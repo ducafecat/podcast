@@ -3,11 +3,11 @@
   <title>duCafeCat</title>
   
   
-  <link href="/podcast/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="https://ducafecat.github.io/"/>
+  <link href="https://ducafecat.tech/"/>
   <updated>2018-09-27T05:58:30.000Z</updated>
-  <id>https://ducafecat.github.io/</id>
+  <id>https://ducafecat.tech/</id>
   
   <author>
     <name>猫哥</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://ducafecat.github.io/2018/09/27/hello-world/"/>
-    <id>https://ducafecat.github.io/2018/09/27/hello-world/</id>
+    <link href="https://ducafecat.tech/2018/09/27/hello-world/"/>
+    <id>https://ducafecat.tech/2018/09/27/hello-world/</id>
     <published>2018-09-27T05:58:30.000Z</published>
     <updated>2018-09-27T05:58:30.000Z</updated>
     

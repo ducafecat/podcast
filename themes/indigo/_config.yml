@@ -18,15 +18,15 @@ menu:
   th-list:
     text: Categories
     url: /categories
-  github:
-    url: https://github.com/yscoder
-    target: _blank
-  weibo:
-    url: http://www.weibo.com/ysweb
-    target: _blank
-  link:
-    text: 测试
-    url: /custom
+  # github:
+  #   url: https://github.com/yscoder
+  #   target: _blank
+  # weibo:
+  #   url: http://www.weibo.com/ysweb
+  #   target: _blank
+  # link:
+  #   text: 测试
+  #   url: /custom
 
 # 你的头像url
 avatar: /img/avatar.jpg
@@ -38,7 +38,7 @@ brand: /img/brand.jpg
 favicon: /favicon.ico
 
 # email
-email: 634206017@qq.com
+email: ducafecat@gmail.com
 
 # 设置 Android L Chrome 浏览器状态栏颜色
 color: '#3F51B5'
@@ -62,10 +62,10 @@ show_last_updated: true
 share: true
 
 # 是否开启打赏，关闭 reward: false
-reward:
-  title: 谢谢大爷~
-  wechat: /img/wechat.jpg     #微信，关闭设为 false
-  alipay: /img/alipay.jpg     #支付宝，关闭设为 false
+# reward:
+#   title: 谢谢大爷~
+#   wechat: /img/wechat.jpg     #微信，关闭设为 false
+#   alipay: /img/alipay.jpg     #支付宝，关闭设为 false
 
 # 是否开启搜索
 search: true
@@ -79,10 +79,11 @@ toc:
   list_number: true  # 是否显示数字排序
 
 # 文章页留言内容，hexo中所有变量及辅助函数等均可调用，具体请查阅 hexo.io
-postMessage: 这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" target="_blank" rel="external"><%- page.permalink.replace(/index\.html$/, '') %></a>
+# postMessage: 这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" target="_blank" rel="external"><%- page.permalink.replace(/index\.html$/, '') %></a>
+postMessage: 暂不开通留言，邮件 ducafecat@gmail.com
 
 # 站长统计，如要开启，输入CNZZ站点id，如 cnzz: 1255152447
-cnzz: false
+cnzz: 1274923561
 
 # 百度统计，如要开启，改为你的 key
 baidu_tongji: false
@@ -146,14 +147,14 @@ since_year: 2018
 about: 用户页面中作者相关的描述性文字，如不需要设为 false
 
 # “不蒜子”访问量统计，详见 http://ibruce.info/2015/04/04/busuanzi/
-visit_counter:
-  site_uv: 站点总访客数：
-  site_pv: 站点总访问量：
+# visit_counter:
+#   site_uv: 站点总访客数：
+#   site_pv: 站点总访问量：
 
 # 动态定义title
-title_change:
-  normal: (つェ⊂)咦!又好了!
-  leave: 死鬼去哪里了！
+# title_change:
+  # normal: (つェ⊂)咦!又好了!
+  # leave: 死鬼去哪里了！
 
 # 设置为 true 发布后将使用 unpkg cdn 最新的主题样式
 # 如果想让你的自定义样式生效，把此项设为 false

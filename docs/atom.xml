@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
-  <icon>https://www.gravatar.com/avatar/c240f1720ed8361caf329d7e173987fe</icon>
+  <title>duCafeCat</title>
+  
   
   <link href="/podcast/atom.xml" rel="self"/>
   
@@ -10,8 +10,8 @@
   <id>https://ducafecat.github.io/</id>
   
   <author>
-    <name>John Doe</name>
-    <email>your email</email>
+    <name>猫哥</name>
+    
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>

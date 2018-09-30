@@ -1,0 +1,64 @@
+---
+title: Dart语言学习 - 02 Windows 下安装 SDK
+top: false
+date: 2018-09-30 14:41:49
+tags: dart
+categories: Dart语言学习
+---
+
+# 环境
+
+- Windows 10
+- Dart SDK 2.0.0
+
+# 下载 SDK
+
+![](2018-09-30-14-54-15.png)
+
+下载 URL
+
+```sh
+https://storage.googleapis.com/dart-archive/channels/stable/release/2.0.0/sdk/dartsdk-windows-x64-release.zip
+```
+
+** 墙内请替换域名 `storage.flutter-io.cn` **
+
+替换后 URL
+
+```sh
+https://storage.flutter-io.cn/dart-archive/channels/stable/release/2.0.0/sdk/dartsdk-windows-x64-release.zip
+```
+
+# 解压到磁盘
+
+![](2018-09-30-15-24-14.png)
+
+磁盘位置 `C:\sdk\dart`
+
+# 设置环境变量
+
+![](2018-09-30-15-01-44.png)
+
+环境变量 `PATH` 新增 `C:\sdk\dart\bin`
+
+# 测试
+
+![](2018-09-30-15-08-44.png)
+
+新开命令行窗口
+
+```sh
+dart --version
+Dart VM version: 2.0.0 (Fri Aug 3 10:53:23 2018 +0200) on "windows_x64"
+```
+
+# 参考
+
+- [Dart SDK Archive](https://webdev.dartlang.org/tools/sdk/archive)
+- [Using-Flutter-in-China](https://github.com/flutter/flutter/wiki/Using-Flutter-in-China)
+
+----
+
+© 猫哥
+微信 ducafecat
+[ducafecat.tech](https://ducafecat.tech/)

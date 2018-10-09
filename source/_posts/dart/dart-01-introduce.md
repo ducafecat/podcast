@@ -42,13 +42,9 @@ categories: Dart语言学习
 ```md
 ## 前言
 
-## 安装 - Win10
+## 安装&配置 - Windows
 
-## 安装 - MacOS
-
-## 配置 IDE - Win10
-
-## 配置 IDE - MacOS
+## 安装&配置 - MacOS
 
 ## 变量 - 两种方式
 

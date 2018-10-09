@@ -59,6 +59,45 @@ dart --version
 Dart VM version: 2.0.0 (Fri Aug 3 10:53:23 2018 +0200) on "windows_x64"
 ```
 
+# VSCode IDE 配置
+
+## [下载链接](https://code.visualstudio.com/)
+
+## 安装 Dart 插件
+
+# 编写 HelloWord
+
+## 新建目录 `dart-learn`
+
+## 编写文件 `hello.dart`
+
+```dart
+void main() {
+  print('hello word!');
+}
+```
+
+## 调试运行
+
+配置文件 `launch.json`
+
+```json
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Dart",
+      "program": "${file}",
+      "request": "launch",
+      "type": "dart"
+    }
+  ]
+}
+```
+
 # 参考
 
 - [Dart SDK Archive](https://webdev.dartlang.org/tools/sdk/archive)

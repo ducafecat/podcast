@@ -5,6 +5,11 @@ tags: dart
 categories: Dart语言学习
 ---
 
+# 本节目标
+
+- 配置 Dart 开发环境
+- 解决墙内问题
+
 # 环境
 
 - MacOS
@@ -12,9 +17,11 @@ categories: Dart语言学习
 
 # 下载 SDK
 
-![](2018-09-30-16-07-22.png)
+## [SDK 列表](https://webdev.dartlang.org/tools/sdk/archive)
 
-下载 URL
+![archive](2018-09-30-16-07-22.png)
+
+## 下载 URL
 
 ```sh
 https://storage.googleapis.com/dart-archive/channels/stable/release/2.0.0/sdk/dartsdk-macos-x64-release.zip
@@ -22,7 +29,7 @@ https://storage.googleapis.com/dart-archive/channels/stable/release/2.0.0/sdk/da
 
 ** 墙内请替换域名 `storage.flutter-io.cn` **
 
-替换后 URL
+## 替换后 URL
 
 ```sh
 https://storage.flutter-io.cn/dart-archive/channels/stable/release/2.0.0/sdk/dartsdk-macos-x64-release.zip
@@ -66,5 +73,5 @@ Dart VM version: 2.0.0 (Fri Aug 3 10:53:23 2018 +0200) on "macos_x64"
 ----
 
 © 猫哥
-微信 ducafecat
-[ducafecat.tech](https://ducafecat.tech/)
+
+[https://ducafecat.tech](https://ducafecat.tech/)

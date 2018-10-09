@@ -3,10 +3,9 @@ title: {{ title }}
 date: {{ date }}
 tags:
 categories:
-top: false
 ---
 
-# 目标
+# 本节目标
 
 # 环境
 
@@ -21,5 +20,5 @@ top: false
 ----
 
 © 猫哥
-微信 ducafecat
-[ducafecat.tech](https://ducafecat.tech/)
+
+[https://ducafecat.tech](https://ducafecat.tech/)

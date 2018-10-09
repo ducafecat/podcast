@@ -5,25 +5,39 @@ tags: dart
 categories: Dart语言学习
 ---
 
-# Dart
+# 本节目标
 
-[dartlang.org](https://www.dartlang.org/)
+- 为什么学习 Dart
+- 课程计划
+- 如果获取课程资料、代码、视频
 
-![homepage](2018-09-30-11-24-24.png)
+# 2018 Google 开发者大会
 
-# 能用来做什么
+## [大会官网](http://www.google.cn/events/developerdays2018/)
 
-## 多平台开发
+![首页简介](2018-10-09-09-45-04.png)
 
-![Platforms](2018-09-30-11-25-34.png)
+## [bilibili 视频](https://space.bilibili.com/64169458/#/)
 
-## Flutter
+![介绍视频](2018-10-09-09-45-53.png)
 
-[flutter.io](https://flutter.io/)
+# Flutter
+
+## [官网](https://flutter.io/)
 
 ![Flutter](2018-09-30-11-26-41.png)
 
-# 大纲
+# Dart
+
+## [官网](https://www.dartlang.org/)
+
+![homepage](2018-09-30-11-24-24.png)
+
+## [多平台开发](https://www.dartlang.org/guides/platforms)
+
+![Platforms](2018-09-30-11-25-34.png)
+
+# 课程计划
 
 ```md
 ## 前言
@@ -106,16 +120,37 @@ categories: Dart语言学习
 
 ## 代码规范 - 设计指南
 
+## 基础类库 - dart:core
+
+## 基础类库 - dart:async
+
+## 基础类库 - dart:math
+
+## 基础类库 - dart:convert
+
 ```
+
+# 课程资料
+
+## [主站 https://ducafecat.tech](https://ducafecat.tech/)
+
+## 资料
+
+- 视频
+  - [youtube]()
+  - [优酷]()
+- [文档](https://ducafecat.tech/categories/Dart%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/)
+- [代码](https://github.com/ducafecat/dart-learn)
 
 # 参考
 
-- [官网](https://www.dartlang.org/)
+- [Dart 官网](https://www.dartlang.org/)
+- [Flutter 官网](https://flutter.io/)
 - [2018 Google 开发者大会](http://www.google.cn/events/developerdays2018/)
 - [bilibili](https://space.bilibili.com/64169458/#/)
 
 ---
 
 © 猫哥
-微信 ducafecat
-[ducafecat.tech](https://ducafecat.tech/)
+
+[https://ducafecat.tech](https://ducafecat.tech/)

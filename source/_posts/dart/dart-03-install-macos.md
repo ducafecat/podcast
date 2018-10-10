@@ -1,6 +1,6 @@
 ---
 title: Dart语言学习 - 03 MacOS 下安装 SDK
-top: false
+date: 2018-09-30 15:41:49
 tags: dart
 categories: Dart语言学习
 ---
@@ -73,9 +73,9 @@ Dart VM version: 2.0.0 (Fri Aug 3 10:53:23 2018 +0200) on "macos_x64"
 
 # 编写 HelloWord
 
-## 新建目录 `dart-learn`
+- 新建目录 `dart-learn`
 
-## 编写文件 `hello.dart`
+- 编写文件 `hello.dart`
 
 ```dart
 void main() {

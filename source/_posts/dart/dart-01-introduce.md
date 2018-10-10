@@ -56,11 +56,13 @@ categories: Dart语言学习
 
 ## 类型 - Bool
 
-## 类型 - Lists
+## 类型 - 日期
+
+## 类型 - List
 
 ## 类型 - Maps
 
-## 类型 - Set
+## 类型 - Sets
 
 ## 类型 - Runes
 

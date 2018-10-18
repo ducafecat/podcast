@@ -118,14 +118,6 @@ categories: Dart语言学习
 
 ## 代码规范 - 设计指南
 
-## 基础类库 - dart:core
-
-## 基础类库 - dart:async
-
-## 基础类库 - dart:math
-
-## 基础类库 - dart:convert
-
 ```
 
 # 课程资料

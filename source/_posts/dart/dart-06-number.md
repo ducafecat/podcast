@@ -67,6 +67,11 @@ double b = double.parse('1.223');
 String a = 123.toString();
 String b = 1.223.toString();
 print([a, b]);
+
+// double -> int
+double a = 1.8;
+int b = a.toInt();
+print(b);
 ```
 
 ## 位运算
@@ -82,7 +87,6 @@ var c = 123;
 var z = 123;
 var result = a & b & c;
 print(result);
-assert(z == result); // assert 断言
 ```
 
 ### `|` 或运算

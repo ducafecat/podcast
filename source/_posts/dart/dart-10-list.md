@@ -85,7 +85,7 @@ fillRange   | 按区间填充
 getRange    | 按区间获取
 shuffle     | 随机变换顺序
 sort        | 排序
-sublist     | 创建子列表
+sublist     | 创建子
 
 ## 添加
 

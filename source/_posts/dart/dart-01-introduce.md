@@ -60,9 +60,9 @@ categories: Dart语言学习
 
 ## 类型 - List
 
-## 类型 - Maps
+## 类型 - Map
 
-## 类型 - Sets
+## 类型 - Set
 
 ## 类型 - Runes
 

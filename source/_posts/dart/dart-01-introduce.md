@@ -66,7 +66,7 @@ categories: Dart语言学习
 
 ## 类型 - Runes
 
-## 类型 - Symbols
+## 类型 - Symbol
 
 ## 类型 - Enum
 

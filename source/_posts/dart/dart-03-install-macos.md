@@ -39,33 +39,9 @@ https://storage.flutter-io.cn/dart-archive/channels/stable/release/2.0.0/sdk/dar
 
 ![](2018-09-30-16-09-28.png)
 
-磁盘位置 `~/Documents/sdk/dart`
+磁盘位置 `~/Documents/sdk/dart-sdk`
 
-# 设置环境变量
-
-```sh
-# 打开配置文件
-vim ~/.bash_profile
-
-# 尾部加入配置
-export PATH=~/Documents/sdk/dart/bin:$PATH
-
-# 重载配置文件
-source ~/.bash_profile
-```
-
-# 测试
-
-![](2018-09-30-16-23-57.png)
-
-新开命令行窗口
-
-```sh
-dart --version
-Dart VM version: 2.0.0 (Fri Aug 3 10:53:23 2018 +0200) on "macos_x64"
-```
-
-# VSCode IDE 配置
+# 配置 VSCode IDE
 
 ## [下载链接](https://code.visualstudio.com/)
 
@@ -102,6 +78,32 @@ void main() {
     }
   ]
 }
+```
+
+# 配置命令行模式
+
+## 设置环境变量
+
+```sh
+# 打开配置文件
+vim ~/.bash_profile
+
+# 尾部加入配置
+export PATH=~/Documents/sdk/dart-sdk/bin:$PATH
+
+# 重载配置文件
+source ~/.bash_profile
+```
+
+## 测试
+
+![](2018-09-30-16-23-57.png)
+
+新开命令行窗口
+
+```sh
+dart --version
+Dart VM version: 2.0.0 (Fri Aug 3 10:53:23 2018 +0200) on "macos_x64"
 ```
 
 # 参考

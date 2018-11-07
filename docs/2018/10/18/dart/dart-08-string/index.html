@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Dart语言学习 - 08 字符串 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="dart">
+    <meta name="description" content="本节目标 声明方式 字符串模板 字符串连接 转义操作 其它常用运算  环境 Dart 2.0.0  单引号或者双引号12String a = &apos;ducafecat&apos;;String b = &quot;ducafecat&quot;; 字符串模板123var a = 123;String b = &apos;ducafecat : $&amp;#123;a&amp;#125;&apos;;print(b); 字符串连接123456789101112131">
+<meta name="keywords" content="dart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dart语言学习 - 08 字符串">
+<meta property="og:url" content="https://ducafecat.tech/2018/10/18/dart/dart-08-string/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 声明方式 字符串模板 字符串连接 转义操作 其它常用运算  环境 Dart 2.0.0  单引号或者双引号12String a = &apos;ducafecat&apos;;String b = &quot;ducafecat&quot;; 字符串模板123var a = 123;String b = &apos;ducafecat : $&amp;#123;a&amp;#125;&apos;;print(b); 字符串连接123456789101112131">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-18T07:04:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dart语言学习 - 08 字符串">
+<meta name="twitter:description" content="本节目标 声明方式 字符串模板 字符串连接 转义操作 其它常用运算  环境 Dart 2.0.0  单引号或者双引号12String a = &apos;ducafecat&apos;;String b = &quot;ducafecat&quot;; 字符串模板123var a = 123;String b = &apos;ducafecat : $&amp;#123;a&amp;#125;&apos;;print(b); 字符串连接123456789101112131">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Dart语言学习 - 08 字符串</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Dart语言学习 - 08 字符串</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-18T05:48:22.000Z" itemprop="datePublished" class="page-time">
+  2018-10-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#环境"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#单引号或者双引号"><span class="post-toc-number">3.</span> <span class="post-toc-text">单引号或者双引号</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字符串模板"><span class="post-toc-number">4.</span> <span class="post-toc-text">字符串模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字符串连接"><span class="post-toc-number">5.</span> <span class="post-toc-text">字符串连接</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#转义符号"><span class="post-toc-number">6.</span> <span class="post-toc-text">转义符号</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#取消转义"><span class="post-toc-number">7.</span> <span class="post-toc-text">取消转义</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#搜索"><span class="post-toc-number">8.</span> <span class="post-toc-text">搜索</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#提取数据"><span class="post-toc-number">9.</span> <span class="post-toc-text">提取数据</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#大小写转换"><span class="post-toc-number">10.</span> <span class="post-toc-text">大小写转换</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#裁剪-判断空字符串"><span class="post-toc-number">11.</span> <span class="post-toc-text">裁剪 判断空字符串</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#替换部分字符"><span class="post-toc-number">12.</span> <span class="post-toc-text">替换部分字符</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字符串创建"><span class="post-toc-number">13.</span> <span class="post-toc-text">字符串创建</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码"><span class="post-toc-number">14.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考"><span class="post-toc-number">15.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-dart/dart-08-string"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Dart语言学习 - 08 字符串</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-18 13:48:22" datetime="2018-10-18T05:48:22.000Z"  itemprop="datePublished">2018-10-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h1><ul>
+<li>声明方式</li>
+<li>字符串模板</li>
+<li>字符串连接</li>
+<li>转义操作</li>
+<li>其它常用运算</li>
+</ul>
+<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><ul>
+<li>Dart 2.0.0</li>
+</ul>
+<h1 id="单引号或者双引号"><a href="#单引号或者双引号" class="headerlink" title="单引号或者双引号"></a>单引号或者双引号</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span> a = <span class="string">'ducafecat'</span>;</span><br><span class="line"><span class="built_in">String</span> b = <span class="string">"ducafecat"</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line"><span class="built_in">String</span> b = <span class="string">'ducafecat : <span class="subst">$&#123;a&#125;</span>'</span>;</span><br><span class="line"><span class="built_in">print</span>(b);</span><br></pre></td></tr></table></figure>
+<h1 id="字符串连接"><a href="#字符串连接" class="headerlink" title="字符串连接"></a>字符串连接</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span> + <span class="string">' '</span> + <span class="string">'ducafecat'</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span><span class="string">' '</span><span class="string">'ducafecat'</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span>   <span class="string">' '</span>     <span class="string">'ducafecat'</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span></span><br><span class="line"><span class="string">' '</span></span><br><span class="line"><span class="string">'ducafecat'</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'''</span></span><br><span class="line"><span class="string">hello word</span></span><br><span class="line"><span class="string">this is multi line</span></span><br><span class="line"><span class="string">'''</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="string">"""</span></span><br><span class="line"><span class="string">hello word</span></span><br><span class="line"><span class="string">this is multi line</span></span><br><span class="line"><span class="string">"""</span>;</span><br><span class="line"><span class="built_in">print</span>(a);</span><br></pre></td></tr></table></figure>
+<h1 id="转义符号"><a href="#转义符号" class="headerlink" title="转义符号"></a>转义符号</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'hello word \n this is multi line'</span>;</span><br><span class="line"><span class="built_in">print</span>(a);</span><br></pre></td></tr></table></figure>
+<h1 id="取消转义"><a href="#取消转义" class="headerlink" title="取消转义"></a>取消转义</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">r'hello word \n this is multi line'</span>;</span><br><span class="line"><span class="built_in">print</span>(a);</span><br></pre></td></tr></table></figure>
+<h1 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'web site ducafecat.tech'</span>;</span><br><span class="line"><span class="built_in">print</span>(a.contains(<span class="string">'ducafecat'</span>));</span><br><span class="line"><span class="built_in">print</span>(a.startsWith(<span class="string">'web'</span>));</span><br><span class="line"><span class="built_in">print</span>(a.endsWith(<span class="string">'tech'</span>));</span><br><span class="line"><span class="built_in">print</span>(a.indexOf(<span class="string">'site'</span>));</span><br></pre></td></tr></table></figure>
+<h1 id="提取数据"><a href="#提取数据" class="headerlink" title="提取数据"></a>提取数据</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(a.substring(<span class="number">0</span>,<span class="number">5</span>));</span><br><span class="line"><span class="keyword">var</span> b = a.split(<span class="string">' '</span>);</span><br><span class="line"><span class="built_in">print</span>(b.length);</span><br><span class="line"><span class="built_in">print</span>(b[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
+<h1 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(a.toLowerCase());</span><br><span class="line"><span class="built_in">print</span>(a.toUpperCase());</span><br></pre></td></tr></table></figure>
+<h1 id="裁剪-判断空字符串"><a href="#裁剪-判断空字符串" class="headerlink" title="裁剪 判断空字符串"></a>裁剪 判断空字符串</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'    hello word     '</span>.trim());</span><br><span class="line"><span class="built_in">print</span>(<span class="string">''</span>.isEmpty);</span><br></pre></td></tr></table></figure>
+<h1 id="替换部分字符"><a href="#替换部分字符" class="headerlink" title="替换部分字符"></a>替换部分字符</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'hello word word!'</span>.replaceAll(<span class="string">'word'</span>, <span class="string">'ducafecat'</span>));</span><br></pre></td></tr></table></figure>
+<h1 id="字符串创建"><a href="#字符串创建" class="headerlink" title="字符串创建"></a>字符串创建</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sb = <span class="built_in">StringBuffer</span>();</span><br><span class="line">sb..write(<span class="string">'hello word!'</span>)</span><br><span class="line">..write(<span class="string">'my'</span>)</span><br><span class="line">..write(<span class="string">' '</span>)</span><br><span class="line">..writeAll([<span class="string">'web'</span>, <span class="string">'site'</span>, <span class="string">'https://ducafecat.tech'</span>]);</span><br><span class="line"><span class="built_in">print</span>(sb.toString());</span><br></pre></td></tr></table></figure>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><ul>
+<li><a href="https://github.com/ducafecat/dart-learn/blob/master/08-%E5%AD%97%E7%AC%A6%E4%B8%B2/string.dart" target="_blank" rel="noopener">string.dart</a></li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://www.dartlang.org/guides/language/language-tour" target="_blank" rel="noopener">language-tour</a></li>
+<li><a href="https://api.dartlang.org/stable/2.0.0/dart-core/String-class.html" target="_blank" rel="noopener">String</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-10-18T07:04:35.000Z" itemprop="dateUpdated">2018-10-18 15:04:35</time>
+</span><br>
+
+
+        
+        暂不开通留言，邮件 ducafecat@gmail.com
+        
+    </div>
+    
+    <footer>
+        <a href="https://ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2018/10/18/dart/dart-08-string/&title=《Dart语言学习 - 08 字符串》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2018/10/18/dart/dart-08-string/&title=《Dart语言学习 - 08 字符串》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2018/10/18/dart/dart-08-string/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 08 字符串》 — duCafeCat&url=https://ducafecat.tech/2018/10/18/dart/dart-08-string/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2018/10/18/dart/dart-08-string/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/10/18/dart/dart-09-datetime/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Dart语言学习 - 09 日期时间</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/10/17/dart/dart-07-bool/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Dart语言学习 - 07 布尔</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猫哥 &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2018/10/18/dart/dart-08-string/&title=《Dart语言学习 - 08 字符串》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2018/10/18/dart/dart-08-string/&title=《Dart语言学习 - 08 字符串》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2018/10/18/dart/dart-08-string/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 08 字符串》 — duCafeCat&url=https://ducafecat.tech/2018/10/18/dart/dart-08-string/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2018/10/18/dart/dart-08-string/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aQW7DMAwFUd//0u62QGN5PukGMDVaBWli6WXBkiKPA6/zYv3+69/X63f4+48tGTJkvJZxLhfZmDy58/n12WTIkLEP4+qhfAMOTp+2PpsMGTJkpKlhLYyu95UhQ4aMGqNWjt6kdzJkyJCxZKQXavxSjHye7PVYLS5DhowXMvhRvv/6X/obMmTIeBXjLK20MZkmefF5ZMiQMZrBG43kWp9czPFEM04QZciQMZRBQmSnxOUDHLy1cFOFy5AhYxwjLSx52dkJoCQEy5AhY2dGGuxIU7NPQqeVIUPGaAY5NAc8NjxRGimTIUPGPAbfgDyOXPF3ytS4fJUhQ8Y4Bh+2IOldDUN+6A8/vQwZMkYz+BH75W5aNpOwLkOGjB0YaRsgTd34ZVmrOSFDhowNGPyqqw8mpS/HyJAhYx9G7cu1YYunLuxaua0MGTJeyEjDLk/dOiGYBPEP/zdkyJCxASNtZLZSulL5epPhypAhYyiDJHMczMvddCzs8gkyZMgYzUhHxFIwQXZCsAwZMnZg1FIxUo7WeMUGpwwZMkYz+Jd5Ksmv3kjKSFqqMmTImM04w5UmiwdYtUaCDBky9mHwRQJlLeDWam4epmXIkDGDwccdakMStTKVj1zIkCFjH0atAZlesfUTvkuMDBkyZIRJYWfkIm1XyJAhQwbZ4Kmfg1fbj6WGMmTIeBWDp3TpWEZ6rGK7QoYMGaMZaaMxLU1rRWzaipAhQ8ZQxg/aeA8siaYZNAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

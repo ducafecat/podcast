@@ -107,7 +107,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -141,11 +141,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-dart/dart-03-install-macos"
+            <article id="post-dart/dart-14-symbol-enum-comments"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2018-09-30 15:31:44" datetime="2018-09-30T07:31:44.000Z"  itemprop="datePublished">2018-09-30</time>
+        <time class="post-time" title="2018-10-27 11:05:15" datetime="2018-10-27T03:05:15.000Z"  itemprop="datePublished">2018-10-27</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
@@ -159,7 +159,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/09/30/dart/dart-03-install-macos/">Dart语言学习 - 03 MacOS 下安装 SDK</a>
+      <a class="post-title-link" href="/2018/10/27/dart/dart-14-symbol-enum-comments/">Dart语言学习 14 symbol、enum、comments</a>
     </h3>
   
 
@@ -170,25 +170,19 @@
 
     
         本节目标
-配置 Dart 开发环境
-解决墙内问题
+symbol
+enum
+comments
 
 环境
-MacOS
-Dart SDK 2.0.0
+Dart 2.0.0
 
-下载 SDKSDK 列表
-                
-                    
-                    
-                
-                archive
-            
-下载 URL1https://stora...
+符号 SymbolDart语言的标识符，在反射中用的很普及，特别是很多发布包都是混淆后的。
+123456import 'dart:mirrors';Symbol libraryName = new Symbol('dart.core');MirrorSystem mirrorSystem = currentM...
     
 
-        <a href="/2018/09/30/dart/dart-03-install-macos/" class="post-more waves-effect waves-button">
-            阅读全文…
+        <a href="/2018/10/27/dart/dart-14-symbol-enum-comments/" class="post-more waves-effect waves-button">
+            Continue reading...
         </a>
     </div>
     
@@ -203,11 +197,11 @@ Dart SDK 2.0.0
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-dart/dart-02-install-windows"
+            <article id="post-dart/dart-13-runes"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2018-09-30 14:41:49" datetime="2018-09-30T06:41:49.000Z"  itemprop="datePublished">2018-09-30</time>
+        <time class="post-time" title="2018-10-27 08:51:21" datetime="2018-10-27T00:51:21.000Z"  itemprop="datePublished">2018-10-27</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
@@ -221,7 +215,7 @@ Dart SDK 2.0.0
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/09/30/dart/dart-02-install-windows/">Dart语言学习 - 02 Windows 下安装 SDK</a>
+      <a class="post-title-link" href="/2018/10/27/dart/dart-13-runes/">Dart语言学习 - 13 Runes</a>
     </h3>
   
 
@@ -232,25 +226,29 @@ Dart SDK 2.0.0
 
     
         本节目标
-配置 Dart 开发环境
-解决墙内问题
+字符编码 ASCII、Unicode、UTF-8、UTF-16、UTF-32
+字与字符
+如何操作
 
 环境
-Windows 10
-Dart SDK 2.0.0
+Dart 2.0.0
 
-下载 SDKSDK 列表
-                
-                    
-                    
-                
-                archive
-            
-源下载 URL1https:/...
+字符集ASCII
+ASCII
+
+非 ASCII 中的 GB2312、GBK
+汉字内码扩展规范
+
+Unicode、UTF-8、UTF-16、UTF-32
+UTF-8
+UTF-16
+UTF-32
+
+Runes 对象Runes 对象是一个 32位 字符对象，用...
     
 
-        <a href="/2018/09/30/dart/dart-02-install-windows/" class="post-more waves-effect waves-button">
-            阅读全文…
+        <a href="/2018/10/27/dart/dart-13-runes/" class="post-more waves-effect waves-button">
+            Continue reading...
         </a>
     </div>
     
@@ -265,11 +263,11 @@ Dart SDK 2.0.0
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-dart/dart-01-introduce"
+            <article id="post-dart/dart-12-set"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2018-09-30 10:00:48" datetime="2018-09-30T02:00:48.000Z"  itemprop="datePublished">2018-09-30</time>
+        <time class="post-time" title="2018-10-25 14:47:10" datetime="2018-10-25T06:47:10.000Z"  itemprop="datePublished">2018-10-25</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
@@ -283,7 +281,7 @@ Dart SDK 2.0.0
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/09/30/dart/dart-01-introduce/">Dart语言学习 - 01 前言</a>
+      <a class="post-title-link" href="/2018/10/25/dart/dart-12-set/">Dart语言学习 - 12 Set</a>
     </h3>
   
 
@@ -294,23 +292,431 @@ Dart SDK 2.0.0
 
     
         本节目标
-为什么学习 Dart
-课程计划
-如果获取课程资料、代码、视频
+初始、声明
+常用属性
+常用方法
 
-2018 Google 开发者大会大会官网
-                
-                    
-                    
-                
-                首页简介
-            
-bilibili 视频
-                ...
+环境
+Dart 2.0.0
+
+声明Set 是一个元素唯一的有序队列
+松散12345678// var a = new Set();// a.add('java');// a.add('php');// a.add('python');// a.add('java');// a.add('sql');// a.add('swift');// a.ad...
     
 
-        <a href="/2018/09/30/dart/dart-01-introduce/" class="post-more waves-effect waves-button">
-            阅读全文…
+        <a href="/2018/10/25/dart/dart-12-set/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-dart/dart-11-map"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-10-23 15:36:12" datetime="2018-10-23T07:36:12.000Z"  itemprop="datePublished">2018-10-23</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/10/23/dart/dart-11-map/">Dart语言学习 - 11 Map</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        本节目标
+初始、声明
+常用属性
+常用方法
+
+环境
+Dart 2.0.0
+
+初始key value 形式的集合
+1var a = &#123;'name': 'ducafecat', 'web': 'www.ducafecat.tech'&#125;;
+声明松散1234var a = new Map();a['name'] = 'ducafecat';a['web'] = 'www.ducaf...
+    
+
+        <a href="/2018/10/23/dart/dart-11-map/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-dart/dart-10-list"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-10-19 10:49:35" datetime="2018-10-19T02:49:35.000Z"  itemprop="datePublished">2018-10-19</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/10/19/dart/dart-10-list/">Dart语言学习 - 10 列表</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        本节目标
+初始、声明
+常用属性
+常用方法
+
+环境
+Dart 2.0.0
+
+初始List 是一个有序列表
+12var l = [1, 2, 3];print(l);
+声明定长123456List&lt;int&gt; l = new List();l..add(1)..add(2)..add(3);print(l);
+自动123456List&lt;int&gt; l = new List(3...
+    
+
+        <a href="/2018/10/19/dart/dart-10-list/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-dart/dart-09-datetime"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-10-18 15:02:05" datetime="2018-10-18T07:02:05.000Z"  itemprop="datePublished">2018-10-18</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/10/18/dart/dart-09-datetime/">Dart语言学习 - 09 日期时间</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        本节目标
+声明
+UTC 时间
+公元时间
+时间戳
+解析标准时间
+时间运算
+
+环境
+Dart 2.0.0
+
+声明1234var now = new DateTime.now();print(now);var d = new DateTime(2018, 10, 10, 9, 30);print(d);
+创建时间 UTC
+UTC 协调世界时
+原子时
+原子钟
+
+12var d = new DateT...
+    
+
+        <a href="/2018/10/18/dart/dart-09-datetime/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-dart/dart-08-string"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-10-18 13:48:22" datetime="2018-10-18T05:48:22.000Z"  itemprop="datePublished">2018-10-18</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/10/18/dart/dart-08-string/">Dart语言学习 - 08 字符串</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        本节目标
+声明方式
+字符串模板
+字符串连接
+转义操作
+其它常用运算
+
+环境
+Dart 2.0.0
+
+单引号或者双引号12String a = 'ducafecat';String b = "ducafecat";
+字符串模板123var a = 123;String b = 'ducafecat : $&#123;a&#125;';print(b);
+字符串连接123456789101112...
+    
+
+        <a href="/2018/10/18/dart/dart-08-string/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-dart/dart-07-bool"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-10-17 17:37:31" datetime="2018-10-17T09:37:31.000Z"  itemprop="datePublished">2018-10-17</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/10/17/dart/dart-07-bool/">Dart语言学习 - 07 布尔</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        本节目标
+布尔 声明、比较、默认值
+断言、asset、isEmpty、isNaN
+逻辑操作符 &amp;&amp;、||、!
+关系运算符 == != &gt; &gt;= &lt; &lt;=
+
+环境
+Dart 2.0.0
+
+声明为了代表布尔值，Dart 有一个名字为 bool 的类型。 只有两个对象是布尔类型的：true 和 false 所创建的对象， 这两个对象也都是编译时常量。
+boo...
+    
+
+        <a href="/2018/10/17/dart/dart-07-bool/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-dart/dart-06-number"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-10-16 17:08:33" datetime="2018-10-16T09:08:33.000Z"  itemprop="datePublished">2018-10-16</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/10/16/dart/dart-06-number/">Dart语言学习 - 06 数值</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        本节目标
+数值类型 int、double、num
+数值表示法 十进制、十六进制
+科学计数法
+数值转换
+位运算
+
+环境
+Dart 2.0.0
+
+数值数值类型int整数值，其取值通常位于 -253 和 253 之间。
+int class
+double64-bit (双精度) 浮点数，符合 IEEE 754 标准。
+double class
+numint 和 double 都是 num 的子类。
+...
+    
+
+        <a href="/2018/10/16/dart/dart-06-number/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-dart/dart-05-constant"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-10-10 14:49:26" datetime="2018-10-10T06:49:26.000Z"  itemprop="datePublished">2018-10-10</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/10/10/dart/dart-05-constant/">Dart语言学习 - 05 常量</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        本节目标
+常量的定义方式
+final const 的区别
+
+环境
+Dart 2.0.0
+
+定义类型声明可以省略12345final String a = 'ducafecat';final a = 'ducafecat';const String a = 'ducafecat';const a = 'ducafecat';
+初始后不能再赋值12345final a = 'ducafecat'...
+    
+
+        <a href="/2018/10/10/dart/dart-05-constant/" class="post-more waves-effect waves-button">
+            Continue reading...
         </a>
     </div>
     
@@ -327,6 +733,12 @@ bilibili 视频
     </ul>
 
     
+<nav id="page-nav">
+    <div class="inner">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    </div>
+</nav>
+
 
 </div>
 
@@ -338,7 +750,7 @@ bilibili 视频
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

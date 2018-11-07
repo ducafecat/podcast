@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Dart语言学习 - 11 Map | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="dart">
+    <meta name="description" content="本节目标 初始、声明 常用属性 常用方法  环境 Dart 2.0.0  初始key value 形式的集合 1var a = &amp;#123;&apos;name&apos;: &apos;ducafecat&apos;, &apos;web&apos;: &apos;www.ducafecat.tech&apos;&amp;#125;; 声明松散1234var a = new Map();a[&apos;name&apos;] = &apos;ducafecat&apos;;a[&apos;web&apos;] = &apos;www.ducafeca">
+<meta name="keywords" content="dart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dart语言学习 - 11 Map">
+<meta property="og:url" content="https://ducafecat.tech/2018/10/23/dart/dart-11-map/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 初始、声明 常用属性 常用方法  环境 Dart 2.0.0  初始key value 形式的集合 1var a = &amp;#123;&apos;name&apos;: &apos;ducafecat&apos;, &apos;web&apos;: &apos;www.ducafecat.tech&apos;&amp;#125;; 声明松散1234var a = new Map();a[&apos;name&apos;] = &apos;ducafecat&apos;;a[&apos;web&apos;] = &apos;www.ducafeca">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-23T09:07:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dart语言学习 - 11 Map">
+<meta name="twitter:description" content="本节目标 初始、声明 常用属性 常用方法  环境 Dart 2.0.0  初始key value 形式的集合 1var a = &amp;#123;&apos;name&apos;: &apos;ducafecat&apos;, &apos;web&apos;: &apos;www.ducafecat.tech&apos;&amp;#125;; 声明松散1234var a = new Map();a[&apos;name&apos;] = &apos;ducafecat&apos;;a[&apos;web&apos;] = &apos;www.ducafeca">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Dart语言学习 - 11 Map</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Dart语言学习 - 11 Map</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-23T07:36:12.000Z" itemprop="datePublished" class="page-time">
+  2018-10-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#环境"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#初始"><span class="post-toc-number">3.</span> <span class="post-toc-text">初始</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#声明"><span class="post-toc-number">4.</span> <span class="post-toc-text">声明</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#松散"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">松散</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#强类型"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">强类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基本属性"><span class="post-toc-number">5.</span> <span class="post-toc-text">基本属性</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常用方法"><span class="post-toc-number">6.</span> <span class="post-toc-text">常用方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#addAll"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">addAll</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#addEntries"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">addEntries</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#containsKey"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">containsKey</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#containsValue"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">containsValue</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#clear"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">clear</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#remove"><span class="post-toc-number">6.6.</span> <span class="post-toc-text">remove</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#removeWhere"><span class="post-toc-number">6.7.</span> <span class="post-toc-text">removeWhere</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#update"><span class="post-toc-number">6.8.</span> <span class="post-toc-text">update</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#updateAll"><span class="post-toc-number">6.9.</span> <span class="post-toc-text">updateAll</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#操作符"><span class="post-toc-number">7.</span> <span class="post-toc-text">操作符</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码"><span class="post-toc-number">8.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考"><span class="post-toc-number">9.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-dart/dart-11-map"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Dart语言学习 - 11 Map</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-23 15:36:12" datetime="2018-10-23T07:36:12.000Z"  itemprop="datePublished">2018-10-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h1><ul>
+<li>初始、声明</li>
+<li>常用属性</li>
+<li>常用方法</li>
+</ul>
+<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><ul>
+<li>Dart 2.0.0</li>
+</ul>
+<h1 id="初始"><a href="#初始" class="headerlink" title="初始"></a>初始</h1><p>key value 形式的集合</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="string">'name'</span>: <span class="string">'ducafecat'</span>, <span class="string">'web'</span>: <span class="string">'www.ducafecat.tech'</span>&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><h2 id="松散"><a href="#松散" class="headerlink" title="松散"></a>松散</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">a[<span class="string">'name'</span>] = <span class="string">'ducafecat'</span>;</span><br><span class="line">a[<span class="string">'web'</span>] = <span class="string">'www.ducafecat.tech'</span>;</span><br><span class="line">a[<span class="number">0</span>] = <span class="string">'abc'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="强类型"><a href="#强类型" class="headerlink" title="强类型"></a>强类型</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Map</span>&lt;<span class="built_in">int</span>, <span class="built_in">String</span>&gt;();</span><br><span class="line">b[<span class="number">0</span>] = <span class="string">'java'</span>;</span><br><span class="line">b[<span class="number">1</span>] = <span class="string">'python'</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="基本属性"><a href="#基本属性" class="headerlink" title="基本属性"></a>基本属性</h1><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isEmpty</td>
+<td>是否为空</td>
+</tr>
+<tr>
+<td>isNotEmpty</td>
+<td>是否不为空</td>
+</tr>
+<tr>
+<td>keys</td>
+<td>key 集合</td>
+</tr>
+<tr>
+<td>values</td>
+<td>values 集合</td>
+</tr>
+<tr>
+<td>length</td>
+<td>个数</td>
+</tr>
+<tr>
+<td>entries</td>
+<td>加工数据入口</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(a.isEmpty);</span><br><span class="line"><span class="built_in">print</span>(a.isNotEmpty);</span><br><span class="line"><span class="built_in">print</span>(a.keys);</span><br><span class="line"><span class="built_in">print</span>(a.values);</span><br><span class="line"><span class="built_in">print</span>(a.length);</span><br><span class="line"><span class="built_in">print</span>(a.entries);</span><br></pre></td></tr></table></figure>
+<h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addAll</td>
+<td>添加</td>
+</tr>
+<tr>
+<td>addEntries</td>
+<td>从入口添加</td>
+</tr>
+<tr>
+<td>containsKey</td>
+<td>按 key 查询</td>
+</tr>
+<tr>
+<td>containsValue</td>
+<td>按 value 查询</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>清空</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>删除某个</td>
+</tr>
+<tr>
+<td>removeWhere</td>
+<td>按条件删除</td>
+</tr>
+<tr>
+<td>update</td>
+<td>更新某个</td>
+</tr>
+<tr>
+<td>updateAll</td>
+<td>按条件更新</td>
+</tr>
+</tbody>
+</table>
+<h2 id="addAll"><a href="#addAll" class="headerlink" title="addAll"></a>addAll</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b.addAll(&#123;<span class="string">'first'</span>: <span class="string">'java'</span>, <span class="string">'second'</span>: <span class="string">'python'</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="addEntries"><a href="#addEntries" class="headerlink" title="addEntries"></a>addEntries</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b.addEntries(a.entries);</span><br></pre></td></tr></table></figure>
+<h2 id="containsKey"><a href="#containsKey" class="headerlink" title="containsKey"></a>containsKey</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(a.containsKey(<span class="string">'name'</span>));</span><br></pre></td></tr></table></figure>
+<h2 id="containsValue"><a href="#containsValue" class="headerlink" title="containsValue"></a>containsValue</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(a.containsValue(<span class="string">'www.ducafecat.tech'</span>));</span><br></pre></td></tr></table></figure>
+<h2 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b.clear();</span><br></pre></td></tr></table></figure>
+<h2 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.remove(<span class="string">'name'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="removeWhere"><a href="#removeWhere" class="headerlink" title="removeWhere"></a>removeWhere</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.removeWhere((key,val) =&gt; key == <span class="string">'name'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="update"><a href="#update" class="headerlink" title="update"></a>update</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.update(<span class="string">'name'</span>, (val) =&gt; <span class="string">'abc'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="updateAll"><a href="#updateAll" class="headerlink" title="updateAll"></a>updateAll</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.updateAll((key, val) =&gt; <span class="string">"---$val---"</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h1><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[]</td>
+<td>取值</td>
+</tr>
+<tr>
+<td>[]=</td>
+<td>赋值</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(a[<span class="string">'name'</span>]);</span><br><span class="line">a[<span class="string">'name'</span>] = <span class="string">'abc'</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><ul>
+<li><a href="https://github.com/ducafecat/dart-learn/blob/master/11-Map/map.dart" target="_blank" rel="noopener">map.dart</a></li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://www.dartlang.org/guides/language/language-tour" target="_blank" rel="noopener">language-tour</a></li>
+<li><a href="https://api.dartlang.org/stable/2.0.0/dart-core/Map-class.html" target="_blank" rel="noopener">Map</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-10-23T09:07:33.000Z" itemprop="dateUpdated">2018-10-23 17:07:33</time>
+</span><br>
+
+
+        
+        暂不开通留言，邮件 ducafecat@gmail.com
+        
+    </div>
+    
+    <footer>
+        <a href="https://ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2018/10/23/dart/dart-11-map/&title=《Dart语言学习 - 11 Map》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2018/10/23/dart/dart-11-map/&title=《Dart语言学习 - 11 Map》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2018/10/23/dart/dart-11-map/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 11 Map》 — duCafeCat&url=https://ducafecat.tech/2018/10/23/dart/dart-11-map/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2018/10/23/dart/dart-11-map/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/10/25/dart/dart-12-set/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Dart语言学习 - 12 Set</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/10/19/dart/dart-10-list/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Dart语言学习 - 10 列表</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猫哥 &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2018/10/23/dart/dart-11-map/&title=《Dart语言学习 - 11 Map》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2018/10/23/dart/dart-11-map/&title=《Dart语言学习 - 11 Map》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2018/10/23/dart/dart-11-map/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 11 Map》 — duCafeCat&url=https://ducafecat.tech/2018/10/23/dart/dart-11-map/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2018/10/23/dart/dart-11-map/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aOW7DQAwFUN//0gqQyo2kT9IOopk3lYF4maeC4fZ6xef4Pe+v30/yzrPPXr//wwcDA+OxjOPyJO9JMMkvJo/slIqBgbEBoxdkr69bDd/5d2JgYGBcf10SQPPMLf9dDAwMjDnjuhDNi1UMDAyMSRF7HUaTv+bF6hdrcQwMjAcyemXn37z++nwDAwPj3zOO4smDb/VTo1thYGAszcib/tWiNwnck9AfZbgYGBhLMOaNtrzFNl+zOL0nBgbG0oxeW78agicFatKAw8DAwKgC/nLV9ZXPSDEwMB7LqKZ083RwMuaM1iwwMDC2ZOQFZ371Ku/mPhgYGEszqpeepInNYJr/G8DAwFia0VubGC2Stq5eXmPFwMBYiDEvO5OUbr4XcdMKxMDAWJTRW3q4vmL1s71li5s9XAwMjIUY85N/XcLIQzAGBsY+jDy9S9YgeiVrHpQL5SsGBsYGjF7HbpLA5Q/ldNkCAwNjUcYkCCaFa3Usmg87y11DDAyMxzJ6JWW1NM0nqFUSBgbGboxewlcdN/aGBzeJJgYGxtKMars/oeYla15OY2Bg7Mw4iqfXRMuXJ5oBHQMDY2lGdamiujZRbcYl4Xu0M4KBgfFYRm/d4VOZ6WSQUEgQMTAwlmDkbfo8KE+aeuW1DAwMDIygATcZA/QiJwYGBsZ8hWvyIPIUFgMDYx9GdRjQC5e9wUC0kIGBgbE0ozoYyJfGet/ce3wYGBiLMn4AQiOOdJdPtC0AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

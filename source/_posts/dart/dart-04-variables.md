@@ -30,18 +30,29 @@ a = {'key': 'val123'};
 a = ['abc'];
 ```
 
-## dynamic、Object
+## Object
 
-功能相同，可以变成任何类型
+动态任意类型，编译阶段检查类型
+
+```dart
+Object a = 'doucafecat';
+a = 123;
+a = [2222];
+a.p();
+```
+
+## dynamic
+
+动态任意类型，编译阶段不检查检查类型
 
 ```dart
 dynamic a = 'doucafecat';
-Object a = 'doucafecat';
 a = 123;
 a = [1111];
+a.p();
 ```
 
-## 比较 var、dynamic、Object
+## 比较 var 与 dynamic、Object
 
 唯一区别 var 如果有初始值，类型被锁定
 

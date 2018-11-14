@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="duCafeCat">
 <meta property="og:description" content="本节目标 布尔 声明、比较、默认值 断言、asset、isEmpty、isNaN 逻辑操作符 &amp;amp;&amp;amp;、||、! 关系运算符 == != &amp;gt; &amp;gt;= &amp;lt; &amp;lt;=  环境 Dart 2.0.0  声明为了代表布尔值，Dart 有一个名字为 bool 的类型。 只有两个对象是布尔类型的：true 和 false 所创建的对象， 这两个对象也都是编译时常量。 bool 1">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-18T05:40:26.000Z">
+<meta property="og:updated_time" content="2018-11-14T03:03:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dart语言学习 - 07 布尔">
 <meta name="twitter:description" content="本节目标 布尔 声明、比较、默认值 断言、asset、isEmpty、isNaN 逻辑操作符 &amp;amp;&amp;amp;、||、! 关系运算符 == != &amp;gt; &amp;gt;= &amp;lt; &amp;lt;=  环境 Dart 2.0.0  声明为了代表布尔值，Dart 有一个名字为 bool 的类型。 只有两个对象是布尔类型的：true 和 false 所创建的对象， 这两个对象也都是编译时常量。 bool 1">
@@ -190,6 +190,9 @@
 <p>只有 true 对象才被认为是 true。 所有其他的值都是 flase。</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span> name = <span class="string">'ducafecat'</span>;</span><br><span class="line"><span class="keyword">if</span>(name) &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'this is name'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="assert-断言"><a href="#assert-断言" class="headerlink" title="assert 断言"></a>assert 断言</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">assert</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">assert</span>(name.isEmpty);</span><br><span class="line"><span class="keyword">assert</span>(name.isNotEmpty);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">0</span> / <span class="number">0</span>;</span><br><span class="line"><span class="keyword">assert</span>(<span class="built_in">num</span>.isNaN);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意： 断言只在检查模式下运行有效，如果在生产模式 运行，则断言不会执行。</p>
+</blockquote>
 <h1 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h1><h2 id="amp-amp-逻辑与"><a href="#amp-amp-逻辑与" class="headerlink" title="&amp;&amp; 逻辑与"></a><code>&amp;&amp;</code> 逻辑与</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span> a = <span class="keyword">true</span>;</span><br><span class="line"><span class="built_in">bool</span> b = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">assert</span>(a &amp;&amp; b);</span><br></pre></td></tr></table></figure>
 <h2 id="逻辑或"><a href="#逻辑或" class="headerlink" title="|| 逻辑或"></a><code>||</code> 逻辑或</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span> a = <span class="keyword">true</span>;</span><br><span class="line"><span class="built_in">bool</span> b = <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">assert</span>(a || b);</span><br></pre></td></tr></table></figure>
 <h2 id="逻辑非"><a href="#逻辑非" class="headerlink" title="! 逻辑非"></a><code>!</code> 逻辑非</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span> a = <span class="keyword">true</span>;</span><br><span class="line"><span class="built_in">bool</span> b = !a;</span><br><span class="line"><span class="built_in">print</span>(b);</span><br></pre></td></tr></table></figure>
@@ -217,7 +220,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-10-18T05:40:26.000Z" itemprop="dateUpdated">2018-10-18 13:40:26</time>
+    Last updated: <time datetime="2018-11-14T03:03:40.000Z" itemprop="dateUpdated">2018-11-14 11:03:40</time>
 </span><br>
 
 

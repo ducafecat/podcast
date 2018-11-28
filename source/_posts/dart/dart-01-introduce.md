@@ -86,7 +86,15 @@ categories: Dart语言学习
 
 ## 类 - 静态变量、方法
 
+## 类 - abstract 抽象类、方法
+
+## 类 - interface、implements
+
 ## 类 - 继承
+
+## 类 - 扩展
+
+## 类 - 混合
 
 ## 类 - 重写
 

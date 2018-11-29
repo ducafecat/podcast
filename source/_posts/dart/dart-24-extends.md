@@ -12,6 +12,7 @@ categories: Dart语言学习
 - 不可多继承
 - 父类调用
 - 调用父类构造
+- 重写超类函数
 
 # 环境
 
@@ -129,6 +130,35 @@ class AndroidPhone extends Mobile {
 ```
 
 > 可调用父类的 构造函数
+
+# 重写超类函数
+
+```dart
+void main() {
+  dynamic p = AndroidPhone(12345678);
+  p.showNumber111();
+}
+
+class Mobile {
+  int number;
+  int signal;
+  Mobile(this.number);
+  void showNumber() {
+    print('010-${number}');
+  }
+}
+
+class AndroidPhone extends Mobile {
+  AndroidPhone(int number) : super(number);
+
+  @override
+  void noSuchMethod(Invocation mirror) {
+    print('被重写 noSuchMethod');
+  }
+}
+```
+
+> 在重写的函数上加修饰符 `@override`
 
 # 代码
 

@@ -14,7 +14,7 @@ categories: Dart语言学习
 
 - Dart 2.0.0
 
-# Dart 中没有 interface 关键字
+# *Dart 中没有 interface 关键字*
 
 # 实现接口
 
@@ -39,6 +39,8 @@ class AndroidPhone implements IPhone {
   }
 }
 ```
+
+> 接口用途的抽象类 请用字母 `I` 开头 , 如 `IPhone`
 
 # 从一个普通类履行接口
 
@@ -67,6 +69,8 @@ class AndroidPhone implements Phone {
   }
 }
 ```
+
+> Dart 可以从一个普通的类履行接口
 
 # 履行多接口
 
@@ -101,6 +105,8 @@ class AndroidPhone implements Phone, Mobile {
 }
 ```
 
+> Dart 可以履行多个接口
+
 # 代码
 
 - [interface](https://github.com/ducafecat/dart-learn/blob/master/19-%E7%B1%BB/interface.dart)
@@ -109,7 +115,7 @@ class AndroidPhone implements Phone, Mobile {
 
 - [language-tour](https://www.dartlang.org/guides/language/language-tour)
 
-----
+---
 
 © 猫哥
 

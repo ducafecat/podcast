@@ -86,11 +86,11 @@ categories: Dart语言学习
 
 ## 类 - 静态变量、方法
 
-## 类 - abstract 抽象类、方法
+## 类 - Abstract 抽象类、方法
 
-## 类 - interface、implements
+## 类 - Interface 接口
 
-## 类 - 继承
+## 类 - extends 继承
 
 ## 类 - 扩展
 

@@ -60,26 +60,6 @@ class AndroidPhone extends Phone {
 
 > 抽象类中只定义抽象函数，实例化访问会报错
 
-# 不可多继承
-
-```dart
-class Phone {
-  void startup() {
-    print('开机');
-  }
-  void shutdown() {
-    print('关机');
-  }
-}
-
-class Mobile {
-  int signal;
-}
-
-class AndroidPhone extends Phone, Mobile {
-}
-```
-
 # 父类调用
 
 ```dart
@@ -162,7 +142,7 @@ class AndroidPhone extends Mobile {
 
 # 代码
 
-- [extends](https://github.com/ducafecat/dart-learn/blob/master/19-%E7%B1%BB/extends.dart)
+- [extends](https://github.com/ducafecat/dart-learn/tree/master/24-%E7%BB%A7%E6%89%BF)
 
 # 参考
 

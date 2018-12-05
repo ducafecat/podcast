@@ -13,6 +13,8 @@ categories: Dart语言学习
 
 # 环境
 
+- Dart 2.1.0
+
 # 导入核心库
 
 ```dart

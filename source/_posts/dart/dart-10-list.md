@@ -26,7 +26,7 @@ print(l);
 
 # 声明
 
-## 定长
+## 自动
 
 ```dart
 List<int> l = new List();
@@ -37,7 +37,7 @@ l
 print(l);
 ```
 
-## 自动
+## 定长
 
 ```dart
 List<int> l = new List(3);

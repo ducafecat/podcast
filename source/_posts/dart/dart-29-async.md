@@ -12,21 +12,6 @@ categories: Dart语言学习
 
 # 环境
 
-# 调用异步 等待
-
-```dart
-import 'package:dio/dio.dart';
-
-void main() async {
-  Dio dio = new Dio();
-  Response<String> response = await dio.get("https://www.baidu.com");
-  print(response.data);
-}
-```
-
-> `async` 写在函数定义
-> `await` 写在异步请求头
-
 # 调用异步 回调
 
 ```dart
@@ -41,6 +26,21 @@ void main() {
 ```
 
 > `then` 的方式异步回调
+
+# 调用异步 等待
+
+```dart
+import 'package:dio/dio.dart';
+
+void main() async {
+  Dio dio = new Dio();
+  Response<String> response = await dio.get("https://www.baidu.com");
+  print(response.data);
+}
+```
+
+> `async` 写在函数定义
+> `await` 写在异步请求头
 
 # 异步返回值
 

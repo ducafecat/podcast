@@ -19,6 +19,20 @@ categories: Dart语言学习
 Runes 对象是一个 32位 字符对象，用来表示一个字。
 这样设计也是考虑兼容 UTF-16 四个字节的情况。
 
+## `length` 和 `runes.length` 比较
+
+```dart
+String a = '👺';
+print(a.length);
+print(a.runes.length);
+
+>> 输出
+2 // 标识占 2 个 16 位字符
+1 // 表示占 1 个 32 位字符
+```
+
+> runes 是一个 32 位字符对象
+
 ## 操作 32-bit Unicode 字符
 
 ```dart
@@ -32,30 +46,27 @@ String c = '\u{1f596} \u6211'
 
 > 如果非4个数值，需要用 {...}
 
-## `length` 和 `runes.length` 比较
-
-```dart
-var a = '👺';
-print(a)
-print(a.length); // 表示这个字符 占2位
-print(a.runes.length); // 表示有几个字符
-```
-
 ## 返回 16-bit code units 的 `codeUnitAt` `codeUnits`
 
 ```dart
 var a = '👺';
-print(a)
-print(a.codeUnitAt(0));// 显示某个字符的 10进制
-print(a.codeUnits);// 打印 占2位 字符码
+print(a.codeUnitAt(0));
+print(a.codeUnits);
+
+>> 输出
+55357           // 第 1 位的 10 进制数值
+[55357, 56442]  // 显示 2 位的 10 进制数值
 ```
 
 ## 返回 32-bit Unicode 的 `runes`
 
 ```dart
 var a = '👺';
-print(a)
-print(a.runes);// 打印 字符码 10进制
+print(a.runes);
+
+>> 输出
+
+(128122) // 显示 32 位的 10 进制数值
 ```
 
 ## String 操作整理

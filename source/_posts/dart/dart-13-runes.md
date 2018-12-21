@@ -48,7 +48,6 @@ var a = '👺';
 print(a)
 print(a.codeUnitAt(0));// 显示某个字符的 10进制
 print(a.codeUnits);// 打印 占2位 字符码
-print(a.runes);// 打印 字符码 10进制
 ```
 
 ## 返回 32-bit Unicode 的 `runes`
@@ -58,6 +57,14 @@ var a = '👺';
 print(a)
 print(a.runes);// 打印 字符码 10进制
 ```
+
+## String 操作整理
+
+名称 | 说明
+-----|----------
+codeUnitAt      | 某个字符的码 10进制
+fromCharCodes   | Runes 转 String 工厂函数
+runes           | 返回字对象
 
 # 基础知识字符集
 
@@ -74,36 +81,6 @@ print(a.runes);// 打印 字符码 10进制
 - [UTF-8](https://zh.wikipedia.org/wiki/UTF-8)
 - [UTF-16](https://zh.wikipedia.org/wiki/UTF-16)
 - [UTF-32](https://zh.wikipedia.org/wiki/UTF-32)
-
-# Runes 对象
-
-
-
-## Runes 转 String
-
-```dart
-Runes b = new Runes('\u{1f596} \u6211');
-var c = String.fromCharCodes(b);
-```
-
-## String 转 Runes
-
-```dart
-var a = '👺';
-print(a.codeUnitAt(0));// 显示某个字符的 10进制
-print(a.length); // 表示这个字符 占2位
-print(a.runes.length); // 表示有几个字符
-print(a.codeUnits);// 打印 占2位 字符码
-print(a.runes);// 打印 字符码 10进制
-```
-
-## String 操作整理
-
-名称 | 说明
------|----------
-codeUnitAt      | 某个字符的码 10进制
-fromCharCodes   | Runes 转 String 工厂函数
-runes           | 返回字对象
 
 # 代码
 

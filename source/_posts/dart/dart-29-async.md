@@ -12,6 +12,8 @@ categories: Dart语言学习
 
 # 环境
 
+- Dart 2.1.0
+
 # 调用异步 回调
 
 ```dart

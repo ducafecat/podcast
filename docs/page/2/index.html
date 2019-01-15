@@ -570,25 +570,14 @@ Dart 2.0.0
 
     
         本节目标
-字符编码 ASCII、Unicode、UTF-8、UTF-16、UTF-32
-字与字符
-如何操作
+Runes
+基础知识 字符编码 ASCII、Unicode、UTF-8、UTF-16、UTF-32
 
 环境
 Dart 2.0.0
 
-字符集ASCII
-ASCII
-
-非 ASCII 中的 GB2312、GBK
-汉字内码扩展规范
-
-Unicode、UTF-8、UTF-16、UTF-32
-UTF-8
-UTF-16
-UTF-32
-
-Runes 对象Runes 对象是一个 32位 字符对象，用...
+RunesRunes 对象是一个 32位 字符对象，用来表示一个字。这样设计也是考虑兼容 UTF-16 四个字节的情况。
+length 和 runes.length 比较1234567String a = '👺';print(a.length);pr...
     
 
         <a href="/2018/10/27/dart/dart-13-runes/" class="post-more waves-effect waves-button">

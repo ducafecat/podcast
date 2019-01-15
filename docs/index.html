@@ -173,7 +173,7 @@
 调用异步 等待、递归
 异步返回值
 
-环境调用异步 等待1234567import 'package:dio/dio.dart';void main() async &#123;  Dio dio = new Dio();  Response&lt;String&gt; response = await dio.get("https://www.baidu.com");  print...
+环境调用异步 回调12345678import 'package:dio/dio.dart';void main() &#123;  Dio dio = new Dio();  dio.get("https://www.baidu.com").then((response) &#123;    print(response.data);  &#1...
     
 
         <a href="/2018/12/05/dart/dart-29-async/" class="post-more waves-effect waves-button">

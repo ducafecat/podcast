@@ -73,7 +73,7 @@ Future sendReceive(SendPort port, msg) {
 
 # 代码
 
-- []()
+- [32-隔离](https://github.com/ducafecat/dart-learn/tree/master/32-%E9%9A%94%E7%A6%BB)
 
 # 参考
 

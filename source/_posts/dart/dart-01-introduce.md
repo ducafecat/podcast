@@ -110,7 +110,7 @@ categories: Dart语言学习
 
 ## 类型定义 - Typedef
 
-## 元数据 - Metadata
+## 注解 - Metadata
 
 ## 代码规范 - 代码风格
 

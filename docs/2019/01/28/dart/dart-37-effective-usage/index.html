@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Dart语言学习 - 37 代码分格 最佳实践 effective-usage | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="dart">
+    <meta name="description" content="本节目标 最佳实践  环境 Dart 2.1.0  使用相邻的字符串字面量定义来链接字符串123raiseAlarm(    &apos;ERROR: Parts of the spaceship are on fire. Other &apos;    &apos;parts are overrun by martians. Unclear which are which.&apos;); 使用插值的形式来组合字符串和值1&apos;Hello">
+<meta name="keywords" content="dart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dart语言学习 - 37 代码分格 最佳实践 effective-usage">
+<meta property="og:url" content="https://ducafecat.tech/2019/01/28/dart/dart-37-effective-usage/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 最佳实践  环境 Dart 2.1.0  使用相邻的字符串字面量定义来链接字符串123raiseAlarm(    &apos;ERROR: Parts of the spaceship are on fire. Other &apos;    &apos;parts are overrun by martians. Unclear which are which.&apos;); 使用插值的形式来组合字符串和值1&apos;Hello">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-01-28T08:45:26.095Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dart语言学习 - 37 代码分格 最佳实践 effective-usage">
+<meta name="twitter:description" content="本节目标 最佳实践  环境 Dart 2.1.0  使用相邻的字符串字面量定义来链接字符串123raiseAlarm(    &apos;ERROR: Parts of the spaceship are on fire. Other &apos;    &apos;parts are overrun by martians. Unclear which are which.&apos;); 使用插值的形式来组合字符串和值1&apos;Hello">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Dart语言学习 - 37 代码分格 最佳实践 effective-usage</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Dart语言学习 - 37 代码分格 最佳实践 effective-usage</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-28T07:30:46.000Z" itemprop="datePublished" class="page-time">
+  2019-01-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#环境"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用相邻的字符串字面量定义来链接字符串"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用相邻的字符串字面量定义来链接字符串</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用插值的形式来组合字符串和值"><span class="post-toc-number">4.</span> <span class="post-toc-text">使用插值的形式来组合字符串和值</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#避免在字符串插值中使用多余的大括号"><span class="post-toc-number">5.</span> <span class="post-toc-text">避免在字符串插值中使用多余的大括号</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#尽可能的使用集合字面量来定义集合"><span class="post-toc-number">6.</span> <span class="post-toc-text">尽可能的使用集合字面量来定义集合</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如果有必要还可以提供泛型类型"><span class="post-toc-number">7.</span> <span class="post-toc-text">如果有必要还可以提供泛型类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#不要-使用-length-来判断集合是否为空"><span class="post-toc-number">8.</span> <span class="post-toc-text">不要 使用 .length 来判断集合是否为空</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用高阶（higher-order）函数来转换集合数据"><span class="post-toc-number">9.</span> <span class="post-toc-text">使用高阶（higher-order）函数来转换集合数据</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#避免-在-Iterable-forEach-中使用函数声明形式"><span class="post-toc-number">10.</span> <span class="post-toc-text">避免 在 Iterable.forEach() 中使用函数声明形式</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如果你只想在每个集合元素上调用一个已经定义好的函数，则可以使用-forEach-函数"><span class="post-toc-number">11.</span> <span class="post-toc-text">如果你只想在每个集合元素上调用一个已经定义好的函数，则可以使用 forEach() 函数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#要-用方法声明的形式来给方法起个名字"><span class="post-toc-number">12.</span> <span class="post-toc-text">要 用方法声明的形式来给方法起个名字</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#不要-显式的把变量初始化为-null"><span class="post-toc-number">13.</span> <span class="post-toc-text">不要 显式的把变量初始化为 null</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#不要-创建没必要的-getter-和-setter"><span class="post-toc-number">14.</span> <span class="post-toc-text">不要 创建没必要的 getter 和 setter</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#推荐-使用-final-关键字来限定只读属性"><span class="post-toc-number">15.</span> <span class="post-toc-text">推荐 使用 final 关键字来限定只读属性</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#考虑-用-gt-来实现只有一个单一返回语句的函数"><span class="post-toc-number">16.</span> <span class="post-toc-text">考虑 用 =&gt; 来实现只有一个单一返回语句的函数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#要-尽可能的在定义变量的时候初始化其值"><span class="post-toc-number">17.</span> <span class="post-toc-text">要 尽可能的在定义变量的时候初始化其值</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#要-尽可能的使用初始化形式"><span class="post-toc-number">18.</span> <span class="post-toc-text">要 尽可能的使用初始化形式</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#要-把-super-调用放到构造函数初始化列表之后调用"><span class="post-toc-number">19.</span> <span class="post-toc-text">要 把 super() 调用放到构造函数初始化列表之后调用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#要-使用-rethrow-来重新抛出捕获的异常"><span class="post-toc-number">20.</span> <span class="post-toc-text">要 使用 rethrow 来重新抛出捕获的异常</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#推荐-使用-async-await-而不是直接使用底层的特性"><span class="post-toc-number">21.</span> <span class="post-toc-text">推荐 使用 async/await 而不是直接使用底层的特性</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#不要-在没有有用效果的情况下使用-async"><span class="post-toc-number">22.</span> <span class="post-toc-text">不要 在没有有用效果的情况下使用 async</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考"><span class="post-toc-number">23.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-dart/dart-37-effective-usage"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Dart语言学习 - 37 代码分格 最佳实践 effective-usage</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-28 15:30:46" datetime="2019-01-28T07:30:46.000Z"  itemprop="datePublished">2019-01-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h1><ul>
+<li>最佳实践</li>
+</ul>
+<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><ul>
+<li>Dart 2.1.0</li>
+</ul>
+<h1 id="使用相邻的字符串字面量定义来链接字符串"><a href="#使用相邻的字符串字面量定义来链接字符串" class="headerlink" title="使用相邻的字符串字面量定义来链接字符串"></a>使用相邻的字符串字面量定义来链接字符串</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">raiseAlarm(</span><br><span class="line">    <span class="string">'ERROR: Parts of the spaceship are on fire. Other '</span></span><br><span class="line">    <span class="string">'parts are overrun by martians. Unclear which are which.'</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="使用插值的形式来组合字符串和值"><a href="#使用插值的形式来组合字符串和值" class="headerlink" title="使用插值的形式来组合字符串和值"></a>使用插值的形式来组合字符串和值</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello, $name! You are <span class="subst">$&#123;year - birth&#125;</span> years old.'</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="避免在字符串插值中使用多余的大括号"><a href="#避免在字符串插值中使用多余的大括号" class="headerlink" title="避免在字符串插值中使用多余的大括号"></a>避免在字符串插值中使用多余的大括号</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hi, $name!'</span></span><br><span class="line"><span class="string">"Wear your wildest $decade's outfit."</span></span><br><span class="line"><span class="string">'Wear your wildest <span class="subst">$&#123;decade&#125;</span>s outfit.'</span></span><br></pre></td></tr></table></figure>
+<h1 id="尽可能的使用集合字面量来定义集合"><a href="#尽可能的使用集合字面量来定义集合" class="headerlink" title="尽可能的使用集合字面量来定义集合"></a>尽可能的使用集合字面量来定义集合</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> points = [];</span><br><span class="line"><span class="keyword">var</span> addresses = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="如果有必要还可以提供泛型类型"><a href="#如果有必要还可以提供泛型类型" class="headerlink" title="如果有必要还可以提供泛型类型"></a>如果有必要还可以提供泛型类型</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> points = &lt;Point&gt;[];</span><br><span class="line"><span class="keyword">var</span> addresses = &lt;<span class="built_in">String</span>, Address&gt;&#123;&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="不要-使用-length-来判断集合是否为空"><a href="#不要-使用-length-来判断集合是否为空" class="headerlink" title="不要 使用 .length 来判断集合是否为空"></a>不要 使用 .length 来判断集合是否为空</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (lunchBox.isEmpty) <span class="keyword">return</span> <span class="string">'so hungry...'</span>;</span><br><span class="line"><span class="keyword">if</span> (words.isNotEmpty) <span class="keyword">return</span> words.join(<span class="string">' '</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="使用高阶（higher-order）函数来转换集合数据"><a href="#使用高阶（higher-order）函数来转换集合数据" class="headerlink" title="使用高阶（higher-order）函数来转换集合数据"></a>使用高阶（higher-order）函数来转换集合数据</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aquaticNames = animals</span><br><span class="line">    .where((animal) =&gt; animal.isAquatic)</span><br><span class="line">    .map((animal) =&gt; animal.name);</span><br></pre></td></tr></table></figure>
+<h1 id="避免-在-Iterable-forEach-中使用函数声明形式"><a href="#避免-在-Iterable-forEach-中使用函数声明形式" class="headerlink" title="避免 在 Iterable.forEach() 中使用函数声明形式"></a>避免 在 Iterable.forEach() 中使用函数声明形式</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> person <span class="keyword">in</span> people) &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>forEach() 方法通常在 JavaScript 中使用，原因是系统内置的 for-in 循环并不能提供期望的结果。 相反，在 Dart 中如果需要遍历一个集合，通常使用循环语句</p>
+<h1 id="如果你只想在每个集合元素上调用一个已经定义好的函数，则可以使用-forEach-函数"><a href="#如果你只想在每个集合元素上调用一个已经定义好的函数，则可以使用-forEach-函数" class="headerlink" title="如果你只想在每个集合元素上调用一个已经定义好的函数，则可以使用 forEach() 函数"></a>如果你只想在每个集合元素上调用一个已经定义好的函数，则可以使用 forEach() 函数</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">people.forEach(<span class="built_in">print</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="要-用方法声明的形式来给方法起个名字"><a href="#要-用方法声明的形式来给方法起个名字" class="headerlink" title="要 用方法声明的形式来给方法起个名字"></a>要 用方法声明的形式来给方法起个名字</h1><ul>
+<li>正确</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  localFunction() &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>错误示范</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  <span class="keyword">var</span> localFunction = () &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="不要-显式的把变量初始化为-null"><a href="#不要-显式的把变量初始化为-null" class="headerlink" title="不要 显式的把变量初始化为 null"></a>不要 显式的把变量初始化为 null</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> _nextId;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LazyId</span> </span>&#123;</span><br><span class="line">  <span class="built_in">int</span> _id;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">int</span> <span class="keyword">get</span> id &#123;</span><br><span class="line">    <span class="keyword">if</span> (_nextId == <span class="keyword">null</span>) _nextId = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (_id == <span class="keyword">null</span>) _id = _nextId++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> _id;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 Dart 中没有初始化的变量和域会自动的 初始化为 null。在语言基本就保证了该行为的可靠性。 在 Dart 中没有 “未初始化的内存”这个概念。所以添加 = null 是多余的。</p>
+<h1 id="不要-创建没必要的-getter-和-setter"><a href="#不要-创建没必要的-getter-和-setter" class="headerlink" title="不要 创建没必要的 getter 和 setter"></a>不要 创建没必要的 getter 和 setter</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line"># 段落 <span class="number">1</span></span><br><span class="line"></span><br><span class="line">- 正确</span><br><span class="line"></span><br><span class="line">```dart</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> contents;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>错误</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> _contents;</span><br><span class="line">  <span class="keyword">get</span> contents =&gt; _contents;</span><br><span class="line">  <span class="keyword">set</span> contents(value) &#123;</span><br><span class="line">    _contents = value;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="推荐-使用-final-关键字来限定只读属性"><a href="#推荐-使用-final-关键字来限定只读属性" class="headerlink" title="推荐 使用 final 关键字来限定只读属性"></a>推荐 使用 final 关键字来限定只读属性</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> contents = [];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="考虑-用-gt-来实现只有一个单一返回语句的函数"><a href="#考虑-用-gt-来实现只有一个单一返回语句的函数" class="headerlink" title="考虑 用 =&gt; 来实现只有一个单一返回语句的函数"></a>考虑 用 =&gt; 来实现只有一个单一返回语句的函数</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">get</span> width =&gt; right - left;</span><br><span class="line"><span class="built_in">bool</span> ready(<span class="built_in">num</span> time) =&gt; minTime == <span class="keyword">null</span> || minTime &lt;= time;</span><br><span class="line">containsValue(<span class="built_in">String</span> value) =&gt; getValues().contains(value);</span><br></pre></td></tr></table></figure>
+<h1 id="要-尽可能的在定义变量的时候初始化其值"><a href="#要-尽可能的在定义变量的时候初始化其值" class="headerlink" title="要 尽可能的在定义变量的时候初始化其值"></a>要 尽可能的在定义变量的时候初始化其值</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Folder</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> name;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">List</span>&lt;Document&gt; contents = [];</span><br><span class="line"></span><br><span class="line">  Folder(<span class="keyword">this</span>.name);</span><br><span class="line">  Folder.temp() : name = <span class="string">'temporary'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="要-尽可能的使用初始化形式"><a href="#要-尽可能的使用初始化形式" class="headerlink" title="要 尽可能的使用初始化形式"></a>要 尽可能的使用初始化形式</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="built_in">num</span> x, y;</span><br><span class="line">  Point(<span class="keyword">this</span>.x, <span class="keyword">this</span>.y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="要-把-super-调用放到构造函数初始化列表之后调用"><a href="#要-把-super-调用放到构造函数初始化列表之后调用" class="headerlink" title="要 把 super() 调用放到构造函数初始化列表之后调用"></a>要 把 super() 调用放到构造函数初始化列表之后调用</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">View(Style style, <span class="built_in">List</span> children)</span><br><span class="line">    : _children = children,</span><br><span class="line">      <span class="keyword">super</span>(style) &#123;</span><br></pre></td></tr></table></figure>
+<h1 id="要-使用-rethrow-来重新抛出捕获的异常"><a href="#要-使用-rethrow-来重新抛出捕获的异常" class="headerlink" title="要 使用 rethrow 来重新抛出捕获的异常"></a>要 使用 rethrow 来重新抛出捕获的异常</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  somethingRisky();</span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">  <span class="keyword">if</span> (!canHandle(e)) <span class="keyword">rethrow</span>;</span><br><span class="line">  handle(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="推荐-使用-async-await-而不是直接使用底层的特性"><a href="#推荐-使用-async-await-而不是直接使用底层的特性" class="headerlink" title="推荐 使用 async/await 而不是直接使用底层的特性"></a>推荐 使用 async/await 而不是直接使用底层的特性</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;<span class="built_in">bool</span>&gt; doAsyncComputation() <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="keyword">await</span> longRunningCalculation();</span><br><span class="line">    <span class="keyword">return</span> verifyResult(result.summary);</span><br><span class="line">  &#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">    log.error(e);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="不要-在没有有用效果的情况下使用-async"><a href="#不要-在没有有用效果的情况下使用-async" class="headerlink" title="不要 在没有有用效果的情况下使用 async"></a>不要 在没有有用效果的情况下使用 async</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Future afterTwoThings(Future first, second) &#123;</span><br><span class="line">  <span class="keyword">return</span> Future.wait([first, second]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://www.dartlang.org/guides/language/effective-dart/usage" target="_blank" rel="noopener">usage</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        暂不开通留言，邮件 ducafecat@gmail.com
+        
+    </div>
+    
+    <footer>
+        <a href="https://ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/01/28/dart/dart-37-effective-usage/&title=《Dart语言学习 - 37 代码分格 最佳实践 effective-usage》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/01/28/dart/dart-37-effective-usage/&title=《Dart语言学习 - 37 代码分格 最佳实践 effective-usage》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/01/28/dart/dart-37-effective-usage/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 37 代码分格 最佳实践 effective-usage》 — duCafeCat&url=https://ducafecat.tech/2019/01/28/dart/dart-37-effective-usage/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/01/28/dart/dart-37-effective-usage/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/01/28/dart/dart-38-effective-design/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Dart语言学习 - 38 代码分格 API 设计 effective-design</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/28/dart/dart-36-effective-documentation/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Dart语言学习 - 36 - 代码分格 文档 effective-documentation</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猫哥 &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/01/28/dart/dart-37-effective-usage/&title=《Dart语言学习 - 37 代码分格 最佳实践 effective-usage》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/01/28/dart/dart-37-effective-usage/&title=《Dart语言学习 - 37 代码分格 最佳实践 effective-usage》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/01/28/dart/dart-37-effective-usage/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 37 代码分格 最佳实践 effective-usage》 — duCafeCat&url=https://ducafecat.tech/2019/01/28/dart/dart-37-effective-usage/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/01/28/dart/dart-37-effective-usage/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3aQY7jMAwEwPn/p3evAwySdJOSkUP5FBiJrdJBUpr8+Ymvf7+u9lfv7/y9n3w+fOHh4eEthv73esV7BW4Hmrx98ys8PDy8e7x8sX7/gvffSbac2Xhe3sfDw8P7et7hZX0xBXh4eHjfwzt1OL4RTODh4eE9yUvCiCSizUON2fMvZi14eHh43am1KGV9w+cr9T08PDy8dVU9jwn2b5ltAB+eiYeHh3eBtxliHmfkzz/1HTw8PLxneG1kMEMm72obvz6MDQ8PD+8oL3lEskDPIt12muqNBw8PD+8CLx/6pqCVT99mIiIqHh4e3pq3jxXaobRH5DzqHe5geHh4eCWvXXDbKGEWyG7KYy+zFjw8PLyjvHYbODvoTWwxDCbw8PDwFrykoNWWtZIFetNqUIwTDw8P7wIvj2uTSdm0DrTTUTcx4OHh4R3l5W1PSSB7oAusLK1FWQseHh7eIV6+vOalqX0Fqu2eiup7eHh4eI/w8vv7iai7w5Jf4eHh4V3gzUpfm+0kbxHIt5Yi0sXDw8Nb85KF9V4kMZvKvAUBDw8P7wYvaWbaRxizGDfZBur+CDw8PLxDvLawdKpPtm0myFsT8PDw8J7htY/I27PajWdWQhs+CA8PD+8Qry1uJUPZXEmoMUyp8fDw8Ea8zcI9C3/bZoW8aXWYZODh4eEteLNlPX9mfgTPJ+g9Hg8PD+82r72TxxDtBB0LL/Dw8PCO8jahQMvel7LqVi08PDy8C7xZ6JC3Vc0aCNo2ggNbCx4eHl7JazeDJBTYNBMkQUaxbeDh4eFd47WVo1k5P+9lyHezD+PEw8PD+wLepjErf9esDBal1Hh4eHiP8/I7bctUG1hER3k8PDy8a7zNwXfWYjXbcpIjOx4eHt5t3uwPf3vw3US6m6gCDw8P7yjvP2IGNcqo7lQQAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

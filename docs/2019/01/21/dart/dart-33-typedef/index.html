@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     
 
     
@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="dart">
-    <meta name="description" content="本节目标 typedef 使用  环境 Dart 2.1.0  作用typedef 用来保存函数的信息，未来可能会保存类信息。 示例代码 采用 typedef  123456789101112131415typedef int Compare(Object a, Object b);class SortedCollection &amp;#123;  Compare compare;  SortedCol">
+    <meta name="description" content="本节目标 typedef 使用  环境 Dart 2.1.0  作用typedef 用来保存函数的信息，未来可能会保存类信息。 示例代码 采用 typedef  123456789101112131415161718192021// 定义函数类型typedef int Compare(Object a, Object b);// 定义排序类class SortedCollection &amp;#123;">
 <meta name="keywords" content="dart">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dart语言学习 - 33 类型信息 typedef">
 <meta property="og:url" content="https://ducafecat.tech/2019/01/21/dart/dart-33-typedef/index.html">
 <meta property="og:site_name" content="duCafeCat">
-<meta property="og:description" content="本节目标 typedef 使用  环境 Dart 2.1.0  作用typedef 用来保存函数的信息，未来可能会保存类信息。 示例代码 采用 typedef  123456789101112131415typedef int Compare(Object a, Object b);class SortedCollection &amp;#123;  Compare compare;  SortedCol">
+<meta property="og:description" content="本节目标 typedef 使用  环境 Dart 2.1.0  作用typedef 用来保存函数的信息，未来可能会保存类信息。 示例代码 采用 typedef  123456789101112131415161718192021// 定义函数类型typedef int Compare(Object a, Object b);// 定义排序类class SortedCollection &amp;#123;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-28T06:42:11.692Z">
+<meta property="og:updated_time" content="2019-05-20T09:00:34.533Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dart语言学习 - 33 类型信息 typedef">
-<meta name="twitter:description" content="本节目标 typedef 使用  环境 Dart 2.1.0  作用typedef 用来保存函数的信息，未来可能会保存类信息。 示例代码 采用 typedef  123456789101112131415typedef int Compare(Object a, Object b);class SortedCollection &amp;#123;  Compare compare;  SortedCol">
+<meta name="twitter:description" content="本节目标 typedef 使用  环境 Dart 2.1.0  作用typedef 用来保存函数的信息，未来可能会保存类信息。 示例代码 采用 typedef  123456789101112131415161718192021// 定义函数类型typedef int Compare(Object a, Object b);// 定义排序类class SortedCollection &amp;#123;">
     
         <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
     
@@ -48,7 +48,7 @@
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide" >
+    <aside id="menu" class="hide">
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -68,28 +68,28 @@
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/"  >
+              <a href="/">
                 <i class="icon icon-lg icon-home"></i>
                 主页
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives"  >
+              <a href="/archives">
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags"  >
+              <a href="/tags">
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/categories"  >
+              <a href="/categories">
                 <i class="icon icon-lg icon-th-list"></i>
                 Categories
               </a>
@@ -131,7 +131,7 @@
         <h1 class="title">Dart语言学习 - 33 类型信息 typedef</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-01-21T09:21:06.000Z" itemprop="datePublished" class="page-time">
+                <time datetime="2019-01-20T16:21:06.000Z" itemprop="datePublished" class="page-time">
   2019-01-21
 </time>
 
@@ -158,13 +158,12 @@
     </aside>
 
 
-<article id="post-dart/dart-33-typedef"
-  class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-dart/dart-33-typedef" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">Dart语言学习 - 33 类型信息 typedef</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-01-21 17:21:06" datetime="2019-01-21T09:21:06.000Z"  itemprop="datePublished">2019-01-21</time>
+            <time class="post-time" title="2019-01-21 00:21:06" datetime="2019-01-20T16:21:06.000Z" itemprop="datePublished">2019-01-21</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
@@ -185,11 +184,11 @@
 <h1 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h1><ul>
 <li>采用 <code>typedef</code></li>
 </ul>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">int</span> Compare(<span class="built_in">Object</span> a, <span class="built_in">Object</span> b);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SortedCollection</span> </span>&#123;</span><br><span class="line">  Compare compare;</span><br><span class="line"></span><br><span class="line">  SortedCollection(<span class="keyword">this</span>.compare);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> sort(<span class="built_in">Object</span> a, <span class="built_in">Object</span> b) =&gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">main() &#123;</span><br><span class="line">  SortedCollection coll = <span class="keyword">new</span> SortedCollection(sort);</span><br><span class="line">  <span class="keyword">assert</span>(coll.compare <span class="keyword">is</span> <span class="built_in">Function</span>);</span><br><span class="line">  <span class="keyword">assert</span>(coll.compare <span class="keyword">is</span> Compare);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义函数类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">int</span> Compare(<span class="built_in">Object</span> a, <span class="built_in">Object</span> b);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义排序类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SortedCollection</span> </span>&#123;</span><br><span class="line">  Compare compare;</span><br><span class="line">  <span class="comment">// 构造时传入函数</span></span><br><span class="line">  SortedCollection(<span class="keyword">this</span>.compare);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义排序函数</span></span><br><span class="line"><span class="built_in">int</span> sort(<span class="built_in">Object</span> a, <span class="built_in">Object</span> b) =&gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 程序入口</span></span><br><span class="line">main() &#123;</span><br><span class="line">  <span class="comment">// 实例化传入</span></span><br><span class="line">  SortedCollection coll = <span class="keyword">new</span> SortedCollection(sort);</span><br><span class="line">  <span class="comment">// 类型检查</span></span><br><span class="line">  <span class="keyword">assert</span>(coll.compare <span class="keyword">is</span> <span class="built_in">Function</span>);</span><br><span class="line">  <span class="keyword">assert</span>(coll.compare <span class="keyword">is</span> Compare);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>未采用</li>
+<li>未采用 <code>typedef</code></li>
 </ul>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SortedCollection</span> </span>&#123;</span><br><span class="line">  <span class="built_in">Function</span> compare;</span><br><span class="line"></span><br><span class="line">  SortedCollection(<span class="built_in">int</span> f(<span class="built_in">Object</span> a, <span class="built_in">Object</span> b)) &#123;</span><br><span class="line">    compare = f;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Initial, broken implementation.</span></span><br><span class="line"><span class="built_in">int</span> sort(<span class="built_in">Object</span> a, <span class="built_in">Object</span> b) =&gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">main() &#123;</span><br><span class="line">  SortedCollection coll = <span class="keyword">new</span> SortedCollection(sort);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 我们只知道 compare 是一个 Function 类型，</span></span><br><span class="line">  <span class="comment">// 但是不知道具体是何种 Function 类型？</span></span><br><span class="line">  <span class="keyword">assert</span>(coll.compare <span class="keyword">is</span> <span class="built_in">Function</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SortedCollection</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 函数对象</span></span><br><span class="line">  <span class="built_in">Function</span> compare;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 定义函数</span></span><br><span class="line">  SortedCollection(<span class="built_in">int</span> f(<span class="built_in">Object</span> a, <span class="built_in">Object</span> b)) &#123;</span><br><span class="line">    compare = f;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生命函数</span></span><br><span class="line"><span class="built_in">int</span> sort(<span class="built_in">Object</span> a, <span class="built_in">Object</span> b) =&gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">main() &#123;</span><br><span class="line">  <span class="comment">// 实例化</span></span><br><span class="line">  SortedCollection coll = <span class="keyword">new</span> SortedCollection(sort);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 我们只知道 compare 是一个 Function 类型，</span></span><br><span class="line">  <span class="comment">// 但是不知道具体是何种 Function 类型？</span></span><br><span class="line">  <span class="keyword">assert</span>(coll.compare <span class="keyword">is</span> <span class="built_in">Function</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>区别就是 <code>typedef</code> 编辑器会提示函数信息</p>
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><ul>
 <li><a href="https://github.com/ducafecat/dart-learn/tree/master/33-%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF" target="_blank" rel="noopener">33-类型信息</a></li>
@@ -284,7 +283,7 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2019/01/21/dart/dart-34-metadata/" id="post-prev" class="post-nav-link">
+      <a href="/2019/01/22/dart/dart-34-metadata/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">Dart语言学习 - 34 注解 Metadata</h4>
       </a>
@@ -293,7 +292,7 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/01/21/dart/dart-32-isolates/" id="post-next" class="post-nav-link">
+      <a href="/2019/01/20/dart/dart-32-isolates/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">Dart语言学习 - 32 线程隔离 isolate</h4>
       </a>
@@ -311,6 +310,23 @@
 
 
 
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'ducafecat',
+            repo: 'podcast',
+            oauth: {
+                client_id: '284cdfef5aed0df89f8a',
+                client_secret: '4a2c65aada2c517d4f90439872af5c4fb0571e03',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
 
 
 

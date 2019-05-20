@@ -110,12 +110,12 @@ disqus_shortname: false
 # 是否开启友言评论, 填写友言用户id
 uyan_uid: false
 # 是否使用 gitment，https://github.com/imsun/gitment
-gitment: false
-# gitment:
-#   owner:
-#   repo:
-#   client_id:
-#   client_secret:
+# gitment: false
+gitment:
+  owner: ducafecat
+  repo: podcast
+  client_id: 284cdfef5aed0df89f8a
+  client_secret: 4a2c65aada2c517d4f90439872af5c4fb0571e03
 
 # Valine Comment system. https://valine.js.org
 valine:

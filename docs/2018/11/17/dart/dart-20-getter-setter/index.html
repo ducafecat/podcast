@@ -309,18 +309,18 @@
 
 <section class="comments" id="comments">
     <div id="gitment_thread"></div>
-    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
-    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+    <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
     <script>
         var gitment = new Gitment({
             owner: 'ducafecat',
             repo: 'podcast',
             oauth: {
                 client_id: '284cdfef5aed0df89f8a',
-                client_secret: '4a2c65aada2c517d4f90439872af5c4fb0571e03',
-            },
-        })
-        gitment.render('comments')
+                client_secret: '4a2c65aada2c517d4f90439872af5c4fb0571e03'
+            }
+        });
+        gitment.render('comments');
     </script>
 </section>
 

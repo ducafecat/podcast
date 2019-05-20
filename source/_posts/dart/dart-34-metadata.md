@@ -1,6 +1,6 @@
 ---
 title: Dart语言学习 - 34 注解 Metadata
-date: 2019-01-21 18:15:56
+date: 2019-01-22 00:15:56
 tags: dart
 categories: Dart语言学习
 ---
@@ -25,12 +25,6 @@ categories: Dart语言学习
 用来注解 不建议使用、老旧的 成员对象
 
 ```dart
-main(List<String> args) {
-  var t = new Television();
-  t.activate();
-  t.turnOn();
-}
-
 class Television {
 
   @deprecated
@@ -41,6 +35,12 @@ class Television {
   void turnOn() {
     print('on!');
   }
+}
+
+main(List<String> args) {
+  var t = new Television();
+  t.activate();
+  t.turnOn();
 }
 ```
 
@@ -53,16 +53,16 @@ class Television {
 下面的代码中父类是 `Object`
 
 ```dart
-main(List<String> args) {
-  dynamic a = new A();
-  a.message();
-}
-
 class A {
   @override
   noSuchMethod(Invocation mirror) {
     print('没有找到方法');
   }
+}
+
+main(List<String> args) {
+  dynamic a = new A();
+  a.message();
 }
 ```
 
@@ -73,16 +73,16 @@ class A {
 在 Dart2 中已经被标记为过时老旧
 
 ```dart
-main(List<String> args) {
-  dynamic a = new A();
-  a.say();
-}
-
 @proxy
 class A {
   noSuchMethod(Invocation mirror) {
     print('没有找到方法');
   }
+}
+
+main(List<String> args) {
+  dynamic a = new A();
+  a.say();
 }
 ```
 
@@ -96,6 +96,18 @@ class A {
 
 ```dart
 import 'dart:mirrors';
+
+@Todo('seth', 'make this do something')
+void doSomething() {
+  print('do something');
+}
+
+class Todo {
+  final String who;
+  final String what;
+
+  const Todo(this.who, this.what);
+}
 
 main(List<String> args) {
   currentMirrorSystem().libraries.forEach((uri, lib) {
@@ -112,18 +124,6 @@ main(List<String> args) {
       });
     });
   });
-}
-
-@Todo('seth', 'make this do something')
-void doSomething() {
-  print('do something');
-}
-
-class Todo {
-  final String who;
-  final String what;
-
-  const Todo(this.who, this.what);
 }
 ```
 

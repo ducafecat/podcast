@@ -1,6 +1,6 @@
 ---
 title: Dart语言学习 - 32 线程隔离 isolate
-date: 2019-01-21 15:52:55
+date: 2019-01-20 00:52:55
 tags: dart
 categories: Dart语言学习
 ---
@@ -33,37 +33,49 @@ categories: Dart语言学习
 import 'dart:async';
 import 'dart:isolate';
 
+// 第1步：定义主线程
 main() async {
+  // 第3步：编写回调Port
   var receivePort = new ReceivePort();
   await Isolate.spawn(echo, receivePort.sendPort);
 
-  // first 是 echo 线程的消息入口
+  // 第6步：保存隔离线程回调Port
   var sendPort = await receivePort.first;
-
+  
+	// 第7步：发送消息
   var msg = await sendReceive(sendPort, "foo");
   print('received $msg');
   msg = await sendReceive(sendPort, "bar");
   print('received $msg');
 }
 
-// 隔离的入口点
+// 第2步：定义隔离线程的入口点
 echo(SendPort sendPort) async {
-  // 打开接收端口接收传入的消息。
+  // 第4步：编写回调Port
   var port = new ReceivePort();
 
-  // 通知任何其他隔离此隔离侦听的端
+  // 第5步：告诉主线程回调入口点
   sendPort.send(port.sendPort);
 
-  // 循环接收消息
+  // 第8步：循环接收消息
   await for (var msg in port) {
+    // 数组 msg[0] 是数据
     var data = msg[0];
+    // 数组 msg[1] 是发送方Port
     SendPort replyTo = msg[1];
+    // 回传发送方 数据
     replyTo.send(data);
+    // 如果数据时 bar 关闭当前回调
     if (data == "bar") port.close();
   }
 }
 
-// 发送并接收消息
+/*
+主线程 发送消息函数
+数组 msg[0] 是数据
+数组 msg[1] 是发送方Port
+返回 隔离线程 Port
+*/
 Future sendReceive(SendPort port, msg) {
   ReceivePort response = new ReceivePort();
   port.send([msg, response.sendPort]);

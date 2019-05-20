@@ -1,6 +1,6 @@
 ---
 title: Dart语言学习 - 33 类型信息 typedef
-date: 2019-01-21 17:21:06
+date: 2019-01-21 00:21:06
 tags: dart
 categories: Dart语言学习
 ---
@@ -22,38 +22,47 @@ typedef 用来保存函数的信息，未来可能会保存类信息。
 - 采用 `typedef`
 
 ```dart
+// 定义函数类型
 typedef int Compare(Object a, Object b);
 
+// 定义排序类
 class SortedCollection {
   Compare compare;
-
+  // 构造时传入函数
   SortedCollection(this.compare);
 }
 
+// 定义排序函数
 int sort(Object a, Object b) => 0;
 
+// 程序入口
 main() {
+  // 实例化传入
   SortedCollection coll = new SortedCollection(sort);
+  // 类型检查
   assert(coll.compare is Function);
   assert(coll.compare is Compare);
 }
 ```
 
-- 未采用
+- 未采用 `typedef`
 
 ```dart
 class SortedCollection {
+  // 函数对象
   Function compare;
-
+  
+  // 定义函数
   SortedCollection(int f(Object a, Object b)) {
     compare = f;
   }
 }
 
-// Initial, broken implementation.
+// 生命函数
 int sort(Object a, Object b) => 0;
 
 main() {
+  // 实例化
   SortedCollection coll = new SortedCollection(sort);
 
   // 我们只知道 compare 是一个 Function 类型，

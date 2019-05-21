@@ -80,7 +80,7 @@ toc:
 
 # 文章页留言内容，hexo中所有变量及辅助函数等均可调用，具体请查阅 hexo.io
 # postMessage: 这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" target="_blank" rel="external"><%- page.permalink.replace(/index\.html$/, '') %></a>
-postMessage: 暂不开通留言，邮件 ducafecat@gmail.com
+postMessage: 邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
 
 # 站长统计，如要开启，输入CNZZ站点id，如 cnzz: 1255152447
 cnzz: 1274928662
@@ -106,8 +106,8 @@ less:
 
 # 以下评论插件开启一个即可
 # 是否开启 disqus
-# disqus_shortname: ducafecat-tech
-disqus_shortname: false
+disqus_shortname: ducafecat-tech
+# disqus_shortname: false
 # 是否开启友言评论, 填写友言用户id
 uyan_uid: false
 # 是否使用 gitment，https://github.com/imsun/gitment
@@ -120,7 +120,7 @@ gitment: false
 
 # Valine Comment system. https://valine.js.org
 valine:
-  enable: true # 如果你想使用valine，请将值设置为 true
+  enable: false # 如果你想使用valine，请将值设置为 true
   appId: z7UfIW8iru0N4zaOMUgcT2yv-gzGzoHsz # your leancloud appId
   appKey: Q9mIr7CyGKseJOKjddHrvF0s # your leancloud appKey
   notify: false # Mail notify

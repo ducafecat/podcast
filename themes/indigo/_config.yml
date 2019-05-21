@@ -120,7 +120,7 @@ gitment: false
 
 # Valine Comment system. https://valine.js.org
 valine:
-  enable: false # 如果你想使用valine，请将值设置为 true
+  enable: true # 如果你想使用valine，请将值设置为 true
   appId: z7UfIW8iru0N4zaOMUgcT2yv-gzGzoHsz # your leancloud appId
   appKey: Q9mIr7CyGKseJOKjddHrvF0s # your leancloud appKey
   notify: false # Mail notify

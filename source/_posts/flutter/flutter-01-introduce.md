@@ -13,19 +13,19 @@ categories: Flutter移动开发
 - 课程计划
 - 如果获取课程资料、代码、视频
 
-## 环境
-
-- Flutter 1.0 stable
-
 ## 适合人群
 
 - 泛移动开发人员
 - 原生移动开发人员
 - 前端开发人员
 
+## 跨平台: 移动、Web、桌面、嵌入
+
+![跨平台](image-20190522135901818.png)
+
 ## Flutter 框架结构
 
-![](2019-01-22-16-21-03.png)
+![](image-20190523091712106.png)
 
 - Flutter Framework
 
@@ -44,6 +44,12 @@ Skia 是一个开源的二维图形库，提供各种常用的 API，并可在�
 Skia 由谷歌出资管理，任何人都可基于 BSD 免费软件许可证使用 Skia。Skia 开发团队致力于开发其核心部分， 并广泛采纳各方对于 Skia 的开源贡献。
 
 因为没有使用原生的 UI 和绘制框架，所以才保证了 Flutter 的高性能体验。
+
+![](image-20190523092032825.png)
+
+- Flutter for Web
+
+通过对比，可以发现，web框架层和mobile的几乎一模一样。因此只需要重新实现一下引擎和嵌入层，不用变动Flutter API就可以完全可以将UI代码从Android / IOS Flutter App移植到Web。Dart能够使用Dart2Js编译器把Dart代码编译成Js代码。大多数原生App元素能够通过DOM实现，DOM实现不了的元素可以通过Canvas来实现。
 
 ## Flutter 特点
 
@@ -122,9 +128,12 @@ Skia 由谷歌出资管理，任何人都可基于 BSD 免费软件许可证使�
 - [flutter.io](https://flutter.io)
 - [skia](https://skia.org/index_zh)
 - [showcase](https://flutter.io/showcase)
+- [An open list of apps built with Flutter](https://itsallwidgets.com/)
+- [[Flutter: a Portable UI Framework for Mobile, Web, Embedded, and Desktop](https://developers.googleblog.com/2019/05/Flutter-io19.html)](https://developers.googleblog.com/2019/05/Flutter-io19.html)
 
 ---
 
 © 猫哥
 
 [https://ducafecat.tech](https://ducafecat.tech/)
+

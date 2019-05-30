@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter移动开发 - 04 基础控件 image | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="本节目标 image 构造函数的 5 种方式 加载图片 Asset、NetworkImage 占位图 FadeInImage 头像 CircleAvatar 圆角 ClipRRect 图片 fit 方式  1. Image图片显示组件 支持图像格式 JPEG，PNG，GIF，动画 GIF，WebP，动画 WebP，BMP 和 WBMP 1.1 五种构造方式   构造 说明     Image()">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter移动开发 - 04 基础控件 image">
+<meta property="og:url" content="https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 image 构造函数的 5 种方式 加载图片 Asset、NetworkImage 占位图 FadeInImage 头像 CircleAvatar 圆角 ClipRRect 图片 fit 方式  1. Image图片显示组件 支持图像格式 JPEG，PNG，GIF，动画 GIF，WebP，动画 WebP，BMP 和 WBMP 1.1 五种构造方式   构造 说明     Image()">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/image-20190523170707924.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/image-20190523170951568.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/image-20190523171033329.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/image-20190523172626391.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/image-20190523172716044.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/image-20190523172757661.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/image-20190523172853657.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/image-20190523172919652.png">
+<meta property="og:updated_time" content="2019-05-24T06:01:38.212Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter移动开发 - 04 基础控件 image">
+<meta name="twitter:description" content="本节目标 image 构造函数的 5 种方式 加载图片 Asset、NetworkImage 占位图 FadeInImage 头像 CircleAvatar 圆角 ClipRRect 图片 fit 方式  1. Image图片显示组件 支持图像格式 JPEG，PNG，GIF，动画 GIF，WebP，动画 WebP，BMP 和 WBMP 1.1 五种构造方式   构造 说明     Image()">
+<meta name="twitter:image" content="https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/image-20190523170707924.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter移动开发 - 04 基础控件 image</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Flutter移动开发 - 04 基础控件 image</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-21T16:39:12.000Z" itemprop="datePublished" class="page-time">
+  2019-05-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter移动开发/">Flutter移动开发</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Image"><span class="post-toc-number">2.</span> <span class="post-toc-text">1. Image</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-五种构造方式"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.1 五种构造方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-构造参数"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">1.2 构造参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-混色"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">1.3 混色</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-4-缩放"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">1.4 缩放</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-5-代码示例"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">1.5 代码示例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-5-1-加载资源图片"><span class="post-toc-number">2.5.1.</span> <span class="post-toc-text">1.5.1 加载资源图片</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-5-2-image-加载网络图片"><span class="post-toc-number">2.5.2.</span> <span class="post-toc-text">1.5.2 image 加载网络图片</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-5-3-NetworkImage-加载网络图片"><span class="post-toc-number">2.5.3.</span> <span class="post-toc-text">1.5.3 NetworkImage 加载网络图片</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-5-4-占位图加载网络图片"><span class="post-toc-number">2.5.4.</span> <span class="post-toc-text">1.5.4 占位图加载网络图片</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-5-5-头像"><span class="post-toc-number">2.5.5.</span> <span class="post-toc-text">1.5.5 头像</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-5-6-图标"><span class="post-toc-number">2.5.6.</span> <span class="post-toc-text">1.5.6 图标</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-5-7-圆角矩形"><span class="post-toc-number">2.5.7.</span> <span class="post-toc-text">1.5.7 圆角矩形</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-5-8-椭圆形"><span class="post-toc-number">2.5.8.</span> <span class="post-toc-text">1.5.8 椭圆形</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-5-9-混色"><span class="post-toc-number">2.5.9.</span> <span class="post-toc-text">1.5.9 混色</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-5-10-缩放"><span class="post-toc-number">2.5.10.</span> <span class="post-toc-text">1.5.10 缩放</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">3.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-flutter/flutter-04-image" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter移动开发 - 04 基础控件 image</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-22 00:39:12" datetime="2019-05-21T16:39:12.000Z" itemprop="datePublished">2019-05-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter移动开发/">Flutter移动开发</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h2><ul>
+<li>image 构造函数的 5 种方式</li>
+<li>加载图片 Asset、NetworkImage</li>
+<li>占位图 FadeInImage</li>
+<li>头像 CircleAvatar</li>
+<li>圆角 ClipRRect</li>
+<li>图片 fit 方式</li>
+</ul>
+<h2 id="1-Image"><a href="#1-Image" class="headerlink" title="1. Image"></a>1. Image</h2><p>图片显示组件</p>
+<p>支持图像格式 JPEG，PNG，GIF，动画 GIF，WebP，动画 WebP，BMP 和 WBMP</p>
+<h3 id="1-1-五种构造方式"><a href="#1-1-五种构造方式" class="headerlink" title="1.1 五种构造方式"></a>1.1 五种构造方式</h3><table>
+<thead>
+<tr>
+<th>构造</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Image()</td>
+<td>ImageProvider 适配图片</td>
+</tr>
+<tr>
+<td>Image.asset</td>
+<td>加载资源图片</td>
+</tr>
+<tr>
+<td>Image.file</td>
+<td>加载本地图片</td>
+</tr>
+<tr>
+<td>Image.network</td>
+<td>加载网络图片</td>
+</tr>
+<tr>
+<td>Image.memory</td>
+<td>加载 Uint8List 资源图片</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-2-构造参数"><a href="#1-2-构造参数" class="headerlink" title="1.2 构造参数"></a>1.2 构造参数</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>double scale = 1.0</td>
+<td>缩放</td>
+</tr>
+<tr>
+<td>semanticLabel</td>
+<td>图像的语义描述</td>
+</tr>
+<tr>
+<td>excludeFromSemantics = false</td>
+<td>是否启用图像的语义描述</td>
+</tr>
+<tr>
+<td>width</td>
+<td>宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>高度</td>
+</tr>
+<tr>
+<td>color</td>
+<td>使用 colorBlendMode 颜色图像像素混合</td>
+</tr>
+<tr>
+<td>colorBlendMode</td>
+<td>用于将 color 与此图像组合</td>
+</tr>
+<tr>
+<td>fit</td>
+<td>图片如何在 Image 控件中显示</td>
+</tr>
+<tr>
+<td>alignment = Alignment.center</td>
+<td>对齐</td>
+</tr>
+<tr>
+<td>repeat = ImageRepeat.noRepeat</td>
+<td>重复</td>
+</tr>
+<tr>
+<td>centerSlice</td>
+<td>指定中心区域进行九个补丁图像</td>
+</tr>
+<tr>
+<td>matchTextDirection = false</td>
+<td>是否在 TextDirection 的方向上绘制图像</td>
+</tr>
+<tr>
+<td>gaplessPlayback = false</td>
+<td>当图像提供者发生变化时，是继续显示旧图像</td>
+</tr>
+<tr>
+<td>filterQuality = FilterQuality.low</td>
+<td>图像过滤器的质量级别。(渲染模式的质量)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-3-混色"><a href="#1-3-混色" class="headerlink" title="1.3 混色"></a>1.3 混色</h3><ul>
+<li>29 种混合模式</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> BlendMode &#123;</span><br><span class="line">  clear,src,dst,srcOver,dstOver,srcIn,dstIn,srcOut,dstOut,srcATop,dstATop,xor,plus，modulate,screen,overlay,darken,lighten,colorDodge,colorBurn,hardLight,softLight,difference,exclusion,multiply,hue,saturation,color,luminosity,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>主要的混合模式效果如下</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190523170707924.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="1-4-缩放"><a href="#1-4-缩放" class="headerlink" title="1.4 缩放"></a>1.4 缩放</h3><p>enum BoxFit 枚举对象</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fill</td>
+<td>图片按照指定的大小在Image中显示，拉伸显示图片，不保持原比例，填满Image。<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190523170951568.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure></td>
+</tr>
+<tr>
+<td>contain</td>
+<td>以原图正常显示为目的，如果原图大小大于Image的size，就按照比例缩小原图的宽高，居中显示在Image中。如果原图size小于Image的size，则按比例拉升原图的宽和高，填充Image一边并居中显示。<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190523171033329.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure></td>
+</tr>
+<tr>
+<td>cover</td>
+<td>以原图填满Image为目的，如果原图size大于Image的size，按比例缩小，居中显示在Image上。如果原图size小于Image的size，则按比例拉升原图的宽和高，填充Image居中显示。<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190523172626391.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure></td>
+</tr>
+<tr>
+<td>fitWidth</td>
+<td>以原图正常显示为目的，如果原图宽大小大于（小于）Image的宽，就缩小（放大）原图的宽与Image一致，居中显示在Image中。<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190523172716044.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure></td>
+</tr>
+<tr>
+<td>fitHeight</td>
+<td>以原图正常显示为目的，如果原图高大小大于（小于）Image的高，就缩小（放大）原图的高与Image一致，居中显示在Image中。<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190523172757661.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure></td>
+</tr>
+<tr>
+<td>none</td>
+<td>保持原图的大小，显示在Image的中心。当原图的size大于Image的size时，多出来的部分被截掉。<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190523172853657.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure></td>
+</tr>
+<tr>
+<td>scaleDown</td>
+<td>以原图正常显示为目的，如果原图大小大于Image的size，就按照比例缩小原图的宽高，居中显示在Image中。如果原图size小于Image的size，则不做处理居中显示图片。<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190523172919652.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure></td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-5-代码示例"><a href="#1-5-代码示例" class="headerlink" title="1.5 代码示例"></a>1.5 代码示例</h3><h4 id="1-5-1-加载资源图片"><a href="#1-5-1-加载资源图片" class="headerlink" title="1.5.1 加载资源图片"></a>1.5.1 加载资源图片</h4><ul>
+<li>复制文件到目录 <code>assets/images/react.jpeg</code></li>
+<li>修改 pubspec.yaml</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># To add assets to your application, add an assets section, like <span class="keyword">this</span>:</span><br><span class="line">assets:</span><br><span class="line">  - assets/images/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>读取图片</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/gestures.dart'</span>;</span><br><span class="line"></span><br><span class="line">main(<span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; args) &#123;</span><br><span class="line">  runApp(MaterialApp(</span><br><span class="line">      home: Scaffold(</span><br><span class="line">          appBar: AppBar(title: Text(<span class="string">'my app'</span>)),</span><br><span class="line">          body: Container(</span><br><span class="line">              child: Column(</span><br><span class="line">            crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">            children: &lt;Widget&gt;[</span><br><span class="line">              Image.asset(<span class="string">'assets/images/react.jpeg'</span>)</span><br><span class="line">            ],</span><br><span class="line">          )))));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-5-2-image-加载网络图片"><a href="#1-5-2-image-加载网络图片" class="headerlink" title="1.5.2 image 加载网络图片"></a>1.5.2 image 加载网络图片</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Image.network(_imgUrl)</span><br></pre></td></tr></table></figure>
+<h4 id="1-5-3-NetworkImage-加载网络图片"><a href="#1-5-3-NetworkImage-加载网络图片" class="headerlink" title="1.5.3 NetworkImage 加载网络图片"></a>1.5.3 NetworkImage 加载网络图片</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Image(image: NetworkImage(_imgUrl))</span><br></pre></td></tr></table></figure>
+<h4 id="1-5-4-占位图加载网络图片"><a href="#1-5-4-占位图加载网络图片" class="headerlink" title="1.5.4 占位图加载网络图片"></a>1.5.4 占位图加载网络图片</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FadeInImage(</span><br><span class="line">  fadeInCurve: Curves.bounceIn,</span><br><span class="line">  placeholder: AssetImage(_assetImg),</span><br><span class="line">  image: NetworkImage(_imgUrl))</span><br></pre></td></tr></table></figure>
+<h4 id="1-5-5-头像"><a href="#1-5-5-头像" class="headerlink" title="1.5.5 头像"></a>1.5.5 头像</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CircleAvatar(</span><br><span class="line">  backgroundColor: Colors.brown.shade800,</span><br><span class="line">  child: Text(<span class="string">'圆角图片'</span>),</span><br><span class="line">  backgroundImage: AssetImage(_assetImg),</span><br><span class="line">  radius: <span class="number">50.0</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="1-5-6-图标"><a href="#1-5-6-图标" class="headerlink" title="1.5.6 图标"></a>1.5.6 图标</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ImageIcon(</span><br><span class="line">  NetworkImage(_imgUrl),</span><br><span class="line">  size: <span class="number">100</span>,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h4 id="1-5-7-圆角矩形"><a href="#1-5-7-圆角矩形" class="headerlink" title="1.5.7 圆角矩形"></a>1.5.7 圆角矩形</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ClipRRect(</span><br><span class="line">  child: Image.network(_imgUrl),</span><br><span class="line">  borderRadius: BorderRadius.all(Radius.circular(<span class="number">20</span>)),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h4 id="1-5-8-椭圆形"><a href="#1-5-8-椭圆形" class="headerlink" title="1.5.8 椭圆形"></a>1.5.8 椭圆形</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ClipOval(</span><br><span class="line">  child: Image.network(</span><br><span class="line">    _imgUrl,</span><br><span class="line">    scale: <span class="number">8.5</span>,</span><br><span class="line">  ),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h4 id="1-5-9-混色"><a href="#1-5-9-混色" class="headerlink" title="1.5.9 混色"></a>1.5.9 混色</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Image.asset(</span><br><span class="line">  _assetHeaderImg,</span><br><span class="line">  color: Colors.amber,</span><br><span class="line">  colorBlendMode: BlendMode.dstATop,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h4 id="1-5-10-缩放"><a href="#1-5-10-缩放" class="headerlink" title="1.5.10 缩放"></a>1.5.10 缩放</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Image.asset(</span><br><span class="line">  _assetImg,</span><br><span class="line">  width: <span class="number">400</span>,</span><br><span class="line">  height: <span class="number">50</span>,</span><br><span class="line">  fit: BoxFit.cover,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ducafecat/flutter-learn/tree/master/p04_image" target="_blank" rel="noopener">https://github.com/ducafecat/flutter-learn/tree/master/p04_image</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://api.flutter.dev/flutter/dart-ui/Image-class.html" target="_blank" rel="noopener">Image class</a></li>
+<li><a href="https://api.flutter.dev/flutter/painting/NetworkImage-class.html" target="_blank" rel="noopener">NetworkImage class</a></li>
+<li><a href="https://api.flutter.dev/flutter/widgets/FadeInImage-class.html" target="_blank" rel="noopener">FadeInImage class</a></li>
+<li><a href="https://api.flutter.dev/flutter/widgets/ClipRRect-class.html" target="_blank" rel="noopener">ClipRRect class</a></li>
+<li><a href="https://api.flutter.dev/flutter/widgets/ClipOval-class.html" target="_blank" rel="noopener">ClipOval class</a></li>
+<li><a href="https://api.flutter.dev/flutter/widgets/ImageIcon-class.html" target="_blank" rel="noopener">ImageIcon class</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/&title=《Flutter移动开发 - 04 基础控件 image》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/&title=《Flutter移动开发 - 04 基础控件 image》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter移动开发 - 04 基础控件 image》 — duCafeCat&url=https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/05/23/flutter/flutter-05-button/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter移动开发 - 05 基础控件 button</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/05/21/flutter/flutter-03-text/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter移动开发 - 03 基础控件 Text、RichText、TextSpan</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'ducafecat-tech';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猫哥 &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/&title=《Flutter移动开发 - 04 基础控件 image》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/&title=《Flutter移动开发 - 04 基础控件 image》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter移动开发 - 04 基础控件 image》 — duCafeCat&url=https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/05/22/flutter/flutter-04-image/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACHUlEQVR42u3aS3LEIAwFwNz/0s42m2GeBE4V0KxSiWPTLFTo8/MTr+fPGj+TPz/zX82FgYGxLeMZrk/PJJsYv3OMyfeGgYFxDyN/dR4oE/w4rCd7w8DAwBg/0wvHvYCOgYGBMXNdS6j5FzEwMDBmktjxi3Jq8r8v5uIYGBgbMqoh8j9/fqW/gYGBsRXjKa5egK4W2sq7wsDAOJqRB7iZ4n5SmEtS3C9fwcDAOJqRbzdPbteOhSW/wcDAuJORlM9mEuDk+PIDxcDAOJWRNy/zAn31CHpHFt1tMTAwjmC8N2zRC6BJmlout2FgYGzO6AXcKmZ+LOzLOzEwMK5h9D6f58fVK2ZhnxgYGBcwesX9PMnMN927IGJgYJzNqDYOexfKvPGQkz5eEDEwMK5k9JLY6hhZ70AxMDDuZCSbS1LN/DiqA2fR1RADA+MgRt5ErA5bVAH5oXyZGcHAwDiOkZfP3riVLZ4ZwcDAOJox01xMhiSSoNzDLOuRYmBgbMKoXs7yEY1euT8P4hgYGPcw5sPuPHXq6xgYGNcwqqMPvbBbfbKZhWNgYBzBeIorf3U1aM6Ma2BgYJzNmA92qwa/qqG8eWHFwMDYllEubBVT1urJNZNnDAyMCxi9MllycUzC5YLUFwMDAyMut1X/mtf5MTAwMHrJZN6YnMmhk3FYDAyMGxirBuWrDdH5hgQGBsYNjF4RbVUPscdu7gQDA2M/xi88B+TzJYx6wQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

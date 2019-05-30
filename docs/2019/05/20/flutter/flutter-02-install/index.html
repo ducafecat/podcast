@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter移动开发 - 02 安装环境 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="本节目标 安装 sdk、配置环境变量 配置 开发工具 vscode 配置模拟器 ios、android 编写 hello word 运行  1. 安装 SDK1.1 git 方式123mkdir ~/sdkcd ~/sdkgit clone -b stable https://github.com/flutter/flutter.git  推荐，下次更新直接 git pull  1.2 下载压缩包">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter移动开发 - 02 安装环境">
+<meta property="og:url" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 安装 sdk、配置环境变量 配置 开发工具 vscode 配置模拟器 ios、android 编写 hello word 运行  1. 安装 SDK1.1 git 方式123mkdir ~/sdkcd ~/sdkgit clone -b stable https://github.com/flutter/flutter.git  推荐，下次更新直接 git pull  1.2 下载压缩包">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190523092526095.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522092722232.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522090847671.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522093037076.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522091510591.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522093342772.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522104947380.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522105204530.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522110737156.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522112214757.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522112401274.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522103232745.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522112733325.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522112817716.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190522114153390.png">
+<meta property="og:updated_time" content="2019-05-23T01:25:44.100Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter移动开发 - 02 安装环境">
+<meta name="twitter:description" content="本节目标 安装 sdk、配置环境变量 配置 开发工具 vscode 配置模拟器 ios、android 编写 hello word 运行  1. 安装 SDK1.1 git 方式123mkdir ~/sdkcd ~/sdkgit clone -b stable https://github.com/flutter/flutter.git  推荐，下次更新直接 git pull  1.2 下载压缩包">
+<meta name="twitter:image" content="https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/image-20190523092526095.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter移动开发 - 02 安装环境</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Flutter移动开发 - 02 安装环境</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-19T16:21:32.000Z" itemprop="datePublished" class="page-time">
+  2019-05-20
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter移动开发/">Flutter移动开发</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-安装-SDK"><span class="post-toc-number">2.</span> <span class="post-toc-text">1. 安装 SDK</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-git-方式"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.1 git 方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-下载压缩包"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">1.2 下载压缩包</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-配置环境变量"><span class="post-toc-number">3.</span> <span class="post-toc-text">2. 配置环境变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-配置-xcode"><span class="post-toc-number">4.</span> <span class="post-toc-text">3. 配置 xcode</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-安装-xcode"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">3.1 安装 xcode</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-自带模拟器"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">3.2 自带模拟器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-启动模拟器"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">3.3 启动模拟器</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-配置-Android-Studio"><span class="post-toc-number">5.</span> <span class="post-toc-text">4. 配置 Android Studio</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-配置-vscode"><span class="post-toc-number">6.</span> <span class="post-toc-text">5. 配置 vscode</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-编写-helloword"><span class="post-toc-number">7.</span> <span class="post-toc-text">6. 编写 helloword</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">8.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-flutter/flutter-02-install" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter移动开发 - 02 安装环境</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-20 00:21:32" datetime="2019-05-19T16:21:32.000Z" itemprop="datePublished">2019-05-20</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter移动开发/">Flutter移动开发</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h2><ul>
+<li>安装 sdk、配置环境变量</li>
+<li>配置 开发工具 vscode</li>
+<li>配置模拟器 ios、android</li>
+<li>编写 hello word 运行</li>
+</ul>
+<h2 id="1-安装-SDK"><a href="#1-安装-SDK" class="headerlink" title="1. 安装 SDK"></a>1. 安装 SDK</h2><h3 id="1-1-git-方式"><a href="#1-1-git-方式" class="headerlink" title="1.1 git 方式"></a>1.1 git 方式</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/sdk</span><br><span class="line"><span class="built_in">cd</span> ~/sdk</span><br><span class="line">git <span class="built_in">clone</span> -b stable https://github.com/flutter/flutter.git</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>推荐，下次更新直接 <code>git pull</code></p>
+</blockquote>
+<h3 id="1-2-下载压缩包"><a href="#1-2-下载压缩包" class="headerlink" title="1.2 下载压缩包"></a>1.2 下载压缩包</h3><h2 id="2-配置环境变量"><a href="#2-配置环境变量" class="headerlink" title="2. 配置环境变量"></a>2. 配置环境变量</h2><ul>
+<li><p>macos $HOME/.bash_profile</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; vi <span class="variable">$HOME</span>/.bash_profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># flutter</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:<span class="string">"~/sdk/flutter/bin"</span></span><br><span class="line"><span class="built_in">export</span> PUB_HOSTED_URL=https://pub.flutter-io.cn</span><br><span class="line"><span class="built_in">export</span> FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</span><br><span class="line"></span><br><span class="line">&gt; <span class="built_in">source</span> <span class="variable">$HOME</span>/.bash_profile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>windows 下配置</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190523092526095.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li><p>执行 flutter doctor , 自动下载依赖项、编译所需工具</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">&gt; flutter doctor</span><br><span class="line"></span><br><span class="line">Downloading Dart SDK from Flutter engine 52c7a1e849a170be4b2b2fe34142ca2c0a6fea1f...</span><br><span class="line">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span><br><span class="line">                                 Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">100  120M  100  120M    0     0  2338k      0  0:00:52  0:00:52 --:--:-- 2359k</span><br><span class="line">Building flutter tool...</span><br><span class="line"></span><br><span class="line">  ╔════════════════════════════════════════════════════════════════════════════╗</span><br><span class="line">  ║                 Welcome to Flutter! - https://flutter.dev                  ║</span><br><span class="line">  ║                                                                            ║</span><br><span class="line">  ║ The Flutter tool anonymously reports feature usage statistics and crash    ║</span><br><span class="line">  ║ reports to Google <span class="keyword">in</span> order to <span class="built_in">help</span> Google contribute improvements to       ║</span><br><span class="line">  ║ Flutter over time.                                                         ║</span><br><span class="line">  ║                                                                            ║</span><br><span class="line">  ║ Read about data we send with crash reports:                                ║</span><br><span class="line">  ║ https://github.com/flutter/flutter/wiki/Flutter-CLI-crash-reporting        ║</span><br><span class="line">  ║                                                                            ║</span><br><span class="line">  ║ See Google<span class="string">'s privacy policy:                                               ║</span></span><br><span class="line"><span class="string">  ║ https://www.google.com/intl/en/policies/privacy/                           ║</span></span><br><span class="line"><span class="string">  ║                                                                            ║</span></span><br><span class="line"><span class="string">  ║ Use "flutter config --no-analytics" to disable analytics and crash         ║</span></span><br><span class="line"><span class="string">  ║ reporting.                                                                 ║</span></span><br><span class="line"><span class="string">  ╚════════════════════════════════════════════════════════════════════════════╝</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Flutter assets will be downloaded from https://storage.flutter-io.cn. Make sure you trust this source!</span></span><br><span class="line"><span class="string">Downloading Material fonts...                                       0.8s</span></span><br><span class="line"><span class="string">Downloading android-arm-profile/darwin-x64 tools...                 1.0s</span></span><br><span class="line"><span class="string">Downloading android-arm-release/darwin-x64 tools...                 0.8s</span></span><br><span class="line"><span class="string">Downloading android-arm64-profile/darwin-x64 tools...               1.0s</span></span><br><span class="line"><span class="string">Downloading android-arm64-release/darwin-x64 tools...               0.8s</span></span><br><span class="line"><span class="string">Downloading android-arm-dynamic-profile/darwin-x64 tools...         1.0s</span></span><br><span class="line"><span class="string">Downloading android-arm-dynamic-release/darwin-x64 tools...         0.8s</span></span><br><span class="line"><span class="string">Downloading android-arm64-dynamic-profile/darwin-x64 tools...         1.0s</span></span><br><span class="line"><span class="string">Downloading android-arm64-dynamic-release/darwin-x64 tools...         0.8s</span></span><br><span class="line"><span class="string">Downloading android-x86 tools...                                    6.9s</span></span><br><span class="line"><span class="string">Downloading android-x64 tools...                                    6.9s</span></span><br><span class="line"><span class="string">Downloading android-arm tools...                                    3.1s</span></span><br><span class="line"><span class="string">Downloading android-arm-profile tools...                            2.2s</span></span><br><span class="line"><span class="string">Downloading android-arm-release tools...                            1.4s</span></span><br><span class="line"><span class="string">Downloading android-arm64 tools...                                  3.3s</span></span><br><span class="line"><span class="string">Downloading android-arm64-profile tools...                          2.0s</span></span><br><span class="line"><span class="string">Downloading android-arm64-release tools...                          1.6s</span></span><br><span class="line"><span class="string">Downloading android-arm-dynamic-profile tools...                    2.3s</span></span><br><span class="line"><span class="string">Downloading android-arm-dynamic-release tools...                    1.8s</span></span><br><span class="line"><span class="string">Downloading android-arm64-dynamic-profile tools...                  2.5s</span></span><br><span class="line"><span class="string">Downloading android-arm64-dynamic-release tools...                  2.2s</span></span><br><span class="line"><span class="string">Downloading ios tools...                                           15.5s</span></span><br><span class="line"><span class="string">Downloading ios-profile tools...                                   11.9s</span></span><br><span class="line"><span class="string">Downloading ios-release tools...                                    8.6s</span></span><br><span class="line"><span class="string">Downloading Gradle Wrapper...                                       0.0s</span></span><br><span class="line"><span class="string">Downloading package sky_engine...                                   0.3s</span></span><br><span class="line"><span class="string">Downloading common tools...                                         4.1s</span></span><br><span class="line"><span class="string">Downloading common tools...                                         4.1s</span></span><br><span class="line"><span class="string">Downloading darwin-x64 tools...                                    14.2s</span></span><br><span class="line"><span class="string">Doctor summary (to see all details, run flutter doctor -v):</span></span><br><span class="line"><span class="string">[✓] Flutter (Channel stable, v1.5.4-hotfix.2, on Mac OS X 10.14.4 18E226, locale zh-Hans-CN)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[!] Android toolchain - develop for Android devices (Android SDK version 26.0.2)</span></span><br><span class="line"><span class="string">    ✗ Flutter requires Android SDK 28 and the Android BuildTools 28.0.3</span></span><br><span class="line"><span class="string">      To update using sdkmanager, run:</span></span><br><span class="line"><span class="string">        "/Users/hans/Library/Android/sdk/tools/bin/sdkmanager" "platforms;android-28" "build-tools;28.0.3"</span></span><br><span class="line"><span class="string">      or visit https://flutter.dev/setup/#android-setup for detailed instructions.</span></span><br><span class="line"><span class="string">    ✗ Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses</span></span><br><span class="line"><span class="string">[!] iOS toolchain - develop for iOS devices (Xcode 10.2.1)</span></span><br><span class="line"><span class="string">    ✗ libimobiledevice and ideviceinstaller are not installed. To install with Brew, run:</span></span><br><span class="line"><span class="string">        brew update</span></span><br><span class="line"><span class="string">        brew install --HEAD usbmuxd</span></span><br><span class="line"><span class="string">        brew link usbmuxd</span></span><br><span class="line"><span class="string">        brew install --HEAD libimobiledevice</span></span><br><span class="line"><span class="string">        brew install ideviceinstaller</span></span><br><span class="line"><span class="string">    ✗ ios-deploy not installed. To install:</span></span><br><span class="line"><span class="string">        brew install ios-deploy</span></span><br><span class="line"><span class="string">    ! CocoaPods out of date (1.5.0 is recommended).</span></span><br><span class="line"><span class="string">        CocoaPods is used to retrieve the iOS platform side'</span>s plugin code that responds to your plugin usage on the Dart side.</span><br><span class="line">        Without resolving iOS dependencies with CocoaPods, plugins will not work on iOS.</span><br><span class="line">        For more info, see https://flutter.dev/platform-plugins</span><br><span class="line">      To upgrade:</span><br><span class="line">        brew upgrade cocoapods</span><br><span class="line">        pod setup</span><br><span class="line">[!] Android Studio (version 2.3)</span><br><span class="line">    ✗ Flutter plugin not installed; this adds Flutter specific functionality.</span><br><span class="line">    ✗ Dart plugin not installed; this adds Dart specific functionality.</span><br><span class="line">[!] IntelliJ IDEA Ultimate Edition (version 2018.3.3)</span><br><span class="line">    ✗ Flutter plugin not installed; this adds Flutter specific functionality.</span><br><span class="line">    ✗ Dart plugin not installed; this adds Dart specific functionality.</span><br><span class="line">[✓] VS Code (version 1.34.0)</span><br><span class="line">[!] Connected device</span><br><span class="line">    ! No devices available</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>toolchain 我们可以不装，本机有 Android Studio、XCode 就行</p>
+</blockquote>
+<h2 id="3-配置-xcode"><a href="#3-配置-xcode" class="headerlink" title="3. 配置 xcode"></a>3. 配置 xcode</h2><h3 id="3-1-安装-xcode"><a href="#3-1-安装-xcode" class="headerlink" title="3.1 安装 xcode"></a>3.1 安装 xcode</h3><ul>
+<li>Apple Store 安装 xcode</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190522092722232.png" alt="apple store" title>
+                </div>
+                <div class="image-caption">apple store</div>
+            </figure>
+<h3 id="3-2-自带模拟器"><a href="#3-2-自带模拟器" class="headerlink" title="3.2 自带模拟器"></a>3.2 自带模拟器</h3><ul>
+<li>xcode -&gt; preferences -&gt; components</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190522090847671.png" alt="components" title>
+                </div>
+                <div class="image-caption">components</div>
+            </figure>
+<h3 id="3-3-启动模拟器"><a href="#3-3-启动模拟器" class="headerlink" title="3.3 启动模拟器"></a>3.3 启动模拟器</h3><ul>
+<li>xcode -&gt; open developer tool -&gt; simulator</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190522093037076.png" alt="simulator" title>
+                </div>
+                <div class="image-caption">simulator</div>
+            </figure>
+<ul>
+<li>启动完成</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190522091510591.png" alt="running" title>
+                </div>
+                <div class="image-caption">running</div>
+            </figure>
+<ul>
+<li>切换模拟器机型</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190522093342772.png" alt="change" title>
+                </div>
+                <div class="image-caption">change</div>
+            </figure>
+<h2 id="4-配置-Android-Studio"><a href="#4-配置-Android-Studio" class="headerlink" title="4. 配置 Android Studio"></a>4. 配置 Android Studio</h2><ul>
+<li><p>安装 Android Studio</p>
+<p><a href="https://developer.android.google.cn/studio" target="_blank" rel="noopener">https://developer.android.google.cn/studio</a></p>
+</li>
+<li><p>配置环境变量</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; vi ~/.bash_profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># android</span></span><br><span class="line"><span class="built_in">export</span> ANDROID_HOME=/Users/yourname/Library/Android/sdk</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:<span class="variable">$ANDROID_HOME</span>/platform-tools</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:<span class="variable">$ANDROID_HOME</span>/tools</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>“unable to access android sdk add-on list” 点击取消</p>
+<p><img src="image-20190522104947380.png" alt="unable to access android sdk add-on list"></p>
+</li>
+<li><p>自定义安装，全选项目</p>
+<p><img src="image-20190522105204530.png" alt="all"></p>
+</li>
+<li><p>进入模拟器配置</p>
+<p><img src="image-20190522110737156.png" alt="configure -&gt; AVD Manage"></p>
+</li>
+<li><p>配置模拟器参数</p>
+<p>大家机器好点的，就多给点内存和空间吧，这样模拟器运行的快些</p>
+<p><img src="image-20190522112214757.png" alt="参数"></p>
+</li>
+<li><p>运行模拟器</p>
+<p><img src="image-20190522112401274.png" alt="running"></p>
+</li>
+</ul>
+<h2 id="5-配置-vscode"><a href="#5-配置-vscode" class="headerlink" title="5. 配置 vscode"></a>5. 配置 vscode</h2><ul>
+<li><p>安装</p>
+<p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">https://code.visualstudio.com/</a></p>
+</li>
+<li><p>插件 flutter</p>
+<p><img src="image-20190522103232745.png" alt="flutter extensions"></p>
+</li>
+<li><p>第一次运行选择 sdk 目录</p>
+</li>
+</ul>
+<h2 id="6-编写-helloword"><a href="#6-编写-helloword" class="headerlink" title="6. 编写 helloword"></a>6. 编写 helloword</h2><ul>
+<li><p>运行向导</p>
+<p>shift + command + p</p>
+<p><img src="image-20190522112733325.png" alt="flutter: new project"></p>
+</li>
+<li><p>自动生成项目代码，拉取程序包</p>
+<p><img src="image-20190522112817716.png" alt="all done"></p>
+</li>
+<li><p>运行程序</p>
+<p><img src="image-20190522114153390.png" alt="android"></p>
+</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://flutter.dev/community/china" target="_blank" rel="noopener">Using Flutter in China</a></li>
+<li><a href="https://www.runoob.com/android/android-studio-install.html" target="_blank" rel="noopener">Android Studio 安装</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/&title=《Flutter移动开发 - 02 安装环境》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/&title=《Flutter移动开发 - 02 安装环境》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter移动开发 - 02 安装环境》 — duCafeCat&url=https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/05/21/flutter/flutter-03-text/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter移动开发 - 03 基础控件 Text、RichText、TextSpan</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/28/dart/dart-38-effective-design/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Dart语言学习 - 38 代码分格 API 设计 effective-design</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'ducafecat-tech';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猫哥 &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/&title=《Flutter移动开发 - 02 安装环境》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/&title=《Flutter移动开发 - 02 安装环境》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter移动开发 - 02 安装环境》 — duCafeCat&url=https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/05/20/flutter/flutter-02-install/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aS27DMAxFUe9/0+40QGHnPtKtIepqVLSOo6MBK36OA6/z1/r8/f3z5M3pp4pLhgwZyzLO23X1BXyLV++8x/C9yZAhYx8GfzUPlP0wTfYmQ4YMGSS8ku3ygC5DhgwZfQbZBL8IvhZwZciQsSCDBMT01SQZfiEXlyFDxoIMXnX//5//pL8hQ4aMpRhnuPpFfxKa413JkCFjNKPTjKwNTHRS3C/DHDJkyNiGQYJjGjrTSycP0MWOqwwZMpZidMYjeKrZGbNAzQkZMmRswEjbAPzyx6+V/HkZMmTsyUhDaq1V+dRhXVYNZciQMZTBBx3StDZNfWv4oMsqQ4aMZRm1IJu2AXiTsjjqIUOGjA0Yzxb3Sduyc+n8kovLkCFjHKM24sD7hs82HtDhypAhYyijNqhKCvq8edlJm2XIkDGbQTZUw3QOi4TgoBMrQ4aMQQxeJnuqbZk2Si//KkOGjNGMtBzGr4CvDVvIkCFjNIMPT6SFNg5IMcXuhAwZMpZl9Iv1B1hpqyBImGXIkLEBg3+4lgB3xjJQoitDhoxtGMVSF++Xtp8PpkVkyJAxgnGGK720pSW89KoqQ4aMHRi1YJcmrmnSywtz8R5kyJCxLKM27MWTzFpJLj4sGTJkbMBIA1/aSOiU4VDqK0OGDBn4mXTYIr1EypAhQ0aNkQbWfksgGGCVIUPGIEa/0M9DJG8z8OOTIUPGbEaaOvIr4LOlPf5vQIYMGYMYP/2Sk2HOP/EgAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

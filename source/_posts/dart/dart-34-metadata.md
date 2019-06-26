@@ -7,8 +7,8 @@ categories: Dart语言学习
 
 # 本节目标
 
-- 内置 `metadata`
-- `metadata` 如何使用
+- 了解内置注解 `deprecated` `override`
+- 自定义注解，并使用反射实现
 
 # 环境
 

@@ -77,8 +77,12 @@ http://127.0.0.1:62341/ztmtijcoJrI=/#/vm
 > pod setup 很慢的问题
 >
 > 1. 手动下载 git clone https://github.com/CocoaPods/Specs
-> 2. 替换 ~/.cocoapods/repos/master
+> 2. 复制 ~/.cocoapods/repos/Specs-master
 > 3. 执行 pod update
+> 4. 复制 master 下的 .git 到 Specs-master
+> 5. 停止 pod update
+> 6. 重命名 Specs-master 为 master
+> 7. 进入项目的 ios 目录下 pod install 成功
 
 ### 6.2 配置AppStore开发者账号
 

@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/image-20190701160914331.png">
 <meta property="og:image" content="https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/image-20190701161106890.png">
 <meta property="og:image" content="https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/image-20190701161445927.png">
-<meta property="og:updated_time" content="2019-07-02T05:51:09.330Z">
+<meta property="og:updated_time" content="2019-07-02T08:54:46.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境">
 <meta name="twitter:description" content="本节目标 安装 xcode 配置 flutter 连接 xcode 在 IOS 模拟器中运行 flutter app  1. 安装 XCode安装 Xcode 9.0 以上版本 (访问 Apple网站 下载或者，Mac App Store 方式安装). 2. 第一次启动 XCode 安装所需组件">
@@ -219,8 +219,12 @@
 <p>pod setup 很慢的问题</p>
 <ol>
 <li>手动下载 git clone <a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs</a></li>
-<li>替换 ~/.cocoapods/repos/master</li>
+<li>复制 ~/.cocoapods/repos/Specs-master</li>
 <li>执行 pod update</li>
+<li>复制 master 下的 .git 到 Specs-master</li>
+<li>停止 pod update</li>
+<li>重命名 Specs-master 为 master</li>
+<li>进入项目的 ios 目录下 pod install 成功</li>
 </ol>
 </blockquote>
 <h3 id="6-2-配置AppStore开发者账号"><a href="#6-2-配置AppStore开发者账号" class="headerlink" title="6.2 配置AppStore开发者账号"></a>6.2 配置AppStore开发者账号</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open ios/Runner.xcworkspace</span><br></pre></td></tr></table></figure>

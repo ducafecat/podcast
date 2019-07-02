@@ -141,6 +141,166 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-dart/dart-32-isolates"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-20 00:52:55" datetime="2019-01-19T16:52:55.000Z"  itemprop="datePublished">2019-01-20</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/01/20/dart/dart-32-isolates/">Dart语言学习 - 32 线程隔离 isolate</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        本节目标
+了解线程隔离
+
+环境
+Dart 2.1.0
+
+isolate在Dart中实现并发可以用Isolate，它是类似于线程(thread)但不共享内存的独立运行的worker，是一个独立的Dart程序执行环境。其实默认环境就是一个main isolate。
+在Dart语言中，所有的Dart代码都运行在某个isolate中，代码只能使用所属isolate的类和值。不同的isolate可以通...
+    
+
+        <a href="/2019/01/20/dart/dart-32-isolates/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-dart/dart-31-callable"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-16 11:37:26" datetime="2019-01-16T03:37:26.000Z"  itemprop="datePublished">2019-01-16</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/01/16/dart/dart-31-callable/">Dart语言学习 - 31 可调用类 callable</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        本节目标
+定义并执行可定义类
+
+环境
+Dart 2.1.0
+
+callable123456789101112main(List&lt;String&gt; args) &#123;  var phone = IOSPhone();  phone('911');  // IOSPhone()('911');&#125;class IOSPhone &#123;  call(String num...
+    
+
+        <a href="/2019/01/16/dart/dart-31-callable/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-dart/dart-30-generator"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-15 17:25:58" datetime="2019-01-15T09:25:58.000Z"  itemprop="datePublished">2019-01-15</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/01/15/dart/dart-30-generator/">Dart语言学习 - 30 - 生成器 Generators</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        本节目标
+同步、异步代码生成器
+
+环境
+Dart 2.1.0
+
+同步生成器123456789101112131415main(List&lt;String&gt; args) &#123;  var it = naturalsTo(5).iterator;  while(it.moveNext()) &#123;    print(it.current);  &#125;&#125;Iter...
+    
+
+        <a href="/2019/01/15/dart/dart-30-generator/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-dart/dart-29-async"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -528,186 +688,12 @@ Dart 中没有 interface 关键字实现接口12345678910111213141516171819void 
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-dart/dart-22-abstract"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-11-28 16:17:42" datetime="2018-11-28T08:17:42.000Z"  itemprop="datePublished">2018-11-28</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/11/28/dart/dart-22-abstract/">Dart语言学习 - 22 abstract 抽象</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        本节目标
-抽象 类、函数
-接口方式使用
-继承方式使用
-
-环境
-Dart 2.0.0
-
-abstract 类、函数、成员
-普通类前加 abstract
-
-123456abstract class Person &#123;  static const String name = 'ducafecat';  void printName()&#123;    print(name);  &#12...
-    
-
-        <a href="/2018/11/28/dart/dart-22-abstract/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-dart/dart-21-static"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-11-17 16:02:07" datetime="2018-11-17T08:02:07.000Z"  itemprop="datePublished">2018-11-17</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/11/17/dart/dart-21-static/">Dart语言学习 - 21 静态成员</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        本节目标
-静态变量
-静态方法
-
-环境
-Dart 2.0.0
-
-静态变量static 定义声明
-123class People &#123;  static String name = 'ducafecat';&#125;
-调用
-静态变量可以通过外部直接访问,不需要将类实例化
-1print(People.name);
-函数内部访问实例化后的类也可以访问该静态变量
-声明
-123456class ...
-    
-
-        <a href="/2018/11/17/dart/dart-21-static/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-dart/dart-20-getter-setter"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-11-17 15:30:21" datetime="2018-11-17T07:30:21.000Z"  itemprop="datePublished">2018-11-17</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/11/17/dart/dart-20-getter-setter/">Dart语言学习 - 20 get set</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        本节目标
-定义、使用、简化 get set
-
-环境
-Dart 2.0.0
-
-定义、使用 get setgetter 和 setter 的好处是，你可以开始使用实例变量，后来 你可以把实例变量用函数包裹起来，而调用你代码的地方不需要修改。
-定义
-1234567891011class People &#123;  String _name;  set pName(String value) &#...
-    
-
-        <a href="/2018/11/17/dart/dart-20-getter-setter/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
     </div>
 </nav>
 

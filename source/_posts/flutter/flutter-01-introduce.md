@@ -134,10 +134,10 @@ Skia由谷歌出资管理，任何人都可基于BSD免费软件许可证使用S
 
 - 开发环境搭建和工具配置
   - Flutter 环境配置 MacOS
+  - IOS 环境配置 MacOS
+  - Android 环境配置 MacOS
   - Flutter 环境配置 Windows10
-  - IOS 开发环境配置 MacOS
-  - Android 开发环境配置 MacOS
-  - Android 开发环境配置 Windows10
+  - Android 环境配置 Windows10
   - 开发工具的选择 VSCode、IDEA、AndroidStudio
 
 - 快速上手

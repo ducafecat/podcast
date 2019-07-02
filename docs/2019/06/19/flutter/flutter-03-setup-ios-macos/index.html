@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="本节目标 安装 xcode 配置 flutter 连接 xcode 在 IOS 模拟器中运行 flutter app  1. 安装 XCode安装 Xcode 9.0 以上版本 (访问 Apple网站 下载或者，Mac App Store 方式安装). 2. 第一次启动 XCode 安装所需组件">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境">
+<meta property="og:url" content="https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 安装 xcode 配置 flutter 连接 xcode 在 IOS 模拟器中运行 flutter app  1. 安装 XCode安装 Xcode 9.0 以上版本 (访问 Apple网站 下载或者，Mac App Store 方式安装). 2. 第一次启动 XCode 安装所需组件">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/image-20190628180642579.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/image-20190701160914331.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/image-20190701161106890.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/image-20190701161445927.png">
+<meta property="og:updated_time" content="2019-07-02T05:51:09.330Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境">
+<meta name="twitter:description" content="本节目标 安装 xcode 配置 flutter 连接 xcode 在 IOS 模拟器中运行 flutter app  1. 安装 XCode安装 Xcode 9.0 以上版本 (访问 Apple网站 下载或者，Mac App Store 方式安装). 2. 第一次启动 XCode 安装所需组件">
+<meta name="twitter:image" content="https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/image-20190628180642579.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-18T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-06-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-安装-XCode"><span class="post-toc-number">2.</span> <span class="post-toc-text">1. 安装 XCode</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-第一次启动-XCode-安装所需组件"><span class="post-toc-number">3.</span> <span class="post-toc-text">2. 第一次启动 XCode 安装所需组件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-配置-Xcode-command-line-tools"><span class="post-toc-number">4.</span> <span class="post-toc-text">3. 配置 Xcode command-line tools</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-启动模拟器"><span class="post-toc-number">5.</span> <span class="post-toc-text">4. 启动模拟器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-创建-Flutter-项目"><span class="post-toc-number">6.</span> <span class="post-toc-text">5. 创建 Flutter 项目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-create-amp-run"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">5.1 create &amp; run</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-vm-报告"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">5.2 vm 报告</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-部署到真机"><span class="post-toc-number">7.</span> <span class="post-toc-text">6. 部署到真机</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-1-安装软件包"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">6.1 安装软件包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-2-配置AppStore开发者账号"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">6.2 配置AppStore开发者账号</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">8.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-flutter/flutter-03-setup-ios-macos"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-19 00:00:00" datetime="2019-06-18T16:00:00.000Z"  itemprop="datePublished">2019-06-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h2><ul>
+<li>安装 xcode</li>
+<li>配置 flutter 连接 xcode</li>
+<li>在 IOS 模拟器中运行 flutter app</li>
+</ul>
+<h2 id="1-安装-XCode"><a href="#1-安装-XCode" class="headerlink" title="1. 安装 XCode"></a>1. 安装 XCode</h2><p>安装 Xcode 9.0 以上版本 (访问 <a href="https://developer.apple.com/xcode/" target="_blank" rel="noopener">Apple网站</a> 下载或者，<a href="https://itunes.apple.com/us/app/xcode/id497799835" target="_blank" rel="noopener">Mac App Store</a> 方式安装).</p>
+<h2 id="2-第一次启动-XCode-安装所需组件"><a href="#2-第一次启动-XCode-安装所需组件" class="headerlink" title="2. 第一次启动 XCode 安装所需组件"></a>2. 第一次启动 XCode 安装所需组件</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190628180642579.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="3-配置-Xcode-command-line-tools"><a href="#3-配置-Xcode-command-line-tools" class="headerlink" title="3. 配置 Xcode command-line tools"></a>3. 配置 Xcode command-line tools</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer</span><br><span class="line"></span><br><span class="line">检验 打印 license</span><br><span class="line">&gt; sudo xcodebuild -license</span><br></pre></td></tr></table></figure>
+<h2 id="4-启动模拟器"><a href="#4-启动模拟器" class="headerlink" title="4. 启动模拟器"></a>4. 启动模拟器</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open -a Simulator</span><br></pre></td></tr></table></figure>
+<h2 id="5-创建-Flutter-项目"><a href="#5-创建-Flutter-项目" class="headerlink" title="5. 创建 Flutter 项目"></a>5. 创建 Flutter 项目</h2><h3 id="5-1-create-amp-run"><a href="#5-1-create-amp-run" class="headerlink" title="5.1 create &amp; run"></a>5.1 create &amp; run</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; flutter create my_app</span><br><span class="line">&gt; <span class="built_in">cd</span> my_app</span><br><span class="line">&gt; flutter run</span><br><span class="line"></span><br><span class="line">🔥  To hot reload changes <span class="keyword">while</span> running, press <span class="string">"r"</span>. To hot restart (and rebuild state), press <span class="string">"R"</span>.</span><br><span class="line">An Observatory debugger and profiler on iPhone Xʀ is available at: http://127.0.0.1:62341/ztmtijcoJrI=/</span><br><span class="line">For a more detailed <span class="built_in">help</span> message, press <span class="string">"h"</span>. To detach, press <span class="string">"d"</span>; to quit, press <span class="string">"q"</span>.</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190701160914331.png" alt="模拟器运行" title="">
+                </div>
+                <div class="image-caption">模拟器运行</div>
+            </figure>
+<h3 id="5-2-vm-报告"><a href="#5-2-vm-报告" class="headerlink" title="5.2 vm 报告"></a>5.2 vm 报告</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:62341/ztmtijcoJrI=/<span class="comment">#/vm</span></span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190701161106890.png" alt="vm" title="">
+                </div>
+                <div class="image-caption">vm</div>
+            </figure>
+<h2 id="6-部署到真机"><a href="#6-部署到真机" class="headerlink" title="6. 部署到真机"></a>6. 部署到真机</h2><h3 id="6-1-安装软件包"><a href="#6-1-安装软件包" class="headerlink" title="6.1 安装软件包"></a>6.1 安装软件包</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; brew update</span><br><span class="line"></span><br><span class="line">&gt; brew install --HEAD usbmuxd</span><br><span class="line">&gt; brew link usbmuxd</span><br><span class="line">&gt; brew install --HEAD libimobiledevice</span><br><span class="line">&gt; brew install ideviceinstaller ios-deploy cocoapods</span><br><span class="line">&gt; pod setup</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>安装 <a href="https://brew.sh/" target="_blank" rel="noopener">homebrew</a></p>
+</blockquote>
+<blockquote>
+<p>pod setup 很慢的问题</p>
+<ol>
+<li>手动下载 git clone <a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs</a></li>
+<li>替换 ~/.cocoapods/repos/master</li>
+<li>执行 pod update</li>
+</ol>
+</blockquote>
+<h3 id="6-2-配置AppStore开发者账号"><a href="#6-2-配置AppStore开发者账号" class="headerlink" title="6.2 配置AppStore开发者账号"></a>6.2 配置AppStore开发者账号</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open ios/Runner.xcworkspace</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190701161445927.png" alt="Add Account" title="">
+                </div>
+                <div class="image-caption">Add Account</div>
+            </figure>
+<blockquote>
+<p>开发者登录 <a href="https://developer.apple.com/cn/programs/" target="_blank" rel="noopener">https://developer.apple.com/cn/programs/</a></p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://flutter.dev/docs/get-started/install/macos" target="_blank" rel="noopener">Flutter SDK MacOS install</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/&title=《Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/&title=《Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境》 — duCafeCat&url=https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/06/20/flutter/flutter-04-setup-android-macos/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 零基础入门中文教学 - 04 配置 Android 开发环境</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/06/18/flutter/flutter-02-install-sdk-macos/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 零基础入门中文教学 - 02 安装 SDK MacOS</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'ducafecat-tech';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猫哥 &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/&title=《Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/&title=《Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境》 — duCafeCat&url=https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/06/19/flutter/flutter-03-setup-ios-macos/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqklEQVR42u3aMXLDMAwEQP//006TziP7ABCOMrOqMnFMclmQygGPR/w8X56r379++jpOPsvVyIcfPDw8vPHS3zOq4FdYskHV2S+3AA8PD2+Nd3WiJn+TLz2Z5eo6ydeDh4eHdzfe++l7l8FkE/Hw8PD+Iy9JA/JIYrIGPDw8vG/y8kB2MuX8eljMWvDw8PAWqkj3+XmlvoeHh4c3rqqfKkdVj+/5yL8j4OHh4S3w8gP3fWkqOY3zRq481IjWiYeHh3eUNyn8JyX/BJxcA83oBA8PD2+B14tEqxNPvlXNGcqRBB4eHt4hXnLcV8fJx6xeReX6Hh4eHt7XWweq1Gr4m5S+CmvDw8PDW+CdapnqxRNnr4dLCx4eHt4Cb17oypsAJgHupDyGh4eHN+edilnzaODUhRFtNB4eHt4CLw8OqgFBr3Vgnid8aB3Aw8PDO8Q7W8qqxq/5+M/gwcPDw/smb6/5qRpDzKtXzYXi4eHhtSrs8ymr4UJ+5UxWi4eHh3eKN4lT1+PXOG643Bo8PDy8NV61cSp5ka3GCtULIxoTDw8Pb4GXHLK9+CA/xJMX9OqGjqbHw8PDK/J6BbBeK1U+yyhKxsPDw1vjJUdz74W7UJqKn2ZlDw8PD2+Nl8cTSatotVkqGT8fEw8PD2+bVw0XeovoBRzVbcXDw8Pb5vWO3V7sm29HHj3g4eHh/RUvOmqLZf7msjZyCzw8PLxDsN5l0Ct3JRtaLZhdfoqHh4e3wOudsdUp82g4j3Sr7QV4eHh4Z3mnQofttoDqVuLh4eFt83oFp+QVtveCnm/ch+/i4eHh3YZX3YJk0XnUW2g7wMPDw7sBr/p6XW23qrZwHWgdwMPDw2vx8hffatg6eeGehxR4eHh4G7zeP/y9SCIpqiWXykp9Dw8PD+8z7wcLaZxxQfaAFwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

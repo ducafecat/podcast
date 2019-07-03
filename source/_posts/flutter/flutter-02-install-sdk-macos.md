@@ -32,7 +32,7 @@ categories: Flutter零基础入门中文教学
 ## 2. 配置环境变量
 
 ```sh
-> vi $HOME/.bash_profile
+> vi ~/.bash_profile
 
 # flutter
 export PATH="${PATH}:~/Documents/sdk/flutter/bin"
@@ -41,13 +41,13 @@ export PATH="${PATH}:~/Documents/sdk/flutter/bin"
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
-> source $HOME/.bash_profile
+> source ~/.bash_profile
 ```
 
 ## 3. zsh 用户修改配置文件
 
 ```sh
-> vi .zshrc
+> vi ~/.zshrc
 
 最后一行加入
 source ~/.bash_profile

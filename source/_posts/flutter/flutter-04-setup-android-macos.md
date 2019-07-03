@@ -1,5 +1,5 @@
 ---
-title: Flutter 零基础入门中文教学 - 04 配置 Android 开发环境
+title: Flutter 零基础入门中文教学 - 04 配置 Android 开发环境 MacOS
 date: 2019-06-20 00:00:00
 tags: flutter
 categories: Flutter零基础入门中文教学

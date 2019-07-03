@@ -1,5 +1,5 @@
 ---
-title: Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境
+title: Flutter 零基础入门中文教学 - 03 配置 IOS 开发环境 MacOS
 date: 2019-06-19 00:00:00
 tags: flutter
 categories: Flutter零基础入门中文教学

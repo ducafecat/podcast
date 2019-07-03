@@ -17,7 +17,7 @@ categories: Flutter零基础入门中文教学
 
 - [SDK包下载](https://flutter.dev/docs/development/tools/sdk/releases)
 
-> 解压到 /Documents/sdk/flutter
+> 解压到 ~/Documents/sdk/flutter
 
 ### 1.2 方式二：git 拉取源码
 
@@ -37,14 +37,25 @@ categories: Flutter零基础入门中文教学
 # flutter
 export PATH="${PATH}:~/Documents/sdk/flutter/bin"
 
-// 以下两行适合国内
+# 以下两行适合国内
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 > source $HOME/.bash_profile
 ```
 
-## 3. 编译 tool
+## 3. zsh 用户修改配置文件
+
+```sh
+> vi .zshrc
+
+最后一行加入
+source ~/.bash_profile
+
+重启终端生效
+```
+
+## 4. 命令行运行 flutter
 
 ```sh
 > flutter doctor
@@ -84,10 +95,7 @@ please let us know at https://github.com/flutter/flutter/issues.
 
 ![xcode-select --install](image-20190628153509349.png)
 
-
-
-## 4. 检查 doctor
-
+## 5. 检查环境 flutter doctor
 
 ```sh
 > flutter doctor
@@ -131,7 +139,7 @@ Doctor summary (to see all details, run flutter doctor -v):
 ! Doctor found issues in 6 categories.
 ```
 
-## 5. 查看版本 version
+## 6. 查看版本 version
 
 ```sh
 > flutter --version
@@ -139,17 +147,6 @@ Flutter 1.5.4-hotfix.2 • channel stable • https://github.com/flutter/flutter
 Framework • revision 7a4c33425d (9 weeks ago) • 2019-04-29 11:05:24 -0700
 Engine • revision 52c7a1e849
 Tools • Dart 2.3.0 (build 2.3.0-dev.0.5 a1668566e5)
-```
-
-## 6. zsh 用户修改配置文件
-
-```sh
-> vi .zshrc
-
-最后一行加入
-source ~/.bash_profile
-
-重启终端生效
 ```
 
 ## 参考

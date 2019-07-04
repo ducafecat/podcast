@@ -27,15 +27,23 @@ categories: Flutter零基础入门中文教学
 > git clone -b stable https://github.com/flutter/flutter.git
 ```
 
-> 推荐，下次更新直接 `git pull`
+### 1.3 持续升级
+
+下次更新直接进入目录升级
+
+```sh
+> cd ~/Documents/sdk/flutter
+> git pull
+> flutter --version
+```
 
 ## 2. 配置环境变量
 
 ```sh
 > vi ~/.bash_profile
 
-# flutter
-export PATH="${PATH}:~/Documents/sdk/flutter/bin"
+# flutter , 注意没有单引号
+export PATH=${PATH}:~/Documents/sdk/flutter/bin
 
 # 以下两行适合国内
 export PUB_HOSTED_URL=https://pub.flutter-io.cn

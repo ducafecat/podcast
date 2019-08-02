@@ -140,7 +140,7 @@ Skia由谷歌出资管理，任何人都可基于BSD免费软件许可证使用S
   - Android 环境配置 Windows10
   - 开发工具的选择 VSCode、IDEA、AndroidStudio
 
-- 快速上手
+- 实战应用
   - 新闻应用程序结构分析
   - 使用布局组件搭建新闻列表界面
   - 采用第三方 Http Dio 程序包读取数据

@@ -1,6 +1,6 @@
 ---
-title: Flutter 零基础入门中文教学 - 06 项目结构及配置文件
-date: 2019-08-01 00:00:00
+title: Flutter 零基础入门中文教学 - 07 项目结构及配置文件
+date: 2019-08-15 00:00:00
 tags: flutter
 categories: Flutter零基础入门中文教学
 ---
@@ -21,7 +21,7 @@ categories: Flutter零基础入门中文教学
 | android      | Android 项目     |
 | ios          | IOS 项目         |
 | test         | 测试目录         |
-| .idea        | IDEA编辑器配置   |
+| .idea        | IDEA 编辑器配置  |
 | pubspec.yaml | Flutter 配置文件 |
 | pubspec.lock | 包版本锁定       |
 | build        | 编译目录         |
@@ -42,7 +42,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^0.1.2
-  
+
   // 我加入了摄像头依赖包
   camera: ^0.5.2+2
 
@@ -325,8 +325,6 @@ COCOAPODS: 1.7.3
 ## Test 目录
 
 ![](image-20190802173326105.png)
-
-
 
 ---
 

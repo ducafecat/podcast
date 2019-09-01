@@ -1,5 +1,5 @@
 ---
-title: Flutter 零基础入门中文教学 - 07 项目结构及配置文件
+title: Flutter 零基础入门中文教学 - 07 了解项目结构及配置文件
 date: 2019-08-15 00:00:00
 tags: flutter
 categories: Flutter零基础入门中文教学

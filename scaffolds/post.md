@@ -1,6 +1,6 @@
 ---
-title: {{ title }}
-date: {{ date }}
+title: {{title}}
+date: {{date}}
 tags: flutter
 categories: Flutter移动开发
 ---
@@ -31,7 +31,7 @@ categories: Flutter移动开发
 
 ## 参考
 
-- []()
+- [widgets](https://flutter.dev/docs/development/ui/widgets)
 
 ---
 

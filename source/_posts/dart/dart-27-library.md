@@ -91,7 +91,7 @@ void main() {
 }
 ```
 
-> `hideo` 筛掉某几个包
+> `hide` 筛掉某几个包
 > `show` 只使用某几个包
 
 # 延迟载入
@@ -124,7 +124,7 @@ void main() async {
 - [language-tour](https://www.dartlang.org/guides/language/language-tour)
 - [包管理平台](https://pub.dartlang.org/)
 
-----
+---
 
 © 猫哥
 

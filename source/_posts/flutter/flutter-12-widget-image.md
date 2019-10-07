@@ -1,5 +1,5 @@
 ---
-title: Flutter 零基础入门中文教学 - 12 基础组件 Image
+title: Flutter 零基础入门中文教学 - 12 基础组件 Image Asset NetworkImage
 date: 2019-10-7 00:00:00
 tags: flutter
 categories: Flutter零基础入门中文教学
@@ -285,6 +285,8 @@ Image.asset(
 ```
 
 ## 代码
+
+https://github.com/ducafecat/flutter-learn/tree/master/image_widget
 
 ## 参考
 

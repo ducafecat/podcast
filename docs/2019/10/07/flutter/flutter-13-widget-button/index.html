@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 零基础入门中文教学 - 13 基础组件 Button FlatButton RaisedButton OutlineButton | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="本节目标常用按钮操作  FlatButton（扁平化） RaisedButton（有按下状态） OutlineButton（有边框） MaterialButton（Material 风格">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 零基础入门中文教学 - 13 基础组件 Button FlatButton RaisedButton OutlineButton">
+<meta property="og:url" content="https://ducafecat.tech/2019/10/07/flutter/flutter-13-widget-button/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标常用按钮操作  FlatButton（扁平化） RaisedButton（有按下状态） OutlineButton（有边框） MaterialButton（Material 风格">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ducafecat.tech/2019/10/07/flutter/flutter-13-widget-button/2019-10-07-17-06-41.png">
+<meta property="og:updated_time" content="2019-10-07T09:10:03.357Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 零基础入门中文教学 - 13 基础组件 Button FlatButton RaisedButton OutlineButton">
+<meta name="twitter:description" content="本节目标常用按钮操作  FlatButton（扁平化） RaisedButton（有按下状态） OutlineButton（有边框） MaterialButton（Material 风格">
+<meta name="twitter:image" content="https://ducafecat.tech/2019/10/07/flutter/flutter-13-widget-button/2019-10-07-17-06-41.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 零基础入门中文教学 - 13 基础组件 Button FlatButton RaisedButton OutlineButton</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 零基础入门中文教学 - 13 基础组件 Button FlatButton RaisedButton OutlineButton</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-06T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-10-07
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Button"><span class="post-toc-number">2.</span> <span class="post-toc-text">Button</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#示例"><span class="post-toc-number">3.</span> <span class="post-toc-text">示例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">4.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-flutter/flutter-13-widget-button"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter 零基础入门中文教学 - 13 基础组件 Button FlatButton RaisedButton OutlineButton</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-07 00:00:00" datetime="2019-10-06T16:00:00.000Z"  itemprop="datePublished">2019-10-07</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-10-07-17-06-41.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h2><p>常用按钮操作</p>
+<ul>
+<li>FlatButton（扁平化）</li>
+<li>RaisedButton（有按下状态）</li>
+<li>OutlineButton（有边框）</li>
+<li>MaterialButton（Material 风格）</li>
+<li>RawMaterialButton（没有应用 style 的 Material 风格按钮）</li>
+<li>FloatingActionButton（悬浮按钮）</li>
+</ul>
+<h2 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h2><p>在 Flutter 中 Button 有很多封装好的 Widget 类：</p>
+<ul>
+<li>FlatButton（扁平化）</li>
+<li>RaisedButton（有按下状态）</li>
+<li>OutlineButton（有边框）</li>
+<li>MaterialButton（Material 风格）</li>
+<li>RawMaterialButton（没有应用 style 的 Material 风格按钮）</li>
+<li>FloatingActionButton（悬浮按钮）</li>
+<li>BackButton（返回按钮）</li>
+<li>IconButton（Icon 图标）</li>
+<li>CloseButton（关闭按钮）</li>
+<li>ButtonBar（可以排列放置按钮元素的）</li>
+</ul>
+<p>其中大部分的 Button 都是基于 RawMaterialButton 进行的修改定制而成的。</p>
+<ul>
+<li>构造函数</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> FlatButton(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="comment">// 点击事件</span></span><br><span class="line">    <span class="meta">@required</span> VoidCallback onPressed,</span><br><span class="line">    <span class="comment">// 高亮改变，按下和抬起时都会调用的方法</span></span><br><span class="line">    ValueChanged&lt;<span class="built_in">bool</span>&gt; onHighlightChanged,</span><br><span class="line">    <span class="comment">// 定义按钮的基色，以及按钮的最小尺寸，内部填充和形状的默认值</span></span><br><span class="line">    ButtonTextTheme textTheme,</span><br><span class="line">    <span class="comment">// 按钮文字的颜色</span></span><br><span class="line">    Color textColor,</span><br><span class="line">    <span class="comment">// 按钮禁用时的文字颜色</span></span><br><span class="line">    Color disabledTextColor,</span><br><span class="line">    <span class="comment">// 按钮背景颜色</span></span><br><span class="line">    Color color,</span><br><span class="line">    <span class="comment">// 按钮禁用时的背景颜色</span></span><br><span class="line">    Color disabledColor,</span><br><span class="line">    <span class="comment">// 按钮按下时的背景颜色</span></span><br><span class="line">    Color highlightColor,</span><br><span class="line">    <span class="comment">// 点击时，水波动画中水波的颜色，不要水波纹效果设置透明颜色即可</span></span><br><span class="line">    Color splashColor,</span><br><span class="line">    <span class="comment">// 按钮主题，默认是浅色主题，分为深色和浅色</span></span><br><span class="line">    Brightness colorBrightness,</span><br><span class="line">    <span class="comment">// 按钮的填充间距</span></span><br><span class="line">    EdgeInsetsGeometry padding,</span><br><span class="line">    <span class="comment">// 外形</span></span><br><span class="line">    ShapeBorder shape,</span><br><span class="line">    Clip clipBehavior = Clip.none,</span><br><span class="line">    MaterialTapTargetSize materialTapTargetSize,</span><br><span class="line">    <span class="comment">// 按钮的内容，里面可以放子元素</span></span><br><span class="line">    <span class="meta">@required</span> Widget child,</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><ul>
+<li>后退、关闭</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ButtonBar(</span><br><span class="line">  children: &lt;Widget&gt;[</span><br><span class="line">    BackButton(</span><br><span class="line">      color: Colors.orange,</span><br><span class="line">    ),</span><br><span class="line">    CloseButton(),</span><br><span class="line">  ],</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<ul>
+<li>扁平按钮 FlatButton</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ButtonBar(</span><br><span class="line">  children: &lt;Widget&gt;[</span><br><span class="line">    FlatButton(</span><br><span class="line">      child: Text(<span class="string">'扁平按钮'</span>),</span><br><span class="line">      onPressed: () &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'我是扁平按钮'</span>);</span><br><span class="line">      &#125;,</span><br><span class="line">    ),</span><br><span class="line">    FlatButton(</span><br><span class="line">      child: Text(</span><br><span class="line">        <span class="string">'扁平按钮 禁用'</span>,</span><br><span class="line">      ),</span><br><span class="line">      onPressed: <span class="keyword">null</span>,</span><br><span class="line">    ),</span><br><span class="line">  ],</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<ul>
+<li>扁平带图标按钮 FlatButton.icon</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ButtonBar(</span><br><span class="line">  children: &lt;Widget&gt;[</span><br><span class="line">    FlatButton.icon(</span><br><span class="line">      label: Text(<span class="string">'带图标扁平按钮'</span>),</span><br><span class="line">      icon: Icon(Icons.add_call, size: <span class="number">18.0</span>),</span><br><span class="line">      onPressed: () &#123;&#125;,</span><br><span class="line">    ),</span><br><span class="line">    FlatButton.icon(</span><br><span class="line">      icon: <span class="keyword">const</span> Icon(Icons.add_call, size: <span class="number">18.0</span>),</span><br><span class="line">      label: <span class="keyword">const</span> Text(<span class="string">'带图标扁平按钮 禁用'</span>),</span><br><span class="line">      onPressed: <span class="keyword">null</span>,</span><br><span class="line">    ),</span><br><span class="line">  ],</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<ul>
+<li>带框按钮 OutlineButton</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ButtonBar(</span><br><span class="line">  children: &lt;Widget&gt;[</span><br><span class="line">    OutlineButton(</span><br><span class="line">      onPressed: () &#123;&#125;,</span><br><span class="line">      child: Text(<span class="string">'带框按钮'</span>),</span><br><span class="line">    ),</span><br><span class="line">    OutlineButton(</span><br><span class="line">      onPressed: <span class="keyword">null</span>,</span><br><span class="line">      child: Text(<span class="string">'带框按钮 禁用'</span>),</span><br><span class="line">    ),</span><br><span class="line">  ],</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<ul>
+<li>带框图标按钮 OutlineButton.icon</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ButtonBar(</span><br><span class="line">  children: &lt;Widget&gt;[</span><br><span class="line">    OutlineButton.icon(</span><br><span class="line">      label: Text(<span class="string">'带框图标按钮'</span>),</span><br><span class="line">      icon: Icon(Icons.add_to_photos, size: <span class="number">18.0</span>),</span><br><span class="line">      onPressed: () &#123;&#125;,</span><br><span class="line">    ),</span><br><span class="line">    OutlineButton.icon(</span><br><span class="line">      disabledTextColor: Colors.orange,</span><br><span class="line">      icon: Icon(Icons.add_to_photos, size: <span class="number">18.0</span>),</span><br><span class="line">      label: Text(<span class="string">'带框图标按钮 禁用'</span>),</span><br><span class="line">      onPressed: <span class="keyword">null</span>,</span><br><span class="line">    ),</span><br><span class="line">  ],</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<ul>
+<li>立体按钮 RaisedButton</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ButtonBar(</span><br><span class="line">  children: &lt;Widget&gt;[</span><br><span class="line">    RaisedButton(</span><br><span class="line">      child: Text(<span class="string">'立体按钮'</span>),</span><br><span class="line">      onPressed: () &#123;&#125;,</span><br><span class="line">    ),</span><br><span class="line">    RaisedButton(</span><br><span class="line">      child: Text(<span class="string">'立体按钮 禁用'</span>),</span><br><span class="line">      onPressed: <span class="keyword">null</span>,</span><br><span class="line">    ),</span><br><span class="line">  ],</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<ul>
+<li>立体按钮带图标 RaisedButton.icon</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ButtonBar(</span><br><span class="line">  children: &lt;Widget&gt;[</span><br><span class="line">    RaisedButton.icon(</span><br><span class="line">      icon: Icon(Icons.add, size: <span class="number">18.0</span>),</span><br><span class="line">      label: Text(<span class="string">'立体按钮带图标'</span>),</span><br><span class="line">      onPressed: () &#123;&#125;,</span><br><span class="line">    ),</span><br><span class="line">    RaisedButton.icon(</span><br><span class="line">      icon: Icon(Icons.add, size: <span class="number">18.0</span>),</span><br><span class="line">      label: Text(<span class="string">'立体按钮带图标 禁用'</span>),</span><br><span class="line">      onPressed: <span class="keyword">null</span>,</span><br><span class="line">    ),</span><br><span class="line">  ],</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Material 按钮 MaterialButton</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ButtonBar(</span><br><span class="line">  children: &lt;Widget&gt;[</span><br><span class="line">    MaterialButton(</span><br><span class="line">      child: Text(<span class="string">'Material按钮'</span>),</span><br><span class="line">      onPressed: () &#123;</span><br><span class="line">        <span class="comment">// Perform some action</span></span><br><span class="line">      &#125;,</span><br><span class="line">    ),</span><br><span class="line">    MaterialButton(</span><br><span class="line">      child: Text(<span class="string">'Material按钮 禁用'</span>),</span><br><span class="line">      onPressed: <span class="keyword">null</span>,</span><br><span class="line">    ),</span><br><span class="line">  ],</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<ul>
+<li>RawMaterial 按钮 RawMaterialButton</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ButtonBar(</span><br><span class="line">  children: &lt;Widget&gt;[</span><br><span class="line">    RawMaterialButton(</span><br><span class="line">      child: Text(<span class="string">'RawMaterial按钮'</span>),</span><br><span class="line">      onPressed: () &#123;</span><br><span class="line">        <span class="comment">// Perform some action</span></span><br><span class="line">      &#125;,</span><br><span class="line">    ),</span><br><span class="line">    RawMaterialButton(</span><br><span class="line">      child: Text(<span class="string">'RawMaterial按钮 禁用'</span>),</span><br><span class="line">      onPressed: <span class="keyword">null</span>,</span><br><span class="line">    ),</span><br><span class="line">  ],</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<ul>
+<li>浮动按钮 FloatingActionButton</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">ButtonBar(</span><br><span class="line">  children: &lt;Widget&gt;[</span><br><span class="line">    FloatingActionButton(</span><br><span class="line">      child: <span class="keyword">const</span> Icon(Icons.add),</span><br><span class="line">      heroTag: <span class="string">'浮动按钮'</span>,</span><br><span class="line">      onPressed: () &#123;</span><br><span class="line">        <span class="comment">// Perform some action</span></span><br><span class="line">      &#125;,</span><br><span class="line">      tooltip: <span class="string">'浮动按钮提示1'</span>,</span><br><span class="line">    ),</span><br><span class="line">    FloatingActionButton(</span><br><span class="line">      child: <span class="keyword">const</span> Icon(Icons.add),</span><br><span class="line">      onPressed: <span class="keyword">null</span>,</span><br><span class="line">      heroTag: <span class="string">'浮动按钮 禁用'</span>,</span><br><span class="line">      tooltip: <span class="string">'浮动按钮提示2'</span>,</span><br><span class="line">    ),</span><br><span class="line">  ],</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ducafecat/flutter-learn/blob/master/button_widget" target="_blank" rel="noopener">https://github.com/ducafecat/flutter-learn/blob/master/button_widget</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://api.flutter.dev/flutter/material/FlatButton-class.html" target="_blank" rel="noopener">FlatButton class</a></li>
+<li><a href="https://api.flutter.dev/flutter/material/RaisedButton-class.html" target="_blank" rel="noopener">RaisedButton class</a></li>
+<li><a href="https://api.flutter.dev/flutter/material/OutlineButton-class.html" target="_blank" rel="noopener">OutlineButton class</a></li>
+<li><a href="https://api.flutter.dev/flutter/material/MaterialButton-class.html" target="_blank" rel="noopener">MaterialButton class</a></li>
+<li><a href="https://api.flutter.dev/flutter/material/RawMaterialButton-class.html" target="_blank" rel="noopener">RawMaterialButton class</a></li>
+<li><a href="https://api.flutter.dev/flutter/material/FloatingActionButton-class.html" target="_blank" rel="noopener">FloatingActionButton class</a></li>
+<li><a href="https://api.flutter.dev/flutter/material/BackButton-class.html" target="_blank" rel="noopener">BackButton class</a></li>
+<li><a href="https://api.flutter.dev/flutter/material/IconButton-class.html" target="_blank" rel="noopener">IconButton class</a></li>
+<li><a href="https://api.flutter.dev/flutter/material/CloseButton-class.html" target="_blank" rel="noopener">CloseButton class</a></li>
+<li><a href="https://api.flutter.dev/flutter/material/ButtonBar-class.html" target="_blank" rel="noopener">ButtonBar class</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/10/07/flutter/flutter-13-widget-button/&title=《Flutter 零基础入门中文教学 - 13 基础组件 Button FlatButton RaisedButton OutlineButton》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/10/07/flutter/flutter-13-widget-button/&title=《Flutter 零基础入门中文教学 - 13 基础组件 Button FlatButton RaisedButton OutlineButton》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/10/07/flutter/flutter-13-widget-button/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 13 基础组件 Button FlatButton RaisedButton OutlineButton》 — duCafeCat&url=https://ducafecat.tech/2019/10/07/flutter/flutter-13-widget-button/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/10/07/flutter/flutter-13-widget-button/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/10/07/flutter/flutter-12-widget-image/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 零基础入门中文教学 - 12 基础组件 Image Asset NetworkImage</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'ducafecat-tech';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猫哥 &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/10/07/flutter/flutter-13-widget-button/&title=《Flutter 零基础入门中文教学 - 13 基础组件 Button FlatButton RaisedButton OutlineButton》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/10/07/flutter/flutter-13-widget-button/&title=《Flutter 零基础入门中文教学 - 13 基础组件 Button FlatButton RaisedButton OutlineButton》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/10/07/flutter/flutter-13-widget-button/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 13 基础组件 Button FlatButton RaisedButton OutlineButton》 — duCafeCat&url=https://ducafecat.tech/2019/10/07/flutter/flutter-13-widget-button/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/10/07/flutter/flutter-13-widget-button/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuUlEQVR42u3aUW4qMRAEwNz/0sn3UwR0z9iEJ9V+ocDaLiKthx5/fcXX96/r0bvJOM/vTV4fvvDw8PDWS3805fOJn0+f3Jt8ie1deHh4ePd4+YKeP3tn784+mWw8eHh4eJ/Ge/FQjh/r+Sx4eHh4/yMvDyZm4cUmmMDDw8N7Jy8JI2aBbLvctvg+lrXg4eHhxby8i/Q5r6/09/Dw8PDWXfWkGTaLEvK/by48PDy8G7z8gZsfKTgVv7ZHEx5+Eg8PD+8ob3a8aXOwII85ZtvGP2Pi4eHhXeDNjgK0mLawzkOHOsDFw8PDu8DLH835EmcleDLmsAGGh4eHt+a1wyUldX6MYNb6KjYSPDw8vKO8dhGzmKAtypMSPPrH4OHh4V3g3TgKMFvKqRBkuO/h4eHhxbx80HwzmB20yo8IFA0zPDw8vLfwWvBs+rbdNZsRDw8P7zYvCUlnZfTm3TwWWZ0pw8PDw4t5Segwa/+3BwtmMUTRBsPDw8M7ymt/5CeP7DxcaHPX4V14eHh4h+5qQ4HZovMNo733xaaFh4eH90e8NmbdbCT50qMx8fDw8N7I2x+fakPhTZT88O94eHh4l3mztlMets7CjtW2hIeHh3eBNyudk8VtYotNGFEMgYeHh7fgbY6T5iV1flgqKbWLg7Z4eHh4l3ntxpBvG8kWkscNeUGPh4eHd483K1jz6DYJMtoyPdrM8PDw8K7x8tI2n2z2yTYiidpgeHh4eId43+V1quRNWmV5w+zFoSs8PDy8o7z2gZtPMDuqNQss9g02PDw8vFO99WFsGn9NbVicfLl1YY2Hh4e34M2maaPeZGM4eyQLDw8P79N4CXvTTps12KIkGA8PD++NvPyuNqRIRmhbaHh4eHj3eLPGf1t852V3XkZHGwMeHh7eUV77g3829KzZvy/T8fDw8I7yfgCJQ+QpzDiaqwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

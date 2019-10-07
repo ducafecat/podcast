@@ -1,5 +1,5 @@
 ---
-title: Flutter 零基础入门中文教学 - 11 基础组件 Text
+title: Flutter 零基础入门中文教学 - 11 基础组件 Text RichText TextSpan
 date: 2019-10-6 00:00:00
 tags: flutter
 categories: Flutter零基础入门中文教学

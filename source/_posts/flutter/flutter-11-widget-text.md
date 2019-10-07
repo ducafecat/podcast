@@ -7,6 +7,8 @@ categories: Flutter零基础入门中文教学
 
 ## 本节目标
 
+![](2019-10-07-15-12-06.png)
+
 - Text 构造参数
 - TextStyle 样式构造参数
 - Text.rich、RichText、TextSpan 处理复杂字符显示

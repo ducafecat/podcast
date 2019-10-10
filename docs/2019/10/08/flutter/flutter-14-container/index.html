@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 零基础入门中文教学 - 14 基础组件 Container | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="本节目标 基础用法 Padding 和 Margin BoxDecoration 装饰  基础用法Container 是一个组合类容器，它本身不对应具体的 RenderObject，它是 DecoratedBox、ConstrainedBox、Transform、Padding、Align 等组件组合的一个多功能容器，所以我们只需通过一个 Container 组件可以实现同时需要装饰、变换、限制的">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 零基础入门中文教学 - 14 基础组件 Container">
+<meta property="og:url" content="https://ducafecat.tech/2019/10/08/flutter/flutter-14-container/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 基础用法 Padding 和 Margin BoxDecoration 装饰  基础用法Container 是一个组合类容器，它本身不对应具体的 RenderObject，它是 DecoratedBox、ConstrainedBox、Transform、Padding、Align 等组件组合的一个多功能容器，所以我们只需通过一个 Container 组件可以实现同时需要装饰、变换、限制的">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-10T06:19:16.345Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 零基础入门中文教学 - 14 基础组件 Container">
+<meta name="twitter:description" content="本节目标 基础用法 Padding 和 Margin BoxDecoration 装饰  基础用法Container 是一个组合类容器，它本身不对应具体的 RenderObject，它是 DecoratedBox、ConstrainedBox、Transform、Padding、Align 等组件组合的一个多功能容器，所以我们只需通过一个 Container 组件可以实现同时需要装饰、变换、限制的">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 零基础入门中文教学 - 14 基础组件 Container</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 零基础入门中文教学 - 14 基础组件 Container</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-07T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-10-08
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础用法"><span class="post-toc-number">2.</span> <span class="post-toc-text">基础用法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#BoxDecoration-装饰"><span class="post-toc-number">3.</span> <span class="post-toc-text">BoxDecoration 装饰</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#示例"><span class="post-toc-number">4.</span> <span class="post-toc-text">示例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">5.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">6.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-flutter/flutter-14-container"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter 零基础入门中文教学 - 14 基础组件 Container</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-08 00:00:00" datetime="2019-10-07T16:00:00.000Z"  itemprop="datePublished">2019-10-08</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h2><ul>
+<li>基础用法</li>
+<li>Padding 和 Margin</li>
+<li>BoxDecoration 装饰</li>
+</ul>
+<h2 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h2><p>Container 是一个组合类容器，它本身不对应具体的 RenderObject，它是 DecoratedBox、ConstrainedBox、Transform、Padding、Align 等组件组合的一个多功能容器，所以我们只需通过一个 Container 组件可以实现同时需要装饰、变换、限制的场景。下面是 Container 的定义：</p>
+<ul>
+<li>构造函数</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Container(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="comment">// 容器子Widget对齐方式</span></span><br><span class="line">    <span class="keyword">this</span>.alignment,</span><br><span class="line">    <span class="comment">// 容器内部padding</span></span><br><span class="line">    <span class="keyword">this</span>.padding,</span><br><span class="line">    <span class="comment">// 背景色</span></span><br><span class="line">    Color color,</span><br><span class="line">    <span class="comment">// 背景装饰</span></span><br><span class="line">    Decoration decoration,</span><br><span class="line">    <span class="comment">// 前景装饰</span></span><br><span class="line">    <span class="keyword">this</span>.foregroundDecoration,</span><br><span class="line">    <span class="comment">// 容器的宽度</span></span><br><span class="line">    <span class="built_in">double</span> width,</span><br><span class="line">    <span class="comment">// 容器的高度</span></span><br><span class="line">    <span class="built_in">double</span> height,</span><br><span class="line">    <span class="comment">// 容器大小的限制条件</span></span><br><span class="line">    BoxConstraints constraints,</span><br><span class="line">    <span class="comment">// 容器外部margin</span></span><br><span class="line">    <span class="keyword">this</span>.margin,</span><br><span class="line">    <span class="comment">// 变换，如旋转</span></span><br><span class="line">    <span class="keyword">this</span>.transform,</span><br><span class="line">    <span class="comment">// 容器内子Widget</span></span><br><span class="line">    <span class="keyword">this</span>.child,</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="BoxDecoration-装饰"><a href="#BoxDecoration-装饰" class="headerlink" title="BoxDecoration 装饰"></a>BoxDecoration 装饰</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> BoxDecoration(&#123;</span><br><span class="line">  <span class="comment">// 背景色</span></span><br><span class="line">  <span class="keyword">this</span>.color,</span><br><span class="line">  <span class="comment">// 背景图片</span></span><br><span class="line">  <span class="keyword">this</span>.image,</span><br><span class="line">  <span class="comment">// 边框样式</span></span><br><span class="line">  <span class="keyword">this</span>.border,</span><br><span class="line">  <span class="comment">// 边框圆角</span></span><br><span class="line">  <span class="keyword">this</span>.borderRadius,</span><br><span class="line">  <span class="comment">// 阴影</span></span><br><span class="line">  <span class="keyword">this</span>.boxShadow,</span><br><span class="line">  <span class="comment">// 渐变</span></span><br><span class="line">  <span class="keyword">this</span>.gradient,</span><br><span class="line">  <span class="comment">// 背景混合模式</span></span><br><span class="line">  <span class="keyword">this</span>.backgroundBlendMode,</span><br><span class="line">  <span class="comment">// 形状</span></span><br><span class="line">  <span class="keyword">this</span>.shape = BoxShape.rectangle,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">Container(</span><br><span class="line">    constraints: BoxConstraints.expand(</span><br><span class="line">      height: <span class="number">200.0</span>,</span><br><span class="line">    ),</span><br><span class="line">    margin: <span class="keyword">const</span> EdgeInsets.all(<span class="number">20.0</span>),</span><br><span class="line">    padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">8.0</span>),</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 背景色</span></span><br><span class="line">    <span class="comment">// color: Colors.teal.shade700,</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 子Widget居中</span></span><br><span class="line">    alignment: Alignment.centerLeft,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 子Widget元素</span></span><br><span class="line">    child: Text(<span class="string">'Hello World'</span>,</span><br><span class="line">        style: Theme.of(context)</span><br><span class="line">            .textTheme</span><br><span class="line">            .display1</span><br><span class="line">            .copyWith(color: Colors.white)),</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 背景装饰</span></span><br><span class="line">    decoration: BoxDecoration(</span><br><span class="line">      <span class="comment">// 背景色</span></span><br><span class="line">      color: Colors.blueAccent,</span><br><span class="line">      <span class="comment">// 圆角</span></span><br><span class="line">      <span class="comment">// borderRadius: BorderRadius.all(</span></span><br><span class="line">      <span class="comment">//   Radius.circular(20.0),</span></span><br><span class="line">      <span class="comment">// ),</span></span><br><span class="line">      <span class="comment">// 渐变</span></span><br><span class="line">      gradient: RadialGradient(</span><br><span class="line">        colors: [Colors.red, Colors.orange],</span><br><span class="line">        center: Alignment.topLeft,</span><br><span class="line">        radius: <span class="number">.98</span>,</span><br><span class="line">      ),</span><br><span class="line">      <span class="comment">// 阴影</span></span><br><span class="line">      boxShadow: [</span><br><span class="line">        BoxShadow(</span><br><span class="line">          blurRadius: <span class="number">2</span>,</span><br><span class="line">          offset: Offset(<span class="number">0</span>, <span class="number">2</span>),</span><br><span class="line">          color: Colors.blue,</span><br><span class="line">        ),</span><br><span class="line">      ],</span><br><span class="line">      <span class="comment">// 背景图</span></span><br><span class="line">      <span class="comment">// image: DecorationImage(</span></span><br><span class="line">      <span class="comment">//   image: AssetImage('assets/flutter.png'),</span></span><br><span class="line">      <span class="comment">//   fit: BoxFit.cover,</span></span><br><span class="line">      <span class="comment">// ),</span></span><br><span class="line">      <span class="comment">// 背景混合模式</span></span><br><span class="line">      backgroundBlendMode: BlendMode.color,</span><br><span class="line">      <span class="comment">// 形状</span></span><br><span class="line">      shape: BoxShape.circle,</span><br><span class="line">    ),</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 前景装饰</span></span><br><span class="line">    <span class="comment">// foregroundDecoration: BoxDecoration(</span></span><br><span class="line">    <span class="comment">//   image: DecorationImage(</span></span><br><span class="line">    <span class="comment">//     image: AssetImage('assets/flutter.png'),</span></span><br><span class="line">    <span class="comment">//   ),</span></span><br><span class="line">    <span class="comment">// ),</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Container旋转</span></span><br><span class="line">    <span class="comment">// transform: Matrix4.rotationZ(0.1),</span></span><br><span class="line">  ),</span><br></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ducafecat/flutter-learn/blob/master/container_widget" target="_blank" rel="noopener">https://github.com/ducafecat/flutter-learn/blob/master/container_widget</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://api.flutter.dev/flutter/widgets/Container-class.html" target="_blank" rel="noopener">Container class</a></li>
+<li><a href="https://api.flutter.dev/flutter/painting/BoxDecoration-class.html" target="_blank" rel="noopener">BoxDecoration class</a></li>
+<li><a href="https://api.flutter.dev/flutter/painting/RadialGradient-class.html" target="_blank" rel="noopener">RadialGradient class</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/10/08/flutter/flutter-14-container/&title=《Flutter 零基础入门中文教学 - 14 基础组件 Container》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/10/08/flutter/flutter-14-container/&title=《Flutter 零基础入门中文教学 - 14 基础组件 Container》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/10/08/flutter/flutter-14-container/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 14 基础组件 Container》 — duCafeCat&url=https://ducafecat.tech/2019/10/08/flutter/flutter-14-container/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/10/08/flutter/flutter-14-container/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/10/07/flutter/flutter-13-widget-button/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 零基础入门中文教学 - 13 基础组件 Button FlatButton RaisedButton OutlineButton</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'ducafecat-tech';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猫哥 &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/10/08/flutter/flutter-14-container/&title=《Flutter 零基础入门中文教学 - 14 基础组件 Container》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/10/08/flutter/flutter-14-container/&title=《Flutter 零基础入门中文教学 - 14 基础组件 Container》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/10/08/flutter/flutter-14-container/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 14 基础组件 Container》 — duCafeCat&url=https://ducafecat.tech/2019/10/08/flutter/flutter-14-container/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/10/08/flutter/flutter-14-container/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3aQY4iMRAEQP7/6d3rSKOGzCp7drSKPqEGTIcPdpHl1yu+/ny5vt95up7GeX//aZyn7x648PDw8BaP/n7opx/bv04maPYtPDw8vHu8ZLHO1+H3m0qy5bSfebyPh4eH9wt4yetTmwEeHh7e/8HbFOLJVtFOMR4eHt6/4iUP2pa87f1kUi5mLXh4eHhd1fraL9A/+fpKfw8PDw9v3VVvC+XN+LMN4MOYeHh4eBd4+YKbl8ibiciPfBWfxMPDw/txXtKaSqLVdoKSCDiJNvDw8PDO8tpFfIbJw9n8zvvfeuXZMB4eHt6Ilx+NSiZl1txKHrdugOHh4eFd4+3/8LeHCfKJSLaKx2fGw8PDu8CrI9FRxNCGtpujVwUYDw8Pb8Q7FRC0xXdyf3MsrJghPDw8vBEv/9qsTbXZbFZhLh4eHt41Xj5Q3uhqi+/8EENyvy6p8fDw8Ea8/JBTGxYk77ZBcHHoCg8PD+8ob9MtmpW8eUjRbgmbIAMPDw9vf4CgLYXzxX0WecyKezw8PLx7vLbAnTWx8mJ9doDgw4Ti4eHhXePNmlt50dw2utqNCg8PD+82b9P6Sn4yj25n4W996AoPDw/vAq8drg0L2sMHszDicWPAw8PDW/Patv3sONSq87bYKvDw8PDu8e5FEsmYeZttNgIeHh7eDV6+sCYRaj5NZ49YRYcG8PDw8C7z2rZWS61jhdnE4eHh4V3mbcrZGXIWcxThBR4eHt5R3u2AYNNUyxtmj+/i4eHhXeC1S23b4H8/EbOAY9UAw8PDwzvE20SumyB4ExYXGw8eHh7eNd6m4dQ+bh4H749k4eHh4f0GXtsw2xffyeQe2xjw8PDwrvHyBX0WBOd5wocAFw8PD+8ab1P4tgezZlHFbLrx8PDwbvAO/OEvH24W6bZlOh4eHt4F3l8TGrtgmBJRDgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

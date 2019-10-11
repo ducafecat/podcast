@@ -10,6 +10,8 @@ categories: Flutter零基础入门中文教学
 - 基础用法
 - Padding 和 Margin
 - BoxDecoration 装饰
+- BoxShadow 阴影
+- RadialGradient 渐变
 
 ## 基础用法
 

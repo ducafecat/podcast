@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 零基础入门中文教学 - 16 基础组件 Row Column | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="本节目标 Row 行组件 Column 列组件 mainAxisAlignment 主轴 crossAxisAlignment 交叉轴 textDirection 排列方向 verticalDirection 交叉轴起始位置  RowRow 布局组件类似于 Android 中的 LinearLayout 线性布局，它用来做水平横向布局使用，里面的 children 子元素按照水平方向进行排列。">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 零基础入门中文教学 - 16 基础组件 Row Column">
+<meta property="og:url" content="https://ducafecat.tech/2019/10/10/flutter/flutter-16-row-column/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 Row 行组件 Column 列组件 mainAxisAlignment 主轴 crossAxisAlignment 交叉轴 textDirection 排列方向 verticalDirection 交叉轴起始位置  RowRow 布局组件类似于 Android 中的 LinearLayout 线性布局，它用来做水平横向布局使用，里面的 children 子元素按照水平方向进行排列。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-11T08:52:27.712Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 零基础入门中文教学 - 16 基础组件 Row Column">
+<meta name="twitter:description" content="本节目标 Row 行组件 Column 列组件 mainAxisAlignment 主轴 crossAxisAlignment 交叉轴 textDirection 排列方向 verticalDirection 交叉轴起始位置  RowRow 布局组件类似于 Android 中的 LinearLayout 线性布局，它用来做水平横向布局使用，里面的 children 子元素按照水平方向进行排列。">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 零基础入门中文教学 - 16 基础组件 Row Column</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 零基础入门中文教学 - 16 基础组件 Row Column</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-09T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-10-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Row"><span class="post-toc-number">2.</span> <span class="post-toc-text">Row</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Column"><span class="post-toc-number">3.</span> <span class="post-toc-text">Column</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子"><span class="post-toc-number">4.</span> <span class="post-toc-text">例子</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">5.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">6.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-flutter/flutter-16-row-column"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter 零基础入门中文教学 - 16 基础组件 Row Column</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-10 00:00:00" datetime="2019-10-09T16:00:00.000Z"  itemprop="datePublished">2019-10-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h2><ul>
+<li>Row 行组件</li>
+<li>Column 列组件</li>
+<li>mainAxisAlignment 主轴</li>
+<li>crossAxisAlignment 交叉轴</li>
+<li>textDirection 排列方向</li>
+<li>verticalDirection 交叉轴起始位置</li>
+</ul>
+<h2 id="Row"><a href="#Row" class="headerlink" title="Row"></a>Row</h2><p>Row 布局组件类似于 Android 中的 LinearLayout 线性布局，它用来做水平横向布局使用，里面的 children 子元素按照水平方向进行排列。</p>
+<ul>
+<li>构造</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Row(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="comment">// 主轴方向上的对齐方式（Row的主轴是横向轴）</span></span><br><span class="line">    MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,</span><br><span class="line">    <span class="comment">// 在主轴方向（Row的主轴是横向轴）占有空间的值，默认是max</span></span><br><span class="line">    MainAxisSize mainAxisSize = MainAxisSize.max,</span><br><span class="line">    <span class="comment">// 在交叉轴方向(Row是纵向轴)的对齐方式，Row的高度等于子元素中最高的子元素高度</span></span><br><span class="line">    CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,</span><br><span class="line">    <span class="comment">// 水平方向子元素的排列方向：从左到右排列还是反向</span></span><br><span class="line">    TextDirection textDirection,</span><br><span class="line">    <span class="comment">// 表示纵轴（垂直）的对齐排列方向，默认是VerticalDirection.down，表示从上到下。这个参数一般用于Column组件里</span></span><br><span class="line">    VerticalDirection verticalDirection = VerticalDirection.down,</span><br><span class="line">    <span class="comment">// 字符对齐基线方式</span></span><br><span class="line">    TextBaseline textBaseline,</span><br><span class="line">    <span class="comment">// 子元素集合</span></span><br><span class="line">    <span class="built_in">List</span>&lt;Widget&gt; children = <span class="keyword">const</span> &lt;Widget&gt;[],</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>MainAxisAlignment</li>
+</ul>
+<p>主轴属性：主轴方向上的对齐方式，Row 是横向轴为主轴</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> MainAxisAlignment &#123;</span><br><span class="line">  <span class="comment">// 按照主轴起点对齐，例如：按照靠近最左侧子元素对齐</span></span><br><span class="line">  start,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将子元素放置在主轴的末尾，按照末尾对齐</span></span><br><span class="line">  end,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 子元素放置在主轴中心对齐</span></span><br><span class="line">  center,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将主轴方向上的空白区域均分，使得子元素之间的空白区域相等，首尾子元素都靠近首尾，没有间隙。有点类似于两端对齐</span></span><br><span class="line">  spaceBetween,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将主轴方向上的空白区域均分，使得子元素之间的空白区域相等，但是首尾子元素的空白区域为1/2</span></span><br><span class="line">  spaceAround,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将主轴方向上的空白区域均分，使得子元素之间的空白区域相等，包括首尾子元素</span></span><br><span class="line">  spaceEvenly,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>CrossAxisAlignment</li>
+</ul>
+<p>交叉属性：在交叉轴方向的对齐方式，Row 是纵向轴。Row 的高度等于子元素中最高的子元素高度</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> CrossAxisAlignment &#123;</span><br><span class="line">  <span class="comment">// 子元素在交叉轴上起点处展示</span></span><br><span class="line">  start,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 子元素在交叉轴上末尾处展示</span></span><br><span class="line">  end,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 子元素在交叉轴上居中展示</span></span><br><span class="line">  center,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 让子元素填满交叉轴方向</span></span><br><span class="line">  stretch,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 在交叉轴方向，使得子元素按照baseline对齐</span></span><br><span class="line">  baseline,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>MainAxisSize</li>
+</ul>
+<p>在主轴方向子元素占有空间的方式，Row 的主轴是横向轴。默认是 max</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> MainAxisSize &#123;</span><br><span class="line">  <span class="comment">// 根据传入的布局约束条件，最大化主轴方向占用可用空间，也就是尽可能充满可用宽度</span></span><br><span class="line">  max,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 与max相反，是最小化占用主轴方向的可用空间</span></span><br><span class="line">  min,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Column"><a href="#Column" class="headerlink" title="Column"></a>Column</h2><p>Column 是纵向排列子元素</p>
+<p>参数用法同上</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Row 行组件</span></span><br><span class="line">Widget _buildRow() &#123;</span><br><span class="line">  <span class="keyword">return</span> Row(</span><br><span class="line">    mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">    verticalDirection: VerticalDirection.up,</span><br><span class="line">    textBaseline: TextBaseline.ideographic,</span><br><span class="line">    children: &lt;Widget&gt;[</span><br><span class="line">      RaisedButton(</span><br><span class="line">        color: Colors.blue,</span><br><span class="line">        child: Text(<span class="string">'按钮1'</span>),</span><br><span class="line">        onPressed: () &#123;&#125;,</span><br><span class="line">      ),</span><br><span class="line">      RaisedButton(</span><br><span class="line">        color: Colors.grey,</span><br><span class="line">        child: Text(<span class="string">'按钮2'</span>),</span><br><span class="line">        onPressed: () &#123;&#125;,</span><br><span class="line">      ),</span><br><span class="line">      RaisedButton(</span><br><span class="line">        color: Colors.orange,</span><br><span class="line">        child: Text(<span class="string">'按钮3'</span>),</span><br><span class="line">        onPressed: () &#123;&#125;,</span><br><span class="line">      ),</span><br><span class="line">    ],</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Column 列组件</span></span><br><span class="line">Widget _buildColumn() &#123;</span><br><span class="line">  <span class="keyword">return</span> Column(</span><br><span class="line">    mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">    children: &lt;Widget&gt;[</span><br><span class="line">      RaisedButton(</span><br><span class="line">        color: Colors.blue,</span><br><span class="line">        child: Text(<span class="string">'按钮1'</span>),</span><br><span class="line">        onPressed: () &#123;&#125;,</span><br><span class="line">      ),</span><br><span class="line">      RaisedButton(</span><br><span class="line">        color: Colors.grey,</span><br><span class="line">        child: Text(<span class="string">'按钮2'</span>),</span><br><span class="line">        onPressed: () &#123;&#125;,</span><br><span class="line">      ),</span><br><span class="line">      RaisedButton(</span><br><span class="line">        color: Colors.orange,</span><br><span class="line">        child: Text(<span class="string">'按钮3'</span>),</span><br><span class="line">        onPressed: () &#123;&#125;,</span><br><span class="line">      ),</span><br><span class="line">    ],</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Row Column 组件嵌套</span></span><br><span class="line">Widget _buildRowColumn() &#123;</span><br><span class="line">  <span class="keyword">return</span> Column(</span><br><span class="line">    mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">    <span class="comment">// crossAxisAlignment: CrossAxisAlignment.center,</span></span><br><span class="line">    children: &lt;Widget&gt;[</span><br><span class="line">      Row(</span><br><span class="line">        <span class="comment">// 元素排列顺序</span></span><br><span class="line">        textDirection: TextDirection.rtl,</span><br><span class="line">        <span class="comment">// 主轴方向</span></span><br><span class="line">        mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">        <span class="comment">// 交叉轴的起始位置</span></span><br><span class="line">        verticalDirection: VerticalDirection.up,</span><br><span class="line">        <span class="comment">// 交叉轴对齐方式</span></span><br><span class="line">        crossAxisAlignment: CrossAxisAlignment.end,</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">          RaisedButton(</span><br><span class="line">            color: Colors.blue,</span><br><span class="line">            child: Text(<span class="string">'按钮1'</span>),</span><br><span class="line">            onPressed: () &#123;&#125;,</span><br><span class="line">          ),</span><br><span class="line">          RaisedButton(</span><br><span class="line">            color: Colors.blue,</span><br><span class="line">            child: Text(<span class="string">'按钮2222222'</span>),</span><br><span class="line">            onPressed: () &#123;&#125;,</span><br><span class="line">          ),</span><br><span class="line">          Container(</span><br><span class="line">            width: <span class="number">100</span>,</span><br><span class="line">            height: <span class="number">100</span>,</span><br><span class="line">            color: Colors.yellow,</span><br><span class="line">          )</span><br><span class="line">        ],</span><br><span class="line">      )</span><br><span class="line">    ],</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> MaterialApp(</span><br><span class="line">  title: <span class="string">'Material App'</span>,</span><br><span class="line">  home: Scaffold(</span><br><span class="line">    appBar: AppBar(</span><br><span class="line">      title: Text(<span class="string">'Material App Bar'</span>),</span><br><span class="line">    ),</span><br><span class="line">    body:</span><br><span class="line">        <span class="comment">//_buildRow(),</span></span><br><span class="line">        <span class="comment">// _buildColumn(),</span></span><br><span class="line">        _buildRowColumn(),</span><br><span class="line">  ),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ducafecat/flutter-learn/blob/master/row_column_widget" target="_blank" rel="noopener">https://github.com/ducafecat/flutter-learn/blob/master/row_column_widget</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://api.flutter.dev/flutter/widgets/Row-class.html" target="_blank" rel="noopener">Row class</a></li>
+<li><a href="https://api.flutter.dev/flutter/widgets/Column-class.html" target="_blank" rel="noopener">Column class</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/10/10/flutter/flutter-16-row-column/&title=《Flutter 零基础入门中文教学 - 16 基础组件 Row Column》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/10/10/flutter/flutter-16-row-column/&title=《Flutter 零基础入门中文教学 - 16 基础组件 Row Column》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/10/10/flutter/flutter-16-row-column/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 16 基础组件 Row Column》 — duCafeCat&url=https://ducafecat.tech/2019/10/10/flutter/flutter-16-row-column/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/10/10/flutter/flutter-16-row-column/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/10/11/flutter/flutter-17-flex-expanded/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 零基础入门中文教学 - 17 基础组件 Fex Expanded</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/10/09/flutter/flutter-15-scaffold/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 零基础入门中文教学 - 15 基础组件 MaterialApp Scaffold</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'ducafecat-tech';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猫哥 &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/10/10/flutter/flutter-16-row-column/&title=《Flutter 零基础入门中文教学 - 16 基础组件 Row Column》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/10/10/flutter/flutter-16-row-column/&title=《Flutter 零基础入门中文教学 - 16 基础组件 Row Column》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/10/10/flutter/flutter-16-row-column/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 16 基础组件 Row Column》 — duCafeCat&url=https://ducafecat.tech/2019/10/10/flutter/flutter-16-row-column/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/10/10/flutter/flutter-16-row-column/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3awU4kMQwE0Pn/n969LkIDVXbSsNKbE4Km268PScbl1yv+/Pnn8/k3n//69R2S+7y78nXjg4eHh7coPS9i/4LeFZ1cmdSMh4eHd5v3rqBT1yTLff5ak3rw8PDwfg8vKa49OucvCA8PD+9/5+VNh+SJ+xrw8PDwnuS1S3aOzNu4LfVwrwUPDw8v5p1aoJ/8+Uq+h4eHh7dO1duxgKSg2d1mHzw8PLwbvHzB3URT+6GE9tiNh4eH9wwvKWsWU81GEPKqvnkKHh4e3jXeptk6a8Im20bbbXjN3hweHh5eyWv7n/kD9uHWlQAMDw8Pb8FLFuvkcNyObe2bFFEwhoeHh3eZ1x5V29JnMVi7PXy4Bg8PD+8Cr11q27GAfDsZthXyhggeHh7eIV67QLdxVDsgNdtOvmlG4OHh4V3mbSKofJhgtujn8duHbwx4eHh4D/LaY25O3QRsxdAVHh4e3gXebLFu2xB5lLVpQNQxGB4eHt6CFx1Py1ZFPpSQDxPM2iV4eHh4Z3n5wbRtBMzisdlLf3tPPDw8vGu82eOTECsvqC09Cs/w8PDwrvH2I1abJm8Sks22KDw8PLxneHlD9lQrtt02ihYGHh4e3mVeshznw1X50r8Zw4qSPTw8PLxHUvXZqFPyUtqQbDOGhYeHh3ePlx+R99F+fnCfNUdW0xB4eHh4Ja+NsvKCNuNTs40BDw8P7xne7Mi7v8PX7LZVgYeHh3ebN2s65Et2fqTeDytEARgeHh7emtcuuMmWMGs65Pc/FaHh4eHhbXj5ZtD+16x9sAnG6oM1Hh4e3oJ3LHCKx602TYciwMPDw8P7Nby8uFNbTj4iFhWHh4eH90O8pK2QH7hnx/dvWrd4eHh413ib0CsvNx/Syl93tDHg4eHhHeUd+MJfBv8JZtNixsPDw7vG+wt72XOovpvklAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

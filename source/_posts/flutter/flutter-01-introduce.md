@@ -140,7 +140,18 @@ Skia由谷歌出资管理，任何人都可基于BSD免费软件许可证使用S
   - Android 环境配置 Windows10
   - 开发工具的选择 VSCode、IDEA、AndroidStudio
 
-- 实战应用
+- 基础知识
+  - 项目及配置文件介绍
+  - 开发规范
+  - 一切都是 widget
+  - StatelessWidget、StatefulWidget
+  - 框架组件 MaterialApp、Scaffold
+  - 布局组件 Container、Center、Row、Column
+  - 基础组件 Text、Image、Button
+  - 路由导航 Routes、Navigator
+  - 生命周期
+
+- 快熟上手实战
   - 新闻应用程序结构分析
   - 使用布局组件搭建新闻列表界面
   - 采用第三方 Http Dio 程序包读取数据
@@ -156,14 +167,6 @@ Skia由谷歌出资管理，任何人都可基于BSD免费软件许可证使用S
   - 加入应用启动画面
   - 打包 Android APK 文件
   - 打包 IOS IPA 文件
-
-- 基础知识
-  - Route 路由导航
-  - 包管理
-  - 资源管理
-  - 调试工具
-  - 线程模型和异常处理
-  - 生命周期
 
 - 基础组件
   - Widget 与 Element

@@ -141,6 +141,115 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-dart/dart-29-async"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-05 15:51:09" datetime="2018-12-05T07:51:09.000Z"  itemprop="datePublished">2018-12-05</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/05/dart/dart-29-async/">Dart语言学习 - 29 异步 async</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        本节目标
+调用异步 等待、递归
+异步返回值
+
+环境
+Dart 2.1.0
+
+调用异步 回调12345678import 'package:dio/dio.dart';void main() &#123;  Dio dio = new Dio();  dio.get("https://www.baidu.com").then((response) &#123;    print(respons...
+    
+
+        <a href="/2018/12/05/dart/dart-29-async/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-dart/dart-28-generic"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-05 11:30:26" datetime="2018-12-05T03:30:26.000Z"  itemprop="datePublished">2018-12-05</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/05/dart/dart-28-generic/">Dart语言学习 - 28 泛型</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        本节目标
+使用泛型
+定义泛型
+限制泛型
+
+环境
+Dart 2.1.0
+
+泛型使用12345678910111213main(List&lt;String&gt; args) &#123;  var l = List&lt;String&gt;();  l.add('aaa');  l.add('bbb');  l.add('ccc');  print(l);  var m = Map&lt;...
+    
+
+        <a href="/2018/12/05/dart/dart-28-generic/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-dart/dart-27-library"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -593,149 +702,6 @@ Dart 2.0.0
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-dart/dart-19-class"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-11-17 13:52:30" datetime="2018-11-17T05:52:30.000Z"  itemprop="datePublished">2018-11-17</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/11/17/dart/dart-19-class/">Dart语言学习 - 19 类</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        本节目标
-定义、使用类
-构造函数
-简化构造
-初始化列表
-命名构造函数
-重定向构造函数
-
-环境
-Dart 2.0.0
-
-定义、使用类定义
-12class Point &#123;&#125;
-使用
-1var p = new Point();
-构造函数定义
-12345678class Point &#123;  num x;  num y;  Point(num x, num y)&#123; ...
-    
-
-        <a href="/2018/11/17/dart/dart-19-class/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-dart/dart-18-exceptions"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-11-17 10:53:26" datetime="2018-11-17T02:53:26.000Z"  itemprop="datePublished">2018-11-17</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/11/17/dart/dart-18-exceptions/">Dart语言学习 - 18 异常</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        本节目标
-错误类型
-抛出、捕获
-
-环境
-Dart 2.0.0
-
-错误的两种类型Exception 类Exception class
-
-
-
-名称
-说明
-
-
-
-
-DeferredLoadException
-延迟加载错误
-
-
-FormatException
-格式错误
-
-
-IntegerDivisionByZeroException
-整数除零错误
-
-
-IOException
-IO 错误
-
-
-Isol...
-    
-
-        <a href="/2018/11/17/dart/dart-18-exceptions/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
@@ -760,7 +726,7 @@ Isol...
         </p>
     </div>
     <div class="bottom">
-        <p><span>猫哥 &copy; 2018 - 2019</span>
+        <p><span>猫哥 &copy; 2018 - 2020</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>

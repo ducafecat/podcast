@@ -1,37 +1,33 @@
 ---
-title: {{title}}
-date: {{date}}
+title: {{ title }}
+date: {{ date }}
 tags: flutter
-categories: Flutter移动开发
+categories: Flutter实战从零开始
 ---
 
 ## 本节目标
 
-## 1. 段落 1
+## 1 段落
 
-```dart
+## 2 段落
 
-```
-
-### 1.1 二级内容
-
-### 1.2 二级内容
-
-## 1. 段落 1
-
-```dart
-
-```
-
-### 1.1 二级内容
-
-### 1.2 二级内容
+## 3 段落
 
 ## 代码
 
 ## 参考
 
 - [widgets](https://flutter.dev/docs/development/ui/widgets)
+
+## 文章
+
+- [掘金]()
+- [segmentfault 镜像]()
+
+## 视频
+
+- [b 站]()
+- [油管镜像]()
 
 ---
 

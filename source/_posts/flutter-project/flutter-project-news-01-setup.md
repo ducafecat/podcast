@@ -1,6 +1,6 @@
 ---
-title: Flutter 实战从零开始 新闻客户端 - 01 需求分析、标注工具、项目目录构建
-date: 2019-06-16 00:00:00
+title: Flutter 实战从零开始 新闻客户端 - 01 需求分析、使用蓝湖标注工具、项目目录构建
+date: 2020-02-26 00:00:00
 tags: flutter
 categories: Flutter实战从零开始
 ---
@@ -74,7 +74,7 @@ categories: Flutter实战从零开始
 
 ## 蓝湖设计稿
 
-https://lanhuapp.com/web/#/item/project/board?pid=5f69ec5a-623d-4a91-98a1-7e6ee7069600&from=nav
+https://lanhuapp.com/url/wbhGq
 
 可微信联系加授权
 
@@ -82,15 +82,10 @@ https://lanhuapp.com/web/#/item/project/board?pid=5f69ec5a-623d-4a91-98a1-7e6ee7
 
 https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.1
 
-## 文章
-
-- [掘金]()
-- [segmentfault 镜像]()
-
 ## 视频
 
-- [b 站]()
-- [油管镜像]()
+- [b 站](https://www.bilibili.com/video/av92158011/)
+- [油管镜像](https://youtu.be/Uucg6GGGBsY)
 
 ## 参考
 

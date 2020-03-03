@@ -18,6 +18,8 @@ categories: Flutter实战从零开始
 
 - 官方说明
 
+https://flutter.dev/docs/development/ui/assets-and-images
+
 ![](2020-03-02-11-29-01.png)
 
 按这个规则编排，flutter 自动适配分辨率图片
@@ -48,6 +50,8 @@ Image.asset("assets/images/logo.png")
 ## 2 加入字体资源
 
 - 官方说明
+
+https://flutter.dev/docs/cookbook/design/fonts
 
 ![](2020-03-02-11-36-13.png)
 
@@ -83,11 +87,77 @@ fonts:
 
 ### 3.2 设计稿适配
 
+插件 flutter_screenutil
+
+https://pub.flutter-io.cn/packages/flutter_screenutil
+
 ![](2020-03-02-13-41-31.png)
 
 按设计稿比例适配
 
-### 3.3 代码拆分
+### 3.3 工具函数
+
+![](2020-03-03-14-11-29.png)
+
+- `screen.dart` 设计稿适配函数
+
+```dart
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+/// 设置宽度
+double duSetWidth(double width) {
+  return ScreenUtil().setWidth(width);
+}
+
+/// 设置宽度
+double duSetHeight(double height) {
+  return ScreenUtil().setHeight(height);
+}
+
+/// 设置字体尺寸
+double duSetFontSize(double fontSize) {
+  return ScreenUtil().setSp(fontSize);
+}
+```
+
+- `utils.dart` 导出类库
+
+```dart
+library utils;
+
+export 'screen.dart';
+```
+
+### 3.4 常量配置
+
+![](2020-03-03-14-14-55.png)
+
+- `colors.dart` 颜色
+
+```dart
+import 'dart:ui';
+
+class AppColors {
+  /// 主文本
+  static const Color primaryText = Color.fromARGB(255, 45, 45, 47);
+
+  /// 主控件-背景
+  static const Color primaryElement = Color.fromARGB(255, 41, 103, 255);
+
+  /// 主控件-文本
+  static const Color primaryElementText = Color.fromARGB(255, 255, 255, 255);
+}
+```
+
+- `values.dart` 导出类库
+
+```dart
+library values;
+
+export 'colors.dart';
+```
+
+### 3.5 代码拆分
 
 ![](2020-03-02-13-43-25.png)
 
@@ -98,6 +168,10 @@ fonts:
 ## git 代码
 
 https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.1
+
+## 蓝湖设计稿
+
+https://lanhuapp.com/url/wbhGq
 
 ## 视频
 

@@ -5,6 +5,8 @@ tags: flutter
 categories: Flutter 实战从零开始
 ---
 
+![](bg.jpg)
+
 ## 本节目标
 
 - 静态路由
@@ -799,8 +801,8 @@ https://lanhuapp.com/url/wbhGq
 
 ## 视频
 
-- [b 站]()
-- [油管镜像]()
+- [b 站](https://www.bilibili.com/video/av96034282/)
+- [油管镜像](https://www.youtube.com/watch?v=rF1KYE_QJWU)
 
 ---
 

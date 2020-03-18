@@ -1,6 +1,6 @@
 ---
-title: {{ title }}
-date: {{ date }}
+title: { { title } }
+date: { { date } }
 tags: flutter
 categories: Flutter实战从零开始
 ---
@@ -19,15 +19,18 @@ categories: Flutter实战从零开始
 
 - [widgets](https://flutter.dev/docs/development/ui/widgets)
 
-## 文章
+## VSCode 插件
 
-- [掘金]()
-- [segmentfault 镜像]()
+- Flutter、Dart
+- [Flutter Widget Snippets](https://marketplace.visualstudio.com/items?itemName=alexisvt.flutter-snippets)
+- [Awesome Flutter Snippets](https://marketplace.visualstudio.com/items?itemName=Nash.awesome-flutter-snippets)
+- [Paste JSON as Code](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype)
+- [bloc](https://marketplace.visualstudio.com/items?itemName=FelixAngelov.bloc)
 
 ## 视频
 
-- [b 站]()
-- [油管镜像]()
+- [b 站](https://space.bilibili.com/404904528/channel/detail?cid=106755)
+- [油管镜像](https://www.youtube.com/watch?v=Uucg6GGGBsY&list=PL274L1n86T80VZR30KaLOKV6jqwTq5E8D)
 
 ---
 

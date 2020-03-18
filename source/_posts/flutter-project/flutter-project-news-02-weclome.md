@@ -175,8 +175,8 @@ https://lanhuapp.com/url/wbhGq
 
 ## 视频
 
-- [b 站]()
-- [油管镜像]()
+- [b 站](https://www.bilibili.com/video/av93660835)
+- [油管镜像](https://www.youtube.com/watch?v=equsSqqwl9E)
 
 ## 参考
 

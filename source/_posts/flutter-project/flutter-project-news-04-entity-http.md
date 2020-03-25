@@ -1,5 +1,5 @@
 ---
-title: Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio
+title: Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装
 date: 2020-03-16 00:00:00
 tags: flutter
 categories: Flutter 实战从零开始

@@ -14,7 +14,7 @@
     
     
     
-    <title>Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio | duCafeCat</title>
+    <title>Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装 | duCafeCat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -24,7 +24,7 @@
     <meta name="description" content="本节目标 前后端分离、契约开发模式 API 接口管理、工具 RESTful 接口规范 TOKEN 安全通讯 自动生成 entity 接口实体类 dio 封装 localstorage 本">
 <meta name="keywords" content="flutter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio">
+<meta property="og:title" content="Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装">
 <meta property="og:url" content="https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/index.html">
 <meta property="og:site_name" content="duCafeCat">
 <meta property="og:description" content="本节目标 前后端分离、契约开发模式 API 接口管理、工具 RESTful 接口规范 TOKEN 安全通讯 自动生成 entity 接口实体类 dio 封装 localstorage 本">
@@ -45,9 +45,9 @@
 <meta property="og:image" content="https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/2020-03-17-16-03-17.png">
 <meta property="og:image" content="https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/2020-03-17-16-37-25.png">
 <meta property="og:image" content="https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/2020-03-17-16-35-57.png">
-<meta property="og:updated_time" content="2020-03-18T01:02:36.772Z">
+<meta property="og:updated_time" content="2020-03-18T09:44:20.661Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio">
+<meta name="twitter:title" content="Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装">
 <meta name="twitter:description" content="本节目标 前后端分离、契约开发模式 API 接口管理、工具 RESTful 接口规范 TOKEN 安全通讯 自动生成 entity 接口实体类 dio 封装 localstorage 本">
 <meta name="twitter:image" content="https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/bg.jpg">
     
@@ -123,7 +123,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
             <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio</div>
+        <div class="flex-col header-title ellipsis">Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -144,7 +144,7 @@
 </header>
 <header class="content-header post-header">
     <div class="container fade-scale">
-        <h1 class="title">Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio</h1>
+        <h1 class="title">Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装</h1>
         <h5 class="subtitle">
              <time datetime="2020-03-15T16:00:00.000Z" itemprop="datePublished" class="page-time">
 	2020-03-16
@@ -174,7 +174,7 @@
     itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio</h1>
+        <h1 class="post-card-title">Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装</h1>
         <div class="post-meta">
             <time class="post-time" title="2020-03-16 00:00:00" datetime="2020-03-15T16:00:00.000Z"  itemprop="datePublished">2020-03-16</time>
 
@@ -405,7 +405,7 @@
 <h2 id="6-登录调用"><a href="#6-登录调用" class="headerlink" title="6. 登录调用"></a>6. 登录调用</h2><h3 id="6-1-编写-api-接口"><a href="#6-1-编写-api-接口" class="headerlink" title="6.1 编写 api 接口"></a>6.1 编写 api 接口</h3><ul>
 <li>lib/common/apis/user.dart</li>
 </ul>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/entitys/entitys.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/utils/utils.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 用户</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserAPI</span> </span>&#123;</span><br><span class="line">  <span class="comment">/// 登录</span></span><br><span class="line">  <span class="keyword">static</span> Future&lt;UserResponseEntity&gt; login(&#123;UserRequestEntity params&#125;) <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> response = <span class="keyword">await</span> HttpUtil().post(<span class="string">'/user/login'</span>, params: params);</span><br><span class="line">    <span class="keyword">return</span> UserResponseEntity.fromJson(response);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/entitys/entitys.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/utils/utils.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="markdown">/// 用户</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserAPI</span> </span>&#123;</span><br><span class="line">  <span class="comment"><span class="markdown">/// 登录</span></span></span><br><span class="line">  <span class="keyword">static</span> Future&lt;UserResponseEntity&gt; login(&#123;UserRequestEntity params&#125;) <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> response = <span class="keyword">await</span> HttpUtil().post(<span class="string">'/user/login'</span>, params: params);</span><br><span class="line">    <span class="keyword">return</span> UserResponseEntity.fromJson(response);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="6-2-密码加密"><a href="#6-2-密码加密" class="headerlink" title="6.2 密码加密"></a>6.2 密码加密</h3><ul>
 <li>crypto</li>
 </ul>
@@ -413,7 +413,7 @@
 <ul>
 <li>lib/common/utils/security.dart</li>
 </ul>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'dart:convert'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:crypto/crypto.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// SHA256</span></span><br><span class="line"><span class="built_in">String</span> duSHA256(<span class="built_in">String</span> input) &#123;</span><br><span class="line">  <span class="built_in">String</span> salt = <span class="string">'EIpWsyfiy@R@X#qn17!StJNdZK1fFF8iV6ffN!goZkqt#JxO'</span>; <span class="comment">// 加盐</span></span><br><span class="line">  <span class="keyword">var</span> bytes = utf8.encode(input + salt);</span><br><span class="line">  <span class="keyword">var</span> digest = sha256.convert(bytes);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> digest.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'dart:convert'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:crypto/crypto.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="markdown">/// SHA256</span></span></span><br><span class="line"><span class="built_in">String</span> duSHA256(<span class="built_in">String</span> input) &#123;</span><br><span class="line">  <span class="built_in">String</span> salt = <span class="string">'EIpWsyfiy@R@X#qn17!StJNdZK1fFF8iV6ffN!goZkqt#JxO'</span>; <span class="comment">// 加盐</span></span><br><span class="line">  <span class="keyword">var</span> bytes = utf8.encode(input + salt);</span><br><span class="line">  <span class="keyword">var</span> digest = sha256.convert(bytes);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> digest.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="6-3-调用接口"><a href="#6-3-调用接口" class="headerlink" title="6.3 调用接口"></a>6.3 调用接口</h3><ul>
 <li>lib/pages/sign_in/sign_in.dart</li>
 </ul>
@@ -489,7 +489,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/&title=《Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/&title=《Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -499,7 +499,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/&title=《Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/&title=《Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -509,7 +509,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio》 — duCafeCat&url=https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装》 — duCafeCat&url=https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/&via=https://ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -534,7 +534,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建</h4>
+      </a>
+    </div>
   
 
   
@@ -602,7 +609,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/&title=《Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/&title=《Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -612,7 +619,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/&title=《Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/&title=《Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -622,7 +629,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio》 — duCafeCat&url=https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装》 — duCafeCat&url=https://ducafecat.tech/2020/03/16/flutter-project/flutter-project-news-04-entity-http/&via=https://ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

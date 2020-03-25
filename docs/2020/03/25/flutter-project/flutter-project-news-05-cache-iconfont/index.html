@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="本节目标 全局数据 http get 缓存 http proxy 代理 fiddle 抓包工具 iconfont 字体库 BottomNavigationBar 导航控件 编写 api 接口代码  1 客户端数据管理1.1 数据类型 全局数据  存储在内存 用户数据、语言包  响应数据  存储在内存 用户登录状态、多语言、皮肤样式 Redux、Bloc、provider  离线数据  APP 持久">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建">
+<meta property="og:url" content="https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 全局数据 http get 缓存 http proxy 代理 fiddle 抓包工具 iconfont 字体库 BottomNavigationBar 导航控件 编写 api 接口代码  1 客户端数据管理1.1 数据类型 全局数据  存储在内存 用户数据、语言包  响应数据  存储在内存 用户登录状态、多语言、皮肤样式 Redux、Bloc、provider  离线数据  APP 持久">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/2020-03-25-14-46-53.png">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/2020-03-25-14-56-48.png">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/2020-03-25-15-09-38.png">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/2020-03-25-15-06-42.png">
+<meta property="og:updated_time" content="2020-03-25T07:37:37.475Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建">
+<meta name="twitter:description" content="本节目标 全局数据 http get 缓存 http proxy 代理 fiddle 抓包工具 iconfont 字体库 BottomNavigationBar 导航控件 编写 api 接口代码  1 客户端数据管理1.1 数据类型 全局数据  存储在内存 用户数据、语言包  响应数据  存储在内存 用户登录状态、多语言、皮肤样式 Redux、Bloc、provider  离线数据  APP 持久">
+<meta name="twitter:image" content="https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/2020-03-25-14-46-53.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建</h1>
+        <h5 class="subtitle">
+             <time datetime="2020-03-24T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2020-03-25
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter-实战从零开始/">Flutter 实战从零开始</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-客户端数据管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">1 客户端数据管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-数据类型"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.1 数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-编写全局管理"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">1.2 编写全局管理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-调用运行"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">1.3 调用运行</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Http-内存缓存"><span class="post-toc-number">3.</span> <span class="post-toc-text">2 Http 内存缓存</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缓存策略"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">缓存策略</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Http-Proxy-代理-Fiddle-抓包"><span class="post-toc-number">4.</span> <span class="post-toc-text">3 Http Proxy 代理 + Fiddle 抓包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装-Fiddle"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">安装 Fiddle</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#dio-加入-proxy"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">dio 加入 proxy</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-Iconfont-字体库"><span class="post-toc-number">5.</span> <span class="post-toc-text">4 Iconfont 字体库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#引入流程"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">引入流程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自动生成字体库代码"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">自动生成字体库代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-编写-api-业务代码"><span class="post-toc-number">6.</span> <span class="post-toc-text">5 编写 api 业务代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-搭建主界面框架"><span class="post-toc-number">7.</span> <span class="post-toc-text">6 搭建主界面框架</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-编写首页代码"><span class="post-toc-number">8.</span> <span class="post-toc-text">7 编写首页代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#蓝湖设计稿"><span class="post-toc-number">9.</span> <span class="post-toc-text">蓝湖设计稿</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#YAPI-接口管理"><span class="post-toc-number">10.</span> <span class="post-toc-text">YAPI 接口管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git-代码"><span class="post-toc-number">11.</span> <span class="post-toc-text">git 代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#工具"><span class="post-toc-number">12.</span> <span class="post-toc-text">工具</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VSCode-插件"><span class="post-toc-number">13.</span> <span class="post-toc-text">VSCode 插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视频"><span class="post-toc-number">14.</span> <span class="post-toc-text">视频</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-flutter-project/flutter-project-news-05-cache-iconfont" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-03-25 00:00:00" datetime="2020-03-24T16:00:00.000Z"  itemprop="datePublished">2020-03-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter-实战从零开始/">Flutter 实战从零开始</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h2><ul>
+<li>全局数据</li>
+<li>http get 缓存</li>
+<li>http proxy 代理</li>
+<li>fiddle 抓包工具</li>
+<li>iconfont 字体库</li>
+<li>BottomNavigationBar 导航控件</li>
+<li>编写 api 接口代码</li>
+</ul>
+<h2 id="1-客户端数据管理"><a href="#1-客户端数据管理" class="headerlink" title="1 客户端数据管理"></a>1 客户端数据管理</h2><h3 id="1-1-数据类型"><a href="#1-1-数据类型" class="headerlink" title="1.1 数据类型"></a>1.1 数据类型</h3><ul>
+<li>全局数据</li>
+</ul>
+<p>存储在内存</p>
+<p>用户数据、语言包</p>
+<ul>
+<li>响应数据</li>
+</ul>
+<p>存储在内存</p>
+<p>用户登录状态、多语言、皮肤样式</p>
+<p>Redux、Bloc、provider</p>
+<ul>
+<li>离线数据</li>
+</ul>
+<p>APP 持久化磁盘上、浏览器 cookie localStorage</p>
+<h3 id="1-2-编写全局管理"><a href="#1-2-编写全局管理" class="headerlink" title="1.2 编写全局管理"></a>1.2 编写全局管理</h3><ul>
+<li>lib/global.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="markdown">/// 全局配置</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Global</span> </span>&#123;</span><br><span class="line">  <span class="comment"><span class="markdown">/// 用户配置</span></span></span><br><span class="line">  <span class="keyword">static</span> UserLoginResponseEntity profile = UserLoginResponseEntity(</span><br><span class="line">    accessToken: <span class="keyword">null</span>,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment"><span class="markdown">/// 是否 release</span></span></span><br><span class="line">  <span class="keyword">static</span> <span class="built_in">bool</span> <span class="keyword">get</span> isRelease =&gt; <span class="built_in">bool</span>.fromEnvironment(<span class="string">"dart.vm.product"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment"><span class="markdown">/// init</span></span></span><br><span class="line">  <span class="keyword">static</span> Future init() <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="comment">// 运行初始</span></span><br><span class="line">    WidgetsFlutterBinding.ensureInitialized();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 工具初始</span></span><br><span class="line">    <span class="keyword">await</span> StorageUtil.init();</span><br><span class="line">    HttpUtil();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 读取离线用户信息</span></span><br><span class="line">    <span class="keyword">var</span> _profileJSON = StorageUtil().getJSON(STORAGE_USER_PROFILE_KEY);</span><br><span class="line">    <span class="keyword">if</span> (_profileJSON != <span class="keyword">null</span>) &#123;</span><br><span class="line">      profile = UserLoginResponseEntity.fromJson(_profileJSON);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// http 缓存</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// android 状态栏为透明的沉浸</span></span><br><span class="line">    <span class="keyword">if</span> (Platform.isAndroid) &#123;</span><br><span class="line">      SystemUiOverlayStyle systemUiOverlayStyle =</span><br><span class="line">          SystemUiOverlayStyle(statusBarColor: Colors.transparent);</span><br><span class="line">      SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 持久化 用户信息</span></span><br><span class="line">  <span class="keyword">static</span> Future&lt;<span class="built_in">bool</span>&gt; saveProfile(UserLoginResponseEntity userResponse) &#123;</span><br><span class="line">    profile = userResponse;</span><br><span class="line">    <span class="keyword">return</span> StorageUtil()</span><br><span class="line">        .setJSON(STORAGE_USER_PROFILE_KEY, userResponse.toJson());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-调用运行"><a href="#1-3-调用运行" class="headerlink" title="1.3 调用运行"></a>1.3 调用运行</h3><ul>
+<li>lib/main.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> main() =&gt; Global.init().then((e) =&gt; runApp(MyApp()));</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-Http-内存缓存"><a href="#2-Http-内存缓存" class="headerlink" title="2 Http 内存缓存"></a>2 Http 内存缓存</h2><h3 id="缓存策略"><a href="#缓存策略" class="headerlink" title="缓存策略"></a>缓存策略</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-03-25-14-46-53.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
+<li>缓存工具类 lib/common/utils/net_cache.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'dart:collection'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:dio/dio.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/values/values.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CacheObject</span> </span>&#123;</span><br><span class="line">  CacheObject(<span class="keyword">this</span>.response)</span><br><span class="line">      : timeStamp = <span class="built_in">DateTime</span>.now().millisecondsSinceEpoch;</span><br><span class="line">  Response response;</span><br><span class="line">  <span class="built_in">int</span> timeStamp;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="built_in">bool</span> <span class="keyword">operator</span> ==(other) &#123;</span><br><span class="line">    <span class="keyword">return</span> response.hashCode == other.hashCode;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="built_in">int</span> <span class="keyword">get</span> hashCode =&gt; response.realUri.hashCode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NetCache</span> <span class="keyword">extends</span> <span class="title">Interceptor</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 为确保迭代器顺序和对象插入时间一致顺序一致，我们使用LinkedHashMap</span></span><br><span class="line">  <span class="keyword">var</span> cache = LinkedHashMap&lt;<span class="built_in">String</span>, CacheObject&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  onRequest(RequestOptions options) <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!CACHE_ENABLE) <span class="keyword">return</span> options;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// refresh标记是否是"下拉刷新"</span></span><br><span class="line">    <span class="built_in">bool</span> refresh = options.extra[<span class="string">"refresh"</span>] == <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果是下拉刷新，先删除相关缓存</span></span><br><span class="line">    <span class="keyword">if</span> (refresh) &#123;</span><br><span class="line">      <span class="keyword">if</span> (options.extra[<span class="string">"list"</span>] == <span class="keyword">true</span>) &#123;</span><br><span class="line">        <span class="comment">//若是列表，则只要url中包含当前path的缓存全部删除（简单实现，并不精准）</span></span><br><span class="line">        cache.removeWhere((key, v) =&gt; key.contains(options.path));</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 如果不是列表，则只删除uri相同的缓存</span></span><br><span class="line">        delete(options.uri.toString());</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> options;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// get 请求，开启缓存</span></span><br><span class="line">    <span class="keyword">if</span> (options.extra[<span class="string">"noCache"</span>] != <span class="keyword">true</span> &amp;&amp;</span><br><span class="line">        options.method.toLowerCase() == <span class="string">'get'</span>) &#123;</span><br><span class="line">      <span class="built_in">String</span> key = options.extra[<span class="string">"cacheKey"</span>] ?? options.uri.toString();</span><br><span class="line">      <span class="keyword">var</span> ob = cache[key];</span><br><span class="line">      <span class="keyword">if</span> (ob != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">//若缓存未过期，则返回缓存内容</span></span><br><span class="line">        <span class="keyword">if</span> ((<span class="built_in">DateTime</span>.now().millisecondsSinceEpoch - ob.timeStamp) / <span class="number">1000</span> &lt;</span><br><span class="line">            CACHE_MAXAGE) &#123;</span><br><span class="line">          <span class="keyword">return</span> cache[key].response;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="comment">//若已过期则删除缓存，继续向服务器请求</span></span><br><span class="line">          cache.remove(key);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  onError(DioError err) <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="comment">// 错误状态不缓存</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  onResponse(Response response) <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="comment">// 如果启用缓存，将返回结果保存到缓存</span></span><br><span class="line">    <span class="keyword">if</span> (CACHE_ENABLE) &#123;</span><br><span class="line">      _saveCache(response);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  _saveCache(Response object) &#123;</span><br><span class="line">    RequestOptions options = object.request;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 只缓存 get 的请求</span></span><br><span class="line">    <span class="keyword">if</span> (options.extra[<span class="string">"noCache"</span>] != <span class="keyword">true</span> &amp;&amp;</span><br><span class="line">        options.method.toLowerCase() == <span class="string">"get"</span>) &#123;</span><br><span class="line">      <span class="comment">// 如果缓存数量超过最大数量限制，则先移除最早的一条记录</span></span><br><span class="line">      <span class="keyword">if</span> (cache.length == CACHE_MAXCOUNT) &#123;</span><br><span class="line">        cache.remove(cache[cache.keys.first]);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">String</span> key = options.extra[<span class="string">"cacheKey"</span>] ?? options.uri.toString();</span><br><span class="line">      cache[key] = CacheObject(object);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> delete(<span class="built_in">String</span> key) &#123;</span><br><span class="line">    cache.remove(key);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>dio 封装 lib/common/utils/http.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加内存缓存</span></span><br><span class="line">HttpUtil._internal() &#123;</span><br><span class="line">  ...</span><br><span class="line">  dio.interceptors.add(NetCache());</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改 get 请求</span></span><br><span class="line"><span class="comment"><span class="markdown">/// restful get 操作</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// refresh 是否下拉刷新 默认 false</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// noCache 是否不缓存 默认 true</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// list 是否列表 默认 false</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// cacheKey 缓存key</span></span></span><br><span class="line">Future <span class="keyword">get</span>(</span><br><span class="line">  <span class="built_in">String</span> path, &#123;</span><br><span class="line">  <span class="keyword">dynamic</span> params,</span><br><span class="line">  Options options,</span><br><span class="line">  <span class="built_in">bool</span> refresh = <span class="keyword">false</span>,</span><br><span class="line">  <span class="built_in">bool</span> noCache = !CACHE_ENABLE,</span><br><span class="line">  <span class="built_in">bool</span> list = <span class="keyword">false</span>,</span><br><span class="line">  <span class="built_in">String</span> cacheKey,</span><br><span class="line">&#125;) <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    Options requestOptions = options ?? Options();</span><br><span class="line">    requestOptions = requestOptions.merge(extra: &#123;</span><br><span class="line">      <span class="string">"refresh"</span>: refresh,</span><br><span class="line">      <span class="string">"noCache"</span>: noCache,</span><br><span class="line">      <span class="string">"list"</span>: list,</span><br><span class="line">      <span class="string">"cacheKey"</span>: cacheKey,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="keyword">dynamic</span>&gt; _authorization = getAuthorizationHeader();</span><br><span class="line">    <span class="keyword">if</span> (_authorization != <span class="keyword">null</span>) &#123;</span><br><span class="line">      requestOptions = requestOptions.merge(headers: _authorization);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> response = <span class="keyword">await</span> dio.<span class="keyword">get</span>(path,</span><br><span class="line">        queryParameters: params,</span><br><span class="line">        options: requestOptions,</span><br><span class="line">        cancelToken: cancelToken);</span><br><span class="line">    <span class="keyword">return</span> response.data;</span><br><span class="line">  &#125; on DioError <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="keyword">throw</span> createErrorEntity(e);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-Http-Proxy-代理-Fiddle-抓包"><a href="#3-Http-Proxy-代理-Fiddle-抓包" class="headerlink" title="3 Http Proxy 代理 + Fiddle 抓包"></a>3 Http Proxy 代理 + Fiddle 抓包</h2><h3 id="安装-Fiddle"><a href="#安装-Fiddle" class="headerlink" title="安装 Fiddle"></a>安装 Fiddle</h3><p><a href="https://www.telerik.com/download/fiddler-everywhere" target="_blank" rel="noopener">https://www.telerik.com/download/fiddler-everywhere</a></p>
+<h3 id="dio-加入-proxy"><a href="#dio-加入-proxy" class="headerlink" title="dio 加入 proxy"></a>dio 加入 proxy</h3><ul>
+<li>lib/common/utils/http.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!Global.isRelease &amp;&amp; PROXY_ENABLE) &#123;</span><br><span class="line">  (dio.httpClientAdapter <span class="keyword">as</span> DefaultHttpClientAdapter).onHttpClientCreate =</span><br><span class="line">      (client) &#123;</span><br><span class="line">    client.findProxy = (uri) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"PROXY $PROXY_IP:$PROXY_PORT"</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">//代理工具会提供一个抓包的自签名证书，会通不过证书校验，所以我们禁用证书校验</span></span><br><span class="line">    client.badCertificateCallback =</span><br><span class="line">        (X509Certificate cert, <span class="built_in">String</span> host, <span class="built_in">int</span> port) =&gt; <span class="keyword">true</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-Iconfont-字体库"><a href="#4-Iconfont-字体库" class="headerlink" title="4 Iconfont 字体库"></a>4 Iconfont 字体库</h2><h3 id="引入流程"><a href="#引入流程" class="headerlink" title="引入流程"></a>引入流程</h3><ul>
+<li>登录</li>
+</ul>
+<p><a href="https://www.iconfont.cn" target="_blank" rel="noopener">https://www.iconfont.cn</a></p>
+<ul>
+<li>创建字体项目</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-03-25-14-56-48.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>字体文件放入</li>
+</ul>
+<p>assets/fonts/iconfont.ttf</p>
+<ul>
+<li>pubspec.yaml</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">fonts:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line"><span class="attr">  - family:</span> <span class="string">Iconfont</span></span><br><span class="line"><span class="attr">    fonts:</span></span><br><span class="line"><span class="attr">      - asset:</span> <span class="string">assets/fonts/iconfont.ttf</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>lib/common/utils/iconfont.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Iconfont</span> </span>&#123;</span><br><span class="line">    <span class="comment">// iconName: share</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> share = IconData(</span><br><span class="line">    <span class="number">0xe60d</span>,</span><br><span class="line">    fontFamily: <span class="string">'Iconfont'</span>,</span><br><span class="line">    matchTextDirection: <span class="keyword">true</span>,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// iconName: fav</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> fav = IconData(</span><br><span class="line">    <span class="number">0xe60c</span>,</span><br><span class="line">    fontFamily: <span class="string">'Iconfont'</span>,</span><br><span class="line">    matchTextDirection: <span class="keyword">true</span>,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// iconName: social-linkedin</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> sociallinkedin = IconData(</span><br><span class="line">    <span class="number">0xe605</span>,</span><br><span class="line">    fontFamily: <span class="string">'Iconfont'</span>,</span><br><span class="line">    matchTextDirection: <span class="keyword">true</span>,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// iconName: social-apple</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> socialapple = IconData(</span><br><span class="line">    <span class="number">0xe606</span>,</span><br><span class="line">    fontFamily: <span class="string">'Iconfont'</span>,</span><br><span class="line">    matchTextDirection: <span class="keyword">true</span>,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// iconName: social-octocat</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> socialoctocat = IconData(</span><br><span class="line">    <span class="number">0xe607</span>,</span><br><span class="line">    fontFamily: <span class="string">'Iconfont'</span>,</span><br><span class="line">    matchTextDirection: <span class="keyword">true</span>,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// iconName: social-reddit</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> socialreddit = IconData(</span><br><span class="line">    <span class="number">0xe608</span>,</span><br><span class="line">    fontFamily: <span class="string">'Iconfont'</span>,</span><br><span class="line">    matchTextDirection: <span class="keyword">true</span>,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// iconName: social-snapchat</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> socialsnapchat = IconData(</span><br><span class="line">    <span class="number">0xe609</span>,</span><br><span class="line">    fontFamily: <span class="string">'Iconfont'</span>,</span><br><span class="line">    matchTextDirection: <span class="keyword">true</span>,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// iconName: social-skype</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> socialskype = IconData(</span><br><span class="line">    <span class="number">0xe60a</span>,</span><br><span class="line">    fontFamily: <span class="string">'Iconfont'</span>,</span><br><span class="line">    matchTextDirection: <span class="keyword">true</span>,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// iconName: social-twitter</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> socialtwitter = IconData(</span><br><span class="line">    <span class="number">0xe60b</span>,</span><br><span class="line">    fontFamily: <span class="string">'Iconfont'</span>,</span><br><span class="line">    matchTextDirection: <span class="keyword">true</span>,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// iconName: me</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> me = IconData(</span><br><span class="line">    <span class="number">0xe604</span>,</span><br><span class="line">    fontFamily: <span class="string">'Iconfont'</span>,</span><br><span class="line">    matchTextDirection: <span class="keyword">true</span>,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// iconName: tag</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> tag = IconData(</span><br><span class="line">    <span class="number">0xe603</span>,</span><br><span class="line">    fontFamily: <span class="string">'Iconfont'</span>,</span><br><span class="line">    matchTextDirection: <span class="keyword">true</span>,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// iconName: grid</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> grid = IconData(</span><br><span class="line">    <span class="number">0xe602</span>,</span><br><span class="line">    fontFamily: <span class="string">'Iconfont'</span>,</span><br><span class="line">    matchTextDirection: <span class="keyword">true</span>,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// iconName: home</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> home = IconData(</span><br><span class="line">    <span class="number">0xe601</span>,</span><br><span class="line">    fontFamily: <span class="string">'Iconfont'</span>,</span><br><span class="line">    matchTextDirection: <span class="keyword">true</span>,</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="自动生成字体库代码"><a href="#自动生成字体库代码" class="headerlink" title="自动生成字体库代码"></a>自动生成字体库代码</h3><p><a href="https://github.com/ymzuiku/iconfont_builder" target="_blank" rel="noopener">https://github.com/ymzuiku/iconfont_builder</a></p>
+<ul>
+<li>拉取项目、编译</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拉取项目</span></span><br><span class="line">&gt; git <span class="built_in">clone</span> https://github.com/ymzuiku/iconfont_builder</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新包</span></span><br><span class="line">&gt; pub get</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装工具</span></span><br><span class="line">&gt; pub global activate iconfont_builder</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查环境配置</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:~/.pub-cache/bin</span><br></pre></td></tr></table></figure>
+<ul>
+<li>参考我的配置</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># flutter sdk</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:~/Documents/sdk/flutter/bin</span><br><span class="line"></span><br><span class="line"><span class="comment"># dart sdk</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:~/Documents/sdk/flutter/bin/cache/dart-sdk/bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:~/.pub-cache/bin</span><br><span class="line"></span><br><span class="line"><span class="comment"># flutter-io 国内镜像</span></span><br><span class="line"><span class="built_in">export</span> PUB_HOSTED_URL=https://pub.flutter-io.cn</span><br><span class="line"><span class="built_in">export</span> FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</span><br><span class="line"></span><br><span class="line"><span class="comment"># android</span></span><br><span class="line"><span class="built_in">export</span> ANDROID_HOME=~/Library/Android/sdk</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:<span class="variable">$&#123;ANDROID_HOME&#125;</span>/platform-tools</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:<span class="variable">$&#123;ANDROID_HOME&#125;</span>/tools</span><br></pre></td></tr></table></figure>
+<h2 id="5-编写-api-业务代码"><a href="#5-编写-api-业务代码" class="headerlink" title="5 编写 api 业务代码"></a>5 编写 api 业务代码</h2><ul>
+<li>yapi 配置</li>
+</ul>
+<p>导入 doc/api.json</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-03-25-15-09-38.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>代码</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-03-25-15-06-42.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="6-搭建主界面框架"><a href="#6-搭建主界面框架" class="headerlink" title="6 搭建主界面框架"></a>6 搭建主界面框架</h2><ul>
+<li>框架页面 lib/pages/application/application.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_ApplicationPageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">ApplicationPage</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="title">with</span> <span class="title">SingleTickerProviderStateMixin</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 当前 tab 页码</span></span><br><span class="line">  <span class="built_in">int</span> _page = <span class="number">0</span>;</span><br><span class="line">  <span class="comment">// tab 页标题</span></span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; _tabTitles = [</span><br><span class="line">    <span class="string">'Welcome'</span>,</span><br><span class="line">    <span class="string">'Cagegory'</span>,</span><br><span class="line">    <span class="string">'Bookmarks'</span>,</span><br><span class="line">    <span class="string">'Account'</span></span><br><span class="line">  ];</span><br><span class="line">  <span class="comment">// 页控制器</span></span><br><span class="line">  PageController _pageController;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 底部导航项目</span></span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">List</span>&lt;BottomNavigationBarItem&gt; _bottomTabs = &lt;BottomNavigationBarItem&gt;[...];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// tab栏动画</span></span><br><span class="line">  <span class="keyword">void</span> _handleNavBarTap(<span class="built_in">int</span> index) &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// tab栏页码切换</span></span><br><span class="line">  <span class="keyword">void</span> _handlePageChanged(<span class="built_in">int</span> page) &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 顶部导航</span></span><br><span class="line">  Widget _buildAppBar() &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 内容页</span></span><br><span class="line">  Widget _buildPageView() &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 底部导航</span></span><br><span class="line">  Widget _buildBottomNavigationBar() &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: _buildAppBar(),</span><br><span class="line">      body: _buildPageView(),</span><br><span class="line">      bottomNavigationBar: _buildBottomNavigationBar(),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7-编写首页代码"><a href="#7-编写首页代码" class="headerlink" title="7 编写首页代码"></a>7 编写首页代码</h2><ul>
+<li>首页代码 lib/pages/main/main.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_MainPageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">MainPage</span>&gt; </span>&#123;</span><br><span class="line">  NewsPageListResponseEntity _newsPageList; <span class="comment">// 新闻翻页</span></span><br><span class="line">  NewsRecommendResponseEntity _newsRecommend; <span class="comment">// 新闻推荐</span></span><br><span class="line">  <span class="built_in">List</span>&lt;CategoryResponseEntity&gt; _categories; <span class="comment">// 分类</span></span><br><span class="line">  <span class="built_in">List</span>&lt;ChannelResponseEntity&gt; _channels; <span class="comment">// 频道</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">String</span> _selCategoryCode; <span class="comment">// 选中的分类Code</span></span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> initState() &#123;</span><br><span class="line">    <span class="keyword">super</span>.initState();</span><br><span class="line">    _loadAllData();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 读取所有数据</span></span><br><span class="line">  _loadAllData() <span class="keyword">async</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 分类菜单</span></span><br><span class="line">  Widget _buildCategories() &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 抽取前先实现业务</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 推荐阅读</span></span><br><span class="line">  Widget _buildRecommend() &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 频道</span></span><br><span class="line">  Widget _buildChannels() &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 新闻列表</span></span><br><span class="line">  Widget _buildNewsList() &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ad 广告条</span></span><br><span class="line">  <span class="comment">// 邮件订阅</span></span><br><span class="line">  Widget _buildEmailSubscribe() &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> SingleChildScrollView(</span><br><span class="line">      child: Column(</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">          _buildCategories(),</span><br><span class="line">          _buildRecommend(),</span><br><span class="line">          _buildChannels(),</span><br><span class="line">          _buildNewsList(),</span><br><span class="line">          _buildEmailSubscribe(),</span><br><span class="line">        ],</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>抽取新闻分类 lib/pages/main/categories_widget.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Widget newsCategoriesWidget(</span><br><span class="line">    &#123;<span class="built_in">List</span>&lt;CategoryResponseEntity&gt; categories,</span><br><span class="line">    <span class="built_in">String</span> selCategoryCode,</span><br><span class="line">    <span class="built_in">Function</span>(CategoryResponseEntity) onTap&#125;) &#123;</span><br><span class="line">  <span class="keyword">return</span> categories == <span class="keyword">null</span></span><br><span class="line">      ? Container()</span><br><span class="line">      : SingleChildScrollView(</span><br><span class="line">          scrollDirection: Axis.horizontal,</span><br><span class="line">          child: Row(</span><br><span class="line">            children: categories.map&lt;Widget&gt;((item) &#123;</span><br><span class="line">              <span class="keyword">return</span> Container(</span><br><span class="line">                alignment: Alignment.center,</span><br><span class="line">                height: duSetHeight(<span class="number">52</span>),</span><br><span class="line">                padding: EdgeInsets.symmetric(horizontal: <span class="number">8</span>),</span><br><span class="line">                child: GestureDetector(</span><br><span class="line">                  child: Text(</span><br><span class="line">                    item.title,</span><br><span class="line">                    style: TextStyle(</span><br><span class="line">                      color: selCategoryCode == item.code</span><br><span class="line">                          ? AppColors.secondaryElementText</span><br><span class="line">                          : AppColors.primaryText,</span><br><span class="line">                      fontSize: duSetFontSize(<span class="number">18</span>),</span><br><span class="line">                      fontFamily: <span class="string">'Montserrat'</span>,</span><br><span class="line">                      fontWeight: FontWeight.w600,</span><br><span class="line">                    ),</span><br><span class="line">                  ),</span><br><span class="line">                  onTap: () =&gt; onTap(item),</span><br><span class="line">                ),</span><br><span class="line">              );</span><br><span class="line">            &#125;).toList(),</span><br><span class="line">          ),</span><br><span class="line">        );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="蓝湖设计稿"><a href="#蓝湖设计稿" class="headerlink" title="蓝湖设计稿"></a>蓝湖设计稿</h2><p><a href="https://lanhuapp.com/url/wbhGq" target="_blank" rel="noopener">https://lanhuapp.com/url/wbhGq</a></p>
+<h2 id="YAPI-接口管理"><a href="#YAPI-接口管理" class="headerlink" title="YAPI 接口管理"></a>YAPI 接口管理</h2><p><a href="http://yapi.demo.qunar.com/" target="_blank" rel="noopener">http://yapi.demo.qunar.com/</a></p>
+<h2 id="git-代码"><a href="#git-代码" class="headerlink" title="git 代码"></a>git 代码</h2><p><a href="https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.5" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.5</a></p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul>
+<li><a href="https://app.quicktype.io" target="_blank" rel="noopener">json to object quicktype</a></li>
+<li><a href="https://www.telerik.com/download/fiddler-everywhere" target="_blank" rel="noopener">Fiddler 抓包</a></li>
+<li><a href="https://www.iconfont.cn" target="_blank" rel="noopener">iconfont 阿里图标库</a></li>
+<li><a href="https://github.com/ymzuiku/iconfont_builder" target="_blank" rel="noopener">Iconfont 生成工具</a></li>
+</ul>
+<h2 id="VSCode-插件"><a href="#VSCode-插件" class="headerlink" title="VSCode 插件"></a>VSCode 插件</h2><ul>
+<li>Flutter、Dart</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=alexisvt.flutter-snippets" target="_blank" rel="noopener">Flutter Widget Snippets</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=Nash.awesome-flutter-snippets" target="_blank" rel="noopener">Awesome Flutter Snippets</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype" target="_blank" rel="noopener">Paste JSON as Code</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=FelixAngelov.bloc" target="_blank" rel="noopener">bloc</a></li>
+</ul>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><ul>
+<li><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">b 站</a></li>
+<li><a href="https://www.youtube.com/watch?v=Uucg6GGGBsY&amp;list=PL274L1n86T80VZR30KaLOKV6jqwTq5E8D" target="_blank" rel="noopener">油管镜像</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/&title=《Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/&title=《Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建》 — duCafeCat&url=https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/03/16/flutter-project/flutter-project-news-04-entity-http/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 实战从零开始 新闻客户端 - 04 YAPI接口管理、RESTful、生成代码、dio封装</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猫哥 &copy; 2018 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/&title=《Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/&title=《Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建》 — duCafeCat&url=https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADLklEQVR42u3aQW7jQAwEwPz/097rAonkJikBFl06BY4sT02AtEnOz098vf67fr9+dOfvd+WvHD3t/PWLL2xsbOyHsF+n1zkvoSbgo6Un70p++8fzsbGxsdexjz7y/J7z7Tu/Mw/CXvi9MWJjY2Njxx+chGKV11snNjY2NnbvS3/e9KmWQ9jY2NjY1aZSHj9JEZKPAXrrvKyXho2Njf3x7DxaPv/nW+bb2NjY2B/MfhWvZAyQlyKTmBwpsLGxsRexe0d2eo373rg3L1rK68HGxsZewc4PPubN+uS9ybsmhdCbNWBjY2MvYvdKgiSE8mfm1PzJ2NjY2N/GnsfPZMsm7aqkpCkMErCxsbEfyO4dxKk28Xvjh15RFN2JjY2NvZqdx8x8uDu5qmEZ9a6wsbGxF7HzL/d5MVN972Rc8WYAjI2Njb2a3duC/OBOdWBQLjOSYMPGxsZexM4LkmrMVIuQ+eHLQoBhY2NjL2JPAiyPrnxIXGgMFf88l+U2NjY29gezz7/K9wYGeZhVw2+0QdjY2NiL2NVNSaLrvlZREoFJ3GJjY2NvYucf3yskqtGYb3fSbDpcGzY2NvZS9h2waBGD0ihvhx0GGDY2NvbD2XmrqDpqrQZY9WBQtdLCxsbG3s2u7lC1UMkP1uTbPfmDYWNjY+9j9w6+JAVJPr6tvl4tQrCxsbG/k11t5STHdPKZc7Vc6R0ewsbGxn46u9eaue+gTx541XHvm6kINjY29mPZefDMD9D0llgteC7IZ2xsbOxHsZMGzaQx1Dvokw8MqmNgbGxs7H3s/H97tUeVt5B6R4XmTS5sbGzsfeze4PZ8m3qLzge6F7TDsLGxsVewrwJPljI/4lO1YGNjY+9mV1s5+dJ7zaz8yYURCDY2NvYK9qt49bagOlrOxwBJTP7xTGxsbOxF7F4ATIInx0xGEflvsbGxsXewJwcfe0dkqg2pycYdfhY2Njb2OnZ19HtHfvZaVM3NxcbGxv56dq8h1Wsb5U2lXISNjY2NXW0/nT+zysjXE823sbGxsVewe02lZClJ0/+qaMzDEhsbG3sTOw+A/J55OZHHXjUssbGxsRex/wGwJ9mF96crqAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

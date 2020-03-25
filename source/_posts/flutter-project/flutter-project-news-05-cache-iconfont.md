@@ -1,13 +1,15 @@
 ---
-title: Flutter 实战从零开始 新闻客户端 - 05 数据管理、Http缓存、Fiddle抓包、主界面搭建
+title: Flutter 实战从零开始 新闻客户端 - 05 AppData、Cache、Fiddle、iconfont、主界面搭建
 date: 2020-03-25 00:00:00
 tags: flutter
 categories: Flutter 实战从零开始
 ---
 
+![](bg.jpg)
+
 ## 本节目标
 
-- 全局数据
+- 全局数据、响应数据、持久化
 - http get 缓存
 - http proxy 代理
 - fiddle 抓包工具
@@ -33,9 +35,11 @@ categories: Flutter 实战从零开始
 
 Redux、Bloc、provider
 
-- 离线数据
+- 持久化
 
-APP 持久化磁盘上、浏览器 cookie localStorage
+APP 保持磁盘上
+
+浏览器 cookie localStorage
 
 ### 1.2 编写全局管理
 

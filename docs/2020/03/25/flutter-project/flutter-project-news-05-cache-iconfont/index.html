@@ -21,23 +21,23 @@
     
     
     <meta name="keywords" content="flutter">
-    <meta name="description" content="本节目标 全局数据、响应数据、持久化 http get 缓存 http proxy 代理 fiddle 抓包工具 iconfont 字体库 BottomNavigationBar 导航控">
+    <meta name="description" content="本节目标 全局数据、响应数据、持久化 http get 缓存 http proxy 代理 fiddle 抓包工具 iconfont 字体库 主界面搭建 BottomNavigationB">
 <meta name="keywords" content="flutter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flutter 实战从零开始 新闻客户端 - 05 AppData、Cache、Fiddle、iconfont、主界面搭建">
 <meta property="og:url" content="https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/index.html">
 <meta property="og:site_name" content="duCafeCat">
-<meta property="og:description" content="本节目标 全局数据、响应数据、持久化 http get 缓存 http proxy 代理 fiddle 抓包工具 iconfont 字体库 BottomNavigationBar 导航控">
+<meta property="og:description" content="本节目标 全局数据、响应数据、持久化 http get 缓存 http proxy 代理 fiddle 抓包工具 iconfont 字体库 主界面搭建 BottomNavigationB">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/bg.jpg">
 <meta property="og:image" content="https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/2020-03-25-14-46-53.png">
 <meta property="og:image" content="https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/2020-03-25-14-56-48.png">
 <meta property="og:image" content="https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/2020-03-25-15-09-38.png">
 <meta property="og:image" content="https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/2020-03-25-15-06-42.png">
-<meta property="og:updated_time" content="2020-03-25T08:38:24.009Z">
+<meta property="og:updated_time" content="2020-03-26T01:31:30.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter 实战从零开始 新闻客户端 - 05 AppData、Cache、Fiddle、iconfont、主界面搭建">
-<meta name="twitter:description" content="本节目标 全局数据、响应数据、持久化 http get 缓存 http proxy 代理 fiddle 抓包工具 iconfont 字体库 BottomNavigationBar 导航控">
+<meta name="twitter:description" content="本节目标 全局数据、响应数据、持久化 http get 缓存 http proxy 代理 fiddle 抓包工具 iconfont 字体库 主界面搭建 BottomNavigationB">
 <meta name="twitter:image" content="https://ducafecat.tech/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/bg.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
@@ -189,6 +189,7 @@
 <li>http proxy 代理</li>
 <li>fiddle 抓包工具</li>
 <li>iconfont 字体库</li>
+<li>主界面搭建</li>
 <li>BottomNavigationBar 导航控件</li>
 <li>编写 api 接口代码</li>
 </ul>
@@ -271,6 +272,10 @@
 <li>参考我的配置</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># flutter sdk</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:~/Documents/sdk/flutter/bin</span><br><span class="line"></span><br><span class="line"><span class="comment"># dart sdk</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:~/Documents/sdk/flutter/bin/cache/dart-sdk/bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:~/.pub-cache/bin</span><br><span class="line"></span><br><span class="line"><span class="comment"># flutter-io 国内镜像</span></span><br><span class="line"><span class="built_in">export</span> PUB_HOSTED_URL=https://pub.flutter-io.cn</span><br><span class="line"><span class="built_in">export</span> FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</span><br><span class="line"></span><br><span class="line"><span class="comment"># android</span></span><br><span class="line"><span class="built_in">export</span> ANDROID_HOME=~/Library/Android/sdk</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:<span class="variable">$&#123;ANDROID_HOME&#125;</span>/platform-tools</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:<span class="variable">$&#123;ANDROID_HOME&#125;</span>/tools</span><br></pre></td></tr></table></figure>
+<ul>
+<li>生成字体类</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 你的项目根目录</span><br><span class="line">iconfont_builder --from ./assets/fonts --to ./lib/common/utils/iconfont.dart</span><br></pre></td></tr></table></figure>
 <h2 id="5-编写-api-业务代码"><a href="#5-编写-api-业务代码" class="headerlink" title="5 编写 api 业务代码"></a>5 编写 api 业务代码</h2><ul>
 <li>yapi 配置</li>
 </ul>

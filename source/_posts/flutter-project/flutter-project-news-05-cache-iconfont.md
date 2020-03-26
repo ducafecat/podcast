@@ -14,6 +14,7 @@ categories: Flutter 实战从零开始
 - http proxy 代理
 - fiddle 抓包工具
 - iconfont 字体库
+- 主界面搭建
 - BottomNavigationBar 导航控件
 - 编写 api 接口代码
 
@@ -449,6 +450,13 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export PATH=${PATH}:${ANDROID_HOME}/tools
+```
+
+- 生成字体类
+
+```sh
+cd 你的项目根目录
+iconfont_builder --from ./assets/fonts --to ./lib/common/utils/iconfont.dart
 ```
 
 ## 5 编写 api 业务代码

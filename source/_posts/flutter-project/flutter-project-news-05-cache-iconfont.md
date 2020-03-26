@@ -109,11 +109,11 @@ class MyApp extends StatelessWidget {
 
 ## 2 Http 内存缓存
 
-### 缓存策略
+### 2.1 缓存策略
 
 ![](2020-03-25-14-46-53.png)
 
-### 代码
+### 2.2 代码
 
 - 缓存工具类 lib/common/utils/net_cache.dart
 
@@ -265,11 +265,13 @@ class NetCache extends Interceptor {
 
 ## 3 Http Proxy 代理 + Fiddle 抓包
 
-### 安装 Fiddle
+### 3.1 安装 Fiddle
 
 https://www.telerik.com/download/fiddler-everywhere
 
-### dio 加入 proxy
+![](2020-03-26-14-03-16.png)
+
+### 3.2 dio 加入 proxy
 
 - lib/common/utils/http.dart
 
@@ -289,7 +291,7 @@ https://www.telerik.com/download/fiddler-everywhere
 
 ## 4 Iconfont 字体库
 
-### 引入流程
+### 4.1 引入流程
 
 - 登录
 
@@ -412,7 +414,7 @@ class Iconfont {
 }
 ```
 
-### 自动生成字体库代码
+### 4.2 自动生成字体库代码
 
 https://github.com/ymzuiku/iconfont_builder
 

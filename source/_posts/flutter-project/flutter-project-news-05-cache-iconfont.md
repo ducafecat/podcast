@@ -18,9 +18,9 @@ categories: Flutter 实战从零开始
 - BottomNavigationBar 导航控件
 - 编写 api 接口代码
 
-## 1 客户端数据管理
+## 客户端数据管理
 
-### 1.1 数据类型
+### 数据类型
 
 - 全局数据
 
@@ -42,7 +42,7 @@ APP 保持磁盘上
 
 浏览器 cookie localStorage
 
-### 1.2 编写全局管理
+### 编写全局管理
 
 - lib/global.dart
 
@@ -92,7 +92,7 @@ class Global {
 
 ```
 
-### 1.3 调用运行
+### 调用运行
 
 - lib/main.dart
 
@@ -107,13 +107,13 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-## 2 Http 内存缓存
+## Http 内存缓存
 
-### 2.1 缓存策略
+### 缓存策略
 
 ![](2020-03-25-14-46-53.png)
 
-### 2.2 代码
+### 代码
 
 - 缓存工具类 lib/common/utils/net_cache.dart
 
@@ -263,15 +263,15 @@ class NetCache extends Interceptor {
   }
 ```
 
-## 3 Http Proxy 代理 + Fiddle 抓包
+## Http Proxy 代理 + Fiddle 抓包
 
-### 3.1 安装 Fiddle
+### 安装 Fiddle
 
 https://www.telerik.com/download/fiddler-everywhere
 
 ![](2020-03-26-14-03-16.png)
 
-### 3.2 dio 加入 proxy
+### dio 加入 proxy
 
 - lib/common/utils/http.dart
 
@@ -289,9 +289,9 @@ https://www.telerik.com/download/fiddler-everywhere
   }
 ```
 
-## 4 Iconfont 字体库
+## Iconfont 字体库
 
-### 4.1 引入流程
+### 引入流程
 
 - 登录
 
@@ -328,93 +328,11 @@ class Iconfont {
     matchTextDirection: true,
   );
 
-  // iconName: fav
-  static const fav = IconData(
-    0xe60c,
-    fontFamily: 'Iconfont',
-    matchTextDirection: true,
-  );
-
-  // iconName: social-linkedin
-  static const sociallinkedin = IconData(
-    0xe605,
-    fontFamily: 'Iconfont',
-    matchTextDirection: true,
-  );
-
-  // iconName: social-apple
-  static const socialapple = IconData(
-    0xe606,
-    fontFamily: 'Iconfont',
-    matchTextDirection: true,
-  );
-
-  // iconName: social-octocat
-  static const socialoctocat = IconData(
-    0xe607,
-    fontFamily: 'Iconfont',
-    matchTextDirection: true,
-  );
-
-  // iconName: social-reddit
-  static const socialreddit = IconData(
-    0xe608,
-    fontFamily: 'Iconfont',
-    matchTextDirection: true,
-  );
-
-  // iconName: social-snapchat
-  static const socialsnapchat = IconData(
-    0xe609,
-    fontFamily: 'Iconfont',
-    matchTextDirection: true,
-  );
-
-  // iconName: social-skype
-  static const socialskype = IconData(
-    0xe60a,
-    fontFamily: 'Iconfont',
-    matchTextDirection: true,
-  );
-
-  // iconName: social-twitter
-  static const socialtwitter = IconData(
-    0xe60b,
-    fontFamily: 'Iconfont',
-    matchTextDirection: true,
-  );
-
-  // iconName: me
-  static const me = IconData(
-    0xe604,
-    fontFamily: 'Iconfont',
-    matchTextDirection: true,
-  );
-
-  // iconName: tag
-  static const tag = IconData(
-    0xe603,
-    fontFamily: 'Iconfont',
-    matchTextDirection: true,
-  );
-
-  // iconName: grid
-  static const grid = IconData(
-    0xe602,
-    fontFamily: 'Iconfont',
-    matchTextDirection: true,
-  );
-
-  // iconName: home
-  static const home = IconData(
-    0xe601,
-    fontFamily: 'Iconfont',
-    matchTextDirection: true,
-  );
+  ...
 }
 ```
 
-### 4.2 自动生成字体库代码
+### 自动生成字体库代码
 
 https://github.com/ymzuiku/iconfont_builder
 
@@ -461,7 +379,7 @@ cd 你的项目根目录
 iconfont_builder --from ./assets/fonts --to ./lib/common/utils/iconfont.dart
 ```
 
-## 5 编写 api 业务代码
+## 编写 api 业务代码
 
 - yapi 配置
 
@@ -473,7 +391,9 @@ iconfont_builder --from ./assets/fonts --to ./lib/common/utils/iconfont.dart
 
 ![](2020-03-25-15-06-42.png)
 
-## 6 搭建主界面框架
+## 搭建主界面框架
+
+![](2020-03-26-16-24-46.png)
 
 - 框架页面 lib/pages/application/application.dart
 
@@ -533,7 +453,9 @@ class _ApplicationPageState extends State<ApplicationPage>
 
 ```
 
-## 7 编写首页代码
+## 编写首页代码
+
+![](2020-03-26-16-25-42.png)
 
 - 首页代码 lib/pages/main/main.dart
 

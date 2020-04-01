@@ -23,6 +23,8 @@ http://yapi.demo.qunar.com/
 
 ## 代码
 
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.5
+
 ## 参考
 
 - [widgets](https://flutter.dev/docs/development/ui/widgets)

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 实战从零开始 新闻客户端 - 06 代码规范、业务代码组织、新闻首页实现 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="1 本节目标 代码规范 业务代码组织 首页代码编写  2 代码规范2.1 官方代码规范https://dart.dev/guides/language/effective-dart 2.">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 实战从零开始 新闻客户端 - 06 代码规范、业务代码组织、新闻首页实现">
+<meta property="og:url" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="1 本节目标 代码规范 业务代码组织 首页代码编写  2 代码规范2.1 官方代码规范https://dart.dev/guides/language/effective-dart 2.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/bg.jpeg">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/2020-04-01-09-50-51.png">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/2020-04-01-09-52-25.png">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/2020-04-01-10-30-19.png">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/2020-04-01-09-56-04.png">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/2020-04-01-10-39-09.png">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/2020-04-01-10-41-34.png">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/2020-04-01-14-17-41.png">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/2020-04-01-14-16-06.png">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/2020-04-01-10-55-39.png">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/2020-04-01-10-57-39.png">
+<meta property="og:image" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/2020-04-01-11-00-53.png">
+<meta property="og:updated_time" content="2020-04-01T06:26:40.731Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 实战从零开始 新闻客户端 - 06 代码规范、业务代码组织、新闻首页实现">
+<meta name="twitter:description" content="1 本节目标 代码规范 业务代码组织 首页代码编写  2 代码规范2.1 官方代码规范https://dart.dev/guides/language/effective-dart 2.">
+<meta name="twitter:image" content="https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/bg.jpeg">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 实战从零开始 新闻客户端 - 06 代码规范、业务代码组织、新闻首页实现</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 实战从零开始 新闻客户端 - 06 代码规范、业务代码组织、新闻首页实现</h1>
+        <h5 class="subtitle">
+             <time datetime="2020-03-30T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2020-03-31
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter-实战从零开始/">Flutter 实战从零开始</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">1 本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-代码规范"><span class="post-toc-number">2.</span> <span class="post-toc-text">2 代码规范</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-官方代码规范"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">2.1 官方代码规范</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-chrome-插件-lt-彩云小译-网页翻译插件-gt"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.3 chrome 插件 &lt;彩云小译 - 网页翻译插件&gt;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-阿里项目规范"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">2.4 阿里项目规范</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-业务界面代码组织"><span class="post-toc-number">3.</span> <span class="post-toc-text">3 业务界面代码组织</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-redux、fish-redux"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">3.1 redux、fish-redux</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-bloc"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">3.2 bloc</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-简单就是美"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3.3 简单就是美</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-4-如何平衡"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">3.4 如何平衡</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-新闻首页实现"><span class="post-toc-number">4.</span> <span class="post-toc-text">4 新闻首页实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-1-界面组成分析"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">4.1 界面组成分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-代码框架"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">4.2 代码框架</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-实现业务"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">4.3 实现业务</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#蓝湖设计稿"><span class="post-toc-number">5.</span> <span class="post-toc-text">蓝湖设计稿</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#YAPI-接口管理"><span class="post-toc-number">6.</span> <span class="post-toc-text">YAPI 接口管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">7.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">8.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VSCode-插件"><span class="post-toc-number">9.</span> <span class="post-toc-text">VSCode 插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视频"><span class="post-toc-number">10.</span> <span class="post-toc-text">视频</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-flutter-project/flutter-project-news-06-main-ui" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter 实战从零开始 新闻客户端 - 06 代码规范、业务代码组织、新闻首页实现</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-03-31 00:00:00" datetime="2020-03-30T16:00:00.000Z"  itemprop="datePublished">2020-03-31</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter-实战从零开始/">Flutter 实战从零开始</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="bg.jpeg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="1-本节目标"><a href="#1-本节目标" class="headerlink" title="1 本节目标"></a>1 本节目标</h2><ul>
+<li>代码规范</li>
+<li>业务代码组织</li>
+<li>首页代码编写</li>
+</ul>
+<h2 id="2-代码规范"><a href="#2-代码规范" class="headerlink" title="2 代码规范"></a>2 代码规范</h2><h3 id="2-1-官方代码规范"><a href="#2-1-官方代码规范" class="headerlink" title="2.1 官方代码规范"></a>2.1 官方代码规范</h3><p><a href="https://dart.dev/guides/language/effective-dart" target="_blank" rel="noopener">https://dart.dev/guides/language/effective-dart</a></p>
+<h3 id="2-3-chrome-插件-lt-彩云小译-网页翻译插件-gt"><a href="#2-3-chrome-插件-lt-彩云小译-网页翻译插件-gt" class="headerlink" title="2.3 chrome 插件 &lt;彩云小译 - 网页翻译插件&gt;"></a>2.3 chrome 插件 &lt;彩云小译 - 网页翻译插件&gt;</h3><p><a href="https://chrome.google.com/webstore/detail/lingocloud-web-translatio/jmpepeebcbihafjjadogphmbgiffiajh" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/lingocloud-web-translatio/jmpepeebcbihafjjadogphmbgiffiajh</a></p>
+<h3 id="2-4-阿里项目规范"><a href="#2-4-阿里项目规范" class="headerlink" title="2.4 阿里项目规范"></a>2.4 阿里项目规范</h3><p><a href="https://github.com/alibaba/flutter-go/blob/master/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md" target="_blank" rel="noopener">https://github.com/alibaba/flutter-go/blob/master/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md</a></p>
+<h2 id="3-业务界面代码组织"><a href="#3-业务界面代码组织" class="headerlink" title="3 业务界面代码组织"></a>3 业务界面代码组织</h2><h3 id="3-1-redux、fish-redux"><a href="#3-1-redux、fish-redux" class="headerlink" title="3.1 redux、fish-redux"></a>3.1 redux、fish-redux</h3><ul>
+<li>redux 架构</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-04-01-09-50-51.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>fish-redux 架构</li>
+</ul>
+<p>进一步的细分，进行规范</p>
+<p><a href="https://github.com/alibaba/fish-redux/tree/master/doc" target="_blank" rel="noopener">https://github.com/alibaba/fish-redux/tree/master/doc</a><br><a href="https://medium.com/@dave790602/flutter-architecture-fish-redux-9b753912224a" target="_blank" rel="noopener">https://medium.com/@dave790602/flutter-architecture-fish-redux-9b753912224a</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-04-01-09-52-25.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>fish-redux 代码</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-04-01-10-30-19.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="3-2-bloc"><a href="#3-2-bloc" class="headerlink" title="3.2 bloc"></a>3.2 bloc</h3><ul>
+<li>架构</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-04-01-09-56-04.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p><a href="https://bloclibrary.dev/#/" target="_blank" rel="noopener">https://bloclibrary.dev/#/</a></p>
+<ul>
+<li>代码组织</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-04-01-10-39-09.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="3-3-简单就是美"><a href="#3-3-简单就是美" class="headerlink" title="3.3 简单就是美"></a>3.3 简单就是美</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-04-01-10-41-34.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="3-4-如何平衡"><a href="#3-4-如何平衡" class="headerlink" title="3.4 如何平衡"></a>3.4 如何平衡</h3><ul>
+<li>是否团队开发</li>
+</ul>
+<ul>
+<li>是否简单业务（20 页面）</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-04-01-14-17-41.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>是否重交互（视频社交、聊天 A）</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-04-01-14-16-06.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="4-新闻首页实现"><a href="#4-新闻首页实现" class="headerlink" title="4 新闻首页实现"></a>4 新闻首页实现</h2><h3 id="4-1-界面组成分析"><a href="#4-1-界面组成分析" class="headerlink" title="4.1 界面组成分析"></a>4.1 界面组成分析</h3><ul>
+<li>分类导航、推荐新闻、频道导航</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-04-01-10-55-39.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>新闻列表、广告 ad、邮件订阅</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-04-01-10-57-39.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="4-2-代码框架"><a href="#4-2-代码框架" class="headerlink" title="4.2 代码框架"></a>4.2 代码框架</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_MainPageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">MainPage</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> initState() &#123;</span><br><span class="line">    <span class="keyword">super</span>.initState();</span><br><span class="line">    _loadAllData();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 读取所有数据</span></span><br><span class="line">  _loadAllData() <span class="keyword">async</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 分类菜单</span></span><br><span class="line">  Widget _buildCategories() &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 推荐阅读</span></span><br><span class="line">  Widget _buildRecommend() &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 频道</span></span><br><span class="line">  Widget _buildChannels() &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 新闻列表</span></span><br><span class="line">  Widget _buildNewsList() &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ad 广告条</span></span><br><span class="line">  <span class="comment">// 邮件订阅</span></span><br><span class="line">  Widget _buildEmailSubscribe() &#123;</span><br><span class="line">    <span class="keyword">return</span> newsletterWidget();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> SingleChildScrollView(</span><br><span class="line">        child: Column(</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            _buildCategories(),</span><br><span class="line">            Divider(height: <span class="number">1</span>),</span><br><span class="line">            _buildRecommend(),</span><br><span class="line">            Divider(height: <span class="number">1</span>),</span><br><span class="line">            _buildChannels(),</span><br><span class="line">            Divider(height: <span class="number">1</span>),</span><br><span class="line">            _buildNewsList(),</span><br><span class="line">            Divider(height: <span class="number">1</span>),</span><br><span class="line">            _buildEmailSubscribe(),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-实现业务"><a href="#4-3-实现业务" class="headerlink" title="4.3 实现业务"></a>4.3 实现业务</h3><ul>
+<li>创建 widget 单独文件</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-04-01-11-00-53.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>分类导航</li>
+</ul>
+<p>lib/pages/main/categories_widget.dart</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">Widget newsCategoriesWidget(&#123;</span><br><span class="line">  <span class="built_in">List</span>&lt;CategoryResponseEntity&gt; categories,</span><br><span class="line">  <span class="built_in">String</span> selCategoryCode,</span><br><span class="line">  <span class="built_in">Function</span>(CategoryResponseEntity) onTap,</span><br><span class="line">&#125;) &#123;</span><br><span class="line">  <span class="keyword">return</span> SingleChildScrollView(</span><br><span class="line">    scrollDirection: Axis.horizontal,</span><br><span class="line">    child: Row(</span><br><span class="line">      children: categories.map&lt;Widget&gt;((item) &#123;</span><br><span class="line">        <span class="keyword">return</span> Container(</span><br><span class="line">          alignment: Alignment.center,</span><br><span class="line">          height: duSetHeight(<span class="number">52</span>),</span><br><span class="line">          padding: EdgeInsets.symmetric(horizontal: <span class="number">8</span>),</span><br><span class="line">          child: GestureDetector(</span><br><span class="line">            child: Text(</span><br><span class="line">              item.title,</span><br><span class="line">              style: TextStyle(</span><br><span class="line">                color: selCategoryCode == item.code</span><br><span class="line">                    ? AppColors.secondaryElementText</span><br><span class="line">                    : AppColors.primaryText,</span><br><span class="line">                fontSize: duSetFontSize(<span class="number">18</span>),</span><br><span class="line">                fontFamily: <span class="string">'Montserrat'</span>,</span><br><span class="line">                fontWeight: FontWeight.w600,</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">            onTap: () =&gt; onTap(item),</span><br><span class="line">          ),</span><br><span class="line">        );</span><br><span class="line">      &#125;).toList(),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>频道导航</li>
+</ul>
+<p>lib/pages/main/channels_widget.dart</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">Widget newsChannelsWidget(&#123;</span><br><span class="line">  <span class="built_in">List</span>&lt;ChannelResponseEntity&gt; channels,</span><br><span class="line">  <span class="built_in">Function</span>(ChannelResponseEntity) onTap,</span><br><span class="line">&#125;) &#123;</span><br><span class="line">  <span class="keyword">return</span> Container(</span><br><span class="line">    height: duSetHeight(<span class="number">137</span>),</span><br><span class="line">    child: SingleChildScrollView(</span><br><span class="line">      scrollDirection: Axis.horizontal,</span><br><span class="line">      child: Row(</span><br><span class="line">        children: channels.map&lt;Widget&gt;((item) &#123;</span><br><span class="line">          <span class="keyword">return</span> Container(</span><br><span class="line">            width: duSetWidth(<span class="number">70</span>),</span><br><span class="line">            height: duSetHeight(<span class="number">97</span>),</span><br><span class="line">            margin: EdgeInsets.symmetric(horizontal: duSetWidth(<span class="number">10</span>)),</span><br><span class="line">            child: InkWell(</span><br><span class="line">              child: Column(</span><br><span class="line">                crossAxisAlignment: CrossAxisAlignment.stretch,</span><br><span class="line">                mainAxisAlignment: MainAxisAlignment.spaceBetween,</span><br><span class="line">                children: [</span><br><span class="line">                  <span class="comment">// 图标</span></span><br><span class="line">                  Container(</span><br><span class="line">                    height: duSetWidth(<span class="number">64</span>),</span><br><span class="line">                    margin: EdgeInsets.symmetric(horizontal: duSetWidth(<span class="number">3</span>)),</span><br><span class="line">                    child: Stack(</span><br><span class="line">                      alignment: Alignment.center,</span><br><span class="line">                      children: [</span><br><span class="line">                        Positioned(</span><br><span class="line">                          left: <span class="number">0</span>,</span><br><span class="line">                          top: <span class="number">0</span>,</span><br><span class="line">                          right: <span class="number">0</span>,</span><br><span class="line">                          child: Container(</span><br><span class="line">                            height: duSetWidth(<span class="number">64</span>),</span><br><span class="line">                            decoration: BoxDecoration(</span><br><span class="line">                              color: AppColors.primaryBackground,</span><br><span class="line">                              boxShadow: [</span><br><span class="line">                                Shadows.primaryShadow,</span><br><span class="line">                              ],</span><br><span class="line">                              borderRadius:</span><br><span class="line">                                  BorderRadius.all(Radius.circular(<span class="number">32</span>)),</span><br><span class="line">                            ),</span><br><span class="line">                            child: Container(),</span><br><span class="line">                          ),</span><br><span class="line">                        ),</span><br><span class="line">                        Positioned(</span><br><span class="line">                          left: duSetWidth(<span class="number">10</span>),</span><br><span class="line">                          top: duSetWidth(<span class="number">10</span>),</span><br><span class="line">                          right: duSetWidth(<span class="number">10</span>),</span><br><span class="line">                          child: Image.asset(</span><br><span class="line">                            <span class="string">"assets/images/channel-<span class="subst">$&#123;item.code&#125;</span>.png"</span>,</span><br><span class="line">                            fit: BoxFit.none,</span><br><span class="line">                          ),</span><br><span class="line">                        ),</span><br><span class="line">                      ],</span><br><span class="line">                    ),</span><br><span class="line">                  ),</span><br><span class="line">                  <span class="comment">// 标题</span></span><br><span class="line">                  Text(</span><br><span class="line">                    item.title,</span><br><span class="line">                    textAlign: TextAlign.center,</span><br><span class="line">                    overflow: TextOverflow.clip,</span><br><span class="line">                    maxLines: <span class="number">1</span>,</span><br><span class="line">                    style: TextStyle(</span><br><span class="line">                      color: AppColors.thirdElementText,</span><br><span class="line">                      fontFamily: <span class="string">"Avenir"</span>,</span><br><span class="line">                      fontWeight: FontWeight.w400,</span><br><span class="line">                      fontSize: duSetFontSize(<span class="number">14</span>),</span><br><span class="line">                      height: <span class="number">1</span>,</span><br><span class="line">                    ),</span><br><span class="line">                  ),</span><br><span class="line">                ],</span><br><span class="line">              ),</span><br><span class="line">              onTap: () =&gt; onTap(item),</span><br><span class="line">            ),</span><br><span class="line">          );</span><br><span class="line">        &#125;).toList(),</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>新闻行 Item</li>
+</ul>
+<p>lib/pages/main/news_item_widget.dart</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">Widget newsItem(NewsItem item) &#123;</span><br><span class="line">  <span class="keyword">return</span> Container(</span><br><span class="line">    height: duSetHeight(<span class="number">161</span>),</span><br><span class="line">    padding: EdgeInsets.all(duSetWidth(<span class="number">20</span>)),</span><br><span class="line">    child: Row(</span><br><span class="line">      mainAxisAlignment: MainAxisAlignment.spaceBetween,</span><br><span class="line">      crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">      children: &lt;Widget&gt;[</span><br><span class="line">        <span class="comment">// 图</span></span><br><span class="line">        imageCached(</span><br><span class="line">          item.thumbnail,</span><br><span class="line">          width: duSetWidth(<span class="number">121</span>),</span><br><span class="line">          height: duSetWidth(<span class="number">121</span>),</span><br><span class="line">        ),</span><br><span class="line">        <span class="comment">// 右侧</span></span><br><span class="line">        SizedBox(</span><br><span class="line">          width: duSetWidth(<span class="number">194</span>),</span><br><span class="line">          child: Column(</span><br><span class="line">            crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">            children: &lt;Widget&gt;[</span><br><span class="line">              <span class="comment">// 作者</span></span><br><span class="line">              Container(</span><br><span class="line">                margin: EdgeInsets.all(<span class="number">0</span>),</span><br><span class="line">                child: Text(</span><br><span class="line">                  item.author,</span><br><span class="line">                  style: TextStyle(</span><br><span class="line">                    fontFamily: <span class="string">'Avenir'</span>,</span><br><span class="line">                    fontWeight: FontWeight.normal,</span><br><span class="line">                    color: AppColors.thirdElementText,</span><br><span class="line">                    fontSize: duSetFontSize(<span class="number">14</span>),</span><br><span class="line">                    height: <span class="number">1</span>,</span><br><span class="line">                  ),</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              <span class="comment">// 标题</span></span><br><span class="line">              Container(</span><br><span class="line">                margin: EdgeInsets.only(top: duSetHeight(<span class="number">10</span>)),</span><br><span class="line">                child: Text(</span><br><span class="line">                  item.title,</span><br><span class="line">                  style: TextStyle(</span><br><span class="line">                    fontFamily: <span class="string">'Montserrat'</span>,</span><br><span class="line">                    fontWeight: FontWeight.w500,</span><br><span class="line">                    color: AppColors.primaryText,</span><br><span class="line">                    fontSize: duSetFontSize(<span class="number">16</span>),</span><br><span class="line">                    height: <span class="number">1</span>,</span><br><span class="line">                  ),</span><br><span class="line">                  overflow: TextOverflow.clip,</span><br><span class="line">                  maxLines: <span class="number">3</span>,</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              <span class="comment">// Spacer</span></span><br><span class="line">              Spacer(),</span><br><span class="line">              <span class="comment">// 一行 3 列</span></span><br><span class="line">              Container(</span><br><span class="line">                child: Row(</span><br><span class="line">                  crossAxisAlignment: CrossAxisAlignment.center,</span><br><span class="line">                  children: &lt;Widget&gt;[</span><br><span class="line">                    <span class="comment">// 分类</span></span><br><span class="line">                    ConstrainedBox(</span><br><span class="line">                      constraints: BoxConstraints(</span><br><span class="line">                        maxWidth: duSetWidth(<span class="number">60</span>),</span><br><span class="line">                      ),</span><br><span class="line">                      child: Text(</span><br><span class="line">                        item.category,</span><br><span class="line">                        style: TextStyle(</span><br><span class="line">                          fontFamily: <span class="string">'Avenir'</span>,</span><br><span class="line">                          fontWeight: FontWeight.normal,</span><br><span class="line">                          color: AppColors.secondaryElementText,</span><br><span class="line">                          fontSize: duSetFontSize(<span class="number">14</span>),</span><br><span class="line">                          height: <span class="number">1</span>,</span><br><span class="line">                        ),</span><br><span class="line">                        overflow: TextOverflow.clip,</span><br><span class="line">                        maxLines: <span class="number">1</span>,</span><br><span class="line">                      ),</span><br><span class="line">                    ),</span><br><span class="line">                    <span class="comment">// 添加时间</span></span><br><span class="line">                    Container(</span><br><span class="line">                      width: duSetWidth(<span class="number">15</span>),</span><br><span class="line">                    ),</span><br><span class="line">                    ConstrainedBox(</span><br><span class="line">                      constraints: BoxConstraints(</span><br><span class="line">                        maxWidth: duSetWidth(<span class="number">100</span>),</span><br><span class="line">                      ),</span><br><span class="line">                      child: Text(</span><br><span class="line">                        <span class="string">'• <span class="subst">$&#123;duTimeLineFormat(item.addtime)&#125;</span>'</span>,</span><br><span class="line">                        style: TextStyle(</span><br><span class="line">                          fontFamily: <span class="string">'Avenir'</span>,</span><br><span class="line">                          fontWeight: FontWeight.normal,</span><br><span class="line">                          color: AppColors.thirdElementText,</span><br><span class="line">                          fontSize: duSetFontSize(<span class="number">14</span>),</span><br><span class="line">                          height: <span class="number">1</span>,</span><br><span class="line">                        ),</span><br><span class="line">                        overflow: TextOverflow.clip,</span><br><span class="line">                        maxLines: <span class="number">1</span>,</span><br><span class="line">                      ),</span><br><span class="line">                    ),</span><br><span class="line">                    <span class="comment">// 更多</span></span><br><span class="line">                    Spacer(),</span><br><span class="line">                    InkWell(</span><br><span class="line">                      child: Icon(</span><br><span class="line">                        Icons.more_horiz,</span><br><span class="line">                        color: AppColors.primaryText,</span><br><span class="line">                        size: <span class="number">24</span>,</span><br><span class="line">                      ),</span><br><span class="line">                      onTap: () &#123;&#125;,</span><br><span class="line">                    ),</span><br><span class="line">                  ],</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">            ],</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">      ],</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>邮件订阅</li>
+</ul>
+<p>lib/pages/main/newsletter_widget.dart</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">Widget newsletterWidget() &#123;</span><br><span class="line">  <span class="keyword">return</span> Container(</span><br><span class="line">    margin: EdgeInsets.all(duSetWidth(<span class="number">20</span>)),</span><br><span class="line">    child: Column(</span><br><span class="line">      children: &lt;Widget&gt;[</span><br><span class="line">        <span class="comment">// newsletter</span></span><br><span class="line">        Row(</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            Text(</span><br><span class="line">              <span class="string">'Newsletter'</span>,</span><br><span class="line">              style: TextStyle(</span><br><span class="line">                fontFamily: <span class="string">'Montserrat'</span>,</span><br><span class="line">                fontSize: duSetFontSize(<span class="number">18</span>),</span><br><span class="line">                fontWeight: FontWeight.w600,</span><br><span class="line">                color: AppColors.thirdElement,</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">            Spacer(),</span><br><span class="line">            IconButton(</span><br><span class="line">              icon: Icon(</span><br><span class="line">                Icons.close,</span><br><span class="line">                color: AppColors.thirdElementText,</span><br><span class="line">                size: duSetFontSize(<span class="number">17</span>),</span><br><span class="line">              ),</span><br><span class="line">              onPressed: () &#123;&#125;,</span><br><span class="line">            ),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line"></span><br><span class="line">        <span class="comment">// email</span></span><br><span class="line">        inputEmailEdit(</span><br><span class="line">          marginTop: <span class="number">19</span>,</span><br><span class="line">          keyboardType: TextInputType.emailAddress,</span><br><span class="line">          hintText: <span class="string">"Email"</span>,</span><br><span class="line">          isPassword: <span class="keyword">false</span>,</span><br><span class="line">          controller: <span class="keyword">null</span>,</span><br><span class="line">        ),</span><br><span class="line"></span><br><span class="line">        <span class="comment">// btn subcrible</span></span><br><span class="line">        Padding(</span><br><span class="line">          padding: EdgeInsets.only(top: <span class="number">15</span>),</span><br><span class="line">          child: btnFlatButtonWidget(</span><br><span class="line">            onPressed: () &#123;&#125;,</span><br><span class="line">            width: duSetWidth(<span class="number">335</span>),</span><br><span class="line">            height: duSetHeight(<span class="number">44</span>),</span><br><span class="line">            fontWeight: FontWeight.w600,</span><br><span class="line">            title: <span class="string">"Subscribe"</span>,</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line"></span><br><span class="line">        <span class="comment">// disc</span></span><br><span class="line">        Container(</span><br><span class="line">          margin: EdgeInsets.only(top: duSetHeight(<span class="number">29</span>)),</span><br><span class="line">          width: duSetWidth(<span class="number">261</span>),</span><br><span class="line">          child: Text.rich(TextSpan(children: &lt;TextSpan&gt;[</span><br><span class="line">            TextSpan(</span><br><span class="line">              text: <span class="string">'By clicking on Subscribe button you agree to accept'</span>,</span><br><span class="line">              style: <span class="keyword">new</span> TextStyle(</span><br><span class="line">                color: AppColors.thirdElementText,</span><br><span class="line">                fontFamily: <span class="string">"Avenir"</span>,</span><br><span class="line">                fontWeight: FontWeight.w400,</span><br><span class="line">                fontSize: duSetFontSize(<span class="number">14</span>),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">            TextSpan(</span><br><span class="line">              text: <span class="string">' Privacy Policy'</span>,</span><br><span class="line">              style: <span class="keyword">new</span> TextStyle(</span><br><span class="line">                color: AppColors.secondaryElementText,</span><br><span class="line">                fontFamily: <span class="string">"Avenir"</span>,</span><br><span class="line">                fontWeight: FontWeight.w400,</span><br><span class="line">                fontSize: duSetFontSize(<span class="number">14</span>),</span><br><span class="line">              ),</span><br><span class="line">              recognizer: TapGestureRecognizer()</span><br><span class="line">                ..onTap = () &#123;</span><br><span class="line">                  toastInfo(msg: <span class="string">'Privacy Policy'</span>);</span><br><span class="line">                &#125;,</span><br><span class="line">            ),</span><br><span class="line">          ])),</span><br><span class="line">        ),</span><br><span class="line">      ],</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>推荐阅读</li>
+</ul>
+<p>lib/pages/main/recommend_widget.dart</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">Widget recommendWidget(NewsRecommendResponseEntity newsRecommend) &#123;</span><br><span class="line">  <span class="keyword">return</span> Container(</span><br><span class="line">    margin: EdgeInsets.all(duSetWidth(<span class="number">20</span>)),</span><br><span class="line">    child: Column(</span><br><span class="line">      crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">      children: &lt;Widget&gt;[</span><br><span class="line">        <span class="comment">// 图</span></span><br><span class="line">        imageCached(</span><br><span class="line">          newsRecommend.thumbnail,</span><br><span class="line">          width: duSetWidth(<span class="number">335</span>),</span><br><span class="line">          height: duSetHeight(<span class="number">290</span>),</span><br><span class="line">        ),</span><br><span class="line">        <span class="comment">// 作者</span></span><br><span class="line">        Container(</span><br><span class="line">          margin: EdgeInsets.only(top: duSetHeight(<span class="number">14</span>)),</span><br><span class="line">          child: Text(</span><br><span class="line">            newsRecommend.author,</span><br><span class="line">            style: TextStyle(</span><br><span class="line">              fontFamily: <span class="string">'Avenir'</span>,</span><br><span class="line">              fontWeight: FontWeight.normal,</span><br><span class="line">              color: AppColors.thirdElementText,</span><br><span class="line">              fontSize: duSetFontSize(<span class="number">14</span>),</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">        <span class="comment">// 标题</span></span><br><span class="line">        Container(</span><br><span class="line">          margin: EdgeInsets.only(top: duSetHeight(<span class="number">10</span>)),</span><br><span class="line">          child: Text(</span><br><span class="line">            newsRecommend.title,</span><br><span class="line">            style: TextStyle(</span><br><span class="line">              fontFamily: <span class="string">'Montserrat'</span>,</span><br><span class="line">              fontWeight: FontWeight.w600,</span><br><span class="line">              color: AppColors.primaryText,</span><br><span class="line">              fontSize: duSetFontSize(<span class="number">24</span>),</span><br><span class="line">              height: <span class="number">1</span>,</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">        <span class="comment">// 一行 3 列</span></span><br><span class="line">        Container(</span><br><span class="line">          margin: EdgeInsets.only(top: duSetHeight(<span class="number">10</span>)),</span><br><span class="line">          child: Row(</span><br><span class="line">            crossAxisAlignment: CrossAxisAlignment.center,</span><br><span class="line">            children: &lt;Widget&gt;[</span><br><span class="line">              <span class="comment">// 分类</span></span><br><span class="line">              ConstrainedBox(</span><br><span class="line">                constraints: <span class="keyword">const</span> BoxConstraints(</span><br><span class="line">                  maxWidth: <span class="number">120</span>,</span><br><span class="line">                ),</span><br><span class="line">                child: Text(</span><br><span class="line">                  newsRecommend.category,</span><br><span class="line">                  style: TextStyle(</span><br><span class="line">                    fontFamily: <span class="string">'Avenir'</span>,</span><br><span class="line">                    fontWeight: FontWeight.normal,</span><br><span class="line">                    color: AppColors.secondaryElementText,</span><br><span class="line">                    fontSize: duSetFontSize(<span class="number">14</span>),</span><br><span class="line">                    height: <span class="number">1</span>,</span><br><span class="line">                  ),</span><br><span class="line">                  overflow: TextOverflow.clip,</span><br><span class="line">                  maxLines: <span class="number">1</span>,</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              <span class="comment">// 添加时间</span></span><br><span class="line">              Container(</span><br><span class="line">                width: duSetWidth(<span class="number">15</span>),</span><br><span class="line">              ),</span><br><span class="line">              ConstrainedBox(</span><br><span class="line">                constraints: <span class="keyword">const</span> BoxConstraints(</span><br><span class="line">                  maxWidth: <span class="number">120</span>,</span><br><span class="line">                ),</span><br><span class="line">                child: Text(</span><br><span class="line">                  <span class="string">'• <span class="subst">$&#123;duTimeLineFormat(newsRecommend.addtime)&#125;</span>'</span>,</span><br><span class="line">                  style: TextStyle(</span><br><span class="line">                    fontFamily: <span class="string">'Avenir'</span>,</span><br><span class="line">                    fontWeight: FontWeight.normal,</span><br><span class="line">                    color: AppColors.thirdElementText,</span><br><span class="line">                    fontSize: duSetFontSize(<span class="number">14</span>),</span><br><span class="line">                    height: <span class="number">1</span>,</span><br><span class="line">                  ),</span><br><span class="line">                  overflow: TextOverflow.clip,</span><br><span class="line">                  maxLines: <span class="number">1</span>,</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              <span class="comment">// 更多</span></span><br><span class="line">              Spacer(),</span><br><span class="line">              InkWell(</span><br><span class="line">                child: Icon(</span><br><span class="line">                  Icons.more_horiz,</span><br><span class="line">                  color: AppColors.primaryText,</span><br><span class="line">                  size: <span class="number">24</span>,</span><br><span class="line">                ),</span><br><span class="line">                onTap: () &#123;&#125;,</span><br><span class="line">              ),</span><br><span class="line">            ],</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">      ],</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="蓝湖设计稿"><a href="#蓝湖设计稿" class="headerlink" title="蓝湖设计稿"></a>蓝湖设计稿</h2><p><a href="https://lanhuapp.com/url/wbhGq" target="_blank" rel="noopener">https://lanhuapp.com/url/wbhGq</a></p>
+<h2 id="YAPI-接口管理"><a href="#YAPI-接口管理" class="headerlink" title="YAPI 接口管理"></a>YAPI 接口管理</h2><p><a href="http://yapi.demo.qunar.com/" target="_blank" rel="noopener">http://yapi.demo.qunar.com/</a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.6" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.6</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://github.com/alibaba/flutter-go#the-flutter-go-roadmap%E8%B7%AF%E7%BA%BF%E5%9B%BE-for-2019" target="_blank" rel="noopener">Flutter Go 代码开发规范 0.1.0 版</a></li>
+<li><a href="https://dart.dev/guides/language/effective-dart" target="_blank" rel="noopener">effective-dart</a></li>
+<li><a href="https://bloclibrary.dev/#/" target="_blank" rel="noopener">bloc</a></li>
+</ul>
+<h2 id="VSCode-插件"><a href="#VSCode-插件" class="headerlink" title="VSCode 插件"></a>VSCode 插件</h2><ul>
+<li>Flutter、Dart</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=alexisvt.flutter-snippets" target="_blank" rel="noopener">Flutter Widget Snippets</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=Nash.awesome-flutter-snippets" target="_blank" rel="noopener">Awesome Flutter Snippets</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype" target="_blank" rel="noopener">Paste JSON as Code</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=FelixAngelov.bloc" target="_blank" rel="noopener">bloc</a></li>
+</ul>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><ul>
+<li><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">b 站</a></li>
+<li><a href="https://www.youtube.com/watch?v=Uucg6GGGBsY&amp;list=PL274L1n86T80VZR30KaLOKV6jqwTq5E8D" target="_blank" rel="noopener">油管镜像</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/&title=《Flutter 实战从零开始 新闻客户端 - 06 代码规范、业务代码组织、新闻首页实现》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/&title=《Flutter 实战从零开始 新闻客户端 - 06 代码规范、业务代码组织、新闻首页实现》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 实战从零开始 新闻客户端 - 06 代码规范、业务代码组织、新闻首页实现》 — duCafeCat&url=https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/03/25/flutter-project/flutter-project-news-05-cache-iconfont/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 实战从零开始 新闻客户端 - 05 AppData、Cache、Fiddle、iconfont、主界面搭建</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猫哥 &copy; 2018 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/&title=《Flutter 实战从零开始 新闻客户端 - 06 代码规范、业务代码组织、新闻首页实现》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/&title=《Flutter 实战从零开始 新闻客户端 - 06 代码规范、业务代码组织、新闻首页实现》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 实战从零开始 新闻客户端 - 06 代码规范、业务代码组织、新闻首页实现》 — duCafeCat&url=https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2020/03/31/flutter-project/flutter-project-news-06-main-ui/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3aQU7DQAwFUO5/aZAQK6pJvu2ZFKSXVUVpmpdF7H774yM+Pr+P17+8/j15d3Xm10+tXm8+8PDw8FqXvjqSU68+dQ1YfUvCS64ZDw8P7zSv+si+hl3fmmrZyG83Hh4e3l/jlR/K4/KDh4eH9995CaBaVJJWOw8m8PDw8J7kVWOCXnaa/0/vXTw8PLxneNUB2F94fXC+h4eHhzeYqlcj2jxcSFrqyXX+nAEPDw/vAC+5iF1N8GSZoHcr8fDw8M7xJmHrPPy9voZeRHKTuODh4eGNedct7K52uXqecuu8AuPh4eFt5c0HS0nZ6K0CVAdmeHh4eE/yqmtSk/ggKT89/LYtMDw8PLxNq1F5WHB9/l0xx2hRFQ8PD2/Aq47B8pDiXHTbLBt4eHh4m3i9Njof/xfmb8VCEpU3PDw8vMO8fI2gGv7m7XK1fb9pvvHw8PAO8CYXt/dy8yJUpeLh4eHt5c2jhDyWjYb9ew88PDy8Y7z8QvNhVbX89BYabl7j4eHhHeCV15iKvHmAWx3L3fxuwMPDw9vKy9vuPNLNH/eTNr16Tjw8PLwJbxLOVhehem1xHiUvVwfw8PDwtvJ6BWDXKKu3ClAdvOHh4eHt5eVtbjK46gWyeTkpN+h4eHh4x3i9gVMeGfTWF5JvuQmI8fDw8I7xqttK1VWq5LE+WWJYfgoPDw/vAC8fQfXi1wRQyEtaUS8eHh7eXl4vSK0WgHlgkdyOZd3Dw8PDe4RXHXdVo94E3BuqFX4B4OHh4bV4+ZF/zWQ5IL8ReHh4eO/l5cVgskYwH5vlBWO5QICHh4e3lbd3+FStRfN2+eZ3Ax4eHt6beL32OlqQaq0m4OHh4f0v3iR0SOLg+Q3Cw8PDO82bDL2S8KLXoFdDWzw8PLxneJMBWO9xvyu6PT7fw8PDw/t9fAF9MNB1RriVsQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -41,7 +41,7 @@ favicon: /favicon.ico
 email: ducafecat@gmail.com
 
 # 设置 Android L Chrome 浏览器状态栏颜色
-color: '#3F51B5'
+color: "#3F51B5"
 
 # 页面标题
 tags_title: Tags
@@ -52,7 +52,7 @@ categories_title: Categories
 excerpt_render: false
 excerpt_length: 200
 excerpt_link: 阅读全文...
-mathjax: false
+mathjax: falsefalse
 archive_yearly: true
 
 # 是否显示文章最后更新时间
@@ -76,7 +76,7 @@ hideMenu: true
 # 是否开启toc
 # toc: false
 toc:
-  list_number: true  # 是否显示数字排序
+  list_number: true # 是否显示数字排序
 
 # 文章页留言内容，hexo中所有变量及辅助函数等均可调用，具体请查阅 hexo.io
 # postMessage: 这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" target="_blank" rel="external"><%- page.permalink.replace(/index\.html$/, '') %></a>
@@ -134,7 +134,6 @@ valine:
 # Hyper Comments support. Write your id here, or false to disable
 hyper_id: false
 
-
 # 规范网址
 # 让搜索引擎重定向你的不同域名、不同子域、同域不同目录的站点到你期望的路径
 # https://support.google.com/webmasters/answer/139066
@@ -145,7 +144,7 @@ canonical: false
 since_year: 2018
 
 # 用户页面中作者相关的描述性文字，如不需要设为 false
-about: 用户页面中作者相关的描述性文字，如不需要设为 false
+about: false
 
 # “不蒜子”访问量统计，详见 http://ibruce.info/2015/04/04/busuanzi/
 # visit_counter:
@@ -154,8 +153,8 @@ about: 用户页面中作者相关的描述性文字，如不需要设为 false
 
 # 动态定义title
 # title_change:
-  # normal: (つェ⊂)咦!又好了!
-  # leave: 死鬼去哪里了！
+# normal: (つェ⊂)咦!又好了!
+# leave: 死鬼去哪里了！
 
 # 设置为 true 发布后将使用 unpkg cdn 最新的主题样式
 # 如果想让你的自定义样式生效，把此项设为 false

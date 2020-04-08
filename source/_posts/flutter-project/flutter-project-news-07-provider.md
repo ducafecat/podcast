@@ -40,10 +40,6 @@ categories: Flutter 实战从零开始
   - [provider](https://pub.flutter-io.cn/packages/provider)
   - [pk_skeleton](https://pub.flutter-io.cn/packages/pk_skeleton)
 
-- 画图在线工具
-  - https://www.processon.com/
-  - https://app.diagrams.net/
-
 ## 第一次显示欢迎界面、离线登录
 
 ![](2020-04-08-22-08-21.png)

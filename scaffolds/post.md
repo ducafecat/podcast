@@ -5,35 +5,50 @@ tags: flutter
 categories: Flutter实战从零开始
 ---
 
-## 本节目标
+# 本节目标
 
-## 视频
+- 安装插件
+- 路由定义
+- 自动生成路由控制类
+- 转场动画
+- 登录检查中间件
+
+## 正文
+
+### 安装插件
+
+### 路由定义
+
+### 自动生成路由控制类
+
+### 转场动画
+
+### 登录检查中间件
+
+## 资源
+
+### 视频
 
 - [b 站](https://space.bilibili.com/404904528/channel/detail?cid=106755)
 - [油管镜像](https://www.youtube.com/watch?v=Uucg6GGGBsY&list=PL274L1n86T80VZR30KaLOKV6jqwTq5E8D)
 
-## 资源
+### 蓝湖设计稿（加微信给授权 ducafecat）
 
-- 蓝湖设计稿（加微信给授权 ducafecat）
-  https://lanhuapp.com/url/wbhGq
+https://lanhuapp.com/url/wbhGq
 
-- YAPI 接口管理
-  http://yapi.demo.qunar.com/
+### YAPI 接口管理
 
-- 代码
-  https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.7
+http://yapi.demo.qunar.com/
 
-- 参考
-  - [provider](https://pub.flutter-io.cn/packages/provider)
-  - [pk_skeleton](https://pub.flutter-io.cn/packages/pk_skeleton)
+### 代码
 
-## 1 段落
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.8
 
-## 2 段落
+### 参考
 
-## 3 段落
+https://pub.flutter-io.cn/packages/auto_route
 
-## VSCode 插件
+### VSCode 插件
 
 - Flutter、Dart
 - [Flutter Widget Snippets](https://marketplace.visualstudio.com/items?itemName=alexisvt.flutter-snippets)

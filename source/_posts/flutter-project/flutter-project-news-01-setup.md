@@ -2,7 +2,7 @@
 title: Flutter 实战从零开始 新闻客户端 - 01 需求分析、使用蓝湖标注工具、项目目录构建
 date: 2020-02-26 00:00:00
 tags: flutter
-categories: Flutter实战从零开始
+categories: Flutter 实战从零开始
 ---
 
 ## 本节目标

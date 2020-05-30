@@ -1,5 +1,5 @@
 ---
-title: Docker - 02 前端全栈 windows 从零安装 centos 7 docker 的正确姿势
+title: Docker - 02 前端全栈 windows 从零安装 vmware + centos + docker + yapi
 date: 2020-05-29 00:00:00
 tags: Docker Linux
 categories: Docker
@@ -16,6 +16,8 @@ categories: Docker
 - centos 配置 docker环境
 
 ## 视频
+
+https://youtu.be/NJIwbs8qmDY
 
 ## 正文
 

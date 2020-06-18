@@ -23,6 +23,8 @@ https://supernova.io/
 
 ![](2020-06-18-11-13-44.png)
 
+> 商业设计稿不好直接分享, 可以加微信联系 ducafecat
+
 ### 编写用户中心界面代码
 
 #### 组织代码结构
@@ -635,6 +637,14 @@ Widget divider10Px({Color bgColor = AppColors.secondaryElement}) {
 ![](2020-06-18-11-15-41.png)
 
 ## 资源
+
+### 设计稿蓝湖预览
+
+https://lanhuapp.com/url/lYuz1
+密码: gSKl
+
+> 蓝湖现在收费了，所以查看标记还请自己上传 xd 设计稿
+> 商业设计稿文件不好直接分享, 可以加微信联系 ducafecat
 
 ### 代码
 

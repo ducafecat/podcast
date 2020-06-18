@@ -636,6 +636,10 @@ Widget divider10Px({Color bgColor = AppColors.secondaryElement}) {
 
 ![](2020-06-18-11-15-41.png)
 
+## 总结
+
+![](2020-06-19-07-22-10.png)
+
 ## 资源
 
 ### 设计稿蓝湖预览

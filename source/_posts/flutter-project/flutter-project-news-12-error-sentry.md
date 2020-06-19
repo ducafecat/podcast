@@ -228,6 +228,14 @@ end
 
 - https://docs.sentry.io/platforms/cocoa/?_ga=2.17974013.534595501.1591172359-228174411.1591172359&_gac=1.12380800.1591172359.EAIaIQobChMIrICd9Jrl6QIVCj5gCh2zFw8lEAAYASAAEgJwyfD_BwE&platform=javascript
 
+### 设计稿蓝湖预览
+
+https://lanhuapp.com/url/lYuz1
+密码: gSKl
+
+> 蓝湖现在收费了，所以查看标记还请自己上传 xd 设计稿
+> 商业设计稿文件不好直接分享, 可以加微信联系 ducafecat
+
 ### 代码
 
 https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.12

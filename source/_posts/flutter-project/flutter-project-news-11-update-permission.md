@@ -540,7 +540,11 @@ https://pub.flutter-io.cn/packages/easy_dialog
 
 ### 蓝湖设计稿（加微信给授权 ducafecat）
 
-https://lanhuapp.com/url/wbhGq
+https://lanhuapp.com/url/lYuz1
+密码: gSKl
+
+> 蓝湖现在收费了，所以查看标记还请自己上传 xd 设计稿
+> 商业设计稿文件不好直接分享, 可以加微信联系 ducafecat
 
 ### YAPI 接口管理
 

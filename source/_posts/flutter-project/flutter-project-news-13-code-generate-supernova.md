@@ -1,5 +1,5 @@
 ---
-title: Flutter 实战从零开始 新闻客户端 - 13 使用 supernova 导入 adobe xd 自动生成用户中心代码
+title: Flutter 实战从零开始 新闻客户端 - 13 使用 supernova、imgcook 导入 sketch psd xd 自动生成用户中心代码
 date: 2020-06-18 00:00:00
 tags: flutter
 categories: Flutter 实战从零开始
@@ -14,6 +14,16 @@ categories: Flutter 实战从零开始
 - 如何高效使用生成代码
 
 ## 正文
+
+### 代码生成器
+
+- [supernova](https://supernova.io)
+- [imgcook](https://imgcook.taobao.org)
+
+### 有潜力加入代码生成功能
+
+- [lanhuapp](https://lanhuapp.com/)
+- [mockplus](https://app.mockplus.cn/)
 
 ### supernova 代码生成器
 

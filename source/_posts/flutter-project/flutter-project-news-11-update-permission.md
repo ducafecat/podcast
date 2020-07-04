@@ -15,6 +15,16 @@ categories: Flutter 实战从零开始
 - ios 支持 swift 语言
 - 快速提示框
 
+## 视频
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1Gi4y147zG&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV17t4y117ua&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+## 代码
+
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.11
+
 ## 正文
 
 ### ios 支持 swift 语言
@@ -549,10 +559,6 @@ https://lanhuapp.com/url/lYuz1
 ### YAPI 接口管理
 
 http://yapi.demo.qunar.com/
-
-### 代码
-
-https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.11
 
 ### 参考
 

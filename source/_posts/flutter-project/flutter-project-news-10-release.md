@@ -16,6 +16,16 @@ categories: Flutter 实战从零开始
 - 制作图标
 - 制作启动画面
 
+## 视频
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1G541147ZV&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1ik4y1k7yP&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+## 代码
+
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.10
+
 ## 正文
 
 ### 1. APP 图标
@@ -300,10 +310,6 @@ https://lanhuapp.com/url/lYuz1
 ### YAPI 接口管理
 
 http://yapi.demo.qunar.com/
-
-### 代码
-
-https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.10
 
 ### 参考
 

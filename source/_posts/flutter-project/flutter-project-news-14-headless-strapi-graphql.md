@@ -9,12 +9,27 @@ categories: Flutter 实战从零开始
 
 # 本节目标
 
-- strapi docker 安装
-- 构建自己的数据结构
-- graphql 查询协议
-- flutter 代码实现
+- strapi + graphql 插件 + docker 安装
+- strapi 管理数据结构、内容
+- flutter + graphql 插件 实现查询
+
+## 视频
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1Zz411e7dj&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+## 代码
+
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.14
 
 ## 正文
+
+### 后台开发步骤
+
+![](2020-07-04-13-47-38.png)
+
+### 采用 strapi + nodejs + 网关 的方案
+
+![](2020-07-04-13-48-08.png)
 
 ### 1. strapi 安装
 
@@ -723,10 +738,6 @@ https://lanhuapp.com/url/lYuz1
 
 > 蓝湖现在收费了，所以查看标记还请自己上传 xd 设计稿
 > 商业设计稿文件不好直接分享, 可以加微信联系 ducafecat
-
-### 代码
-
-https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.14
 
 ### 参考
 

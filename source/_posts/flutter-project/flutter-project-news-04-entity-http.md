@@ -18,6 +18,14 @@ categories: Flutter 实战从零开始
 - localstorage 本地存储
 - 密码加密
 
+## 视频
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1t7411R7tN&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+## 代码
+
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.4
+
 ## 1. 接口管理
 
 ### 1.1 前后端分离、契约模式
@@ -385,10 +393,6 @@ String duSHA256(String input) {
 ## YAPI 接口管理
 
 http://yapi.demo.qunar.com/
-
-## git 代码
-
-https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.4
 
 ## 蓝湖设计稿
 

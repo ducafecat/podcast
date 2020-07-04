@@ -12,6 +12,14 @@ categories: Flutter 实战从零开始
 - 设计稿适配
 - 编写界面代码的逻辑和组织
 
+## 视频
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV19E411s7YM&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+## 代码
+
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.2
+
 ## 1 加入图片资源
 
 ### 1.1 flutter 图片资源规则

@@ -21,6 +21,24 @@ categories: Flutter 实战从零开始
 
 ## 视频
 
+<iframe src="//player.bilibili.com/player.html?bvid=BV1vV411o7bn&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1SA411t7ov&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1jt4y1U7Nn&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1wt4y127L5&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1b54y1d7DB&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV11z411b7FJ&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+## 代码
+
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.7
+
+## 视频
+
 - [b 站](https://space.bilibili.com/404904528/channel/detail?cid=106755)
 - [油管镜像](https://www.youtube.com/watch?v=Uucg6GGGBsY&list=PL274L1n86T80VZR30KaLOKV6jqwTq5E8D)
 

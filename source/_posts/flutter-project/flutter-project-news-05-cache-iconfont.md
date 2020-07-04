@@ -18,6 +18,14 @@ categories: Flutter 实战从零开始
 - BottomNavigationBar 导航控件
 - 编写 api 接口代码
 
+## 视频
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1A54y1d7Pa&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+## 代码
+
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.5
+
 ## 客户端数据管理
 
 ### 数据类型
@@ -575,10 +583,6 @@ https://lanhuapp.com/url/lYuz1
 ## YAPI 接口管理
 
 http://yapi.demo.qunar.com/
-
-## git 代码
-
-https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.5
 
 ## 工具
 

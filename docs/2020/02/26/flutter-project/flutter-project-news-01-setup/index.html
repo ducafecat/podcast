@@ -21,13 +21,13 @@
     
     
     <meta name="keywords" content="flutter">
-    <meta name="description" content="本节目标 需求分析 使用蓝湖平台作为标注工具 构建 Flutter 项目  1 需求说明                                                                                                           1.1 样式表 颜色">
+    <meta name="description" content="本节目标 需求分析 使用蓝湖平台作为标注工具 构建 Flutter 项目  视频   代码https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.1 1 需求说明">
 <meta name="keywords" content="flutter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flutter 实战从零开始 新闻客户端 - 01 需求分析、使用蓝湖标注工具、项目目录构建">
 <meta property="og:url" content="https://ducafecat.tech/2020/02/26/flutter-project/flutter-project-news-01-setup/index.html">
 <meta property="og:site_name" content="duCafeCat">
-<meta property="og:description" content="本节目标 需求分析 使用蓝湖平台作为标注工具 构建 Flutter 项目  1 需求说明                                                                                                           1.1 样式表 颜色">
+<meta property="og:description" content="本节目标 需求分析 使用蓝湖平台作为标注工具 构建 Flutter 项目  视频   代码https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.1 1 需求说明">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://ducafecat.tech/2020/02/26/flutter-project/flutter-project-news-01-setup/2020-02-27-10-31-41.png">
 <meta property="og:image" content="https://ducafecat.tech/2020/02/26/flutter-project/flutter-project-news-01-setup/2020-02-26-17-52-10.png">
@@ -38,10 +38,10 @@
 <meta property="og:image" content="https://ducafecat.tech/2020/02/26/flutter-project/flutter-project-news-01-setup/2020-02-27-10-33-19.png">
 <meta property="og:image" content="https://ducafecat.tech/2020/02/26/flutter-project/flutter-project-news-01-setup/2020-02-27-11-03-37.png">
 <meta property="og:image" content="https://ducafecat.tech/2020/02/26/flutter-project/flutter-project-news-01-setup/2020-02-27-10-59-10.png">
-<meta property="og:updated_time" content="2020-06-19T01:20:29.252Z">
+<meta property="og:updated_time" content="2020-07-04T06:23:27.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter 实战从零开始 新闻客户端 - 01 需求分析、使用蓝湖标注工具、项目目录构建">
-<meta name="twitter:description" content="本节目标 需求分析 使用蓝湖平台作为标注工具 构建 Flutter 项目  1 需求说明                                                                                                           1.1 样式表 颜色">
+<meta name="twitter:description" content="本节目标 需求分析 使用蓝湖平台作为标注工具 构建 Flutter 项目  视频   代码https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.1 1 需求说明">
 <meta name="twitter:image" content="https://ducafecat.tech/2020/02/26/flutter-project/flutter-project-news-01-setup/2020-02-27-10-31-41.png">
     
         <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
@@ -158,7 +158,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-需求说明"><span class="post-toc-number">2.</span> <span class="post-toc-text">1 需求说明</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-样式表"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.1 样式表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-整理页面-组件列表"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">1.2 整理页面+组件列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-排查技术点"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">1.3 排查技术点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-使用蓝湖平台作为标注工具"><span class="post-toc-number">3.</span> <span class="post-toc-text">2 使用蓝湖平台作为标注工具</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-上传蓝湖"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">2.1 上传蓝湖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-标注"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2.2 标注</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-代码提示"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">2.3 代码提示</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-原型展示"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">2.4 原型展示</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-构建-Flutter-项目"><span class="post-toc-number">4.</span> <span class="post-toc-text">3 构建 Flutter 项目</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-1-可复用小型项目结构"><span class="post-toc-number"></span> <span class="post-toc-text">3.1 可复用小型项目结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#蓝湖设计稿"><span class="post-toc-number">1.</span> <span class="post-toc-text">蓝湖设计稿</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git-代码"><span class="post-toc-number">2.</span> <span class="post-toc-text">git 代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视频"><span class="post-toc-number">3.</span> <span class="post-toc-text">视频</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视频"><span class="post-toc-number">2.</span> <span class="post-toc-text">视频</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">3.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-需求说明"><span class="post-toc-number">4.</span> <span class="post-toc-text">1 需求说明</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-样式表"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">1.1 样式表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-整理页面-组件列表"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">1.2 整理页面+组件列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-排查技术点"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">1.3 排查技术点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-使用蓝湖平台作为标注工具"><span class="post-toc-number">5.</span> <span class="post-toc-text">2 使用蓝湖平台作为标注工具</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-上传蓝湖"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">2.1 上传蓝湖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-标注"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">2.2 标注</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-代码提示"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">2.3 代码提示</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-原型展示"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">2.4 原型展示</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-构建-Flutter-项目"><span class="post-toc-number">6.</span> <span class="post-toc-text">3 构建 Flutter 项目</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-1-可复用小型项目结构"><span class="post-toc-number"></span> <span class="post-toc-text">3.1 可复用小型项目结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#蓝湖设计稿"><span class="post-toc-number">1.</span> <span class="post-toc-text">蓝湖设计稿</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git-代码"><span class="post-toc-number">2.</span> <span class="post-toc-text">git 代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视频-1"><span class="post-toc-number">3.</span> <span class="post-toc-text">视频</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,6 +185,9 @@
 <li>使用蓝湖平台作为标注工具</li>
 <li>构建 Flutter 项目</li>
 </ul>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><iframe src="//player.bilibili.com/player.html?bvid=BV1J7411N7KF&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.1" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.1</a></p>
 <h2 id="1-需求说明"><a href="#1-需求说明" class="headerlink" title="1 需求说明"></a>1 需求说明</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -299,7 +302,7 @@
 <p>蓝湖现在收费了，所以查看标记还请自己上传 xd 设计稿<br>商业设计稿文件不好直接分享, 可以加微信联系 ducafecat</p>
 </blockquote>
 <h2 id="git-代码"><a href="#git-代码" class="headerlink" title="git 代码"></a>git 代码</h2><p><a href="https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.1" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.1</a></p>
-<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><ul>
+<h2 id="视频-1"><a href="#视频-1" class="headerlink" title="视频"></a>视频</h2><ul>
 <li><a href="https://www.bilibili.com/video/av92158011/" target="_blank" rel="noopener">b 站</a></li>
 <li><a href="https://youtu.be/Uucg6GGGBsY" target="_blank" rel="noopener">油管镜像</a></li>
 </ul>

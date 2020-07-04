@@ -14,6 +14,14 @@ categories: Flutter 实战从零开始
 - android 集成
 - ios 集成
 
+## 视频
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1Ek4y1r7zk&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+## 代码
+
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.12
+
 ## 正文
 
 ### 错误收集策略
@@ -235,10 +243,6 @@ https://lanhuapp.com/url/lYuz1
 
 > 蓝湖现在收费了，所以查看标记还请自己上传 xd 设计稿
 > 商业设计稿文件不好直接分享, 可以加微信联系 ducafecat
-
-### 代码
-
-https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.12
 
 ---
 

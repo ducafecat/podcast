@@ -18,6 +18,14 @@ categories: Flutter 实战从零开始
 - 抽取透明导航栏
 - toast 提示组件
 
+## 视频
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1rE411G7se&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+## 代码
+
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.3
+
 ## 1 静态路由
 
 ### 1.1 定义静态路由
@@ -785,10 +793,6 @@ Widget transparentAppBar({
     );
   }
 ```
-
-## git 代码
-
-https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.3
 
 ## 蓝湖设计稿
 

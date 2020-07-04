@@ -11,6 +11,14 @@ categories: Flutter 实战从零开始
 - 使用蓝湖平台作为标注工具
 - 构建 Flutter 项目
 
+## 视频
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1J7411N7KF&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+## 代码
+
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.1
+
 ## 1 需求说明
 
 ![](2020-02-27-10-31-41.png)

@@ -13,6 +13,14 @@ categories: Flutter 实战从零开始
 - 业务代码组织
 - 首页代码编写
 
+## 视频
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1Pp4y1C7hx&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+## 代码
+
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.6
+
 ## 2 代码规范
 
 ### 2.1 官方代码规范
@@ -615,10 +623,6 @@ https://lanhuapp.com/url/lYuz1
 ## YAPI 接口管理
 
 http://yapi.demo.qunar.com/
-
-## 代码
-
-https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.6
 
 ## 参考
 

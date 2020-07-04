@@ -17,6 +17,14 @@ categories: Flutter 实战从零开始
 - 带参数传递
 - 获取返回值
 
+## 视频
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1xf4y1S7Xq&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+## 代码
+
+https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.8
+
 ## 正文
 
 ### 一些优秀的路由插件
@@ -421,10 +429,6 @@ https://lanhuapp.com/url/lYuz1
 ### YAPI 接口管理
 
 http://yapi.demo.qunar.com/
-
-### 代码
-
-https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.8
 
 ### 参考
 

@@ -1,7 +1,7 @@
 ---
 title: Docker - 02 前端全栈 windows 从零安装 vmware + centos + docker + yapi
 date: 2020-05-29 00:00:00
-tags: Docker Linux
+tags: Docker
 categories: Docker
 ---
 
@@ -13,7 +13,7 @@ categories: Docker
 - windows 下使用 docker 为什么不行 ?
 - VMWare 安装 centos
 - 远程 centos 系统
-- centos 配置 docker环境
+- centos 配置 docker 环境
 
 ## 视频
 
@@ -35,8 +35,6 @@ https://youtu.be/NJIwbs8qmDY
 | 办公 office wps ps 微信 QQ XD VSCode | ok      | ok    | ok     |
 | macos 专属 safri sketch              |         | ok    |        |
 | 程序编译、文件名大小写严格           |         | ok    | ok     |
-
-
 
 ### 2. windows 直接用 docker 存在的问题
 
@@ -120,8 +118,6 @@ $ service network restart
 $ cat /etc/resolv.conf
 ```
 
-
-
 #### 3.4 远程 ssh 工具
 
 - finalshell
@@ -135,8 +131,6 @@ $ cat /etc/resolv.conf
 
 - cmder
   http://cmder.net/
-
-  
 
 #### 3.6 安装 docker
 
@@ -249,7 +243,6 @@ networks:
     ipam:
       config:
         - subnet: 172.22.0.0/16
-
 ```
 
 #### 4.2 运行 yapi
@@ -262,8 +255,6 @@ $ docker-compose up -d
 $ docker-compose down
 ```
 
-
-
 #### 4.3 修改本地解析
 
 C:\Windows\System32\drivers\etc\hosts
@@ -271,8 +262,6 @@ C:\Windows\System32\drivers\etc\hosts
 ```shell
 127.0.0.1 api.news.ducafecat.tech
 ```
-
-
 
 ## 问题整理
 
@@ -288,26 +277,19 @@ bcdedit /set hypervisorlaunchtype off
 
 然后重启电脑
 
-
-
-
 ## 参考
 
 - install docker
 
-  https://docs.docker.com/engine/install/centos/ 
+  https://docs.docker.com/engine/install/centos/
 
 - install docker-compose
 
-  https://github.com/docker/compose/releases 
+  https://github.com/docker/compose/releases
 
 - 阿里镜像
 
   https://cr.console.aliyun.com/cn-beijing/instances/mirrors
-
-
-
-
 
 ---
 

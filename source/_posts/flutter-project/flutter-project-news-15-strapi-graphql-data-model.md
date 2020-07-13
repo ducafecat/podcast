@@ -17,6 +17,10 @@ categories: Flutter 实战从零开始
 
 ## 视频
 
+https://www.bilibili.com/video/BV1jD4y1S7Mu/
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1jD4y1S7Mu&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
 ## 代码
 
 https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.15

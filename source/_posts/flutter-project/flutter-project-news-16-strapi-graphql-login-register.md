@@ -14,9 +14,34 @@ categories: Flutter 实战从零开始
 
 ## 视频
 
+https://www.bilibili.com/video/BV1vt4y1Q7i3/
+
+![](2020-07-20-09-12-19.png)
+
 ## 代码
 
 https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.16
+
+## strapi 运行环境网盘下载
+
+- 网盘
+
+链接:https://pan.baidu.com/s/13Ujy2hzXp8tSqxCx_4IhVQ
+密码:yu82
+
+- 运行
+
+需要用 docker-compose 启动
+账号 admin
+密码 123456
+
+```sh
+# 启动
+docker-compose up -d --remove-orphans
+
+# 关闭
+docker-compose down
+```
 
 ## 正文
 

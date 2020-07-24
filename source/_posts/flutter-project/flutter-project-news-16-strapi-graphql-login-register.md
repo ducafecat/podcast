@@ -1,5 +1,5 @@
 ---
-title: Flutter 实战从零开始 新闻客户端 - 16 strapi + graphql 用户注册、登录、异常处理
+title: Flutter 实战从零开始 新闻客户端 - 16 headless strapi + graphql 用户注册、登录、异常处理
 date: 2020-07-14 00:00:00
 tags: flutter
 categories: Flutter 实战从零开始
@@ -16,7 +16,7 @@ categories: Flutter 实战从零开始
 
 https://www.bilibili.com/video/BV1vt4y1Q7i3/
 
-![](2020-07-20-09-12-19.png)
+<iframe src="//player.bilibili.com/player.html?bvid=BV1vt4y1Q7i3&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
 
 ## 代码
 

@@ -1,5 +1,5 @@
 ---
-title: Flutter 实战从零开始 新闻客户端 - 17 strapi centos 发布部署 + jmeter 压测
+title: Flutter 实战从零开始 新闻客户端 - 17 headless strapi centos 发布部署 + jmeter 压测
 date: 2020-07-21 00:00:00
 tags: flutter
 categories: Flutter 实战从零开始
@@ -15,6 +15,10 @@ categories: Flutter 实战从零开始
 - jmeter 做基线测试 调优服务器配置
 
 ## 视频
+
+https://www.bilibili.com/video/BV15v411q7CK/
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV15v411q7CK&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
 
 ## strapi 运行环境网盘下载
 

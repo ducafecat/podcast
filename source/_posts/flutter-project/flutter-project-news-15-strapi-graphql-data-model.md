@@ -1,5 +1,5 @@
 ---
-title: Flutter 实战从零开始 新闻客户端 - 15 strapi 数据建模 graphql 条件查询排序
+title: Flutter 实战从零开始 新闻客户端 - 15 headless strapi 数据建模 graphql 条件查询排序
 date: 2020-07-09 00:00:00
 tags: flutter
 categories: Flutter 实战从零开始

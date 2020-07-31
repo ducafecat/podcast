@@ -1,5 +1,5 @@
 ---
-title: Flutter 混合开发 - 01 编写设备端组件的正确姿势!
+title: Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势!
 date: 2020-07-30 00:00:00
 tags: flutter
 categories: Flutter见闻
@@ -10,9 +10,13 @@ categories: Flutter见闻
 # 本节目标
 
 - 闲鱼手册中提到的混合开发
-- 编写一个 flutter 组件
+- 编写到使用一个 flutter 组件的完整过程
 
 ## 视频
+
+https://www.bilibili.com/video/bv1iT4y1j72t
+
+<iframe src="//player.bilibili.com/player.html?bvid=bv1iT4y1j72t&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
 
 ## 代码
 
@@ -31,6 +35,10 @@ https://github.com/ducafecat/flutter_baidu_plugin_ducafecat/releases/tag/1.0.1
 ![](2020-07-30-17-48-41.png)
 
 ## 聊聊 Flutter in Action 闲鱼最佳实践
+
+电子书下载
+
+https://c.tb.cn/I3.ZZpRl
 
 ### 第二代混合技术方案 FlutterBoost
 
@@ -169,9 +177,9 @@ ios/Classes/FlutterBaiduPluginDucafecatPlugin.m
 
 ```yaml
 flutter_baidu_plugin_ducafecat:
-  version: ^0.0.1
   git:
     url: https://github.com/ducafecat/flutter_baidu_plugin_ducafecat
+    version: ^0.0.1
 ```
 
 - 调用 加法

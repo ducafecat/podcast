@@ -14,20 +14,20 @@
     
     
     
-    <title>Flutter 混合开发 - 01 编写设备端组件的正确姿势! | duCafeCat</title>
+    <title>Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势! | duCafeCat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="flutter">
-    <meta name="description" content="本节目标 闲鱼手册中提到的混合开发 编写一个 flutter 组件  视频代码https://github.com/ducafecat/flutter_baidu_plugin_duca">
+    <meta name="description" content="本节目标 闲鱼手册中提到的混合开发 编写到使用一个 flutter 组件的完整过程  视频https://www.bilibili.com/video/bv1iT4y1j72t    代">
 <meta name="keywords" content="flutter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Flutter 混合开发 - 01 编写设备端组件的正确姿势!">
+<meta property="og:title" content="Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势!">
 <meta property="og:url" content="https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/index.html">
 <meta property="og:site_name" content="duCafeCat">
-<meta property="og:description" content="本节目标 闲鱼手册中提到的混合开发 编写一个 flutter 组件  视频代码https://github.com/ducafecat/flutter_baidu_plugin_duca">
+<meta property="og:description" content="本节目标 闲鱼手册中提到的混合开发 编写到使用一个 flutter 组件的完整过程  视频https://www.bilibili.com/video/bv1iT4y1j72t    代">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/2020-07-30-21-51-56.png">
 <meta property="og:image" content="https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/2020-07-30-17-35-34.png">
@@ -37,10 +37,10 @@
 <meta property="og:image" content="https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/2020-07-30-21-08-03.png">
 <meta property="og:image" content="https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/2020-07-30-21-15-03.png">
 <meta property="og:image" content="https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/2020-07-30-21-25-14.png">
-<meta property="og:updated_time" content="2020-07-30T13:53:28.623Z">
+<meta property="og:updated_time" content="2020-07-31T06:12:52.915Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flutter 混合开发 - 01 编写设备端组件的正确姿势!">
-<meta name="twitter:description" content="本节目标 闲鱼手册中提到的混合开发 编写一个 flutter 组件  视频代码https://github.com/ducafecat/flutter_baidu_plugin_duca">
+<meta name="twitter:title" content="Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势!">
+<meta name="twitter:description" content="本节目标 闲鱼手册中提到的混合开发 编写到使用一个 flutter 组件的完整过程  视频https://www.bilibili.com/video/bv1iT4y1j72t    代">
 <meta name="twitter:image" content="https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/2020-07-30-21-51-56.png">
     
         <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
@@ -115,7 +115,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
             <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Flutter 混合开发 - 01 编写设备端组件的正确姿势!</div>
+        <div class="flex-col header-title ellipsis">Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势!</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -136,7 +136,7 @@
 </header>
 <header class="content-header post-header">
     <div class="container fade-scale">
-        <h1 class="title">Flutter 混合开发 - 01 编写设备端组件的正确姿势!</h1>
+        <h1 class="title">Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势!</h1>
         <h5 class="subtitle">
              <time datetime="2020-07-29T16:00:00.000Z" itemprop="datePublished" class="page-time">
 	2020-07-30
@@ -166,7 +166,7 @@
     itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Flutter 混合开发 - 01 编写设备端组件的正确姿势!</h1>
+        <h1 class="post-card-title">Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势!</h1>
         <div class="post-meta">
             <time class="post-time" title="2020-07-30 00:00:00" datetime="2020-07-29T16:00:00.000Z"  itemprop="datePublished">2020-07-30</time>
 
@@ -188,9 +188,12 @@
             </figure>
 <h1 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h1><ul>
 <li>闲鱼手册中提到的混合开发</li>
-<li>编写一个 flutter 组件</li>
+<li>编写到使用一个 flutter 组件的完整过程</li>
 </ul>
-<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ducafecat/flutter_baidu_plugin_ducafecat/releases/tag/1.0.1" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_baidu_plugin_ducafecat/releases/tag/1.0.1</a></p>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p><a href="https://www.bilibili.com/video/bv1iT4y1j72t" target="_blank" rel="noopener">https://www.bilibili.com/video/bv1iT4y1j72t</a></p>
+<iframe src="//player.bilibili.com/player.html?bvid=bv1iT4y1j72t&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ducafecat/flutter_baidu_plugin_ducafecat/releases/tag/1.0.1" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_baidu_plugin_ducafecat/releases/tag/1.0.1</a></p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="从古至今、移动开发不可回避的问题"><a href="#从古至今、移动开发不可回避的问题" class="headerlink" title="从古至今、移动开发不可回避的问题"></a>从古至今、移动开发不可回避的问题</h3><ul>
 <li>flutter、weex、React Native、Cordova</li>
 </ul>
@@ -211,7 +214,9 @@
                 </div>
                 <div class="image-caption"></div>
             </figure>
-<h2 id="聊聊-Flutter-in-Action-闲鱼最佳实践"><a href="#聊聊-Flutter-in-Action-闲鱼最佳实践" class="headerlink" title="聊聊 Flutter in Action 闲鱼最佳实践"></a>聊聊 Flutter in Action 闲鱼最佳实践</h2><h3 id="第二代混合技术方案-FlutterBoost"><a href="#第二代混合技术方案-FlutterBoost" class="headerlink" title="第二代混合技术方案 FlutterBoost"></a>第二代混合技术方案 FlutterBoost</h3><ul>
+<h2 id="聊聊-Flutter-in-Action-闲鱼最佳实践"><a href="#聊聊-Flutter-in-Action-闲鱼最佳实践" class="headerlink" title="聊聊 Flutter in Action 闲鱼最佳实践"></a>聊聊 Flutter in Action 闲鱼最佳实践</h2><p>电子书下载</p>
+<p><a href="https://c.tb.cn/I3.ZZpRl" target="_blank" rel="noopener">https://c.tb.cn/I3.ZZpRl</a></p>
+<h3 id="第二代混合技术方案-FlutterBoost"><a href="#第二代混合技术方案-FlutterBoost" class="headerlink" title="第二代混合技术方案 FlutterBoost"></a>第二代混合技术方案 FlutterBoost</h3><ul>
 <li>项目开源地址</li>
 </ul>
 <p><a href="https://github.com/alibaba/flutter_boost" target="_blank" rel="noopener">https://github.com/alibaba/flutter_boost</a></p>
@@ -280,7 +285,7 @@
 <h3 id="新建工程调用"><a href="#新建工程调用" class="headerlink" title="新建工程调用"></a>新建工程调用</h3><ul>
 <li>pubspec.yaml</li>
 </ul>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">flutter_baidu_plugin_ducafecat:</span></span><br><span class="line"><span class="attr">  version:</span> <span class="string">^0.0.1</span></span><br><span class="line"><span class="attr">  git:</span></span><br><span class="line"><span class="attr">    url:</span> <span class="attr">https://github.com/ducafecat/flutter_baidu_plugin_ducafecat</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">flutter_baidu_plugin_ducafecat:</span></span><br><span class="line"><span class="attr">  git:</span></span><br><span class="line"><span class="attr">    url:</span> <span class="attr">https://github.com/ducafecat/flutter_baidu_plugin_ducafecat</span></span><br><span class="line"><span class="attr">    version:</span> <span class="string">^0.0.1</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>调用 加法</li>
 </ul>
@@ -330,7 +335,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/&title=《Flutter 混合开发 - 01 编写设备端组件的正确姿势!》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/&title=《Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势!》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -340,7 +345,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/&title=《Flutter 混合开发 - 01 编写设备端组件的正确姿势!》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/&title=《Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势!》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -350,7 +355,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 混合开发 - 01 编写设备端组件的正确姿势!》 — duCafeCat&url=https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势!》 — duCafeCat&url=https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/&via=https://ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -443,7 +448,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/&title=《Flutter 混合开发 - 01 编写设备端组件的正确姿势!》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/&title=《Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势!》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -453,7 +458,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/&title=《Flutter 混合开发 - 01 编写设备端组件的正确姿势!》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/&title=《Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势!》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -463,7 +468,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 混合开发 - 01 编写设备端组件的正确姿势!》 — duCafeCat&url=https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势!》 — duCafeCat&url=https://ducafecat.tech/2020/07/30/flutter-daily/flutter-plugins-01-developing-packages-plugins/&via=https://ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

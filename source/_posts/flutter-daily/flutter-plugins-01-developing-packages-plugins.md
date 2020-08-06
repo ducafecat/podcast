@@ -1,8 +1,8 @@
 ---
-title: Flutter 百度地图插件开发 - 01 编写设备端组件的正确姿势!
+title: Flutter 混合开发 - 01 编写设备端组件的正确姿势!
 date: 2020-07-30 00:00:00
 tags: flutter
-categories: Flutter见闻
+categories: Flutter混合开发
 ---
 
 ![](2020-07-30-21-51-56.png)

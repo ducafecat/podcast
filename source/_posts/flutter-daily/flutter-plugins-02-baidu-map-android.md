@@ -13,13 +13,29 @@ categories: Flutter混合开发
 - 百度组件初始
 - 编写定位代码 android 篇
 
-![](2020-08-06-18-27-47.png)
+![](2020-08-12-15-01-43.png)
+
+## 环境
+
+```sh
+$ flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, 1.20.1, on Mac OS X 10.15.6 19G73, locale zh-Hans-CN)
+[✓] Android toolchain - develop for Android devices (Android SDK version 29.0.2)
+[✓] Xcode - develop for iOS and macOS (Xcode 11.6)
+[✓] Android Studio (version 4.0)
+[✓] VS Code (version 1.47.3)
+```
 
 ## 视频
 
 ## 代码
 
 https://github.com/ducafecat/flutter_baidu_plugin_ducafecat/releases/tag/v1.0.2
+
+可以直接用 👇 v1.0.3
+
+https://github.com/ducafecat/flutter_baidu_plugin_ducafecat/releases/tag/v1.0.3
 
 ## 正文
 
@@ -45,7 +61,7 @@ https://github.com/ducafecat/flutter_baidu_plugin_ducafecat/releases/tag/v1.0.2
 
 http://lbsyun.baidu.com/index.php?title=flutter/loc
 
-### 百度地图定位功能
+### 组件代码
 
 #### 百度应用管理，创建 AK
 
@@ -132,6 +148,33 @@ http://lbsyun.baidu.com/index.php?title=android-locsdk/guide/create-project/andr
 
 ![](2020-08-06-16-27-07.png)
 
+- android/build.gradle
+
+```gradle
+...
+android {
+    compileSdkVersion 28
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+dependencies {
+    implementation files('libs/BaiduLBS_Android.jar')
+}
+
+```
+
 #### 编写 Flutter 组件代码
 
 - 目录 lib
@@ -143,58 +186,57 @@ http://lbsyun.baidu.com/index.php?title=android-locsdk/guide/create-project/andr
 ```dart
 /// 百度定位结果类，用于存储各类定位结果信息
 class BaiduLocation {
+  /// 定位成功时间
   final String locTime;
 
-  /// 定位成功时间
+  /// 定位结果类型
   final int locType;
 
-  /// 定位结果类型
+  /// 半径
   final double radius;
 
-  /// 精度
+  /// 纬度
   final double latitude;
 
-  /// 纬度
+  /// 经度
   final double longitude;
 
-  /// 经度
+  /// 海拔
   final double altitude;
 
-  /// 高度
+  /// 国家
   final String country;
 
-  /// 国家
+  /// 省份
   final String province;
 
-  /// 省份
+  /// 城市
   final String city;
 
-  /// 城市
+  /// 区县
   final String district;
 
-  /// 区县
+  /// 街道
   final String street;
 
-  /// 街道
+  /// 地址
   final String address;
 
-  /// 地址
-  final String locationDetail;
-
   /// 位置语义化描述，例如"在百度大厦附近"
-  final String poiList;
+  final String locationDetail;
 
   /// 周边poi信息，每个poi之间用"|"隔开
 
-  final String callbackTime;
+  final String poiList;
 
   /// 定位结果回调时间
-  final int errorCode;
+  final String callbackTime;
 
   /// 错误码
-  final String errorInfo;
+  final int errorCode;
 
   /// 定位失败描述信息
+  final String errorInfo;
 
   BaiduLocation(
       {this.locTime,
@@ -1168,7 +1210,9 @@ android/src/main/java/tech/ducafecat/flutter_baidu_plugin_ducafecat/FlutterBaidu
   }
 ```
 
-#### Flutter Example 动态授权
+### Example 代码
+
+#### 动态授权
 
 - example/pubspec.yaml
 
@@ -1185,45 +1229,64 @@ dependencies:
 - example/lib/main.dart
 
 ```dart
-  // 动态申请定位权限
-  Future<bool> _requestPermission() async {
-    Map<Permission, PermissionStatus> statuses = await [
-      Permission.location,
-      Permission.storage,
-    ].request();
 
-    return statuses[Permission.location].isGranted &&
-        statuses[Permission.storage].isGranted;
-  }
-```
-
-#### Flutter Example 调用组件 API
-
-- example/lib/main.dart
-
-```dart
 class _MyAppState extends State<MyApp> {
-  // 组件对象
-  FlutterBaiduPluginDucafecat _locationPlugin = FlutterBaiduPluginDucafecat();
-
-  // 定义成员变量
-  StreamSubscription<Map<String, Object>> _locationListener; // 事件监听
-  BaiduLocation _baiduLocation; // 经纬度信息
-  Map<String, Object> _loationResult; // 返回格式数据
-
   @override
   void initState() {
     super.initState();
     _requestPermission(); // 执行权限请求
   }
 
+  // 动态申请定位权限
+  Future<bool> _requestPermission() async {
+    Map<Permission, PermissionStatus> statuses = await [
+      Permission.location,
+      Permission.storage,
+    ].request();
+
+    return statuses[Permission.location].isGranted &&
+        statuses[Permission.storage].isGranted;
+  }
+}
+```
+
+#### 主界面代码
+
+- example/lib/main.dart
+
+```dart
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:flutter_baidu_plugin_ducafecat/flutter_baidu_plugin_ducafecat.dart';
+import 'package:flutter_baidu_plugin_ducafecat_example/views/location-view.dart';
+import 'package:permission_handler/permission_handler.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    _requestPermission(); // 执行权限请求
+
+    if (Platform.isIOS == true) {
+      FlutterBaiduPluginDucafecat.setApiKeyForIOS(
+          "dkYT07blcAj3drBbcN1eGFYqt16HP1pR");
+    }
+  }
+
   @override
   void dispose() {
     super.dispose();
-    // 取消监听
-    if (null != _locationListener) {
-      _locationListener.cancel();
-    }
   }
 
   // 动态申请定位权限
@@ -1235,6 +1298,79 @@ class _MyAppState extends State<MyApp> {
 
     return statuses[Permission.location].isGranted &&
         statuses[Permission.storage].isGranted;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      routes: {
+        "location_view": (context) => LocationView(),
+      },
+      home: MyHome(),
+    );
+  }
+}
+
+class MyHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('地图插件')),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ListTile(
+              title: Text('定位信息'),
+              subtitle: Text('点击开始后，百度地图实时推送经纬度信息'),
+              leading: Icon(Icons.location_searching),
+              trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                Navigator.pushNamed(context, "location_view");
+              },
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+```
+
+#### 定位服务代码
+
+- example/lib/views/location-view.dart
+
+```dart
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_baidu_plugin_ducafecat/entity/flutter_baidu_location.dart';
+import 'package:flutter_baidu_plugin_ducafecat/entity/flutter_baidu_location_android_option.dart';
+import 'package:flutter_baidu_plugin_ducafecat/entity/flutter_baidu_location_ios_option.dart';
+import 'package:flutter_baidu_plugin_ducafecat/flutter_baidu_plugin_ducafecat.dart';
+
+class LocationView extends StatefulWidget {
+  LocationView({Key key}) : super(key: key);
+
+  @override
+  _LocationViewState createState() => _LocationViewState();
+}
+
+class _LocationViewState extends State<LocationView> {
+  FlutterBaiduPluginDucafecat _locationPlugin = FlutterBaiduPluginDucafecat();
+  StreamSubscription<Map<String, Object>> _locationListener; // 事件监听
+  BaiduLocation _baiduLocation; // 经纬度信息
+  // Map<String, Object> _loationResult; // 返回格式数据
+
+  @override
+  void dispose() {
+    super.dispose();
+
+    // 取消监听
+    if (null != _locationListener) {
+      _locationListener.cancel();
+    }
   }
 
   // 返回定位信息
@@ -1245,7 +1381,7 @@ class _MyAppState extends State<MyApp> {
     _locationListener =
         _locationPlugin.onResultCallback().listen((Map<String, Object> result) {
       setState(() {
-        _loationResult = result;
+        // _loationResult = result;
         try {
           _baiduLocation = BaiduLocation.fromMap(result);
           print(_baiduLocation);
@@ -1291,7 +1427,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   // 启动定位
-  void _startLocation() {
+  void _handleStartLocation() {
     if (null != _locationPlugin) {
       _setupListener();
       _setLocOption();
@@ -1300,30 +1436,139 @@ class _MyAppState extends State<MyApp> {
   }
 
   // 停止定位
-  void _stopLocation() {
+  void _handleStopLocation() {
     if (null != _locationPlugin) {
       _locationPlugin.stopLocation();
+      setState(() {
+        _baiduLocation = null;
+      });
     }
+  }
+
+  ////////////////////////////////////////////////////////////
+
+  // 显示地理信息
+  Widget _buildLocationView() {
+    return _baiduLocation != null
+        ? Table(
+            children: [
+              TableRow(children: [
+                TableCell(child: Text('经度')),
+                TableCell(child: Text(_baiduLocation.longitude.toString())),
+              ]),
+              TableRow(children: [
+                TableCell(child: Text('纬度')),
+                TableCell(child: Text(_baiduLocation.latitude.toString())),
+              ]),
+              TableRow(children: [
+                TableCell(child: Text('国家')),
+                TableCell(
+                    child: Text(_baiduLocation.country != null
+                        ? _baiduLocation.country
+                        : "")),
+              ]),
+              TableRow(children: [
+                TableCell(child: Text('省份')),
+                TableCell(
+                    child: Text(_baiduLocation.province != null
+                        ? _baiduLocation.province
+                        : "")),
+              ]),
+              TableRow(children: [
+                TableCell(child: Text('城市')),
+                TableCell(
+                    child: Text(_baiduLocation.city != null
+                        ? _baiduLocation.city
+                        : "")),
+              ]),
+              TableRow(children: [
+                TableCell(child: Text('区县')),
+                TableCell(
+                    child: Text(_baiduLocation.district != null
+                        ? _baiduLocation.district
+                        : "")),
+              ]),
+              TableRow(children: [
+                TableCell(child: Text('街道')),
+                TableCell(
+                    child: Text(_baiduLocation.street != null
+                        ? _baiduLocation.street
+                        : "")),
+              ]),
+              TableRow(children: [
+                TableCell(child: Text('地址')),
+                TableCell(
+                    child: Text(_baiduLocation.address != null
+                        ? _baiduLocation.address
+                        : "")),
+              ]),
+              TableRow(children: [
+                TableCell(child: Text('位置语义化描述')),
+                TableCell(
+                    child: Text(_baiduLocation.locationDetail != null
+                        ? _baiduLocation.locationDetail
+                        : "")),
+              ]),
+              TableRow(children: [
+                TableCell(child: Text('周边poi信息')),
+                TableCell(
+                    child: Text(_baiduLocation.poiList != null
+                        ? _baiduLocation.poiList
+                        : "")),
+              ]),
+              TableRow(children: [
+                TableCell(child: Text('错误码')),
+                TableCell(
+                    child: Text(_baiduLocation.errorCode != null
+                        ? _baiduLocation.errorCode.toString()
+                        : "")),
+              ]),
+              TableRow(children: [
+                TableCell(child: Text('定位失败描述信息')),
+                TableCell(
+                    child: Text(_baiduLocation.errorInfo != null
+                        ? _baiduLocation.errorInfo
+                        : "")),
+              ]),
+            ],
+          )
+        : Container();
+  }
+
+  // 控制面板
+  Widget _buildControlPlan() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        MaterialButton(
+          color: Colors.blue,
+          textColor: Colors.white,
+          onPressed: _baiduLocation == null ? _handleStartLocation : null,
+          child: Text('开始定位'),
+        ),
+        MaterialButton(
+          color: Colors.blue,
+          textColor: Colors.white,
+          onPressed: _baiduLocation != null ? _handleStopLocation : null,
+          child: Text('暂停定位'),
+        )
+      ],
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text('地图插件')),
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              FlatButton(
-                onPressed: _startLocation,
-                child: Text('开始定位'),
-              ),
-              FlatButton(
-                onPressed: _stopLocation,
-                child: Text('暂停定位'),
-              )
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('定位信息'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            _buildControlPlan(),
+            Divider(),
+            _buildLocationView(),
+          ],
         ),
       ),
     );

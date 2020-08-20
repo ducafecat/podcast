@@ -43,3 +43,6 @@ https://lanhuapp.com/url/lYuz1
 © 猫哥
 
 [https://ducafecat.tech](https://ducafecat.tech/)
+
+[https://ducafecat.gitee.io](https://ducafecat.gitee.io)
+

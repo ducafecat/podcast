@@ -1583,6 +1583,9 @@ class _LocationViewState extends State<LocationView> {
 
 ## 参考
 
+- https://lbsyun.baidu.com/apiconsole/key#/home
+- http://lbsyun.baidu.com/index.php?title=android-locsdk
+
 ---
 
 © 猫哥

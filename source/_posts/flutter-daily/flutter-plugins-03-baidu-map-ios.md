@@ -9,6 +9,8 @@ categories: Flutter混合开发
 
 # 本节目标
 
+![](2020-08-24-10-01-58.png)
+
 - 创建 ios flutter 插件流程
 - 集成百度定位功能
 
@@ -21,6 +23,8 @@ https://github.com/ducafecat/flutter_baidu_plugin_ducafecat/releases/tag/v1.0.3
 ## 百度平台部分
 
 ### 设置 AK
+
+https://lbsyun.baidu.com/apiconsole/key#/home
 
 - 添加应用
 
@@ -562,8 +566,10 @@ NS_ASSUME_NONNULL_END
 
 ## 参考
 
+- https://lbsyun.baidu.com/apiconsole/key#/home
 - https://flutter.dev/docs/development/packages-and-plugins/developing-packages#step-2c-add-ios-platform-code-swifthm
 - http://lbsyun.baidu.com/index.php?title=ios-locsdk/guide/create-project/cocoapods-create
+- http://lbsyun.baidu.com/index.php?title=ios-locsdk
 
 ---
 

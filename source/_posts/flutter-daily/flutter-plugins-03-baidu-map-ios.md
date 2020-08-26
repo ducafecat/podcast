@@ -16,6 +16,10 @@ categories: Flutter混合开发
 
 ## 视频
 
+https://www.bilibili.com/video/BV1HT4y1L73i/
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1HT4y1L73i&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
 ## 代码
 
 https://github.com/ducafecat/flutter_baidu_plugin_ducafecat/releases/tag/v1.0.3

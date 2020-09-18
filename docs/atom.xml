@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ducafecat.tech/"/>
-  <updated>2020-09-03T07:20:34.557Z</updated>
+  <updated>2020-09-18T05:54:13.691Z</updated>
   <id>https://ducafecat.tech/</id>
   
   <author>
@@ -17,27 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Flutter 2020 学习心得、学习路线</title>
-    <link href="https://ducafecat.tech/2020/09/03/flutter-daily/flutter-2020-how-to-learn-flutter-develop/"/>
-    <id>https://ducafecat.tech/2020/09/03/flutter-daily/flutter-2020-how-to-learn-flutter-develop/</id>
-    <published>2020-09-02T16:00:00.000Z</published>
-    <updated>2020-09-03T07:20:34.557Z</updated>
+    <title>harmonyos-2020-v2-research</title>
+    <link href="https://ducafecat.tech/2020/09/18/flutter-daily/harmonyos-2020-v2-research/"/>
+    <id>https://ducafecat.tech/2020/09/18/flutter-daily/harmonyos-2020-v2-research/</id>
+    <published>2020-09-18T05:54:04.000Z</published>
+    <updated>2020-09-18T05:54:13.691Z</updated>
     
-    <content type="html"><![CDATA[<figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="2020-09-03-15-13-56.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h2 id="新人上手情况"><a href="#新人上手情况" class="headerlink" title="新人上手情况"></a>新人上手情况</h2><ul><li>语言基础</li><li>数据结构</li><li>网络通信</li><li>前端布局</li><li>动画</li><li>优化点</li></ul><h2 id="前端遇到的最大问题"><a href="#前端遇到的最大问题" class="headerlink" title="前端遇到的最大问题"></a>前端遇到的最大问题</h2><ul><li>原生调试</li><li>原生组件开发</li></ul><h2 id="聊聊学习动机"><a href="#聊聊学习动机" class="headerlink" title="聊聊学习动机"></a>聊聊学习动机</h2><ul><li>单位工作需要</li><li>自己兴趣开发 APP</li><li>毕业设计</li><li>漫无目的、漫无目的的学习</li></ul><h2 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h2><p><a href="https://github.com/olexale/flutter_roadmap" target="_blank" rel="noopener">https://github.com/olexale/flutter_roadmap</a></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="2020-09-03-15-09-44.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul><li><p>官网 dart<br><a href="https://dart.dev/guides/language/language-tour" target="_blank" rel="noopener">https://dart.dev/guides/language/language-tour</a></p></li><li><p>官网 flutter<br><a href="https://flutter.dev/" target="_blank" rel="noopener">https://flutter.dev/</a><br><a href="https://flutter.cn/" target="_blank" rel="noopener">https://flutter.cn/</a></p></li><li><p>juejin<br><a href="https://juejin.im/tag/Flutter" target="_blank" rel="noopener">https://juejin.im/tag/Flutter</a></p></li><li><p>medium<br><a href="https://medium.com/tag/flutter" target="_blank" rel="noopener">https://medium.com/tag/flutter</a></p></li><li><p>flutter awesome github<br><a href="https://github.com/Solido/awesome-flutter" target="_blank" rel="noopener">https://github.com/Solido/awesome-flutter</a><br><a href="https://github.com/crazycodeboy/awesome-flutter-cn" target="_blank" rel="noopener">https://github.com/crazycodeboy/awesome-flutter-cn</a></p></li><li><p>flutter awesome web<br><a href="https://flutterawesome.com/" target="_blank" rel="noopener">https://flutterawesome.com/</a></p></li><li><p>other<br><a href="https://twitter.com/search?q=flutterdev" target="_blank" rel="noopener">https://twitter.com/search?q=flutterdev</a><br><a href="https://www.facebook.com/search/groups/?q=flutter%20dev" target="_blank" rel="noopener">https://www.facebook.com/search/groups/?q=flutter%20dev</a></p></li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最快的学习方式有个目标、看优秀源代码，完成你的作品、上线！</p><ul><li><hr></li></ul><p>© 猫哥</p><p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p><p><a href="https://ducafecat.gitee.io" target="_blank" rel="noopener">https://ducafecat.gitee.io</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h1><ul><li><h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2></li></ul><iframe src="//player.bilibili.com/player.html?bvid=BV1Zz411e7dj&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.14" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.14</a></p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>### </p><p>### </p><p>### </p><p>### </p><p>### </p><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h3 id="设计稿蓝湖预览"><a href="#设计稿蓝湖预览" class="headerlink" title="设计稿蓝湖预览"></a>设计稿蓝湖预览</h3><p><a href="https://lanhuapp.com/url/lYuz1" target="_blank" rel="noopener">https://lanhuapp.com/url/lYuz1</a><br>密码: gSKl</p><blockquote><p>蓝湖现在收费了，所以查看标记还请自己上传 xd 设计稿<br>商业设计稿文件不好直接分享, 可以加微信联系 ducafecat</p></blockquote><hr><p>© 猫哥</p><p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p><p><a href="https://ducafecat.gitee.io" target="_blank" rel="noopener">https://ducafecat.gitee.io</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;figure class=&quot;image-bubble&quot;&gt;
-                &lt;div class=&quot;img-lightbox&quot;&gt;
-                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                   
+        &lt;h1 id=&quot;本节目标&quot;&gt;&lt;a href=&quot;#本节目标&quot; class=&quot;headerlink&quot; title=&quot;本节目标&quot;&gt;&lt;/a&gt;本节目标&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h2 id=&quot;视频&quot;&gt;&lt;a href=&quot;#视频&quot; class=&quot;headerlink&quot; title=&quot;视频&quot;&gt;
       
     
     </summary>
     
-      <category term="Flutter见闻" scheme="https://ducafecat.tech/categories/Flutter%E8%A7%81%E9%97%BB/"/>
+      <category term="Flutter实战从零开始" scheme="https://ducafecat.tech/categories/Flutter%E5%AE%9E%E6%88%98%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/"/>
     
     
       <category term="flutter" scheme="https://ducafecat.tech/tags/flutter/"/>
@@ -886,6 +884,34 @@
     
     
       <category term="flutter" scheme="https://ducafecat.tech/tags/flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HarmonyOS 真的是套壳么，我也好奇的玩了下</title>
+    <link href="https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/"/>
+    <id>https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/</id>
+    <published>2019-09-17T16:00:00.000Z</published>
+    <updated>2020-09-18T06:32:19.202Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="2020-09-18-14-32-16.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h2 id="分布式设备系统"><a href="#分布式设备系统" class="headerlink" title="分布式设备系统"></a>分布式设备系统</h2><p><a href="https://www.huawei.com" target="_blank" rel="noopener">https://www.huawei.com</a></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="2020-09-18-14-02-49.png" alt title>                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="2020-09-18-14-03-15.png" alt title>                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="2020-09-18-14-03-45.png" alt title>                </div>                <div class="image-caption"></div>            </figure><blockquote><p>设备的互联才是未来、物联网</p></blockquote><h2 id="HarmonyOS-源码"><a href="#HarmonyOS-源码" class="headerlink" title="HarmonyOS 源码"></a>HarmonyOS 源码</h2><p><a href="https://openharmony.gitee.com" target="_blank" rel="noopener">https://openharmony.gitee.com</a></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="2020-09-18-14-09-07.png" alt title>                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="2020-09-18-14-09-23.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h2 id="开发板卡"><a href="#开发板卡" class="headerlink" title="开发板卡"></a>开发板卡</h2><p><a href="https://device.harmonyos.com/cn/docs/start/introduce/oem_start_guide-0000001054913231" target="_blank" rel="noopener">https://device.harmonyos.com/cn/docs/start/introduce/oem_start_guide-0000001054913231</a><br><a href="https://gitee.com/openharmony/docs/blob/master/quick-start/Hi3861开发板介绍.md" target="_blank" rel="noopener">https://gitee.com/openharmony/docs/blob/master/quick-start/Hi3861开发板介绍.md</a></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="2020-09-18-14-09-40.png" alt title>                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="2020-09-18-14-16-07.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h2 id="Hello-Word"><a href="#Hello-Word" class="headerlink" title="Hello Word!"></a>Hello Word!</h2><p><a href="https://developer.harmonyos.com/cn/develop/deveco-studio#download" target="_blank" rel="noopener">https://developer.harmonyos.com/cn/develop/deveco-studio#download</a></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="2020-09-18-14-20-01.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul><li><a href="https://www.huawei.com" target="_blank" rel="noopener">华为官网</a></li><li><a href="https://www.harmonyos.com/cn/develop" target="_blank" rel="noopener">开发者</a></li><li><a href="https://device.harmonyos.com/cn/docs/start/introduce/oem_start_guide-0000001054913231" target="_blank" rel="noopener">开发版卡</a></li><li><a href="https://developer.harmonyos.com/cn/docs/documentation/doc-guides/harmonyos-overview-0000000000011903" target="_blank" rel="noopener">HarmonyOS 文档</a></li><li><p><a href="https://openharmony.gitee.com/" target="_blank" rel="noopener">HarmonyOS 源码</a></p></li><li><hr></li></ul><p>© 猫哥</p><p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p><p><a href="https://ducafecat.gitee.io" target="_blank" rel="noopener">https://ducafecat.gitee.io</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                   
+      
+    
+    </summary>
+    
+      <category term="其它" scheme="https://ducafecat.tech/categories/%E5%85%B6%E5%AE%83/"/>
+    
+    
+      <category term="HarmonyOS" scheme="https://ducafecat.tech/tags/HarmonyOS/"/>
     
   </entry>
   

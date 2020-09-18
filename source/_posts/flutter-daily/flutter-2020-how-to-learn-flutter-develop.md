@@ -1,68 +1,54 @@
 ---
-title: Flutter 2020 学习心得、学习路线
-date: 2020-09-03 00:00:00
-tags: flutter
-categories: Flutter见闻
+title: HarmonyOS 真的是套壳么，我也好奇的玩了下
+date: 2019-09-18 00:00:00
+tags: HarmonyOS
+categories: 其它
 ---
 
-![](2020-09-03-15-13-56.png)
+![](2020-09-18-14-32-16.png)
 
-## 新人上手情况
+## 分布式设备系统
 
-- 语言基础
-- 数据结构
-- 网络通信
-- 前端布局
-- 动画
-- 优化点
+https://www.huawei.com
 
-## 前端遇到的最大问题
+![](2020-09-18-14-02-49.png)
 
-- 原生调试
-- 原生组件开发
+![](2020-09-18-14-03-15.png)
 
-## 聊聊学习动机
+![](2020-09-18-14-03-45.png)
 
-- 单位工作需要
-- 自己兴趣开发 APP
-- 毕业设计
-- 漫无目的、漫无目的的学习
+> 设备的互联才是未来、物联网
 
-## 学习路线
+## HarmonyOS 源码
 
-https://github.com/olexale/flutter_roadmap
+https://openharmony.gitee.com
 
-![](2020-09-03-15-09-44.png)
+![](2020-09-18-14-09-07.png)
 
-## 资源
+![](2020-09-18-14-09-23.png)
 
-- 官网 dart
-  https://dart.dev/guides/language/language-tour
+## 开发板卡
 
-- 官网 flutter
-  https://flutter.dev/
-  https://flutter.cn/
+https://device.harmonyos.com/cn/docs/start/introduce/oem_start_guide-0000001054913231
+https://gitee.com/openharmony/docs/blob/master/quick-start/Hi3861开发板介绍.md
 
-- juejin
-  https://juejin.im/tag/Flutter
+![](2020-09-18-14-09-40.png)
 
-- medium
-  https://medium.com/tag/flutter
+![](2020-09-18-14-16-07.png)
 
-- flutter awesome github
-  https://github.com/Solido/awesome-flutter
-  https://github.com/crazycodeboy/awesome-flutter-cn
+## Hello Word!
 
-- flutter awesome web
-  https://flutterawesome.com/
+https://developer.harmonyos.com/cn/develop/deveco-studio#download
 
-- other
-  https://twitter.com/search?q=flutterdev
-  https://www.facebook.com/search/groups/?q=flutter%20dev
+![](2020-09-18-14-20-01.png)
 
-## 总结
+## 引用
 
-最快的学习方式有个目标、看优秀源代码，完成你的作品、上线！
+- [华为官网](https://www.huawei.com)
+- [开发者](https://www.harmonyos.com/cn/develop)
+- [开发版卡](https://device.harmonyos.com/cn/docs/start/introduce/oem_start_guide-0000001054913231)
+- [HarmonyOS 文档](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/harmonyos-overview-0000000000011903)
+- [HarmonyOS 源码](https://openharmony.gitee.com/)
 
 - ***
 

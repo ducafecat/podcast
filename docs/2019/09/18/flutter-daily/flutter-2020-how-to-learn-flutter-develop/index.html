@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>HarmonyOS 真的是套壳么，我也好奇的玩了下 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="HarmonyOS">
+    <meta name="description" content="分布式设备系统https://www.huawei.com">
+<meta name="keywords" content="HarmonyOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HarmonyOS 真的是套壳么，我也好奇的玩了下">
+<meta property="og:url" content="https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="分布式设备系统https://www.huawei.com">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/2020-09-18-14-32-16.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/2020-09-18-14-02-49.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/2020-09-18-14-03-15.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/2020-09-18-14-03-45.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/2020-09-18-14-09-07.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/2020-09-18-14-09-23.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/2020-09-18-14-09-40.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/2020-09-18-14-16-07.png">
+<meta property="og:image" content="https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/2020-09-18-14-20-01.png">
+<meta property="og:updated_time" content="2020-09-18T06:32:19.202Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HarmonyOS 真的是套壳么，我也好奇的玩了下">
+<meta name="twitter:description" content="分布式设备系统https://www.huawei.com">
+<meta name="twitter:image" content="https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/2020-09-18-14-32-16.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">HarmonyOS 真的是套壳么，我也好奇的玩了下</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">HarmonyOS 真的是套壳么，我也好奇的玩了下</h1>
+        <h5 class="subtitle">
+             <time datetime="2019-09-17T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2019-09-18
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/其它/">其它</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分布式设备系统"><span class="post-toc-number">1.</span> <span class="post-toc-text">分布式设备系统</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HarmonyOS-源码"><span class="post-toc-number">2.</span> <span class="post-toc-text">HarmonyOS 源码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开发板卡"><span class="post-toc-number">3.</span> <span class="post-toc-text">开发板卡</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hello-Word"><span class="post-toc-number">4.</span> <span class="post-toc-text">Hello Word!</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引用"><span class="post-toc-number">5.</span> <span class="post-toc-text">引用</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-flutter-daily/flutter-2020-how-to-learn-flutter-develop" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">HarmonyOS 真的是套壳么，我也好奇的玩了下</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-09-18 00:00:00" datetime="2019-09-17T16:00:00.000Z"  itemprop="datePublished">2019-09-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/其它/">其它</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-09-18-14-32-16.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="分布式设备系统"><a href="#分布式设备系统" class="headerlink" title="分布式设备系统"></a>分布式设备系统</h2><p><a href="https://www.huawei.com" target="_blank" rel="noopener">https://www.huawei.com</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-09-18-14-02-49.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-09-18-14-03-15.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-09-18-14-03-45.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>设备的互联才是未来、物联网</p>
+</blockquote>
+<h2 id="HarmonyOS-源码"><a href="#HarmonyOS-源码" class="headerlink" title="HarmonyOS 源码"></a>HarmonyOS 源码</h2><p><a href="https://openharmony.gitee.com" target="_blank" rel="noopener">https://openharmony.gitee.com</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-09-18-14-09-07.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-09-18-14-09-23.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="开发板卡"><a href="#开发板卡" class="headerlink" title="开发板卡"></a>开发板卡</h2><p><a href="https://device.harmonyos.com/cn/docs/start/introduce/oem_start_guide-0000001054913231" target="_blank" rel="noopener">https://device.harmonyos.com/cn/docs/start/introduce/oem_start_guide-0000001054913231</a><br><a href="https://gitee.com/openharmony/docs/blob/master/quick-start/Hi3861开发板介绍.md" target="_blank" rel="noopener">https://gitee.com/openharmony/docs/blob/master/quick-start/Hi3861开发板介绍.md</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-09-18-14-09-40.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-09-18-14-16-07.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="Hello-Word"><a href="#Hello-Word" class="headerlink" title="Hello Word!"></a>Hello Word!</h2><p><a href="https://developer.harmonyos.com/cn/develop/deveco-studio#download" target="_blank" rel="noopener">https://developer.harmonyos.com/cn/develop/deveco-studio#download</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-09-18-14-20-01.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul>
+<li><a href="https://www.huawei.com" target="_blank" rel="noopener">华为官网</a></li>
+<li><a href="https://www.harmonyos.com/cn/develop" target="_blank" rel="noopener">开发者</a></li>
+<li><a href="https://device.harmonyos.com/cn/docs/start/introduce/oem_start_guide-0000001054913231" target="_blank" rel="noopener">开发版卡</a></li>
+<li><a href="https://developer.harmonyos.com/cn/docs/documentation/doc-guides/harmonyos-overview-0000000000011903" target="_blank" rel="noopener">HarmonyOS 文档</a></li>
+<li><p><a href="https://openharmony.gitee.com/" target="_blank" rel="noopener">HarmonyOS 源码</a></p>
+</li>
+<li><hr>
+</li>
+</ul>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+<p><a href="https://ducafecat.gitee.io" target="_blank" rel="noopener">https://ducafecat.gitee.io</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HarmonyOS/">HarmonyOS</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/&title=《HarmonyOS 真的是套壳么，我也好奇的玩了下》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/&title=《HarmonyOS 真的是套壳么，我也好奇的玩了下》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《HarmonyOS 真的是套壳么，我也好奇的玩了下》 — duCafeCat&url=https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/10/06/flutter/flutter-11-widget-text/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 零基础入门中文教学 - 11 基础组件 Text RichText TextSpan</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/09/16/flutter-daily/flutter-daily-01-update-sdk19/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 见闻 - 01 Flutter 1.9 正式发布 实现三端编译发布 android ios web</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猫哥 &copy; 2018 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/&title=《HarmonyOS 真的是套壳么，我也好奇的玩了下》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/&title=《HarmonyOS 真的是套壳么，我也好奇的玩了下》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《HarmonyOS 真的是套壳么，我也好奇的玩了下》 — duCafeCat&url=https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/&via=https://ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/09/18/flutter-daily/flutter-2020-how-to-learn-flutter-develop/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADLklEQVR42u3aQU7lQAwEUO5/aUaaLUqosqMZ0rysvj4h6dcsCtv98RFfn3+vr5+/3nN/Xd0/e8L9eh64sLGxsV/CTl5z//n+/vs7k43I7ym2DBsbG/s4dhJam0BqYzLZsmSbLr/HxsbG/pXs+1DZlzF51GFjY2NjbwKsvSfv5yTP+W+5jY2Njf3j2e1S2tZSW9gkYdYOGLCxsbFPZW8GvT/t8z+ab2NjY2P/GPZned3/c58XKklMtsVPocDGxsY+iN22+/OlzH63DafN6BcbGxv7DHbesmmDpG39zAJsWKJgY2NjH8SOBqLlQpO4akn5VubBho2NjX0Guw2w9nBMPvrNn9MOd6NeGjY2NvYR7CQ22tDKA2Yz1q3/JNjY2NiHsmdD2f0SN6OC4bgCGxsb+yB2vqDZGOCBLte6t18cxMTGxsZ+LbsNqjxU2q3cFzB5AGNjY2OfxN407ttcyN+Vh9zqXdjY2NgvZ7elRV5U5Jg20tr202q+jY2Njf1C9mwpbTtpv1mzcS82Njb2eez2CE7+fX7lsfTsnwEbGxv7PHZeNuxb/+0W103/ZIyNjY2NfQQ7j6J2KfWJoXLkPHt+ncDY2NjYL2FvHpEvMWc8VfZcerGxsbEPYudlQ9vuzwMpHzZvRs6X24GNjY19BPv+cW3Y5G39/PntCqNmEzY2NvYR7Ly5v2noz4qZvCNU34ONjY19EDsHtJuSdOPb40Ez8Dcxho2Njf1ydtvQL+qbR3kP/xQbGxv7IPamTdNiZk2iWeMpSitsbGzsI9izpv8GmXyTD3dn42RsbGzsk9ibKMoD49kBQP60+sgONjY29gvZeXO/fU3eYGoLknxVl8/BxsbGPo7dLv0juDaHKdtv6jVgY2NjH8fOr7ZUSIqWWemSt7ou5yHY2NjYR7Dzazb03QfPrI3VlknY2NjYb2e3oVUMU0dLb+Mwf3tRkGBjY2O/kL35d3/TJJpF4Ky0uJxvY2NjY/8adrKspO7Jj0vOWlHY2NjY2EkJsWkbtZhZ1D1WimBjY2O/hN2GSt7ob+/cHAMtWlrY2NjYB7Hrdkw8AN5cs3HF5rARNjY29gvZfwAFznfLSlvLbgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

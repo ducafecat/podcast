@@ -7,7 +7,13 @@ categories: 其它
 
 ![](2020-09-18-14-32-16.png)
 
-## 分布式设备系统
+## 上手一个 Hello Word!
+
+https://developer.harmonyos.com/cn/develop/deveco-studio#download
+
+![](2020-09-18-14-20-01.png)
+
+## 了解下 HUAWEI
 
 https://www.huawei.com
 
@@ -17,7 +23,11 @@ https://www.huawei.com
 
 ![](2020-09-18-14-03-45.png)
 
-> 设备的互联才是未来、物联网
+- 总结
+
+1. 华为是做基建、通讯设备的公司
+2. 行业跨度大，企事业+个人业务
+3. 趋势 IoT 设备互联是资源整合的
 
 ## HarmonyOS 源码
 
@@ -27,6 +37,20 @@ https://openharmony.gitee.com
 
 ![](2020-09-18-14-09-23.png)
 
+### 核心
+
+- kernel_liteos_a 适用于 cpu 内存 大的
+
+https://gitee.com/openharmony/kernel_liteos_a
+
+- kernel_liteos_m 适用于建议设备
+
+https://gitee.com/openharmony/kernel_liteos_m
+
+- 基于开源项目
+
+http://nuttx.apache.org/
+
 ## 开发板卡
 
 https://device.harmonyos.com/cn/docs/start/introduce/oem_start_guide-0000001054913231
@@ -35,12 +59,6 @@ https://gitee.com/openharmony/docs/blob/master/quick-start/Hi3861开发板介绍
 ![](2020-09-18-14-09-40.png)
 
 ![](2020-09-18-14-16-07.png)
-
-## Hello Word!
-
-https://developer.harmonyos.com/cn/develop/deveco-studio#download
-
-![](2020-09-18-14-20-01.png)
 
 ## 引用
 

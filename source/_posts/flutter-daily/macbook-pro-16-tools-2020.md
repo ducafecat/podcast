@@ -7,6 +7,10 @@ categories: 其它
 
 ![](2020-10-12-14-22-43.png)
 
+## 视频
+
+https://www.bilibili.com/video/BV1854y1R7LG/
+
 ## 系统
 
 ### Homebrew

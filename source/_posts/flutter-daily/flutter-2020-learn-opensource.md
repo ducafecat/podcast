@@ -5,6 +5,8 @@ tags: flutter
 categories: Flutter见闻
 ---
 
+![](2020-11-03-12-23-32.png)
+
 ## 关注点
 
 - 目录文件结构

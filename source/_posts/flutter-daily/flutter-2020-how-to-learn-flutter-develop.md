@@ -7,6 +7,10 @@ categories: Flutter见闻
 
 ![](2020-09-03-15-13-56.png)
 
+## 视频
+
+https://www.bilibili.com/video/BV1CT4y1L7At/
+
 ## 新人上手情况
 
 - 语言基础

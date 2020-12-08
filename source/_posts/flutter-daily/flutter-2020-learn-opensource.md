@@ -7,6 +7,10 @@ categories: Flutter见闻
 
 ![](2020-11-03-12-23-32.png)
 
+## 视频
+
+https://www.bilibili.com/video/BV13D4y1R71r/
+
 ## 关注点
 
 - 目录文件结构

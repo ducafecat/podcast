@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://ducafecat.tech/2020/12/08/flutter-bloc/flutter-bloc-01-counter-quick-start/2020-12-08-17-28-24.png">
 <meta property="og:image" content="https://ducafecat.tech/2020/12/08/flutter-bloc/flutter-bloc-01-counter-quick-start/2020-12-08-17-35-16.png">
 <meta property="og:image" content="https://ducafecat.tech/2020/12/08/flutter-bloc/flutter-bloc-01-counter-quick-start/2020-12-08-17-38-28.png">
-<meta property="og:updated_time" content="2020-12-08T09:54:46.490Z">
+<meta property="og:updated_time" content="2020-12-10T03:05:47.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter Bloc 01 - 快速上手 计算器">
 <meta name="twitter:description" content="本节目标 为什么要用 bloc bloc vs provider 学习路线推荐 安装 bloc vscode 插件 配置 bloc 依赖包 编写计算器示例  视频代码https://gi">
@@ -217,13 +217,19 @@
 <li><p>方便的 测试、记录 用户行为</p>
 </li>
 </ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SimpleBlocDelegate</span> <span class="keyword">extends</span> <span class="title">BlocDelegate</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> onEvent(Bloc bloc, <span class="built_in">Object</span> event) &#123;</span><br><span class="line">    <span class="keyword">super</span>.onEvent(bloc, event);</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'<span class="subst">$&#123;bloc.runtimeType&#125;</span> $event'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 所有的UI事件</span></span><br><span class="line">    <span class="comment">// 可用 umeng 这样平台 进行跟踪</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> onError(Bloc bloc, <span class="built_in">Object</span> error, StackTrace stacktrace) &#123;</span><br><span class="line">    <span class="keyword">super</span>.onError(bloc, error, stacktrace);</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'<span class="subst">$&#123;bloc.runtimeType&#125;</span> $error'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 所有发生的错误</span></span><br><span class="line">    <span class="comment">// 用 sentry 记录错误</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> onTransition(Bloc bloc, Transition transition) &#123;</span><br><span class="line">    <span class="keyword">super</span>.onTransition(bloc, transition);</span><br><span class="line">    <span class="built_in">print</span>(transition);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 所有的 State 变化</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="bloc-vs-provider"><a href="#bloc-vs-provider" class="headerlink" title="bloc vs provider"></a>bloc vs provider</h3><ul>
 <li><p>bloc 是一种 mvvm 基于 事件、状态 驱动的</p>
 </li>
 <li><p>provider 是基于方法的</p>
 </li>
 </ul>
-<h3 id="bloc-学习路线"><a href="#bloc-学习路线" class="headerlink" title="bloc 学习路线"></a>bloc 学习路线</h3><p>Flutter Bloc 快速上手 -&gt; Stream -&gt; Cubit -&gt; Bloc</p>
+<h3 id="bloc-学习路线"><a href="#bloc-学习路线" class="headerlink" title="bloc 学习路线"></a>bloc 学习路线</h3><ul>
+<li><p>Flutter Bloc 快速上手 -&gt; Stream -&gt; Cubit -&gt; Bloc</p>
+</li>
+<li><p>理解基于 mvvm 组件化拆分</p>
+</li>
+</ul>
 <h3 id="安装-bloc-vscode-插件"><a href="#安装-bloc-vscode-插件" class="headerlink" title="安装 bloc vscode 插件"></a>安装 bloc vscode 插件</h3><p>bloc</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">

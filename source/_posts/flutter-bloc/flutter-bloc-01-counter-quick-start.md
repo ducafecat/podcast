@@ -42,6 +42,37 @@ https://github.com/ducafecat/flutter-bloc-learn/tree/master/ducafecat_bloc_start
 
 - 方便的 测试、记录 用户行为
 
+```dart
+class SimpleBlocDelegate extends BlocDelegate {
+  @override
+  void onEvent(Bloc bloc, Object event) {
+    super.onEvent(bloc, event);
+    print('${bloc.runtimeType} $event');
+
+    // 所有的UI事件
+    // 可用 umeng 这样平台 进行跟踪
+  }
+
+  @override
+  void onError(Bloc bloc, Object error, StackTrace stacktrace) {
+    super.onError(bloc, error, stacktrace);
+    print('${bloc.runtimeType} $error');
+
+    // 所有发生的错误
+    // 用 sentry 记录错误
+  }
+
+  @override
+  void onTransition(Bloc bloc, Transition transition) {
+    super.onTransition(bloc, transition);
+    print(transition);
+
+    // 所有的 State 变化
+  }
+}
+
+```
+
 ### bloc vs provider
 
 - bloc 是一种 mvvm 基于 事件、状态 驱动的
@@ -50,7 +81,9 @@ https://github.com/ducafecat/flutter-bloc-learn/tree/master/ducafecat_bloc_start
 
 ### bloc 学习路线
 
-Flutter Bloc 快速上手 -> Stream -> Cubit -> Bloc
+- Flutter Bloc 快速上手 -> Stream -> Cubit -> Bloc
+
+- 理解基于 mvvm 组件化拆分
 
 ### 安装 bloc vscode 插件
 

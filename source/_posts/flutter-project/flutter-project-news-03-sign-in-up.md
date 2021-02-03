@@ -692,7 +692,7 @@ Widget transparentAppBar({
 
 ### 3.3 检验有效性
 
-- lib/pages/sign_up/sign_up.dart
+- lib/pages/sign_up/sign_in.dart
 
 ```dart
   // 执行注册操作

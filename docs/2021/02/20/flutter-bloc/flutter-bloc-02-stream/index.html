@@ -25,20 +25,20 @@
 <meta name="keywords" content="flutter bloc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flutter Bloc 02 - 基础对象 Stream 流操作">
-<meta property="og:url" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/index.html">
+<meta property="og:url" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/index.html">
 <meta property="og:site_name" content="duCafeCat">
 <meta property="og:description" content="本节目标 Stream 创建 StreamController 控制 StreamSubscription 订阅 StreamTransformer 转换 Sink、StreamSink">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/2021-02-21-09-11-23.png">
-<meta property="og:image" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/2021-02-22-17-26-26.png">
-<meta property="og:image" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/2021-02-22-17-34-07.png">
-<meta property="og:image" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/2021-02-22-17-40-50.png">
-<meta property="og:image" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/2021-02-22-17-45-33.png">
-<meta property="og:updated_time" content="2021-02-22T09:46:33.169Z">
+<meta property="og:image" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/2021-02-21-09-11-23.png">
+<meta property="og:image" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/2021-02-22-17-26-26.png">
+<meta property="og:image" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/2021-02-22-17-34-07.png">
+<meta property="og:image" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/2021-02-22-17-40-50.png">
+<meta property="og:image" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/2021-02-22-17-45-33.png">
+<meta property="og:updated_time" content="2021-02-22T14:00:44.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter Bloc 02 - 基础对象 Stream 流操作">
 <meta name="twitter:description" content="本节目标 Stream 创建 StreamController 控制 StreamSubscription 订阅 StreamTransformer 转换 Sink、StreamSink">
-<meta name="twitter:image" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/2021-02-21-09-11-23.png">
+<meta name="twitter:image" content="https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/2021-02-21-09-11-23.png">
     
         <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
     
@@ -159,7 +159,7 @@
     </aside>
 
 
-<article id="post-flutter-bloc/flutter-bloc-02-stream-yield" class="post-article article-type-post fade"
+<article id="post-flutter-bloc/flutter-bloc-02-stream" class="post-article article-type-post fade"
     itemprop="blogPost">
 
     <div class="post-card">
@@ -304,7 +304,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/&title=《Flutter Bloc 02 - 基础对象 Stream 流操作》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/&title=《Flutter Bloc 02 - 基础对象 Stream 流操作》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -314,22 +314,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/&title=《Flutter Bloc 02 - 基础对象 Stream 流操作》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/&title=《Flutter Bloc 02 - 基础对象 Stream 流操作》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter Bloc 02 - 基础对象 Stream 流操作》 — duCafeCat&url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter Bloc 02 - 基础对象 Stream 流操作》 — duCafeCat&url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/&via=https://ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -417,7 +417,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/&title=《Flutter Bloc 02 - 基础对象 Stream 流操作》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/&title=《Flutter Bloc 02 - 基础对象 Stream 流操作》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -427,22 +427,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/&title=《Flutter Bloc 02 - 基础对象 Stream 流操作》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/&title=《Flutter Bloc 02 - 基础对象 Stream 流操作》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter Bloc 02 - 基础对象 Stream 流操作》 — duCafeCat&url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter Bloc 02 - 基础对象 Stream 流操作》 — duCafeCat&url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/&via=https://ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream-yield/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2021/02/20/flutter-bloc/flutter-bloc-02-stream/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -453,7 +453,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACmklEQVR42u3aQY5aMRAE0Ln/pYmSVaRkoKrbhkR6XqGBAb+/cLeq/fUVr8ev9bVej9/Wn9/8+Gad3QMeHh7envd4umZfPQMk/5vvGQ8PD+82L9ni7FjPtzsrJy8seHh4eB/l5dT2YT0vEnh4eHj/L+/5J/et86zVxsPDw/sUL2mFkwM630ReKtrP4+Hh4d3m7WPZ97++ON/Dw8PDW0zVk0O5DRo2lwbq3eLh4eFd4CVt8fNWOD+NZ5Fu8jhelA08PDy8C7x83JVgkscxKw/53l5k1Xh4eHiHeElcm8e4eaCwaZ3r0oWHh4e35j3f3KwkJH85S8XDw8N7J2/WQOePI2fnpagehuHh4eFd4yWkPFZoB/95QFy/i4eHh3eB18ays4fSxrV5g34gxsXDw8OLeXkgmxy7bbu8KVHRPvHw8PDewptFA+03tKR2/IaHh4d3m3fqEG+HXrOwuChaeHh4eJd57Zi//fm2YLTNNB4eHt47ecnrzUE/i27bcPkvO8HDw8N7C6+9QHBq8jaMG2YxLh4eHt5RXhs6bGKIttjUQTMeHh7eBd4sls3XDLYh4eHh4b2T1x7E7WhqtvVN64+Hh4d3g1cfrGXEsBmztQExHh4e3vt5nzroZ3FGtPDw8PCu8WaPYxa2thenNm03Hh4e3g3e5mppAmipszSlyKfx8PDw1rw2nD014N8HEMMwAg8PD+8o71R5yAOL2WWvIubAw8PDu8DbJKL5EOtsTHyMhIeHh7fg5Uf8rOGeXfBqQ+QoksDDw8M7ytv//KyNzkvF8J4AHh4e3kd5+wFV+xDbxv3b+R4eHh7eP8A7NebffCbaDx4eHt41Xjv0ml0j2IzBZg09Hh4e3g3eqQFYG+zmW2mRV+Z7eHh4eD/XD+iADmJObGwaAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3aQW4jMQwEwPz/01lgTwsk4+0mpcSH0slIxhqVDiJN6uMjHp9/x+u/JH//d3x9/vNhvJ75wMDDw8MbLT2fOnn+65MJ4OldmzXg4eHh3eO9PuLbBc3YydlehyU8PDy8X+Xtk/JktIk4Hh4e3jvzkmQ3+e4mnODh4eG9Dy8pRiQH9GNRYFSkyNdzoNaCh4eHF/PaBtg7fL7Y38PDw8M7VCDIG1HJ/LNLA/Vq8fDw8C7wZheqZotuyxDtzI9hAw8PD+8o79TRv2n574u5j8/g4eHhXePlC51dNWhnnl0y+AaMh4eHd4GXJNZ5u+tU8+zUJS08PDy8G7z8eE2W3oaH2aYUzTA8PDy8a7x8EXmPfpZY58l3fVEVDw8P7ygvP2o3ram2XNvOtirj4uHh4XW/+ofXBfbliTY85Cv82HwZDw8Pb8HL0+t9Mffs5uLh4eHd5uUtpf0lrVkAaIu8eHh4eD/DSz7PWvjDuwyjRh0eHh7ebd4eNmuSJYueha6oSo2Hh4e34OVtrTx1bptqmzVE6TUeHh7eUV7e1J+l0e3WzELU45x4eHh4F3izQzmnJley2nJtm+7j4eHhneXVP+zLJtZrWNtUq5tneHh4eBd4+ZfzhbYF3PZz3ufCw8PDu8H7T3139Mq2WJBvVl4UxsPDw7vNyw/fPP3dY/ZpNx4eHt4NXjtFXsLIA8+szJFvAR4eHt5ZXvviaLdK2KwAERVK8PDw8C7z8itWs/R632BrE2s8PDy8G7x9RTQPD/ti7mESHh4e3oKXB4MZaZ+gt621Ivrh4eHhLXjFj/ygvJtfBciDRx66on/g4eHh/Qjv1IHeXjtItvJxDXh4eHhvwJuVdDfNs1UQwsPDw7vGy5te7aF/qg2WX0TAw8PDu81bXWyKX5Bv2R55oL+Hh4eH9/34A94dvMGADuuMAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

@@ -1,5 +1,5 @@
 ---
-title: Flutter Bloc 02 - 基础对象 stream yield
+title: Flutter Bloc 02 - 基础对象 Stream 流操作
 date: 2021-2-20 00:00:00
 tags: flutter bloc
 categories: Flutter Bloc
@@ -9,18 +9,36 @@ categories: Flutter Bloc
 
 # 本节目标
 
-- stream 创建、订阅、观察
-- yield 生成器
+- Stream 创建
+- StreamController 控制
+- StreamSubscription 订阅
+- StreamTransformer 转换
+- Sink、StreamSink、EventSink 修改数据
 
 ## 视频
 
 ## 代码
 
-https://github.com/ducafecat/flutter-bloc-learn/tree/master/stream_yield
+https://github.com/ducafecat/flutter-bloc-learn/tree/master/stream
 
 ## 正文
 
-### 准备工具函数
+### 核心类
+
+![](2021-02-22-17-26-26.png)
+
+![](2021-02-22-17-34-07.png)
+
+| 名称               | 说明                                   |
+| ------------------ | -------------------------------------- |
+| Stream             | 事件流或者管道                         |
+| StreamController   | 事件管理者                             |
+| StreamSubscription | 管理事件订阅，如 cacenl、pause         |
+| StreamSink         | 流 Sink 入口，提供如 add、addStream 等 |
+| EventSink          | 事件 Sink 入口                         |
+| StreamTransformer  | 流转换                                 |
+
+### 准备函数
 
 ```dart
 // 打印流列表
@@ -43,7 +61,7 @@ Future<int> funii = Future(() {
 
 ### stream 创建
 
-- 延迟间隔
+#### 延迟间隔
 
 ```dart
 periodic() async {
@@ -52,7 +70,7 @@ periodic() async {
 }
 ```
 
-- futrue 数据源
+#### futrue 数据源
 
 ```dart
 fromFuture() async {
@@ -61,7 +79,7 @@ fromFuture() async {
 }
 ```
 
-- futrues 多数据源
+#### futrues 多数据源
 
 ```dart
 fromFutures() async {
@@ -75,7 +93,7 @@ fromFutures() async {
 
 ### stream 监听
 
-- 单对单
+#### 单对单
 
 ```dart
 listen() async {
@@ -93,7 +111,7 @@ listen() async {
 }
 ```
 
-- 广播
+#### 广播
 
 ```dart
 boardcast() async {
@@ -108,7 +126,7 @@ boardcast() async {
 }
 ```
 
-- task skip
+#### 操作 task skip
 
 ```dart
 opt() async {
@@ -122,9 +140,11 @@ opt() async {
 }
 ```
 
-### stream 流控制类
+### StreamController 流控制类
 
-- StreamController 单点
+![](2021-02-22-17-40-50.png)
+
+#### 单点
 
 ```dart
 scListen() async {
@@ -154,14 +174,14 @@ scListen() async {
 }
 ```
 
-- StreamController 广播
+#### 广播
 
 ```dart
 scBroadcast() async {
   StreamController sc = StreamController.broadcast();
 
-  sc.stream.listen(print);
-  sc.stream.listen(print);
+  StreamSubscription ss1 = sc.stream.listen(print);
+  StreamSubscription ss2 = sc.stream.listen(print);
 
   sc.addStream(Stream.fromIterable([1, 2, 3, 4, 5]));
 
@@ -171,7 +191,9 @@ scBroadcast() async {
 
 ```
 
-- StreamTransformer
+### StreamTransformer 流转换
+
+![](2021-02-22-17-45-33.png)
 
 ```dart
 scTransformer() async {
@@ -200,7 +222,7 @@ scTransformer() async {
 }
 ```
 
-### stream 执行
+### 执行
 
 ```dart
 
@@ -222,43 +244,6 @@ main(List<String> args) async {
   print('--- end ---');
 }
 
-```
-
-### yield 异步生成器
-
-```dart
-// 生成多个异步函数
-Stream<int> createStream(int max) async* {
-  for (var i = 0; i < max; i++) {
-    yield* fun(i);
-  }
-}
-
-// 异步函数
-Stream<int> fun(int val) async* {
-  yield val;
-}
-
-// 异步函数执行并求和
-Future<int> sumStream(Stream<int> items) async {
-  int sumNum = 0;
-  await for (var val in items) {
-    print(val);
-    sumNum += val;
-  }
-  return sumNum;
-}
-
-main(List<String> args) async {
-  print('--- start ---');
-
-  Stream<int> streamItems = createStream(10);
-  int sumNum = await sumStream(streamItems);
-
-  print('sumNum -> $sumNum');
-
-  print('--- end ---');
-}
 ```
 
 ---

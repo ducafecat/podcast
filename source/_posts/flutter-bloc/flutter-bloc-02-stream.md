@@ -68,6 +68,15 @@ periodic() async {
   Stream<int> stream = Stream<int>.periodic(Duration(seconds: 1), (val) => val);
   await printStream(stream);
 }
+
+>>
+1
+2
+3
+4
+5
+6
+
 ```
 
 #### futrue 数据源
@@ -77,6 +86,11 @@ fromFuture() async {
   Stream<int> stream = Stream<int>.fromFuture(funi);
   await printStream(stream);
 }
+
+>>
+
+100
+
 ```
 
 #### futrues 多数据源
@@ -89,6 +103,12 @@ fromFutures() async {
   ]);
   await printStream(stream);
 }
+
+>>
+
+100
+200
+
 ```
 
 ### stream 监听
@@ -109,6 +129,16 @@ listen() async {
     cancelOnError: true,
   );
 }
+
+>>
+
+1
+2
+3
+4
+5
+6
+
 ```
 
 #### 广播
@@ -124,6 +154,20 @@ boardcast() async {
     print(event);
   });
 }
+
+>>
+
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+
 ```
 
 #### 操作 task skip
@@ -138,6 +182,17 @@ opt() async {
     print(event);
   });
 }
+
+>> take(3)
+1
+2
+3
+
+>> skip(2)
+3
+4
+5
+
 ```
 
 ### StreamController 流控制类
@@ -172,6 +227,13 @@ scListen() async {
   // 关闭流
   sc.close();
 }
+
+>>
+
+onListen
+onPause
+onCancel
+
 ```
 
 #### 广播
@@ -188,6 +250,19 @@ scBroadcast() async {
   await Future.delayed(Duration(seconds: 2));
   sc.close();
 }
+
+>>
+
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
 
 ```
 
@@ -220,6 +295,19 @@ scTransformer() async {
   await Future.delayed(Duration(seconds: 2));
   sc.close();
 }
+
+>>
+2
+2
+4
+4
+6
+6
+8
+8
+10
+10
+
 ```
 
 ### 执行

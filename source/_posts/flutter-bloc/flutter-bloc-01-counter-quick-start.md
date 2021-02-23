@@ -18,6 +18,8 @@ categories: Flutter Bloc
 
 ## 视频
 
+https://www.bilibili.com/video/BV1ef4y1e79o/
+
 ## 代码
 
 https://github.com/ducafecat/flutter-bloc-learn/tree/master/ducafecat_bloc_start_example

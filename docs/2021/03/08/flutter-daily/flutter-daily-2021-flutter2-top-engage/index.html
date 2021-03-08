@@ -14,18 +14,20 @@
     
     
     
-    <title>2021 Flutter v2 重要的 16 个特性 | duCafeCat</title>
+    <title>2021 关于 Flutter v2 我整理了16个重要特性 | duCafeCat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="flutter">
-    <meta name="keywords" content="flutter">
+    <meta name="description" content="谷歌开发者官文https://mp.weixin.qq.com/s/EzS3dtpZB_i9p358qqlBpg">
+<meta name="keywords" content="flutter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2021 Flutter v2 重要的 16 个特性">
+<meta property="og:title" content="2021 关于 Flutter v2 我整理了16个重要特性">
 <meta property="og:url" content="https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/index.html">
 <meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="谷歌开发者官文https://mp.weixin.qq.com/s/EzS3dtpZB_i9p358qqlBpg">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/2021-03-08-17-43-31.png">
 <meta property="og:image" content="https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/2021-03-08-17-41-36.png">
@@ -57,9 +59,10 @@
 <meta property="og:image" content="https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/2021-03-08-09-50-52.png">
 <meta property="og:image" content="https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/2021-03-08-09-51-39.png">
 <meta property="og:image" content="https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/2021-03-08-15-30-38.png">
-<meta property="og:updated_time" content="2021-03-08T09:45:34.850Z">
+<meta property="og:updated_time" content="2021-03-08T14:14:31.855Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2021 Flutter v2 重要的 16 个特性">
+<meta name="twitter:title" content="2021 关于 Flutter v2 我整理了16个重要特性">
+<meta name="twitter:description" content="谷歌开发者官文https://mp.weixin.qq.com/s/EzS3dtpZB_i9p358qqlBpg">
 <meta name="twitter:image" content="https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/2021-03-08-17-43-31.png">
     
         <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
@@ -134,7 +137,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
             <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2021 Flutter v2 重要的 16 个特性</div>
+        <div class="flex-col header-title ellipsis">2021 关于 Flutter v2 我整理了16个重要特性</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -155,7 +158,7 @@
 </header>
 <header class="content-header post-header">
     <div class="container fade-scale">
-        <h1 class="title">2021 Flutter v2 重要的 16 个特性</h1>
+        <h1 class="title">2021 关于 Flutter v2 我整理了16个重要特性</h1>
         <h5 class="subtitle">
              <time datetime="2021-03-07T16:00:00.000Z" itemprop="datePublished" class="page-time">
 	2021-03-08
@@ -176,7 +179,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-大平台-gt-windows、macos、linux、web、embedded、ios、android"><span class="post-toc-number">1.</span> <span class="post-toc-text">7 大平台 -&gt; windows、macos、linux、web、embedded、ios、android</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#web-平台优化、进入稳定版"><span class="post-toc-number">2.</span> <span class="post-toc-text">web 平台优化、进入稳定版</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#canonical-支持"><span class="post-toc-number">3.</span> <span class="post-toc-text">canonical 支持</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#组件库升级、对-ios-支持加强"><span class="post-toc-number">4.</span> <span class="post-toc-text">组件库升级、对 ios 支持加强</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flutter-for-Surface-Duo-amp-折叠屏"><span class="post-toc-number">5.</span> <span class="post-toc-text">Flutter for Surface Duo &amp; 折叠屏</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#混合编程"><span class="post-toc-number">6.</span> <span class="post-toc-text">混合编程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Dart-Null-Safety"><span class="post-toc-number">7.</span> <span class="post-toc-text">Dart Null Safety</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#flutter-fix"><span class="post-toc-number">8.</span> <span class="post-toc-text">flutter fix</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#flutter-DevTools-开发工具升级"><span class="post-toc-number">9.</span> <span class="post-toc-text">flutter DevTools 开发工具升级</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Android-Studio-IntelliJ-扩展"><span class="post-toc-number">10.</span> <span class="post-toc-text">Android Studio/IntelliJ 扩展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Visual-Studio-Code-扩展"><span class="post-toc-number">11.</span> <span class="post-toc-text">Visual Studio Code 扩展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sentry-升级对-flutter-的支持"><span class="post-toc-number">12.</span> <span class="post-toc-text">sentry 升级对 flutter 的支持</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#upgraded-firebase-plugins-for-flutter"><span class="post-toc-number">13.</span> <span class="post-toc-text">upgraded firebase plugins for flutter</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flutter-Community-Plus-Plugins"><span class="post-toc-number">14.</span> <span class="post-toc-text">Flutter Community Plus Plugins</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#google-mobile-ads-for-flutter"><span class="post-toc-number">15.</span> <span class="post-toc-text">google mobile ads for flutter</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DartPad-升级到支持-Flutter-2"><span class="post-toc-number">16.</span> <span class="post-toc-text">DartPad 升级到支持 Flutter 2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置-flutter-2"><span class="post-toc-number">17.</span> <span class="post-toc-text">配置 flutter 2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">18.</span> <span class="post-toc-text">参考</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#谷歌开发者官文"><span class="post-toc-number">1.</span> <span class="post-toc-text">谷歌开发者官文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-大平台-gt-windows、macos、linux、web、embedded、ios、android"><span class="post-toc-number">2.</span> <span class="post-toc-text">7 大平台 -&gt; windows、macos、linux、web、embedded、ios、android</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#web-平台优化、进入稳定版"><span class="post-toc-number">3.</span> <span class="post-toc-text">web 平台优化、进入稳定版</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#canonical-支持"><span class="post-toc-number">4.</span> <span class="post-toc-text">canonical 支持</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#组件库升级、对-ios-支持加强"><span class="post-toc-number">5.</span> <span class="post-toc-text">组件库升级、对 ios 支持加强</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flutter-for-Surface-Duo-amp-折叠屏"><span class="post-toc-number">6.</span> <span class="post-toc-text">Flutter for Surface Duo &amp; 折叠屏</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#混合编程"><span class="post-toc-number">7.</span> <span class="post-toc-text">混合编程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Dart-Null-Safety"><span class="post-toc-number">8.</span> <span class="post-toc-text">Dart Null Safety</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#flutter-fix"><span class="post-toc-number">9.</span> <span class="post-toc-text">flutter fix</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#flutter-DevTools-开发工具升级"><span class="post-toc-number">10.</span> <span class="post-toc-text">flutter DevTools 开发工具升级</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Android-Studio-IntelliJ-扩展"><span class="post-toc-number">11.</span> <span class="post-toc-text">Android Studio/IntelliJ 扩展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Visual-Studio-Code-扩展"><span class="post-toc-number">12.</span> <span class="post-toc-text">Visual Studio Code 扩展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sentry-升级对-flutter-的支持"><span class="post-toc-number">13.</span> <span class="post-toc-text">sentry 升级对 flutter 的支持</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#upgraded-firebase-plugins-for-flutter"><span class="post-toc-number">14.</span> <span class="post-toc-text">upgraded firebase plugins for flutter</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flutter-Community-Plus-Plugins"><span class="post-toc-number">15.</span> <span class="post-toc-text">Flutter Community Plus Plugins</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#google-mobile-ads-for-flutter"><span class="post-toc-number">16.</span> <span class="post-toc-text">google mobile ads for flutter</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DartPad-升级到支持-Flutter-2"><span class="post-toc-number">17.</span> <span class="post-toc-text">DartPad 升级到支持 Flutter 2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置-flutter-2"><span class="post-toc-number">18.</span> <span class="post-toc-text">配置 flutter 2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">19.</span> <span class="post-toc-text">参考</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,7 +188,7 @@
     itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2021 Flutter v2 重要的 16 个特性</h1>
+        <h1 class="post-card-title">2021 关于 Flutter v2 我整理了16个重要特性</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-03-08 00:00:00" datetime="2021-03-07T16:00:00.000Z"  itemprop="datePublished">2021-03-08</time>
 
@@ -205,6 +208,7 @@
                 </div>
                 <div class="image-caption"></div>
             </figure>
+<h2 id="谷歌开发者官文"><a href="#谷歌开发者官文" class="headerlink" title="谷歌开发者官文"></a>谷歌开发者官文</h2><p><a href="https://mp.weixin.qq.com/s/EzS3dtpZB_i9p358qqlBpg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/EzS3dtpZB_i9p358qqlBpg</a></p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -233,9 +237,9 @@
 <h2 id="web-平台优化、进入稳定版"><a href="#web-平台优化、进入稳定版" class="headerlink" title="web 平台优化、进入稳定版"></a>web 平台优化、进入稳定版</h2><ul>
 <li><p>3 个方向</p>
 <ul>
-<li>pwa 缓存、推送、移动功能</li>
-<li>spa 单页程序类似 vue rect</li>
-<li>expanding mobile 快速迁移 app、复用代码</li>
+<li>pwa: 缓存、push 推送服务、桌面快捷、消息提示</li>
+<li>spa: 单页程序类似 vue rect</li>
+<li>expanding mobile: 快速迁移 app、复用代码</li>
 </ul>
 </li>
 <li><p>irobot 构建基于 flutter</p>
@@ -285,20 +289,21 @@
 </li>
 <li><p>动画<br><a href="https://flutterplasma.dev/" target="_blank" rel="noopener">https://flutterplasma.dev/</a></p>
 </li>
-<li><p>invoice</p>
-<ul>
-<li><a href="https://www.invoiceninja.com/" target="_blank" rel="noopener">https://www.invoiceninja.com/</a></li>
-</ul>
+<li><p>invoice<br><a href="https://www.invoiceninja.com/" target="_blank" rel="noopener">https://www.invoiceninja.com/</a></p>
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="canonical-支持"><a href="#canonical-支持" class="headerlink" title="canonical 支持"></a>canonical 支持</h2><p><a href="https://medium.com/flutter/announcing-flutter-linux-alpha-with-canonical-19eb824590a9" target="_blank" rel="noopener">https://medium.com/flutter/announcing-flutter-linux-alpha-with-canonical-19eb824590a9</a></p>
+<p><a href="https://canonical.com/" target="_blank" rel="noopener">https://canonical.com/</a></p>
+<blockquote>
+<p>Canonical 公司是一个私营公司，由南非的企业家马克·沙特尔沃思创建，主要为了促进开源软件项目。 Canonical 在马恩岛登记注册，其雇员分布在世界各地，其主要办事处在伦敦，在蒙特利尔也有办事处。Canonical 公司支持并创建了几个项目，主要都是自由/开源软件（FOSS）或是一些旨在改善自由软件开发者和贡献者的工具。</p>
+</blockquote>
 <ul>
 <li><p>why canonical 大力推 flutter !，主要以下几点</p>
 <ul>
 <li>快速增长的 flutter 应用</li>
-<li>多品台支持</li>
+<li>多平台支持</li>
 <li>设备优化的好</li>
 <li>丰富的组件库</li>
 <li>IDE 环境成熟 Visual Studio Code, Android Studio, and IntelliJ</li>
@@ -586,7 +591,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/&title=《2021 Flutter v2 重要的 16 个特性》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/&title=《2021 关于 Flutter v2 我整理了16个重要特性》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -596,7 +601,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/&title=《2021 Flutter v2 重要的 16 个特性》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/&title=《2021 关于 Flutter v2 我整理了16个重要特性》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -606,7 +611,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2021 Flutter v2 重要的 16 个特性》 — duCafeCat&url=https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2021 关于 Flutter v2 我整理了16个重要特性》 — duCafeCat&url=https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/&via=https://ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -699,7 +704,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/&title=《2021 Flutter v2 重要的 16 个特性》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/&title=《2021 关于 Flutter v2 我整理了16个重要特性》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -709,7 +714,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/&title=《2021 Flutter v2 重要的 16 个特性》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/&title=《2021 关于 Flutter v2 我整理了16个重要特性》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -719,7 +724,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2021 Flutter v2 重要的 16 个特性》 — duCafeCat&url=https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2021 关于 Flutter v2 我整理了16个重要特性》 — duCafeCat&url=https://ducafecat.tech/2021/03/08/flutter-daily/flutter-daily-2021-flutter2-top-engage/&via=https://ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

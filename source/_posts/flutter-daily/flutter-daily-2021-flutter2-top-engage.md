@@ -1,11 +1,15 @@
 ---
-title: 2021 Flutter v2 重要的 16 个特性
+title: 2021 关于 Flutter v2 我整理了16个重要特性
 date: 2021-3-8 00:00:00
 tags: flutter
 categories: Flutter见闻
 ---
 
 ![](2021-03-08-17-43-31.png)
+
+## 谷歌开发者官文
+
+https://mp.weixin.qq.com/s/EzS3dtpZB_i9p358qqlBpg
 
 ![](2021-03-08-17-41-36.png)
 
@@ -22,9 +26,9 @@ categories: Flutter见闻
 
 - 3 个方向
 
-  - pwa 缓存、推送、移动功能
-  - spa 单页程序类似 vue rect
-  - expanding mobile 快速迁移 app、复用代码
+  - pwa: 缓存、push 推送服务、桌面快捷、消息提示
+  - spa: 单页程序类似 vue rect
+  - expanding mobile: 快速迁移 app、复用代码
 
 - irobot 构建基于 flutter
 
@@ -57,16 +61,20 @@ https://edu.irobot.com/the-latest/building-a-coding-experience-for-all
     https://flutterplasma.dev/
 
   - invoice
-    - https://www.invoiceninja.com/
+    https://www.invoiceninja.com/
 
 ## canonical 支持
 
 https://medium.com/flutter/announcing-flutter-linux-alpha-with-canonical-19eb824590a9
 
+https://canonical.com/
+
+> Canonical 公司是一个私营公司，由南非的企业家马克·沙特尔沃思创建，主要为了促进开源软件项目。 Canonical 在马恩岛登记注册，其雇员分布在世界各地，其主要办事处在伦敦，在蒙特利尔也有办事处。Canonical 公司支持并创建了几个项目，主要都是自由/开源软件（FOSS）或是一些旨在改善自由软件开发者和贡献者的工具。
+
 - why canonical 大力推 flutter !，主要以下几点
 
   - 快速增长的 flutter 应用
-  - 多品台支持
+  - 多平台支持
   - 设备优化的好
   - 丰富的组件库
   - IDE 环境成熟 Visual Studio Code, Android Studio, and IntelliJ

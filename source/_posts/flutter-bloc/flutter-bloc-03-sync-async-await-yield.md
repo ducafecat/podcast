@@ -15,121 +15,19 @@ categories: Flutter Bloc
 
 ## 视频
 
+https://www.bilibili.com/video/BV1JZ4y1w7hX/
+
 ## 代码
 
 https://github.com/ducafecat/flutter-bloc-learn/tree/master/sync-async
 
 ## 正文
 
-### sync* + yield
+## 在 BLOC 中常见 `yield` `yield*` `Stream<T>`
 
-同步 sync 后返回 Iterable<T> 可序列化对象
+计算器 [Bloc 代码](https://github.com/ducafecat/flutter-bloc-learn/tree/master/ducafecat_bloc_start_example)
 
-```dart
-main() {
-  getList(10).forEach(print);
-}
-
-Iterable<int> getList(int count) sync* {
-  for (int i = 0; i < count; i++) {
-    yield i;
-  }
-}
-```
-
-### sync* + yield*
-
-带上 * 因为 yield 返回对象是 Iterable<T>
-
-```dart
-main() {
-  getList(10).forEach(print);
-}
-
-Iterable<int> getList(int count) sync* {
-  yield* generate(count);
-}
-
-Iterable<int> generate(int count) sync* {
-  for (int i = 0; i < count; i++) {
-    yield i;
-  }
-}
-```
-
-### async + await
-
-Future + async + await 经典配合
-
-常见场景，等待异步完成，比如拉取数据、 IO 操作
-
-```dart
-main() {
-  print("start..........");
-  getList(10).then(print);
-}
-
-Future<int> getList(int count) async {
-  await sleep();
-  for (int i = 0; i < count; i++) {
-    return i;
-  }
-  return 99;
-}
-
-Future sleep() async {
-  return Future.delayed(Duration(seconds: 3));
-}
-```
-
-### async* + yield
-
-带上 * 后，yield 返回 Stream<T> 对象
-
-接收方用 listen(...)
-
-```dart
-main() {
-  getList(10).listen(print);
-}
-
-Stream<int> getList(int count) async* {
-  for (int i = 0; i < count; i++) {
-    await Future.delayed(Duration(seconds: 1));
-    yield i;
-  }
-}
-```
-
-### async* + yield*
-
-yield* 后返回的是另一个 Stream<T> 对象
-
-```dart
-main() {
-  getList(10).listen(print);
-}
-
-Stream<int> getList(int count) async* {
-  yield* generate(count);
-}
-
-Stream<int> generate(int count) async* {
-  for (int i = 0; i < count; i++) {
-    await Future.delayed(Duration(seconds: 1));
-    yield i;
-  }
-}
-
-```
-
-## 在 BLOC 中常见 yield yield* Stream<T>
-
-- 参考第一节计算器代码
-
-  https://github.com/ducafecat/flutter-bloc-learn/tree/master/ducafecat_bloc_start_example
-
-- lib/counter/bloc/counter_bloc.dart
+我们可以发现在 bloc 模块中，非常多 `yield*` `yield` `async*` ，如何正确使用还是很重要的，所以这篇文章把同步、异步的对应的操作符都整理出来。
 
 ```dart
 class CounterBloc extends Bloc<CounterEvent, CounterState> {
@@ -163,6 +61,194 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
 
 ```
 
+### 同步 `sync*` + `yield`
+
+同步 sync 后返回 Iterable<T> 可序列化对象
+
+- 代码
+
+```dart
+main() {
+  getList(10).forEach(print);
+}
+
+Iterable<int> getList(int count) sync* {
+  for (int i = 0; i < count; i++) {
+    yield i;
+  }
+}
+```
+
+- 输出
+
+```
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Exited
+```
+
+### 同步 `sync*` + `yield*`
+
+带上 \* 因为 yield 返回对象是 Iterable<T>
+
+- 代码
+
+```dart
+main() {
+  getList(10).forEach(print);
+}
+
+Iterable<int> getList(int count) sync* {
+  yield* generate(count);
+}
+
+Iterable<int> generate(int count) sync* {
+  for (int i = 0; i < count; i++) {
+    yield i;
+  }
+}
+```
+
+- 输出
+
+```
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Exited
+
+```
+
+### 异步 `async` + `await`
+
+Future + async + await 经典配合
+
+常见场景，等待异步完成，比如拉取数据、 IO 操作
+
+- 代码
+
+```dart
+main() {
+  print("start..........");
+  getList(10).then(print);
+}
+
+Future<int> getList(int count) async {
+  await sleep();
+  for (int i = 0; i < count; i++) {
+    return i;
+  }
+  return 99;
+}
+
+Future sleep() async {
+  return Future.delayed(Duration(seconds: 3));
+}
+```
+
+- 输出
+
+```
+start..........
+0
+Exited
+
+```
+
+### 异步 `async*` + `yield`
+
+带上 \* 后，yield 返回 Stream<T> 对象
+
+接收方用 listen(...)
+
+- 代码
+
+```dart
+main() {
+  getList(10).listen(print);
+}
+
+Stream<int> getList(int count) async* {
+  for (int i = 0; i < count; i++) {
+    await Future.delayed(Duration(seconds: 1));
+    yield i;
+  }
+}
+```
+
+- 输出
+
+```
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Exited
+
+```
+
+### 异步 `async*` + `yield*`
+
+yield\* 后返回的是另一个 Stream<T> 对象
+
+- 代码
+
+```dart
+main() {
+  getList(10).listen(print);
+}
+
+Stream<int> getList(int count) async* {
+  yield* generate(count);
+}
+
+Stream<int> generate(int count) async* {
+  for (int i = 0; i < count; i++) {
+    await Future.delayed(Duration(seconds: 1));
+    yield i;
+  }
+}
+
+```
+
+- 输出
+
+```
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Exited
+
+```
+
 ---
 
 © 猫哥
@@ -170,4 +256,3 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
 [https://ducafecat.tech](https://ducafecat.tech/)
 
 [https://ducafecat.gitee.io](https://ducafecat.gitee.io)
-

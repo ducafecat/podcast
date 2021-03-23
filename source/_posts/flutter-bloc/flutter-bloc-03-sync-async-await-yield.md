@@ -23,7 +23,7 @@ https://github.com/ducafecat/flutter-bloc-learn/tree/master/sync-async
 
 ## 正文
 
-## 在 BLOC 中常见 `yield` `yield*` `Stream<T>`
+## 在 BLOC 中常见 yield yield\* Stream<T>
 
 计算器 [Bloc 代码](https://github.com/ducafecat/flutter-bloc-learn/tree/master/ducafecat_bloc_start_example)
 
@@ -61,7 +61,7 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
 
 ```
 
-### 同步 `sync*` + `yield`
+### 同步 sync\* + yield
 
 同步 sync 后返回 Iterable<T> 可序列化对象
 
@@ -95,7 +95,11 @@ Iterable<int> getList(int count) sync* {
 Exited
 ```
 
-### 同步 `sync*` + `yield*`
+- 我如果把 `sync` 的 `*` 去掉,编辑器会提示这是固定格式。
+
+![](2021-03-23-08-05-28.png)
+
+### 同步 sync* + yield*
 
 带上 \* 因为 yield 返回对象是 Iterable<T>
 
@@ -134,7 +138,11 @@ Exited
 
 ```
 
-### 异步 `async` + `await`
+- 我把 `yield` 的 `*` 去掉后，提示返回 `Iterable<T>` 必须带上 `*`
+
+![](2021-03-23-08-09-58.png)
+
+### 异步 async + await
 
 Future + async + await 经典配合
 
@@ -167,12 +175,13 @@ Future sleep() async {
 start..........
 0
 Exited
-
 ```
 
-### 异步 `async*` + `yield`
+这里就直接返回了, 没有后续的任何操作。
 
-带上 \* 后，yield 返回 Stream<T> 对象
+### 异步 async\* + yield
+
+带上 `*` 后，yield 返回 Stream<T> 对象
 
 接收方用 listen(...)
 
@@ -205,10 +214,13 @@ Stream<int> getList(int count) async* {
 8
 9
 Exited
-
 ```
 
-### 异步 `async*` + `yield*`
+- yield 必须和 `async*` 或 `sync*` 配套使用
+
+![](2021-03-23-08-14-38.png)
+
+### 异步 async* + yield*
 
 yield\* 后返回的是另一个 Stream<T> 对象
 
@@ -246,10 +258,13 @@ Stream<int> generate(int count) async* {
 8
 9
 Exited
-
 ```
 
----
+- 返回 `Stream<T>` 类型必须是用 `yield*` 的方式
+
+![](2021-03-23-08-16-23.png)
+
+- ***
 
 © 猫哥
 

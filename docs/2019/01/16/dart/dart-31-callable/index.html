@@ -25,7 +25,7 @@
 <meta name="keywords" content="dart">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dart语言学习 - 31 可调用类 callable">
-<meta property="og:url" content="https://ducafecat.tech/2019/01/16/dart/dart-31-callable/index.html">
+<meta property="og:url" content="https://blog.ducafecat.tech/2019/01/16/dart/dart-31-callable/index.html">
 <meta property="og:site_name" content="duCafeCat">
 <meta property="og:description" content="本节目标 定义并执行可定义类  环境 Dart 2.1.0  callable123456789101112main(List&amp;lt;String&amp;gt; args) &amp;#123;  var phone = IOSPhone();  phone(&apos;911&apos;);  // IOSPhone()(&apos;911&apos;);&amp;#125;class IOSPhone &amp;#123;  call(String num) &amp;">
 <meta property="og:locale" content="en">
@@ -185,7 +185,7 @@
 </ul>
 <hr>
 <p>© 猫哥</p>
-<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech</a></p>
 
         </div>
 
@@ -200,7 +200,7 @@
     </div>
     
     <footer>
-        <a href="https://ducafecat.tech">
+        <a href="https://blog.ducafecat.tech">
             <img src="/img/avatar.jpg" alt="猫哥">
             猫哥
         </a>
@@ -222,7 +222,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/01/16/dart/dart-31-callable/&title=《Dart语言学习 - 31 可调用类 callable》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2019/01/16/dart/dart-31-callable/&title=《Dart语言学习 - 31 可调用类 callable》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -232,22 +232,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/01/16/dart/dart-31-callable/&title=《Dart语言学习 - 31 可调用类 callable》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2019/01/16/dart/dart-31-callable/&title=《Dart语言学习 - 31 可调用类 callable》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/01/16/dart/dart-31-callable/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2019/01/16/dart/dart-31-callable/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 31 可调用类 callable》 — duCafeCat&url=https://ducafecat.tech/2019/01/16/dart/dart-31-callable/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 31 可调用类 callable》 — duCafeCat&url=https://blog.ducafecat.tech/2019/01/16/dart/dart-31-callable/&via=https://blog.ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/01/16/dart/dart-31-callable/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2019/01/16/dart/dart-31-callable/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -316,23 +316,31 @@
     <div class="top">
         
 
-        <p>
-            
-                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
-        </p>
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
     </div>
     <div class="bottom">
-        <p><span>猫哥 &copy; 2018 - 2021</span>
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
             </span>
         </p>
     </div>
 </footer>
-
     </main>
     <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
@@ -342,7 +350,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/01/16/dart/dart-31-callable/&title=《Dart语言学习 - 31 可调用类 callable》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2019/01/16/dart/dart-31-callable/&title=《Dart语言学习 - 31 可调用类 callable》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -352,22 +360,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/01/16/dart/dart-31-callable/&title=《Dart语言学习 - 31 可调用类 callable》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2019/01/16/dart/dart-31-callable/&title=《Dart语言学习 - 31 可调用类 callable》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/01/16/dart/dart-31-callable/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2019/01/16/dart/dart-31-callable/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 31 可调用类 callable》 — duCafeCat&url=https://ducafecat.tech/2019/01/16/dart/dart-31-callable/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 31 可调用类 callable》 — duCafeCat&url=https://blog.ducafecat.tech/2019/01/16/dart/dart-31-callable/&via=https://blog.ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/01/16/dart/dart-31-callable/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2019/01/16/dart/dart-31-callable/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -378,7 +386,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aS27jMBAFwNz/0h5gVgMEjt9jS8GILK6E2JZYWnTYn6+veL3+ruQv/65391n77QULAwPjsYzXj+v7pr9fJ3d49wqSZ0V3xsDAOICRPCzZSv7N9tMPe8bAwMD4MRDnITs5MmJgYGDcHXDzlDV5FgYGBkabxK59pz0m3p6LY2BgPJDRNgZ+8/rG/gYGBsZDGK+l1aa7k19F+8HAwNiakRTC2vGLPAVtxzI+7BADA2NTxmQYIi/6T4bDIiQGBsbBjLWjW55p5gNnH2IsBgbG1oy8cjUJoG3j8+LTLgYGxhaMdkjiqu3mwbToxGJgYGzHWEtW84dNAno+0oGBgbE3Yy3g5kG2LeElp1cMDIzTGPOC2lp4Te6fYEZTGxgYGA9hrCWckzZAUdyf/N/AwMDYiJFvJW9wFiFy0OBcvDUGBsYDGe0j28NcsolJCwEDA+MERhLgJqW3pLg/eaEYGBjnMNbSzrrFeEMZLmoMYGBgPJyRhLnJSMRai7Qt52FgYJzAyNPRtYQzT3RHCwMD4wBGewRsg+n8cPnhJWJgYGzNyA+IbSEs2WIbcOumJgYGxsMZawWvdiyjbX/WARcDA2NrxiTMtQ3ItoR3SwKMgYHxWMakcZhft4lxHugxMDDOYaxlvZNhiLX09e39MTAwMMoktg2XbeOzeCsYGBiHMdoG5FpKnLdLMTAwTmMkSWw7eDE5VtYLAwNja8a8MdCG3as+vbi/gYGB8T8y/gCib0upGP268QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3ay26DMBAF0Pz/T9NtqghyxwNVbR9WFQLHh8XU83i94ut4u97vJM9/vvv55Nmv3HxhYGBMyzgur2tGgrm+c4bJ94aBgbEPI186CZRHcOXrJB8IAwMD44yRb6JzWMTAwMC4a7nCMa4YuDEwMDCqB7gEcL1+Uit7MBfHwMCYkJFX3f/+70f6GxgYGFMxjuJVbXN2ynaFXWFgYCzNyAPcWFJaBbdWwMDAWJrRSSn77M6Ixmvs22NgYEzIqB4Hqwln3grNj5Wn/zcwMDCWYyTNgGSEojOE8WCoxcDAWIKRL5GDkzvVFmkBhoGBsSijehDMxybGSnJJEMfAwNiZ0RnPykN2pxlwegcDA2NpRvXRasMgwVSHX7+EYAwMjIUYY69VW5hPJLFfpkUwMDAWYowV2vJwXG0GVH8FAwNjB8Zdg1856a4QfDpsgYGBsSgjKahVw2iVWv2Iv97FwMDYhlEtyucDZ31SORfHwMBYiHHXrEKSmnZKaYVAj4GBsSgjD455yjqWxHY+FgYGxg6MsZZANenNU988EGNgYOzGSMLrWKOxU7ZrTbRhYGBMzug3A5JDZKcwd0P+jYGBMTmjU+jPN50npclRdexjYWBgzM64a6iiv+nqyAUGBsZujE4bMklr8yNgHvoxMDAw+g2DJ8a/ClVDDAwMjDhQ5u3M6jMPBlwMDIx/ychHuPJS2lhCO9aQwMDAWJuRp46dO9VN5O0BDAyMpRk/KN5qmCPKKVkAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

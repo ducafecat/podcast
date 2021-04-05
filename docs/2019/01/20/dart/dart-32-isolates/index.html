@@ -25,16 +25,16 @@
 <meta name="keywords" content="dart">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dart语言学习 - 32 线程隔离 isolate">
-<meta property="og:url" content="https://ducafecat.tech/2019/01/20/dart/dart-32-isolates/index.html">
+<meta property="og:url" content="https://blog.ducafecat.tech/2019/01/20/dart/dart-32-isolates/index.html">
 <meta property="og:site_name" content="duCafeCat">
 <meta property="og:description" content="本节目标 了解线程隔离  环境 Dart 2.1.0  isolate在Dart中实现并发可以用Isolate，它是类似于线程(thread)但不共享内存的独立运行的worker，是一个独立的Dart程序执行环境。其实默认环境就是一个main isolate。 在Dart语言中，所有的Dart代码都运行在某个isolate中，代码只能使用所属isolate的类和值。不同的isolate可以通过po">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://ducafecat.tech/2019/01/20/dart/dart-32-isolates/2019-01-21-16-09-42.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/01/20/dart/dart-32-isolates/2019-01-21-16-09-42.png">
 <meta property="og:updated_time" content="2019-08-01T18:39:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dart语言学习 - 32 线程隔离 isolate">
 <meta name="twitter:description" content="本节目标 了解线程隔离  环境 Dart 2.1.0  isolate在Dart中实现并发可以用Isolate，它是类似于线程(thread)但不共享内存的独立运行的worker，是一个独立的Dart程序执行环境。其实默认环境就是一个main isolate。 在Dart语言中，所有的Dart代码都运行在某个isolate中，代码只能使用所属isolate的类和值。不同的isolate可以通过po">
-<meta name="twitter:image" content="https://ducafecat.tech/2019/01/20/dart/dart-32-isolates/2019-01-21-16-09-42.png">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2019/01/20/dart/dart-32-isolates/2019-01-21-16-09-42.png">
     
         <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
     
@@ -201,7 +201,7 @@
 </ul>
 <hr>
 <p>© 猫哥</p>
-<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech</a></p>
 
         </div>
 
@@ -216,7 +216,7 @@
     </div>
     
     <footer>
-        <a href="https://ducafecat.tech">
+        <a href="https://blog.ducafecat.tech">
             <img src="/img/avatar.jpg" alt="猫哥">
             猫哥
         </a>
@@ -238,7 +238,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/01/20/dart/dart-32-isolates/&title=《Dart语言学习 - 32 线程隔离 isolate》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2019/01/20/dart/dart-32-isolates/&title=《Dart语言学习 - 32 线程隔离 isolate》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -248,22 +248,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/01/20/dart/dart-32-isolates/&title=《Dart语言学习 - 32 线程隔离 isolate》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2019/01/20/dart/dart-32-isolates/&title=《Dart语言学习 - 32 线程隔离 isolate》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/01/20/dart/dart-32-isolates/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2019/01/20/dart/dart-32-isolates/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 32 线程隔离 isolate》 — duCafeCat&url=https://ducafecat.tech/2019/01/20/dart/dart-32-isolates/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 32 线程隔离 isolate》 — duCafeCat&url=https://blog.ducafecat.tech/2019/01/20/dart/dart-32-isolates/&via=https://blog.ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/01/20/dart/dart-32-isolates/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2019/01/20/dart/dart-32-isolates/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -332,23 +332,31 @@
     <div class="top">
         
 
-        <p>
-            
-                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
-        </p>
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
     </div>
     <div class="bottom">
-        <p><span>猫哥 &copy; 2018 - 2021</span>
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
             </span>
         </p>
     </div>
 </footer>
-
     </main>
     <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
@@ -358,7 +366,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/01/20/dart/dart-32-isolates/&title=《Dart语言学习 - 32 线程隔离 isolate》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2019/01/20/dart/dart-32-isolates/&title=《Dart语言学习 - 32 线程隔离 isolate》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -368,22 +376,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/01/20/dart/dart-32-isolates/&title=《Dart语言学习 - 32 线程隔离 isolate》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2019/01/20/dart/dart-32-isolates/&title=《Dart语言学习 - 32 线程隔离 isolate》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/01/20/dart/dart-32-isolates/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2019/01/20/dart/dart-32-isolates/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 32 线程隔离 isolate》 — duCafeCat&url=https://ducafecat.tech/2019/01/20/dart/dart-32-isolates/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 32 线程隔离 isolate》 — duCafeCat&url=https://blog.ducafecat.tech/2019/01/20/dart/dart-32-isolates/&via=https://blog.ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/01/20/dart/dart-32-isolates/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2019/01/20/dart/dart-32-isolates/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -394,7 +402,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACF0lEQVR42u3aMW7DMAwF0Nz/0unaoojzSTpDqKcpMFSXzwNBUno84vX8tf4/v97/as//NyT7RwsDA+NrGc/LlezJMdfvvIa9+Y8YGBgHMJJU+Cot5jvzNJ3HhoGBgdH7nYeYJGUMDAyMKiNvWXvtKAYGBsakia0yqmH1kjIGBsYJjEkS/PTvj5xvYGBgfBXjWVzJ4D5vXCeR/HkPBgbGakae4PIR/6SIHMWDgYGxmtFLhdV0mRedo4+FgYFxAKM3rK8iqx8oB2NgYGxlVMOqHl5WG938eBUDA+MERpIKe0+qh5F58RdNDTEwMA5g5CVddUCWPC9f18DAwFjNSI4bewXcPOFWr3pgYGBsZUwa1F5ZWeit8+cYGBirGUkqzPdMgs4LxOiaBQYGxiJG71pDfj2ieiRQHb1hYGCcwKgO/R/jVSUVPh8GBsZSRhJoMrGbpN2c+jIFY2BgHMCoNrG9g8nesWjUymJgYKxmVIu23tWu6vHkqK3FwMBYyqiGlYfYu5bRHAViYGAcxpik2ruoyegNAwPjTMYkLU6Sb3UMF7WvGBgYKxjzlJoXl/knyN+AgYFxAuPecq2XLqu8SdGJgYHxvYx5kk2e5OzeX2FgYJzAyJvMXpF3V/p+U+diYGBgFIObNJ9lKgYGBkY8uP/EyKxwhImBgbGakTSxSUD3Hgnk/wUDA2M3Y34xIi8Hq4FW22kMDIx1jB/+19sZ0CkgXAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3aQW7DMAwFUd//0s42QBN5PiUHNTVaFYWj6HnBkCKPA6/zbb3/Z/75v8+Md55aMmTIeCzjHC7+zFpM/L0yZMjYgMG3JoHyBIvvMz6bDBkyZIwZ/BA8WMuQIUPGKkaaxtWKWBkyZMhIi1gOGO9P7spurMVlyJDxQAa/df/937f0N2TIkPEoxhmuVT3EmeTyw84yZMhozeABrnYs3tpcsIMMGTJaM2qH5mMWaapXezUyZMjYgZFeyq894viqjrQQZMiQsTMjDbvpEMbiXwwZMmS0Y6TBjjQaeWCtFcOoBytDhoxGjLQc5XiyZy19PGY2lSFDxsMZ6chp2ubkwZ23AT70N2TIkNGUkZaR6VhGumca9GXIkNGbwa/pZ4LsHUXsxbSIDBkyGjHIFvzr04PyxiRCypAhYxsGL2L5K+DXdunOX389ZMiQ0ZRRSwdnDlp7icGtoQwZMlow0NAVTuDmh8N4mnhRi8uQIaMRY9XV2Ez6yFuV6AwyZMhoypgf7UqTS/6pOMOVIUPGBoxVLYH4Wr8UOWXIkLEbgxecteOuSjcvclsZMmS0Y5zhqr2C9HAxVYYMGa0ZfJGLsJln+LhG7WXJkCHj6YzaUEUauGsla/BZGTJkbMBIAx9HpikgD/0yZMiQUcsu7x7/QtMiMmTIkBFehPEGZ/rMjb8bMmTI+JcMPsLFD1EraNPxDhkyZOzA4KXjfArID8HbAzJkyGjNeAEFXiLgxqfX2QAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

@@ -25,7 +25,7 @@
 <meta name="keywords" content="dart">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dart语言学习 - 34 注解 Metadata">
-<meta property="og:url" content="https://ducafecat.tech/2019/01/22/dart/dart-34-metadata/index.html">
+<meta property="og:url" content="https://blog.ducafecat.tech/2019/01/22/dart/dart-34-metadata/index.html">
 <meta property="og:site_name" content="duCafeCat">
 <meta property="og:description" content="本节目标 了解内置注解 deprecated override 自定义注解，并使用反射实现  环境 Dart 2.1.0  作用官方称之为 元数据 , 其实在 java 里就是注解 简化代码编写，方便阅读，和重用 内置 deprecated用来注解 不建议使用、老旧的 成员对象 1234567891011121314151617class Television &amp;#123;  @deprecate">
 <meta property="og:locale" content="en">
@@ -200,7 +200,7 @@
 </ul>
 <hr>
 <p>© 猫哥</p>
-<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech</a></p>
 
         </div>
 
@@ -215,7 +215,7 @@
     </div>
     
     <footer>
-        <a href="https://ducafecat.tech">
+        <a href="https://blog.ducafecat.tech">
             <img src="/img/avatar.jpg" alt="猫哥">
             猫哥
         </a>
@@ -237,7 +237,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/01/22/dart/dart-34-metadata/&title=《Dart语言学习 - 34 注解 Metadata》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2019/01/22/dart/dart-34-metadata/&title=《Dart语言学习 - 34 注解 Metadata》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -247,22 +247,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/01/22/dart/dart-34-metadata/&title=《Dart语言学习 - 34 注解 Metadata》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2019/01/22/dart/dart-34-metadata/&title=《Dart语言学习 - 34 注解 Metadata》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/01/22/dart/dart-34-metadata/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2019/01/22/dart/dart-34-metadata/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 34 注解 Metadata》 — duCafeCat&url=https://ducafecat.tech/2019/01/22/dart/dart-34-metadata/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 34 注解 Metadata》 — duCafeCat&url=https://blog.ducafecat.tech/2019/01/22/dart/dart-34-metadata/&via=https://blog.ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/01/22/dart/dart-34-metadata/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2019/01/22/dart/dart-34-metadata/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -331,23 +331,31 @@
     <div class="top">
         
 
-        <p>
-            
-                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
-        </p>
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
     </div>
     <div class="bottom">
-        <p><span>猫哥 &copy; 2018 - 2021</span>
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
             </span>
         </p>
     </div>
 </footer>
-
     </main>
     <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
@@ -357,7 +365,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2019/01/22/dart/dart-34-metadata/&title=《Dart语言学习 - 34 注解 Metadata》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2019/01/22/dart/dart-34-metadata/&title=《Dart语言学习 - 34 注解 Metadata》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -367,22 +375,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2019/01/22/dart/dart-34-metadata/&title=《Dart语言学习 - 34 注解 Metadata》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2019/01/22/dart/dart-34-metadata/&title=《Dart语言学习 - 34 注解 Metadata》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2019/01/22/dart/dart-34-metadata/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2019/01/22/dart/dart-34-metadata/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 34 注解 Metadata》 — duCafeCat&url=https://ducafecat.tech/2019/01/22/dart/dart-34-metadata/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 34 注解 Metadata》 — duCafeCat&url=https://blog.ducafecat.tech/2019/01/22/dart/dart-34-metadata/&via=https://blog.ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2019/01/22/dart/dart-34-metadata/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2019/01/22/dart/dart-34-metadata/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -393,7 +401,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3awXLDMAhF0fz/T7sz3Ue6D5w2RtcrT+qoHC+IELxe+Lp+L3LPPyHP33zJkCHjsYxreb17hnz3XViEymOTIUPGOQySZNcBrVfrMNYryJAhQwYP990nJHHz/ytDhgwZaeHaAciQIUNGyiBFbC35plvPj9fiMmTIeCDj3sbAvff/1t+QIUPG1zCu8EqP3tabRbKtRFHJkCFjNINsy1AB+Ye5P9jhypAhYxyDbArTZ2pjYbUWggwZMk5g1DB8bIJ/UmyCypAhYyijlkw7Y6npywrKVxkyZAxl1ALlrUReEnfapTJkyJjNWAfEt3rpyFftyc3WUIYMGaMZPM3V0uINvwnr52XIkDGawbd0adCdJM5XliFDxmmMWuidBFpL0JtXIEOGjKGMdOiBL83HYfuJW4YMGVMZZOk0CaZbRv7d+NRQhgwZIxi8YVkrQe8apwjKVxkyZIxmEFinJZmuw1+EDBkyTmCkKbI2QMZL4nSkTIYMGbMZnYZiLY2mRS+6lyFDxmGM/qTGOsRaEbuJRIYMGaMZnygjayukBfNmZkSGDBmDGFd4pUGkwxO82bnpxMqQIWMQo3+uns6g1QbLaj8MMmTImMRIxx34wX16JMebCsWzPRkyZDycwY/pSVJOQ+EvYpNwZciQcTyDtxXJX1PS5nXIkCFDRmPAK21hpqMbMmTIOIeRFrHp1i0dCEvbFTJkyJjN6DQG+j0H3s5sNS9lyJDxVMYPd3QnzfHhpDgAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJ0lEQVR42u3aQW7DMAwF0d7/0u42QGF1Pim3MDVaBY6h6GnBkKK+vvC4Psbnk/77P99Zz9waMmTIeC3jWo67d1LMeol3c5K1yZAh4xxGbWryhGxQJ0zLkCFDRi0gpm+S35UhQ4aMdLorHOv08R8CrgwZMl7I4KEzLS95kE1TTBkyZJzD4Kfuf//5kf6GDBkyXsXYm97xYziSGgarkiFDxmgGD3C1opRfxdgwgwwZMkYz0gBau2ZRS0NbOa8MGTLGMfa2GDmJfEtaCDJkyJjKqF3kWu9HrZRthVoZMmSMZvApSMwmS09bpHGJK0OGjKEMfg0iPdyvJZQ8uMuQIeM0Bk/vyEJJ6llrBtw+kSFDxmhGLeFLy12S8KVBX4YMGScw0iKzdl3siSL29h9DhgwZ4xj9axOkJZk2RNOkU4YMGbMZ/UOxdAt2heDb1FCGDBlDGbuube1tKgQHcDJkyBjN2NuATK+RdVqhv2S4MmTIGM1YL5qkcU8cpZE5ZciQcSajc+hPAjF5XkwNZciQMZTRKV/TBfENCuaRIUPGAYzOJa3aURpvQqBALEOGjKGMKxy8ZO20QmOqDBkyRjP46PxYWqCutywtdGXIkDGDkQbZNLkkiSYvnlEtLkOGjKGMNPDxsJiGbB76ZciQIaO/uE6yGDcVZMiQIQMf8acJYtryfOR/Q4YMGS9hkCK2Hzp5kyBtSMiQIWM2g5eOpFVQK4M7iakMGTJGM74BKzNqmHQAYhUAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

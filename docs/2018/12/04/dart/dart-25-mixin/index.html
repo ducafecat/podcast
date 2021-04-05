@@ -25,7 +25,7 @@
 <meta name="keywords" content="dart">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dart语言学习 - 25 多继承类 mixin">
-<meta property="og:url" content="https://ducafecat.tech/2018/12/04/dart/dart-25-mixin/index.html">
+<meta property="og:url" content="https://blog.ducafecat.tech/2018/12/04/dart/dart-25-mixin/index.html">
 <meta property="og:site_name" content="duCafeCat">
 <meta property="og:description" content="本节目标 多继承类的实现方式 函数重名冲突  环境 Dart 2.1.0  类多继承123456789101112131415161718192021222324252627282930313233343536373839404142void main() &amp;#123;  var xm = Xiaomi();  xm.startup();  xm.shutdown();  xm.call();">
 <meta property="og:locale" content="en">
@@ -193,7 +193,7 @@
 </ul>
 <hr>
 <p>© 猫哥</p>
-<p><a href="https://ducafecat.tech/">https://ducafecat.tech</a></p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech</a></p>
 
         </div>
 
@@ -208,7 +208,7 @@
     </div>
     
     <footer>
-        <a href="https://ducafecat.tech">
+        <a href="https://blog.ducafecat.tech">
             <img src="/img/avatar.jpg" alt="猫哥">
             猫哥
         </a>
@@ -230,7 +230,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2018/12/04/dart/dart-25-mixin/&title=《Dart语言学习 - 25 多继承类 mixin》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2018/12/04/dart/dart-25-mixin/&title=《Dart语言学习 - 25 多继承类 mixin》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -240,22 +240,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2018/12/04/dart/dart-25-mixin/&title=《Dart语言学习 - 25 多继承类 mixin》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2018/12/04/dart/dart-25-mixin/&title=《Dart语言学习 - 25 多继承类 mixin》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2018/12/04/dart/dart-25-mixin/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2018/12/04/dart/dart-25-mixin/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 25 多继承类 mixin》 — duCafeCat&url=https://ducafecat.tech/2018/12/04/dart/dart-25-mixin/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 25 多继承类 mixin》 — duCafeCat&url=https://blog.ducafecat.tech/2018/12/04/dart/dart-25-mixin/&via=https://blog.ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2018/12/04/dart/dart-25-mixin/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2018/12/04/dart/dart-25-mixin/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -324,23 +324,31 @@
     <div class="top">
         
 
-        <p>
-            
-                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
-        </p>
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
     </div>
     <div class="bottom">
-        <p><span>猫哥 &copy; 2018 - 2021</span>
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
             </span>
         </p>
     </div>
 </footer>
-
     </main>
     <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
@@ -350,7 +358,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ducafecat.tech/2018/12/04/dart/dart-25-mixin/&title=《Dart语言学习 - 25 多继承类 mixin》 — duCafeCat&pic=https://ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2018/12/04/dart/dart-25-mixin/&title=《Dart语言学习 - 25 多继承类 mixin》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -360,22 +368,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ducafecat.tech/2018/12/04/dart/dart-25-mixin/&title=《Dart语言学习 - 25 多继承类 mixin》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2018/12/04/dart/dart-25-mixin/&title=《Dart语言学习 - 25 多继承类 mixin》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ducafecat.tech/2018/12/04/dart/dart-25-mixin/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2018/12/04/dart/dart-25-mixin/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 25 多继承类 mixin》 — duCafeCat&url=https://ducafecat.tech/2018/12/04/dart/dart-25-mixin/&via=https://ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 25 多继承类 mixin》 — duCafeCat&url=https://blog.ducafecat.tech/2018/12/04/dart/dart-25-mixin/&via=https://blog.ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ducafecat.tech/2018/12/04/dart/dart-25-mixin/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2018/12/04/dart/dart-25-mixin/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -386,7 +394,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aUW7EMAhF0e5/0+kCqjj3wUylwPVXlTYOpx8IG35+8Lr+rLvf3j0575y+VVwyZMh4LeM6rnOgBEmofOfbr8iQIWMBg6TC81vnRHwOlPyzHmKWIUOGDFzkkbDIkiFDhowOIy0KURDhv0+GDBk7GTzxnYvC9DBMisgPn8VlyJDxQkaaIv/z56/0N2TIkPEqxhUufq3WOQDHUcmQIWM0o3OV1hmzIM3OOB4ZMmQMZXTCIkMVnxoLe3giQ4aMlQweXNoM4ENjwViGDBkyFjD64xH9sq/2XIYMGRsYneEGgk+v0jojIDJkyJjK6A978WKutgPaU4YMGaMZnQuv9IqNFJ2dUQ8ZMmRMZaQlHQmLj1DUWqTBWVyGDBmDGOdPdi790+RLCkR00SZDhoxBjNpVWu0Y/I3BDhkyZGxg8NKNp8VOoDwF31a4MmTIWMColYmdtMsLTXQWlyFDxjgGv2JDHQYQOnnOU7MMGTK2MfgxlYfS2T8+1sqQIWMBI7ifKzU4+4E+PJEhQ8YaBk+y5K20zcCv3mTIkLGZ0UmUaeKu/f3tWzJkyBjKuMKVNinTlmS6Axq2kCFDxssZfPE2JwF3GqK8xJQhQ8YkBgmoVgLWUmQ6nCFDhow9jPSQ2W9hdhoSMmTIkFFLrOmYBfl6QJUhQ4YMfHz9VGI9R/gwhytDhoyhDD6cygdYa43PWkNChgwZsxlpyqt9OL1Q61/2yZAhYwTjF7CES6kMBa8xAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aS1LDMBAFwNz/0mYLBbHfjGTAUmtFFY6izmKs+bxe8To+rd7z7z77/Zn8W8oLAwPjsYzjdFWPleycYPKzYWBg7MPobV394vyz+dkwMDAwxp+ZFXwxMDAwqgH3/Ih5UvrH7w0MDIxHMfILXDW9zIPs+Q8xLRfHwMB4ICOvuv/+37f0NzAwMB7FOIorua5Vr3q9Ut2XnTEwMJZmjDQje0W3JLlt7oCBgbEoY9YYRPLf3jU0gmFgYGzAyMte50fsheNeKP8h4GJgYCzKqCal+VVvVmOyELIxMDAWZVQP2qvGnz9fBVz0YDEwMLZk5MNe1fGv3k/WDLgYGBjLMfKjJ83I8WbAxacwMDC2Z/RGVKsjX9Xh17ctTAwMjOUYealr/Fhzk9iLayIGBsZCjPELX5525sMc+f4YGBg7MKpDD9U0NW9tVkPwxdUQAwNjOUavEDYr7J7DCvMVGBgY2zB6yWoeQMffDOU3BgYGxqKMHFMOi8Ptgbc7YGBgbMPolenzC2LSFk2aClHtEAMDYwNGM5mcFKanBVwMDIzlGHkRP4GNtAGq3UkMDIxVGUdxjY+L9QbIygMWGBgYCzHydUfzIB9E6+2DgYGxEmNukE12q5bnonQXAwNjA8ZI4EuKYiNFvUIqi4GBgdH6mrnjXxcZOQYGBkYxKZ1Luv29gYGB8e8ZvVGtZJxipP15S7kNAwPjgYz8wlcNyiOHmNsoxcDAeCzjA9R3k2FBrNQsAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

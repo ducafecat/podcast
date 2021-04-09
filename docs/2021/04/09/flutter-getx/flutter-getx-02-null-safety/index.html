@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter Getx 02 - 空安全、更健全的代码 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter getx">
+    <meta name="description" content="本节目标 空安全意味着什么 如何迁移代码 如何禁用空安全 代码规范示例  视频代码https://github.com/ducafecat/getx_quick_start 参考 htt">
+<meta name="keywords" content="flutter getx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter Getx 02 - 空安全、更健全的代码">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 空安全意味着什么 如何迁移代码 如何禁用空安全 代码规范示例  视频代码https://github.com/ducafecat/getx_quick_start 参考 htt">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/2021-04-09-14-52-51.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/2021-04-09-11-16-14.png">
+<meta property="og:updated_time" content="2021-04-09T06:55:35.763Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter Getx 02 - 空安全、更健全的代码">
+<meta name="twitter:description" content="本节目标 空安全意味着什么 如何迁移代码 如何禁用空安全 代码规范示例  视频代码https://github.com/ducafecat/getx_quick_start 参考 htt">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/2021-04-09-14-52-51.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter Getx 02 - 空安全、更健全的代码</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter Getx 02 - 空安全、更健全的代码</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-04-08T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2021-04-09
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter-Getx/">Flutter Getx</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视频"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">视频</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#空安全意味着什么"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">空安全意味着什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#带来的好处"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">带来的好处</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开启和迁移"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">开启和迁移</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#禁用空安全"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">禁用空安全</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#范例、规范"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">范例、规范</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-flutter-getx/flutter-getx-02-null-safety" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter Getx 02 - 空安全、更健全的代码</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-04-09 00:00:00" datetime="2021-04-08T16:00:00.000Z"  itemprop="datePublished">2021-04-09</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter-Getx/">Flutter Getx</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-04-09-14-52-51.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h1 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h1><ul>
+<li>空安全意味着什么</li>
+<li>如何迁移代码</li>
+<li>如何禁用空安全</li>
+<li>代码规范示例</li>
+</ul>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://dart.cn/null-safety" target="_blank" rel="noopener">https://dart.cn/null-safety</a></li>
+<li><a href="https://dart.cn/null-safety/migration-guide" target="_blank" rel="noopener">https://dart.cn/null-safety/migration-guide</a></li>
+<li><a href="https://dart.cn/null-safety/understanding-null-safety" target="_blank" rel="noopener">https://dart.cn/null-safety/understanding-null-safety</a></li>
+<li><a href="https://dart.cn/null-safety/unsound-null-safety" target="_blank" rel="noopener">https://dart.cn/null-safety/unsound-null-safety</a></li>
+<li><a href="https://dart.cn/null-safety/faq" target="_blank" rel="noopener">https://dart.cn/null-safety/faq</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="空安全意味着什么"><a href="#空安全意味着什么" class="headerlink" title="空安全意味着什么"></a>空安全意味着什么</h3><ul>
+<li>默认不可空</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span> title = <span class="string">'ducafecat'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>type?</code> 操作符</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>? title = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>value!</code> 操作符</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>? title = <span class="string">'ducafecat'</span>;</span><br><span class="line"><span class="built_in">String</span> newTitle = title!;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>value?</code> 操作符</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>? title = <span class="string">'ducafecat'</span>;</span><br><span class="line"><span class="built_in">bool</span> isEmpty = title?.isEmpty();</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>value??</code> 操作符</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>? title = <span class="string">'ducafecat'</span>;</span><br><span class="line"><span class="built_in">String</span> newTitle = title ?? <span class="string">'cat'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>late</code> 会在运行时检查。所以请您仅在确定它被使用前一定会被初始化的情况下使用</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">late <span class="built_in">String</span>? title;</span><br><span class="line">title = <span class="string">'ducafecat'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>List、泛型</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>集合是否可空</th>
+<th>数据项是否可空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List<string></string></td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td>List<string>?</string></td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>List&lt;String?&gt;</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>List&lt;String?&gt;?</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Map</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>集合是否可空</th>
+<th>数据项是否可空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Map&lt;String, int&gt;</td>
+<td>no</td>
+<td>no*</td>
+</tr>
+<tr>
+<td>Map&lt;String, int&gt;?</td>
+<td>yes</td>
+<td>no*</td>
+</tr>
+<tr>
+<td>Map&lt;String, int?&gt;</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Map&lt;String, int?&gt;?</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>*</code> 可能返回空</p>
+</blockquote>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 有可能返回 null</span></span><br><span class="line"><span class="built_in">int</span> value = &lt;<span class="built_in">String</span>, <span class="built_in">int</span>&gt;&#123;<span class="string">'one'</span>: <span class="number">1</span>&#125;[<span class="string">'one'</span>]; <span class="comment">// ERROR</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 需要加上 type?</span></span><br><span class="line"><span class="built_in">int</span>? value = &lt;<span class="built_in">String</span>, <span class="built_in">int</span>&gt;&#123;<span class="string">'one'</span>: <span class="number">1</span>&#125;[<span class="string">'one'</span>]; <span class="comment">// OK</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者 value!</span></span><br><span class="line"><span class="built_in">int</span> value = &lt;<span class="built_in">String</span>, <span class="built_in">int</span>&gt;&#123;<span class="string">'one'</span>: <span class="number">1</span>&#125;[<span class="string">'one'</span>]!; <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
+<h3 id="带来的好处"><a href="#带来的好处" class="headerlink" title="带来的好处"></a>带来的好处</h3><ul>
+<li>代码更健康</li>
+<li>用户体验好</li>
+<li>运行更快</li>
+<li>编译文件更小</li>
+</ul>
+<h3 id="开启和迁移"><a href="#开启和迁移" class="headerlink" title="开启和迁移"></a>开启和迁移</h3><ul>
+<li>pubspec.yaml</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">  sdk: &quot;&gt;=2.12.0 &lt;3.0.0&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>迁移顺序</li>
+</ul>
+<p>我们强烈建议您按顺序迁移代码，先迁移依赖关系中的处于最末端的依赖。例如，如果 C 依赖了 B，B 依赖了 A，那么应该按照 A -&gt; B -&gt; C 的顺序进行迁移。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-04-09-11-16-14.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>检查依赖项目</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Dart 版本是否为 2.12 或更高</span><br><span class="line">&gt; dart --version</span><br><span class="line"></span><br><span class="line"># 依赖包的迁移状态</span><br><span class="line">&gt; dart pub outdated --mode=null-safety</span><br></pre></td></tr></table></figure>
+<ul>
+<li>升级依赖</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 该命令会更改您的 pubspec.yaml 文件</span><br><span class="line">&gt; dart pub upgrade --null-safety</span><br><span class="line"></span><br><span class="line"># 升级包</span><br><span class="line">&gt; dart pub upgrade</span><br></pre></td></tr></table></figure>
+<ul>
+<li>迁移工具</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; dart migrate</span><br></pre></td></tr></table></figure>
+<ul>
+<li>分析</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; dart analyze</span><br></pre></td></tr></table></figure>
+<h3 id="禁用空安全"><a href="#禁用空安全" class="headerlink" title="禁用空安全"></a>禁用空安全</h3><ul>
+<li>cli 命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; dart --no-sound-null-safety run</span><br><span class="line">&gt; flutter run --no-sound-null-safety</span><br></pre></td></tr></table></figure>
+<ul>
+<li>.vscode/launch.json</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  // 使用 IntelliSense 了解相关属性。</span><br><span class="line">  // 悬停以查看现有属性的描述。</span><br><span class="line">  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span><br><span class="line">  "version": "0.2.0",</span><br><span class="line">  "configurations": [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"getx_quick_start"</span>,</span><br><span class="line">      <span class="attr">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"dart"</span>,</span><br><span class="line">      <span class="attr">"program"</span>: <span class="string">"lib/main.dart"</span>,</span><br><span class="line">      <span class="attr">"args"</span>: [<span class="string">"--no-sound-null-safety"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="范例、规范"><a href="#范例、规范" class="headerlink" title="范例、规范"></a>范例、规范</h3><p><a href="https://dart.cn/null-safety/understanding-null-safety" target="_blank" rel="noopener">https://dart.cn/null-safety/understanding-null-safety</a></p>
+<ul>
+<li>明确处理空状态</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">makeCoffee(<span class="built_in">String</span> coffee, [<span class="built_in">String</span>? dairy]) &#123;</span><br><span class="line">  <span class="keyword">if</span> (dairy != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'$coffee with $dairy'</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Black $coffee'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>顶层变量和静态字段必须包含一个初始化方法。</strong>由于它们能在程序里的任何位置被访问到，编译器无法保证它们在被使用前已被赋值。唯一保险的选项是要求其本身包含初始化表达式，以确保产生匹配的类型的值。</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> topLevel = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="built_in">int</span> staticField = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>实例的字段也必须在声明时包含初始化方法，可以为常见初始化形式，也可以在实例的构造方法中进行初始化。</strong></li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span> </span>&#123;</span><br><span class="line">  <span class="built_in">int</span> atDeclaration = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">int</span> initializingFormal;</span><br><span class="line">  <span class="built_in">int</span> initializationList;</span><br><span class="line"></span><br><span class="line">  SomeClass(<span class="keyword">this</span>.initializingFormal)</span><br><span class="line">      : initializationList = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>局部变量的灵活度最高。一个非空的变量 <strong>不一定需要</strong> 一个初始化方法。</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> tracingFibonacci(<span class="built_in">int</span> n) &#123;</span><br><span class="line">  <span class="built_in">int</span> result;</span><br><span class="line">  <span class="keyword">if</span> (n &lt; <span class="number">2</span>) &#123;</span><br><span class="line">    result = n;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    result = tracingFibonacci(n - <span class="number">2</span>) + tracingFibonacci(n - <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">print</span>(result);</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>流程分析，在这里 Dart 将 <code>object</code> 的类型从它声明的 <code>Object</code> 提升到了 <code>List</code>。在空安全引入以前，下面的程序无法运行。</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// With (or without) null safety:</span></span><br><span class="line"><span class="built_in">bool</span> isEmptyList(<span class="built_in">Object</span> object) &#123;</span><br><span class="line">  <span class="keyword">if</span> (object <span class="keyword">is</span> <span class="built_in">List</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> object.isEmpty; <span class="comment">// &lt;-- OK!</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Without null safety:</span></span><br><span class="line"><span class="built_in">bool</span> isEmptyList(<span class="built_in">Object</span> object) &#123;</span><br><span class="line">  <span class="keyword">if</span> (object <span class="keyword">is</span>! <span class="built_in">List</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">  <span class="keyword">return</span> object.isEmpty;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>绝对的赋值分析</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> tracingFibonacci(<span class="built_in">int</span> n) &#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">int</span> result;</span><br><span class="line">  <span class="keyword">if</span> (n &lt; <span class="number">2</span>) &#123;</span><br><span class="line">    result = n;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    result = tracingFibonacci(n - <span class="number">2</span>) + tracingFibonacci(n - <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">print</span>(result);</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>无用代码的警告</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span> checkList(<span class="built_in">List</span> list) &#123;</span><br><span class="line">  <span class="keyword">if</span> (list?.isEmpty) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Got nothing'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'Got something'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>懒加载的变量， <code>late</code> 修饰符是“在运行时而非编译时对变量进行约束”。这就让 <code>late</code> 这个词语约等于 <strong>何时</strong> 执行对变量的强制约束。</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Using null safety:</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Coffee</span> </span>&#123;</span><br><span class="line">  <span class="built_in">String</span>? _temperature;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> heat() &#123; _temperature = <span class="string">'hot'</span>; &#125;</span><br><span class="line">  <span class="keyword">void</span> chill() &#123; _temperature = <span class="string">'iced'</span>; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">String</span> serve() =&gt; _temperature! + <span class="string">' coffee'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Using null safety:</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Coffee</span> </span>&#123;</span><br><span class="line">  late <span class="built_in">String</span> _temperature;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> heat() &#123; _temperature = <span class="string">'hot'</span>; &#125;</span><br><span class="line">  <span class="keyword">void</span> chill() &#123; _temperature = <span class="string">'iced'</span>; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">String</span> serve() =&gt; _temperature + <span class="string">' coffee'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>late</code> 与 <code>final</code> 结合使用，与普通的 <code>final</code> 字段不同，您不需要在声明或构造时就将其初始化。您可以稍后在运行中的某个地方加载它。但是您只能对其进行 <strong>一次</strong> 赋值，并且它在运行时会进行校验。</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Using null safety:</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Coffee</span> </span>&#123;</span><br><span class="line">  late <span class="keyword">final</span> <span class="built_in">String</span> _temperature;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> heat() &#123; _temperature = <span class="string">'hot'</span>; &#125;</span><br><span class="line">  <span class="keyword">void</span> chill() &#123; _temperature = <span class="string">'iced'</span>; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">String</span> serve() =&gt; _temperature + <span class="string">' coffee'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>毕传参数，这里的所有参数都必须通过命名来传递。参数 <code>a</code> 和 <code>c</code> 是可选的，可以省略。参数 <code>b</code> 和 <code>d</code> 是必需的，调用时必须传递。在这里请注意，是否必需和是否可空无关。</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Using null safety:</span></span><br><span class="line">function(&#123;<span class="built_in">int</span>? a, required <span class="built_in">int</span>? b, <span class="built_in">int</span>? c, required <span class="built_in">int</span>? d&#125;) &#123;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>抽象字段</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Cup</span> </span>&#123;</span><br><span class="line">  Beverage <span class="keyword">get</span> contents;</span><br><span class="line">  <span class="keyword">set</span> contents(Beverage);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Cup</span> </span>&#123;</span><br><span class="line">  <span class="keyword">abstract</span> Beverage contents;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>一些赋值计算可以移动到静态的初始化中。</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Initalized without values</span></span><br><span class="line">ListQueue _context;</span><br><span class="line">Float32List _buffer;</span><br><span class="line"><span class="keyword">dynamic</span> _readObject;</span><br><span class="line"></span><br><span class="line">Vec2D(<span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="keyword">dynamic</span>&gt; object) &#123;</span><br><span class="line">  _buffer = Float32List.fromList([<span class="number">0.0</span>, <span class="number">0.0</span>]);</span><br><span class="line">  _readObject = object[<span class="string">'container'</span>];</span><br><span class="line">  _context = ListQueue&lt;<span class="keyword">dynamic</span>&gt;();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Initalized with values</span></span><br><span class="line"><span class="keyword">final</span> ListQueue _context = ListQueue&lt;<span class="keyword">dynamic</span>&gt;();</span><br><span class="line"><span class="keyword">final</span> Float32List _buffer = Float32List.fromList([<span class="number">0.0</span>, <span class="number">0.0</span>]);</span><br><span class="line"><span class="keyword">final</span> <span class="keyword">dynamic</span> _readObject;</span><br><span class="line"></span><br><span class="line">Vec2D(<span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="keyword">dynamic</span>&gt; object) : _readObject = object[<span class="string">'container'</span>];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可能返回 <code>null</code> 的工厂方法</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">factory</span> StreamReader(<span class="keyword">dynamic</span> data) &#123;</span><br><span class="line">  StreamReader reader;</span><br><span class="line">  <span class="keyword">if</span> (data <span class="keyword">is</span> ByteData) &#123;</span><br><span class="line">    reader = BlockReader(data);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (data <span class="keyword">is</span> <span class="built_in">Map</span>) &#123;</span><br><span class="line">    reader = JSONBlockReader(data);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> reader;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">factory</span> StreamReader(<span class="keyword">dynamic</span> data) &#123;</span><br><span class="line">  <span class="keyword">if</span> (data <span class="keyword">is</span> ByteData) &#123;</span><br><span class="line">    <span class="comment">// Move the readIndex forward for the binary reader.</span></span><br><span class="line">    <span class="keyword">return</span> BlockReader(data);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (data <span class="keyword">is</span> <span class="built_in">Map</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> JSONBlockReader(data);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> ArgumentError(<span class="string">'Unexpected type for data'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech</a></p>
+<p><a href="https://ducafecat.gitee.io" target="_blank" rel="noopener">https://ducafecat.gitee.io</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter-getx/">flutter getx</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/&title=《Flutter Getx 02 - 空安全、更健全的代码》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/&title=《Flutter Getx 02 - 空安全、更健全的代码》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter Getx 02 - 空安全、更健全的代码》 — duCafeCat&url=https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/04/05/flutter-getx/flutter-getx-01-router-middleware/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter Getx 01 - 路由、中间件、鉴权、传值、跳转</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/&title=《Flutter Getx 02 - 空安全、更健全的代码》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/&title=《Flutter Getx 02 - 空安全、更健全的代码》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter Getx 02 - 空安全、更健全的代码》 — duCafeCat&url=https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/04/09/flutter-getx/flutter-getx-02-null-safety/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3aQXLCQAwEQP7/aXJNKoU9klbAoX2iHGK2fVhtjfR4xNfz1/X/fvVO/v1Xnw9feHh4eIOl/79e8fJFXz+n95qSNePh4eFt86pLfPUz8w29up6b/8XDw8P7Al6+uFPH5bws4eHh4X0zLz/gXh/Qk+d8oDDg4eHhBbz80XmpiMKC78la8PDw8GLe5KD8qc8r/T08PDy8cVf9esNN2lrJX/MSUl4tHh4e3gKvdzjO7+SvI4keeuvEw8PD2+CdPUxfb+V5DJGHvNWBMDw8PLw5bxLj5vFrrw2W3LkpBnh4eHhrvMlAQH4UzqONvMxE/T08PDy8t/DyMtALC3pxQ7kxhoeHh3eUV21K9RZa/d/5wfpPfw8PDw/vLbxCyhs3uhLM9etISlfEwMPDwxvweiFpNU49OyJQPtbj4eHhrfFGUemg8T8vSOWsBQ8PD2/Aqza38g06//4k6r35jIeHh7fAq0a3k1130kLrlSg8PDy8T/Em41bVAKJ64C4PH+Dh4eGNefmxOP/5SaRbjW5vul14eHh4C7xq277X1uoNCszbcnh4eHjbvHyJ1aXnkUSzg9eLbvHw8PBavHzTT4a0clK1GDSDYDw8PLwFXnXUqTdK1TtYH6h4eHh4eMu8fAQqb+TnT66GEYUjOx4eHt4aL28sbRSDZA3NASw8PDy8t/OSx+WFoRd/5Ou5CSPw8PDwjvJ6zf58xCqPNh6DCw8PD2+b9yxevddxqpVVHYTFw8PD2+BVN9xToe1kdOAABg8PD2/My4tBLxSolpnJC8LDw8N7J28yINU7jieH7Ga+goeHh/dlvHkIm4TC1bUdKwx4eHh4y7zJkEE1nuiNfOHh4eHt8XqBQl4wqoxqQYqGrvDw8PAO8SaH4OQn8x07/86Bnh4eHh5eh/cD/mAr8A4U+CYAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

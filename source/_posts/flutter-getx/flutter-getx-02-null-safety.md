@@ -16,6 +16,8 @@ categories: Flutter Getx
 
 ## 视频
 
+https://www.bilibili.com/video/bv1g5411c7hF
+
 ## 代码
 
 https://github.com/ducafecat/getx_quick_start

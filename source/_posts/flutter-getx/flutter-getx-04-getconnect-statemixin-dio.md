@@ -22,8 +22,7 @@ https://github.com/ducafecat/getx_quick_start
 
 ## 参考
 
-- https://pub.flutter-io.cn/packages/get#reactive-state-manager
-- https://dart.dev/guides/language/extension-methods
+- https://pub.flutter-io.cn/packages/get#getconnect
 
 ## 正文
 

@@ -2,9 +2,10 @@
 title: {{ title }}
 date: {{ date }}
 tags: flutter
-categories: Flutter实战从零开始
+categories: 译文
 ---
 
+## 原文
 
 ## 本节目标
 
@@ -89,6 +90,10 @@ https://getstrapi.cn
 
 ### 系列集合
 
+#### 译文
+
+https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/
+
 #### Dart 编程语言基础
 
 https://space.bilibili.com/404904528/channel/detail?cid=111585
@@ -100,10 +105,6 @@ https://space.bilibili.com/404904528/channel/detail?cid=123470
 #### Flutter 实战从零开始 新闻客户端
 
 https://space.bilibili.com/404904528/channel/detail?cid=106755
-
-#### Flutter 组件开发
-
-https://space.bilibili.com/404904528/channel/detail?cid=144262
 
 #### Flutter 组件开发
 

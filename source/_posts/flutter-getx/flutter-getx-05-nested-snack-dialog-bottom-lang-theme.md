@@ -19,6 +19,8 @@ date: 2021-05-09 00:00:00
 
 ## 视频
 
+https://www.bilibili.com/video/BV1RU4y1t7DD/
+
 ## 代码
 
 https://github.com/ducafecat/getx_quick_start

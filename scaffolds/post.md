@@ -98,6 +98,10 @@ https://getstrapi.cn
 
 https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/
 
+#### 开源项目
+
+https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/
+
 #### Dart 编程语言基础
 
 https://space.bilibili.com/404904528/channel/detail?cid=111585

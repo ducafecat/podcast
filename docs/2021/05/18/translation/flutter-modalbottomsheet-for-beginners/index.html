@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter ModalBottomSheet 指导 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信 flutter 研修群 ducafecat原文 https://evandrmb.medium.com/flutter">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter ModalBottomSheet 指导">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信 flutter 研修群 ducafecat原文 https://evandrmb.medium.com/flutter">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/2021-05-18-09-22-09.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/2021-05-18-08-58-03.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/2021-05-18-08-59-31.png">
+<meta property="og:updated_time" content="2021-05-18T01:22:29.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter ModalBottomSheet 指导">
+<meta name="twitter:description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信 flutter 研修群 ducafecat原文 https://evandrmb.medium.com/flutter">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/2021-05-18-09-22-09.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter ModalBottomSheet 指导</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter ModalBottomSheet 指导</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-05-17T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2021-05-18
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><span class="post-toc-number">1.</span> <span class="post-toc-text">老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信-flutter-研修群-ducafecat"><span class="post-toc-number">2.</span> <span class="post-toc-text">微信 flutter 研修群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">3.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">4.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">6.</span> <span class="post-toc-text">正文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">7.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">7.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">7.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">7.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开源项目"><span class="post-toc-number">7.4.2.</span> <span class="post-toc-text">开源项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">7.4.3.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">7.4.4.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">7.4.5.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">7.4.6.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">7.4.7.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">7.4.8.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">7.4.9.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-translation/flutter-modalbottomsheet-for-beginners" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter ModalBottomSheet 指导</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-05-18 00:00:00" datetime="2021-05-17T16:00:00.000Z"  itemprop="datePublished">2021-05-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-05-18-09-22-09.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><a href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文" class="headerlink" title="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~"></a>老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</h2><h2 id="微信-flutter-研修群-ducafecat"><a href="#微信-flutter-研修群-ducafecat" class="headerlink" title="微信 flutter 研修群 ducafecat"></a>微信 flutter 研修群 ducafecat</h2><h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://evandrmb.medium.com/flutter-modalbottomsheet-for-beginners-e5f3af271076" target="_blank" rel="noopener">https://evandrmb.medium.com/flutter-modalbottomsheet-for-beginners-e5f3af271076</a></p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/evandrmb/bottom_sheet" target="_blank" rel="noopener">https://github.com/evandrmb/bottom_sheet</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://material.io/components/sheets-bottom" target="_blank" rel="noopener">https://material.io/components/sheets-bottom</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>根据材质设计指南，底部表是一个小工具，用于显示锚定在屏幕底部的附加内容。虽然了解使用这个的设计规则很好，但这不是本文的目标。要了解更多关于底板设计原则的详细信息，请参阅“<a href="https://material.io/components/sheets-bottom" target="_blank" rel="noopener">Sheets: bottom — Material Design</a>”。</p>
+<p>现在你知道了 BottomSheet，你可能会问自己: 什么是 ModalBottomSheet？我们如何使用他们在 Flutter？</p>
+<p>好的，第一个问题，有两种底层表: 模态的和持久的。当用户与屏幕交互时，持久化保持可见。谷歌地图应用就是一个例子。</p>
+<p>另一方面，模式化的操作会阻止用户在应用程序中做其他动作。您可以使用它们来确认某些操作，或者请求额外的数据，比如询问用户在电子商务应用程序中订购时需要多少交换，等等。</p>
+<p>在本文中，我们将通过创建一个简单的体重跟踪应用程序来展示如何使用它，在这个应用程序中我们可以提交我们的体重并查看我们之前的体重。我们不会输入应用程序的详细信息，而是直接进入 ModalBottomSheet 实现。</p>
+<p>要显示它，您需要从具有 Scaffold 的上下文调用 showModalBottomSheet，否则，您将得到一个错误。也就是说，让我们开始构建我们的表格。</p>
+<p>首先要知道的是 ModalBottomSheets 的高度默认为屏幕的一半，为了改变它，必须传递 true 给 isScrollControlled 参数，并返回一个与我们期望的大小相匹配的小部件，所以让我们这样做。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> addWeight() &#123;</span><br><span class="line">    showModalBottomSheet(</span><br><span class="line">      isScrollControlled: <span class="keyword">true</span>,</span><br><span class="line">      context: context,</span><br><span class="line">      builder: (context) &#123;</span><br><span class="line">        <span class="keyword">var</span> date = <span class="built_in">DateTime</span>.now();</span><br><span class="line"></span><br><span class="line">		    <span class="keyword">return</span> Container(</span><br><span class="line">          height: <span class="number">302</span>,</span><br><span class="line">          padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">16.0</span>),</span><br><span class="line">          child: Column(</span><br><span class="line">            crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">            children: [</span><br><span class="line"></span><br><span class="line">            ],</span><br><span class="line">          ),</span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>现在，我们需要添加一些东西，以便我们的用户可以输入他们的权重让我们添加一个 TextInput 并给它一个 TextEditingController (这种方式即使我们的工作表意外关闭时，用户再次打开它，它的值仍然存在)。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> addWeight() &#123;</span><br><span class="line">    showModalBottomSheet(</span><br><span class="line">      isScrollControlled: <span class="keyword">true</span>,</span><br><span class="line">      context: context,</span><br><span class="line">      builder: (context) &#123;</span><br><span class="line">        <span class="keyword">var</span> date = <span class="built_in">DateTime</span>.now();</span><br><span class="line"></span><br><span class="line">		    <span class="keyword">return</span> Container(</span><br><span class="line">          height: <span class="number">302</span>,</span><br><span class="line">          padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">16.0</span>),</span><br><span class="line">          child: Column(</span><br><span class="line">            crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">            children: [</span><br><span class="line">				      padding: EdgeInsets.only(bottom: <span class="number">24.0</span>),</span><br><span class="line">                child: Text(</span><br><span class="line">                  <span class="string">'Register Weight'</span>,</span><br><span class="line">                  style: Styles.titleStyle,</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              TextField(</span><br><span class="line">                controller: weightInputController,</span><br><span class="line">                keyboardType: TextInputType.number,</span><br><span class="line">                decoration: InputDecoration(</span><br><span class="line">                  labelText: <span class="string">'Weight (KG)'</span>,</span><br><span class="line">                  border: OutlineInputBorder(</span><br><span class="line">                    borderRadius: Styles.borderRadius,</span><br><span class="line">                  ),</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">            ],</span><br><span class="line">          ),</span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>看起来不错，但现在我们有麻烦了。当用户点击我们的 TextField 键盘在它上面，为什么？当键盘打开时，我们的工作表不会调整位置，我们可以把工作表做得更大，但这不能解决我们的问题，因为我们仍然需要添加一个字段，用户可以在其中输入他们记录重量的日期。那么解决方案是什么呢？这很简单，如果打开键盘，我们让我们的工作表在它上面，我们可以实现这一点，给我们的容器一个边距的边缘。在 viewinset.bottom 中，我们将得到以下结果:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-05-18-08-58-03.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>它开始看起来很漂亮，但是你不认为如果我们在纸上加一些半径会更平滑吗？让我们通过添加如下所示的 shapeproperty 来实现。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">showModalBottomSheet(</span><br><span class="line">      isScrollControlled: <span class="keyword">true</span>,</span><br><span class="line">      context: context,</span><br><span class="line">      shape: <span class="keyword">const</span> RoundedRectangleBorder(</span><br><span class="line">          borderRadius: BorderRadius.only(</span><br><span class="line">            topLeft: Radius.circular(<span class="number">8</span>),</span><br><span class="line">            topRight: Radius.circular(<span class="number">8</span>),</span><br><span class="line">          )),</span><br></pre></td></tr></table></figure>
+<p>酷，现在让我们做我们的小工具来选择一个日期。通常，您会创建一个小部件来处理这个逻辑，并使用 ValueChanged 函数公开选定的值，但是为了说明您将来可能面临的问题，让我们在工作表本身内部创建所有逻辑。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> addWeight() &#123;</span><br><span class="line">    showModalBottomSheet(</span><br><span class="line">      isScrollControlled: <span class="keyword">true</span>,</span><br><span class="line">      context: context,</span><br><span class="line">      shape: <span class="keyword">const</span> RoundedRectangleBorder(</span><br><span class="line">          borderRadius: BorderRadius.only(</span><br><span class="line">        topLeft: Radius.circular(<span class="number">8</span>),</span><br><span class="line">        topRight: Radius.circular(<span class="number">8</span>),</span><br><span class="line">      )),</span><br><span class="line">      builder: (context) &#123;</span><br><span class="line">        <span class="keyword">return</span> Container(</span><br><span class="line">          height: <span class="number">360</span>,</span><br><span class="line">          width: MediaQuery.of(context).size.width,</span><br><span class="line">          margin:</span><br><span class="line">              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),</span><br><span class="line">          padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">16.0</span>),</span><br><span class="line">          decoration: BoxDecoration(</span><br><span class="line">            borderRadius: BorderRadius.circular(<span class="number">20</span>),</span><br><span class="line">          ),</span><br><span class="line">          child: Column(</span><br><span class="line">            crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">            children: [</span><br><span class="line">              <span class="keyword">const</span> Padding(</span><br><span class="line">                padding: EdgeInsets.only(bottom: <span class="number">24.0</span>),</span><br><span class="line">                child: Text(</span><br><span class="line">                  <span class="string">'Register Weight'</span>,</span><br><span class="line">                  style: Styles.titleStyle,</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              TextField(</span><br><span class="line">                controller: weightInputController,</span><br><span class="line">                keyboardType: TextInputType.number,</span><br><span class="line">                decoration: InputDecoration(</span><br><span class="line">                  labelText: <span class="string">'Weight (KG)'</span>,</span><br><span class="line">                  border: OutlineInputBorder(</span><br><span class="line">                    borderRadius: Styles.borderRadius,</span><br><span class="line">                  ),</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              Padding(</span><br><span class="line">                padding: <span class="keyword">const</span> EdgeInsets.symmetric(vertical: <span class="number">8.0</span>),</span><br><span class="line">                child: Row(</span><br><span class="line">                  children: [</span><br><span class="line">                    Expanded(</span><br><span class="line">                      child: Text(</span><br><span class="line">                        <span class="string">'Select a date'</span>,</span><br><span class="line">                        style: TextStyle(</span><br><span class="line">                          fontSize: <span class="number">14</span>,</span><br><span class="line">                          fontWeight: FontWeight.w500,</span><br><span class="line">                        ),</span><br><span class="line">                      ),</span><br><span class="line">                    ),</span><br><span class="line">                    Container(</span><br><span class="line">                      padding: <span class="keyword">const</span> EdgeInsets.symmetric(horizontal: <span class="number">4</span>),</span><br><span class="line">                      margin: <span class="keyword">const</span> EdgeInsets.symmetric(vertical: <span class="number">8.0</span>),</span><br><span class="line">                      height: <span class="number">36</span>,</span><br><span class="line">                      decoration: BoxDecoration(</span><br><span class="line">                        borderRadius: Styles.borderRadius,</span><br><span class="line">                      ),</span><br><span class="line">                      child: OutlinedButton(</span><br><span class="line">                        onPressed: () <span class="keyword">async</span> &#123;</span><br><span class="line">                          <span class="keyword">final</span> now = <span class="built_in">DateTime</span>.now();</span><br><span class="line"></span><br><span class="line">                          <span class="keyword">final</span> result = <span class="keyword">await</span> showDatePicker(</span><br><span class="line">                              context: context,</span><br><span class="line">                              initialDate: now,</span><br><span class="line">                              firstDate: now.subtract(</span><br><span class="line">                                <span class="keyword">const</span> <span class="built_in">Duration</span>(</span><br><span class="line">                                  days: <span class="number">90</span>,</span><br><span class="line">                                ),</span><br><span class="line">                              ),</span><br><span class="line">                              lastDate: now);</span><br><span class="line"></span><br><span class="line">                          <span class="keyword">if</span> (result != <span class="keyword">null</span>) &#123;</span><br><span class="line">                            setState(() &#123;</span><br><span class="line">                              selectedDate = result;</span><br><span class="line">                            &#125;);</span><br><span class="line">                          &#125;</span><br><span class="line">                        &#125;,</span><br><span class="line">                        child: Row(</span><br><span class="line">                          mainAxisAlignment: MainAxisAlignment.spaceBetween,</span><br><span class="line">                          children: [</span><br><span class="line">                            Padding(</span><br><span class="line">                              padding: <span class="keyword">const</span> EdgeInsets.only(right: <span class="number">16.0</span>),</span><br><span class="line">                              child:</span><br><span class="line">                                  Text(<span class="string">'<span class="subst">$&#123;formatDateToString(selectedDate)&#125;</span>'</span>),</span><br><span class="line">                            ),</span><br><span class="line">                            Icon(Icons.calendar_today_outlined),</span><br><span class="line">                          ],</span><br><span class="line">                        ),</span><br><span class="line">                      ),</span><br><span class="line">                    ),</span><br><span class="line">                  ],</span><br><span class="line">                ),</span><br><span class="line">              )</span><br><span class="line"></span><br><span class="line">            ],</span><br><span class="line">          ),</span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，我已经在我们的主页中添加了 selectedDatevariable，你可以在我最后提供的存储库链接中看到这一点。但是现在我们遇到了一个问题，尽管我们正在使用 setstateoutlinebutton 更新 selectedDate 的值，但是在重新打开工作表之前，仍然会显示旧的值，如下所示。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-05-18-08-59-31.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>为了解决这个问题，我们需要将 OutlinedButton 传递给 StatefulBuilder (或者您可以创建一个新的小部件并使用回调公开更改，正如我前面所说的，顺便说一下，这是更正确的方法)。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> addWeight() &#123;</span><br><span class="line">    showModalBottomSheet(</span><br><span class="line">      isScrollControlled: <span class="keyword">true</span>,</span><br><span class="line">      context: context,</span><br><span class="line">      shape: <span class="keyword">const</span> RoundedRectangleBorder(</span><br><span class="line">          borderRadius: BorderRadius.only(</span><br><span class="line">        topLeft: Radius.circular(<span class="number">8</span>),</span><br><span class="line">        topRight: Radius.circular(<span class="number">8</span>),</span><br><span class="line">      )),</span><br><span class="line">      builder: (context) &#123;</span><br><span class="line">        <span class="keyword">return</span> Container(</span><br><span class="line">          height: <span class="number">360</span>,</span><br><span class="line">          width: MediaQuery.of(context).size.width,</span><br><span class="line">          margin:</span><br><span class="line">              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),</span><br><span class="line">          padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">16.0</span>),</span><br><span class="line">          decoration: BoxDecoration(</span><br><span class="line">            borderRadius: BorderRadius.circular(<span class="number">20</span>),</span><br><span class="line">          ),</span><br><span class="line">          child: Column(</span><br><span class="line">            crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">            children: [</span><br><span class="line">              <span class="keyword">const</span> Padding(</span><br><span class="line">                padding: EdgeInsets.only(bottom: <span class="number">24.0</span>),</span><br><span class="line">                child: Text(</span><br><span class="line">                  <span class="string">'Register Weight'</span>,</span><br><span class="line">                  style: Styles.titleStyle,</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              TextField(</span><br><span class="line">                controller: weightInputController,</span><br><span class="line">                keyboardType: TextInputType.number,</span><br><span class="line">                decoration: InputDecoration(</span><br><span class="line">                  labelText: <span class="string">'Weight (KG)'</span>,</span><br><span class="line">                  border: OutlineInputBorder(</span><br><span class="line">                    borderRadius: Styles.borderRadius,</span><br><span class="line">                  ),</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              Padding(</span><br><span class="line">                padding: <span class="keyword">const</span> EdgeInsets.symmetric(vertical: <span class="number">8.0</span>),</span><br><span class="line">                child: Row(</span><br><span class="line">                  children: [</span><br><span class="line">                    Expanded(</span><br><span class="line">                      child: Text(</span><br><span class="line">                        <span class="string">'Select a date'</span>,</span><br><span class="line">                        style: TextStyle(</span><br><span class="line">                          fontSize: <span class="number">14</span>,</span><br><span class="line">                          fontWeight: FontWeight.w500,</span><br><span class="line">                        ),</span><br><span class="line">                      ),</span><br><span class="line">                    ),</span><br><span class="line">                    Container(</span><br><span class="line">                        padding: <span class="keyword">const</span> EdgeInsets.symmetric(horizontal: <span class="number">4</span>),</span><br><span class="line">                        margin: <span class="keyword">const</span> EdgeInsets.symmetric(vertical: <span class="number">8.0</span>),</span><br><span class="line">                        height: <span class="number">36</span>,</span><br><span class="line">                        decoration: BoxDecoration(</span><br><span class="line">                          borderRadius: Styles.borderRadius,</span><br><span class="line">                        ),</span><br><span class="line">                        child: StatefulBuilder(</span><br><span class="line">                          builder: (context, setState) &#123;</span><br><span class="line">                            <span class="keyword">return</span> OutlinedButton(</span><br><span class="line">                              onPressed: () <span class="keyword">async</span> &#123;</span><br><span class="line">                                <span class="keyword">final</span> now = <span class="built_in">DateTime</span>.now();</span><br><span class="line"></span><br><span class="line">                                <span class="keyword">final</span> result = <span class="keyword">await</span> showDatePicker(</span><br><span class="line">                                    context: context,</span><br><span class="line">                                    initialDate: now,</span><br><span class="line">                                    firstDate: now.subtract(</span><br><span class="line">                                      <span class="keyword">const</span> <span class="built_in">Duration</span>(</span><br><span class="line">                                        days: <span class="number">90</span>,</span><br><span class="line">                                      ),</span><br><span class="line">                                    ),</span><br><span class="line">                                    lastDate: now);</span><br><span class="line"></span><br><span class="line">                                <span class="keyword">if</span> (result != <span class="keyword">null</span>) &#123;</span><br><span class="line">                                  setState(() &#123;</span><br><span class="line">                                    selectedDate = result;</span><br><span class="line">                                  &#125;);</span><br><span class="line">                                &#125;</span><br><span class="line">                              &#125;,</span><br><span class="line">                              child: Row(</span><br><span class="line">                                mainAxisAlignment:</span><br><span class="line">                                    MainAxisAlignment.spaceBetween,</span><br><span class="line">                                children: [</span><br><span class="line">                                  Padding(</span><br><span class="line">                                    padding: <span class="keyword">const</span> EdgeInsets.only(right: <span class="number">16.0</span>),</span><br><span class="line">                                    child: Text(</span><br><span class="line">                                        <span class="string">'<span class="subst">$&#123;formatDateToString(selectedDate)&#125;</span>'</span>),</span><br><span class="line">                                  ),</span><br><span class="line">                                  Icon(Icons.calendar_today_outlined),</span><br><span class="line">                                ],</span><br><span class="line">                              ),</span><br><span class="line">                            );</span><br><span class="line">                          &#125;,</span><br><span class="line">                        )),</span><br><span class="line">                  ],</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              Expanded(child: Container()),</span><br><span class="line">              ButtonBar(</span><br><span class="line">                children: [</span><br><span class="line">                  ElevatedButton(</span><br><span class="line">                    onPressed: () =&gt; Navigator.pop(context),</span><br><span class="line">                    child: Text(<span class="string">'Cancel'</span>,</span><br><span class="line">                        style: TextStyle(</span><br><span class="line">                          color: Theme.of(context).primaryColor,</span><br><span class="line">                        )),</span><br><span class="line">                    style: ElevatedButton.styleFrom(</span><br><span class="line">                      primary: Colors.white,</span><br><span class="line">                      <span class="comment">// minimumSize: Size(96, 48),</span></span><br><span class="line">                    ),</span><br><span class="line">                  ),</span><br><span class="line">                  ElevatedButton(</span><br><span class="line">                      onPressed: () &#123;</span><br><span class="line">                        setState(() &#123;</span><br><span class="line">                          weights.insert(</span><br><span class="line">                              <span class="number">0</span>,</span><br><span class="line">                              WeightModel(</span><br><span class="line">                                value: <span class="built_in">double</span>.parse(weightInputController.text),</span><br><span class="line">                                date: selectedDate,</span><br><span class="line">                              ));</span><br><span class="line">                        &#125;);</span><br><span class="line">                        Navigator.pop(context);</span><br><span class="line">                      &#125;,</span><br><span class="line">                      child: <span class="keyword">const</span> Text(<span class="string">'Register'</span>)),</span><br><span class="line">                ],</span><br><span class="line">              ),</span><br><span class="line">            ],</span><br><span class="line">          ),</span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>这是我们的 ModalBottomSheet 的最终版本！</p>
+<p><a href="https://github.com/evandrmb/bottom_sheet" target="_blank" rel="noopener">https://github.com/evandrmb/bottom_sheet</a></p>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech/</a></p>
+<p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">https://github.com/ducafecat</a></p>
+<h2 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h2><h3 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h3><h4 id="GetX-Quick-Start"><a href="#GetX-Quick-Start" class="headerlink" title="GetX Quick Start"></a>GetX Quick Start</h4><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h4 id="新闻客户端"><a href="#新闻客户端" class="headerlink" title="新闻客户端"></a>新闻客户端</h4><p><a href="https://github.com/ducafecat/flutter_learn_news" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news</a></p>
+<h3 id="strapi-手册译文"><a href="#strapi-手册译文" class="headerlink" title="strapi 手册译文"></a>strapi 手册译文</h3><p><a href="https://getstrapi.cn" target="_blank" rel="noopener">https://getstrapi.cn</a></p>
+<h3 id="微信讨论群-ducafecat"><a href="#微信讨论群-ducafecat" class="headerlink" title="微信讨论群 ducafecat"></a>微信讨论群 ducafecat</h3><h3 id="系列集合"><a href="#系列集合" class="headerlink" title="系列集合"></a>系列集合</h3><h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p><a href="https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/</a></p>
+<h4 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h4><p><a href="https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/</a></p>
+<h4 id="Dart-编程语言基础"><a href="#Dart-编程语言基础" class="headerlink" title="Dart 编程语言基础"></a>Dart 编程语言基础</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=111585" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=111585</a></p>
+<h4 id="Flutter-零基础入门"><a href="#Flutter-零基础入门" class="headerlink" title="Flutter 零基础入门"></a>Flutter 零基础入门</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=123470" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=123470</a></p>
+<h4 id="Flutter-实战从零开始-新闻客户端"><a href="#Flutter-实战从零开始-新闻客户端" class="headerlink" title="Flutter 实战从零开始 新闻客户端"></a>Flutter 实战从零开始 新闻客户端</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=106755</a></p>
+<h4 id="Flutter-组件开发"><a href="#Flutter-组件开发" class="headerlink" title="Flutter 组件开发"></a>Flutter 组件开发</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=144262" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=144262</a></p>
+<h4 id="Flutter-Bloc"><a href="#Flutter-Bloc" class="headerlink" title="Flutter Bloc"></a>Flutter Bloc</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177519" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177519</a></p>
+<h4 id="Flutter-Getx4"><a href="#Flutter-Getx4" class="headerlink" title="Flutter Getx4"></a>Flutter Getx4</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177514" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177514</a></p>
+<h4 id="Docker-Yapi"><a href="#Docker-Yapi" class="headerlink" title="Docker Yapi"></a>Docker Yapi</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=130578" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=130578</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/&title=《Flutter ModalBottomSheet 指导》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/&title=《Flutter ModalBottomSheet 指导》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter ModalBottomSheet 指导》 — duCafeCat&url=https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/05/17/flutter-opensource/flutter-music-player-blackhole/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter开源项目 - 音乐播放器 BlackHole</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/&title=《Flutter ModalBottomSheet 指导》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/&title=《Flutter ModalBottomSheet 指导》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter ModalBottomSheet 指导》 — duCafeCat&url=https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADJElEQVR42u3aQW7bUAwFwNz/0u6miwKplEdSCix6tApsQ9Z8Lxjy8esrvl7/XEevfP/8+X3O73b0yeTdyy5sbGzsh7Bfp9d3RoLPeef3nNz/h6PBxsbGXsc+L0JHf5/fYXI01eKXW7CxsbGxz3nVR8yLWe8nwcbGxsY+H/rkjUqvsUkKJzY2NjZ2PlTKx/HVQc+8yN04S8PGxsZ+e3aeir7/37fk29jY2NhvzH4Vr3mBubvIRQpsbGzsRezJV/ZgeTxcDR7Of4b/fCM2Njb2InZeiqoRwu8v8SSFDRsbG3sTuxcDVF9PSL0AoNeWYGNjY29lT1ZqejUzL2CTAVY0TsLGxsZ+OHsyBpqszlQP66rjxsbGxt7E7rUQ+ecnqz/zpqWQOWBjY2OvY1/FS5DVglRtisoNCTY2NvYidr6g07tDHuvmoUWhmGFjY2MvYvdWHq9d7snD42qkUV0nwsbGxn4iuxfHVgdPyaNcUH7ylgkbGxt7Bbu6mjOJE/JyVR0tXdBsYGNjYz+cfe2Yphf0znPYJBj4+y42Njb2B7CrhaEaCfeKZbVwln8ZbGxs7Aeye6FvtZ3oLehMjrX8GWxsbOyHs3sBQN6u5KOivNnIy9XhJ7GxsbFXsPMmobpS04uQ89erEcLhsg42Njb2UnZ1xH9H49FrVKIRFTY2NvZqdi9wndyhWYTm4yRsbGzspexeAcsbibxo3RhUYGNjYy9iTx73qkjgqoFReU0HGxsbewX7ji9Iji8vQhPF4VNhY2NjL2JXC1WyOlONfielLmlRfjhQbGxs7HXsqwpb9UHLYW1rtISNjY29lZ2EAZN1mbylmR9rYZ0IGxsb+2PY+VJOdcmmGhIXGozk+bGxsbFXsF/FKzmO6iPmh5UPqn74YbCxsbEXsXth6qR45MOpyYgqakWwsbGxF7GrsWvv//m8OSks3AzaG2xsbOx97EmT0KyKrTtcMEXDxsbGxj5tCZJ2ohcq5EcWtTHY2NjYH8zOR/D5oL86KpqUSWxsbOyt7OpQqZdC9AZVybFWA2lsbGzsTexeWJuXismjVI+mOhTDxsbGfjj7D7yiShU/wBa+AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

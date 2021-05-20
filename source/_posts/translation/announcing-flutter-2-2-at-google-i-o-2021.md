@@ -118,7 +118,7 @@ https://ducafecat.tech/
 
 https://github.com/ducafecat
 
-![qrcode](/img/public-qrcode.png)
+![](/img/public-qrcode.png)
 
 ## 往期
 

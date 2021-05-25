@@ -74,7 +74,7 @@ https://ducafecat.tech/
 
 https://github.com/ducafecat
 
-![](/img/public-qrcode.png)
+![](https://ducafecat.tech/img/public-qrcode.png)
 
 ## 往期
 

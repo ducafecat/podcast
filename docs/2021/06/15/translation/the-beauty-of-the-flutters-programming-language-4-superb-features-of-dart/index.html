@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Dart 的编程语言之美 4 个超级特性 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信 Flutter 技术群 ducafecat原文 https://reprom.io/the-beauty-of-the">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dart 的编程语言之美 4 个超级特性">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/06/15/translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信 Flutter 技术群 ducafecat原文 https://reprom.io/the-beauty-of-the">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/06/15/translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart/2021-06-15-07-58-44.png">
+<meta property="og:image" content="https://ducafecat.tech/img/public-qrcode.png">
+<meta property="og:updated_time" content="2021-06-14T23:58:46.303Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dart 的编程语言之美 4 个超级特性">
+<meta name="twitter:description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信 Flutter 技术群 ducafecat原文 https://reprom.io/the-beauty-of-the">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/06/15/translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart/2021-06-15-07-58-44.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Dart 的编程语言之美 4 个超级特性</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Dart 的编程语言之美 4 个超级特性</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-06-14T23:46:06.000Z" itemprop="datePublished" class="page-time">
+	2021-06-15
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><span class="post-toc-number">1.</span> <span class="post-toc-text">老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信-Flutter-技术群-ducafecat"><span class="post-toc-number">2.</span> <span class="post-toc-text">微信 Flutter 技术群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">3.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">5.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Null-safety"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Null safety</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Async-await"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Async / await</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义函数参数的多种方法"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">定义函数参数的多种方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Composition-with-mixins"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">Composition with mixins</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">6.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">6.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">6.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开源项目"><span class="post-toc-number">6.4.2.</span> <span class="post-toc-text">开源项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">6.4.3.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">6.4.4.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">6.4.5.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">6.4.6.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">6.4.7.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">6.4.8.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">6.4.9.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Dart 的编程语言之美 4 个超级特性</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-06-15 07:46:06" datetime="2021-06-14T23:46:06.000Z"  itemprop="datePublished">2021-06-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-06-15-07-58-44.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><a href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文" class="headerlink" title="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~"></a>老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</h2><h2 id="微信-Flutter-技术群-ducafecat"><a href="#微信-Flutter-技术群-ducafecat" class="headerlink" title="微信 Flutter 技术群 ducafecat"></a>微信 Flutter 技术群 ducafecat</h2><h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://reprom.io/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart" target="_blank" rel="noopener">https://reprom.io/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart</a></p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://dart.dev/codelabs/async-await" target="_blank" rel="noopener">https://dart.dev/codelabs/async-await</a></li>
+<li><a href="https://medium.com/flutter-community/dart-what-are-mixins-3a72344011f3" target="_blank" rel="noopener">https://medium.com/flutter-community/dart-what-are-mixins-3a72344011f3</a></li>
+<li><a href="https://dart.dev/guides/language/language-tour" target="_blank" rel="noopener">https://dart.dev/guides/language/language-tour</a></li>
+<li><a href="https://api.dart.dev/stable/2.13.1/dart-isolate/dart-isolate-library.html" target="_blank" rel="noopener">https://api.dart.dev/stable/2.13.1/dart-isolate/dart-isolate-library.html</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在阅读 Flutter 时，我读到最多的缺点之一就是使用 Dart 编程语言。它还没有 Kotlin 那么成熟，这是我读到的最常被提及的论点之一。在我看来(我承认这可能会引起争议) ，Dart 是一种伟大的语言，我不会在 Flutter 创建应用程序时为其他任何语言改变它，我是在 Kotlin 专业地创建 android 应用程序之后说的，顺便说一句，这也是一种优雅而美丽的语言。</p>
+<p>在这篇文章中，我打算展示我最喜欢的 Dart 编程语言的 4 个特性，没有特定的顺序; 让我们看看我们如何利用这个现代工具:</p>
+<h3 id="Null-safety"><a href="#Null-safety" class="headerlink" title="Null safety"></a>Null safety</h3><p>最近在 2.12 版本中添加(包括在 Flutter 2.0 中)。在任何假装坚实和高效的现代语言中，空安全都是必须的。这就是为什么 Dart 团队一直致力于实现声音 null 安全，这意味着我们可以有可以为空的类型和不能为空的类型，如果我们尝试在后面执行一个不安全的操作，我们会在应用程序构建之前得到一个编译错误:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// This is a String that can be null</span></span><br><span class="line"><span class="built_in">String</span>? nullVar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// This String cannot be null, the compiler forces me</span></span><br><span class="line"><span class="comment">// to set it a value because of its non-nullable nature.</span></span><br><span class="line"><span class="built_in">String</span> nonNullVar = <span class="string">'I am not null'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Alternatively, I can specify that the value will be</span></span><br><span class="line"><span class="comment">// set later, but the property continues to be non-nullable.</span></span><br><span class="line">late <span class="built_in">String</span> lateNonNullVar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// If I want to call a method on an instance of a type</span></span><br><span class="line"><span class="comment">// that can be null, I need first to do a runtime check that</span></span><br><span class="line"><span class="comment">// its value is not null.</span></span><br><span class="line"><span class="keyword">if</span> (nullVar != <span class="keyword">null</span>) &#123;</span><br><span class="line">  nonNullVar.toLowerCase();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Or call it using the '?' operator, which means that the</span></span><br><span class="line"><span class="comment">// method will only be called if the instance is not null:</span></span><br><span class="line">nullVar?.toLowerCase();</span><br><span class="line"></span><br><span class="line"><span class="comment">// If the type is not nullable I can safely call any</span></span><br><span class="line"><span class="comment">// method on it directly.</span></span><br><span class="line">nonNullVar.toLowerCase();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Always remember to initialize late vars, or you</span></span><br><span class="line"><span class="comment">// will get an exception when trying to access its members.</span></span><br><span class="line">lateNonNullVar = <span class="string">'some value'</span>;</span><br><span class="line">lateNonNullVar.toLowerCase();</span><br></pre></td></tr></table></figure>
+<h3 id="Async-await"><a href="#Async-await" class="headerlink" title="Async / await"></a>Async / await</h3><p>就像在 Javascript 中我们有 Promises，在 Dart 中我们有 Futures，其中 async/await 是主要的关键词，这给了我们开发者一个简单而强大的方法来处理异步操作:</p>
+<p>使用 Futures，我们可以轻松地停止当前操作流，等待某个异步操作完成，然后继续工作。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// To specify that a function will perform an asynchronous</span></span><br><span class="line"><span class="comment">// operation (like doing a network request or reading from</span></span><br><span class="line"><span class="comment">// a database) we mark it with the 'async' keyword:</span></span><br><span class="line">asyncFunction() <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Use the 'await' keyword to stop the flow until the function</span></span><br><span class="line"><span class="comment">// has completed its task:</span></span><br><span class="line"><span class="keyword">await</span> asyncFunction();</span><br><span class="line"></span><br><span class="line"><span class="comment">// You must declare a function as 'async' if it contains</span></span><br><span class="line"><span class="comment">// calls to other async functions:</span></span><br><span class="line">main() <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">await</span> asyncFunction();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// If the async function returns a value, wrap it within</span></span><br><span class="line"><span class="comment">// a Future. For instance, the following function</span></span><br><span class="line"><span class="comment">// would do a network call and return its result:</span></span><br><span class="line">Future&lt;NetworkResult&gt; doNetworkCall() <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> result = <span class="keyword">await</span> doNetworkCall();</span><br><span class="line"></span><br><span class="line"><span class="comment">// But what if the network request fails and an exception</span></span><br><span class="line"><span class="comment">// is thrown? Just wrap the call in a try/catch block:</span></span><br><span class="line">late NetworkResult result;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  result = <span class="keyword">await</span> doNetworkCall();</span><br><span class="line">&#125; on NetworkException <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="comment">// Handle error</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要指出的是，即使使用 async/await 关键字，所有的操作都是在同一个线程中执行的，如果我们需要具体的性能要求，我们可以使用 isolates 产生替代线程。</p>
+<h3 id="定义函数参数的多种方法"><a href="#定义函数参数的多种方法" class="headerlink" title="定义函数参数的多种方法"></a>定义函数参数的多种方法</h3><p>在 Dart 中，我们在定义函数参数时有多个选项:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// You can define mandatory parameters as you do in</span></span><br><span class="line"><span class="comment">// many other languages, specifying their type and setting a label:</span></span><br><span class="line">functionWithMandatoryParameters(<span class="built_in">String</span> someString, <span class="built_in">int</span> someNumber) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// You are forced to send the defined parameters</span></span><br><span class="line"><span class="comment">// when using the function:</span></span><br><span class="line">functionWithMandatoryParameters(<span class="string">'some_string'</span>, <span class="number">46</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// You can however specify that the parameters are optional:</span></span><br><span class="line"><span class="comment">// (note that the type must be defined as nullable, precisely because</span></span><br><span class="line"><span class="comment">// there's no guarantee that the caller will send a value)</span></span><br><span class="line">functionWithOptionalParams(</span><br><span class="line">  &#123;<span class="built_in">String</span>? optionalString, <span class="built_in">int</span>? optionalNumber&#125;) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// You can call this function without sending any values,</span></span><br><span class="line"><span class="comment">// or specifying a value for an optional parameter with its label:</span></span><br><span class="line">functionWithOptionalParams();</span><br><span class="line">functionWithOptionalParams(optionalString: <span class="string">'some_string'</span>);</span><br><span class="line">functionWithOptionalParams(</span><br><span class="line">  optionalString: <span class="string">'some_string'</span>, optionalNumber: <span class="number">46</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// When defining optional parameters, you can set a default value</span></span><br><span class="line"><span class="comment">// that will be used in case that there is no value sent by the caller:</span></span><br><span class="line">functionWithDefaultValue(&#123;<span class="built_in">String</span> someString = <span class="string">'default'</span>&#125;) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The value of someString is 'default'</span></span><br><span class="line">functionWithDefaultValue();</span><br><span class="line"><span class="comment">// The value of someString is 'some_string'</span></span><br><span class="line">functionWithDefaultValue(someString: <span class="string">'some_string'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Lastly, you can even define mandatory named parameters with the</span></span><br><span class="line"><span class="comment">// 'required' keyword, this is useful to enhance code readability.</span></span><br><span class="line">createUser(</span><br><span class="line">  &#123;required <span class="built_in">String</span> username,</span><br><span class="line">  required <span class="built_in">String</span> name,</span><br><span class="line">  required <span class="built_in">String</span> surname,</span><br><span class="line">  required <span class="built_in">String</span> address,</span><br><span class="line">  required <span class="built_in">String</span> city,</span><br><span class="line">  required <span class="built_in">String</span> country&#125;) &#123;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">createUser(</span><br><span class="line">  username: <span class="string">'Ghost'</span>,</span><br><span class="line">  name: <span class="string">'John'</span>,</span><br><span class="line">  surname: <span class="string">'Doe'</span>,</span><br><span class="line">  address: <span class="string">'3590  Mill Street'</span>,</span><br><span class="line">  city: <span class="string">'Beaver'</span>,</span><br><span class="line">  country: <span class="string">'US'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Composition-with-mixins"><a href="#Composition-with-mixins" class="headerlink" title="Composition with mixins"></a>Composition with mixins</h3><p>软件开发中最不流行的趋势之一是重组而不是继承，这意味着使用类似组件的元素向类添加功能，而不是从父类继承。这种方法允许我们轻松地添加封装的功能，而无需处理复杂的继承层次结构。</p>
+<p>例如，假设您有一个登录逻辑，您可能希望在应用程序中的不同位置使用它。您可以使用这个逻辑创建一个组件(mixin) ，然后在需要时重用它:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AuthUtils</span> </span>&#123;</span><br><span class="line">  Future&lt;User&gt; login() <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="comment">// Here we can add the login logic that will later be reused</span></span><br><span class="line">    <span class="comment">// in any class that ads this mixin.</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoginPage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  LoginPage(&#123;Key? key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _LoginPageState createState() =&gt; _LoginPageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_LoginPageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">LoginPage</span>&gt; <span class="title">with</span> <span class="title">AuthUtils</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> FutureBuilder&lt;User&gt;(</span><br><span class="line">      future: login(), <span class="comment">// Calling the mixin function</span></span><br><span class="line">      builder: (BuildContext context, AsyncSnapshot&lt;User&gt; snapshot) &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的优点是，我们可以随心所欲地添加任意多的 mixin，而不是仅通过使用继承从一个父类继承。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这些只是 Dart 提供给开发者的多个有用特性中的 4 个。如果你想了解更多，我建议你去参观 Dart 语言之旅，它以一种非常友好的方式解释了这门语言的每一个细节。</p>
+<p><a href="https://dart.dev/guides/language/language-tour" target="_blank" rel="noopener">https://dart.dev/guides/language/language-tour</a></p>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech/</a></p>
+<p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">https://github.com/ducafecat</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h2><h3 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h3><h4 id="GetX-Quick-Start"><a href="#GetX-Quick-Start" class="headerlink" title="GetX Quick Start"></a>GetX Quick Start</h4><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h4 id="新闻客户端"><a href="#新闻客户端" class="headerlink" title="新闻客户端"></a>新闻客户端</h4><p><a href="https://github.com/ducafecat/flutter_learn_news" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news</a></p>
+<h3 id="strapi-手册译文"><a href="#strapi-手册译文" class="headerlink" title="strapi 手册译文"></a>strapi 手册译文</h3><p><a href="https://getstrapi.cn" target="_blank" rel="noopener">https://getstrapi.cn</a></p>
+<h3 id="微信讨论群-ducafecat"><a href="#微信讨论群-ducafecat" class="headerlink" title="微信讨论群 ducafecat"></a>微信讨论群 ducafecat</h3><h3 id="系列集合"><a href="#系列集合" class="headerlink" title="系列集合"></a>系列集合</h3><h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p><a href="https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/</a></p>
+<h4 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h4><p><a href="https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/</a></p>
+<h4 id="Dart-编程语言基础"><a href="#Dart-编程语言基础" class="headerlink" title="Dart 编程语言基础"></a>Dart 编程语言基础</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=111585" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=111585</a></p>
+<h4 id="Flutter-零基础入门"><a href="#Flutter-零基础入门" class="headerlink" title="Flutter 零基础入门"></a>Flutter 零基础入门</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=123470" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=123470</a></p>
+<h4 id="Flutter-实战从零开始-新闻客户端"><a href="#Flutter-实战从零开始-新闻客户端" class="headerlink" title="Flutter 实战从零开始 新闻客户端"></a>Flutter 实战从零开始 新闻客户端</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=106755</a></p>
+<h4 id="Flutter-组件开发"><a href="#Flutter-组件开发" class="headerlink" title="Flutter 组件开发"></a>Flutter 组件开发</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=144262" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=144262</a></p>
+<h4 id="Flutter-Bloc"><a href="#Flutter-Bloc" class="headerlink" title="Flutter Bloc"></a>Flutter Bloc</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177519" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177519</a></p>
+<h4 id="Flutter-Getx4"><a href="#Flutter-Getx4" class="headerlink" title="Flutter Getx4"></a>Flutter Getx4</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177514" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177514</a></p>
+<h4 id="Docker-Yapi"><a href="#Docker-Yapi" class="headerlink" title="Docker Yapi"></a>Docker Yapi</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=130578" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=130578</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/06/15/translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart/&title=《Dart 的编程语言之美 4 个超级特性》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/06/15/translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart/&title=《Dart 的编程语言之美 4 个超级特性》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/06/15/translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart 的编程语言之美 4 个超级特性》 — duCafeCat&url=https://blog.ducafecat.tech/2021/06/15/translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/06/15/translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/06/10/translation/autocomplete-fields-in-flutter/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 自动提示文本框</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/06/15/translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart/&title=《Dart 的编程语言之美 4 个超级特性》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/06/15/translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart/&title=《Dart 的编程语言之美 4 个超级特性》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/06/15/translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart 的编程语言之美 4 个超级特性》 — duCafeCat&url=https://blog.ducafecat.tech/2021/06/15/translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/06/15/translation/the-beauty-of-the-flutters-programming-language-4-superb-features-of-dart/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEiUlEQVR42u3aS27bQBAFwNz/0somCwOO5Pe6KUBDF1eGbJE9RQMz/fnzJ74eX66vn3z/7fe//P73z+7/+lnt50nkF1+YMGHChOkjmR4vr9e3nmG1C0tiSO6Qx/yf72LChAkTpsOZktvN9s08xNcxvP48X3D7+jFhwoQJ029jer2wZDF5Oj1LnmdPxIQJEyZMmPKFRcnk+niRH0E2KT0mTJgwYboHU3K7NqF931KTcvCsIXpBLRwTJkyYMH0YU74x3+/nt8w3YcKECROmj2F6lFcyNLMp0V6bJOeHjx9WjQkTJkyYjmVqU9/Zjrk5rcxS4tnr+eG7mDBhwoTpWKY80HZw59qNvE3L2wW3hxhMmDBhwnQuU962nJVQ80NDHsP+ALEq/mLChAkTpo9kSkZO879pjxTJU2bobXn3hzgxYcKECdPhTMni29QxPy7kp5X9gE473ooJEyZMmE5nyoE2jcnX23+yPbepeEsTrRQTJkyYMB3IdNXgaTtAMxvxaRufG/SoF4oJEyZMmD6eqcXKx2Lag8Vm2HSGVa8UEyZMmDAdzpRvkHnzMh+jaYPOn9KWjJ/GhgkTJkyYbsTUbuTJ4aBtYa5ajyV3xIcJEyZMmA5kasuym6Dbou1VB5T86U/viQkTJkyYjmVqW5VXhZsP6+Sl502ZeNXUxIQJEyZMH8/UpqZ5SzLPv2dl3Fl5t8XFhAkTJkznMm2CmKXNs3BnyW1L9vRzTJgwYcJ0C6bZVrpJbmfLmKXHKzJMmDBhwnQs0yygR3zl0ElBeXbnWSMzSoYxYcKECdOBTLP0NSkWz4q/bYE4HzCavQZMmDBhwnQW02ZrbI8ISejJgSCJYXb4ePotTJgwYcJ0C6Z943CzMbfNzjzF3TzrB2lMmDBhwnQIUxLWLJTNMOtV5eAL6gGYMGHChOkWTMnhIElr28Q4PwTMhmxmLxITJkyYMN2DKb9RApp8ty3s5ihtMbqOHBMmTJgw3YLp3Q3LWYLdoufjREWxGxMmTJgwHct0VVjt2M3+KfsW6azxiQkTJkyYzmLabOqz3767AZk3YvNmLSZMmDBhOp1p1sWbNT73czKzz1clY0yYMGHCdAumzSDOLCXefKs9XswOLpgwYcKE6XSmzdY7S2sT6PzQkCfP7Wt+2vvFhAkTJkxHMbXb8+uNdjZe0x4CNuM49X8QJkyYMGE6lilvIrah5MM6swR1lpy3L/jfz5gwYcKE6XCmWWE0H6lpDxbvKPu2x4vL6seYMGHChOljmJINexN6cpjIN+nZYWI4ToQJEyZMmI5lmgW3bzq2d5ht5EMCTJgwYcJ0I6ZHeb3j/kXfdVHkXf0rYMKECROmY5muWnC71LaBmhSUZ4u/+GyFCRMmTJg+kmlWzN2kqTnxrGScx5m3PDFhwoQJ0+lMm4W1bcs8xc2T2DwxbhNpTJgwYcL0O5nyrX0zZNO2J/NhoDoGTJgwYcL0a5hmj8lHRdu/3Ly84oCCCRMmTJgOZ9rcaBPQpnzcJsartBwTJkyYMB3LlE+tvKN5uYlh9nnyLUyYMGHCdAumv6+RFH0kEFM6AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

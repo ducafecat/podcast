@@ -480,12 +480,6 @@ void _drawSwipeAbleArc(Canvas canvas, Size size) {
 
 ![](login-ok.gif)
 
-###
-
-###
-
-###
-
 ---
 
 © 猫哥

@@ -7,7 +7,9 @@ categories: 译文
 
 ## 老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~
 
-## 微信Flutter技术群 ducafecat
+## 微信群 ducafecat
+
+## b站 https://space.bilibili.com/404904528
 
 ## 原文
 

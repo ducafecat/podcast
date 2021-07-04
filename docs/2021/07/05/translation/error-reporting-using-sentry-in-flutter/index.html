@@ -21,14 +21,15 @@
     
     
     <meta name="keywords" content="flutter">
-    <meta name="description" content="猫哥说这个 Sentry 是一个错误收集平台方案，个人项目是免费的。 现在针对 Flutter 已经很成熟，可以同时收集 Dart、Flutter、原生端的错误。 猫哥在企业中是自己搭建了 Sentry 服务，这个是可以私有化的。 老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信群 ducafecatb 站 https://space.bilibili.com/404904528">
+    <meta name="description" content="猫哥说这个 Sentry 是一个错误收集平台方案，个人项目是免费的。 现在针对 Flutter 已经很成熟，可以同时收集 Dart、Flutter、原生端的错误。 猫哥在企业中是自己搭建">
 <meta name="keywords" content="flutter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在 Flutter 使用 Sentry 收集错误">
 <meta property="og:url" content="https://blog.ducafecat.tech/2021/07/05/translation/error-reporting-using-sentry-in-flutter/index.html">
 <meta property="og:site_name" content="duCafeCat">
-<meta property="og:description" content="猫哥说这个 Sentry 是一个错误收集平台方案，个人项目是免费的。 现在针对 Flutter 已经很成熟，可以同时收集 Dart、Flutter、原生端的错误。 猫哥在企业中是自己搭建了 Sentry 服务，这个是可以私有化的。 老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信群 ducafecatb 站 https://space.bilibili.com/404904528">
+<meta property="og:description" content="猫哥说这个 Sentry 是一个错误收集平台方案，个人项目是免费的。 现在针对 Flutter 已经很成熟，可以同时收集 Dart、Flutter、原生端的错误。 猫哥在企业中是自己搭建">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/05/translation/error-reporting-using-sentry-in-flutter/2021-07-05-06-05-28.png">
 <meta property="og:image" content="https://blog.ducafecat.tech/2021/07/05/translation/error-reporting-using-sentry-in-flutter/2021-07-05-05-42-13.png">
 <meta property="og:image" content="https://blog.ducafecat.tech/2021/07/05/translation/error-reporting-using-sentry-in-flutter/2021-07-05-05-42-34.png">
 <meta property="og:image" content="https://blog.ducafecat.tech/2021/07/05/translation/error-reporting-using-sentry-in-flutter/2021-07-05-05-42-54.png">
@@ -42,11 +43,11 @@
 <meta property="og:image" content="https://blog.ducafecat.tech/2021/07/05/translation/error-reporting-using-sentry-in-flutter/2021-07-05-05-46-54.png">
 <meta property="og:image" content="https://blog.ducafecat.tech/2021/07/05/translation/error-reporting-using-sentry-in-flutter/sentry.gif">
 <meta property="og:image" content="https://ducafecat.tech/img/public-qrcode.png">
-<meta property="og:updated_time" content="2021-07-04T21:52:29.346Z">
+<meta property="og:updated_time" content="2021-07-04T22:05:30.641Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 Flutter 使用 Sentry 收集错误">
-<meta name="twitter:description" content="猫哥说这个 Sentry 是一个错误收集平台方案，个人项目是免费的。 现在针对 Flutter 已经很成熟，可以同时收集 Dart、Flutter、原生端的错误。 猫哥在企业中是自己搭建了 Sentry 服务，这个是可以私有化的。 老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信群 ducafecatb 站 https://space.bilibili.com/404904528">
-<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/07/05/translation/error-reporting-using-sentry-in-flutter/2021-07-05-05-42-13.png">
+<meta name="twitter:description" content="猫哥说这个 Sentry 是一个错误收集平台方案，个人项目是免费的。 现在针对 Flutter 已经很成熟，可以同时收集 Dart、Flutter、原生端的错误。 猫哥在企业中是自己搭建">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/07/05/translation/error-reporting-using-sentry-in-flutter/2021-07-05-06-05-28.png">
     
         <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
     
@@ -184,7 +185,14 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="猫哥说"><a href="#猫哥说" class="headerlink" title="猫哥说"></a>猫哥说</h2><p>这个 Sentry 是一个错误收集平台方案，个人项目是免费的。</p>
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-07-05-06-05-28.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="猫哥说"><a href="#猫哥说" class="headerlink" title="猫哥说"></a>猫哥说</h2><p>这个 Sentry 是一个错误收集平台方案，个人项目是免费的。</p>
 <p>现在针对 Flutter 已经很成熟，可以同时收集 Dart、Flutter、原生端的错误。</p>
 <p>猫哥在企业中是自己搭建了 Sentry 服务，这个是可以私有化的。</p>
 <h2 id="老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><a href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文" class="headerlink" title="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~"></a>老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</h2><h2 id="微信群-ducafecat"><a href="#微信群-ducafecat" class="headerlink" title="微信群 ducafecat"></a>微信群 ducafecat</h2><h2 id="b-站-https-space-bilibili-com-404904528"><a href="#b-站-https-space-bilibili-com-404904528" class="headerlink" title="b 站 https://space.bilibili.com/404904528"></a>b 站 <a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">https://space.bilibili.com/404904528</a></h2><h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>

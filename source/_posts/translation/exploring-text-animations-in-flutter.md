@@ -7,8 +7,6 @@ date: 2021-07-19 00:00:00
 
 ![](2021-07-19-07-42-06.png)
 
-## 老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~
-
 ## 微信群 ducafecat
 
 ## b 站 https://space.bilibili.com/404904528
@@ -172,7 +170,7 @@ Widget _typer(){
 
 在这个小部件中，我们将返回 SizedBox ()。在内部，我们将添加 DefaultTextStyle ()并添加 AnimatedTextKit ()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加四个带有速度持续时间的 TyperAnimatedText ()。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
-![](_type.gif)
+![](type.gif)
 
 #### 淡出动画文本
 
@@ -209,7 +207,7 @@ Widget _fade(){
 
 在这个小部件中，我们将返回 SizedBox ()。在内部，我们将添加 DefaultTextStyle ()并添加 AnimatedTextKit ()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加 4 个 FadeAnimatedText () ，其中包括速度持续时间、 fadeOutBegin 和 fadeInEnd。比 fadeInEnd 要好。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
-![](_fade.gif)
+![](fade.gif)
 
 #### 缩放动画文字
 
@@ -241,7 +239,7 @@ Widget _scale(){
 
 在这个小部件中，我们将返回 SizedBox ()。在内部，我们将添加 DefaultTextStyle ()并添加 AnimatedTextKit ()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加四个带有 scalingFactor 的 ScaleAnimatedText ()。scalingFactor 设置了动画文本的缩放因子。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
-![](_scale.gif)
+![](scale.gif)
 
 #### TextLiquidFill 动画
 
@@ -268,7 +266,7 @@ Widget _textLiquidFillAnimation(){
 
 在这个小部件中，我们将返回 SizedBox ()。在内部，我们将添加 TextLiquidFill ()小部件。在这个小部件中，我们将添加文本、 waveDuration、 waveColor 和 boxBackgroundColor。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
-![](_textLiquidFill.gif)
+![](textLiquidFill.gif)
 
 #### 动画文字
 
@@ -296,7 +294,7 @@ Widget _wavy(){
 
 在这个小部件中，我们将返回 DefaultTextStyle ()。在内部，我们将添加 AnimatedTextKit ()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加两个 WavyAnimatedText ()和文本的速度持续时间。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
-![](_wavy.gif)
+![](wavy.gif)
 
 #### 闪烁动画文字
 
@@ -328,7 +326,7 @@ Widget _flicker(){
 
 在这个小部件中，我们将返回 SizedBox ()。在内部，我们将添加 DefaultTextStyle ()并添加 AnimatedTextKit ()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加四个具有 entryEnd 和速度的 FlickerAnimatedText ()。entryEnd 被标记为文本闪烁输入间隔的结束。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
-![](_flicker.gif)
+![](flicker.gif)
 
 #### 彩色动画文本
 
@@ -382,7 +380,7 @@ static const colorizeTextStyle = TextStyle(
 
 用户可以根据文本改变颜色。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频
 
-![](_colorize.gif)
+![](colorize.gif)
 
 #### 打字机动画文字
 
@@ -420,7 +418,7 @@ Widget _typeWriter(){
 
 在这个小部件中，我们将返回 SizedBox ()。在内部，我们将添加 DefaultTextStyle ()并添加 AnimatedTextKit ()小部件。在这个小部件中，我们将添加 animatedtext。内部，我们将添加四个打字机动画文本()与曲线和速度。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
-![](_typeWriter.gif)
+![](typeWriter.gif)
 
 #### 所有代码
 

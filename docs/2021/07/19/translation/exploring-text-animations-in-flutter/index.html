@@ -21,31 +21,31 @@
     
     
     <meta name="keywords" content="flutter">
-    <meta name="description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信群 ducafecatb 站 https://space.bilibili.com/404904528原文 https:">
+    <meta name="description" content="微信群 ducafecatb 站 https://space.bilibili.com/404904528原文 https://medium.com/flutterdevs/explor">
 <meta name="keywords" content="flutter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在 Flutter 中实现文字动画">
 <meta property="og:url" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/index.html">
 <meta property="og:site_name" content="duCafeCat">
-<meta property="og:description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信群 ducafecatb 站 https://space.bilibili.com/404904528原文 https:">
+<meta property="og:description" content="微信群 ducafecatb 站 https://space.bilibili.com/404904528原文 https://medium.com/flutterdevs/explor">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/2021-07-19-07-42-06.png">
 <meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/2021-07-19-07-12-36.png">
 <meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/2021-07-19-07-19-27.png">
 <meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/rotate.gif">
-<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/_type.gif">
-<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/_fade.gif">
-<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/_scale.gif">
-<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/_textLiquidFill.gif">
-<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/_wavy.gif">
-<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/_flicker.gif">
-<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/_colorize.gif">
-<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/_typeWriter.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/type.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/fade.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/scale.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/textLiquidFill.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/wavy.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/flicker.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/colorize.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/typeWriter.gif">
 <meta property="og:image" content="https://ducafecat.tech/img/public-qrcode.png">
-<meta property="og:updated_time" content="2021-07-18T23:42:08.889Z">
+<meta property="og:updated_time" content="2021-07-18T23:55:29.447Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 Flutter 中实现文字动画">
-<meta name="twitter:description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信群 ducafecatb 站 https://space.bilibili.com/404904528原文 https:">
+<meta name="twitter:description" content="微信群 ducafecatb 站 https://space.bilibili.com/404904528原文 https://medium.com/flutterdevs/explor">
 <meta name="twitter:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/2021-07-19-07-42-06.png">
     
         <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
@@ -162,7 +162,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><span class="post-toc-number">1.</span> <span class="post-toc-text">老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信群-ducafecat"><span class="post-toc-number">2.</span> <span class="post-toc-text">微信群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#b-站-https-space-bilibili-com-404904528"><span class="post-toc-number">3.</span> <span class="post-toc-text">b 站 https://space.bilibili.com/404904528</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">4.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">6.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简介"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何实现-dart-文件中的代码"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">如何实现 dart 文件中的代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#旋转动画文字"><span class="post-toc-number">6.4.1.</span> <span class="post-toc-text">旋转动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#打字机动画文字"><span class="post-toc-number">6.4.2.</span> <span class="post-toc-text">打字机动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#淡出动画文本"><span class="post-toc-number">6.4.3.</span> <span class="post-toc-text">淡出动画文本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#缩放动画文字"><span class="post-toc-number">6.4.4.</span> <span class="post-toc-text">缩放动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#TextLiquidFill-动画"><span class="post-toc-number">6.4.5.</span> <span class="post-toc-text">TextLiquidFill 动画</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#动画文字"><span class="post-toc-number">6.4.6.</span> <span class="post-toc-text">动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#闪烁动画文字"><span class="post-toc-number">6.4.7.</span> <span class="post-toc-text">闪烁动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#彩色动画文本"><span class="post-toc-number">6.4.8.</span> <span class="post-toc-text">彩色动画文本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#打字机动画文字-1"><span class="post-toc-number">6.4.9.</span> <span class="post-toc-text">打字机动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#所有代码"><span class="post-toc-number">6.4.10.</span> <span class="post-toc-text">所有代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">7.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">7.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">7.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">7.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开源项目"><span class="post-toc-number">7.4.2.</span> <span class="post-toc-text">开源项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">7.4.3.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">7.4.4.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">7.4.5.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">7.4.6.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">7.4.7.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">7.4.8.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">7.4.9.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信群-ducafecat"><span class="post-toc-number">1.</span> <span class="post-toc-text">微信群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#b-站-https-space-bilibili-com-404904528"><span class="post-toc-number">2.</span> <span class="post-toc-text">b 站 https://space.bilibili.com/404904528</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">3.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">5.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简介"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何实现-dart-文件中的代码"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">如何实现 dart 文件中的代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#旋转动画文字"><span class="post-toc-number">5.4.1.</span> <span class="post-toc-text">旋转动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#打字机动画文字"><span class="post-toc-number">5.4.2.</span> <span class="post-toc-text">打字机动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#淡出动画文本"><span class="post-toc-number">5.4.3.</span> <span class="post-toc-text">淡出动画文本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#缩放动画文字"><span class="post-toc-number">5.4.4.</span> <span class="post-toc-text">缩放动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#TextLiquidFill-动画"><span class="post-toc-number">5.4.5.</span> <span class="post-toc-text">TextLiquidFill 动画</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#动画文字"><span class="post-toc-number">5.4.6.</span> <span class="post-toc-text">动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#闪烁动画文字"><span class="post-toc-number">5.4.7.</span> <span class="post-toc-text">闪烁动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#彩色动画文本"><span class="post-toc-number">5.4.8.</span> <span class="post-toc-text">彩色动画文本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#打字机动画文字-1"><span class="post-toc-number">5.4.9.</span> <span class="post-toc-text">打字机动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#所有代码"><span class="post-toc-number">5.4.10.</span> <span class="post-toc-text">所有代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">6.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">6.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">6.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开源项目"><span class="post-toc-number">6.4.2.</span> <span class="post-toc-text">开源项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">6.4.3.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">6.4.4.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">6.4.5.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">6.4.6.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">6.4.7.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">6.4.8.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">6.4.9.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -191,7 +191,7 @@
                 </div>
                 <div class="image-caption"></div>
             </figure>
-<h2 id="老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><a href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文" class="headerlink" title="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~"></a>老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</h2><h2 id="微信群-ducafecat"><a href="#微信群-ducafecat" class="headerlink" title="微信群 ducafecat"></a>微信群 ducafecat</h2><h2 id="b-站-https-space-bilibili-com-404904528"><a href="#b-站-https-space-bilibili-com-404904528" class="headerlink" title="b 站 https://space.bilibili.com/404904528"></a>b 站 <a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">https://space.bilibili.com/404904528</a></h2><h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<h2 id="微信群-ducafecat"><a href="#微信群-ducafecat" class="headerlink" title="微信群 ducafecat"></a>微信群 ducafecat</h2><h2 id="b-站-https-space-bilibili-com-404904528"><a href="#b-站-https-space-bilibili-com-404904528" class="headerlink" title="b 站 https://space.bilibili.com/404904528"></a>b 站 <a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">https://space.bilibili.com/404904528</a></h2><h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
 <p><a href="https://medium.com/flutterdevs/exploring-text-animations-in-flutter-9b74103940d2" target="_blank" rel="noopener">https://medium.com/flutterdevs/exploring-text-animations-in-flutter-9b74103940d2</a></p>
 </blockquote>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
@@ -264,7 +264,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="_type.gif" alt="" title="">
+                    <img src="type.gif" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -274,7 +274,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="_fade.gif" alt="" title="">
+                    <img src="fade.gif" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -284,7 +284,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="_scale.gif" alt="" title="">
+                    <img src="scale.gif" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -294,7 +294,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="_textLiquidFill.gif" alt="" title="">
+                    <img src="textLiquidFill.gif" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -304,7 +304,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="_wavy.gif" alt="" title="">
+                    <img src="wavy.gif" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -314,7 +314,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="_flicker.gif" alt="" title="">
+                    <img src="flicker.gif" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -326,7 +326,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="_colorize.gif" alt="" title="">
+                    <img src="colorize.gif" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -336,7 +336,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="_typeWriter.gif" alt="" title="">
+                    <img src="typeWriter.gif" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>

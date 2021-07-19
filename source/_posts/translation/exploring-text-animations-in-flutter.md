@@ -27,13 +27,13 @@ date: 2021-07-19 00:00:00
 
 在 Flutter，动画是直接做到的，而且很多古怪的东西可以用比原生 Android 更少的努力来完善。
 
-在本帖中，我们将探索颤振文本动画。我们还将实现一个演示程序的文本动画，并显示一个冷静和美丽的文本动画收集使用的动画 \_ 文本工具包在您的颤振应用程序。
+在本帖中，我们将探索 Flutter 文本动画。我们还将实现一个演示程序的文本动画，并显示一个冷静和美丽的文本动画收集使用的动画工具包在您的 Flutter 应用程序。
 
 https://pub.dev/packages/animated_text_kit
 
 ### 简介
 
-一个颤振小工具包，包含一些很酷的和伟大的内容动画分类。我们将制作非凡的和优秀的内容动画利用动画 `animated_text_kit` 工具包包。
+一个 Flutter 小工具包，包含一些很酷的和伟大的内容动画分类。我们将制作非凡的和优秀的内容动画利用动画 `animated_text_kit` 工具包包。
 
 ### 属性
 
@@ -81,7 +81,7 @@ flutter packages get
 
 #### 旋转动画文字
 
-在正文中，我们将添加一个列小部件。在这个小部件中，添加一个具有高度和宽度的 Container。其子属性，添加一个 \_ rotate ()小部件。
+在正文中，我们将添加一个列小部件。在这个小部件中，添加一个具有高度和宽度的 Container。其子属性，添加一个 `_rotate()` 小部件。
 
 ```dart
 Center(
@@ -102,7 +102,7 @@ Center(
 )
 ```
 
-在 `_rotate()` 小部件中。我们将返回 Row 小部件。在内部，添加文本和 defaultextstyle ()。它是子属性，我们将添加 AnimatedTextKit ()小部件。在里面，我们将添加 repeatForever 是真实的，isRepeatingAnimation 也是真实的，并添加 animatedtext。在 animatedtext 中，我们将添加三个 RotateAnimatedText ()。用户还可以添加持续时间，旋转。
+在 `_rotate()` 小部件中。我们将返回 Row 小部件。在内部，添加文本和 defaultextstyle()。它是子属性，我们将添加 AnimatedTextKit()小部件。在里面，我们将添加 repeatForever 是真实的，isRepeatingAnimation 也是真实的，并添加 animatedtext。在 animatedtext 中，我们将添加三个 RotateAnimatedText()。用户还可以添加持续时间，旋转。
 
 ```dart
 Widget _rotate(){
@@ -168,7 +168,7 @@ Widget _typer(){
 }
 ```
 
-在这个小部件中，我们将返回 SizedBox ()。在内部，我们将添加 DefaultTextStyle ()并添加 AnimatedTextKit ()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加四个带有速度持续时间的 TyperAnimatedText ()。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
+在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 DefaultTextStyle()并添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加四个带有速度持续时间的 TyperAnimatedText()。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
 ![](type.gif)
 
@@ -205,7 +205,7 @@ Widget _fade(){
 }
 ```
 
-在这个小部件中，我们将返回 SizedBox ()。在内部，我们将添加 DefaultTextStyle ()并添加 AnimatedTextKit ()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加 4 个 FadeAnimatedText () ，其中包括速度持续时间、 fadeOutBegin 和 fadeInEnd。比 fadeInEnd 要好。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
+在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 DefaultTextStyle()并添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加 4 个 FadeAnimatedText() ，其中包括速度持续时间、 fadeOutBegin 和 fadeInEnd。比 fadeInEnd 要好。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
 ![](fade.gif)
 
@@ -237,7 +237,7 @@ Widget _scale(){
 }
 ```
 
-在这个小部件中，我们将返回 SizedBox ()。在内部，我们将添加 DefaultTextStyle ()并添加 AnimatedTextKit ()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加四个带有 scalingFactor 的 ScaleAnimatedText ()。scalingFactor 设置了动画文本的缩放因子。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
+在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 DefaultTextStyle()并添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加四个带有 scalingFactor 的 ScaleAnimatedText()。scalingFactor 设置了动画文本的缩放因子。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
 ![](scale.gif)
 
@@ -264,7 +264,7 @@ Widget _textLiquidFillAnimation(){
 }
 ```
 
-在这个小部件中，我们将返回 SizedBox ()。在内部，我们将添加 TextLiquidFill ()小部件。在这个小部件中，我们将添加文本、 waveDuration、 waveColor 和 boxBackgroundColor。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
+在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 TextLiquidFill()小部件。在这个小部件中，我们将添加文本、 waveDuration、 waveColor 和 boxBackgroundColor。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
 ![](textLiquidFill.gif)
 
@@ -292,7 +292,7 @@ Widget _wavy(){
 }
 ```
 
-在这个小部件中，我们将返回 DefaultTextStyle ()。在内部，我们将添加 AnimatedTextKit ()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加两个 WavyAnimatedText ()和文本的速度持续时间。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
+在这个小部件中，我们将返回 DefaultTextStyle()。在内部，我们将添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加两个 WavyAnimatedText()和文本的速度持续时间。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
 ![](wavy.gif)
 
@@ -324,7 +324,7 @@ Widget _flicker(){
 }
 ```
 
-在这个小部件中，我们将返回 SizedBox ()。在内部，我们将添加 DefaultTextStyle ()并添加 AnimatedTextKit ()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加四个具有 entryEnd 和速度的 FlickerAnimatedText ()。entryEnd 被标记为文本闪烁输入间隔的结束。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
+在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 DefaultTextStyle()并添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加四个具有 entryEnd 和速度的 FlickerAnimatedText()。entryEnd 被标记为文本闪烁输入间隔的结束。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
 ![](flicker.gif)
 
@@ -362,7 +362,7 @@ Widget _colorize(){
 }
 ```
 
-在这个小部件中，我们将返回 SizedBox ()。在内部，我们将添加 AnimatedTextKit ()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加三个带有 textStyle 和颜色的 colorizeanmatedtext ()。
+在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加三个带有 textStyle 和颜色的 colorizeanmatedtext()。
 
 ```dart
 List<MaterialColor> colorizeColors = [
@@ -416,7 +416,7 @@ Widget _typeWriter(){
 }
 ```
 
-在这个小部件中，我们将返回 SizedBox ()。在内部，我们将添加 DefaultTextStyle ()并添加 AnimatedTextKit ()小部件。在这个小部件中，我们将添加 animatedtext。内部，我们将添加四个打字机动画文本()与曲线和速度。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
+在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 DefaultTextStyle()并添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。内部，我们将添加四个打字机动画文本()与曲线和速度。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。
 
 ![](typeWriter.gif)
 
@@ -463,9 +463,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 RaisedButton(
                   child: Text('Rotate Animation Text',style: TextStyle(color: Colors.black),),
                   color: Colors.tealAccent,
-                  onPressed: () {
+                  onPressed:() {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => RotateAnimationText()));
+                        MaterialPageRoute(builder:(context) => RotateAnimationText()));
                   },
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                   padding: EdgeInsets.all(13),
@@ -475,9 +475,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 RaisedButton(
                   child: Text('Typer Animation Text',style: TextStyle(color: Colors.black),),
                   color: Colors.tealAccent,
-                  onPressed: () {
+                  onPressed:() {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => TyperAnimationText()));
+                        MaterialPageRoute(builder:(context) => TyperAnimationText()));
                   },
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                   padding: EdgeInsets.all(13),
@@ -488,9 +488,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 RaisedButton(
                   child: Text('Fade Animation Text',style: TextStyle(color: Colors.black),),
                   color: Colors.tealAccent,
-                  onPressed: () {
+                  onPressed:() {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => FadeAnimationText()));
+                        MaterialPageRoute(builder:(context) => FadeAnimationText()));
                   },
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                   padding: EdgeInsets.all(13),
@@ -501,9 +501,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 RaisedButton(
                   child: Text('Scale Animation Text',style: TextStyle(color: Colors.black),),
                   color: Colors.tealAccent,
-                  onPressed: () {
+                  onPressed:() {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => ScaleAnimationText()));
+                        MaterialPageRoute(builder:(context) => ScaleAnimationText()));
                   },
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                   padding: EdgeInsets.all(13),
@@ -514,9 +514,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 RaisedButton(
                   child: Text('TextLiquidFill Animation',style: TextStyle(color: Colors.black),),
                   color: Colors.tealAccent,
-                  onPressed: () {
+                  onPressed:() {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => TextLiquidFillAnimation()));
+                        MaterialPageRoute(builder:(context) => TextLiquidFillAnimation()));
                   },
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                   padding: EdgeInsets.all(13),
@@ -527,9 +527,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 RaisedButton(
                   child: Text('Wavy Animation Text',style: TextStyle(color: Colors.black),),
                   color: Colors.tealAccent,
-                  onPressed: () {
+                  onPressed:() {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => WavyAnimationText()));
+                        MaterialPageRoute(builder:(context) => WavyAnimationText()));
                   },
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                   padding: EdgeInsets.all(13),
@@ -540,9 +540,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 RaisedButton(
                   child: Text('Flicker Animation Text',style: TextStyle(color: Colors.black),),
                   color: Colors.tealAccent,
-                  onPressed: () {
+                  onPressed:() {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => FlickerAnimationText()));
+                        MaterialPageRoute(builder:(context) => FlickerAnimationText()));
                   },
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                   padding: EdgeInsets.all(13),
@@ -553,9 +553,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 RaisedButton(
                   child: Text('Colorize Animation Text',style: TextStyle(color: Colors.black),),
                   color: Colors.tealAccent,
-                  onPressed: () {
+                  onPressed:() {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => ColorizeAnimationText()));
+                        MaterialPageRoute(builder:(context) => ColorizeAnimationText()));
                   },
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                   padding: EdgeInsets.all(13),
@@ -567,9 +567,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 RaisedButton(
                   child: Text('Typewriter Animation Text',style: TextStyle(color: Colors.black),),
                   color: Colors.tealAccent,
-                  onPressed: () {
+                  onPressed:() {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => TypewriterAnimationText()));
+                        MaterialPageRoute(builder:(context) => TypewriterAnimationText()));
                   },
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                   padding: EdgeInsets.all(13),

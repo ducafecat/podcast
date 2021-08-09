@@ -5,12 +5,6 @@ tags: flutter
 categories: 译文
 ---
 
-## 老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~
-
-## 微信群 ducafecat
-
-## b站 https://space.bilibili.com/404904528
-
 ## 原文
 
 ## 本节目标
@@ -42,39 +36,29 @@ https://github.com/ducafecat/getx_quick_start
 
 ## 正文
 
-### 状态管理
+### 
 
-#### Obx
+### 
 
-#### GetX
+### 
 
-#### GetBuilder
+### 
 
-#### ValueBuilder
+### 
 
-### 防抖、限流
-
-#### ever
-
-#### once
-
-#### debounce
-
-#### interval
-
-### 依赖注入
-
-#### Get.put
-
-#### Get.lazyPut
+### 
 
 ---
 
 © 猫哥
 
-https://ducafecat.tech/
+- https://ducafecat.tech/
 
-https://github.com/ducafecat
+- https://github.com/ducafecat
+
+- 微信群 ducafecat
+
+- b站 https://space.bilibili.com/404904528
 
 ![](https://ducafecat.tech/img/public-qrcode.png)
 

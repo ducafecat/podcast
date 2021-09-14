@@ -9,6 +9,8 @@ date: 2021-09-14 00:00:00
 
 ## 原文
 
+> https://medium.com/flutterdevs/snackbar-widget-in-flutter-476bb2431538
+
 ## 代码
 
 https://github.com/flutter-devs/flutter_snackbar_demo

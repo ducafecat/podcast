@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>flutter 最简单的应用程序图标制作方法 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="原文 https://medium.com/@bharadwaj.palakurthy/the-easiest-way-to-make-app-icons-in-flutter-9fe1">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter 最简单的应用程序图标制作方法">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/09/17/translation/the-easiest-way-to-make-app-icons-in-flutter/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="原文 https://medium.com/@bharadwaj.palakurthy/the-easiest-way-to-make-app-icons-in-flutter-9fe1">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/09/17/translation/the-easiest-way-to-make-app-icons-in-flutter/2021-09-17-09-01-55.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/e50c1729b6a2a06718db1590902fa4d9a84bf207fe77d8cba5daf2766fd4ad3a.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/e3f60e43c5b3946488dc86982a76dbab056195e66d946fb867c1fe77f67cdda6.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/2af230975ce3c7d2008bf1962f3c24b0a1d57db3d8b0752bf1cdb32eb97ed7b1.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/a03aa910cb3c1a3353928b9684a8137f244380db9ee87340a26f4e8e3ef3eae9.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/5aa8577609eab9bc5e67af5c0b5a34cd4ecf8515fc80d4d22a782edb8471bb9c.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/e189e5ab390a63ccc1a010f83fb7e2e484a53a324348238aa74c561c70f203f2.png">
+<meta property="og:image" content="https://ducafecat.tech/img/public-qrcode.png">
+<meta property="og:updated_time" content="2021-09-17T01:02:32.677Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flutter 最简单的应用程序图标制作方法">
+<meta name="twitter:description" content="原文 https://medium.com/@bharadwaj.palakurthy/the-easiest-way-to-make-app-icons-in-flutter-9fe1">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/09/17/translation/the-easiest-way-to-make-app-icons-in-flutter/2021-09-17-09-01-55.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">flutter 最简单的应用程序图标制作方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">flutter 最简单的应用程序图标制作方法</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-09-16T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2021-09-17
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">1.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">2.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">3.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Flutter-Launcher-Icons"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Flutter Launcher Icons:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#先决条件"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">先决条件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实施方案"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">实施方案:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">属性:</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Thank-you"><span class="post-toc-number"></span> <span class="post-toc-text">Thank you!</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#谢谢"><span class="post-toc-number"></span> <span class="post-toc-text">谢谢</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">1.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开源项目"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">开源项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">1.4.6.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">1.4.7.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">1.4.8.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">1.4.9.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-translation/the-easiest-way-to-make-app-icons-in-flutter" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">flutter 最简单的应用程序图标制作方法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-09-17 00:00:00" datetime="2021-09-16T16:00:00.000Z"  itemprop="datePublished">2021-09-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-09-17-09-01-55.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://medium.com/@bharadwaj.palakurthy/the-easiest-way-to-make-app-icons-in-flutter-9fe1bc9dd646" target="_blank" rel="noopener">https://medium.com/@bharadwaj.palakurthy/the-easiest-way-to-make-app-icons-in-flutter-9fe1bc9dd646</a></p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://pub.flutter-io.cn/packages/flutter_launcher_icons" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/flutter_launcher_icons</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/e50c1729b6a2a06718db1590902fa4d9a84bf207fe77d8cba5daf2766fd4ad3a.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>让我们承认这一点ーー管理应用程序图标是一项重复的任务。他们必须生成的多分辨率和手动放置在几个文件夹，这是一个世俗的任务采取。你可能需要做一些小的改变或者修改，现在你必须重复整个替换图标的过程。</p>
+<p>不仅如此，根据我们选择的平台或操作系统的版本，还应用了不同的规则。所以把这些都记在心里，这个过程最好是自动化，而不是手动完成。我们将在这里使用这个名为“ flutter_launcher_icons”的 flutter 包来自动生成所有需要的分辨率。</p>
+<h3 id="Flutter-Launcher-Icons"><a href="#Flutter-Launcher-Icons" class="headerlink" title="Flutter Launcher Icons:"></a>Flutter Launcher Icons:</h3><p>一个命令行工具，简化了更新应用程序启动图标的任务。完全灵活，允许你选择你想要更新启动器图标的平台，如果你想要的话，选择保留你的旧启动器图标，以防你想在未来的某个时候返回。</p>
+<h3 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h3><p>在任何情况下，当从图形编辑器导出时，应该是:</p>
+<ul>
+<li>Format: 32-bit 格式: 32 位<strong>PNG 巴布亚新几内亚</strong></li>
+<li>Icon size 图标大小<strong>must be up to 1024x1024 pixels 必须达到 1024x1024 像素</strong></li>
+<li>确保在 40 像素处可见(这是最小的图标)<strong>(Apple Requirement) (苹果需求)</strong></li>
+<li>最大尺寸<strong>1024KB (Android Requirement) 1024KB (Android 版本要求)</strong></li>
+<li>图标必须用<strong>no transparency 没有透明度</strong></li>
+<li>形状必须是正方形<strong>no rounded corners 没有圆角</strong></li>
+<li>需要一个自适应的 android 图标<strong>background 背景</strong>and 及<strong>foreground 前景</strong>to be separated 分开</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/e3f60e43c5b3946488dc86982a76dbab056195e66d946fb867c1fe77f67cdda6.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>安卓产品图标关键字</p>
+<p>The intended look might be different from the guidelines provided by the platforms. So we’ll be creating 3 different flavors for android, iOS, adaptive icons.</p>
+<p>预期的外观可能与平台提供的指导方针不同。因此，我们将为 android、 iOS 和自适应图标创建三种不同的风格。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/2af230975ce3c7d2008bf1962f3c24b0a1d57db3d8b0752bf1cdb32eb97ed7b1.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>预期外观</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/a03aa910cb3c1a3353928b9684a8137f244380db9ee87340a26f4e8e3ef3eae9.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>Android and iOS (no transparency) 安卓和 iOS (没有透明度)</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/5aa8577609eab9bc5e67af5c0b5a34cd4ecf8515fc80d4d22a782edb8471bb9c.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>Adaptive Icons for Android 8.0 and above 8.0 及以上版本的自适应图标</p>
+<h3 id="实施方案"><a href="#实施方案" class="headerlink" title="实施方案:"></a>实施方案:</h3><p>我们将使用一个名为 flutter_launcher_icons 的包</p>
+<p>现在我们需要分别在你的代码中实现它:</p>
+<ul>
+<li>第一步: 添加依赖项。</li>
+</ul>
+<blockquote>
+<p>将 dependency 添加到位于 Flutter 项目根目录中的 pubspec.yaml 文件:</p>
+</blockquote>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dev_dependencies:</span><br><span class="line">  flutter_launcher_icons: any</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二步: 配置属性</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">flutter_icons:</span><br><span class="line">  ios: <span class="keyword">true</span></span><br><span class="line">  android: <span class="keyword">true</span></span><br><span class="line">  image_path_ios: <span class="string">"assets/launcher/icon.png"</span></span><br><span class="line">  image_path_android: <span class="string">"assets/launcher/icon.png"</span></span><br><span class="line">  adaptive_icon_background: <span class="string">"assets/launcher/background.png"</span></span><br><span class="line">  adaptive_icon_foreground: <span class="string">"assets/launcher/foreground.png"</span></span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/e189e5ab390a63ccc1a010f83fb7e2e484a53a324348238aa74c561c70f203f2.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>图像在你的 assets/launcher/</p>
+<ul>
+<li>第三步: 运行包</li>
+</ul>
+<blockquote>
+<p>设置完配置后，剩下要做的就是运行包。</p>
+</blockquote>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flutter pub <span class="keyword">get</span></span><br><span class="line">flutter pub run flutter_launcher_icons:main</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第四步: 跑步</li>
+</ul>
+<p>如果一切顺利，资产已经产生。现在，您已经准备好构建应用程序并运行它了。恭喜你</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性:"></a>属性:</h3><blockquote>
+<p>目前，它只能用于为 android/ios 分配图标</p>
+</blockquote>
+<ul>
+<li><strong>image_path 图像路径</strong>: : 图标图像文件的位置，你想用它作为应用程序启动图标</li>
+<li><strong>image_path_android 图片/path/android</strong>: : 特定于 Android 平台的图标图像文件的位置</li>
+<li><strong>image_path_ios 图片/path/ios</strong>: : 特定于 iOS 平台的图标图像文件位置</li>
+</ul>
+<blockquote>
+<p>接下来的两个属性只在生成 Android 启动器图标时使用</p>
+</blockquote>
+<ul>
+<li><strong>adaptive_icon_background 背景</strong>: You can pass in a solid color (E.g. “#ffffff”) or image asset (E.g. “assets/images/christmas-background.png”) which will be used to fill out the background of the adaptive icon.</li>
+<li><strong>adaptive_icon_foreground 自适应图标前景</strong>: The image asset which will be used for the icon foreground of the adaptive icon : 将用于自适应图标的前景图标的图像资产</li>
+</ul>
+<h1 id="Thank-you"><a href="#Thank-you" class="headerlink" title="Thank you!"></a>Thank you!</h1><h1 id="谢谢"><a href="#谢谢" class="headerlink" title="谢谢"></a>谢谢</h1><hr>
+<p>© 猫哥</p>
+<ul>
+<li><p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech/</a></p>
+</li>
+<li><p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">https://github.com/ducafecat</a></p>
+</li>
+<li><p>微信群 ducafecat</p>
+</li>
+<li><p>b 站 <a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">https://space.bilibili.com/404904528</a></p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h2><h3 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h3><h4 id="GetX-Quick-Start"><a href="#GetX-Quick-Start" class="headerlink" title="GetX Quick Start"></a>GetX Quick Start</h4><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h4 id="新闻客户端"><a href="#新闻客户端" class="headerlink" title="新闻客户端"></a>新闻客户端</h4><p><a href="https://github.com/ducafecat/flutter_learn_news" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news</a></p>
+<h3 id="strapi-手册译文"><a href="#strapi-手册译文" class="headerlink" title="strapi 手册译文"></a>strapi 手册译文</h3><p><a href="https://getstrapi.cn" target="_blank" rel="noopener">https://getstrapi.cn</a></p>
+<h3 id="微信讨论群-ducafecat"><a href="#微信讨论群-ducafecat" class="headerlink" title="微信讨论群 ducafecat"></a>微信讨论群 ducafecat</h3><h3 id="系列集合"><a href="#系列集合" class="headerlink" title="系列集合"></a>系列集合</h3><h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p><a href="https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/</a></p>
+<h4 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h4><p><a href="https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/</a></p>
+<h4 id="Dart-编程语言基础"><a href="#Dart-编程语言基础" class="headerlink" title="Dart 编程语言基础"></a>Dart 编程语言基础</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=111585" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=111585</a></p>
+<h4 id="Flutter-零基础入门"><a href="#Flutter-零基础入门" class="headerlink" title="Flutter 零基础入门"></a>Flutter 零基础入门</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=123470" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=123470</a></p>
+<h4 id="Flutter-实战从零开始-新闻客户端"><a href="#Flutter-实战从零开始-新闻客户端" class="headerlink" title="Flutter 实战从零开始 新闻客户端"></a>Flutter 实战从零开始 新闻客户端</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=106755</a></p>
+<h4 id="Flutter-组件开发"><a href="#Flutter-组件开发" class="headerlink" title="Flutter 组件开发"></a>Flutter 组件开发</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=144262" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=144262</a></p>
+<h4 id="Flutter-Bloc"><a href="#Flutter-Bloc" class="headerlink" title="Flutter Bloc"></a>Flutter Bloc</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177519" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177519</a></p>
+<h4 id="Flutter-Getx4"><a href="#Flutter-Getx4" class="headerlink" title="Flutter Getx4"></a>Flutter Getx4</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177514" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177514</a></p>
+<h4 id="Docker-Yapi"><a href="#Docker-Yapi" class="headerlink" title="Docker Yapi"></a>Docker Yapi</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=130578" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=130578</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/09/17/translation/the-easiest-way-to-make-app-icons-in-flutter/&title=《flutter 最简单的应用程序图标制作方法》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/09/17/translation/the-easiest-way-to-make-app-icons-in-flutter/&title=《flutter 最简单的应用程序图标制作方法》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/09/17/translation/the-easiest-way-to-make-app-icons-in-flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《flutter 最简单的应用程序图标制作方法》 — duCafeCat&url=https://blog.ducafecat.tech/2021/09/17/translation/the-easiest-way-to-make-app-icons-in-flutter/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/09/17/translation/the-easiest-way-to-make-app-icons-in-flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/09/16/translation/explore-multi-select-items-in-flutter/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">flutter 多选项目插件</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/09/17/translation/the-easiest-way-to-make-app-icons-in-flutter/&title=《flutter 最简单的应用程序图标制作方法》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/09/17/translation/the-easiest-way-to-make-app-icons-in-flutter/&title=《flutter 最简单的应用程序图标制作方法》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/09/17/translation/the-easiest-way-to-make-app-icons-in-flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《flutter 最简单的应用程序图标制作方法》 — duCafeCat&url=https://blog.ducafecat.tech/2021/09/17/translation/the-easiest-way-to-make-app-icons-in-flutter/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/09/17/translation/the-easiest-way-to-make-app-icons-in-flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADSUlEQVR42u3a0U7jQAwFUP7/p4u0T4sg6bWdSo178lSlocwZJFxfz9dXfD3+Xb/v/H/9vn90J3/y6PX5J192YWNjY9+E/Ti9zn/l0btHzyRLTNZw/vrcgo2Njb2VnS86L2bJluVFLvn8xIKNjY39yez8mbxRqS63WmixsbGxsavtwZMGoBVL5eUQGxsb+5PZSWFIGJMiNGljXpilYWNjY789uzrofefXL5xvY2NjY78l+1G8eoWqOvStHtMpK7CxsbEXsfOv+5NhQK+RSFaStEyH5Q0bGxt7Bbs3gs2PzuRHLct/q2L7hI2Njb2V/YpBb28wnA8Sqlt/KMXGxsZexO6Vq+oodx4t9VqUUTeGjY2NfUN28naOrDKqmz4fYGBjY2PvYPcajKRgnC+09+5l8RY2Njb2OnaenCdf96tb0zu+k/yRonEvNjY29m3Z1fagF+jPx71XjSh+nDnFxsbGXsHuHZTpjVd7pSgpe3lpxMbGxt7KTgKgarMxGdZetfX5UBkbGxv77uxoD4ohVDXK7zU5vVEBNjY29iZ29St+0iokV68hmQwS/sjSsLGxsZeykx+uNg+vKGa9YTA2Njb2VnYS5VcDpnyzro37C2kZNjY29gr2k3/0xYApOaYzD4+SYzrlQS82Njb2bdnVIjEvKpPAaHL088kZJWxsbOwV7KR0XVVaeuDe6OKPtWFjY2OvY+dD1mr70Ws55gXySdiEjY2NvY5dDeVHbUBxDFB9MsrPsLGxsdexq2PXyYGbyaKrv/fwXWxsbOyl7Pz4Sx4G5UvPg6c8fjq8j42Njb2aXQ3xq6OFvGjld/JRwWEBw8bGxr4tO8lYEkbyZLI18yOehcKJjY2NvYJdPYKTf/RVB3ry2Cs/6IONjY29j31V2Uhal+R+b/BcaH6wsbGx17Hzq1fG8kC/GmlVm5PCBBsbGxv7Jux5hJSE8r1oqfpkgixvATY2NvZN2Pm4dNIGTLa1F0I9KYHY2NjY69iFUKZYKvL2IN/03lZiY2NjY/fGBvkY4Hy5k1DpMFHDxsbG/kh2HgNNBsnV0XJ1tdjY2Nj72MkH9Y7j5I1ErwnJ255mloaNjY399uzeoLc6PKg2G70SNR9sYGNjY9+K/Q2+0sld5WCxQgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

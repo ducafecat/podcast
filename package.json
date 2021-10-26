@@ -8,7 +8,8 @@
   "scripts": {
     "serve": "hexo server",
     "build": "hexo generate",
-    "deploy": "hexo deploy"
+    "deploy": "hexo deploy",
+    "publish": "git push & git push gitee"
   },
   "dependencies": {
     "hexo": "^3.9.0",

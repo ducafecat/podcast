@@ -9,7 +9,7 @@
     "serve": "hexo server",
     "build": "hexo generate",
     "deploy": "hexo deploy",
-    "publish": "git push & git push gitee"
+    "git": "git push & git push gitee"
   },
   "dependencies": {
     "hexo": "^3.9.0",

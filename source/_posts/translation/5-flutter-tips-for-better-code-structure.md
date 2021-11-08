@@ -7,6 +7,10 @@ date: 2021-11-08 06:00:00
 
 ![](2021-11-08-09-08-13.png)
 
+## 原文
+
+> https://itnext.io/5-flutter-tips-for-better-code-structure-fa514845a903
+
 ## 正文
 
 ### 1. 将 init 操作与 main 函数分离，使其更加清晰

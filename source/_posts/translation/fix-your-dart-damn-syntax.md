@@ -7,6 +7,10 @@ date: 2021-11-09 00:00:00
 
 ![](2021-11-08-09-08-24.png)
 
+## 原文
+
+> https://itnext.io/fix-your-dart-damn-syntax-b3d3474373bd
+
 ## 参考
 
 - https://dart.dev/guides/language/effective-dart

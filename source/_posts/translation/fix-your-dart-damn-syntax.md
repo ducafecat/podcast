@@ -1,5 +1,5 @@
 ---
-title: fix-your-dart-damn-syntax
+title: flutter 修正你的 dart damn syntax 语法
 tags: flutter
 categories: 译文
 date: 2021-11-09 00:00:00

@@ -1,5 +1,5 @@
 ---
-title: Flutter开源项目 - appFlowy 真的是 Notion 的替代品?
+title: Flutter开源项目 - appFlowy 真的是 Notion 的替代品? 一周暴涨 star 9k 多!
 tags: flutter
 categories: 开源
 date: 2021-12-01 22:20:14

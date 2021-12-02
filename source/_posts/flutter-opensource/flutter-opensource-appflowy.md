@@ -1,5 +1,5 @@
 ---
-title: Flutter开源项目 - appFlowy markdown 知识管理
+title: Flutter开源项目 - appFlowy 真的是 Notion 的替代品?
 tags: flutter
 categories: 开源
 date: 2021-12-01 22:20:14

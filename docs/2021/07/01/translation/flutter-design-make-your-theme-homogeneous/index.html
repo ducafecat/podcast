@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 设计 使您的主题同质化 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="猫哥说如果你和我一样长期面对电脑，分享几个对眼睛有好处的经验  竟可能的室内用自然光，关掉多余的光源 显示器分辨率比例调小，字体大些 如果你需要更多屏幕空间，可以加一个辅助屏幕 可能的话">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 设计 使您的主题同质化">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="猫哥说如果你和我一样长期面对电脑，分享几个对眼睛有好处的经验  竟可能的室内用自然光，关掉多余的光源 显示器分辨率比例调小，字体大些 如果你需要更多屏幕空间，可以加一个辅助屏幕 可能的话">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/2021-07-01-05-45-34.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/2021-07-01-05-33-41.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/2021-07-01-05-34-14.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/2021-07-01-05-36-52.png">
+<meta property="og:image" content="https://ducafecat.tech/img/public-qrcode.png">
+<meta property="og:updated_time" content="2021-06-30T21:56:09.406Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 设计 使您的主题同质化">
+<meta name="twitter:description" content="猫哥说如果你和我一样长期面对电脑，分享几个对眼睛有好处的经验  竟可能的室内用自然光，关掉多余的光源 显示器分辨率比例调小，字体大些 如果你需要更多屏幕空间，可以加一个辅助屏幕 可能的话">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/2021-07-01-05-45-34.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 设计 使您的主题同质化</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 设计 使您的主题同质化</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-06-30T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2021-07-01
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#猫哥说"><span class="post-toc-number">1.</span> <span class="post-toc-text">猫哥说</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><span class="post-toc-number">2.</span> <span class="post-toc-text">老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信群-ducafecat"><span class="post-toc-number">3.</span> <span class="post-toc-text">微信群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#b-站-https-space-bilibili-com-404904528"><span class="post-toc-number">4.</span> <span class="post-toc-text">b 站 https://space.bilibili.com/404904528</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">5.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">6.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">7.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">8.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用程序主题的正确方法是什么？"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">应用程序主题的正确方法是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主题数据涵盖了所有的窗口小部件，对吧？"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">主题数据涵盖了所有的窗口小部件，对吧？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">总结</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为了更进一步"><span class="post-toc-number">8.4.</span> <span class="post-toc-text">为了更进一步..</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">9.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">9.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">9.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">9.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">9.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开源项目"><span class="post-toc-number">9.4.2.</span> <span class="post-toc-text">开源项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">9.4.3.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">9.4.4.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">9.4.5.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">9.4.6.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">9.4.7.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">9.4.8.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">9.4.9.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-translation/flutter-design-make-your-theme-homogeneous" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter 设计 使您的主题同质化</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-07-01 00:00:00" datetime="2021-06-30T16:00:00.000Z"  itemprop="datePublished">2021-07-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-07-01-05-45-34.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="猫哥说"><a href="#猫哥说" class="headerlink" title="猫哥说"></a>猫哥说</h2><p>如果你和我一样长期面对电脑，分享几个对眼睛有好处的经验</p>
+<ul>
+<li>竟可能的室内用自然光，关掉多余的光源</li>
+<li>显示器分辨率比例调小，字体大些</li>
+<li>如果你需要更多屏幕空间，可以加一个辅助屏幕</li>
+<li>可能的话去慢慢适应暗色主题</li>
+<li>颜色调的对比度低些</li>
+<li>连续工作 2 小时，起来走走 让眼睛眺望下远方</li>
+</ul>
+<blockquote>
+<p>当然并不是所有人都适合，让自己的眼睛舒服就行</p>
+</blockquote>
+<p>这篇文章是告诉你如何通过 ThemeData 来全局管理 Flutter 的界面样式。</p>
+<p>有一次我项目做完，已经通过了评审，然后产品和我说要调下样式，刷的一下，给我了一个新的 sketch 设计稿，我的内心是抗拒的，但是只能耐心的去分析这个新版的样式标准，幸好设计师是一个设计学科的硕士做事还算规范。</p>
+<p>然后我通过 ThemeData 解决了 90% 的问题，因为我在代码中尽可能的用官方组件，这样在 ThemeData 中还能找到这个对象。</p>
+<p>剩下的自定义组件，应为我有抽取公共组件，所以改改就完成了。</p>
+<p>阅读建议，你可以通过我的译文大致的了解内容，如果感兴趣可以通过原文细细品味，下方有原文链接。</p>
+<h2 id="老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><a href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文" class="headerlink" title="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~"></a>老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</h2><h2 id="微信群-ducafecat"><a href="#微信群-ducafecat" class="headerlink" title="微信群 ducafecat"></a>微信群 ducafecat</h2><h2 id="b-站-https-space-bilibili-com-404904528"><a href="#b-站-https-space-bilibili-com-404904528" class="headerlink" title="b 站 https://space.bilibili.com/404904528"></a>b 站 <a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">https://space.bilibili.com/404904528</a></h2><h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://medium.com/flutter-community/flutter-design-make-your-theme-homogeneous-13ddeffb186f" target="_blank" rel="noopener">https://medium.com/flutter-community/flutter-design-make-your-theme-homogeneous-13ddeffb186f</a></p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/GONZALEZD/flutter_demos/tree/main/app_theming" target="_blank" rel="noopener">https://github.com/GONZALEZD/flutter_demos/tree/main/app_theming</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-07-01-05-33-41.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>在很多 Flutter 源代码和应用程序中，我观察到一个反复出现的实践，即通过小部件参数直接添加自定义样式，导致不一致的设计和额外的维护。作为一个个人的例子，我必须维护一个 Flutter 应用程序，其中所有标题有不同的字体大小(有时字体重量)。</p>
+<p>在这篇文章中，我将解释你的重要性的方式，你应该设计您的 Flutter 应用程序，尤其是关注的主题。</p>
+<p>在您看来，这些“设置”页面在代码方面的区别是什么？</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-07-01-05-34-14.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>Settings page 设置页面</p>
+<h3 id="应用程序主题的正确方法是什么？"><a href="#应用程序主题的正确方法是什么？" class="headerlink" title="应用程序主题的正确方法是什么？"></a>应用程序主题的正确方法是什么？</h3><blockquote>
+<p>在上图中，“设置”页面共享完全相同的代码。在这个层次上，这四种设计之间没有严格的区别。</p>
+</blockquote>
+<p>这里面没有什么神奇的东西: 所有的主题相关的东西都集中在更高的层次，在 MaterialApp widget 中。这个小工具允许你定义两个主题，一个用于 light brightness，另一个用于 dark theme 模式。</p>
+<p>此外，如果没有给出任何价值，大多数小部件都会从中检索它们的设计。</p>
+<p>小部件正在从 ThemeData (大多数情况下)设置默认值</p>
+<p>让我们来看一个如何正确做到这一点的例子: Card widget。你可以观察到在设置页面的第三个例子中，形状是直线而不是角。</p>
+<p>而只有‘ child’属性在代码中使用: Card (child: …)</p>
+<p>当你深入研究 Card 小部件是如何设计的时候，你会看到它的形状是如何定义的。下面是有关 Card.shape 属性的代码文档:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="markdown">/// The shape of </span>the<span class="markdown"> card's [Material].</span></span></span><br><span class="line"><span class="comment"><span class="markdown">///</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// Defines </span>the<span class="markdown"> card's [Material.shape].</span></span></span><br><span class="line"><span class="comment"><span class="markdown">///</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// If this property is null then [CardTheme.shape] of [ThemeData.cardTheme]</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// is used. If that's null then </span>the<span class="markdown"> shape </span>will<span class="markdown"> be </span>a<span class="markdown"> [RoundedRectangleBorder]</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// with </span>a<span class="markdown"> circular corner radius of 4.0.</span></span></span><br><span class="line"><span class="keyword">final</span> ShapeBorder? shape;</span><br></pre></td></tr></table></figure>
+<p>因此，为了确保“普通”卡片共享相同的设计，您必须定义自己的 ThemeData，并在 MaterialApp 小部件中使用它作为主题(或 darkTheme)。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ThemeData example() &#123;</span><br><span class="line">  <span class="keyword">final</span> base  = ThemeData.dark();</span><br><span class="line">  <span class="keyword">final</span> mainColor = Colors.lightBlue;</span><br><span class="line">  <span class="keyword">return</span> base.copyWith(</span><br><span class="line">    cardColor: Color.lerp(mainColor, Colors.white, <span class="number">0.2</span>),</span><br><span class="line">    cardTheme: base.cardTheme?.copyWith(</span><br><span class="line">      color: Color.lerp(mainColor, Colors.black, <span class="number">0.1</span>),</span><br><span class="line">      margin: EdgeInsets.all(<span class="number">20.0</span>),</span><br><span class="line">      elevation: <span class="number">0.0</span>,</span><br><span class="line">      shape: BeveledRectangleBorder(</span><br><span class="line">          borderRadius: BorderRadius.circular(<span class="number">14.0</span>),</span><br><span class="line">          side: BorderSide(color: Colors.white24, width: <span class="number">1</span>)),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的代码演示了如何更改卡片设计，但是您可以为来自 Flutter SDK 的几乎所有小部件进行更改。此外，您应该将主题相关的内容集中到单个文件中，因为 ThemeData 是一个巨大的数据结构。</p>
+<h3 id="主题数据涵盖了所有的窗口小部件，对吧？"><a href="#主题数据涵盖了所有的窗口小部件，对吧？" class="headerlink" title="主题数据涵盖了所有的窗口小部件，对吧？"></a>主题数据涵盖了所有的窗口小部件，对吧？</h3><p>不幸的是，ThemeData 并不能覆盖所有窗口小部件。例如，您不能在其中定义列表贴片设计。幸运的是，您可以通过 ListTileTheme 小部件实现这一点。</p>
+<p>说明如何更改列表平铺选定的颜色和填充，而无需在源代码中显式设置页面。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-07-01-05-36-52.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>通过 ListTileTheme，我们可以在不更改页面代码一行的情况下重新定义选择的标题/背景和前景色</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ListView.builder(</span><br><span class="line">  itemBuilder: (context, index) &#123;</span><br><span class="line">    <span class="keyword">final</span> value = elements[index];</span><br><span class="line">    <span class="keyword">return</span> ListTile(</span><br><span class="line">      selected: value == selected,</span><br><span class="line">      title: Text(value.title),</span><br><span class="line">      subtitle: Text(value.message),</span><br><span class="line">      leading: Icon(value.icon),</span><br><span class="line">      onTap: () =&gt; setState(() =&gt; selected = value),</span><br><span class="line">    );</span><br><span class="line">  &#125;,</span><br><span class="line">  itemCount: elements.length,</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>正如您在代码中看到的，与设计没有任何关系。它的优点是避免代码噪声，使其简洁易懂。另外，我喜欢的一点是我所有的方法都很小(少于 30 行)。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>在本文中，我们了解了如何将应用程序设计集中到 ThemeData 对象中。正如你所理解的，你可能需要阅读很多 Flutter SDK 代码文档，但是当你或者其他同事需要维护它的时候，好处就来了:</p>
+<ul>
+<li>避免代码重复</li>
+<li>减少页面中的代码，使代码更易于阅读和理解</li>
+<li>确保设计的一致性</li>
+</ul>
+<p>但是正如你可能已经看到的，ThemeData 对象是一个非常大的结构，在不断的演变中。所以，请密切关注它！</p>
+<p>我在开始一个新项目时查看 ThemeData</p>
+<h3 id="为了更进一步"><a href="#为了更进一步" class="headerlink" title="为了更进一步.."></a>为了更进一步..</h3><p>再给你两个小建议！首先，如果您希望为您的组件之一进行特定的设计，而不是在构建方法中定制它，您可以将小部件包装到 Theme 小部件中。</p>
+<p>当您设计一个新的小部件时，您可能希望通过从 ThemeData 检索主题信息来模仿 SDK 小部件。您可能已经看到，从 ThemeData 继承是不正确的方式。相反，您可以通过 InheritedTheme 小部件“扩展”它，并模仿它在 ListTileTheme 小部件中的实现方式。</p>
+<p>像往常一样，你可以在这里找到本文使用的源代码和 adobe 设计:</p>
+<p><a href="https://github.com/GONZALEZD/flutter_demos/tree/main/app_theming" target="_blank" rel="noopener">https://github.com/GONZALEZD/flutter_demos/tree/main/app_theming</a></p>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech/</a></p>
+<p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">https://github.com/ducafecat</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h2><h3 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h3><h4 id="GetX-Quick-Start"><a href="#GetX-Quick-Start" class="headerlink" title="GetX Quick Start"></a>GetX Quick Start</h4><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h4 id="新闻客户端"><a href="#新闻客户端" class="headerlink" title="新闻客户端"></a>新闻客户端</h4><p><a href="https://github.com/ducafecat/flutter_learn_news" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news</a></p>
+<h3 id="strapi-手册译文"><a href="#strapi-手册译文" class="headerlink" title="strapi 手册译文"></a>strapi 手册译文</h3><p><a href="https://getstrapi.cn" target="_blank" rel="noopener">https://getstrapi.cn</a></p>
+<h3 id="微信讨论群-ducafecat"><a href="#微信讨论群-ducafecat" class="headerlink" title="微信讨论群 ducafecat"></a>微信讨论群 ducafecat</h3><h3 id="系列集合"><a href="#系列集合" class="headerlink" title="系列集合"></a>系列集合</h3><h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p><a href="https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/</a></p>
+<h4 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h4><p><a href="https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/</a></p>
+<h4 id="Dart-编程语言基础"><a href="#Dart-编程语言基础" class="headerlink" title="Dart 编程语言基础"></a>Dart 编程语言基础</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=111585" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=111585</a></p>
+<h4 id="Flutter-零基础入门"><a href="#Flutter-零基础入门" class="headerlink" title="Flutter 零基础入门"></a>Flutter 零基础入门</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=123470" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=123470</a></p>
+<h4 id="Flutter-实战从零开始-新闻客户端"><a href="#Flutter-实战从零开始-新闻客户端" class="headerlink" title="Flutter 实战从零开始 新闻客户端"></a>Flutter 实战从零开始 新闻客户端</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=106755</a></p>
+<h4 id="Flutter-组件开发"><a href="#Flutter-组件开发" class="headerlink" title="Flutter 组件开发"></a>Flutter 组件开发</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=144262" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=144262</a></p>
+<h4 id="Flutter-Bloc"><a href="#Flutter-Bloc" class="headerlink" title="Flutter Bloc"></a>Flutter Bloc</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177519" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177519</a></p>
+<h4 id="Flutter-Getx4"><a href="#Flutter-Getx4" class="headerlink" title="Flutter Getx4"></a>Flutter Getx4</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177514" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177514</a></p>
+<h4 id="Docker-Yapi"><a href="#Docker-Yapi" class="headerlink" title="Docker Yapi"></a>Docker Yapi</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=130578" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=130578</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/&title=《Flutter 设计 使您的主题同质化》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/&title=《Flutter 设计 使您的主题同质化》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 设计 使您的主题同质化》 — duCafeCat&url=https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/07/02/translation/learn-the-best-way-to-hide-sensitive-keys-in-your-flutter-app/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">在你的 Flutter 项目中隐藏敏感信息</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/06/29/translation/generate-strong-random-password-in-flutter/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 强随机密码生成器</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/&title=《Flutter 设计 使您的主题同质化》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/&title=《Flutter 设计 使您的主题同质化》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 设计 使您的主题同质化》 — duCafeCat&url=https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/07/01/translation/flutter-design-make-your-theme-homogeneous/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMklEQVR42u3ay1KDYAwGUN//pevaqdIvCR0hPawcUfhPWGRy+fqKr8fT9Xz3+Ofj55z1+5MvbGxs7JuwH4fXMSB//vO7/jrD8VuOz5ZYsLGxsbeyk+MmmLOS1vF5khC8MGJjY2NjB5ikUMmTVvX52NjY2NjJyyapKy8k/jmBYWNjY9+Enbxy0tDJSdUk9/ZeGjY2Nvbl2b0W/zV/fst8GxsbG/vC7F6y6T0/L3V6Y4OCAhsbG3sRu/fKvDx499JPvvrzyxuxsbGxV7B7h0uGu73EdlbqenEXGxsbexG7N7LNk01vxac6MGiOirGxsbFXsBNM3pSvhixPYHmZEYUPGxsbexE7OUR+N08qSUlTXetpruxgY2Njr2CfBZ6MBKpBLKSovGbCxsbGXsHureZUxwblVn6xEIrKGGxsbOx17OoRq6PW3oB28l8vPiE2Njb2CnY+GOglpGrB0ytUyqMLbGxs7EXs3nLM5HBnNbMmBRI2Njb2JvYEnM+Q8yJhMuItRwIbGxt7Ebu68jJJM+cGulom/ajAsLGxsVew8+Z7b+NlHrjTePlsBBsbG/u27CQE1YKkesSk9V/ollXDgY2NjX1DdpU3bxJVy578YySDCmxsbOx97OSPqqs21eIhGQBX3xuNnLGxsbFXsKst+HztplrGnFWoRCJsbGzsdexJmknSRg9WDdBo+RIbGxv7tuzJ2k1U5cTTiV4JNGlpYWNjY+9g5+34XrunmqKqYU3ONpoMY2NjY1+eXU1Rkz2gvKE/2ZbspWRsbGzsfexem2m+pjMfGFcLJGxsbOxPYCd3k9BUC49qosoLKmxsbOx97Ly1lLR7HsWrNzyuBvTPqQg2Njb2InY+jq2mqHyUmyfLaoHxYmUHGxsb+7bsXrLpFRL5d0hI+af65ZzY2NjYi9hnjQqqiS0vYCaJc5IysbGxse/FzpNWrx2fp8BeEsrLp6hbho2NjX1bdrWVk6/UVIuKt3fRsLGxsT+e3RvE5mVMtZjpPQcbGxv7k9m9A/WCUk14hdEyNjY29jp2nhImw92kvOk1tpKG1KiXho2NjX1h9rz107vy50zGCSes7GBjY2Nfl/0NVCFpBPp3rrMAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 自定义聊天气泡 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信群 ducafecatb 站 https://space.bilibili.com/404904528原文 https:">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 自定义聊天气泡">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信群 ducafecatb 站 https://space.bilibili.com/404904528原文 https:">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/2021-07-13-07-26-06.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/2021-07-13-07-13-02.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/2021-07-13-07-19-48.png">
+<meta property="og:image" content="https://ducafecat.tech/img/public-qrcode.png">
+<meta property="og:updated_time" content="2021-07-12T23:26:08.508Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 自定义聊天气泡">
+<meta name="twitter:description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信群 ducafecatb 站 https://space.bilibili.com/404904528原文 https:">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/2021-07-13-07-26-06.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 自定义聊天气泡</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 自定义聊天气泡</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-07-12T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2021-07-13
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><span class="post-toc-number">1.</span> <span class="post-toc-text">老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信群-ducafecat"><span class="post-toc-number">2.</span> <span class="post-toc-text">微信群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#b-站-https-space-bilibili-com-404904528"><span class="post-toc-number">3.</span> <span class="post-toc-text">b 站 https://space.bilibili.com/404904528</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">4.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">5.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">6.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">7.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置-assets"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">配置 assets</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何实现-dart-文件中的代码"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">如何实现 dart 文件中的代码:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#完整代码"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">完整代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Conclusion"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">Conclusion:</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">8.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">8.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">8.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">8.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">8.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开源项目"><span class="post-toc-number">8.4.2.</span> <span class="post-toc-text">开源项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">8.4.3.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">8.4.4.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">8.4.5.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">8.4.6.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">8.4.7.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">8.4.8.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">8.4.9.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-translation/custom-chat-bubble-in-flutter" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter 自定义聊天气泡</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-07-13 00:00:00" datetime="2021-07-12T16:00:00.000Z"  itemprop="datePublished">2021-07-13</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-07-13-07-26-06.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><a href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文" class="headerlink" title="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~"></a>老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</h2><h2 id="微信群-ducafecat"><a href="#微信群-ducafecat" class="headerlink" title="微信群 ducafecat"></a>微信群 ducafecat</h2><h2 id="b-站-https-space-bilibili-com-404904528"><a href="#b-站-https-space-bilibili-com-404904528" class="headerlink" title="b 站 https://space.bilibili.com/404904528"></a>b 站 <a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">https://space.bilibili.com/404904528</a></h2><h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://medium.com/flutterdevs/custom-chat-bubble-in-flutter-6aa7d24fc683" target="_blank" rel="noopener">https://medium.com/flutterdevs/custom-chat-bubble-in-flutter-6aa7d24fc683</a></p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/flutter-devs/flutter_custom_chat_bubble" target="_blank" rel="noopener">https://github.com/flutter-devs/flutter_custom_chat_bubble</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://pub.flutter-io.cn/packages/get#reactive-state-manager" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/get#reactive-state-manager</a></li>
+<li><a href="https://dart.dev/guides/language/extension-methods" target="_blank" rel="noopener">https://dart.dev/guides/language/extension-methods</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-07-13-07-13-02.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>对话聊天应用程序显示聊天中的消息会在强烈的阴影背景下上升。现代聊天应用程序显示的聊天气泡的斜率取决于气泡在屏幕上的位置。在 flutter 应用中，有时需要使用聊天气泡。然而，将一个库用于一个特别无关紧要的任务并不好。</p>
+<p>在这个博客，我们将探索自定义聊天气泡 flutter。我们将看到如何实现一个自定义聊天泡泡的演示程序，以及如何使一个自定义聊天泡泡最简单的不使用任何第三方库在您的 flutter 应用程序。</p>
+<h3 id="配置-assets"><a href="#配置-assets" class="headerlink" title="配置 assets"></a>配置 assets</h3><ul>
+<li>第一步: 添加 assets</li>
+</ul>
+<p>将 assets 添加到 <code>pubspec.yaml</code> 文件。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">assets:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">assets/images/</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二步: 在应用程序的根目录中运行 <code>flutter packages get</code> 。</li>
+</ul>
+<h3 id="如何实现-dart-文件中的代码"><a href="#如何实现-dart-文件中的代码" class="headerlink" title="如何实现 dart 文件中的代码:"></a>如何实现 dart 文件中的代码:</h3><p>你需要分别在你的代码中实现它:</p>
+<p>在 lib 文件夹中创建一个名为 <code>custom_shape.dart</code> 的新 dart 文件。</p>
+<p>首先，创建自定义形状自定义 <code>CustomPainter</code> 类。这将用于在聊天气泡结束时绘制自定义形状。用户可以在自定义形状中添加任何颜色。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomShape</span> <span class="keyword">extends</span> <span class="title">CustomPainter</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> Color bgColor;</span><br><span class="line"></span><br><span class="line">  CustomShape(<span class="keyword">this</span>.bgColor);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> paint(Canvas canvas, Size size) &#123;</span><br><span class="line">    <span class="keyword">var</span> paint = Paint()..color = bgColor;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> path = Path();</span><br><span class="line">    path.lineTo(<span class="number">-5</span>, <span class="number">0</span>);</span><br><span class="line">    path.lineTo(<span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line">    path.lineTo(<span class="number">5</span>, <span class="number">0</span>);</span><br><span class="line">    canvas.drawPath(path, paint);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="built_in">bool</span> shouldRepaint(CustomPainter oldDelegate) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 lib 文件夹中创建一个名为 <code>send_message_screen.dart</code> 的新 dart 文件。</p>
+<p>首先，我们将创建一个构造器的最终字符串消息。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="built_in">String</span> message;</span><br><span class="line"><span class="keyword">const</span> SentMessageScreen(&#123;</span><br><span class="line">  Key key,</span><br><span class="line">  <span class="meta">@required</span> <span class="keyword">this</span>.message,</span><br><span class="line">&#125;) : <span class="keyword">super</span>(key: key);</span><br></pre></td></tr></table></figure>
+<p>在构建方法中，我们将返回 Padding()。在内部，我们将添加 Row() 小部件。在这个小部件中，我们将添加 mainAxisAlignment 并添加 messageTextGroup。我们将定义下面的代码。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> Padding(</span><br><span class="line">  padding: EdgeInsets.only(right: <span class="number">18.0</span>, left: <span class="number">50</span>, top: <span class="number">15</span>, bottom: <span class="number">5</span>),</span><br><span class="line">  child: Row(</span><br><span class="line">    mainAxisAlignment: MainAxisAlignment.end,</span><br><span class="line">    children: &lt;Widget&gt;[</span><br><span class="line">      SizedBox(height: <span class="number">30</span>),</span><br><span class="line">      messageTextGroup,</span><br><span class="line">    ],</span><br><span class="line">  ),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>我们将深入定义 messageTextGroup:</p>
+<p>我们将创建一个最终的 messageTextGroup 等于 Flexible ()小部件。在这个小部件中，我们将添加 Row ()小部件。在内部，添加主轴对齐是结束，并启动了跨轴对齐。在儿童内部，我们将添加装饰框的 Conatiner 和添加颜色，边框半径。它的子属性，我们将添加一个可变消息文本。我们将添加 CustomPaint () ，我们将使用上面的画家类是带颜色的 CustomShape。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> messageTextGroup = Flexible(</span><br><span class="line">    child: Row(</span><br><span class="line">      mainAxisAlignment: MainAxisAlignment.end,</span><br><span class="line">      crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">      children: [</span><br><span class="line">        Flexible(</span><br><span class="line">          child: Container(</span><br><span class="line">            padding: EdgeInsets.all(<span class="number">14</span>),</span><br><span class="line">            decoration: BoxDecoration(</span><br><span class="line">              color: Colors.cyan[<span class="number">900</span>],</span><br><span class="line">              borderRadius: BorderRadius.only(</span><br><span class="line">                topLeft: Radius.circular(<span class="number">18</span>),</span><br><span class="line">                bottomLeft: Radius.circular(<span class="number">18</span>),</span><br><span class="line">                bottomRight: Radius.circular(<span class="number">18</span>),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">            child: Text(</span><br><span class="line">              message,</span><br><span class="line">              style: TextStyle(color: Colors.white, fontSize: <span class="number">14</span>),</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">        CustomPaint(painter: CustomShape(Colors.cyan[<span class="number">900</span>])),</span><br><span class="line">      ],</span><br><span class="line">    ));</span><br></pre></td></tr></table></figure>
+<p>在 lib 文件夹中创建一个名为 <code>received_message_screen.dart</code> 的新 dart 文件。</p>
+<p>类似地，我们现在可以创建一个接收到的消息屏幕。我们只需要翻转定制的形状，并把它放在开始，而不是结束。我们将使用转换小部件翻转自定义形状小部件。在转换小部件中，我们将添加对齐为中心，转换为 <code>Matrix4.rotationY(math. pi)</code>。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> messageTextGroup = Flexible(</span><br><span class="line">    child: Row(</span><br><span class="line">      mainAxisAlignment: MainAxisAlignment.start,</span><br><span class="line">      crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">      children: [</span><br><span class="line">        Transform(</span><br><span class="line">          alignment: Alignment.center,</span><br><span class="line">          transform: Matrix4.rotationY(math.pi),</span><br><span class="line">          child: CustomPaint(</span><br><span class="line">            painter: CustomShape(Colors.grey[<span class="number">300</span>]),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">        Flexible(</span><br><span class="line">          child: Container(</span><br><span class="line">            padding: EdgeInsets.all(<span class="number">14</span>),</span><br><span class="line">            decoration: BoxDecoration(</span><br><span class="line">              color: Colors.grey[<span class="number">300</span>],</span><br><span class="line">              borderRadius: BorderRadius.only(</span><br><span class="line">                topRight: Radius.circular(<span class="number">18</span>),</span><br><span class="line">                bottomLeft: Radius.circular(<span class="number">18</span>),</span><br><span class="line">                bottomRight: Radius.circular(<span class="number">18</span>),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">            child: Text(</span><br><span class="line">              message,</span><br><span class="line">              style: TextStyle(color: Colors.black, fontSize: <span class="number">14</span>),</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">      ],</span><br><span class="line">    ));</span><br></pre></td></tr></table></figure>
+<p>在 lib 文件夹中创建一个名为 <code>home_page.dart</code> 的新 dart 文件。</p>
+<p>在正文中，我们将添加一个 Container ()小部件。在里面，添加装饰框和添加图像。它是子属性，我们可以在 ListView ()中同时添加发送和接收消息屏幕。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Container(</span><br><span class="line">  decoration: BoxDecoration(</span><br><span class="line">      image: DecorationImage(</span><br><span class="line">          image: AssetImage(<span class="string">"assets/bg_chat.jpg"</span>),</span><br><span class="line">          fit: BoxFit.cover)),</span><br><span class="line">  child: ListView(</span><br><span class="line">    children: [</span><br><span class="line">      SentMessageScreen(message: <span class="string">"Hello"</span>),</span><br><span class="line">      ReceivedMessageScreen(message: <span class="string">"Hi, how are you"</span>),</span><br><span class="line">      SentMessageScreen(message: <span class="string">"I am great how are you doing"</span>),</span><br><span class="line">      ReceivedMessageScreen(message: <span class="string">"I am also fine"</span>),</span><br><span class="line">      SentMessageScreen(message: <span class="string">"Can we meet tomorrow?"</span>),</span><br><span class="line">      ReceivedMessageScreen(message: <span class="string">"Yes, of course we will meet tomorrow"</span>),</span><br><span class="line">    ],</span><br><span class="line">  ),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<p>当我们运行应用程序时，我们应该得到屏幕的输出，就像下面的屏幕截图一样。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-07-13-07-19-48.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_custom_chat_bubble/received_message_screen.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_custom_chat_bubble/send_messsage_screen.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HomePage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  HomePage(&#123;Key key, <span class="keyword">this</span>.title&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> title;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _HomePageState createState() =&gt; _HomePageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_HomePageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">HomePage</span>&gt; </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        backgroundColor: Colors.cyan[<span class="number">900</span>],</span><br><span class="line">        automaticallyImplyLeading: <span class="keyword">false</span>,</span><br><span class="line">        title: Text(widget.title),</span><br><span class="line">      ),</span><br><span class="line">      body: Container(</span><br><span class="line">        decoration: BoxDecoration(</span><br><span class="line">            image: DecorationImage(</span><br><span class="line">                image: AssetImage(<span class="string">"assets/bg_chat.jpg"</span>),</span><br><span class="line">                fit: BoxFit.cover)),</span><br><span class="line">        child: ListView(</span><br><span class="line">          children: [</span><br><span class="line">            SentMessageScreen(message: <span class="string">"Hello"</span>),</span><br><span class="line">            ReceivedMessageScreen(message: <span class="string">"Hi, how are you"</span>),</span><br><span class="line">            SentMessageScreen(message: <span class="string">"I am great how are you doing"</span>),</span><br><span class="line">            ReceivedMessageScreen(message: <span class="string">"I am also fine"</span>),</span><br><span class="line">            SentMessageScreen(message: <span class="string">"Can we meet tomorrow?"</span>),</span><br><span class="line">            ReceivedMessageScreen(message: <span class="string">"Yes, of course we will meet tomorrow"</span>),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion:"></a>Conclusion:</h3><p>在文章中，我已经解释了自定义聊天气泡的基本结构，您可以根据自己的选择修改这个代码。这是一个小的介绍自定义聊天泡泡用户交互从我这边，它的工作使用 flutter。</p>
+<p>我希望这个博客将提供您尝试在您的 flutter 项目自定义聊天气泡充分的信息。我们将为工作的演示程序自定义聊天气泡使用任何第三方库在您的 flutter 应用程序。所以请尝试一下。</p>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech/</a></p>
+<p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">https://github.com/ducafecat</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h2><h3 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h3><h4 id="GetX-Quick-Start"><a href="#GetX-Quick-Start" class="headerlink" title="GetX Quick Start"></a>GetX Quick Start</h4><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h4 id="新闻客户端"><a href="#新闻客户端" class="headerlink" title="新闻客户端"></a>新闻客户端</h4><p><a href="https://github.com/ducafecat/flutter_learn_news" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news</a></p>
+<h3 id="strapi-手册译文"><a href="#strapi-手册译文" class="headerlink" title="strapi 手册译文"></a>strapi 手册译文</h3><p><a href="https://getstrapi.cn" target="_blank" rel="noopener">https://getstrapi.cn</a></p>
+<h3 id="微信讨论群-ducafecat"><a href="#微信讨论群-ducafecat" class="headerlink" title="微信讨论群 ducafecat"></a>微信讨论群 ducafecat</h3><h3 id="系列集合"><a href="#系列集合" class="headerlink" title="系列集合"></a>系列集合</h3><h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p><a href="https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/</a></p>
+<h4 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h4><p><a href="https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/</a></p>
+<h4 id="Dart-编程语言基础"><a href="#Dart-编程语言基础" class="headerlink" title="Dart 编程语言基础"></a>Dart 编程语言基础</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=111585" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=111585</a></p>
+<h4 id="Flutter-零基础入门"><a href="#Flutter-零基础入门" class="headerlink" title="Flutter 零基础入门"></a>Flutter 零基础入门</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=123470" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=123470</a></p>
+<h4 id="Flutter-实战从零开始-新闻客户端"><a href="#Flutter-实战从零开始-新闻客户端" class="headerlink" title="Flutter 实战从零开始 新闻客户端"></a>Flutter 实战从零开始 新闻客户端</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=106755</a></p>
+<h4 id="Flutter-组件开发"><a href="#Flutter-组件开发" class="headerlink" title="Flutter 组件开发"></a>Flutter 组件开发</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=144262" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=144262</a></p>
+<h4 id="Flutter-Bloc"><a href="#Flutter-Bloc" class="headerlink" title="Flutter Bloc"></a>Flutter Bloc</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177519" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177519</a></p>
+<h4 id="Flutter-Getx4"><a href="#Flutter-Getx4" class="headerlink" title="Flutter Getx4"></a>Flutter Getx4</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177514" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177514</a></p>
+<h4 id="Docker-Yapi"><a href="#Docker-Yapi" class="headerlink" title="Docker Yapi"></a>Docker Yapi</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=130578" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=130578</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/&title=《Flutter 自定义聊天气泡》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/&title=《Flutter 自定义聊天气泡》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 自定义聊天气泡》 — duCafeCat&url=https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/07/14/translation/automatic-generate-json-serializable-in-flutter/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 自动生成json实体类</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/07/09/translation/how-to-handle-401-unauthorised-with-dio-interceptor-flutter/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 如何处理401 未授权的 Dio 拦截器</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/&title=《Flutter 自定义聊天气泡》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/&title=《Flutter 自定义聊天气泡》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 自定义聊天气泡》 — duCafeCat&url=https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/07/13/translation/custom-chat-bubble-in-flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3aQW4jMQwEwPz/09nrLoKJu0nJ8AI1pyBjSywdJJri11f8fD88f7/9+fmf330aeTbLsQcPDw/vUOhtiMm3EmS7ZE+z4+Hh4d3mJVt2uxvPxtnEg4eHh/eZvGTrf9qmW3abXuPh4eH9L7xZ8SL5/2xePDw8vPfw2qHz0sCLYsHn1Frw8PDwuvEPFBfe+feV+z08PDy89a367JB4Gn/WlLCKFg8PD+8Cr72UapegbcxKZs/jxMPDw7vB27RJ5dPnZYj9Iv4zJh4eHt4FXjLN74HOQjkWdPwWDw8P7z28TbKbNAq0gSaL/jg+Hh4e3iFePvF+u88PmLYh7KsNGg8PD2/N26fXbYk2bxTYNHvh4eHh3eO1P/vzpLk9KtpjIyrd4uHh4R3l5VvzrA2rDbRdiOjSDg8PD+8oLwk0Sl6DZzPCLCnHw8PDu8FrM89NotwWc9siyAskHh4e3iHebHPfNAQkpHycF2k6Hh4e3gXeqZLuZglmJY9hTxkeHh7emtdeSm0OlT2+/gGAh4eHd43XFiPy0POiwyz5jooReHh4eG/k1ZdMi0uvfPai6QoPDw/vAm9TDpghkwR9BotKEnh4eHiHeMn2urmayhPivOSRLBYeHh7ebV6+WbdX+JsR8uT7xcGAh4eHd5SXFFjz4PJx8mQ9byAY3rnh4eHhjXizgHLS7CIteVt0k+Hh4eEd5c1Cqasds/LrqKkLDw8P7wbvu3zyJciPkFn5I3qLh4eHd4HXbrj77TtZrH3xYhUWHh4eXsCbtVvlJYP8SNgfG3h4eHjv5OUh5ht6HuKsnBEdEnh4eHgfzEsS6PzYyIsdfeEaDw8P7928/Bho0/e8FbW4PMPDw8O7xpulyHmamxwemzLu4yx4eHh4F3ibH/yzxoK2HLxZaDw8PLyjvD9EKOQpXf/dggAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

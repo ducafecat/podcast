@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter BLoC 用户登录 1 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="原文 https://medium.com/theotherdev-s/mastering-flutter-bloc-pattern-for-login-part-1-94082e139">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter BLoC 用户登录 1">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="原文 https://medium.com/theotherdev-s/mastering-flutter-bloc-pattern-for-login-part-1-94082e139">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/2021-05-06-08-01-18.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/2021-05-06-07-51-51.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/2021-05-06-07-54-44.png">
+<meta property="og:updated_time" content="2021-05-06T00:05:40.980Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter BLoC 用户登录 1">
+<meta name="twitter:description" content="原文 https://medium.com/theotherdev-s/mastering-flutter-bloc-pattern-for-login-part-1-94082e139">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/2021-05-06-08-01-18.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter BLoC 用户登录 1</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter BLoC 用户登录 1</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-05-05T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2021-05-06
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">1.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">2.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码，可以先阅读代码，再看文档"><span class="post-toc-number">3.</span> <span class="post-toc-text">代码，可以先阅读代码，再看文档</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">5.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开始"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">开始</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#登录状态"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">登录状态</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#登入表格"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">登入表格</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用户界面"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">用户界面</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#老铁记得-点赞、转发-，我将更有动力呈现-Flutter-好文"><span class="post-toc-number">6.</span> <span class="post-toc-text">老铁记得 点赞、转发 ，我将更有动力呈现 Flutter 好文~~~~</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">7.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">7.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">7.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">7.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">7.4.2.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">7.4.3.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">7.4.4.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">7.4.5.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">7.4.6.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">7.4.7.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">7.4.8.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-translation/mastering-flutter-bloc-pattern-for-login-part-1" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter BLoC 用户登录 1</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-05-06 00:00:00" datetime="2021-05-05T16:00:00.000Z"  itemprop="datePublished">2021-05-06</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-05-06-08-01-18.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://medium.com/theotherdev-s/mastering-flutter-bloc-pattern-for-login-part-1-94082e139725" target="_blank" rel="noopener">https://medium.com/theotherdev-s/mastering-flutter-bloc-pattern-for-login-part-1-94082e139725</a></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-05-06-07-51-51.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>首先，由于这不是一个基本的教程，我们理所当然地认为这是一个路线的知识，我们也包含了一点点的 <code>validation</code> 与 <code>formoz</code> 包来创建可重用的模型; 这不是本教程的目的，以显示这将如何工作，您将看到这在下一个教程。对于登录部分，出于教程的目的，我们还使用了 <code>BLoC (Cubit)</code> 的子集，因此您将看到这两者之间的区别。</p>
+<h2 id="代码，可以先阅读代码，再看文档"><a href="#代码，可以先阅读代码，再看文档" class="headerlink" title="代码，可以先阅读代码，再看文档"></a>代码，可以先阅读代码，再看文档</h2><p><a href="https://github.com/Alessandro-v/bloc_login" target="_blank" rel="noopener">https://github.com/Alessandro-v/bloc_login</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://pub.flutter-io.cn/packages/equatable" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/equatable</a></li>
+<li><a href="https://pub.flutter-io.cn/packages/validation" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/validation</a></li>
+<li><a href="https://pub.flutter-io.cn/packages/flutter_bloc" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/flutter_bloc</a></li>
+<li><a href="https://pub.flutter-io.cn/packages/formoz" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/formoz</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-05-06-07-54-44.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>在我们开始之前，让我们在 pubspec.yaml 中添加一些必要的包:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">equatable: ^2.0.0</span><br><span class="line">flutter_bloc: ^7.0.0</span><br><span class="line">formz: ^0.3.2</span><br></pre></td></tr></table></figure>
+<p>添加 <code>equatable</code> 包只会使您的工作更加容易，但是如果您想手动比较类的实例，只需要重写 “==” 和 hashCode。</p>
+<h3 id="登录状态"><a href="#登录状态" class="headerlink" title="登录状态"></a>登录状态</h3><p>让我们从一个包含表单状态和所有字段状态的类开始:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoginState</span> <span class="keyword">extends</span> <span class="title">Equatable</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> LoginState(&#123;</span><br><span class="line">    <span class="keyword">this</span>.email = <span class="keyword">const</span> Email.pure(),</span><br><span class="line">    <span class="keyword">this</span>.password = <span class="keyword">const</span> Password.pure(),</span><br><span class="line">    <span class="keyword">this</span>.status = FormzStatus.pure,</span><br><span class="line">    <span class="keyword">this</span>.exceptionError,</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">final</span> Email email;</span><br><span class="line">  <span class="keyword">final</span> Password password;</span><br><span class="line">  <span class="keyword">final</span> FormzStatus status;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> exceptionError;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="built_in">List</span>&lt;<span class="built_in">Object</span>&gt; <span class="keyword">get</span> props =&gt; [email, password, status, exceptionError];</span><br><span class="line">  LoginState copyWith(&#123;</span><br><span class="line">    Email email,</span><br><span class="line">    Password password,</span><br><span class="line">    FormzStatus status,</span><br><span class="line">    <span class="built_in">String</span> error,</span><br><span class="line">  &#125;) &#123;</span><br><span class="line">    <span class="keyword">return</span> LoginState(</span><br><span class="line">      email: email ?? <span class="keyword">this</span>.email,</span><br><span class="line">      password: password ?? <span class="keyword">this</span>.password,</span><br><span class="line">      status: status ?? <span class="keyword">this</span>.status,</span><br><span class="line">      exceptionError: error ?? <span class="keyword">this</span>.exceptionError,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在让我们创建我们的 LoginCubit，它将负责执行逻辑，例如通过 emit 获取电子邮件和输出新状态:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoginCubit</span> <span class="keyword">extends</span> <span class="title">Cubit</span>&lt;<span class="title">LoginState</span>&gt; </span>&#123;</span><br><span class="line">  LoginCubit() : <span class="keyword">super</span>(<span class="keyword">const</span> LoginState());</span><br><span class="line">  <span class="keyword">void</span> emailChanged(<span class="built_in">String</span> value) &#123;</span><br><span class="line">    <span class="keyword">final</span> email = Email.dirty(value);</span><br><span class="line">    emit(state.copyWith(</span><br><span class="line">      email: email,</span><br><span class="line">      status: Formz.validate([</span><br><span class="line">        email,</span><br><span class="line">        state.password</span><br><span class="line">      ]),</span><br><span class="line">    ));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">void</span> passwordChanged(<span class="built_in">String</span> value) &#123;</span><br><span class="line">    <span class="keyword">final</span> password = Password.dirty(value);</span><br><span class="line">    emit(state.copyWith(</span><br><span class="line">      password: password,</span><br><span class="line">      status: Formz.validate([</span><br><span class="line">        state.email,</span><br><span class="line">        password</span><br><span class="line">      ]),</span><br><span class="line">    ));</span><br><span class="line">  &#125;</span><br><span class="line">  Future&lt;<span class="keyword">void</span>&gt; logInWithCredentials() <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!state.status.isValidated) <span class="keyword">return</span>;</span><br><span class="line">    emit(state.copyWith(status: FormzStatus.submissionInProgress));</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">await</span> Future.delayed(<span class="built_in">Duration</span>(milliseconds: <span class="number">500</span>));</span><br><span class="line">      emit(state.copyWith(status: FormzStatus.submissionSuccess));</span><br><span class="line">    &#125; on Exception <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      emit(state.copyWith(status: FormzStatus.submissionFailure, error: e.toString()));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是我们如何将腕尺与我们的用户界面连接起来呢？下面是对 <code>BlocProvider</code> 的解救，这是一个小部件，它使用: <code>BlocProvider.of&lt;logincubit&gt;(context)</code> 为其子部件提供一个区块</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BlocProvider(</span><br><span class="line">  create: (_) =&gt; LoginCubit(),</span><br><span class="line">  child: LoginForm(),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<h3 id="登入表格"><a href="#登入表格" class="headerlink" title="登入表格"></a>登入表格</h3><p>既然现在似乎都在他自己的地方，是时候解决我们的最后一块 puzzle，整个用户界面</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoginForm</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> LoginForm(&#123;Key key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> BlocConsumer&lt;LoginCubit, LoginState&gt;(</span><br><span class="line">        listener: (context, state) &#123;</span><br><span class="line">          <span class="keyword">if</span> (state.status.isSubmissionFailure) &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'submission failure'</span>);</span><br><span class="line">          &#125; <span class="keyword">else</span> <span class="keyword">if</span> (state.status.isSubmissionSuccess) &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'success'</span>);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        builder: (context, state) =&gt; Stack(</span><br><span class="line">          children: [</span><br><span class="line">            Positioned.fill(</span><br><span class="line">              child: SingleChildScrollView(</span><br><span class="line">                padding: <span class="keyword">const</span> EdgeInsets.fromLTRB(<span class="number">38.0</span>, <span class="number">0</span>, <span class="number">38.0</span>, <span class="number">8.0</span>),</span><br><span class="line">                child: Container(</span><br><span class="line">                  child: Column(</span><br><span class="line">                    crossAxisAlignment: CrossAxisAlignment.stretch,</span><br><span class="line">                    mainAxisAlignment: MainAxisAlignment.start,</span><br><span class="line">                    children: [</span><br><span class="line">                      _WelcomeText(),</span><br><span class="line">                      _EmailInputField(),</span><br><span class="line">                      _PasswordInputField(),</span><br><span class="line">                      _LoginButton(),</span><br><span class="line">                      _SignUpButton(),</span><br><span class="line">                    ],</span><br><span class="line">                  ),</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">            state.status.isSubmissionInProgress</span><br><span class="line">                ? Positioned(</span><br><span class="line">              child: Align(</span><br><span class="line">                alignment: Alignment.center,</span><br><span class="line">                child: CircularProgressIndicator(),</span><br><span class="line">              ),</span><br><span class="line">            ) : Container(),</span><br><span class="line">          ],</span><br><span class="line">        )</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了对 Cubit 发出的新状态做出反应，我们需要将我们的表单包裹在一个 BlocConsumer 中，现在我们将暴露一个监听者和一个建造者。</p>
+<ul>
+<li>Listener</li>
+</ul>
+<p>这里我们将监听状态更改，例如，在响应 API 调用时显示错误或执行导航。</p>
+<ul>
+<li>Builder</li>
+</ul>
+<p>在这里，我们将显示 ui 反应状态的变化，我们的 <code>Cubit</code>。</p>
+<h3 id="用户界面"><a href="#用户界面" class="headerlink" title="用户界面"></a>用户界面</h3><p>我们的用户界面由一个列和 5 个子元素组成，但是我们只展示 2 个简短的小部件:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_EmailInputField</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> BlocBuilder&lt;LoginCubit, LoginState&gt;(</span><br><span class="line">      buildWhen: (previous, current) =&gt; previous.email != current.email,</span><br><span class="line">      builder: (context, state) &#123;</span><br><span class="line">        <span class="keyword">return</span> AuthTextField(</span><br><span class="line">          hint: <span class="string">'Email'</span>,</span><br><span class="line">          key: <span class="keyword">const</span> Key(<span class="string">'loginForm_emailInput_textField'</span>),</span><br><span class="line">          keyboardType: TextInputType.emailAddress,</span><br><span class="line">          error: state.email.error.name,</span><br><span class="line">          onChanged: (email) =&gt; context</span><br><span class="line">              .read&lt;LoginCubit&gt;()</span><br><span class="line">              .emailChanged(email),</span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_LoginButton</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> _LoginButton(&#123;Key key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> BlocBuilder&lt;LoginCubit, LoginState&gt;(</span><br><span class="line">      buildWhen: (previous, current) =&gt; previous.status != current.status,</span><br><span class="line">      builder: (context, state) &#123;</span><br><span class="line">        <span class="keyword">return</span> CupertinoButton(</span><br><span class="line">            child: Text(<span class="string">'Login'</span>),</span><br><span class="line">            onPressed: state.status.isValidated</span><br><span class="line">                ? () =&gt; context.read&lt;LoginCubit&gt;().logInWithCredentials()</span><br><span class="line">                : <span class="keyword">null</span></span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这两个小部件都包装在一个 <code>BlocBuilder</code> 中，只有当肘位为它们各自的评估属性发出新的状态时，<code>BlocBuilder</code> 才负责重新构建这些小部件，因此，例如，如果用户没有在 email 字段中键入任何内容，<code>EmailInputField</code> 将永远不会被重新构建。</p>
+<p>相反，如果所有字段都经过验证，按钮将调用 <code>logInWithCredentials()</code> 函数，该函数将根据 API 响应发出一个新状态(失败或成功)。</p>
+<h2 id="老铁记得-点赞、转发-，我将更有动力呈现-Flutter-好文"><a href="#老铁记得-点赞、转发-，我将更有动力呈现-Flutter-好文" class="headerlink" title="老铁记得 点赞、转发 ，我将更有动力呈现 Flutter 好文~~~~"></a>老铁记得 点赞、转发 ，我将更有动力呈现 Flutter 好文~~~~</h2><hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech/</a></p>
+<p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">https://github.com/ducafecat</a></p>
+<h2 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h2><h3 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h3><h4 id="GetX-Quick-Start"><a href="#GetX-Quick-Start" class="headerlink" title="GetX Quick Start"></a>GetX Quick Start</h4><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h4 id="新闻客户端"><a href="#新闻客户端" class="headerlink" title="新闻客户端"></a>新闻客户端</h4><p><a href="https://github.com/ducafecat/flutter_learn_news" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news</a></p>
+<h3 id="strapi-手册译文"><a href="#strapi-手册译文" class="headerlink" title="strapi 手册译文"></a>strapi 手册译文</h3><p><a href="https://getstrapi.cn" target="_blank" rel="noopener">https://getstrapi.cn</a></p>
+<h3 id="微信讨论群-ducafecat"><a href="#微信讨论群-ducafecat" class="headerlink" title="微信讨论群 ducafecat"></a>微信讨论群 ducafecat</h3><h3 id="系列集合"><a href="#系列集合" class="headerlink" title="系列集合"></a>系列集合</h3><h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p><a href="https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/</a></p>
+<h4 id="Dart-编程语言基础"><a href="#Dart-编程语言基础" class="headerlink" title="Dart 编程语言基础"></a>Dart 编程语言基础</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=111585" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=111585</a></p>
+<h4 id="Flutter-零基础入门"><a href="#Flutter-零基础入门" class="headerlink" title="Flutter 零基础入门"></a>Flutter 零基础入门</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=123470" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=123470</a></p>
+<h4 id="Flutter-实战从零开始-新闻客户端"><a href="#Flutter-实战从零开始-新闻客户端" class="headerlink" title="Flutter 实战从零开始 新闻客户端"></a>Flutter 实战从零开始 新闻客户端</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=106755</a></p>
+<h4 id="Flutter-组件开发"><a href="#Flutter-组件开发" class="headerlink" title="Flutter 组件开发"></a>Flutter 组件开发</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=144262" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=144262</a></p>
+<h4 id="Flutter-Bloc"><a href="#Flutter-Bloc" class="headerlink" title="Flutter Bloc"></a>Flutter Bloc</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177519" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177519</a></p>
+<h4 id="Flutter-Getx4"><a href="#Flutter-Getx4" class="headerlink" title="Flutter Getx4"></a>Flutter Getx4</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177514" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177514</a></p>
+<h4 id="Docker-Yapi"><a href="#Docker-Yapi" class="headerlink" title="Docker Yapi"></a>Docker Yapi</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=130578" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=130578</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/&title=《Flutter BLoC 用户登录 1》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/&title=《Flutter BLoC 用户登录 1》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter BLoC 用户登录 1》 — duCafeCat&url=https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/05/07/translation/flutter-how-to-fluttering-from-one-version-to-other-versions/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 多个版本切换控制</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/05/05/translation/story-view-in-flutter/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 添加APP启动 Story View</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/&title=《Flutter BLoC 用户登录 1》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/&title=《Flutter BLoC 用户登录 1》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter BLoC 用户登录 1》 — duCafeCat&url=https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/05/06/translation/mastering-flutter-bloc-pattern-for-login-part-1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADHElEQVR42u3a0YrbMBAF0P3/n06hT4W07r0zDiTK0dPieGUfBTLojn5+4vH4PZ6v/Hn9+Z7nO5/H9WzP15NPbxvY2NjYH8LOX+tfr5gsxPXLXc+ZX0ks2NjY2Keyr4tW/rAEmT/lGtPOgI2NjY3dYvLXTWbYlElsbGxs7FkAlCzTIxh3lUBsbGzss9mviO/bpyTLnX8lt2Vp2NjY2G/P3kQ/7/b3C/vb2NjY2G/JfoxGG/2019sWRf3+2NjY2AexZ9F/FNmUUVQy2yzqisoYNjY29sey2+LUlqV2ods2w+z9sbGxsU9iz7YByZ2zZsD+AFD+ntjY2Ninsjct3ldEQu08ydeAjY2NfRI7D5LaWH9zvHKGL56FjY2NfRC7jX6SYpZvNmYNibbU1U/BxsbG/ij2Jo5PGPlytIVtVmixsbGxz2PvI552OdpwataWiNoD2NjY2Mex86OT7ZGdfdCT3L+JorCxsbHPYD/icVtqVUZFObtYMmxsbOwj2Js46a527KxtsFlobGxs7O9ht4WtLW+beTafYmNjY5/B3m8t8gM9be2YLWJ0SAgbGxv7IPa9BawNpPIAKD+mUxRIbGxs7CPYs0M5m0L1ijZAu6DY2NjYJ7Fn0UwezbdL2W5OZg1pbGxs7JPYedzThvj7sjcrk9HXg42Njf017M22ZNNOmG0/ivKJjY2NfSj7dUuQx0CzxnNdJrGxsbEPYuekvL3aBkB3Hf1pSyA2Njb2Gey2yZr//u/bADNS3R7AxsbG/nD2JvS5fli+TLNGRV5KsbGxsb+HPfzpLwvbjNc2A/INFTY2NvZJ7P0RnKQQ5iH+5kpbPrGxsbHPY7cLkcRSCX7TKrgBiY2Njf2B7Ec58g1Mjtn8b97Y+EujFxsbG/sI9qaAtbDZEZ+8NN4WLWFjY2N/ILs9HLk5mtMGTJty+J9FwcbGxj6OPQuSZlHU9f1tK3c2GzY2NvY3szcHfdptST5P3QDGxsbG/kp2+/h7Q6t8wxNVK2xsbOzj2HcdjmzLW9sAzmfDxsbG/h52W2DyyGmzVcgbBm0rAhsbG/sg9i/Bg9SYnMSRxAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

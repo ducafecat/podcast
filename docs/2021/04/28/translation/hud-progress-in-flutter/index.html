@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 中使用 HUD Progress 组件 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="原文 https://medium.com/flutterdevs/hud-progress-in-flutter-281ed0f644d0  前言在 flutter 中，我们显示任何进">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 中使用 HUD Progress 组件">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="原文 https://medium.com/flutterdevs/hud-progress-in-flutter-281ed0f644d0  前言在 flutter 中，我们显示任何进">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/2021-04-27-22-36-09.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/2021-04-27-22-27-36.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/2021-04-27-22-32-07.png">
+<meta property="og:updated_time" content="2021-04-27T14:36:11.349Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 中使用 HUD Progress 组件">
+<meta name="twitter:description" content="原文 https://medium.com/flutterdevs/hud-progress-in-flutter-281ed0f644d0  前言在 flutter 中，我们显示任何进">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/2021-04-27-22-36-09.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 中使用 HUD Progress 组件</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 中使用 HUD Progress 组件</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-04-27T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2021-04-28
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">1.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">2.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#pub-dev"><span class="post-toc-number">3.</span> <span class="post-toc-text">pub.dev</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">4.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HUD-Progress"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">HUD Progress</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#例子"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">例子</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#完整代码"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">完整代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">5.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">5.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">5.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">5.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">5.4.2.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">5.4.3.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">5.4.4.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">5.4.5.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">5.4.6.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">5.4.7.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">5.4.8.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-translation/hud-progress-in-flutter" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter 中使用 HUD Progress 组件</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-04-28 00:00:00" datetime="2021-04-27T16:00:00.000Z"  itemprop="datePublished">2021-04-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-04-27-22-36-09.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://medium.com/flutterdevs/hud-progress-in-flutter-281ed0f644d0" target="_blank" rel="noopener">https://medium.com/flutterdevs/hud-progress-in-flutter-281ed0f644d0</a></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 flutter 中，我们显示任何进度指示器，因为我们的应用程序是繁忙的或在搁置，为此，我们显示一个循环的进度指示器。覆盖加载屏幕显示一个进度指示器，也称为模态进度 HUD 或平视显示，这通常意味着应用程序正在加载或执行一些工作。</p>
+<p>在本文中，我们将利用 HUD 进程程序包来探讨平视显示器在 flutter 方面的进展。有了这个软件包，我们可以很容易地实现平视显示的颤振进度。那么让我们开始吧。</p>
+<h2 id="pub-dev"><a href="#pub-dev" class="headerlink" title="pub.dev"></a>pub.dev</h2><p><a href="https://pub.dev/packages/flutter_progress_hud" target="_blank" rel="noopener">https://pub.dev/packages/flutter_progress_hud</a></p>
+<p><a href="https://pub.dev/packages/flutter_progress_hud/example" target="_blank" rel="noopener">https://pub.dev/packages/flutter_progress_hud/example</a></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="HUD-Progress"><a href="#HUD-Progress" class="headerlink" title="HUD Progress"></a>HUD Progress</h3><p>Flutter HUD Progress 是一种进度指示器库，就像一个循环的进度指示器。在这里，HUD 意味着一个抬头显示器/进度弹出对话框将打开以上的屏幕，将有一个循环的进度指示器。使用这个库，我们可以使用我们的 flutter 。应用程序可以显示循环进度指示器。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-04-27-22-27-36.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
+<li><p>borderColor:<br>边框/颜色: 边框颜色属性用于更改指示符背景边框颜色</p>
+</li>
+<li><p>backgroundColor:<br>背景颜色: 背景颜色属性用于更改指示器背景的颜色</p>
+</li>
+<li><p>indicatorColor:<br>标志/颜色: 背景颜色属性用于更改指示器背景的颜色</p>
+</li>
+<li><p>textStyle:<br>文字样式: 属性用于指示符下面显示的文本，文本的颜色和样式可以在该属性中更改</p>
+</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>第一步: 添加依赖项</li>
+</ul>
+<p>将依赖项添加到 pubspec ー yaml 文件。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line"><span class="attr">  flutter_progress_hud:</span> <span class="string">^2.0.0</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二步: 导包</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_progress_hud/flutter_progress_hud.dart'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第三步: 启用 AndriodX</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">org.gradle.jvmargs=-Xmx1536M</span><br><span class="line">android.enableR8=true</span><br><span class="line">android.useAndroidX=true</span><br><span class="line">android.enableJetifier=true</span><br></pre></td></tr></table></figure>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>在 <code>lib</code> 目录中创建一个名为 <code>progress_hud_demo.dart</code> 的新 dart 文件。</p>
+<p>在创建 Flutter HUD Progress 之前，我们包装了一个进度遮光罩的容器，其次是建设者类。在内部，我们使用了我们的小部件，并定义了进度指示器的边框颜色和背景颜色。让我们详细地了解一下这一点。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ProgressHUD(</span><br><span class="line">  borderColor:Colors.orange,</span><br><span class="line">  backgroundColor:Colors.blue.shade300,</span><br><span class="line">  child:Builder(</span><br><span class="line">    builder:(context)=&gt;Container(</span><br><span class="line">      height:DeviceSize.height(context),</span><br><span class="line">      width:DeviceSize.width(context),</span><br><span class="line">      padding:EdgeInsets.only(left:<span class="number">20</span>,right:<span class="number">20</span>,top:<span class="number">20</span>),</span><br><span class="line">    ),</span><br><span class="line">  ),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<p>现在我们已经采取了一个按钮，在其中指示器设置持续时间 5 秒的指示器时间未来。<code>delayed()</code> 并显示进度的文本。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Container(</span><br><span class="line">  margin: EdgeInsets.only(</span><br><span class="line">      left:<span class="number">20.0</span>, right:<span class="number">20.0</span>, top:<span class="number">55.0</span>),</span><br><span class="line">  child: CustomButton(</span><br><span class="line">    mainButtonText:<span class="string">'Submit'</span>,</span><br><span class="line">    callbackTertiary:()&#123;</span><br><span class="line">      <span class="keyword">final</span> progress = ProgressHUD.of(context);</span><br><span class="line">      progress.showWithText(<span class="string">'Loading...'</span>);</span><br><span class="line">      Future.delayed(<span class="built_in">Duration</span>(seconds:<span class="number">5</span>), () &#123;</span><br><span class="line">        progress.dismiss();</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    color:Colors.blue,</span><br><span class="line">  ),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<p>当我们运行应用程序时，我们应该得到屏幕的输出，就像下面的屏幕截图一样。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-04-27-22-32-07.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:progress_hud_demo/shared/custom_button.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:progress_hud_demo/shared/custom_text_field.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:progress_hud_demo/themes/device_size.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_progress_hud/flutter_progress_hud.dart'</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProgressHudDemo</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _ProgressHudDemoState createState() =&gt; _ProgressHudDemoState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_ProgressHudDemoState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">ProgressHudDemo</span>&gt; </span>&#123;</span><br><span class="line">  <span class="built_in">bool</span> _isInAsyncCall = <span class="keyword">false</span>;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      backgroundColor:Colors.white,</span><br><span class="line">      appBar:AppBar(</span><br><span class="line">        backgroundColor:Colors.blue,</span><br><span class="line">        title:Text(<span class="string">'Flutter HUD Progress Demo'</span>),</span><br><span class="line">        elevation:<span class="number">0.0</span>,</span><br><span class="line">      ),</span><br><span class="line">      body:ProgressHUD(</span><br><span class="line">        borderColor:Colors.orange,</span><br><span class="line">        backgroundColor:Colors.blue.shade300,</span><br><span class="line">        child:Builder(</span><br><span class="line">          builder:(context)=&gt;Container(</span><br><span class="line">            height:DeviceSize.height(context),</span><br><span class="line">            width:DeviceSize.width(context),</span><br><span class="line">            padding:EdgeInsets.only(left:<span class="number">20</span>,right:<span class="number">20</span>,top:<span class="number">20</span>),</span><br><span class="line">            child:Column(</span><br><span class="line">              crossAxisAlignment:CrossAxisAlignment.start,</span><br><span class="line">              children: [</span><br><span class="line"></span><br><span class="line">                Column(</span><br><span class="line">                  crossAxisAlignment:CrossAxisAlignment.start,</span><br><span class="line">                  children: [</span><br><span class="line">                    Text(<span class="string">'Sign In'</span>,style:TextStyle(fontFamily:<span class="string">'Roboto Bold'</span>,fontSize:<span class="number">27</span>,fontWeight:FontWeight.bold),),</span><br><span class="line">                  ],</span><br><span class="line">                ),</span><br><span class="line"></span><br><span class="line">                SizedBox(height:<span class="number">50</span>,),</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                Column(</span><br><span class="line">                  children: [</span><br><span class="line">                    CustomTextField(hintText: <span class="string">'Email'</span>, type:TextInputType.text, obscureText: <span class="keyword">false</span>),</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                    SizedBox(height:<span class="number">35</span>,),</span><br><span class="line"></span><br><span class="line">                    CustomTextField(hintText: <span class="string">'Password'</span>, type:TextInputType.text, obscureText: <span class="keyword">true</span>),</span><br><span class="line">                  ],</span><br><span class="line">                ),</span><br><span class="line"></span><br><span class="line">                Container(</span><br><span class="line">                  margin: EdgeInsets.only(</span><br><span class="line">                      left:<span class="number">20.0</span>, right:<span class="number">20.0</span>, top:<span class="number">55.0</span>),</span><br><span class="line">                  child: CustomButton(</span><br><span class="line">                    mainButtonText:<span class="string">'Submit'</span>,</span><br><span class="line">                    callbackTertiary:()&#123;</span><br><span class="line">                      <span class="keyword">final</span> progress = ProgressHUD.of(context);</span><br><span class="line">                      progress.showWithText(<span class="string">'Loading...'</span>);</span><br><span class="line">                      Future.delayed(<span class="built_in">Duration</span>(seconds:<span class="number">5</span>), () &#123;</span><br><span class="line">                        progress.dismiss();</span><br><span class="line">                      &#125;);</span><br><span class="line">                    &#125;,</span><br><span class="line">                    color:Colors.blue,</span><br><span class="line">                  ),</span><br><span class="line">                ),</span><br><span class="line"></span><br><span class="line">              ],</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech/</a></p>
+<p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">https://github.com/ducafecat</a></p>
+<h2 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h2><h3 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h3><h4 id="GetX-Quick-Start"><a href="#GetX-Quick-Start" class="headerlink" title="GetX Quick Start"></a>GetX Quick Start</h4><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h4 id="新闻客户端"><a href="#新闻客户端" class="headerlink" title="新闻客户端"></a>新闻客户端</h4><p><a href="https://github.com/ducafecat/flutter_learn_news" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news</a></p>
+<h3 id="strapi-手册译文"><a href="#strapi-手册译文" class="headerlink" title="strapi 手册译文"></a>strapi 手册译文</h3><p><a href="https://getstrapi.cn" target="_blank" rel="noopener">https://getstrapi.cn</a></p>
+<h3 id="微信讨论群-ducafecat"><a href="#微信讨论群-ducafecat" class="headerlink" title="微信讨论群 ducafecat"></a>微信讨论群 ducafecat</h3><h3 id="系列集合"><a href="#系列集合" class="headerlink" title="系列集合"></a>系列集合</h3><h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p><a href="https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/</a></p>
+<h4 id="Dart-编程语言基础"><a href="#Dart-编程语言基础" class="headerlink" title="Dart 编程语言基础"></a>Dart 编程语言基础</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=111585" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=111585</a></p>
+<h4 id="Flutter-零基础入门"><a href="#Flutter-零基础入门" class="headerlink" title="Flutter 零基础入门"></a>Flutter 零基础入门</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=123470" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=123470</a></p>
+<h4 id="Flutter-实战从零开始-新闻客户端"><a href="#Flutter-实战从零开始-新闻客户端" class="headerlink" title="Flutter 实战从零开始 新闻客户端"></a>Flutter 实战从零开始 新闻客户端</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=106755</a></p>
+<h4 id="Flutter-组件开发"><a href="#Flutter-组件开发" class="headerlink" title="Flutter 组件开发"></a>Flutter 组件开发</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=144262" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=144262</a></p>
+<h4 id="Flutter-Bloc"><a href="#Flutter-Bloc" class="headerlink" title="Flutter Bloc"></a>Flutter Bloc</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177519" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177519</a></p>
+<h4 id="Flutter-Getx4"><a href="#Flutter-Getx4" class="headerlink" title="Flutter Getx4"></a>Flutter Getx4</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177514" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177514</a></p>
+<h4 id="Docker-Yapi"><a href="#Docker-Yapi" class="headerlink" title="Docker Yapi"></a>Docker Yapi</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=130578" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=130578</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/&title=《Flutter 中使用 HUD Progress 组件》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/&title=《Flutter 中使用 HUD Progress 组件》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 中使用 HUD Progress 组件》 — duCafeCat&url=https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 移动安全 ー Ep.1 SSL Pinning</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/04/27/translation/flutter-interactive-user-guidanc-e-or-how-to-make-a-hole-in-layout/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">flutter 交互式用户指导，以及如何在布局中创造一个洞</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/&title=《Flutter 中使用 HUD Progress 组件》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/&title=《Flutter 中使用 HUD Progress 组件》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 中使用 HUD Progress 组件》 — duCafeCat&url=https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/04/28/translation/hud-progress-in-flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3awW7DIBAE0Pz/T6fXSqmTmQVSH55PlWJjniuxq4HHI76ev678ztenXkd4/TV/dtuFh4eHtzD190MnE30PyJ+dfYg/PgEeHh7eMd7Vivp+6HxlblfvZA7Ru/Dw8PBuwMtf9h02Hh4e3v15yfKdxwqzMAIPDw/vDrx26PcvaNvivEgczFrw8PDwYl7b/t7h7yP7e3h4eHjLu+rJgtu21+1Rg6XZ4uHh4R3gzeLU2TrcHhRo3355Jx4eHt4xXh7m5ve34ewsPv5wqAsPDw/v67x86Nk2WD5yMsMNNQ0PDw+vO+NU4He1y/lHTN64FPXi4eHhBby22c0b2Tb8nX2I4QYYHh4e3nKHmU+0LQ/5Z80/d330Cg8PD+8wb7bFNQthd63eUdaCh4eHt4nXRgnt5v1s/LbYXI6Jh4eHd4DXTq5oZBfubxOG4h+Ah4eHt8xLAtx8cruC4Nl212Xdw8PDw9vKy6dVD7oQ3SZloDiShYeHh3eAl7e/ybRW7pkBijYdDw8PbxNvV6CQfL/Zgr60zYaHh4d3gJcfacqHThb6Wfs+bO7x8PDwNvHa5TUvHm1znIDb4oGHh4d3gpdHA0l4kSz0KzFxG6Dg4eHh/RdvdgigbaaTra9hIcHDw8M7zDs3xeSTrWyVRYUBDw8P7wBvFjTkh6jaCHhWKooagoeHh7eJN4sndhWPlvdhhnh4eHhf4bXHAtp4oo13H/FVtNR4eHh4I96zvGbhxa7yUP+Kh4eHd4C3VE/KpTyf3K74GA8PD+8cry0G64HF+rNF842Hh4d3jDfbGGu3/GdtelK0LsfBw8PDuw0vmdBs0ruOseLh4eHdk5eEp3mRaO+Mols8PDy8Y7z2ZW10mxeYtuR8QOLh4eEd4J1rc5MDBPkR1c17enh4eHgT3g9zcKZL5NeHWAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 零基础入门中文教学 - 01 前言 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="本节目标 介绍 Flutter 课程计划 如果获取课程资料、代码、视频  适合人群 泛移动开发人员 原生移动开发人员 前端开发人员  跨平台: 移动、Web、桌面、嵌入">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 零基础入门中文教学 - 01 前言">
+<meta property="og:url" content="https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 介绍 Flutter 课程计划 如果获取课程资料、代码、视频  适合人群 泛移动开发人员 原生移动开发人员 前端开发人员  跨平台: 移动、Web、桌面、嵌入">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/2019-01-22-16-13-18.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/image-20190522135901818.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/image-20190523091712106.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/image-20190626154959148.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/image-20190523092032825.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/image-20190626153104569.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/image-20190626153252442.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/image-20190626153929267.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/image-20190626154621682.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/image-20190626154700792.png">
+<meta property="og:updated_time" content="2020-02-26T07:55:53.417Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 零基础入门中文教学 - 01 前言">
+<meta name="twitter:description" content="本节目标 介绍 Flutter 课程计划 如果获取课程资料、代码、视频  适合人群 泛移动开发人员 原生移动开发人员 前端开发人员  跨平台: 移动、Web、桌面、嵌入">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/2019-01-22-16-13-18.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 零基础入门中文教学 - 01 前言</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 零基础入门中文教学 - 01 前言</h1>
+        <h5 class="subtitle">
+             <time datetime="2019-06-16T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2019-06-17
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#适合人群"><span class="post-toc-number">2.</span> <span class="post-toc-text">适合人群</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#跨平台-移动、Web、桌面、嵌入"><span class="post-toc-number">3.</span> <span class="post-toc-text">跨平台: 移动、Web、桌面、嵌入</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flutter-框架结构"><span class="post-toc-number">4.</span> <span class="post-toc-text">Flutter 框架结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Skia"><span class="post-toc-number">5.</span> <span class="post-toc-text">Skia</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flutter-for-Web"><span class="post-toc-number">6.</span> <span class="post-toc-text">Flutter for Web</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Fuchsia-OS"><span class="post-toc-number">7.</span> <span class="post-toc-text">Fuchsia OS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flutter-特点"><span class="post-toc-number">8.</span> <span class="post-toc-text">Flutter 特点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flutter-横向对比"><span class="post-toc-number">9.</span> <span class="post-toc-text">Flutter 横向对比</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flutter-生态资源"><span class="post-toc-number">10.</span> <span class="post-toc-text">Flutter 生态资源</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#课程计划"><span class="post-toc-number">11.</span> <span class="post-toc-text">课程计划</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">12.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-flutter/flutter-01-introduce" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter 零基础入门中文教学 - 01 前言</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-17 00:00:00" datetime="2019-06-16T16:00:00.000Z"  itemprop="datePublished">2019-06-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-01-22-16-13-18.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h2><ul>
+<li>介绍 Flutter</li>
+<li>课程计划</li>
+<li>如果获取课程资料、代码、视频</li>
+</ul>
+<h2 id="适合人群"><a href="#适合人群" class="headerlink" title="适合人群"></a>适合人群</h2><ul>
+<li>泛移动开发人员</li>
+<li>原生移动开发人员</li>
+<li>前端开发人员</li>
+</ul>
+<h2 id="跨平台-移动、Web、桌面、嵌入"><a href="#跨平台-移动、Web、桌面、嵌入" class="headerlink" title="跨平台: 移动、Web、桌面、嵌入"></a>跨平台: 移动、Web、桌面、嵌入</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190522135901818.png" alt="跨平台" title="">
+                </div>
+                <div class="image-caption">跨平台</div>
+            </figure>
+<h2 id="Flutter-框架结构"><a href="#Flutter-框架结构" class="headerlink" title="Flutter 框架结构"></a>Flutter 框架结构</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190523091712106.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>Flutter Framework</li>
+</ul>
+<p>Framework 这一层使用 Dart 语言开发，它实现了一套基础库。</p>
+<p>Foundation、Animation、Painting、Gestures 为 Dart 实现的 UI 层，提供动画、手势及绘制。</p>
+<p>Rendering 渲染层，依赖 UI 层，在运行时 Rendering 层会构建一个 Widget 树，当有变化时，会更具一定的算法计算出有变化的部分，然后更新 Widget 树。</p>
+<p>Widgets 层是 Flutter 提供的的一套基础组件库，在基础组件库之上，Flutter 还提供了 Material 和 Cupertino 两种视觉风格的组件库。</p>
+<ul>
+<li>Flutter Engine</li>
+</ul>
+<p>Skia 是一个开源的二维图形库，提供各种常用的 API，并可在多种软硬件平台上运行。谷歌 Chrome 浏览器、Chrome OS、安卓、火狐浏览器、火狐操作系统以及其它许多产品都使用它作为图形引擎。</p>
+<p>Skia 由谷歌出资管理，任何人都可基于 BSD 免费软件许可证使用 Skia。Skia 开发团队致力于开发其核心部分， 并广泛采纳各方对于 Skia 的开源贡献。</p>
+<p>因为没有使用原生的 UI 和绘制框架，所以才保证了 Flutter 的高性能体验。</p>
+<h2 id="Skia"><a href="#Skia" class="headerlink" title="Skia"></a>Skia</h2><p><a href="https://skia.org/" target="_blank" rel="noopener">官网</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190626154959148.png" alt="image-20190626154959148" title="">
+                </div>
+                <div class="image-caption">image-20190626154959148</div>
+            </figure>
+<p>Skia是一个开源的二维图形库，提供各种常用的API，并可在多种软硬件平台上运行。谷歌Chrome浏览器、Chrome OS、安卓、火狐浏览器、火狐操作系统以及其它许多产品都使用它作为图形引擎。</p>
+<p>Skia由谷歌出资管理，任何人都可基于BSD免费软件许可证使用Skia。Skia开发团队致力于开发其核心部分， 并广泛采纳各方对于Skia的开源贡献。</p>
+<h2 id="Flutter-for-Web"><a href="#Flutter-for-Web" class="headerlink" title="Flutter for Web"></a>Flutter for Web</h2><p><a href="https://flutter.dev/web" target="_blank" rel="noopener">https://flutter.dev/web</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190523092032825.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>通过对比，可以发现，web框架层和mobile的几乎一模一样。因此只需要重新实现一下引擎和嵌入层，不用变动Flutter API就可以完全可以将UI代码从Android / IOS Flutter App移植到Web。Dart能够使用Dart2Js编译器把Dart代码编译成Js代码。大多数原生App元素能够通过DOM实现，DOM实现不了的元素可以通过Canvas来实现。</p>
+<h2 id="Fuchsia-OS"><a href="#Fuchsia-OS" class="headerlink" title="Fuchsia OS"></a>Fuchsia OS</h2><ul>
+<li><p><a href="https://xuzhongxing.github.io/201806fuchsia.pdf" target="_blank" rel="noopener">许中兴博士演讲：Fuchsia OS 简介及幻灯片下载</a> </p>
+</li>
+<li><p>桌面系统</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190626153104569.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>手机OS</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190626153252442.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>平板</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190626153929267.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>华为荣耀Play</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190626154621682.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="image-20190626154700792.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="Flutter-特点"><a href="#Flutter-特点" class="headerlink" title="Flutter 特点"></a>Flutter 特点</h2><ul>
+<li><p>多平台支持 iOS Android Linux 未来 Fuchsia OS</p>
+</li>
+<li><p>原生用户界面</p>
+</li>
+<li><p>120fps 超高性能</p>
+</li>
+<li><p>两套成熟 UI 库 Material Design 和 Cupertino</p>
+</li>
+<li><p>响应式的框架 Redux、RxDart、BloC 业务和 UI 分离</p>
+</li>
+<li><p>Flutter 支持 Hot Reload</p>
+</li>
+<li><p>国内阿里咸鱼、腾讯、京东、国外的谷歌等公司都已经有上线产品在使用 Flutter 开发</p>
+<ul>
+<li><a href="https://flutter.io/showcase" target="_blank" rel="noopener">showcase</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Flutter-横向对比"><a href="#Flutter-横向对比" class="headerlink" title="Flutter 横向对比"></a>Flutter 横向对比</h2><ul>
+<li><p>Cordova</p>
+<p>基于 WebView 渲染，遇到动画、大列表 性能慢</p>
+</li>
+<li><p>React Native、Weex</p>
+<p>基于虚拟 DOM 生成原生组件，比 Cordova 这类的性能好，但是遇到负责项目会有叠加 view 过多性能瓶颈</p>
+</li>
+<li><p>Flutter</p>
+<p>自己封装的组件和渲染引擎，在设计上肯定会比 RN 这类的性能好，用的自家 Dart 语言深度编译，不需要像 RN 桥接 JavaScript 进行通讯，也会在性能上有优势</p>
+</li>
+</ul>
+<h2 id="Flutter-生态资源"><a href="#Flutter-生态资源" class="headerlink" title="Flutter 生态资源"></a>Flutter 生态资源</h2><ul>
+<li><a href="https://itsallwidgets.com/" target="_blank" rel="noopener">Flutter应用展示</a></li>
+<li><a href="https://pub.dev/flutter" target="_blank" rel="noopener">官方包管理平台</a></li>
+<li><a href="https://github.com/Solido/awesome-flutter" target="_blank" rel="noopener">awesome</a></li>
+</ul>
+<h2 id="课程计划"><a href="#课程计划" class="headerlink" title="课程计划"></a>课程计划</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>开篇写在最前</span><br><span class="line">  - Flutter 介绍</span><br><span class="line">  - 学习方法推荐</span><br><span class="line">  - 课程计划</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>开发环境搭建和工具配置</span><br><span class="line">  - Flutter 环境配置 MacOS</span><br><span class="line">  - IOS 环境配置 MacOS</span><br><span class="line">  - Android 环境配置 MacOS</span><br><span class="line">  - Flutter 环境配置 Windows10</span><br><span class="line">  - Android 环境配置 Windows10</span><br><span class="line">  - 开发工具的选择 VSCode、IDEA、AndroidStudio</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>基础知识</span><br><span class="line">  - 项目及配置文件介绍</span><br><span class="line">  - 开发规范</span><br><span class="line">  - 一切都是 widget</span><br><span class="line">  - StatelessWidget、StatefulWidget</span><br><span class="line">  - 框架组件 MaterialApp、Scaffold</span><br><span class="line">  - 布局组件 Container、Center、Row、Column</span><br><span class="line">  - 基础组件 Text、Image、Button</span><br><span class="line">  - 路由导航 Routes、Navigator</span><br><span class="line">  - 生命周期</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>快熟上手实战</span><br><span class="line">  - 新闻应用程序结构分析</span><br><span class="line">  - 使用布局组件搭建新闻列表界面</span><br><span class="line">  - 采用第三方 Http Dio 程序包读取数据</span><br><span class="line">  - 解析 Json 到 Modle</span><br><span class="line">  - 使用自定义组件展示新闻行信息</span><br><span class="line">  - 点击新闻条路由导航到详情页</span><br><span class="line">  - 采用Web容器展示新闻内容</span><br><span class="line">  - 上拉刷新、下拉加载新闻列表</span><br><span class="line">  - 定制 Loading 效果</span><br><span class="line">  - 采用矢量图标库</span><br><span class="line">  - 采用 Sqlite 实现新闻列表首页缓存</span><br><span class="line">  - Redux 管理主题样式</span><br><span class="line">  - 加入应用启动画面</span><br><span class="line">  - 打包 Android APK 文件</span><br><span class="line">  - 打包 IOS IPA 文件</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>基础组件</span><br><span class="line">  - Widget 与 Element</span><br><span class="line">  - StatelessWidget</span><br><span class="line">  - StatefulWidget</span><br><span class="line">  - Text</span><br><span class="line">  - Image</span><br><span class="line">  - Button</span><br><span class="line">  - AppBar</span><br><span class="line">  - AlertDialog</span><br><span class="line">  - Icon</span><br><span class="line">  - TextField</span><br><span class="line">  - Form</span><br><span class="line">  - Switch</span><br><span class="line">  - Checkbox</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>布局组件</span><br><span class="line">  - 线性 Row</span><br><span class="line">  - 线性 Column</span><br><span class="line">  - 弹性 Flex</span><br><span class="line">  - 弹性 Expanded</span><br><span class="line">  - 层叠 Stack</span><br><span class="line">  - 层叠 IndexedStack</span><br><span class="line">  - 层叠 Positioned</span><br><span class="line">  - 流式 Flow</span><br><span class="line">  - 流式 Wrap</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>容器组件</span><br><span class="line">  - Scaffold</span><br><span class="line">  - Container</span><br><span class="line">  - Center</span><br><span class="line">  - Padding</span><br><span class="line">  - ConstrainedBox</span><br><span class="line">  - SizedBox</span><br><span class="line">  - DecoratedBox</span><br><span class="line">  - Transform</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>导航组件</span><br><span class="line">  - TabBar</span><br><span class="line">  - NavigationBar</span><br><span class="line">  - PageView</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>可滚动组件</span><br><span class="line">  - CustomScrollView</span><br><span class="line">  - ListView</span><br><span class="line">  - GridView</span><br><span class="line">  - ScrollView</span><br><span class="line">  - ExpansionPanel</span><br><span class="line">  - ScrollController</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>表格组件</span><br><span class="line">  - Table</span><br><span class="line">  - DataTables</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>功能型组件</span><br><span class="line">  - WillPopScope</span><br><span class="line">  - InheritedWidget</span><br><span class="line">  - 主题 Theme</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>事件处理与通知</span><br><span class="line">  - 事件处理</span><br><span class="line">  - 手势识别</span><br><span class="line">  - 全局事件总线</span><br><span class="line">  - 通知消息</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>自定义 Widget</span><br><span class="line">  - 组合其它 Widget</span><br><span class="line">  - 自绘 CustomPaint、Canvas</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>进阶</span><br><span class="line">  - 文件操作</span><br><span class="line">  - Http 请求</span><br><span class="line">  - WebSocket 连接</span><br><span class="line">  - Json 解析</span><br><span class="line">  - 包与插件</span><br><span class="line">  - 国际化</span><br><span class="line">  - 数据库缓存</span><br><span class="line">  - Redux</span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://flutter.io" target="_blank" rel="noopener">flutter.io</a></li>
+<li><a href="https://skia.org/index_zh" target="_blank" rel="noopener">skia</a></li>
+<li><a href="https://flutter.io/showcase" target="_blank" rel="noopener">showcase</a></li>
+<li><a href="https://itsallwidgets.com/" target="_blank" rel="noopener">An open list of apps built with Flutter</a></li>
+<li><a href="https://developers.googleblog.com/2019/05/Flutter-io19.html" target="_blank" rel="noopener"><a href="https://developers.googleblog.com/2019/05/Flutter-io19.html" target="_blank" rel="noopener">Flutter: a Portable UI Framework for Mobile, Web, Embedded, and Desktop</a></a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/&title=《Flutter 零基础入门中文教学 - 01 前言》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/&title=《Flutter 零基础入门中文教学 - 01 前言》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 01 前言》 — duCafeCat&url=https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/06/18/flutter/flutter-02-install-sdk-macos/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 零基础入门中文教学 - 02 安装 SDK MacOS</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/28/dart/dart-38-effective-design/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Dart语言学习 - 38 代码分格 API 设计 effective-design</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/&title=《Flutter 零基础入门中文教学 - 01 前言》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/&title=《Flutter 零基础入门中文教学 - 01 前言》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 01 前言》 — duCafeCat&url=https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2019/06/17/flutter/flutter-01-introduce/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3aQW7kMAwEQP//08l1gUU83RQdGEH5FGTGGpUPotzidcXX13/Xv/9PvpOMkP/W8oWHh4d3PPV2ivc/n0wxZ+dzxsPDw3uaN5vWSfFI7p09Jjw8PLx38vKFOxkzKRh4eHh4f4OXBw15bJFssvHw8PDewGsner/9beOGWVFZzlrw8PDwYl4+uff8/cj5Hh4eHt7xqfr5Ef6sbOTBxIfZ4uHh4T3Amx1uzYKDdgN9/+vFN/Hw8PBWeW0r1Yyx20pVxMF4eHh4D/Dyxfd+oHzJbjfH7QjXrLbg4eHhxbz7gU4aAlp80s51P/6P7wp4eHh4q7xZhNrem0cbs4C4qHh4eHh4S7w2rs23ubOFvo02ircHPDw8vGNevkDvFoB2cW/Djrr+4OHh4ZW8PAhoAXlomzzENmLGw8PDe5qXTzEPc2cxbnt9eD/Aw8PDW+W1y3e7ZOfjt3FDvUHHw8PDW+K1YURbNrZijlmEgYeHh/ebvPw4P59Q2zg1e+gfesrw8PDwjnnJlvf8wKxtNUgeYtschoeHh/cErw0R2unOIuPzYAIPDw9vl5dvSfO4od3ytuMMm67w8PDwVnntQt8+iHyrPWs7+NB0hYeHh/cAL1lq82aCfOrtRvyopwwPDw9videGBSdT321BaGNlPDw8vF1e2y6QhwgtIy9XxbYbDw8P7zFee3CV35s3B5y0ERQ9EXh4eHhLvLaN4DxKyNu8rpMLDw8Pb5X3VV67gcJumfmx6QoPDw9vlTdbY2eftu0I+WNdq414eHh4MW9WDE5I7bHZ0fYdDw8P7zHerE+pjWXzQ7K1MAUPDw/vBbz24Oqk5Jxs0/Hw8PDew2snmh+enWzEl+seHh4e3sEJ++wUvmXM4uCiMODh4eGt8mYv/Dk+uWu2tl9bFx4eHl561zeIzZKXMP+NaQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

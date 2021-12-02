@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Google I/O 2021 发布 Flutter 2.2 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信 flutter 研修群 ducafecat原文 https://medium.com/flutter/announci">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google I&#x2F;O 2021 发布 Flutter 2.2">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信 flutter 研修群 ducafecat原文 https://medium.com/flutter/announci">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/2021-05-19-08-43-51.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/2021-05-19-08-50-47.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/2021-05-19-08-51-18.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/2021-05-19-08-51-43.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/2021-05-19-08-56-12.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/img/public-qrcode.png">
+<meta property="og:updated_time" content="2021-05-19T01:44:13.763Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Google I&#x2F;O 2021 发布 Flutter 2.2">
+<meta name="twitter:description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信 flutter 研修群 ducafecat原文 https://medium.com/flutter/announci">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/2021-05-19-08-43-51.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Google I/O 2021 发布 Flutter 2.2</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Google I/O 2021 发布 Flutter 2.2</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-05-19T00:42:13.000Z" itemprop="datePublished" class="page-time">
+	2021-05-19
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><span class="post-toc-number">1.</span> <span class="post-toc-text">老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信-flutter-研修群-ducafecat"><span class="post-toc-number">2.</span> <span class="post-toc-text">微信 flutter 研修群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">3.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">5.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#建立在-Flutter-2-的基础上"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">建立在 Flutter 2 的基础上</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#介绍-Flutter-2-2"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">介绍 Flutter 2.2</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不仅仅是一个谷歌项目"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">不仅仅是一个谷歌项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#建立伟大的-Experiences"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">建立伟大的 Experiences</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">6.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">6.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">6.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开源项目"><span class="post-toc-number">6.4.2.</span> <span class="post-toc-text">开源项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">6.4.3.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">6.4.4.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">6.4.5.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">6.4.6.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">6.4.7.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">6.4.8.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">6.4.9.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-translation/announcing-flutter-2-2-at-google-i-o-2021" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Google I/O 2021 发布 Flutter 2.2</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-05-19 08:42:13" datetime="2021-05-19T00:42:13.000Z"  itemprop="datePublished">2021-05-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-05-19-08-43-51.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><a href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文" class="headerlink" title="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~"></a>老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</h2><h2 id="微信-flutter-研修群-ducafecat"><a href="#微信-flutter-研修群-ducafecat" class="headerlink" title="微信 flutter 研修群 ducafecat"></a>微信 flutter 研修群 ducafecat</h2><h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://medium.com/flutter/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9" target="_blank" rel="noopener">https://medium.com/flutter/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9</a></p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://flutter.dev/docs/whats-new" target="_blank" rel="noopener">https://flutter.dev/docs/whats-new</a></li>
+<li><a href="https://www.slashdata.co/reports/?category=mobile-desktop" target="_blank" rel="noopener">https://www.slashdata.co/reports/?category=mobile-desktop</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在今天的 Google i/o 大会上，我们发布了 Flutter 2.2，这是我们最新发布的开源工具包，可以为单一平台上的任何设备构建漂亮的应用程序。Flutter 2.2 是 Flutter 目前为止最好的版本，它的更新让开发者比以往任何时候都更容易通过应用程序内购买、支付和广告赚钱; 连接到云服务和 api，扩展应用程序以支持新功能; 以及工具和语言功能，允许开发者消除一整类错误，提高应用程序性能和减少包大小。</p>
+<h3 id="建立在-Flutter-2-的基础上"><a href="#建立在-Flutter-2-的基础上" class="headerlink" title="建立在 Flutter 2 的基础上"></a>建立在 Flutter 2 的基础上</h3><p>Flutter 2.2 是建立在 Flutter 2 的基础上的，它将 Flutter 从它的移动根源扩展到整合了 web、桌面和嵌入式使用。它是专门为环境计算世界设计的，用户有各种各样不同的设备和形式因素，并寻找跨越他们的日常生活的一致体验。使用 Flutter 2.2，企业、初创公司和企业家都可以构建高质量的解决方案，这些解决方案可以充分发挥其潜在市场的潜力，让创造性灵感(而不是目标平台)成为唯一的限制因素。</p>
+<p>Flutter 是目前最流行的跨平台开发框架。</p>
+<p>最近的一项移动开发者研究强调了 Flutter 的增长。分析公司 SlashData 的移动开发人员 2021 年人口预测显示，Flutter 现在是最流行的跨平台开发框架，有 45% 的开发人员选择了它，在 2020 年第一季度到 2021 年第一季度之间增长了 47% 。我们自己的数据证实了 Flutter 的这种转变; 在过去的 30 天里，Play Store 中超过八分之一的新应用程序都是使用 Flutter 构建的。</p>
+<p>在 i/o，我们分享到仅仅在 Play Store 中就有超过 20 万个应用程序使用了 Flutter。这些应用程序来自腾讯，其微信即时通讯应用程序在 iOS 和安卓系统上被超过 12 亿用户使用; ByteDance，TikTok 的发起者，现在已经使用 Flutter 开发了 70 个不同的应用程序; 以及其他来自宝马、 SHEIN、 Grab 和滴滴等公司的应用程序。当然，Flutter 不仅仅被大公司使用。一些最具创新性的应用程序来自于你可能从未听说过的名字: Wombo，沃姆博，自拍应用程序; Fastly,间歇性禁食应用程序; Kite，一个漂亮的投资交易应用程序。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-05-19-08-50-47.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-05-19-08-51-18.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-05-19-08-51-43.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="介绍-Flutter-2-2"><a href="#介绍-Flutter-2-2" class="headerlink" title="介绍 Flutter 2.2"></a>介绍 Flutter 2.2</h3><p>Flutter 2.2 发布的重点是改进开发体验，以帮助您向客户提供更可靠、性能更好的应用程序。</p>
+<p>Sound null safety 现在是默认的新项目。空安全增加了对空引用异常的保护，使开发人员能够在代码中表达不可空类型。由于 Dart 的实现是合理的，编译器可以在运行时消除空检查，从而提高应用程序的性能。这个生态系统反应迅速，大约有 5000 个软件包已经升级到支持空安全。</p>
+<p>这个版本还有很多性能改进: 对于 web 应用，我们使用服务工作者提供后台缓存; 对于 Android 应用，Flutter 支持延迟组件; 对于 iOS，我们一直在开发工具来预编译着色器，以消除或减少首次运行的 jank。我们还为 DevTools 套件添加了一些新特性，帮助您理解如何在应用程序中分配内存，以及对第三方工具扩展的支持。</p>
+<p>此外，我们一直致力于一些重要的改进领域，如改善网页目标的可访问性。</p>
+<p>我们的工作超越了 Flutter 的核心。我们还与其他谷歌团队合作，帮助将 Flutter 整合到我们更广泛的开发者堆栈中。特别是，我们继续建立可信赖的服务，帮助开发者负责任地将他们的应用货币化。我们的新广告 SDK 是更新在这个版本的零安全和自适应横幅格式的支持。我们还引入了一个新的支付插件，与谷歌支付团队建立了合作关系，让你可以在 iOS 和安卓系统上支付实体商品。我们更新了我们的应用内购买插件，以及一个匹配的代码。</p>
+<ul>
+<li><p>ads<br><a href="https://developers.google.com/admob/flutter/quick-start" target="_blank" rel="noopener">https://developers.google.com/admob/flutter/quick-start</a></p>
+</li>
+<li><p>pay<br><a href="http://pub.dev/packages/pay" target="_blank" rel="noopener">http://pub.dev/packages/pay</a></p>
+</li>
+<li><p>in_app_purchase<br><a href="https://pub.dev/packages/in_app_purchase" target="_blank" rel="noopener">https://pub.dev/packages/in_app_purchase</a></p>
+</li>
+<li><p>codelabs flutter-in-app-purchases<br><a href="https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases" target="_blank" rel="noopener">https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases</a></p>
+</li>
+</ul>
+<p>作为“秘密武器”的 Flutter，Dart 也得到一个更新，在这个版本。Dart 2.13 扩展了对本地互操作性的支持，在 FFI 中支持数组和打包结构。它还包括对类型别名的支持，这提高了可读性，并为某些重构场景提供了一种温和的方式。我们继续为更广泛的生态系统添加集成，使用 Dart GitHub Action 和针对基于云的业务逻辑部署进行优化的策划的 Docker Official Image。</p>
+<ul>
+<li><p>github action<br><a href="https://github.com/marketplace/actions/setup-dart-sdk" target="_blank" rel="noopener">https://github.com/marketplace/actions/setup-dart-sdk</a></p>
+</li>
+<li><p>ocker Official Image<br><a href="https://hub.docker.com/_/dart" target="_blank" rel="noopener">https://hub.docker.com/_/dart</a></p>
+</li>
+</ul>
+<h3 id="不仅仅是一个谷歌项目"><a href="#不仅仅是一个谷歌项目" class="headerlink" title="不仅仅是一个谷歌项目"></a>不仅仅是一个谷歌项目</h3><p>虽然谷歌仍然是 Flutter 项目的主要贡献者，但我们很高兴看到 Flutter 周围更广泛的生态系统的发展。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-05-19-08-56-12.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>最近几个月来，Flutter 增长的一个特别领域是不断扩展到越来越多的平台和操作系统。在 Flutter 参与，我们宣布，丰田是带来扑动到他们的下一代汽车信息娱乐系统。上个月，Canonical 发布了他们的第一个 Ubuntu 版本，带有 Flutter 的集成支持，Snap 的集成和韦兰的支持。</p>
+<p><a href="https://medium.com/googleplaydev/seamless-multi-platform-app-development-with-flutter-ea0e8003b0f9#f53d" target="_blank" rel="noopener">https://medium.com/googleplaydev/seamless-multi-platform-app-development-with-flutter-ea0e8003b0f9#f53d</a></p>
+<p><a href="https://ubuntu.com/blog/ubuntu-21-04-is-here" target="_blank" rel="noopener">https://ubuntu.com/blog/ubuntu-21-04-is-here</a></p>
+<p>两个新的合作伙伴展示了这个不断增长的生态系统。三星正在将 Flutter 移植到 Tizen，并提供了一个其他人也可以贡献的开放源代码库。索尼正在努力为嵌入式 Linux 提供解决方案。</p>
+<p><a href="https://github.com/flutter-tizen/flutter-tizen" target="_blank" rel="noopener">https://github.com/flutter-tizen/flutter-tizen</a></p>
+<p><a href="https://github.com/sony/flutter-embedded-linux" target="_blank" rel="noopener">https://github.com/sony/flutter-embedded-linux</a></p>
+<p>设计师也从这个项目的开源性质中受益，Adobe 公布了更新后的 XD to Flutter 插件。Adobe XD 为设计师提供了一个很好的实验和迭代的方式，现在有了增强的 Flutter 支持，设计师和开发人员可以在同一资产上协作，比以往更快地将伟大的想法投入到生产中。</p>
+<p><a href="https://medium.com/adobetech/announcing-xd-to-flutter-v2-0-82d09f3909a7" target="_blank" rel="noopener">https://medium.com/adobetech/announcing-xd-to-flutter-v2-0-82d09f3909a7</a></p>
+<p>最后，微软将继续与我们合作; 除了 Surface 团队一直在使用 Flutter 构建可折叠体验的工作外，本周还将看到为 Windows 10 构建的 UWP 应用程序 Flutter 的 alpha 支持。我们很高兴看到更多的应用程序能够利用 Flutter 内置的平台适应性，在移动、桌面、网络和其他领域提供更好的体验。</p>
+<p><a href="https://flutter.dev/desktop#windows-uwp" target="_blank" rel="noopener">https://flutter.dev/desktop#windows-uwp</a></p>
+<h3 id="建立伟大的-Experiences"><a href="#建立伟大的-Experiences" class="headerlink" title="建立伟大的 Experiences"></a>建立伟大的 Experiences</h3><p>最重要的是，我们建立 Flutter 来帮助开发者建立伟大的体验。我们被应用程序开发可以做得更好这个想法激励着: 我们可以通过消除传统的阻碍接触到你的受众的障碍来增强你的能力。</p>
+<p>我们喜欢看你如何让 Flutter 工作。一个例子是美国退伍军人管理局的一个项目。下面的视频展示了他们的 Flutter 应用程序是如何帮助他们提供创伤后应激障碍士兵康复。</p>
+<p>通过在 Google i/o 上举办各种各样的关于 Flutter 的研讨会、演示会和点播会议，我们很高兴与大家分享我们的工作。别忘了看看我们有趣的照相亭网络应用，它是用 Flutter 开发的，它可以让你和我们的 Dash 吉祥物和她的朋友们创建一张自拍！</p>
+<p><a href="https://events.google.com/io/program/content?4=topic_flutter" target="_blank" rel="noopener">https://events.google.com/io/program/content?4=topic_flutter</a></p>
+<p><a href="https://photobooth.flutter.dev/" target="_blank" rel="noopener">https://photobooth.flutter.dev/</a></p>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech/</a></p>
+<p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">https://github.com/ducafecat</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/public-qrcode.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h2><h3 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h3><h4 id="GetX-Quick-Start"><a href="#GetX-Quick-Start" class="headerlink" title="GetX Quick Start"></a>GetX Quick Start</h4><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h4 id="新闻客户端"><a href="#新闻客户端" class="headerlink" title="新闻客户端"></a>新闻客户端</h4><p><a href="https://github.com/ducafecat/flutter_learn_news" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news</a></p>
+<h3 id="strapi-手册译文"><a href="#strapi-手册译文" class="headerlink" title="strapi 手册译文"></a>strapi 手册译文</h3><p><a href="https://getstrapi.cn" target="_blank" rel="noopener">https://getstrapi.cn</a></p>
+<h3 id="微信讨论群-ducafecat"><a href="#微信讨论群-ducafecat" class="headerlink" title="微信讨论群 ducafecat"></a>微信讨论群 ducafecat</h3><h3 id="系列集合"><a href="#系列集合" class="headerlink" title="系列集合"></a>系列集合</h3><h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p><a href="https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/</a></p>
+<h4 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h4><p><a href="https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/</a></p>
+<h4 id="Dart-编程语言基础"><a href="#Dart-编程语言基础" class="headerlink" title="Dart 编程语言基础"></a>Dart 编程语言基础</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=111585" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=111585</a></p>
+<h4 id="Flutter-零基础入门"><a href="#Flutter-零基础入门" class="headerlink" title="Flutter 零基础入门"></a>Flutter 零基础入门</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=123470" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=123470</a></p>
+<h4 id="Flutter-实战从零开始-新闻客户端"><a href="#Flutter-实战从零开始-新闻客户端" class="headerlink" title="Flutter 实战从零开始 新闻客户端"></a>Flutter 实战从零开始 新闻客户端</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=106755</a></p>
+<h4 id="Flutter-组件开发"><a href="#Flutter-组件开发" class="headerlink" title="Flutter 组件开发"></a>Flutter 组件开发</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=144262" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=144262</a></p>
+<h4 id="Flutter-Bloc"><a href="#Flutter-Bloc" class="headerlink" title="Flutter Bloc"></a>Flutter Bloc</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177519" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177519</a></p>
+<h4 id="Flutter-Getx4"><a href="#Flutter-Getx4" class="headerlink" title="Flutter Getx4"></a>Flutter Getx4</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177514" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177514</a></p>
+<h4 id="Docker-Yapi"><a href="#Docker-Yapi" class="headerlink" title="Docker Yapi"></a>Docker Yapi</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=130578" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=130578</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/&title=《Google I/O 2021 发布 Flutter 2.2》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/&title=《Google I/O 2021 发布 Flutter 2.2》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Google I/O 2021 发布 Flutter 2.2》 — duCafeCat&url=https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/05/20/translation/whats-new-in-flutter-2-2/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 2.2 升级了哪些东西？</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/05/18/translation/flutter-modalbottomsheet-for-beginners/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter ModalBottomSheet 指导</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/&title=《Google I/O 2021 发布 Flutter 2.2》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/&title=《Google I/O 2021 发布 Flutter 2.2》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Google I/O 2021 发布 Flutter 2.2》 — duCafeCat&url=https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/05/19/translation/announcing-flutter-2-2-at-google-i-o-2021/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADM0lEQVR42u3a0W7bQAwEwPz/T7tAnwrUkZakDFjU6CmILenmApQl935+4uv19zr+/euf6/iu/I3J0yZvwcbGxt7Bfh1eyaP///S3e4/fkq/qeJ3RW7CxsbHXsfPidPy4vMz0lp5v8cmqsLGxsR/JTl5zzOs94SPtCjY2NvYj2dWWY9Ku9AZe2NjY2E9mV4c1vQHTvLFJtu/iWRo2Njb217MnReLbfv5gvo2NjY39lexJmJo8p9rY5C3N5MLGxsbexK4O6BNYTkq2I2l7mk/AxsbGXsSeHLWpbk01hJh0V9G92NjY2Ddn5wFAHglUA91q45H8/mQl2NjY2A9g9xqM3rJ6B4by8vnmLmxsbOx17F6w2osQ8rKXbE0vVMDGxsbexK6ebKkWmEkRypc7CZWxsbGx786uDpXy7/eG+73Ckw+VsLGxsbey89HP/PvVMdP85zd4bGxs7KXs/Pf52Kg67pk8vxBRY2NjYy9iV8vG/GBNr3W5qhC+GS1hY2Nj35ydNwzzJU6O8uTlLVozNjY29iJ2NSpIRjbzmKEaMI+O7GBjY2PfnJ0HsUlhSEpatbWoDpuiPxI2Njb2InbeVFwbDFcPceZhQ+HCxsbGXs3uje8nW5k3M3mhOlkVNjY29iJ2r2j1DvdUy1W1LakGBtjY2Nh3Z1ebjepo/lpwHiecPB8bGxt7EXsycJ83J/MAoBo/Y2NjY+9jTwY6vZAg+XQSM4z+ztjY2Ng3ZPf+059vU/UJ5WM38RNGwQA2Njb217Or//Rf22YkleUjBQwbGxt7BTtvNqoj+Hkom3+/2vZgY2Njb2LnJ3qq0W9+XDJ/Wl7GooYEGxsbewW7d9il2gxU24bqUaHyJmJjY2OvYxdi0XjAVB1I9WKJ3tqwsbGx97Grw6P5CKlXDstjo+N4ABsbG3sFu1eoqsd3qsUpb0uScdVoC7CxsbFvwv5ciNvD9wLmcoCBjY2NvY7dK1r5Xb0NnczzT+7CxsbGfiS7Cp7Et70IodyKYGNjYz+Y3WskeqWuF06cbAQ2Njb2OvZk0JO/rPdpdQsunqVhY2Njfz27F/QefzPhJc1GL5BIBljY2NjYK9h/AEaL3nJtBnzsAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

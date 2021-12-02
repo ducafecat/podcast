@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 零基础入门中文教学 - 05 配置 IDE Macos | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="本节目标 配置 VSCode 配置 Intellij IDEA 配置 Android Studio Dart DevTools 调试视图 Hot Reload 热更新  配置 VSCode下载安装https://code.visualstudio.com/ 安装插件 Dart">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 零基础入门中文教学 - 05 配置 IDE Macos">
+<meta property="og:url" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 配置 VSCode 配置 Intellij IDEA 配置 Android Studio Dart DevTools 调试视图 Hot Reload 热更新  配置 VSCode下载安装https://code.visualstudio.com/ 安装插件 Dart">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-10-09-39.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-10-10-08.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-10-10-28.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-10-11-55.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-10-13-20.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-08-02-09-56-23.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-08-02-09-49-46.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-08-02-09-57-30.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-08-02-09-59-24.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-08-02-10-49-23.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-08-02-10-08-04.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-10-16-48.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-10-18-37.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-10-19-57.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-10-29-15.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-10-34-28.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-10-36-44.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-10-51-28.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-11-00-17.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-11-02-01.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-11-11-02.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-11-10-33.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-11-11-57.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-11-13-42.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-11-29-16.png">
+<meta property="og:updated_time" content="2019-08-01T18:39:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 零基础入门中文教学 - 05 配置 IDE Macos">
+<meta name="twitter:description" content="本节目标 配置 VSCode 配置 Intellij IDEA 配置 Android Studio Dart DevTools 调试视图 Hot Reload 热更新  配置 VSCode下载安装https://code.visualstudio.com/ 安装插件 Dart">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/2019-07-03-10-09-39.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 零基础入门中文教学 - 05 配置 IDE Macos</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 零基础入门中文教学 - 05 配置 IDE Macos</h1>
+        <h5 class="subtitle">
+             <time datetime="2019-06-20T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2019-06-21
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置-VSCode"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置 VSCode</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载安装"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">下载安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装插件-Dart"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装插件 Dart</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装插件-Flutter"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">安装插件 Flutter</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装插件-Awesome-Flutter-Snippets"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">安装插件 Awesome Flutter Snippets</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建项目"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">创建项目</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置-Intellij-IDEA"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置 Intellij IDEA</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装插件-Flutter-1"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">安装插件 Flutter</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#new-project"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">new project</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运行"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">运行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#调试器"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">调试器</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置-Android-Studio"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置 Android Studio</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装插件-Flutter-2"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">安装插件 Flutter</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建项目-1"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">创建项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运行-1"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">运行</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hot-reload"><span class="post-toc-number">5.</span> <span class="post-toc-text">hot reload</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">6.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-flutter/flutter-05-setup-ide-macos" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flutter 零基础入门中文教学 - 05 配置 IDE Macos</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-21 00:00:00" datetime="2019-06-20T16:00:00.000Z"  itemprop="datePublished">2019-06-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h2><ul>
+<li>配置 VSCode</li>
+<li>配置 Intellij IDEA</li>
+<li>配置 Android Studio</li>
+<li>Dart DevTools 调试视图</li>
+<li>Hot Reload 热更新</li>
+</ul>
+<h2 id="配置-VSCode"><a href="#配置-VSCode" class="headerlink" title="配置 VSCode"></a>配置 VSCode</h2><h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">https://code.visualstudio.com/</a></p>
+<h3 id="安装插件-Dart"><a href="#安装插件-Dart" class="headerlink" title="安装插件 Dart"></a>安装插件 Dart</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-10-09-39.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="安装插件-Flutter"><a href="#安装插件-Flutter" class="headerlink" title="安装插件 Flutter"></a>安装插件 Flutter</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-10-10-08.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="安装插件-Awesome-Flutter-Snippets"><a href="#安装插件-Awesome-Flutter-Snippets" class="headerlink" title="安装插件 Awesome Flutter Snippets"></a>安装插件 Awesome Flutter Snippets</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-10-10-28.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><ul>
+<li>flutter: new project</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-10-11-55.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>创建完成</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-10-13-20.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>创建模拟器</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-08-02-09-56-23.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>被提示需要 android 配置</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-08-02-09-49-46.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>Install Sources for Android 27</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-08-02-09-57-30.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>安装模拟器镜像 android-27</li>
+</ul>
+<p>Google Play Intel x86 Atom System Image (system-images;android-27;google_apis_playstore;x86)</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-08-02-09-59-24.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>x86 模拟器加速器</li>
+</ul>
+<p>Intel x86 Emulator Accelerator (HAXM installer)</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-08-02-10-49-23.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>android 模拟器</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-08-02-10-08-04.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>ios 模拟器</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-10-16-48.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>F5 运行</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-10-18-37.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>打开 Dart DevTools</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-10-19-57.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="配置-Intellij-IDEA"><a href="#配置-Intellij-IDEA" class="headerlink" title="配置 Intellij IDEA"></a>配置 Intellij IDEA</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><a href="http://www.jetbrains.com/" target="_blank" rel="noopener">http://www.jetbrains.com/</a></p>
+<h3 id="安装插件-Flutter-1"><a href="#安装插件-Flutter-1" class="headerlink" title="安装插件 Flutter"></a>安装插件 Flutter</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-10-29-15.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="new-project"><a href="#new-project" class="headerlink" title="new project"></a>new project</h3><ul>
+<li>选择 flutter</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-10-34-28.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>注意 选择 sdk 位置</p>
+</blockquote>
+<ul>
+<li>选项</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-10-36-44.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>点击 more 更多<br>设置 module name 为英文</p>
+</blockquote>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-10-51-28.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="调试器"><a href="#调试器" class="headerlink" title="调试器"></a>调试器</h3><ul>
+<li>inspector</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-11-00-17.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>outline</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-11-02-01.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="配置-Android-Studio"><a href="#配置-Android-Studio" class="headerlink" title="配置 Android Studio"></a>配置 Android Studio</h2><h3 id="安装插件-Flutter-2"><a href="#安装插件-Flutter-2" class="headerlink" title="安装插件 Flutter"></a>安装插件 Flutter</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-11-11-02.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="创建项目-1"><a href="#创建项目-1" class="headerlink" title="创建项目"></a>创建项目</h3><ul>
+<li>主面板</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-11-10-33.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>导航</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-11-11-57.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-11-13-42.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="运行-1"><a href="#运行-1" class="headerlink" title="运行"></a>运行</h3><p>同 IDEA 效果</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-07-03-11-29-16.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="hot-reload"><a href="#hot-reload" class="headerlink" title="hot reload"></a>hot reload</h2><p>热更新已支持</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://flutter.dev/docs/get-started/install/macos" target="_blank" rel="noopener">Flutter SDK MacOS install</a></li>
+<li><a href="https://flutter.dev/docs/get-started/editor" target="_blank" rel="noopener">Set up an editor</a></li>
+<li><a href="https://flutter.dev/docs/development/tools/hot-reload" target="_blank" rel="noopener">Hot reload</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/&title=《Flutter 零基础入门中文教学 - 05 配置 IDE Macos》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/&title=《Flutter 零基础入门中文教学 - 05 配置 IDE Macos》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 05 配置 IDE Macos》 — duCafeCat&url=https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/08/11/flutter/flutter-06-setup-windows10/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 零基础入门中文教学 - 06 Windows10 下配置 Flutter 开发环境</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/06/20/flutter/flutter-04-setup-android-macos/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 零基础入门中文教学 - 04 配置 Android 开发环境 MacOS</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/&title=《Flutter 零基础入门中文教学 - 05 配置 IDE Macos》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/&title=《Flutter 零基础入门中文教学 - 05 配置 IDE Macos》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 05 配置 IDE Macos》 — duCafeCat&url=https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2019/06/21/flutter/flutter-05-setup-ide-macos/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqUlEQVR42u3aQW7DQAgF0Nz/0u22i8T5wJC40svKcq3xPFcaEPB4xL+fy9/183/vXK+fvPGx8cPDw8Nb2HpyncCur5M75c+Nh4eHt8a7Pqx7R3yy6VfbzffzxoKHh4d3A16SQOdPXoPx8PDw/juvsGi8WpIo4+Hh4d2TlyxdLQdUiwvVosbhWgseHh5erWP1qB7r371e6e/h4eHhjbvqvcR38skmweDJCnh4eHgLvFPJ8bwNNhnJevM8Hh4e3kd41eO7mhYnAwQ5FQ8PD++7vOqieWJdbXRVP/TLt+Ph4eEt8HpjUpMAMC9G9BJ9PDw8vDkvOe6TMFAdOMjHEar7wcPDw9vm5aQ8ja7emZQqCqEIDw8P7xAv2Ur1fq/Rdf1MuXRbXQgPDw+vyEtKBr2mV7VcWxilSj4EHh4e3gJvkrAm7a7JiEC10HygGo2Hh4fXOi3zY31CqvboeuVjPDw8vA1eL5JMCqyTEa5jwQYPDw9vwEuKp73xqbODCAcmI/Dw8PAWePlBnxzo1RS8GqiinePh4eEt8JLlkus8sZ6MI+SlBzw8PLw93qnk9VSJtvnfePUMHh4e3gIvLxlMUudJAaI6QNAcI8DDw8OLeZOFNlLw/CNGHxoPDw9vgZcgq8XWPEGvpt3NT4aHh4f3Qd7kNb0CcbVtVmh34eHh4S3w8lfOx7CSQJKXhqPAgIeHh7fA67X2k0M8KQpPWl94eHh4n+RNjuY8VCQrzAcUnnwmPDw8vAVe78BNNrodNnqFDDw8PLxTvF4wSPDV9efFkWZfDg8PD6/FS4oOeZNswugFrfKf8fDw8G7P64WZQqPrlQUPDw/vZrwk8e0VEarF5ZXAgIeHhxeXaHstq8K0QlBcqKbgK2VcPDw8vHEDrFq67fXiqkEIDw8P74O8X3VZ3zxK6w1hAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

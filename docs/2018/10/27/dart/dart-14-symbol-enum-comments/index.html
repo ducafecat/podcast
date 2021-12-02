@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Dart语言学习 - 14 symbol、enum、comments | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="dart">
+    <meta name="description" content="本节目标 symbol enum comments  环境 Dart 2.0.0  符号 SymbolDart语言的标识符，在反射中用的很普及，特别是很多发布包都是混淆后的。 123456import &apos;dart:mirrors&apos;;Symbol libraryName = new Symbol(&apos;dart.core&apos;);MirrorSystem mirrorSystem = currentMirr">
+<meta name="keywords" content="dart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dart语言学习 - 14 symbol、enum、comments">
+<meta property="og:url" content="https://blog.ducafecat.tech/2018/10/27/dart/dart-14-symbol-enum-comments/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 symbol enum comments  环境 Dart 2.0.0  符号 SymbolDart语言的标识符，在反射中用的很普及，特别是很多发布包都是混淆后的。 123456import &apos;dart:mirrors&apos;;Symbol libraryName = new Symbol(&apos;dart.core&apos;);MirrorSystem mirrorSystem = currentMirr">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-01T18:39:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dart语言学习 - 14 symbol、enum、comments">
+<meta name="twitter:description" content="本节目标 symbol enum comments  环境 Dart 2.0.0  符号 SymbolDart语言的标识符，在反射中用的很普及，特别是很多发布包都是混淆后的。 123456import &apos;dart:mirrors&apos;;Symbol libraryName = new Symbol(&apos;dart.core&apos;);MirrorSystem mirrorSystem = currentMirr">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Dart语言学习 - 14 symbol、enum、comments</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Dart语言学习 - 14 symbol、enum、comments</h1>
+        <h5 class="subtitle">
+             <time datetime="2018-10-27T03:05:15.000Z" itemprop="datePublished" class="page-time">
+	2018-10-27
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#环境"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#符号-Symbol"><span class="post-toc-number">3.</span> <span class="post-toc-text">符号 Symbol</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#枚举-Enum"><span class="post-toc-number">4.</span> <span class="post-toc-text">枚举 Enum</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#注释-Comments"><span class="post-toc-number">5.</span> <span class="post-toc-text">注释 Comments</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单行注释"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">单行注释</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多行注释"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">多行注释</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文档注释"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">文档注释</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码"><span class="post-toc-number">6.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考"><span class="post-toc-number">7.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-dart/dart-14-symbol-enum-comments" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Dart语言学习 - 14 symbol、enum、comments</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-27 11:05:15" datetime="2018-10-27T03:05:15.000Z"  itemprop="datePublished">2018-10-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h1><ul>
+<li>symbol</li>
+<li>enum</li>
+<li>comments</li>
+</ul>
+<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><ul>
+<li>Dart 2.0.0</li>
+</ul>
+<h1 id="符号-Symbol"><a href="#符号-Symbol" class="headerlink" title="符号 Symbol"></a>符号 Symbol</h1><p>Dart语言的标识符，在反射中用的很普及，特别是很多发布包都是混淆后的。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'dart:mirrors'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Symbol</span> libraryName = <span class="keyword">new</span> <span class="built_in">Symbol</span>(<span class="string">'dart.core'</span>);</span><br><span class="line">MirrorSystem mirrorSystem = currentMirrorSystem();</span><br><span class="line">LibraryMirror libMirror = mirrorSystem.findLibrary(libraryName);</span><br><span class="line">libMirror.declarations.forEach((s, d) =&gt; <span class="built_in">print</span>(<span class="string">'$s - $d'</span>));</span><br></pre></td></tr></table></figure>
+<h1 id="枚举-Enum"><a href="#枚举-Enum" class="headerlink" title="枚举 Enum"></a>枚举 Enum</h1><p>适合用在常量定义，类型比较很方便。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Status &#123; none, running, stopped, paused &#125;</span><br><span class="line"></span><br><span class="line">Status.values.forEach((it) =&gt; <span class="built_in">print</span>(<span class="string">'$it - index: <span class="subst">$&#123;it.index&#125;</span>'</span>));</span><br></pre></td></tr></table></figure>
+<h1 id="注释-Comments"><a href="#注释-Comments" class="headerlink" title="注释 Comments"></a>注释 Comments</h1><h2 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Symbol libraryName = new Symbol('dart.core');</span></span><br></pre></td></tr></table></figure>
+<h2 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Symbol</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment">Symbol libraryName = new Symbol('dart.core');</span></span><br><span class="line"><span class="comment">MirrorSystem mirrorSystem = currentMirrorSystem();</span></span><br><span class="line"><span class="comment">LibraryMirror libMirror = mirrorSystem.findLibrary(libraryName);</span></span><br><span class="line"><span class="comment">libMirror.declarations.forEach((s, d) =&gt; print('$s - $d')); </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="文档注释"><a href="#文档注释" class="headerlink" title="文档注释"></a>文档注释</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="markdown">/// <span class="code">`main`</span> 函数</span></span></span><br><span class="line"><span class="comment"><span class="markdown">///</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// 符号</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// 枚举</span></span></span><br><span class="line"><span class="comment"><span class="markdown">///</span></span></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可参考 <code>String</code> 类中的注释使用</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><ul>
+<li><a href="https://github.com/ducafecat/dart-learn/tree/master/14-symbol-enum-comments" target="_blank" rel="noopener">symbol-enum-comments.dart</a></li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://www.dartlang.org/guides/language/language-tour" target="_blank" rel="noopener">language-tour</a></li>
+<li><a href="https://api.dartlang.org/stable/2.0.0/dart-core/Symbol-class.html" target="_blank" rel="noopener">Symbol</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2018/10/27/dart/dart-14-symbol-enum-comments/&title=《Dart语言学习 - 14 symbol、enum、comments》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2018/10/27/dart/dart-14-symbol-enum-comments/&title=《Dart语言学习 - 14 symbol、enum、comments》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2018/10/27/dart/dart-14-symbol-enum-comments/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 14 symbol、enum、comments》 — duCafeCat&url=https://blog.ducafecat.tech/2018/10/27/dart/dart-14-symbol-enum-comments/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2018/10/27/dart/dart-14-symbol-enum-comments/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/11/12/dart/dart-15-function/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Dart语言学习 - 15 函数 Function</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/10/27/dart/dart-13-runes/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Dart语言学习 - 13 Runes</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2018/10/27/dart/dart-14-symbol-enum-comments/&title=《Dart语言学习 - 14 symbol、enum、comments》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2018/10/27/dart/dart-14-symbol-enum-comments/&title=《Dart语言学习 - 14 symbol、enum、comments》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2018/10/27/dart/dart-14-symbol-enum-comments/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 14 symbol、enum、comments》 — duCafeCat&url=https://blog.ducafecat.tech/2018/10/27/dart/dart-14-symbol-enum-comments/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2018/10/27/dart/dart-14-symbol-enum-comments/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACpklEQVR42u3aQVLEMAwEwP3/p+EKBQkjyYJQ1TltLWC7fYiFxq9X/Lx9eK6+v/rp1Wj5+PejHXjw8PDwBku/Wu7Xz/mCEsz9N/lPv9kCPDw8vDXe/es7WXQVmR8w+SGBh4eH90zehDFZKB4eHt5/5PWWnhTEyYx4eHh4T+P1/vmvbsrZz4d7LXh4eHgxL0+RnvN5Jd/Dw8PDG6fqeeGbv7h7xXdztXh4eHgLvN7VgV6s1Wvm9mbHw8PD2+ZVWwnz13d10dWmAx4eHt4erzpB9ZV9aiOqDeJXb//w8PDwAl7+Os6bCL2mQ14o51cN8PDw8DZ4vbg9mT6/ZNBszuLh4eH9Ee9YyFTcrPuCOx8/+ls8PDy8BV41dupFWdVXfG/81+R8w8PDwwt4efB/tuzOA7beFYHLAAwPDw9vzKteCCjfRAgYk82KDjA8PDy8BV61QTC/PtWLxybrwcPDwzvLq16oSibLLxZUGxblAwwPDw9vgVcN4/NpeoFZUoI3y3Q8PDy8MS9vkuYxf7WFkR8YSST2aTQ8PDy8BV6vGTEvgqtP3nrAw8PD2+ZVK+5qnZ4fG9V5o9/Bw8PDW+BVS+c83MojtLMXrfDw8PB+n1cdKAnJqq/ySZsYDw8P7zd5vfj/VBjWK50jJB4eHt4arxo4Tdq+yZj55Ybo/MHDw8Nb4+Ww3vWpSXsCDw8P75m8/DCYBGNJPJYDfpgXDw8P7yhvHkflrYTqAVNtfHyzTXh4eHgLvPzJi91qiyFpT5xqZODh4eGd4lWXfurwqLYbehEdHh4e3h6vWgRPIrEDRXAeieHh4eE9gNdrrebNi/ybqO2Lh4eH9wDeJKk/dZwUjhY8PDy8Nd4kfMrHzJc+aUbg4eHhbfPm//DfT5AUxL2t7B1deHh4eAPeO52EPBj7kf93AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

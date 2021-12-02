@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Dart语言学习 - 02 Windows 下安装 SDK | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="dart">
+    <meta name="description" content="本节目标 配置 Dart 开发环境 解决墙内问题  环境 Windows 10 Dart SDK 2.0.0  下载 SDKSDK 列表                                                                                             archive              源下载 URL1https://st">
+<meta name="keywords" content="dart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dart语言学习 - 02 Windows 下安装 SDK">
+<meta property="og:url" content="https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 配置 Dart 开发环境 解决墙内问题  环境 Windows 10 Dart SDK 2.0.0  下载 SDKSDK 列表                                                                                             archive              源下载 URL1https://st">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/2018-09-30-14-54-15.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/2018-09-30-15-24-14.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/2018-09-30-15-01-44.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/2018-09-30-15-08-44.png">
+<meta property="og:updated_time" content="2019-08-01T18:39:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dart语言学习 - 02 Windows 下安装 SDK">
+<meta name="twitter:description" content="本节目标 配置 Dart 开发环境 解决墙内问题  环境 Windows 10 Dart SDK 2.0.0  下载 SDKSDK 列表                                                                                             archive              源下载 URL1https://st">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/2018-09-30-14-54-15.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猫哥</h5>
+          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Dart语言学习 - 02 Windows 下安装 SDK</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Dart语言学习 - 02 Windows 下安装 SDK</h1>
+        <h5 class="subtitle">
+             <time datetime="2018-09-30T06:41:49.000Z" itemprop="datePublished" class="page-time">
+	2018-09-30
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#环境"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#下载-SDK"><span class="post-toc-number">3.</span> <span class="post-toc-text">下载 SDK</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SDK-列表"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">SDK 列表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#源下载-URL"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">源下载 URL</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#替换后-URL"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">替换后 URL</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解压到磁盘"><span class="post-toc-number">4.</span> <span class="post-toc-text">解压到磁盘</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置-VSCode-IDE"><span class="post-toc-number">5.</span> <span class="post-toc-text">配置 VSCode IDE</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载链接"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">下载链接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装-Dart-插件"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">安装 Dart 插件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#编写-HelloWord"><span class="post-toc-number">6.</span> <span class="post-toc-text">编写 HelloWord</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#调试运行"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">调试运行</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置命令行模式"><span class="post-toc-number">7.</span> <span class="post-toc-text">配置命令行模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置环境变量"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">设置环境变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">测试</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考"><span class="post-toc-number">8.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-dart/dart-02-install-windows" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Dart语言学习 - 02 Windows 下安装 SDK</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-30 14:41:49" datetime="2018-09-30T06:41:49.000Z"  itemprop="datePublished">2018-09-30</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Dart语言学习/">Dart语言学习</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h1><ul>
+<li>配置 Dart 开发环境</li>
+<li>解决墙内问题</li>
+</ul>
+<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><ul>
+<li>Windows 10</li>
+<li>Dart SDK 2.0.0</li>
+</ul>
+<h1 id="下载-SDK"><a href="#下载-SDK" class="headerlink" title="下载 SDK"></a>下载 SDK</h1><h2 id="SDK-列表"><a href="#SDK-列表" class="headerlink" title="SDK 列表"></a><a href="https://webdev.dartlang.org/tools/sdk/archive" target="_blank" rel="noopener">SDK 列表</a></h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2018-09-30-14-54-15.png" alt="archive" title="">
+                </div>
+                <div class="image-caption">archive</div>
+            </figure>
+<h2 id="源下载-URL"><a href="#源下载-URL" class="headerlink" title="源下载 URL"></a>源下载 URL</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://storage.googleapis.com/dart-archive/channels/stable/release/2.0.0/sdk/dartsdk-windows-x64-release.zip</span><br></pre></td></tr></table></figure>
+<p><strong> 墙内请替换域名 <code>storage.flutter-io.cn</code> </strong></p>
+<h2 id="替换后-URL"><a href="#替换后-URL" class="headerlink" title="替换后 URL"></a>替换后 URL</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://storage.flutter-io.cn/dart-archive/channels/stable/release/2.0.0/sdk/dartsdk-windows-x64-release.zip</span><br></pre></td></tr></table></figure>
+<h1 id="解压到磁盘"><a href="#解压到磁盘" class="headerlink" title="解压到磁盘"></a>解压到磁盘</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2018-09-30-15-24-14.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>磁盘位置 <code>C:\sdk\dart-sdk</code></p>
+<h1 id="配置-VSCode-IDE"><a href="#配置-VSCode-IDE" class="headerlink" title="配置 VSCode IDE"></a>配置 VSCode IDE</h1><h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">下载链接</a></h2><h2 id="安装-Dart-插件"><a href="#安装-Dart-插件" class="headerlink" title="安装 Dart 插件"></a>安装 Dart 插件</h2><h1 id="编写-HelloWord"><a href="#编写-HelloWord" class="headerlink" title="编写 HelloWord"></a>编写 HelloWord</h1><ul>
+<li><p>新建目录 <code>dart-learn</code></p>
+</li>
+<li><p>编写文件 <code>hello.dart</code></p>
+</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'hello word!'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="调试运行"><a href="#调试运行" class="headerlink" title="调试运行"></a>调试运行</h2><p>配置文件 <code>launch.json</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  // Use IntelliSense to learn about possible attributes.</span><br><span class="line">  // Hover to view descriptions of existing attributes.</span><br><span class="line">  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span><br><span class="line">  "version": "0.2.0",</span><br><span class="line">  "configurations": [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"Dart"</span>,</span><br><span class="line">      <span class="attr">"program"</span>: <span class="string">"$&#123;file&#125;"</span>,</span><br><span class="line">      <span class="attr">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"dart"</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="配置命令行模式"><a href="#配置命令行模式" class="headerlink" title="配置命令行模式"></a>配置命令行模式</h1><h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2018-09-30-15-01-44.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>环境变量 <code>PATH</code> 新增 <code>C:\sdk\dart-sdk\bin</code></p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2018-09-30-15-08-44.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>新开命令行窗口</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dart --version</span><br><span class="line">Dart VM version: 2.0.0 (Fri Aug 3 10:53:23 2018 +0200) on <span class="string">"windows_x64"</span></span><br></pre></td></tr></table></figure>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://webdev.dartlang.org/tools/sdk/archive" target="_blank" rel="noopener">Dart SDK Archive</a></li>
+<li><a href="https://github.com/flutter/flutter/wiki/Using-Flutter-in-China" target="_blank" rel="noopener">Using-Flutter-in-China</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dart/">dart</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/&title=《Dart语言学习 - 02 Windows 下安装 SDK》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/&title=《Dart语言学习 - 02 Windows 下安装 SDK》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 02 Windows 下安装 SDK》 — duCafeCat&url=https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/09/30/dart/dart-03-install-macos/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Dart语言学习 - 03 MacOS 下安装 SDK</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/30/dart/dart-01-introduce/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Dart语言学习 - 01 前言</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2021
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/&title=《Dart语言学习 - 02 Windows 下安装 SDK》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/&title=《Dart语言学习 - 02 Windows 下安装 SDK》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dart语言学习 - 02 Windows 下安装 SDK》 — duCafeCat&url=https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2018/09/30/dart/dart-02-install-windows/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3awW4iMRAEUP7/p3evkaIh1V024vDmhIAxfhPJ7lT79Yqvfz+un+88vU6u3/c+jfD0zWMXHh4eXjH190M/TWX3evr48oeIh4eH9xne00++X77zjeH9Y+rn8/g+Hh4e3hfw8mJ3t5E05TUeHh7eN/OSYvf9aLsyGg8PD+97eHnYeqqYbqZ+JWvBw8PDi3l5F+l7Xl/p7+Hh4eHVXfVdELBbppN7x7PFw8PDu8DLF9wkYkgOUZ0KJgbzxMPDwzvKayY3jRvyllgyfrR14eHh4V3jNS38ZGtpiuPdIbBX/rzx8PDwCt40Ash/sqr3+xgCDw8P7xpvGjE00W1SjucNuSsJCh4eHt6wBTWNX6dl+i66ncYTeHh4eDd4zQKd37trd+UxxDhrwcPDwyt4eYncRBXTxtW0XM7DaDw8PLxTvN1iPY1xm4hh12DDw8PD+yRvelBgd/igiT8Gfww8PDy8C7w8Qt21+Xffz+OMaPvBw8PDO8o7Gyj0C3oz5h9ZNR4eHl7N2wUQfey7a7YlRXx0dAAPDw+v4OWHopqlP5nQtChPPsXDw8O7x+tJu4BjOk4SWCwjCTw8PLyY10exSeDbh7/Tsh4PDw/vNq9ZoJtDA8nv7qIKPDw8vHu8vO00iE2H9/atuMHuh4eHh3ctxh03mYZX03ibFtx4eHh4n+Ht4oBd/LqLPwa/goeHh3eZtwsjdiFs0nLLt5lXv5Pg4eHhxTFuM+mmSTbdkMaHuvDw8PAu8HbxwTRESMLW3WNdYvDw8PBqXl8cJxFtX4jnjbo/+nt4eHh4h3jTBtjZFbhvpz2Og4eHh/cFvOlhgl20kYy57O/h4eHhfZw3nVz+/SvNNjw8PLxrvOTmZCr5I5h+mjTPHjcGPDw8vKO83T/804lOC/H80R+48PDw8FLef2QBX/SBjUbrAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

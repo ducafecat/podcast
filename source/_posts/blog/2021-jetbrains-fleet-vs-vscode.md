@@ -22,6 +22,18 @@ https://www.jetbrains.com/fleet/
 - https://www.youtube.com/watch?v=ow5kdhDa_pk
 - https://betterprogramming.pub/will-jetbrains-fleet-be-a-vscode-killer-89554d1096ae
 
+## JetBrains
+
+![](2021-12-09-20-45-02.png)
+
+![](2021-12-09-20-45-32.png)
+
+![](2021-12-09-20-45-42.png)
+
+![](2021-12-09-20-45-54.png)
+
+![](2021-12-09-20-46-01.png)
+
 ## 特性
 
 ### 快速启动

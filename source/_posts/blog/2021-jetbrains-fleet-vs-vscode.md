@@ -5,6 +5,10 @@ categories: 译文
 date: 2021-12-09 00:00:00
 ---
 
+## 视频
+
+https://www.bilibili.com/video/BV11Y411p7Km/
+
 ## 前言
 
 ![](2021-12-09-10-30-00.png)

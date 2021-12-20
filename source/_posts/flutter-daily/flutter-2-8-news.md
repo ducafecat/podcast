@@ -5,6 +5,10 @@ categories: 译文
 date: 2021-12-14 00:00:00
 ---
 
+## 视频
+
+https://www.bilibili.com/video/bv1sR4y1x758
+
 ## 参考
 
 - https://medium.com/flutter/whats-new-in-flutter-2-8-d085b763d181

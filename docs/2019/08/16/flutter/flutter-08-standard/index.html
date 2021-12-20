@@ -52,55 +52,58 @@
     <div id="loading" class="active"></div>
 
     <aside id="menu" class="hide" >
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-    </a>
-    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
-      <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/avatar.jpg">
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
         </a>
-        <hgroup class="introduce">
-          <h5 class="nickname">猫哥</h5>
-          <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
-        </hgroup>
-      </div>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
     </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
-        
-            <li class="waves-block waves-effect">
-              <a href="/"  >
-                <i class="icon icon-lg icon-home"></i>
-                主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                Archives
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                Tags
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/categories"  >
-                <i class="icon icon-lg icon-th-list"></i>
-                Categories
-              </a>
-            </li>
-        
-      </ul>
-    </div>
-  </div>
 </aside>
 
     <main id="main">
@@ -148,19 +151,24 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VSCode-格式化"><span class="post-toc-number">2.</span> <span class="post-toc-text">VSCode 格式化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#规范精要"><span class="post-toc-number">3.</span> <span class="post-toc-text">规范精要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用小写加下划线来命名库和源文件"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">使用小写加下划线来命名库和源文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优先使用小驼峰法作为常量命名"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">优先使用小驼峰法作为常量命名</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#所有流控制结构，请使用大括号"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">所有流控制结构，请使用大括号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Doc-注释"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">Doc 注释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导入-lib-下文件库，统一指定包名，避免过多的"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">导入 lib 下文件库，统一指定包名，避免过多的123```dartpackage:flutter_go/</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用相邻字符串连接字符串文字"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">使用相邻字符串连接字符串文字</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优先使用模板字符串"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">优先使用模板字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在不需要的时候，避免使用花括号"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">在不需要的时候，避免使用花括号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不要使用-length-查看集合是否为空"><span class="post-toc-number">3.9.</span> <span class="post-toc-text">不要使用.length 查看集合是否为空</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#遍历一个序列"><span class="post-toc-number">3.10.</span> <span class="post-toc-text">遍历一个序列</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不要显式地将变量初始化为空"><span class="post-toc-number">3.11.</span> <span class="post-toc-text">不要显式地将变量初始化为空</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在不需要的时候不要用-this"><span class="post-toc-number">3.12.</span> <span class="post-toc-text">在不需要的时候不要用 this</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#尽可能使用初始化的形式"><span class="post-toc-number">3.13.</span> <span class="post-toc-text">尽可能使用初始化的形式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不要使用-new"><span class="post-toc-number">3.14.</span> <span class="post-toc-text">不要使用 new</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优先使用-async-await-代替原始的-futures"><span class="post-toc-number">3.15.</span> <span class="post-toc-text">优先使用 async/await 代替原始的 futures</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#当异步没有任何用处时，不要使用它"><span class="post-toc-number">3.16.</span> <span class="post-toc-text">当异步没有任何用处时，不要使用它</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li></ol>
-        </nav>
-    </aside>
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VSCode-格式化"><span class="post-toc-number">2.</span> <span class="post-toc-text">VSCode 格式化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#规范精要"><span class="post-toc-number">3.</span> <span class="post-toc-text">规范精要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用小写加下划线来命名库和源文件"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">使用小写加下划线来命名库和源文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优先使用小驼峰法作为常量命名"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">优先使用小驼峰法作为常量命名</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#所有流控制结构，请使用大括号"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">所有流控制结构，请使用大括号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Doc-注释"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">Doc 注释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导入-lib-下文件库，统一指定包名，避免过多的"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">导入 lib 下文件库，统一指定包名，避免过多的123```dartpackage:flutter_go/</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用相邻字符串连接字符串文字"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">使用相邻字符串连接字符串文字</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优先使用模板字符串"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">优先使用模板字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在不需要的时候，避免使用花括号"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">在不需要的时候，避免使用花括号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不要使用-length-查看集合是否为空"><span class="post-toc-number">3.9.</span> <span class="post-toc-text">不要使用.length 查看集合是否为空</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#遍历一个序列"><span class="post-toc-number">3.10.</span> <span class="post-toc-text">遍历一个序列</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不要显式地将变量初始化为空"><span class="post-toc-number">3.11.</span> <span class="post-toc-text">不要显式地将变量初始化为空</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在不需要的时候不要用-this"><span class="post-toc-number">3.12.</span> <span class="post-toc-text">在不需要的时候不要用 this</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#尽可能使用初始化的形式"><span class="post-toc-number">3.13.</span> <span class="post-toc-text">尽可能使用初始化的形式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不要使用-new"><span class="post-toc-number">3.14.</span> <span class="post-toc-text">不要使用 new</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优先使用-async-await-代替原始的-futures"><span class="post-toc-number">3.15.</span> <span class="post-toc-text">优先使用 async/await 代替原始的 futures</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#当异步没有任何用处时，不要使用它"><span class="post-toc-number">3.16.</span> <span class="post-toc-text">当异步没有任何用处时，不要使用它</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li></ol>
+    </nav>
+
+</aside>
+
 
 
 <article id="post-flutter/flutter-08-standard" class="post-article article-type-post fade"
     itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Flutter 零基础入门中文教学 - 08 开发规范</h1>
+        <h1 class="post-card-title">
+            Flutter 零基础入门中文教学 - 08 开发规范
+        </h1>
         <div class="post-meta">
             <time class="post-time" title="2019-08-16 00:00:00" datetime="2019-08-15T16:00:00.000Z"  itemprop="datePublished">2019-08-16</time>
 
@@ -172,6 +180,9 @@
             
 
         </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
         <div class="post-content" id="post-content" itemprop="postContent">
             <h2 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h2><ul>
 <li>Dart 规范</li>
@@ -342,6 +353,7 @@
 
 
 </article>
+
 
 
 </div>

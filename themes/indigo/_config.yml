@@ -30,6 +30,8 @@ menu:
 
 # 你的头像url
 avatar: /img/avatar.jpg
+weixin: /img/weixin.png
+wx_gzh: /img/banner-gzh.png
 # avatar link
 avatar_link: /
 # 头像背景图

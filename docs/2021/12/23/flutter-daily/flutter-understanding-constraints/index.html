@@ -32,11 +32,19 @@
 <meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-15-37-00.png">
 <meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-16-01-55.png">
 <meta property="og:image" content="https://ducafecat.tech/2021/11/24/flutter/flutter-19-layout-rule/2021-11-24-23-10-10.png">
-<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-13-31-06.png">
-<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-15-08-01.png">
-<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-15-21-24.png">
-<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-15-27-06.png">
-<meta property="og:updated_time" content="2021-12-23T08:02:48.652Z">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-21-50-16.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-21-55-33.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-21-57-45.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-21-59-32.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-22-16-47.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-22-20-52.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-22-23-06.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-22-25-52.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-22-26-48.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-22-28-07.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-22-29-32.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/23/flutter-daily/flutter-understanding-constraints/2021-12-23-22-30-21.png">
+<meta property="og:updated_time" content="2021-12-23T14:34:29.779Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter 布局 - 理解约束">
 <meta name="twitter:description" content="前言每个渲染引擎都有一套自己的规则，比如浏览器 html 流式布局，Flutter 里的是约束布局，这是一种科学的设计。 我想引擎设计出来肯定是有考虑，如:  容易学习，快速上手 零配置">
@@ -236,14 +244,38 @@
                 </div>
                 <div class="image-caption">约束布局</div>
             </figure>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">Widget _buildScaffold() &#123;</span><br><span class="line">  <span class="keyword">return</span> Scaffold(</span><br><span class="line">    body: Column(</span><br><span class="line">      children: <span class="keyword">const</span> &lt;Widget&gt;[</span><br><span class="line">        Text(<span class="string">"aaaaaa"</span>),</span><br><span class="line">        Text(<span class="string">"bbbbb"</span>),</span><br><span class="line">        Text(<span class="string">"cccc"</span>),</span><br><span class="line">      ],</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Widget _buildScaffold() &#123;</span><br><span class="line">  <span class="keyword">return</span> Scaffold(</span><br><span class="line">    body: Column(</span><br><span class="line">      children: <span class="keyword">const</span> &lt;Widget&gt;[</span><br><span class="line">        Text(<span class="string">"aaaaaa"</span>),</span><br><span class="line">        Text(<span class="string">"bbbbb"</span>),</span><br><span class="line">        Text(<span class="string">"cccc"</span>),</span><br><span class="line">      ],</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-12-23-13-31-06.png" alt="" title="">
+                    <img src="2021-12-23-21-50-16.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-23-21-55-33.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>宽度 <code>0.0 &lt;= w &lt;= 303.0</code> , 高度 <code>0.0 &lt;= h &lt;= 523.0</code> ，就是上层传下来的约束</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-23-21-57-45.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>宽度 <code>w=32.0</code> , 高度 <code>h=16.0</code> 就是组件向上层传递的大小信息</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-23-21-59-32.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>元素左边 <code>w=7.5</code>，右边 <code>w=7.5</code>，就是上层决定下层的组件位置</p>
 <h3 id="紧约束、松约束"><a href="#紧约束、松约束" class="headerlink" title="紧约束、松约束"></a>紧约束、松约束</h3><ul>
 <li><p>紧约束 tight</p>
 <p>它的最大/最小宽度是一致的，高度也一样。</p>
@@ -259,28 +291,68 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-12-23-15-08-01.png" alt="" title="">
+                    <img src="2021-12-23-22-16-47.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-23-22-20-52.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>当宽 <code>150&lt;=w&lt;=150</code> , 高 <code>150&lt;=h&lt;=150</code>, 最大/最小宽度是一致的情况，称为紧约束</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-23-22-23-06.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>最小宽度/高度为 0 时，称为松约束</p>
 <h3 id="有边界-bounded、无边界-unbounded"><a href="#有边界-bounded、无边界-unbounded" class="headerlink" title="有边界 bounded、无边界 unbounded"></a>有边界 bounded、无边界 unbounded</h3><p><code>Row</code> <code>Column</code> <code>ListView</code> 这种组件 属于 <code>unbounded</code></p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Widget _buildScaffold() &#123;</span><br><span class="line">  <span class="keyword">return</span> Scaffold(</span><br><span class="line">    body: Column(</span><br><span class="line">      children: [</span><br><span class="line">        <span class="keyword">const</span> FlutterLogo(size: <span class="number">50</span>),</span><br><span class="line">        <span class="keyword">const</span> FlutterLogo(size: <span class="number">20</span>),</span><br><span class="line">        Container(</span><br><span class="line">          height: <span class="number">2000</span>,</span><br><span class="line">          color: Colors.amber,</span><br><span class="line">        ),</span><br><span class="line">      ],</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-12-23-15-21-24.png" alt="" title="">
+                    <img src="2021-12-23-22-25-52.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-23-22-26-48.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>我们可以发现 <code>height unconstrained</code> 不受限制的，这种就是无边界</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-23-22-28-07.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>再看子元素在垂直方向高度是不受限制的</p>
 <h3 id="UnconstrainedBox-不受约束"><a href="#UnconstrainedBox-不受约束" class="headerlink" title="UnconstrainedBox 不受约束"></a>UnconstrainedBox 不受约束</h3><p><code>UnconstrainedBox</code> 可以不受约束自己控制大小</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Widget _buildScaffold() &#123;</span><br><span class="line">  <span class="keyword">return</span> Scaffold(</span><br><span class="line">    body: ConstrainedBox(</span><br><span class="line">      constraints: <span class="keyword">const</span> BoxConstraints(</span><br><span class="line">        minWidth: <span class="number">100</span>,</span><br><span class="line">        minHeight: <span class="number">100</span>,</span><br><span class="line">        maxWidth: <span class="number">150</span>,</span><br><span class="line">        maxHeight: <span class="number">150</span>,</span><br><span class="line">      ),</span><br><span class="line">      child: UnconstrainedBox(</span><br><span class="line">        child: Container(</span><br><span class="line">          width: <span class="number">10</span>,</span><br><span class="line">          height: <span class="number">10</span>,</span><br><span class="line">          color: Colors.blue,</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-12-23-15-27-06.png" alt="" title="">
+                    <img src="2021-12-23-22-29-32.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-23-22-30-21.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>可以发现外部约束是, 宽 <code>100.0 &lt;= w &lt;= 150</code> , 高 <code>100.0 &lt;= h &lt;= 150</code> , 但是 <code>UnconstrainedBox</code> 不受约束影响，但是看起来没有左对齐，而是居中了，我们可以通过 <code>Align</code> 来调整位置。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>今天我们就是把布局很核心的约束、限制规则讲了，大家在布局的时候还是要多思考。</p>
 <p>如果你的布局代码写的很复杂，就要去思考重构了。</p>
 <p>当然了业务需要是另外一回事，尽量的让布局引擎默认规则来处理，这样兼容性好。</p>

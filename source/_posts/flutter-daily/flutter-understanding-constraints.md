@@ -1,5 +1,5 @@
 ---
-title: Flutter 布局 - 理解约束
+title: Flutter 布局 - 理解约束、布局调试工具
 tags: 布局
 categories: flutter
 date: 2021-12-23 00:00:00
@@ -41,6 +41,48 @@ date: 2021-12-23 00:00:00
 布局的话题展开说，就是各种布局方案+具体组件的使用。
 
 但是约束布局是核心，这也是本文的侧重。
+
+### 让子元素竟可能的大，撑满父元素
+
+```dart
+void main(List<String> args) {
+  runApp(build());
+}
+
+Widget build() {
+  return Container(
+    width: 200,
+    height: 200,
+    color: Colors.amber,
+  );
+}
+```
+
+![](2021-12-26-22-22-07.png)
+
+![](2021-12-26-22-22-55.png)
+
+### 确认位置后，按子元素大小显示
+
+```dart
+void main(List<String> args) {
+  runApp(build());
+}
+
+Widget build() {
+  return Center(
+    child: Container(
+      width: 200,
+      height: 200,
+      color: Colors.amber,
+    ),
+  );
+}
+```
+
+![](2021-12-26-22-23-37.png)
+
+![](2021-12-26-22-24-14.png)
 
 ### 核心规则：Constraints go down. Sizes go up. Positions are set by parents.
 

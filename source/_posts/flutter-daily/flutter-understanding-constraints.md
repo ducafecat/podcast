@@ -34,6 +34,8 @@ date: 2021-12-23 00:00:00
 
 ## 视频
 
+https://www.bilibili.com/video/BV1X44y177Ns/
+
 ## 正文
 
 ![](2021-12-23-16-01-55.png)

@@ -57,6 +57,6 @@ https://github.com/ducafecat/getx_quick_start
 
 - [github](https://github.com/ducafecat)
 
-- [b 站](https://space.bilibili.com/404904528)
+- [bilibili](https://space.bilibili.com/404904528)
 
-https://ducafecat.tech/img/banner-gzh.png
+![订阅号](https://ducafecat.tech/img/banner-gzh.png)

@@ -5,6 +5,8 @@ categories: 译文
 date: 2021-12-29 00:00:00
 ---
 
+![](2021-12-29-09-10-00.png)
+
 ## 前言
 
 一个好的导航对 APP 是很重要的，以下这些导航插件也许对你一开始有帮助。
@@ -67,6 +69,6 @@ date: 2021-12-29 00:00:00
 
 - [github](https://github.com/ducafecat)
 
-- [b 站](https://space.bilibili.com/404904528)
+- [bilibili](https://space.bilibili.com/404904528)
 
-https://ducafecat.tech/img/banner-gzh.png
+![订阅号](https://ducafecat.tech/img/banner-gzh.png)

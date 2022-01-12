@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>基于 Riverpod 的 Flutter 状态管理 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="原文 https://itnext.io/flutter-state-management-with-riverpod-ef8d4ef77392  代码https://github.co">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于 Riverpod 的 Flutter 状态管理">
+<meta property="og:url" content="https://blog.ducafecat.tech/2022/01/12/2022/flutter-state-management-with-riverpod/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="原文 https://itnext.io/flutter-state-management-with-riverpod-ef8d4ef77392  代码https://github.co">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2022/01/12/2022/flutter-state-management-with-riverpod/2022-01-12-22-11-50.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/17628a0cd1c5ce558fb867f7ec7100c2dc740d1eb3b6a4effecbd20aeabf3379.jpeg">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/14e64ed984810ff1e2f2ea2a5e9f6a51059e31730a058c6226cb678d614a7dd8.gif">
+<meta property="og:image" content="https://ducafecat.tech/img/banner-gzh.png">
+<meta property="og:updated_time" content="2022-01-12T14:11:53.235Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于 Riverpod 的 Flutter 状态管理">
+<meta name="twitter:description" content="原文 https://itnext.io/flutter-state-management-with-riverpod-ef8d4ef77392  代码https://github.co">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2022/01/12/2022/flutter-state-management-with-riverpod/2022-01-12-22-11-50.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">基于 Riverpod 的 Flutter 状态管理</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">基于 Riverpod 的 Flutter 状态管理</h1>
+        <h5 class="subtitle">
+             <time datetime="2022-01-11T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2022-01-12
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">1.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">2.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">3.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">4.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Riverpod-StateNotifier-Hooks-Freezed"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Riverpod + StateNotifier + Hooks + Freezed</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#动机"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">动机</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在这个例子中我们要做什么？"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">在这个例子中我们要做什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本上，我们会"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">基本上，我们会;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建-API-服务"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">创建 API 服务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用-freezed-和-json-serializable-创建不可变模型"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">使用 freezed 和 json_serializable 创建不可变模型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#从服务中获得-value"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">从服务中获得 value</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建排序和过滤器提供程序"><span class="post-toc-number">4.8.</span> <span class="post-toc-text">创建排序和过滤器提供程序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#从提供程序获取获取的列表并进行筛选，然后使用其他提供程序对它们进行排序"><span class="post-toc-number">4.9.</span> <span class="post-toc-text">从提供程序获取获取的列表并进行筛选，然后使用其他提供程序对它们进行排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在用户界面中显示所有内容"><span class="post-toc-number">4.10.</span> <span class="post-toc-text">在用户界面中显示所有内容</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结束"><span class="post-toc-number">5.</span> <span class="post-toc-text">结束</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#示例-Github-项目"><span class="post-toc-number">6.</span> <span class="post-toc-text">示例 Github 项目</span></a></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-2022/flutter-state-management-with-riverpod" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            基于 Riverpod 的 Flutter 状态管理
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-01-12 00:00:00" datetime="2022-01-11T16:00:00.000Z"  itemprop="datePublished">2022-01-12</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2022-01-12-22-11-50.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://itnext.io/flutter-state-management-with-riverpod-ef8d4ef77392" target="_blank" rel="noopener">https://itnext.io/flutter-state-management-with-riverpod-ef8d4ef77392</a></p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/iisprey/riverpod_example" target="_blank" rel="noopener">https://github.com/iisprey/riverpod_example</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://itnext.io/a-minimalist-guide-to-riverpod-4eb24b3386a1" target="_blank" rel="noopener">https://itnext.io/a-minimalist-guide-to-riverpod-4eb24b3386a1</a></li>
+<li><a href="https://pub.dev/packages/state_notifier" target="_blank" rel="noopener">https://pub.dev/packages/state_notifier</a></li>
+<li><a href="https://iisprey.medium.com/get-rid-of-all-kind-of-boilerplate-code-with-flutter-hooks-2e17eea06ca0" target="_blank" rel="noopener">https://iisprey.medium.com/get-rid-of-all-kind-of-boilerplate-code-with-flutter-hooks-2e17eea06ca0</a></li>
+<li><a href="https://iisprey.medium.com/how-to-handle-complex-json-in-flutter-4982015b4fdf" target="_blank" rel="noopener">https://iisprey.medium.com/how-to-handle-complex-json-in-flutter-4982015b4fdf</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/17628a0cd1c5ce558fb867f7ec7100c2dc740d1eb3b6a4effecbd20aeabf3379.jpeg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>正如我上周所承诺的，我将向您展示我自己的最终国家管理解决方案路径</p>
+<h3 id="Riverpod-StateNotifier-Hooks-Freezed"><a href="#Riverpod-StateNotifier-Hooks-Freezed" class="headerlink" title="Riverpod + StateNotifier + Hooks + Freezed"></a><a href="/a-minimalist-guide-to-riverpod-4eb24b3386a1">Riverpod</a> + <a href="https://pub.dev/packages/state_notifier" target="_blank" rel="noopener">StateNotifier</a> + <a href="https://iisprey.medium.com/get-rid-of-all-kind-of-boilerplate-code-with-flutter-hooks-2e17eea06ca0" target="_blank" rel="noopener">Hooks</a> + <a href="https://iisprey.medium.com/how-to-handle-complex-json-in-flutter-4982015b4fdf" target="_blank" rel="noopener">Freezed</a></h3><p>Riverpod 太棒了！但是好的例子并不多。只有最基本的，就这样。这一次，我试图使一个例子既可理解又复杂。我的目的是通过这个例子教你什么时候使用 Riverpod，以及如何使用它。尽管我简化了过程。希望你喜欢！</p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/14e64ed984810ff1e2f2ea2a5e9f6a51059e31730a058c6226cb678d614a7dd8.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="在这个例子中我们要做什么？"><a href="#在这个例子中我们要做什么？" class="headerlink" title="在这个例子中我们要做什么？"></a>在这个例子中我们要做什么？</h3><p>我们只需要从 API 中获取一些数据，然后在 UI 中对它们进行排序和过滤</p>
+<h3 id="基本上，我们会"><a href="#基本上，我们会" class="headerlink" title="基本上，我们会;"></a>基本上，我们会;</h3><ol>
+<li>Create simple and complex providers and combine them</li>
+<li>创建简单和复杂的提供程序并将它们组合起来</li>
+<li>Use AsyncValue object and show async value in the UI using <code>when</code> method</li>
+<li>使用 AsyncValue 对象并在 UI 中使用 when 方法显示 async 值</li>
+<li>Also, create <code>freezed</code> objects for immutable object solution</li>
+<li>同时，为不可变物件/解决方案创建冻结对象</li>
+</ol>
+<p>我们开始吧！</p>
+<h3 id="创建-API-服务"><a href="#创建-API-服务" class="headerlink" title="创建 API 服务"></a>创建 API 服务</h3><blockquote>
+<p>注意: 我没有找到一个好的 API 模型来使用过滤功能，因为我自己添加了这些角色。原谅我这么说</p>
+</blockquote>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> userService = Provider((ref) =&gt; UserService());</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> _dio = Dio(BaseOptions(baseUrl: <span class="string">'https://reqres.in/api/'</span>));</span><br><span class="line"></span><br><span class="line">  Future&lt;<span class="built_in">List</span>&lt;User&gt;&gt; getUsers() <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="keyword">final</span> res = <span class="keyword">await</span> _dio.<span class="keyword">get</span>(<span class="string">'users'</span>);</span><br><span class="line">    <span class="keyword">final</span> <span class="built_in">List</span> list = res.data[<span class="string">'data'</span>];</span><br><span class="line">    <span class="comment">// API didn't have user roles I just added by hand (it looks ugly but never mind)</span></span><br><span class="line">    list[<span class="number">0</span>][<span class="string">'role'</span>] = <span class="string">'normal'</span>;</span><br><span class="line">    list[<span class="number">1</span>][<span class="string">'role'</span>] = <span class="string">'normal'</span>;</span><br><span class="line">    list[<span class="number">2</span>][<span class="string">'role'</span>] = <span class="string">'normal'</span>;</span><br><span class="line">    list[<span class="number">3</span>][<span class="string">'role'</span>] = <span class="string">'admin'</span>;</span><br><span class="line">    list[<span class="number">4</span>][<span class="string">'role'</span>] = <span class="string">'admin'</span>;</span><br><span class="line">    list[<span class="number">5</span>][<span class="string">'role'</span>] = <span class="string">'normal'</span>;</span><br><span class="line">    <span class="keyword">return</span> list.map((e) =&gt; User.fromJson(e)).toList();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用-freezed-和-json-serializable-创建不可变模型"><a href="#使用-freezed-和-json-serializable-创建不可变模型" class="headerlink" title="使用 freezed 和 json_serializable 创建不可变模型"></a>使用 <code>freezed</code> 和 <code>json_serializable</code> 创建不可变模型</h3><p>我们只需要创建一个</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">part</span> <span class="string">'user.freezed.dart'</span>;</span><br><span class="line"><span class="keyword">part</span> <span class="string">'user.g.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@freezed</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="title">with</span> <span class="title">_</span>$<span class="title">User</span> </span>&#123;</span><br><span class="line">  <span class="meta">@JsonSerializable</span>(fieldRename: FieldRename.snake)</span><br><span class="line">  <span class="keyword">const</span> <span class="keyword">factory</span> User(&#123;</span><br><span class="line">    required <span class="built_in">int</span> id,</span><br><span class="line">    required <span class="built_in">String</span> email,</span><br><span class="line">    required <span class="built_in">String</span> firstName,</span><br><span class="line">    required <span class="built_in">String</span> lastName,</span><br><span class="line">    required <span class="built_in">String</span> avatar,</span><br><span class="line">    <span class="meta">@JsonKey</span>(unknownEnumValue: Role.normal) required Role role,</span><br><span class="line">  &#125;) = _User;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">factory</span> User.fromJson(<span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="keyword">dynamic</span>&gt; json) =&gt; _$UserFromJson(json);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果你想了解更多关于 freezed 的信息，请查看这篇文章。</p>
+<p><a href="https://iisprey.medium.com/how-to-handle-complex-json-in-flutter-4982015b4fdf" target="_blank" rel="noopener">https://iisprey.medium.com/how-to-handle-complex-json-in-flutter-4982015b4fdf</a></p>
+<h3 id="从服务中获得-value"><a href="#从服务中获得-value" class="headerlink" title="从服务中获得 value"></a>从服务中获得 <code>value</code></h3><p>你可以想想，<code>AsyncValue</code> 是什么? 它只是一个联合类，帮助我们处理我们的值的状态。它提供了一个现成的提供者包。</p>
+<p>我将在接下来的文章中详细解释，但就目前而言，仅此而已。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> usersProvider = StateNotifierProvider.autoDispose&lt;UserNotifier, AsyncValue&lt;<span class="built_in">List</span>&lt;User&gt;&gt;&gt;((ref) &#123;</span><br><span class="line">  <span class="keyword">return</span> UserNotifier(ref);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserNotifier</span> <span class="keyword">extends</span> <span class="title">StateNotifier</span>&lt;<span class="title">AsyncValue</span>&lt;<span class="title">List</span>&lt;<span class="title">User</span>&gt;&gt;&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> AutoDisposeStateNotifierProviderRef _ref;</span><br><span class="line"></span><br><span class="line">  late <span class="keyword">final</span> UserService _service;</span><br><span class="line"></span><br><span class="line">  UserNotifier(<span class="keyword">this</span>._ref) : <span class="keyword">super</span>(<span class="keyword">const</span> AsyncValue.data(&lt;User&gt;[])) &#123;</span><br><span class="line">    _service = _ref.watch(userService);</span><br><span class="line">    getUsers();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Future&lt;<span class="keyword">void</span>&gt; getUsers() <span class="keyword">async</span> &#123;</span><br><span class="line">    state = <span class="keyword">const</span> AsyncValue.loading();</span><br><span class="line">    <span class="keyword">final</span> res = <span class="keyword">await</span> AsyncValue.guard(() <span class="keyword">async</span> =&gt; <span class="keyword">await</span> _service.getUsers());</span><br><span class="line">    state = AsyncValue.data(res.asData!.value);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="创建排序和过滤器提供程序"><a href="#创建排序和过滤器提供程序" class="headerlink" title="创建排序和过滤器提供程序"></a>创建排序和过滤器提供程序</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Role &#123; none, normal, admin &#125;</span><br><span class="line"><span class="keyword">enum</span> Sort &#123; normal, reversed &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> filterProvider = StateProvider.autoDispose&lt;Role&gt;((_) =&gt; Role.none);</span><br><span class="line"><span class="keyword">final</span> sortProvider = StateProvider.autoDispose&lt;Sort&gt;((_) =&gt; Sort.normal);</span><br></pre></td></tr></table></figure>
+<h3 id="从提供程序获取获取的列表并进行筛选，然后使用其他提供程序对它们进行排序"><a href="#从提供程序获取获取的列表并进行筛选，然后使用其他提供程序对它们进行排序" class="headerlink" title="从提供程序获取获取的列表并进行筛选，然后使用其他提供程序对它们进行排序"></a>从提供程序获取获取的列表并进行筛选，然后使用其他提供程序对它们进行排序</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> filteredAndSortedUsersProvider = Provider.autoDispose.family&lt;<span class="built_in">List</span>&lt;User&gt;, <span class="built_in">List</span>&lt;User&gt;&gt;((ref, users) &#123;</span><br><span class="line">  <span class="keyword">final</span> filter = ref.watch(filterProvider);</span><br><span class="line">  <span class="keyword">final</span> sort = ref.watch(sortProvider);</span><br><span class="line"></span><br><span class="line">  late <span class="keyword">final</span> <span class="built_in">List</span>&lt;User&gt; filteredList;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">switch</span> (filter) &#123;</span><br><span class="line">    <span class="keyword">case</span> Role.admin:</span><br><span class="line">      filteredList = users.where((e) =&gt; e.role == Role.admin).toList();</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> Role.normal:</span><br><span class="line">      filteredList = users.where((e) =&gt; e.role == Role.normal).toList();</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      filteredList = users;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">switch</span> (sort) &#123;</span><br><span class="line">    <span class="keyword">case</span> Sort.normal:</span><br><span class="line">      <span class="keyword">return</span> filteredList;</span><br><span class="line">    <span class="keyword">case</span> Sort.reversed:</span><br><span class="line">      <span class="keyword">return</span> filteredList.reversed.toList();</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span> filteredList;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="在用户界面中显示所有内容"><a href="#在用户界面中显示所有内容" class="headerlink" title="在用户界面中显示所有内容"></a>在用户界面中显示所有内容</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HomePage</span> <span class="keyword">extends</span> <span class="title">ConsumerWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> HomePage(&#123;Key? key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context, WidgetRef ref) &#123;</span><br><span class="line">    <span class="keyword">final</span> users = ref.watch(usersProvider);</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        centerTitle: <span class="keyword">true</span>,</span><br><span class="line">        title: <span class="keyword">const</span> Text(<span class="string">'Users'</span>),</span><br><span class="line">      ),</span><br><span class="line">      body: RefreshIndicator(</span><br><span class="line">        onRefresh: () <span class="keyword">async</span> =&gt; <span class="keyword">await</span> ref.refresh(usersProvider),</span><br><span class="line">        child: users.when(</span><br><span class="line">          data: (list) &#123;</span><br><span class="line">            <span class="keyword">final</span> newList = ref.watch(filteredAndSortedUsersProvider(list));</span><br><span class="line">            <span class="keyword">if</span> (newList.isEmpty) &#123;</span><br><span class="line">              <span class="keyword">return</span> <span class="keyword">const</span> Center(child: Text(<span class="string">'There is no user'</span>));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> ListView.builder(</span><br><span class="line">              itemCount: newList.length,</span><br><span class="line">              itemBuilder: (_, i) &#123;</span><br><span class="line">                <span class="keyword">final</span> user = newList[i];</span><br><span class="line">                <span class="keyword">return</span> ListTile(</span><br><span class="line">                  minVerticalPadding: <span class="number">25</span>,</span><br><span class="line">                  leading: Image.network(user.avatar),</span><br><span class="line">                  title: Text(<span class="string">'<span class="subst">$&#123;user.firstName&#125;</span> <span class="subst">$&#123;user.lastName&#125;</span>'</span>),</span><br><span class="line">                  trailing: Text(user.role.name),</span><br><span class="line">                );</span><br><span class="line">              &#125;,</span><br><span class="line">            );</span><br><span class="line">          &#125;,</span><br><span class="line">          error: (_, __) =&gt; <span class="keyword">const</span> Center(child: Text(<span class="string">'err'</span>)),</span><br><span class="line">          loading: () =&gt; <span class="keyword">const</span> Center(child: CircularProgressIndicator()),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,</span><br><span class="line">      floatingActionButton: Row(</span><br><span class="line">        mainAxisSize: MainAxisSize.min,</span><br><span class="line">        children: [</span><br><span class="line">          Expanded(</span><br><span class="line">            child: Padding(</span><br><span class="line">              padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">8.0</span>),</span><br><span class="line">              child: Consumer(</span><br><span class="line">                builder: (_, ref, __) &#123;</span><br><span class="line">                  <span class="keyword">final</span> sort = ref.watch(sortProvider.state);</span><br><span class="line">                  <span class="keyword">return</span> ElevatedButton(</span><br><span class="line">                    onPressed: () &#123;</span><br><span class="line">                      <span class="keyword">if</span> (sort.state == Sort.reversed) &#123;</span><br><span class="line">                        sort.state = Sort.normal;</span><br><span class="line">                      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        sort.state = Sort.reversed;</span><br><span class="line">                      &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    child: Text(</span><br><span class="line">                      sort.state == Sort.normal</span><br><span class="line">                          ? <span class="string">'sort reversed'</span></span><br><span class="line">                          : <span class="string">'sort normal'</span>,</span><br><span class="line">                    ),</span><br><span class="line">                  );</span><br><span class="line">                &#125;,</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">          Expanded(</span><br><span class="line">            child: Padding(</span><br><span class="line">              padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">8.0</span>),</span><br><span class="line">              child: Consumer(</span><br><span class="line">                builder: (_, ref, __) &#123;</span><br><span class="line">                  <span class="keyword">final</span> filter = ref.watch(filterProvider.state);</span><br><span class="line">                  <span class="keyword">return</span> ElevatedButton(</span><br><span class="line">                    onPressed: () &#123;</span><br><span class="line">                      <span class="keyword">if</span> (filter.state == Role.admin) &#123;</span><br><span class="line">                        filter.state = Role.none;</span><br><span class="line">                      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        filter.state = Role.admin;</span><br><span class="line">                      &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    child: Text(</span><br><span class="line">                      filter.state == Role.admin</span><br><span class="line">                          ? <span class="string">'remove filter'</span></span><br><span class="line">                          : <span class="string">'filter admins'</span>,</span><br><span class="line">                    ),</span><br><span class="line">                  );</span><br><span class="line">                &#125;,</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">        ],</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>如果你把这个例子看作一个电子商务应用程序，那么这个例子就更有意义了</p>
+<p>我不是 <code>riverpod</code> 的宗师。只是学习和分享我的经验，所以请如果你知道一个更好的方式使用 <code>riverpod</code> 请让我们知道！</p>
+<h2 id="示例-Github-项目"><a href="#示例-Github-项目" class="headerlink" title="示例 Github 项目"></a>示例 Github 项目</h2><p>这是源代码。</p>
+<p><a href="https://github.com/iisprey/riverpod_example" target="_blank" rel="noopener">https://github.com/iisprey/riverpod_example</a></p>
+<p>谢谢你的阅读</p>
+<hr>
+<p>© 猫哥</p>
+<ul>
+<li><p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">ducafecat.tech</a></p>
+</li>
+<li><p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">github</a></p>
+</li>
+<li><p><a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">bilibili</a></p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/banner-gzh.png" alt="订阅号" title="">
+                </div>
+                <div class="image-caption">订阅号</div>
+            </figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/01/12/2022/flutter-state-management-with-riverpod/&title=《基于 Riverpod 的 Flutter 状态管理》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/01/12/2022/flutter-state-management-with-riverpod/&title=《基于 Riverpod 的 Flutter 状态管理》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/01/12/2022/flutter-state-management-with-riverpod/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《基于 Riverpod 的 Flutter 状态管理》 — duCafeCat&url=https://blog.ducafecat.tech/2022/01/12/2022/flutter-state-management-with-riverpod/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/01/12/2022/flutter-state-management-with-riverpod/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/12/29/translation/best-nav-bar-packages-for-flutter/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 最好的导航插件</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/01/12/2022/flutter-state-management-with-riverpod/&title=《基于 Riverpod 的 Flutter 状态管理》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/01/12/2022/flutter-state-management-with-riverpod/&title=《基于 Riverpod 的 Flutter 状态管理》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/01/12/2022/flutter-state-management-with-riverpod/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《基于 Riverpod 的 Flutter 状态管理》 — duCafeCat&url=https://blog.ducafecat.tech/2022/01/12/2022/flutter-state-management-with-riverpod/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/01/12/2022/flutter-state-management-with-riverpod/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3a0Y4aMQwF0P3/n6ZSnyq1wL12wm6lM09oQENOkGJj++srvh6/r2d3Hn9cr5/w9yef3U/ePXbh4eHhjZb+7Mp57dY8e0L++vWa8fDw8G7zXi8roeZfmT852Y43Fjw8PLxv5eVH/OskeLZQPDw8vP+Rl5BmR/nZEIKHh4f3GV5SjMgLEG0BNwlI12steHh4eDGvbYD9hNcX+3t4eHh4i656GyryrdmEomKdeHh4eBd47ULzBlh+Ss8GEYqAgYeHh3eBN1t0e4gnG9puUG7Bw8PDO8vLE9zNSMGskdYGs1WVGg8PDy/g5cf3LOFONmUzlFD8V8DDw8M7xGsP+nZ8Kk+Rzw4Z4OHh4d3j7Y/mNrGebdwwjOHh4eFd5p0qQLQtq/3T6qErPDw8vEO8ole2bo/NxqrateHh4eHd4O1bU0m63DbYTm0QHh4e3ud5SeNqVT8uBxfy1BwPDw/vHi9Z+v6ffhIGTo0y/KMBhoeHh3eZl7fwNxuxCTBJ+o6Hh4f3SV5+fJ8ak8qLs3UbDw8PD+8yry6MBuXX2XDAfsQBDw8P7x4v/7I8/c2DTT6ykIeor3YCAg8PD6/8TF4Ynb07K+/m999sDR4eHt7HeXkSXBdY4/urlhgeHh7eBd5scaeKCHXWX24KHh4e3j1eXpiYLXFz9OcjDnlCj4eHh7fn5eXU/KEJ4BFfbdvsadzDw8PDu8CbDQrsA8Msva47e3h4eHhr3qO86p0r0+I2kLz5efDw8PAu8GbliRv4JKgcJuHh4eEtePmhfKpSumm85UUNPDw8vNu8Nglui7z5gmbh5M1kGR4eHt4P4LVHeV7GbQvBqzkIPDw8vMu82ZBovk2ntgwPDw/vM7xTzadNWXb2vXXGjYeHh3fmH/2B1tS+YJEHm7YVh4eHh3eI9wvtO+Qpaw7c8QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

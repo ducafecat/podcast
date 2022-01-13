@@ -52,8 +52,9 @@ https://github.com/ducafecat/getx_quick_start
 
 © 猫哥
 
+- 微信 ducafecat
 
-- [ducafecat.tech](https://ducafecat.tech/)
+- [博客 ducafecat.tech](https://ducafecat.tech/)
 
 - [github](https://github.com/ducafecat)
 

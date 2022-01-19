@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 创建动画屏幕 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="原文 https://medium.com/@baran.aslankan4/create-an-animation-screen-in-flutter-683d9a534d67  代码">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 创建动画屏幕">
+<meta property="og:url" content="https://blog.ducafecat.tech/2022/01/21/2022/create-an-animation-screen-in-flutter/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="原文 https://medium.com/@baran.aslankan4/create-an-animation-screen-in-flutter-683d9a534d67  代码">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2022/01/21/2022/create-an-animation-screen-in-flutter/2022-01-20-07-40-53.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/5be7678fba1af2347fb75002f1218ad03d750dcf73b3920be7b9c8037cbd88f3.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/8b9650e51a2158a46df6b8e5446636e6a318c16d561c1565e3f77a97961eb195.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/f557b6269ac54cb256f322e18fb20b10751e6ada7419f4c4f06e1a8196a55219.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/4c5e476cc5f53fdc7280dd538fc7abfa8b4c62350e8e5745515092b32d34c52b.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/ddf8e9fce504d7bb16759ddb8df364ba60359d2e7283a5434376b6ef2631f0ce.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/21e150d28b37fbc38aec62ee85779ee42bd16aa9a6eb1b6c8eb41e1b8439ed6d.png">
+<meta property="og:image" content="https://ducafecat.tech/img/banner-gzh.png">
+<meta property="og:updated_time" content="2022-01-19T23:40:55.821Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 创建动画屏幕">
+<meta name="twitter:description" content="原文 https://medium.com/@baran.aslankan4/create-an-animation-screen-in-flutter-683d9a534d67  代码">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2022/01/21/2022/create-an-animation-screen-in-flutter/2022-01-20-07-40-53.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 创建动画屏幕</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 创建动画屏幕</h1>
+        <h5 class="subtitle">
+             <time datetime="2022-01-20T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2022-01-21
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">1.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">2.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">3.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">4.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装依赖项"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">安装依赖项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#现在是设计部分"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">现在是设计部分:</span></a></li></ol></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-2022/create-an-animation-screen-in-flutter" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            Flutter 创建动画屏幕
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-01-21 00:00:00" datetime="2022-01-20T16:00:00.000Z"  itemprop="datePublished">2022-01-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2022-01-20-07-40-53.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://medium.com/@baran.aslankan4/create-an-animation-screen-in-flutter-683d9a534d67" target="_blank" rel="noopener">https://medium.com/@baran.aslankan4/create-an-animation-screen-in-flutter-683d9a534d67</a></p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://pub.flutter-io.cn/packages/animated_text_kit" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/animated_text_kit</a></li>
+<li><a href="https://pub.flutter-io.cn/packages/simple_animations" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/simple_animations</a></li>
+<li><a href="https://pub.flutter-io.cn/packages/google_fonts" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/google_fonts</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>大家好，今天我要向大家展示如何在 Flutter 中创建一个动画屏幕，就像这样;</p>
+<h3 id="安装依赖项"><a href="#安装依赖项" class="headerlink" title="安装依赖项"></a>安装依赖项</h3><p>您可以从 <a href="http://pub.dev/" target="_blank" rel="noopener">pub.dev</a> 获得依赖项</p>
+<p>这些是我在我的项目中使用的版本:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">animated_text_kit: ^<span class="number">4.2</span><span class="number">.1</span></span><br><span class="line">simple_animations: ^<span class="number">3.1</span><span class="number">.1</span></span><br><span class="line">google_fonts: ^<span class="number">2.1</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+<p>在获得依赖关系之后，我们在编码之前还有一个步骤。</p>
+<p>有一个叫做 Liquid Studio 的应用程序是由 Felix Blaschke 创建的，这个应用程序生成飞镖代码来制作一些动画。</p>
+<p><a href="https://felixblaschke.github.io/liquid-studio/#/" target="_blank" rel="noopener">https://felixblaschke.github.io/liquid-studio/#/</a></p>
+<h3 id="现在是设计部分"><a href="#现在是设计部分" class="headerlink" title="现在是设计部分:"></a>现在是设计部分:</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/5be7678fba1af2347fb75002f1218ad03d750dcf73b3920be7b9c8037cbd88f3.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>有许多选项和颜色选择，为此我使用了默认设置和颜色。</p>
+<p>现在，为了使它动画化，我们需要添加另一个层称为 Plasma。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/8b9650e51a2158a46df6b8e5446636e6a318c16d561c1565e3f77a97961eb195.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>点击添加图层按钮并选择 Plasma。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/f557b6269ac54cb256f322e18fb20b10751e6ada7419f4c4f06e1a8196a55219.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>现在你可以自定义渐变层和 plasma layers，我为自己做了一些定制。</p>
+<p>现在要导出，点击左上角的导出按钮。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/4c5e476cc5f53fdc7280dd538fc7abfa8b4c62350e8e5745515092b32d34c52b.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>单击导出场景以导出所有图层。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/ddf8e9fce504d7bb16759ddb8df364ba60359d2e7283a5434376b6ef2631f0ce.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>现在我们有了彩色动画的代码，我们将在 IDE 中使用这段代码，但在此之前，让我们先创建类结构。</p>
+<p>让我们创建一个有状态的小部件并首先返回一个 Scaffold。</p>
+<p>现在，我们希望跳过动画页当我们点击屏幕，要做到这一点，我们可以使用 GestureDetector 小部件。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      body: GestureDetector(</span><br><span class="line"></span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>现在粘贴我们在 liquid studio 中导出的代码，作为 GestureDetector 小部件的子部件。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      body: GestureDetector(</span><br><span class="line">        child: Container(</span><br><span class="line">          decoration: BoxDecoration(</span><br><span class="line">            gradient: LinearGradient(</span><br><span class="line">              tileMode: TileMode.mirror,</span><br><span class="line">              begin: Alignment.topRight,</span><br><span class="line">              end: Alignment.bottomRight,</span><br><span class="line">              colors: [</span><br><span class="line">                Color(<span class="number">0xfff44336</span>),</span><br><span class="line">                Color(<span class="number">0xff2196f3</span>),</span><br><span class="line">              ],</span><br><span class="line">              stops: [</span><br><span class="line">                <span class="number">0</span>,</span><br><span class="line">                <span class="number">1</span>,</span><br><span class="line">              ],</span><br><span class="line">            ),</span><br><span class="line">            backgroundBlendMode: BlendMode.srcOver,</span><br><span class="line">          ),</span><br><span class="line">         PlasmaRenderer(</span><br><span class="line">              type: PlasmaType.infinity,</span><br><span class="line">              particles: <span class="number">10</span>,</span><br><span class="line">              color: Color(<span class="number">0x442eaeaa</span>),</span><br><span class="line">              blur: <span class="number">0.31</span>,</span><br><span class="line">              size: <span class="number">1</span>,</span><br><span class="line">              speed: <span class="number">1.86</span>,</span><br><span class="line">              offset: <span class="number">0</span>,</span><br><span class="line">              blendMode: BlendMode.plus,</span><br><span class="line">              particleType: ParticleType.atlas,</span><br><span class="line">              variation1: <span class="number">0</span>,</span><br><span class="line">              variation2: <span class="number">0</span>,</span><br><span class="line">              variation3: <span class="number">0</span>,</span><br><span class="line">              rotation: <span class="number">0</span>,</span><br><span class="line">            ),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>它应该看起来像这样，现在你会有一个错误，这是因为我们还没有导入简单的动画。</p>
+<p>导入类顶部的简单动画库。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:simple_animations/simple_animations.dart'</span>;</span><br></pre></td></tr></table></figure>
+<p>现在我们的动画颜色已经准备好了，可以点击导航另一个页面，我们将使用 GestureDetector 小部件的点击方法。</p>
+<p>在 Container Widget 下，create on tap method 并导航到所需的页面。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">onTap: ()&#123;</span><br><span class="line">          Navigator.of(context).pushReplacementNamed(<span class="string">'/home'</span>);</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
+<p>现在，当我们测试代码时，应该是这样的:</p>
+<p>现在只剩下一件事情要做，那就是动画文字部分。</p>
+<p>在这段代码中，Container 小部件有一个子元素，那就是 plasma 渲染器，plasma 渲染器可以帮助我们创建颜色动画。现在，为了向屏幕添加文本，我们需要向 Container Widget 添加另一个子元素。要添加子元素，我们需要使用 Stack Widget 覆盖所有子元素。</p>
+<p>点击 PlasmaRenderer Widget，然后点击点击 Widget 后出现的灯泡。</p>
+<p>选择 wrap with Column 选项。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/21e150d28b37fbc38aec62ee85779ee42bd16aa9a6eb1b6c8eb41e1b8439ed6d.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>现在我们必须在这里停下来！</p>
+<p>让我告诉你为什么我选择用列选择，它也可以是行。</p>
+<p>我们将使用 Stack Widget，这个 Widget 可以帮助我们把 Widget 放在彼此之上，基本上就是叠加 Widget。</p>
+<p>但是我为什么要选择专栏呢？</p>
+<p>因为堆栈，列和行窗口小部件没有子窗口，他们有子窗口，如果我选择窗口小部件而不是列，那么我将不得不创建括号和改变子窗口小部件，所以我选择列的原因基本上是为了更快地编码。这一点都不重要，但我只是想提一下</p>
+<p>所以我们已经创建了我们的堆栈小部件，其中一个子部件是 PlasmaRenderer，现在我们要添加动画文本作为子部件，但在创建中心小部件之前，让我们在屏幕中央显示文本。</p>
+<p>为了获得动画文本，我们需要使用 AnimatedTextKit 小部件，因此我们必须导入库。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:animated_text_kit/animated_text_kit.dart'</span>;Center(</span><br><span class="line">          child: AnimatedTextKit( ),</span><br><span class="line">              ),</span><br></pre></td></tr></table></figure>
+<p>在 PlasmaRenderer 之后添加此代码。</p>
+<p>获得了一个名为 animatedTexts 的列表，这个列表将包含我们想要在屏幕上显示的所有文本。</p>
+<p>在 pub.dev 中，AnimatedTextKit 包中有许多文本动画，我选择了旋转文本，但是您可以尝试不同的动画。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">animatedTexts: [</span><br><span class="line">                    RotateAnimatedText(<span class="string">'Hello'</span>,textStyle: <span class="keyword">const</span> TextStyle(fontSize: <span class="number">32</span>,fontWeight: FontWeight.bold,color: Colors.white)),</span><br><span class="line">                    RotateAnimatedText(<span class="string">'Animation screen'</span>,textStyle: <span class="keyword">const</span> TextStyle(fontSize: <span class="number">32</span>,fontWeight: FontWeight.bold,color: Colors.white)),</span><br><span class="line">                    RotateAnimatedText(<span class="string">'Click to get started'</span>,textStyle: <span class="keyword">const</span> TextStyle(fontSize: <span class="number">32</span>,fontWeight: FontWeight.bold,color: Colors.white)),</span><br><span class="line">                  ],</span><br></pre></td></tr></table></figure>
+<p>在这里 RotateAnimatedText 采用我们的字符串，你可以添加样式来改变字体大小和粗体，此外你还可以导入谷歌字体和添加一些自定义字体。对于颜色部分，我选择了白色，你可以选择任何你想要的颜色。</p>
+<p>现在文本已经完成，但是我们需要一些动画时间的定制。</p>
+<p>我们可以使用一些方法来帮助我们定制我们的动画。</p>
+<ul>
+<li>totalRepeatCount: 您可以编写希望动画重复的次数</li>
+<li>pause: 动画文本之间的暂停时间</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">totalRepeatCount: <span class="number">1</span>,</span><br><span class="line">pause: <span class="keyword">const</span> <span class="built_in">Duration</span>(milliseconds: <span class="number">3000</span>),</span><br></pre></td></tr></table></figure>
+<p>将这些内容写入 AnimatedTextKit 小部件。</p>
+<p>我希望它只执行一次，所以我设置重复计数 1。</p>
+<p>Pause 采用 Duration 方法，我将其设置为 3000 毫秒，也就是 3 秒。</p>
+<p>整个代码应该是这样的:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      body: GestureDetector(</span><br><span class="line">        child: Container(</span><br><span class="line">          decoration: BoxDecoration(</span><br><span class="line">            gradient: LinearGradient(</span><br><span class="line">              tileMode: TileMode.mirror,</span><br><span class="line">              begin: Alignment.topLeft,</span><br><span class="line">              end: Alignment.bottomRight,</span><br><span class="line">              colors: [</span><br><span class="line">                Color(<span class="number">0xffff1100</span>),</span><br><span class="line">                Color(<span class="number">0xff008eff</span>),</span><br><span class="line">              ],</span><br><span class="line">              stops: [</span><br><span class="line">                <span class="number">0</span>,</span><br><span class="line">                <span class="number">1</span>,</span><br><span class="line">              ],</span><br><span class="line">            ),</span><br><span class="line">            backgroundBlendMode: BlendMode.srcOver,</span><br><span class="line">          ),</span><br><span class="line">          child: Stack(</span><br><span class="line">            children:[</span><br><span class="line">               PlasmaRenderer(</span><br><span class="line">              type: PlasmaType.infinity,</span><br><span class="line">              particles: <span class="number">10</span>,</span><br><span class="line">              color: Color(<span class="number">0x442eaeaa</span>),</span><br><span class="line">              blur: <span class="number">0.31</span>,</span><br><span class="line">              size: <span class="number">1</span>,</span><br><span class="line">              speed: <span class="number">1.86</span>,</span><br><span class="line">              offset: <span class="number">0</span>,</span><br><span class="line">              blendMode: BlendMode.plus,</span><br><span class="line">              particleType: ParticleType.atlas,</span><br><span class="line">              variation1: <span class="number">0</span>,</span><br><span class="line">              variation2: <span class="number">0</span>,</span><br><span class="line">              variation3: <span class="number">0</span>,</span><br><span class="line">              rotation: <span class="number">0</span>,</span><br><span class="line">            ),</span><br><span class="line">              Center(</span><br><span class="line">                child: AnimatedTextKit(</span><br><span class="line">                  animatedTexts: [</span><br><span class="line">                    RotateAnimatedText(<span class="string">'Hello'</span>,textStyle: <span class="keyword">const</span> TextStyle(fontSize: <span class="number">32</span>,fontWeight: FontWeight.bold,color: Colors.white)),</span><br><span class="line">                    RotateAnimatedText(<span class="string">'Animation screen'</span>,textStyle: <span class="keyword">const</span> TextStyle(fontSize: <span class="number">32</span>,fontWeight: FontWeight.bold,color: Colors.white)),</span><br><span class="line">                    RotateAnimatedText(<span class="string">'Click to get started'</span>,textStyle: <span class="keyword">const</span> TextStyle(fontSize: <span class="number">32</span>,fontWeight: FontWeight.bold,color: Colors.white)),</span><br><span class="line">                  ],</span><br><span class="line">                      totalRepeatCount: <span class="number">1</span>,</span><br><span class="line">                      pause: <span class="keyword">const</span> <span class="built_in">Duration</span>(milliseconds: <span class="number">3000</span>),</span><br><span class="line">                ),</span><br><span class="line">              ),],</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">          onTap: ()&#123;</span><br><span class="line">            Navigator.of(context).pushReplacementNamed(<span class="string">'/home'</span>); &#125;</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>您可以自定义您的动画和使用更多的方法或更多的动画文本根据您的口味。</p>
+<p>这就是我今天的全部内容，谢谢阅读，希望你喜欢，下次写作时再见，祝你有个愉快的一天;</p>
+<hr>
+<p>© 猫哥</p>
+<ul>
+<li><p>微信 ducafecat</p>
+</li>
+<li><p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">博客 ducafecat.tech</a></p>
+</li>
+<li><p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">github</a></p>
+</li>
+<li><p><a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">bilibili</a></p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/banner-gzh.png" alt="订阅号" title="">
+                </div>
+                <div class="image-caption">订阅号</div>
+            </figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/01/21/2022/create-an-animation-screen-in-flutter/&title=《Flutter 创建动画屏幕》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/01/21/2022/create-an-animation-screen-in-flutter/&title=《Flutter 创建动画屏幕》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/01/21/2022/create-an-animation-screen-in-flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 创建动画屏幕》 — duCafeCat&url=https://blog.ducafecat.tech/2022/01/21/2022/create-an-animation-screen-in-flutter/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/01/21/2022/create-an-animation-screen-in-flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/01/20/2022/flutter-run-code-in-the-background/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 后台运行代码</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/01/21/2022/create-an-animation-screen-in-flutter/&title=《Flutter 创建动画屏幕》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/01/21/2022/create-an-animation-screen-in-flutter/&title=《Flutter 创建动画屏幕》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/01/21/2022/create-an-animation-screen-in-flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 创建动画屏幕》 — duCafeCat&url=https://blog.ducafecat.tech/2022/01/21/2022/create-an-animation-screen-in-flutter/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/01/21/2022/create-an-animation-screen-in-flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3aUW6DMBAE0N7/0ukBUsLM2qZV9fiKGjA8KtnO7H59xcfr7Xj/9v3z+7VXI1/d5fPI2w48PDy85Ue/GjpBfn6s5AUlf0meGQ8PD+80L5myrx4xn9CTyb19nptr8fDw8P4AL98u54xkfDw8PLz/wWu3v/mSM1tg8PDw8J7ktUPfRACjM/PA4kjWgoeHhxfzVra/v/X5SH0PDw8Pb7mqvj7151P2yr0unwEPDw/vAK8tSrVNA208sR4W4+Hh4T3Ja4fO/7LOnsXBeHh4eKd5ObWduPP4NVl+6gUDDw8PbytvNkSOnJWm2gWmiCHw8PDwtvKGP/UXwoK2XSApyPUn4eHh4U14SWmqXTbyzXF+bX6vH+p7eHh4eJt4s7J9MsUXtx+9xDwowcPDwzvNy4PdJKSYbZRn4UVR38PDw8PbxJvFDQkv32q3wW4URuPh4eE9wpttiNu2gzbISL7Fw8PDe5I3C1tnj77yatqiHR4eHt4J3q5ifz6hz1qskjNrMB4eHl7JayfZGa99cbuCYDw8PLzTvHZzvDdWmDUr3IyJh4eHd4BXtC6N2qFewdGGHe0SgoeHh3ea15bEWkbbUjALgov/IR4eHl7Jy8UrLQX5K5hFulHTAB4eHt4m3q5pfdaUsBI3FC8aDw8P7xgvCR3aLfisEaEdoY5u8fDw8A7wZhFtXjBr2wjycCRaGPDw8PCO8fJCfltIW3kReW0LDw8P7wTvVR67ItpZzFEvHnh4eHgHeO2Emxer9l47+4yHh4d3jpdP5W0k0fJm97r5Fg8PD+8Yry1r5aS8LWA9gCiyFjw8PLwHeSvBRN64MLuqbh3Aw8PDe4SXFMDaxSOPMDY3XeHh4eEt8NqSVX5+vpleeWWX1+Lh4eEd4M1+8K+EvyuYbTU9PDw8vAnvG4q0sYbW9LCOAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>使用 Codemagic 将 Flutter Windows 应用程序发布到 Microsoft 合作伙伴中心 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="原文https://medium.com/flutter-community/publishing-flutter-windows-apps-to-microsoft-partner-c">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Codemagic 将 Flutter Windows 应用程序发布到 Microsoft 合作伙伴中心">
+<meta property="og:url" content="https://blog.ducafecat.tech/2022/02/13/2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="原文https://medium.com/flutter-community/publishing-flutter-windows-apps-to-microsoft-partner-c">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2022/02/13/2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic/2022-02-13-22-18-18.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/cd5a9faeb54f0b7ef8314ae016a9b301fb5c297200bfcf70b406c1e18e5e40fc.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/bce0454256f2088c01917e0aabf24aaec96fdc8e85066f5aef9bb9bbbbd00bfc.gif">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/b20b03f3c61c79ccb89e4305adb77dcbd0582f16936b620eb88c6a510c5b74c8.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/c5e34764895382c61c7a8d4d7520e8e3dfbf73165e95314179d555b453c98805.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/70f4d1c4297a4f0543877eefe9d169c1e296f2a7d5e8dad470fbcf2255f0cbf5.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/eeb7e5e869db30c9c6ed369a3a70e1a62953592df6dd0b15932951ed6a5a83d2.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/7845cda33accf5316307d54eaffd924d39617037e58b8b0360cbe3eac9ba764e.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/361c992e877f0c189b1181a90d8b789853fe7ba8f81bfad28df2d416365aebd3.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/11e0c2df251213162328caaf4df21dde664dba7afd678bce702ce8910d900948.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/b58efa91c637757636e3b17f10165e46a7b1bf2d42b4ad5fd2862580abaea42e.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/c0b2841c8d66092ee83e9b382b4cfc8180274c4036238112c251d7898d6ed267.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/a86cb81e56b170a1379a93fa9da4ce33972a3df8cefb32fb12232acaf9a01e50.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/3edec69e2faae0192f3c0dba8c60e0b69e9a2224a237e60df631e0e57ee35b33.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/07d4b7a69ecd0a04b859bf7b566488e98c924f972617d9c69fc3bc359b91af62.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/022db05f731fe1b2b93ba44c9e76bc5b5b1470efc248864df91b81f8e7c2b4d5.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/0565f8942d8be6b5fd1eb0c2629353ed66bf9acb89334f919ae07b0940c73045.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/dabd9b5061d0de7ed4e30063a6885331f25032b4d626a8cff0f7d224ab1e9a1f.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/eb4da0c330d669f8631be81193489a0453d1bb4e40298ac94792af49564e0670.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/9b18e857b41f95a3afdf3b4e521b550d7c40f14bf0be0f65deea5837edaf1db5.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/bccd894b7483d3255017f292163317616c6fc44893cbdbd61bef07cc48cf38c4.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/70b855449e040a048513308c82e1714dd26e701fca1fc3c8f202428cfea5fa8d.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/da40cd20aeb1a30ac79a06e5e58efb61fee07a329b9345cdda226e48a9180368.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/a4a67a824c77e922e0282a3d15ec9898fc29759fd3556b9dda855220fd747cae.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/7187d92ae60673daa6f689e37a11a7d3cba498811aec63e573e6d44f864ec77b.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/bdd33c0ffcabd0a1e875e309f1090b2a441f1e8343f552e7da552a1adc6b81e5.png">
+<meta property="og:image" content="https://ducafecat.tech/img/banner-gzh.png">
+<meta property="og:updated_time" content="2022-02-13T14:18:21.512Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用 Codemagic 将 Flutter Windows 应用程序发布到 Microsoft 合作伙伴中心">
+<meta name="twitter:description" content="原文https://medium.com/flutter-community/publishing-flutter-windows-apps-to-microsoft-partner-c">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2022/02/13/2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic/2022-02-13-22-18-18.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">使用 Codemagic 将 Flutter Windows 应用程序发布到 Microsoft 合作伙伴中心</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">使用 Codemagic 将 Flutter Windows 应用程序发布到 Microsoft 合作伙伴中心</h1>
+        <h5 class="subtitle">
+             <time datetime="2022-02-12T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2022-02-13
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">1.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">2.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">3.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">4.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为-Windows-创建一个-Flutter-应用程序"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">为 Windows 创建一个 Flutter 应用程序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生成应用程序的可执行文件"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">生成应用程序的可执行文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建-Microsoft-合作伙伴中心帐户"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">创建 Microsoft 合作伙伴中心帐户</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为-MSIX-构建进行配置"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">为 MSIX 构建进行配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在-Microsoft-合作伙伴中心分发您的包"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">在 Microsoft 合作伙伴中心分发您的包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将项目添加到-Codemagic"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">将项目添加到 Codemagic</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用-Codemagic-构建和发布"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">使用 Codemagic 构建和发布</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启用-Microsoft-合作伙伴中心集成"><span class="post-toc-number">4.8.</span> <span class="post-toc-text">启用 Microsoft 合作伙伴中心集成</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置代码魔法使用工作流编辑器颤动窗口应用程序"><span class="post-toc-number">4.9.</span> <span class="post-toc-text">配置代码魔法使用工作流编辑器颤动窗口应用程序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用-Codemagic-yaml-为-Flutter-Windows-应用程序配置-Codemagic"><span class="post-toc-number">4.10.</span> <span class="post-toc-text">使用 Codemagic.yaml 为 Flutter Windows 应用程序配置 Codemagic</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结束了"><span class="post-toc-number">5.</span> <span class="post-toc-text">结束了</span></a></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            使用 Codemagic 将 Flutter Windows 应用程序发布到 Microsoft 合作伙伴中心
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-02-13 00:00:00" datetime="2022-02-12T16:00:00.000Z"  itemprop="datePublished">2022-02-13</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2022-02-13-22-18-18.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><p><a href="https://medium.com/flutter-community/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic-b1962575510c" target="_blank" rel="noopener">https://medium.com/flutter-community/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic-b1962575510c</a></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>这篇文章最初发表在 Codemagic 博客上，由 Souvik Biswas 撰写</p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/cd5a9faeb54f0b7ef8314ae016a9b301fb5c297200bfcf70b406c1e18e5e40fc.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>Flutter 允许您使用单个代码库为移动设备、网络、桌面和嵌入式设备构建应用程序。2.0 的引入使得试用桌面应用程序变得更加容易，因为这个选项现在可以在 stable 频道上使用。</p>
+<p>本文将帮助您开始使用 Flutter 构建 Windows 桌面应用程序，生成一个版本 MSIX 构建，并使用 Codemagic 将该应用程序发布到微软合作伙伴中心。</p>
+<p>如果你正在寻找一个建立 Flutter 桌面应用程序的更一般的入门指南，包括设计自适应布局，请查看这篇文章。</p>
+<p><a href="https://blog.codemagic.io/flutter-desktop-apps-intro/" target="_blank" rel="noopener">https://blog.codemagic.io/flutter-desktop-apps-intro/</a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/sbis04/flutter_desktop_sample" target="_blank" rel="noopener">https://github.com/sbis04/flutter_desktop_sample</a><br><a href="https://github.com/sbis04/flutter_desktop_sample" target="_blank" rel="noopener">https://github.com/sbis04/flutter_desktop_sample</a></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="为-Windows-创建一个-Flutter-应用程序"><a href="#为-Windows-创建一个-Flutter-应用程序" class="headerlink" title="为 Windows 创建一个 Flutter 应用程序"></a>为 Windows 创建一个 Flutter 应用程序</h3><p>在你开始创建一个新的 Flutter 应用程序之前，你应该在你的 Windows 系统上安装 Flutter SDK。如果你没有安装 Flutter，按照安装指南这里。</p>
+<p><a href="https://docs.flutter.dev/get-started/install/windows" target="_blank" rel="noopener">https://docs.flutter.dev/get-started/install/windows</a></p>
+<blockquote>
+<p>如果你已经在你的系统上安装了 Flutter，确保版本在 2.0 以上。您可以使用 Flutter – version 命令检查您的 Flutter 版本。</p>
+</blockquote>
+<p>要构建 Flutter 窗口应用程序，您应该在您的系统上安装 <a href="https://visualstudio.microsoft.com/downloads/" target="_blank" rel="noopener">Visual Studio 2019</a> 。在安装 Visual Studio 时，如果你想构建 win32 应用程序，可以使用“带 c + + 的桌面开发”工作负载，如果你想构建 UWP 应用程序，可以使用“通用 Windows 平台开发”工作负载。</p>
+<p>默认情况下，Flutter 使用 win32 来构建 Windows 应用程序:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter config --enable-windows-desktop</span><br></pre></td></tr></table></figure>
+<p>为了构建 UWP (通用 Windows 平台)应用程序，你需要在 Flutter 的开发通道。运行以下命令:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flutter channel dev</span><br><span class="line">flutter upgrade</span><br><span class="line">flutter config --enable-windows-uwp-desktop</span><br></pre></td></tr></table></figure>
+<p>运行 <code>flutter doctor</code> ，检查是否有任何未解决的问题。要验证窗口是否列为可用设备之一，请运行 <code>flutter devices</code> 命令。</p>
+<p>要创建一个新的 Flutter 应用程序，请使用以下命令:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter create &lt;project_name&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>将 <code>_&lt;project_name&gt;_</code> 替换为您希望在项目中使用的名称ーー例如，flutter create flutter_desktop_sample。</p>
+</blockquote>
+<p>上面的命令将创建一个 Flutter 计数器应用程序项目。你可以使用以下命令在 Windows 系统上运行它:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter run -d windows</span><br></pre></td></tr></table></figure>
+<p>要使用 UWP 运行应用程序，请使用以下命令:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter run -d winuwp</span><br></pre></td></tr></table></figure>
+<p>Windows UWP 应用程序需要一个沙盒环境才能运行，所以系统会提示您启动它。在一个单独的窗口中打开具有管理员权限的 PowerShell，并运行以下命令:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">checknetisolation loopbackexempt -<span class="keyword">is</span> -n=[APP_CONTAINER_NAME]</span><br></pre></td></tr></table></figure>
+<p>运行此进程后，返回到前一个窗口并按“ y”。这应该可以在 Windows 上启动 UWP 应用程序。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/bce0454256f2088c01917e0aabf24aaec96fdc8e85066f5aef9bb9bbbbd00bfc.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="生成应用程序的可执行文件"><a href="#生成应用程序的可执行文件" class="headerlink" title="生成应用程序的可执行文件"></a>生成应用程序的可执行文件</h3><p>为 Flutter Windows 应用程序生成.exe 可执行文件非常简单，只需运行以下命令:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter build windows</span><br></pre></td></tr></table></figure>
+<p>您可以通过访问 <code>&lt;project_root&gt;/build/windows/runner/Release/&lt;app_name&gt;.exe</code> 来找到生成的文件。执行。这个 <code>.exe</code> 文件可以分发给任何用户，用户可以直接在自己的系统上运行它。</p>
+<p>有一个更安全和推荐的替代方法 <code>.exe</code> 文件ーー MSIX 包。MSIX 包的一些优点是:</p>
+<ul>
+<li>Windows 使用独立的环境安全地安装 MSIX 生成。它还有助于完全卸载应用程序。当你使用一个 <code>.exe</code> 即使在应用程序被删除之后，注册表文件中的更改仍然保留。</li>
+<li>要将您的应用程序发布到 Microsoft Store，您需要一个 MSIX 包 <code>.exe</code> 文件不能直接发布。</li>
+<li>可以有两种类型的 MSIX 包: 一种在本地运行，另一种用于分发到 Microsoft Store。可以将要生成的 MSIX 包的类型指定为生成参数。</li>
+</ul>
+<p>在研究这两种类型的 MSIX 构建之前，让我们先创建一个 Microsoft 合作伙伴中心帐户。</p>
+<h3 id="创建-Microsoft-合作伙伴中心帐户"><a href="#创建-Microsoft-合作伙伴中心帐户" class="headerlink" title="创建 Microsoft 合作伙伴中心帐户"></a>创建 Microsoft 合作伙伴中心帐户</h3><p>您需要一个 Microsoft 合作伙伴中心帐户才能使用 Microsoft Store 分发 Windows 应用程序。此外，在构建可分发的 MSIX 构建时，您需要指定一些应该与您的 Partner Center 应用程序中的属性相匹配的属性。</p>
+<p>按照以下步骤创建和配置 Microsoft 合作伙伴中心应用程序:</p>
+<ul>
+<li><p>你需要一个微软开发者帐户来发布应用到微软商店。你可以在这里注册一个。<br><a href="https://developer.microsoft.com/en-us/microsoft-store/register/" target="_blank" rel="noopener">https://developer.microsoft.com/en-us/microsoft-store/register/</a></p>
+</li>
+<li><p>登录到微软合作伙伴中心。如果你没有帐户，你可以很容易地创建一个新的帐户。<br><a href="https://partner.microsoft.com/en-us/dashboard" target="_blank" rel="noopener">https://partner.microsoft.com/en-us/dashboard</a></p>
+</li>
+<li><p>从 Microsoft 合作伙伴中心的主页上，单击“添加程序”。</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/b20b03f3c61c79ccb89e4305adb77dcbd0582f16936b620eb88c6a510c5b74c8.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>在 Windows \&amp; Xbox 下面选择 Get started，如果需要的话填写任何细节。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/c5e34764895382c61c7a8d4d7520e8e3dfbf73165e95314179d555b453c98805.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>进入 <code>Windows &amp; Xbox &gt; Overview</code>，点击 Create a new app 按钮。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/70f4d1c4297a4f0543877eefe9d169c1e296f2a7d5e8dad470fbcf2255f0cbf5.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>输入应用程序的名称。点击保留产品名称。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/eeb7e5e869db30c9c6ed369a3a70e1a62953592df6dd0b15932951ed6a5a83d2.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>这将在 Microsoft 合作伙伴中心上创建一个应用程序，并导航到应用程序概览页面。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/7845cda33accf5316307d54eaffd924d39617037e58b8b0360cbe3eac9ba764e.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>在配置 MSIX 发行版本时，您将需要从这个 Microsoft 合作伙伴中心应用程序获得一些信息。</p>
+<h3 id="为-MSIX-构建进行配置"><a href="#为-MSIX-构建进行配置" class="headerlink" title="为 MSIX 构建进行配置"></a>为 MSIX 构建进行配置</h3><p>生成 MSIX 安装程序的最简单方法是使用名为 MSIX 的 Flutter 包。这是一个命令行工具，帮助创建一个 <a href="https://pub.dev/packages/msix" target="_blank" rel="noopener">msix</a> 安装程序从 Flutter 窗口建立文件。</p>
+<p>在 <code>pubspec.yaml</code> 文件中添加 <code>dev_dependencies</code> 下的包:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dev_dependencies:</span><br><span class="line">  msix: ^<span class="number">2.6</span><span class="number">.5</span></span><br></pre></td></tr></table></figure>
+<p>如果没有指定其他值，那么在构建 MSIX 时，包使用一些默认配置值。可以在 <code>pubspec.yaml</code> 文件中提供 MSIX 配置。</p>
+<p>要生成一个本地 MSIX，在 <code>pubspec.yaml</code> 文件末尾添加以下配置:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">msix_config:</span><br><span class="line">  display_name: &lt;AppName&gt;</span><br><span class="line">  publisher_display_name: &lt;PublisherName&gt;</span><br><span class="line">  identity_name: &lt;PublisherName.AppName&gt;</span><br><span class="line">  msix_version: <span class="number">1.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line">  logo_path: ./logo/&lt;file_name.png&gt;</span><br></pre></td></tr></table></figure>
+<p>在上面的配置中，用适当的值替换尖括号:</p>
+<ul>
+<li><code>display_name</code>: 应用程序的名称，将显示给用户。</li>
+<li><code>publisher_display_name</code>: 要显示给用户的发行者名称(可以是个人名称或公司名称)。</li>
+<li><code>identity_name</code>: Windows 应用的唯一标识符。</li>
+<li><code>msix_version</code>: 指定应用程序的构建版本。使用“ Major. Minor. Build. Revision”格式，其中“ Major”不能为“0”。</li>
+<li><code>logo_path</code>: 徽标文件的相对路径(可选)。如果没有提供，则使用默认的 Flutter 徽标。</li>
+</ul>
+<p>您可以在 <code>&lt;project_directory&gt;/logo</code> 文件夹中添加徽标文件。理想情况下，标志应该是一个 256x256 分辨率的正方形图像。你可以在这里阅读更多关于徽标大小的信息。</p>
+<p><a href="https://docs.microsoft.com/en-us/windows/apps/design/style/app-icons-and-logos" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows/apps/design/style/app-icons-and-logos</a></p>
+<p>运行以下命令为您的 Flutter Windows 应用程序生成 MSIX 包:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter pub run msix:create</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这个命令使用 <code>pubspec.yaml</code> 文件中定义的配置来生成 MSIX。</p>
+<p>注意: 任何没有通过 Microsoft 合作伙伴中心发布的 MSIX 包都是未签名的包。要安装并运行一个未签名的 MSIX 软件包，您必须在本地信任并签名该应用程序，以便能够在 Windows 上运行它。</p>
+</blockquote>
+<p>您可以通过访问 <code>&lt;project_root&gt;buildwindowsrunnerRelease&lt;app_name&gt;.msix</code> 来找到生成的包。M6.但是如果你双击。如果要在 Windows 系统上打开 msix 包，安装按钮将被禁用。</p>
+<p>你需要签署与您的 Flutter 窗口应用程序本地安装在您的 Windows 系统的 MSIX 包。要做到这一点，请遵循以下步骤:</p>
+<ul>
+<li>右键单击<code>.msix</code> 文件并选择 Properties。</li>
+<li>转到属性对话框中的数字签名选项卡。</li>
+<li>选择“ Msix Testing”签名者并单击“ Details”，然后单击“ View Certificate”。</li>
+<li>单击“安装证书”开始安装证书。</li>
+<li>在对话框中选择本地机器。单击“下一步”。</li>
+<li>在“将所有证书放入以下存储区”下，单击“浏览”</li>
+<li>选择“受信任根证书颁发机构”文件夹。单击“确定”。</li>
+<li>点击下一步，然后完成</li>
+<li>现在，双击文件。您将看到现在启用了 Install 按钮。点击它安装应用程序。</li>
+</ul>
+<p>有了这个，您的 Flutter 窗口应用程序将安装在您的系统上。你可以通过在开始菜单中搜索找到它。</p>
+<h3 id="在-Microsoft-合作伙伴中心分发您的包"><a href="#在-Microsoft-合作伙伴中心分发您的包" class="headerlink" title="在 Microsoft 合作伙伴中心分发您的包"></a>在 Microsoft 合作伙伴中心分发您的包</h3><p>现在，让我们看看如何使用 Microsoft Partner Center 发布包。修改 <code>pubspec.yaml</code> 文件中的 MSIX 配置，如下所示:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">msix_config:</span><br><span class="line">  display_name: &lt;AppName&gt;</span><br><span class="line">  publisher_display_name: &lt;PublisherName&gt;</span><br><span class="line">  identity_name: &lt;PublisherName.AppName&gt;</span><br><span class="line">  publisher: &lt;PublisherID&gt;</span><br><span class="line">  msix_version: <span class="number">1.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line">  logo_path: ./logo/&lt;file_name.png&gt;</span><br><span class="line">  store: <span class="keyword">true</span></span><br></pre></td></tr></table></figure>
+<p>这里定义了另外两个属性:</p>
+<ul>
+<li><code>publisher</code>: 在 Microsoft 合作伙伴中心应用程序中显示的 Publisher ID。</li>
+<li><code>store</code>: 将此设置为 <code>true</code> 将使用 Microsoft Partner Center 生成一个 MSIX 包可分发。</li>
+</ul>
+<p>此外，确保 <code>display_name</code>、 <code>publisher_display_name</code> 和 <code>identity_name</code> 的属性值与合作伙伴中心中的值相匹配。通过在 Microsoft Partner Center 应用程序中导航到 Product management &gt; Product Identity，您将找到这些值。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/361c992e877f0c189b1181a90d8b789853fe7ba8f81bfad28df2d416365aebd3.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>注意: 如果您正在生成用于发布到 Microsoft Store 的 MSIX 包，那么您将无法在本地安装或运行证书。该软件包只能通过 Microsoft 合作伙伴中心发布。</p>
+</blockquote>
+<p>现在，您已经配置您的 Flutter Windows 应用程序的发行版，让我们建立和分发它使用 Codemagic。一旦你开始为你的应用程序添加新的特性，Codemagic 使得分发更新的版本变得更加容易和快速。</p>
+<h3 id="将项目添加到-Codemagic"><a href="#将项目添加到-Codemagic" class="headerlink" title="将项目添加到 Codemagic"></a>将项目添加到 Codemagic</h3><p>将项目添加到 Codemagic 的最简单方法是通过 Git 提供程序。将您的项目添加到 Git 提供程序中，比如(GitHub、 Bitbucket 或 GitLab) ，并按照下面的步骤开始使用 Codemagic:</p>
+<ul>
+<li><p>登录 <a href="https://codemagic.io/login" target="_blank" rel="noopener">Codemagic</a>。如果你是一个新用户，请<a href="https://codemagic.io/signup" target="_blank" rel="noopener">sign up</a>。</p>
+</li>
+<li><p>连接到 Git 提供者，你已经上传了您的 Flutter 项目通过进入 <a href="https://codemagic.io/settings" target="_blank" rel="noopener">Settings</a> 下的集成。请确保您已经授权到上传应用程序的存储库。</p>
+</li>
+<li><p>导航到 <a href="https://codemagic.io/apps" target="_blank" rel="noopener">Applications</a> 页面，然后点击添加应用程序。</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/11e0c2df251213162328caaf4df21dde664dba7afd678bce702ce8910d900948.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>选择 Git provider:</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/b58efa91c637757636e3b17f10165e46a7b1bf2d42b4ad5fd2862580abaea42e.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>单击 Next: Authorize integration to Authorize Codemagic。如果您已经授权了您选择的 Git provider，请单击 Next: Select repository。</li>
+</ul>
+<p>如果您使用 GitHub 作为您的 Git 提供者，那么您需要在选择存储库之前执行一个额外的步骤。单击 Install GitHub App 设置集成。您可以在这里了解更多关于如何配置 GitHub 应用程序集成的信息。</p>
+<p><a href="https://docs.codemagic.io/getting-started/adding-apps-from-custom-sources/#configuring-the-github-app-integration" target="_blank" rel="noopener">https://docs.codemagic.io/getting-started/adding-apps-from-custom-sources/#configuring-the-github-app-integration</a></p>
+<ul>
+<li>现在，从下拉菜单中选择存储库，并选择 Flutter app 作为项目类型。然后单击 Finish: Add application:</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/c0b2841c8d66092ee83e9b382b4cfc8180274c4036238112c251d7898d6ed267.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>您将被带到项目设置。工作流编辑器选项卡将被默认选中。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/a86cb81e56b170a1379a93fa9da4ce33972a3df8cefb32fb12232acaf9a01e50.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="使用-Codemagic-构建和发布"><a href="#使用-Codemagic-构建和发布" class="headerlink" title="使用 Codemagic 构建和发布"></a>使用 Codemagic 构建和发布</h3><p>你可以使用 <a href="https://docs.codemagic.io/flutter-configuration/flutter-projects/" target="_blank" rel="noopener">Workflow Editor</a> 编辑器或 <a href="https://docs.codemagic.io/yaml/yaml-getting-started/" target="_blank" rel="noopener">Codemagic YAML</a> 文件在 Codemagic 上构建一个 Flutter 应用程序。要在 Codemagic 上构建 Windows 应用程序，您需要通过访问<a href="https://codemagic.io/billing/user" target="_blank" rel="noopener">这个页面</a>来启用计费。</p>
+<h3 id="启用-Microsoft-合作伙伴中心集成"><a href="#启用-Microsoft-合作伙伴中心集成" class="headerlink" title="启用 Microsoft 合作伙伴中心集成"></a>启用 Microsoft 合作伙伴中心集成</h3><p>Codemagic 使用 <a href="https://docs.microsoft.com/en-us/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services" target="_blank" rel="noopener">Microsoft Store submission API</a> 将 Windows 应用程序发布到 Microsoft Store。要使用这种集成，必须将 Microsoft 合作伙伴中心帐户链接到 Azure AD 应用程序，并向 Codemagic 提供必要的信息(租户名、租户 ID、客户 ID 和客户机密)。</p>
+<p>按照下面的步骤生成必要的信息:</p>
+<ul>
+<li>通过点击齿轮图标进入你的帐户设置。</li>
+<li>浏览组织概要 &gt; 租户。如果已经有一个现有租户，则可以将其与合作伙伴中心帐户关联。但是，建议为 Codemagic 创建一个新的租户。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/3edec69e2faae0192f3c0dba8c60e0b69e9a2224a237e60df631e0e57ee35b33.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li><p>要创建新租户，请单击 Create 并填写所需信息。</p>
+</li>
+<li><p>使用新租户访问你的 <a href="https://azure.microsoft.com/en-us/services/active-directory/" target="_blank" rel="noopener">Azure AD</a> 账户。</p>
+</li>
+<li><p>进入应用程式注册(从左边的菜单) ，然后点击「 + 新注册」。</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/07d4b7a69ecd0a04b859bf7b566488e98c924f972617d9c69fc3bc359b91af62.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>-输入应用程序的名称，并使用 Single tenant 选项。您可以将 Redirect URI 字段保持为空。点击注册。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/022db05f731fe1b2b93ba44c9e76bc5b5b1470efc248864df91b81f8e7c2b4d5.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>进入证书和机密(从左边的菜单) ，进入客户机密标签，并单击“ + 新客户机机密”。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/0565f8942d8be6b5fd1eb0c2629353ed66bf9acb89334f919ae07b0940c73045.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>输入描述，选择客户机密的有效期。点击添加。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/dabd9b5061d0de7ed4e30063a6885331f25032b4d626a8cff0f7d224ab1e9a1f.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>注意 Value 字段，这是客户机机密。</p>
+<ul>
+<li>最后，转到合作伙伴中心 &gt; 帐户设置 &gt; 用户管理。选择 Azure AD 应用程序，然后点击“ + Create Azure AD application”。选择您创建的应用程序，单击 Next，并将 Developer 角色赋予它。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/eb4da0c330d669f8631be81193489a0453d1bb4e40298ac94792af49564e0670.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>现在，您可以进入 Codemagic 网页并启用 Microsoft 合作伙伴中心集成。它可以在用户设置 &gt; 个人项目集成部分中启用，也可以在团队设置 &gt; 团队帐户中共享项目的团队集成中启用。</p>
+<p>按照以下步骤启用 Microsoft 合作伙伴中心集成:</p>
+<ul>
+<li>在“集成”下，单击“合作伙伴中心”旁边的“连接”按钮。</li>
+<li>输入所需的信息。通过进入合作伙伴中心 &gt; 帐户设置 &gt; 组织配置文件 &gt; 租户，可以找到租户名和租户 ID。在 Azure AD 的概览页面上找到客户端 ID，然后输入您早先注意到的客户端秘密。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/9b18e857b41f95a3afdf3b4e521b550d7c40f14bf0be0f65deea5837edaf1db5.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>点击保存。</li>
+</ul>
+<h3 id="配置代码魔法使用工作流编辑器颤动窗口应用程序"><a href="#配置代码魔法使用工作流编辑器颤动窗口应用程序" class="headerlink" title="配置代码魔法使用工作流编辑器颤动窗口应用程序"></a>配置代码魔法使用工作流编辑器颤动窗口应用程序</h3><p>要使用工作流编辑器配置您的项目，请转到 Codemagic 上的 Workflow Editor 选项卡:</p>
+<ul>
+<li><p>在“为平台生成”下选择“ Windows”。</p>
+</li>
+<li><p>将 VM 实例更改为 Windows。</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/bccd894b7483d3255017f292163317616c6fc44893cbdbd61bef07cc48cf38c4.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>向下滚动到 Build 选项卡。选择生成项目所需的 Flutter 版本，选中 Create a Windows MSIX package 复选框，并将模式设置为 Release。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/70b855449e040a048513308c82e1714dd26e701fca1fc3c8f202428cfea5fa8d.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li><p>转到“分发”选项卡，以配置 Microsoft 合作伙伴中心分发。单击此处可展开 Microsoft 合作伙伴中心选项卡。选中“启用发布到 Microsoft 商店”复选框。</p>
+</li>
+<li><p>从下拉菜单中选择租户。输入我们在 <a href="https://blog.codemagic.io/publishing-flutter-windows-apps/#configuring-for-msix-build" target="_blank" rel="noopener">Configuring MSIX</a> 部分中讨论的其余信息。确保此信息与您的合作伙伴中心应用程序相匹配。</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/da40cd20aeb1a30ac79a06e5e58efb61fee07a329b9345cdda226e48a9180368.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>点击保存更改。</li>
+</ul>
+<blockquote>
+<p>注意: 您必须手动将应用程序的第一个版本发布到合作伙伴中心。您可以从构建工件中下载 MSIX 包。</p>
+</blockquote>
+<p>您已完成 Windows 发布工作流的配置。单击此页面顶部的“启动第一个构建”，然后单击“启动新构建”以启动构建过程。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/a4a67a824c77e922e0282a3d15ec9898fc29759fd3556b9dda855220fd747cae.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="使用-Codemagic-yaml-为-Flutter-Windows-应用程序配置-Codemagic"><a href="#使用-Codemagic-yaml-为-Flutter-Windows-应用程序配置-Codemagic" class="headerlink" title="使用 Codemagic.yaml 为 Flutter Windows 应用程序配置 Codemagic"></a>使用 Codemagic.yaml 为 Flutter Windows 应用程序配置 Codemagic</h3><p>要使用 YAML 配置构建，请转到 Flutter 项目，在根目录 <code>codemagic.yaml</code> 中创建一个新文件。</p>
+<p>Add the following template to the file:</p>
+<p>将以下模板添加到文件中:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">workflows:</span><br><span class="line">  my-workflow:</span><br><span class="line">    name: Workflow name</span><br><span class="line">    instance_type: mac_mini</span><br><span class="line">    max_build_duration: <span class="number">60</span></span><br><span class="line">    environment:</span><br><span class="line">      groups:</span><br><span class="line">        - ...</span><br><span class="line">      flutter: stable</span><br><span class="line">    cache:</span><br><span class="line">      cache_paths:</span><br><span class="line">        - ~/.pub-cache</span><br><span class="line">    scripts:</span><br><span class="line">      - ...</span><br><span class="line">    artifacts:</span><br><span class="line">      - ...</span><br><span class="line">    publishing:</span><br><span class="line">      email:</span><br><span class="line">        recipients:</span><br><span class="line">          - name<span class="meta">@example</span>.com</span><br></pre></td></tr></table></figure>
+<p>这是一个在 Codemagic 上构建应用程序的基本工作流模板。</p>
+<p><a href="https://docs.codemagic.io/yaml/yaml-getting-started/" target="_blank" rel="noopener">https://docs.codemagic.io/yaml/yaml-getting-started/</a></p>
+<p>要生成一个 MSIX 包并使用 Microsoft 合作伙伴中心发布它，请按以下步骤修改工作流:</p>
+<ul>
+<li>定义一个合适的工作流名称，并使用 Windows VM 实例:</li>
+</ul>
+<p><code>workflows: windows-release-workflow: name: Windows release workflow instance_type: windows_x2 max_build_duration: 60</code></p>
+<p>对于 Windows 生成，将 <code>instance_type</code> 设置为 <code>windows_x2</code>。</p>
+<ul>
+<li>添加以下环境变量:</li>
+</ul>
+<p><code>environment: groups: \- windows-signing flutter: master</code></p>
+<p>您需要以加密的格式将客户机机密上传到 Codemagic 的应用程序环境变量(<code>windows-signing</code>是应用程序环境变量的名称)。</p>
+<ul>
+<li>转到 Codemagic 上的项目页面，然后单击 Switch to YAML configuration。转到 Environment variables 选项卡，并添加凭据。输入变量名为 <code>PARTNER_CLIENT_SECRET</code>，然后将客户端机密值粘贴到变量值字段中。创建一个名为 <code>windows-signing</code> 的组。确保选中了安全复选框，然后单击“添加”。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/7187d92ae60673daa6f689e37a11a7d3cba498811aec63e573e6d44f864ec77b.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>首先，在 <code>scripts</code> 部分，获取 Flutter 包:</li>
+</ul>
+<p><code>scripts: \- name: Get Flutter packages script: flutter packages pub get</code></p>
+<ul>
+<li>启用 Windows 平台:</li>
+</ul>
+<p><code>- name: Configure for Windows script: flutter config \--enable-windows-desktop</code></p>
+<ul>
+<li>使用 Flutter 构建 Windows 应用程序:</li>
+</ul>
+<p><code>- name: Build Windows script: flutter build windows</code></p>
+<ul>
+<li>生成可分发的 MSIX 包:</li>
+</ul>
+<p><code>- name: Package Windows script: flutter pub run msix:create</code></p>
+<ul>
+<li>如果您已经将 MSIX 配置添加到 <code>pubspec.yaml</code> 文件中，那么上面的命令应该适用于您。否则，您可以直接在 CLI 工具中提供配置，而无需对您的项目 <code>pubspec.yaml</code> 文件进行任何修改:</li>
+</ul>
+<p><code>- name: Package Windows script: | flutter pub add msix flutter pub run msix:create \--store \--publisher-display-name=&lt;PublisherName&gt; \--display-name=&lt;AppName&gt; \--publisher=&lt;PublisherID&gt; \--identity-name=&lt;PublisherName.AppName&gt; \--version=1.0.0.0</code></p>
+<ul>
+<li>为了检索生成的 MSIX，将 <code>artifacts</code> 路径更新为:</li>
+</ul>
+<p><code>artifacts: \- build/windows/**/*.msix</code></p>
+<ul>
+<li><p>在 <code>publishing</code> 部分，用你自己的 <code>email</code> 代替电子邮件。</p>
+</li>
+<li><p>若要向 Microsoft 伙伴中心发布，请在发布下添加以下内容 <code>publishing</code>:</p>
+</li>
+</ul>
+<p><code>publishing: partner_center: store_id: &lt;STORE_ID&gt; tenant_id: &lt;TENANT_ID&gt; client_id: &lt;CLIENT_ID&gt; client_secret: $PARTNER_CLIENT_SECRET</code></p>
+<ul>
+<li>用适当的值替换尖括号。您将从 Azure AD Overview 页面获得 <code>tenant_id</code> 和 <code>client_id</code> 。你可以通过进入产品管理 &gt; 产品标识，在微软合作伙伴中心应用程序中找到 <code>store_id</code> 。<code>client_secret</code> 是从前面定义的应用程序/环境变量中检索到的。</li>
+</ul>
+<p>这样就完成了 <code>codemagic.yaml</code> 文件的配置。现在，只需提交并将文件添加到 Git 提供程序中，就可以开始了。</p>
+<blockquote>
+<p>注意: 你应该通过微软合作伙伴中心手动发布第一个版本的应用。从仪表板上选择你的应用程序，点击开始提交，然后填写详细信息提交应用程序。第一个版本应该在使用 Codemagic 发布下一个版本之前完全发布。</p>
+</blockquote>
+<p>要开始使用 YAML 文件构建 Flutter Windows 应用程序，请访问 Codemagic 上的项目页面，然后单击 Start your first build。选择您的工作流程，然后单击“启动新生成”以启动生成过程。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/bdd33c0ffcabd0a1e875e309f1090b2a441f1e8343f552e7da552a1adc6b81e5.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="结束了"><a href="#结束了" class="headerlink" title="结束了"></a>结束了</h2><p>祝贺你! 你已经成功地建立了你的第一个 Flutter Windows 应用程序，并且使用 Codemagic 将它发布到微软商店。</p>
+<p>一旦你开始给你的应用添加新的功能，你可以通过简单地更新构建编号和运行 Codemagic 构建，轻松地发布你的 Windows 应用的下一个版本。当然，你也可以添加其他工作流，这样 Codemagic 就可以为 Windows、 iOS、 Android 或 Linux 构建 Flutter 应用程序。</p>
+<p>您可以在这里找到样本 Flutter Windows 应用程序的完整 codemagic.yaml 配置文件。在这个 GitHub 仓库上查看 Flutter 桌面应用程序示例。</p>
+<p><a href="https://github.com/sbis04/flutter_desktop_sample/blob/main/codemagic.yaml" target="_blank" rel="noopener">https://github.com/sbis04/flutter_desktop_sample/blob/main/codemagic.yaml</a></p>
+<p><a href="https://github.com/sbis04/flutter_desktop_sample" target="_blank" rel="noopener">https://github.com/sbis04/flutter_desktop_sample</a></p>
+<hr>
+<p>© 猫哥</p>
+<ul>
+<li><p>微信 ducafecat</p>
+</li>
+<li><p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">博客 ducafecat.tech</a></p>
+</li>
+<li><p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">github</a></p>
+</li>
+<li><p><a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">bilibili</a></p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/banner-gzh.png" alt="订阅号" title="">
+                </div>
+                <div class="image-caption">订阅号</div>
+            </figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/02/13/2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic/&title=《使用 Codemagic 将 Flutter Windows 应用程序发布到 Microsoft 合作伙伴中心》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/02/13/2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic/&title=《使用 Codemagic 将 Flutter Windows 应用程序发布到 Microsoft 合作伙伴中心》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/02/13/2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用 Codemagic 将 Flutter Windows 应用程序发布到 Microsoft 合作伙伴中心》 — duCafeCat&url=https://blog.ducafecat.tech/2022/02/13/2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/02/13/2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/01/21/2022/create-an-animation-screen-in-flutter/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 创建动画屏幕</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/02/13/2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic/&title=《使用 Codemagic 将 Flutter Windows 应用程序发布到 Microsoft 合作伙伴中心》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/02/13/2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic/&title=《使用 Codemagic 将 Flutter Windows 应用程序发布到 Microsoft 合作伙伴中心》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/02/13/2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用 Codemagic 将 Flutter Windows 应用程序发布到 Microsoft 合作伙伴中心》 — duCafeCat&url=https://blog.ducafecat.tech/2022/02/13/2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/02/13/2022/publishing-flutter-windows-apps-to-microsoft-partner-center-with-codemagic/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD+klEQVR42u3cS27bQBAFQN//0gqQlRcW+brfiHCQ4sqQqeFMcdHuD/z1FV+vv9f3n79f+Qrv7r9e8/op776b72184cCBAweOeKPXS+efJwTXm87XnH5y8zpx4MCBA8chjjy4Xt/zbs1Tq+12m3wLBw4cOHA8z5FvLk/2XsG1SyZx4MCBA8e/wjENpbsy4tl7cODAgQPH8xxJcXBa+MvLf9frX4f5XXHzQK0UBw4cOHDM4l2Vzv22nz8+34EDBw4cOOJA1QSkJpQ2baTdhQMHDhw4eo48WZqG3ib49TvZPQUHDhw4cPQc+ahBEsymwXUakhOyXTvqh787cODAgQPHimPaRkr4kgNM20V5OG9STRw4cODAcYqjD4q7Zk+e5k3LlPkLGyRyOHDgwIEj5mgOmSRdzZjdruA4TS9x4MCBA8cpjulYwC6Y9SXF6eDCMrTjwIEDB46aI196B5Tfn4/NJTTTF4wDBw4cOM5y5FtsUrukaZS0lHYjFMvwjAMHDhw4hifKtaYJUvLJDqtpTd2EcBw4cODAUXM0gXY3NHAqOcybT7vf4sCBAweO3W+Tx0xHCqZjB9PnNkMPN+vjwIEDB46a4ybqFkMJyUYTrGmBsiky4sCBAweOnmPQ2o/HCHbJWFNkbHY+iNU4cODAgSPOg5IAmQSz6ejD9M7pi8xLmTfhFgcOHDhwFBx5aa8JnH0ZMU8px1g4cODAgaPgmJbS8uCapHB5kTFZcxrIbxpOOHDgwIFjX6+r/klZE+qmxcE8jdw9BQcOHDhw9Bx5iJqmcPnAQf7d/iXd7AQHDhw4cNQcp0YK8uQtbzXlZcEkSub34MCBAweOhiMv1eWbyFtEU8omwA9SOBw4cODAcYijGTiYHn6aLubjbrvXgwMHDhw4TnHkPZc+fdq1l/L7d+XIaKwBBw4cOHAMOaYHzstwfdspD+TT0bq3n+DAgQMHjqMc+SjArmCXHywvUCahd3APDhw4cOCoOfJgmQezvBXUDNvlh8xBceDAgQNHz5EX1/Ihht3oW77adA+DhhYOHDhw4Cg4dqMAU7K+sNiP30VtKhw4cODAcYgjL9vlR80D6u5byZ7ze3DgwIEDxymOaRvpWA0yLlDm4wv5MMTNbnHgwIEDR8HxGl7TADkNtNOiXl74S5JAHDhw4MDRczTBrxlWyEcW8u02zTMcOHDgwHGWow+uyWGm7+fJ5hMOHDhw4PgEx67Zc6oguEv8zpYgceDAgQPH8xzXwXLaBMqH86ZjCtM/C5aBFgcOHDhwHOLI063dUZtS4G44AwcOHDhwfIKjH2LIw+Eu3eqZHmo74cCBA8d/z7ErpSVYuyC6SwXzdtSBIiMOHDhw4PiZ4w+4FVMliBT35wAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -11,14 +11,14 @@ date: 2022-02-23 10:00:00
 
 - 样式自定义
 
-![](https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123657.png)
+<img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123657.png" style="zoom:33%;" />
 
 - Material 样式调试工具
 
-![](https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123720.png)
-![](https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123759.png)
-![](https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123818.png)
-![](https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123837.png)
+<img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123720.png" style="zoom:25%;float:left;" />
+<img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123759.png" style="zoom:25%;float:left;" />
+<img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123818.png" style="zoom:25%;float:left;" />
+<img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123837.png" style="zoom:25%;" />
 
 ## 本节目标
 

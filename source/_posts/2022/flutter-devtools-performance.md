@@ -56,6 +56,14 @@ Flutter Release 发版前肯定需要性能测试的，今天我们就一起来�
 
 - android studio / intellij
 
+![](https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220317233650.png)
+
+> 一键进入 `profile` 模式，很简单
+
+![](https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220317233506.png)
+
+> 点击 `Open devTools` 直接进入浏览器
+
 ### performance cpu 排查
 
 - 加入测试代码

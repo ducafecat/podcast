@@ -23,6 +23,8 @@ Flutter Release 发版前肯定需要性能测试的，今天我们就一起来�
 
 ## 视频
 
+https://www.bilibili.com/video/BV1Tb4y1p7t9/
+
 ## 参考
 
 - Flutter 性能分析

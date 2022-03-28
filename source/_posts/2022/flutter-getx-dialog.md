@@ -1,13 +1,11 @@
 ---
-title: flutter-getx-dialog
+title: 在 Flutter 使用 GetX 对话框
 tags: flutter
 categories: 译文
 date: 2022-03-28 00:00:00
 ---
 
 ![](https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220328082341.png)
-
-# 在 Flutter 使用 GetX 对话框
 
 ## 原文
 

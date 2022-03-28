@@ -14,20 +14,20 @@
     
     
     
-    <title>flutter-getx-dialog | duCafeCat</title>
+    <title>在 Flutter 使用 GetX 对话框 | duCafeCat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="flutter">
-    <meta name="description" content="在 Flutter 使用 GetX 对话框原文 https://medium.flutterdevs.com/dialog-using-getx-in-flutter-248601043">
+    <meta name="description" content="原文 https://medium.flutterdevs.com/dialog-using-getx-in-flutter-248601043311  参考 https://pub.d">
 <meta name="keywords" content="flutter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="flutter-getx-dialog">
+<meta property="og:title" content="在 Flutter 使用 GetX 对话框">
 <meta property="og:url" content="https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/index.html">
 <meta property="og:site_name" content="duCafeCat">
-<meta property="og:description" content="在 Flutter 使用 GetX 对话框原文 https://medium.flutterdevs.com/dialog-using-getx-in-flutter-248601043">
+<meta property="og:description" content="原文 https://medium.flutterdevs.com/dialog-using-getx-in-flutter-248601043311  参考 https://pub.d">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220328082341.png">
 <meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/1b234cef46b339f3eede934755c50cb7059c024fafb6a5ed1b59d0e08a961f25.png">
@@ -35,10 +35,10 @@
 <meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/0269dc7d896e3714278bf3097c69b8f474c32c683c4fb1f398efef61c47ef018.png">
 <meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/db4995a98be9632ec703316a34671ac39a57e5342ed6097e33294b7635a98928.png">
 <meta property="og:image" content="https://ducafecat.tech/img/banner-gzh.png">
-<meta property="og:updated_time" content="2022-03-28T00:23:48.170Z">
+<meta property="og:updated_time" content="2022-03-28T02:14:46.120Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flutter-getx-dialog">
-<meta name="twitter:description" content="在 Flutter 使用 GetX 对话框原文 https://medium.flutterdevs.com/dialog-using-getx-in-flutter-248601043">
+<meta name="twitter:title" content="在 Flutter 使用 GetX 对话框">
+<meta name="twitter:description" content="原文 https://medium.flutterdevs.com/dialog-using-getx-in-flutter-248601043311  参考 https://pub.d">
 <meta name="twitter:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220328082341.png">
     
         <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
@@ -116,7 +116,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
             <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">flutter-getx-dialog</div>
+        <div class="flex-col header-title ellipsis">在 Flutter 使用 GetX 对话框</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -137,7 +137,7 @@
 </header>
 <header class="content-header post-header">
     <div class="container fade-scale">
-        <h1 class="title">flutter-getx-dialog</h1>
+        <h1 class="title">在 Flutter 使用 GetX 对话框</h1>
         <h5 class="subtitle">
              <time datetime="2022-03-27T16:00:00.000Z" itemprop="datePublished" class="page-time">
 	2022-03-28
@@ -159,7 +159,7 @@
 
     <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
         <h4>TOC</h4>
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#在-Flutter-使用-GetX-对话框"><span class="post-toc-number">1.</span> <span class="post-toc-text">在 Flutter 使用 GetX 对话框</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#了解如何在您的-Flutter-应用程序使用-GetX-创建一个对话框"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">了解如何在您的 Flutter 应用程序使用 GetX 创建一个对话框</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取-Flutter-Package"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">获取 | Flutter Package</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Introduction"><span class="post-toc-number">2.</span> <span class="post-toc-text">Introduction:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#简介"><span class="post-toc-number">3.</span> <span class="post-toc-text">简介:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Constructor"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">Constructor:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Properties"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">Properties:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Implementation"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">Implementation:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何实现-dart-文件中的代码"><span class="post-toc-number">3.0.4.</span> <span class="post-toc-text">如何实现 dart 文件中的代码:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全部代码"><span class="post-toc-number">3.0.5.</span> <span class="post-toc-text">全部代码:</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#结语"><span class="post-toc-number">4.</span> <span class="post-toc-text">结语:</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">1.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">2.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">3.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#了解如何在您的-Flutter-应用程序使用-GetX-创建一个对话框"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">了解如何在您的 Flutter 应用程序使用 GetX 创建一个对话框</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取-Flutter-Package"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">获取 | Flutter Package</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Introduction"><span class="post-toc-number"></span> <span class="post-toc-text">Introduction:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#简介"><span class="post-toc-number"></span> <span class="post-toc-text">简介:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Constructor"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">Constructor:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Properties"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">Properties:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Implementation"><span class="post-toc-number">0.3.</span> <span class="post-toc-text">Implementation:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何实现-dart-文件中的代码"><span class="post-toc-number">0.4.</span> <span class="post-toc-text">如何实现 dart 文件中的代码:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全部代码"><span class="post-toc-number">0.5.</span> <span class="post-toc-text">全部代码:</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#结语"><span class="post-toc-number"></span> <span class="post-toc-text">结语:</span></a>
     </nav>
 
 </aside>
@@ -171,7 +171,7 @@
 
     <div class="post-card">
         <h1 class="post-card-title">
-            flutter-getx-dialog
+            在 Flutter 使用 GetX 对话框
         </h1>
         <div class="post-meta">
             <time class="post-time" title="2022-03-28 00:00:00" datetime="2022-03-27T16:00:00.000Z"  itemprop="datePublished">2022-03-28</time>
@@ -195,7 +195,7 @@
                 </div>
                 <div class="image-caption"></div>
             </figure>
-<h1 id="在-Flutter-使用-GetX-对话框"><a href="#在-Flutter-使用-GetX-对话框" class="headerlink" title="在 Flutter 使用 GetX 对话框"></a>在 Flutter 使用 GetX 对话框</h1><h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
 <p><a href="https://medium.flutterdevs.com/dialog-using-getx-in-flutter-248601043311" target="_blank" rel="noopener">https://medium.flutterdevs.com/dialog-using-getx-in-flutter-248601043311</a></p>
 </blockquote>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
@@ -349,7 +349,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&title=《flutter-getx-dialog》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&title=《在 Flutter 使用 GetX 对话框》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -359,7 +359,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&title=《flutter-getx-dialog》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&title=《在 Flutter 使用 GetX 对话框》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -369,7 +369,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《flutter-getx-dialog》 — duCafeCat&url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 Flutter 使用 GetX 对话框》 — duCafeCat&url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&via=https://blog.ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -471,7 +471,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&title=《flutter-getx-dialog》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&title=《在 Flutter 使用 GetX 对话框》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -481,7 +481,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&title=《flutter-getx-dialog》 — duCafeCat&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&title=《在 Flutter 使用 GetX 对话框》 — duCafeCat&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -491,7 +491,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《flutter-getx-dialog》 — duCafeCat&url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 Flutter 使用 GetX 对话框》 — duCafeCat&url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&via=https://blog.ducafecat.tech" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

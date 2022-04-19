@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>在 Flutter 中实现文字动画 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="微信群 ducafecatb 站 https://space.bilibili.com/404904528原文 https://medium.com/flutterdevs/explor">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 Flutter 中实现文字动画">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="微信群 ducafecatb 站 https://space.bilibili.com/404904528原文 https://medium.com/flutterdevs/explor">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/2021-07-19-07-42-06.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/2021-07-19-07-12-36.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/2021-07-19-07-19-27.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/rotate.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/type.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/fade.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/scale.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/textLiquidFill.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/wavy.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/flicker.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/colorize.gif">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/typeWriter.gif">
+<meta property="og:image" content="https://ducafecat.tech/img/public-qrcode.png">
+<meta property="og:updated_time" content="2021-07-19T00:08:56.057Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 Flutter 中实现文字动画">
+<meta name="twitter:description" content="微信群 ducafecatb 站 https://space.bilibili.com/404904528原文 https://medium.com/flutterdevs/explor">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/2021-07-19-07-42-06.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">在 Flutter 中实现文字动画</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">在 Flutter 中实现文字动画</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-07-18T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2021-07-19
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信群-ducafecat"><span class="post-toc-number">1.</span> <span class="post-toc-text">微信群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#b-站-https-space-bilibili-com-404904528"><span class="post-toc-number">2.</span> <span class="post-toc-text">b 站 https://space.bilibili.com/404904528</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">3.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">5.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简介"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何实现-dart-文件中的代码"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">如何实现 dart 文件中的代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#旋转动画文字"><span class="post-toc-number">5.4.1.</span> <span class="post-toc-text">旋转动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#打字机动画文字"><span class="post-toc-number">5.4.2.</span> <span class="post-toc-text">打字机动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#淡出动画文本"><span class="post-toc-number">5.4.3.</span> <span class="post-toc-text">淡出动画文本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#缩放动画文字"><span class="post-toc-number">5.4.4.</span> <span class="post-toc-text">缩放动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#TextLiquidFill-动画"><span class="post-toc-number">5.4.5.</span> <span class="post-toc-text">TextLiquidFill 动画</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#动画文字"><span class="post-toc-number">5.4.6.</span> <span class="post-toc-text">动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#闪烁动画文字"><span class="post-toc-number">5.4.7.</span> <span class="post-toc-text">闪烁动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#彩色动画文本"><span class="post-toc-number">5.4.8.</span> <span class="post-toc-text">彩色动画文本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#打字机动画文字-1"><span class="post-toc-number">5.4.9.</span> <span class="post-toc-text">打字机动画文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#所有代码"><span class="post-toc-number">5.4.10.</span> <span class="post-toc-text">所有代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">6.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">6.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">6.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开源项目"><span class="post-toc-number">6.4.2.</span> <span class="post-toc-text">开源项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">6.4.3.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">6.4.4.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">6.4.5.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">6.4.6.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">6.4.7.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">6.4.8.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">6.4.9.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-translation/exploring-text-animations-in-flutter" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            在 Flutter 中实现文字动画
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-07-19 00:00:00" datetime="2021-07-18T16:00:00.000Z"  itemprop="datePublished">2021-07-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-07-19-07-42-06.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="微信群-ducafecat"><a href="#微信群-ducafecat" class="headerlink" title="微信群 ducafecat"></a>微信群 ducafecat</h2><h2 id="b-站-https-space-bilibili-com-404904528"><a href="#b-站-https-space-bilibili-com-404904528" class="headerlink" title="b 站 https://space.bilibili.com/404904528"></a>b 站 <a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">https://space.bilibili.com/404904528</a></h2><h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://medium.com/flutterdevs/exploring-text-animations-in-flutter-9b74103940d2" target="_blank" rel="noopener">https://medium.com/flutterdevs/exploring-text-animations-in-flutter-9b74103940d2</a></p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://pub.dev/packages/animated_text_kit" target="_blank" rel="noopener">https://pub.dev/packages/animated_text_kit</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-07-19-07-12-36.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>动画期望在更新您的应用程序的整体客户机体验从视觉分析，运动，和自定义动画的巨大的一部分，你真的可以想象！.就像协调到应用程序中的一些不同的东西一样，动画应该是有帮助的，而不是基本上是一个正常的复杂格式。</p>
+<p>在 Flutter，动画是直接做到的，而且很多古怪的东西可以用比原生 Android 更少的努力来完善。</p>
+<p>在本帖中，我们将探索 Flutter 文本动画。我们还将实现一个演示程序的文本动画，并显示一个冷静和美丽的文本动画收集使用的动画工具包在您的 Flutter 应用程序。</p>
+<p><a href="https://pub.dev/packages/animated_text_kit" target="_blank" rel="noopener">https://pub.dev/packages/animated_text_kit</a></p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>一个 Flutter 小工具包，包含一些很酷的和伟大的内容动画分类。我们将制作非凡的和优秀的内容动画利用动画 <code>animated_text_kit</code> 工具包包。</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>以下是 AnimatedTextKit 的一些属性:</p>
+<ul>
+<li>animatedTexts: 动画文本: 此属性用于列出[ AnimatedText ] ，以便随后在动画中显示</li>
+<li>isRepeatingAnimation: 重复动画: 此属性用于设置动画是否应该通过将其值更改为 false 来重复。默认情况下，它被设置为 true</li>
+<li>totalRepeatCount: 累计重复计数: 此属性用于设置动画应重复的次数。默认情况下，设置为 3</li>
+<li>repeatForever: 此属性用于设置动画是否会永远重复。如果你想永远重复，还需要将动画设置为 true</li>
+<li>onFinished: 此属性用于将 onFinished [ VoidCallback ]添加到动画小部件。只有当[ isrepetinganimation ]设置为 false 时，此方法才会运行</li>
+<li>onTap: 此属性用于将 onTap [ VoidCallback ]添加到动画小部件</li>
+<li>stopPauseOnTap: 此属性用于暂停，是否需要点击删除剩余的暂停时间？.默认情况下，它被设置为 false</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>第一步: 添加依赖项</li>
+</ul>
+<blockquote>
+<p>将依赖项添加到 pubspec.yaml 文件。</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">animated_text_kit:</span> <span class="string">^4.2.1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二步: 导入</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:animated_text_kit/animated_text_kit.dart'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第三步: 在应用程序的根目录中运行 flutter 软件包。</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter packages get</span><br></pre></td></tr></table></figure>
+<h3 id="如何实现-dart-文件中的代码"><a href="#如何实现-dart-文件中的代码" class="headerlink" title="如何实现 dart 文件中的代码"></a>如何实现 dart 文件中的代码</h3><p>你需要分别在你的代码中实现它:</p>
+<blockquote>
+<p>在 lib 文件夹中创建一个名为 home_page_screen.dart 的新 dart 文件。</p>
+</blockquote>
+<p>我们将在主页屏幕上创建九个不同的按钮，当用户点击按钮时，动画将工作。所有按钮都有不同的动画效果。我们将在下面深入讨论这个问题。当我们运行应用程序时，我们应该得到屏幕的输出，就像下面的屏幕截图一样。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-07-19-07-19-27.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="旋转动画文字"><a href="#旋转动画文字" class="headerlink" title="旋转动画文字"></a>旋转动画文字</h4><p>在正文中，我们将添加一个列小部件。在这个小部件中，添加一个具有高度和宽度的 Container。其子属性，添加一个 <code>_rotate()</code> 小部件。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Center(</span><br><span class="line">  child: Column(</span><br><span class="line">    crossAxisAlignment: CrossAxisAlignment.center,</span><br><span class="line">    mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">    children: [</span><br><span class="line">      Container(</span><br><span class="line">        decoration: BoxDecoration(color: Colors.red),</span><br><span class="line">        height: <span class="number">300.0</span>,</span><br><span class="line">        width: <span class="number">350.0</span>,</span><br><span class="line">        child: Center(</span><br><span class="line">          child: _rotate(),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    ],</span><br><span class="line">  ),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>在 <code>_rotate()</code> 小部件中。我们将返回 Row 小部件。在内部，添加文本和 defaultextstyle()。它是子属性，我们将添加 AnimatedTextKit()小部件。在里面，我们将添加 repeatForever 是真实的，isRepeatingAnimation 也是真实的，并添加 animatedtext。在 animatedtext 中，我们将添加三个 RotateAnimatedText()。用户还可以添加持续时间，旋转。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Widget _rotate()&#123;</span><br><span class="line">  <span class="keyword">return</span> Row(</span><br><span class="line">    mainAxisSize: MainAxisSize.min,</span><br><span class="line">    children: &lt;Widget&gt;[</span><br><span class="line">      <span class="keyword">const</span> SizedBox(width: <span class="number">10.0</span>, height: <span class="number">100.0</span>),</span><br><span class="line">      <span class="keyword">const</span> Text(</span><br><span class="line">        <span class="string">'Flutter'</span>,</span><br><span class="line">        style: TextStyle(fontSize: <span class="number">40.0</span>),</span><br><span class="line">      ),</span><br><span class="line">      <span class="keyword">const</span> SizedBox(width: <span class="number">15.0</span>, height: <span class="number">100.0</span>),</span><br><span class="line">      DefaultTextStyle(</span><br><span class="line">        style: <span class="keyword">const</span> TextStyle(</span><br><span class="line">          fontSize: <span class="number">35.0</span>,</span><br><span class="line">        ),</span><br><span class="line">        child: AnimatedTextKit(</span><br><span class="line">            repeatForever: <span class="keyword">true</span>,</span><br><span class="line">            isRepeatingAnimation: <span class="keyword">true</span>,</span><br><span class="line">            animatedTexts: [</span><br><span class="line">          RotateAnimatedText(<span class="string">'AWESOME'</span>),</span><br><span class="line">          RotateAnimatedText(<span class="string">'Text'</span>),</span><br><span class="line">          RotateAnimatedText(<span class="string">'Animation'</span>),</span><br><span class="line">        ]),</span><br><span class="line">      ),</span><br><span class="line">    ],</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="rotate.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="打字机动画文字"><a href="#打字机动画文字" class="headerlink" title="打字机动画文字"></a>打字机动画文字</h4><p>在正文中，我们将添加与上面相同的方法。但是在子属性中的更改，添加一个 <code>_typer</code> 小部件。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Widget _typer()&#123;</span><br><span class="line">  <span class="keyword">return</span> SizedBox(</span><br><span class="line">    width: <span class="number">250.0</span>,</span><br><span class="line">    child: DefaultTextStyle(</span><br><span class="line">      style: <span class="keyword">const</span> TextStyle(</span><br><span class="line">        fontSize: <span class="number">30.0</span>,</span><br><span class="line">        fontFamily: <span class="string">'popin'</span>,</span><br><span class="line">      ),</span><br><span class="line">      child: AnimatedTextKit(</span><br><span class="line">        isRepeatingAnimation: <span class="keyword">true</span>,</span><br><span class="line">          animatedTexts: [</span><br><span class="line">            TyperAnimatedText(<span class="string">'When you talk, you are only repeating'</span></span><br><span class="line">                ,speed: <span class="built_in">Duration</span>(milliseconds: <span class="number">100</span>)),</span><br><span class="line">            TyperAnimatedText(<span class="string">'something you know.But if you listen,'</span></span><br><span class="line">                ,speed: <span class="built_in">Duration</span>(milliseconds: <span class="number">100</span>)),</span><br><span class="line">            TyperAnimatedText(<span class="string">' you may learn something new.'</span></span><br><span class="line">                ,speed: <span class="built_in">Duration</span>(milliseconds: <span class="number">100</span>)),</span><br><span class="line">            TyperAnimatedText(<span class="string">'– Dalai Lama'</span></span><br><span class="line">                ,speed: <span class="built_in">Duration</span>(milliseconds: <span class="number">100</span>)),</span><br><span class="line">          ]</span><br><span class="line">    ),</span><br><span class="line">  ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 DefaultTextStyle()并添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加四个带有速度持续时间的 TyperAnimatedText()。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="type.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="淡出动画文本"><a href="#淡出动画文本" class="headerlink" title="淡出动画文本"></a>淡出动画文本</h4><p>在正文中，我们将添加与上面相同的方法。但是如果改变子属性，添加一个 <code>_fade</code> 小部件。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Widget _fade()&#123;</span><br><span class="line">  <span class="keyword">return</span> SizedBox(</span><br><span class="line">    child: DefaultTextStyle(</span><br><span class="line">      style: <span class="keyword">const</span> TextStyle(</span><br><span class="line">        fontSize: <span class="number">32.0</span>,</span><br><span class="line">        fontWeight: FontWeight.bold,</span><br><span class="line">      ),</span><br><span class="line">      child: Center(</span><br><span class="line">        child: AnimatedTextKit(</span><br><span class="line">          repeatForever: <span class="keyword">true</span>,</span><br><span class="line">          animatedTexts: [</span><br><span class="line">            FadeAnimatedText(<span class="string">'THE HARDER!!'</span>,</span><br><span class="line">                duration: <span class="built_in">Duration</span>(seconds: <span class="number">3</span>),fadeOutBegin: <span class="number">0.9</span>,fadeInEnd: <span class="number">0.7</span>),</span><br><span class="line">            FadeAnimatedText(<span class="string">'YOU WORK!!'</span>,</span><br><span class="line">                duration: <span class="built_in">Duration</span>(seconds: <span class="number">3</span>),fadeOutBegin: <span class="number">0.9</span>,fadeInEnd: <span class="number">0.7</span>),</span><br><span class="line">            FadeAnimatedText(<span class="string">'THE LUCKIER!!!'</span>,</span><br><span class="line">                duration: <span class="built_in">Duration</span>(seconds: <span class="number">3</span>),fadeOutBegin: <span class="number">0.9</span>,fadeInEnd: <span class="number">0.7</span>),</span><br><span class="line">            FadeAnimatedText(<span class="string">'YOU GET!!!!'</span>,</span><br><span class="line">                duration: <span class="built_in">Duration</span>(seconds: <span class="number">3</span>),fadeOutBegin: <span class="number">0.9</span>,fadeInEnd: <span class="number">0.7</span>),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 DefaultTextStyle()并添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加 4 个 FadeAnimatedText() ，其中包括速度持续时间、 fadeOutBegin 和 fadeInEnd。比 fadeInEnd 要好。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="fade.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="缩放动画文字"><a href="#缩放动画文字" class="headerlink" title="缩放动画文字"></a>缩放动画文字</h4><p>在正文中，我们将添加与上面相同的方法。但是在子属性中的更改，添加一个 <code>_scale</code> 小部件。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Widget _scale()&#123;</span><br><span class="line">  <span class="keyword">return</span> SizedBox(</span><br><span class="line">    child: DefaultTextStyle(</span><br><span class="line">      style: <span class="keyword">const</span> TextStyle(</span><br><span class="line">        fontSize: <span class="number">50.0</span>,</span><br><span class="line">        fontFamily: <span class="string">'SF'</span>,</span><br><span class="line">      ),</span><br><span class="line">      child: Center(</span><br><span class="line">        child: AnimatedTextKit(</span><br><span class="line">          repeatForever: <span class="keyword">true</span>,</span><br><span class="line">          animatedTexts: [</span><br><span class="line">            ScaleAnimatedText(<span class="string">'Eat'</span>,scalingFactor: <span class="number">0.2</span>),</span><br><span class="line">            ScaleAnimatedText(<span class="string">'Code'</span>,scalingFactor: <span class="number">0.2</span>),</span><br><span class="line">            ScaleAnimatedText(<span class="string">'Sleep'</span>,scalingFactor: <span class="number">0.2</span>),</span><br><span class="line">            ScaleAnimatedText(<span class="string">'Repeat'</span>,scalingFactor: <span class="number">0.2</span>),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 DefaultTextStyle()并添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加四个带有 scalingFactor 的 ScaleAnimatedText()。scalingFactor 设置了动画文本的缩放因子。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="scale.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="TextLiquidFill-动画"><a href="#TextLiquidFill-动画" class="headerlink" title="TextLiquidFill 动画"></a>TextLiquidFill 动画</h4><p>在正文中，我们将添加与上面相同的方法。但是如果更改子属性，则添加一个 <code>_textLiquidFillAnimation</code> 小部件。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Widget _textLiquidFillAnimation()&#123;</span><br><span class="line">  <span class="keyword">return</span> SizedBox(</span><br><span class="line">    child: Center(</span><br><span class="line">      child: TextLiquidFill(</span><br><span class="line">        text: <span class="string">'Flutter Devs'</span>,</span><br><span class="line">        waveDuration: <span class="built_in">Duration</span>(seconds: <span class="number">5</span>),</span><br><span class="line">        waveColor: Colors.blue,</span><br><span class="line">        boxBackgroundColor: Colors.green,</span><br><span class="line">        textStyle: TextStyle(</span><br><span class="line">          fontSize: <span class="number">50.0</span>,</span><br><span class="line">          fontWeight: FontWeight.bold,</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 TextLiquidFill()小部件。在这个小部件中，我们将添加文本、 waveDuration、 waveColor 和 boxBackgroundColor。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="textLiquidFill.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="动画文字"><a href="#动画文字" class="headerlink" title="动画文字"></a>动画文字</h4><p>在正文中，我们将添加与上面相同的方法。但是如果改变子属性，添加一个 <code>_wave</code> 小部件。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Widget _wavy()&#123;</span><br><span class="line">  <span class="keyword">return</span> DefaultTextStyle(</span><br><span class="line">    style: <span class="keyword">const</span> TextStyle(</span><br><span class="line">      fontSize: <span class="number">25.0</span>,</span><br><span class="line">    ),</span><br><span class="line">    child: AnimatedTextKit(</span><br><span class="line">      animatedTexts: [</span><br><span class="line">        WavyAnimatedText(<span class="string">"Flutter is Google's UI toolkit,"</span>,</span><br><span class="line">            speed: <span class="built_in">Duration</span>(milliseconds: <span class="number">200</span>)),</span><br><span class="line">        WavyAnimatedText(<span class="string">'for building beautiful Apps'</span>,</span><br><span class="line">            speed: <span class="built_in">Duration</span>(milliseconds: <span class="number">200</span>)),</span><br><span class="line">      ],</span><br><span class="line">      isRepeatingAnimation: <span class="keyword">true</span>,</span><br><span class="line">      repeatForever: <span class="keyword">true</span>,</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个小部件中，我们将返回 DefaultTextStyle()。在内部，我们将添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加两个 WavyAnimatedText()和文本的速度持续时间。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="wavy.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="闪烁动画文字"><a href="#闪烁动画文字" class="headerlink" title="闪烁动画文字"></a>闪烁动画文字</h4><p>在正文中，我们将添加与上面相同的方法。但是在子属性中的更改，添加一个 <code>_flicker</code> 小部件。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Widget _flicker()&#123;</span><br><span class="line">  <span class="keyword">return</span> SizedBox(</span><br><span class="line">    width: <span class="number">250.0</span>,</span><br><span class="line">    child: DefaultTextStyle(</span><br><span class="line">      style: <span class="keyword">const</span> TextStyle(</span><br><span class="line">        fontSize: <span class="number">30</span>,</span><br><span class="line">      ),</span><br><span class="line">      child: AnimatedTextKit(</span><br><span class="line">        repeatForever: <span class="keyword">true</span>,</span><br><span class="line">        animatedTexts: [</span><br><span class="line">          FlickerAnimatedText(<span class="string">'FlutterDevs specializes in creating,'</span>,</span><br><span class="line">              speed: <span class="built_in">Duration</span>(milliseconds: <span class="number">1000</span>),entryEnd: <span class="number">0.7</span>),</span><br><span class="line">          FlickerAnimatedText(<span class="string">'cost-effective and'</span>,</span><br><span class="line">              speed: <span class="built_in">Duration</span>(milliseconds: <span class="number">1000</span>),entryEnd: <span class="number">0.7</span>),</span><br><span class="line">          FlickerAnimatedText(<span class="string">"efficient applications!"</span>,</span><br><span class="line">              speed: <span class="built_in">Duration</span>(milliseconds: <span class="number">1000</span>),entryEnd: <span class="number">0.7</span>),</span><br><span class="line">        ],</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 DefaultTextStyle()并添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加四个具有 entryEnd 和速度的 FlickerAnimatedText()。entryEnd 被标记为文本闪烁输入间隔的结束。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="flicker.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="彩色动画文本"><a href="#彩色动画文本" class="headerlink" title="彩色动画文本"></a>彩色动画文本</h4><p>在正文中，我们将添加与上面相同的方法。但是在子属性中的更改，添加一个 <code>_colorize</code> 的小部件。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Widget _colorize()&#123;</span><br><span class="line">  <span class="keyword">return</span> SizedBox(</span><br><span class="line">    child: Center(</span><br><span class="line">      child: AnimatedTextKit(</span><br><span class="line">        animatedTexts: [</span><br><span class="line">          ColorizeAnimatedText(</span><br><span class="line">            <span class="string">'Mobile Developer'</span>,</span><br><span class="line">            textStyle: colorizeTextStyle,</span><br><span class="line">            colors: colorizeColors,</span><br><span class="line">          ),</span><br><span class="line">          ColorizeAnimatedText(</span><br><span class="line">            <span class="string">'Software Testing'</span>,</span><br><span class="line">            textStyle: colorizeTextStyle,</span><br><span class="line">            colors: colorizeColors,</span><br><span class="line">          ),</span><br><span class="line">          ColorizeAnimatedText(</span><br><span class="line">            <span class="string">'Software Engineer'</span>,</span><br><span class="line">            textStyle: colorizeTextStyle,</span><br><span class="line">            colors: colorizeColors,</span><br><span class="line">          ),</span><br><span class="line">        ],</span><br><span class="line">        isRepeatingAnimation: <span class="keyword">true</span>,</span><br><span class="line">        repeatForever: <span class="keyword">true</span>,</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。在内部，我们将添加三个带有 textStyle 和颜色的 colorizeanmatedtext()。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span>&lt;MaterialColor&gt; colorizeColors = [</span><br><span class="line">  Colors.red,</span><br><span class="line">  Colors.yellow,</span><br><span class="line">  Colors.purple,</span><br><span class="line">  Colors.blue,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> colorizeTextStyle = TextStyle(</span><br><span class="line">  fontSize: <span class="number">40.0</span>,</span><br><span class="line">  fontFamily: <span class="string">'SF'</span>,</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>用户可以根据文本改变颜色。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="colorize.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="打字机动画文字-1"><a href="#打字机动画文字-1" class="headerlink" title="打字机动画文字"></a>打字机动画文字</h4><p>在正文中，我们将添加与上面相同的方法。但是如果更改子属性，则添加 <code>_typeWriter</code> 小部件。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Widget _typeWriter()&#123;</span><br><span class="line">  <span class="keyword">return</span> SizedBox(</span><br><span class="line">    child: DefaultTextStyle(</span><br><span class="line">      style: <span class="keyword">const</span> TextStyle(</span><br><span class="line">        fontSize: <span class="number">30.0</span>,</span><br><span class="line">      ),</span><br><span class="line">      child: Padding(</span><br><span class="line">        padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">8.0</span>),</span><br><span class="line">        child: Center(</span><br><span class="line">          child: AnimatedTextKit(</span><br><span class="line">            repeatForever: <span class="keyword">true</span>,</span><br><span class="line">            animatedTexts: [</span><br><span class="line">              TypewriterAnimatedText(<span class="string">'FlutterDevs specializes in creating cost-effective'</span>,</span><br><span class="line">                  curve: Curves.easeIn,speed: <span class="built_in">Duration</span>(milliseconds: <span class="number">80</span>)),</span><br><span class="line">              TypewriterAnimatedText(<span class="string">'and efficient applications with our perfectly crafted,'</span>,</span><br><span class="line">                  curve: Curves.easeIn,speed: <span class="built_in">Duration</span>(milliseconds: <span class="number">80</span>)),</span><br><span class="line">              TypewriterAnimatedText(<span class="string">'creative and leading-edge flutter app development solutions'</span>,</span><br><span class="line">                  curve: Curves.easeIn,speed: <span class="built_in">Duration</span>(milliseconds: <span class="number">80</span>)),</span><br><span class="line">              TypewriterAnimatedText(<span class="string">'for customers all around the globe.'</span>,</span><br><span class="line">                  curve: Curves.easeIn,speed: <span class="built_in">Duration</span>(milliseconds: <span class="number">80</span>)),</span><br><span class="line">            ],</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个小部件中，我们将返回 SizedBox()。在内部，我们将添加 DefaultTextStyle()并添加 AnimatedTextKit()小部件。在这个小部件中，我们将添加 animatedtext。内部，我们将添加四个打字机动画文本()与曲线和速度。当我们运行应用程序，我们应该得到屏幕的输出像下面的屏幕视频。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="typeWriter.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="所有代码"><a href="#所有代码" class="headerlink" title="所有代码"></a>所有代码</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_animation_text/colorize_animation_text.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_animation_text/fade_animation_text.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_animation_text/flicker_animation_text.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_animation_text/rotate_animation_text.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_animation_text/scale_animation_text.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_animation_text/text_liquid_fill_animation.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_animation_text/typer_animation_text.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_animation_text/typewriter_animated_text.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_animation_text/wavy_animation_text.dart'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HomePageScreen</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _HomePageScreenState createState() =&gt; _HomePageScreenState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_HomePageScreenState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">HomePageScreen</span>&gt; </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      backgroundColor: Color(<span class="number">0xffFFFFFF</span>),</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        backgroundColor: Colors.black,</span><br><span class="line">        title: Text(<span class="string">'Flutter Animations Text Demo'</span>),</span><br><span class="line">        automaticallyImplyLeading: <span class="keyword">false</span>,</span><br><span class="line">        centerTitle: <span class="keyword">true</span>,</span><br><span class="line">      ),</span><br><span class="line">      body: Center(</span><br><span class="line">          child: Padding(</span><br><span class="line">            padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">16.0</span>),</span><br><span class="line">            child: Column(</span><br><span class="line">              mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">              crossAxisAlignment: CrossAxisAlignment.stretch,</span><br><span class="line">              children: &lt;Widget&gt;[</span><br><span class="line"></span><br><span class="line">                <span class="comment">// ignore: deprecated_member_use</span></span><br><span class="line">                RaisedButton(</span><br><span class="line">                  child: Text(<span class="string">'Rotate Animation Text'</span>,style: TextStyle(color: Colors.black),),</span><br><span class="line">                  color: Colors.tealAccent,</span><br><span class="line">                  onPressed:() &#123;</span><br><span class="line">                    Navigator.of(context).push(</span><br><span class="line">                        MaterialPageRoute(builder:(context) =&gt; RotateAnimationText()));</span><br><span class="line">                  &#125;,</span><br><span class="line">                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(<span class="number">20</span>))),</span><br><span class="line">                  padding: EdgeInsets.all(<span class="number">13</span>),</span><br><span class="line">                ),</span><br><span class="line">                SizedBox(height: <span class="number">8</span>,),</span><br><span class="line">                <span class="comment">// ignore: deprecated_member_use</span></span><br><span class="line">                RaisedButton(</span><br><span class="line">                  child: Text(<span class="string">'Typer Animation Text'</span>,style: TextStyle(color: Colors.black),),</span><br><span class="line">                  color: Colors.tealAccent,</span><br><span class="line">                  onPressed:() &#123;</span><br><span class="line">                    Navigator.of(context).push(</span><br><span class="line">                        MaterialPageRoute(builder:(context) =&gt; TyperAnimationText()));</span><br><span class="line">                  &#125;,</span><br><span class="line">                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(<span class="number">20</span>))),</span><br><span class="line">                  padding: EdgeInsets.all(<span class="number">13</span>),</span><br><span class="line"></span><br><span class="line">                ),</span><br><span class="line">                SizedBox(height: <span class="number">8</span>,),</span><br><span class="line">                <span class="comment">// ignore: deprecated_member_use</span></span><br><span class="line">                RaisedButton(</span><br><span class="line">                  child: Text(<span class="string">'Fade Animation Text'</span>,style: TextStyle(color: Colors.black),),</span><br><span class="line">                  color: Colors.tealAccent,</span><br><span class="line">                  onPressed:() &#123;</span><br><span class="line">                    Navigator.of(context).push(</span><br><span class="line">                        MaterialPageRoute(builder:(context) =&gt; FadeAnimationText()));</span><br><span class="line">                  &#125;,</span><br><span class="line">                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(<span class="number">20</span>))),</span><br><span class="line">                  padding: EdgeInsets.all(<span class="number">13</span>),</span><br><span class="line"></span><br><span class="line">                ),</span><br><span class="line">                SizedBox(height: <span class="number">8</span>,),</span><br><span class="line">                <span class="comment">// ignore: deprecated_member_use</span></span><br><span class="line">                RaisedButton(</span><br><span class="line">                  child: Text(<span class="string">'Scale Animation Text'</span>,style: TextStyle(color: Colors.black),),</span><br><span class="line">                  color: Colors.tealAccent,</span><br><span class="line">                  onPressed:() &#123;</span><br><span class="line">                    Navigator.of(context).push(</span><br><span class="line">                        MaterialPageRoute(builder:(context) =&gt; ScaleAnimationText()));</span><br><span class="line">                  &#125;,</span><br><span class="line">                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(<span class="number">20</span>))),</span><br><span class="line">                  padding: EdgeInsets.all(<span class="number">13</span>),</span><br><span class="line"></span><br><span class="line">                ),</span><br><span class="line">                SizedBox(height: <span class="number">8</span>,),</span><br><span class="line">                <span class="comment">// ignore: deprecated_member_use</span></span><br><span class="line">                RaisedButton(</span><br><span class="line">                  child: Text(<span class="string">'TextLiquidFill Animation'</span>,style: TextStyle(color: Colors.black),),</span><br><span class="line">                  color: Colors.tealAccent,</span><br><span class="line">                  onPressed:() &#123;</span><br><span class="line">                    Navigator.of(context).push(</span><br><span class="line">                        MaterialPageRoute(builder:(context) =&gt; TextLiquidFillAnimation()));</span><br><span class="line">                  &#125;,</span><br><span class="line">                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(<span class="number">20</span>))),</span><br><span class="line">                  padding: EdgeInsets.all(<span class="number">13</span>),</span><br><span class="line"></span><br><span class="line">                ),</span><br><span class="line">                SizedBox(height: <span class="number">8</span>,),</span><br><span class="line">                <span class="comment">// ignore: deprecated_member_use</span></span><br><span class="line">                RaisedButton(</span><br><span class="line">                  child: Text(<span class="string">'Wavy Animation Text'</span>,style: TextStyle(color: Colors.black),),</span><br><span class="line">                  color: Colors.tealAccent,</span><br><span class="line">                  onPressed:() &#123;</span><br><span class="line">                    Navigator.of(context).push(</span><br><span class="line">                        MaterialPageRoute(builder:(context) =&gt; WavyAnimationText()));</span><br><span class="line">                  &#125;,</span><br><span class="line">                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(<span class="number">20</span>))),</span><br><span class="line">                  padding: EdgeInsets.all(<span class="number">13</span>),</span><br><span class="line"></span><br><span class="line">                ),</span><br><span class="line">                SizedBox(height: <span class="number">8</span>,),</span><br><span class="line">                <span class="comment">// ignore: deprecated_member_use</span></span><br><span class="line">                RaisedButton(</span><br><span class="line">                  child: Text(<span class="string">'Flicker Animation Text'</span>,style: TextStyle(color: Colors.black),),</span><br><span class="line">                  color: Colors.tealAccent,</span><br><span class="line">                  onPressed:() &#123;</span><br><span class="line">                    Navigator.of(context).push(</span><br><span class="line">                        MaterialPageRoute(builder:(context) =&gt; FlickerAnimationText()));</span><br><span class="line">                  &#125;,</span><br><span class="line">                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(<span class="number">20</span>))),</span><br><span class="line">                  padding: EdgeInsets.all(<span class="number">13</span>),</span><br><span class="line"></span><br><span class="line">                ),</span><br><span class="line">                SizedBox(height: <span class="number">8</span>,),</span><br><span class="line">                <span class="comment">// ignore: deprecated_member_use</span></span><br><span class="line">                RaisedButton(</span><br><span class="line">                  child: Text(<span class="string">'Colorize Animation Text'</span>,style: TextStyle(color: Colors.black),),</span><br><span class="line">                  color: Colors.tealAccent,</span><br><span class="line">                  onPressed:() &#123;</span><br><span class="line">                    Navigator.of(context).push(</span><br><span class="line">                        MaterialPageRoute(builder:(context) =&gt; ColorizeAnimationText()));</span><br><span class="line">                  &#125;,</span><br><span class="line">                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(<span class="number">20</span>))),</span><br><span class="line">                  padding: EdgeInsets.all(<span class="number">13</span>),</span><br><span class="line"></span><br><span class="line">                ),</span><br><span class="line">                SizedBox(height: <span class="number">8</span>,),</span><br><span class="line"></span><br><span class="line">                <span class="comment">// ignore: deprecated_member_use</span></span><br><span class="line">                RaisedButton(</span><br><span class="line">                  child: Text(<span class="string">'Typewriter Animation Text'</span>,style: TextStyle(color: Colors.black),),</span><br><span class="line">                  color: Colors.tealAccent,</span><br><span class="line">                  onPressed:() &#123;</span><br><span class="line">                    Navigator.of(context).push(</span><br><span class="line">                        MaterialPageRoute(builder:(context) =&gt; TypewriterAnimationText()));</span><br><span class="line">                  &#125;,</span><br><span class="line">                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(<span class="number">20</span>))),</span><br><span class="line">                  padding: EdgeInsets.all(<span class="number">13</span>),</span><br><span class="line"></span><br><span class="line">                ),</span><br><span class="line"></span><br><span class="line">              ],</span><br><span class="line">            ),</span><br><span class="line">          )</span><br><span class="line">      ), <span class="comment">//center</span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>在这篇文章中，我已经简单地解释了文本动画的基本结构，您可以根据自己的选择修改这个代码。这是一个小的介绍文本动画用户交互从我这边，它的工作使用扑动。</p>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech/</a></p>
+<p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">https://github.com/ducafecat</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h2><h3 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h3><h4 id="GetX-Quick-Start"><a href="#GetX-Quick-Start" class="headerlink" title="GetX Quick Start"></a>GetX Quick Start</h4><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h4 id="新闻客户端"><a href="#新闻客户端" class="headerlink" title="新闻客户端"></a>新闻客户端</h4><p><a href="https://github.com/ducafecat/flutter_learn_news" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news</a></p>
+<h3 id="strapi-手册译文"><a href="#strapi-手册译文" class="headerlink" title="strapi 手册译文"></a>strapi 手册译文</h3><p><a href="https://getstrapi.cn" target="_blank" rel="noopener">https://getstrapi.cn</a></p>
+<h3 id="微信讨论群-ducafecat"><a href="#微信讨论群-ducafecat" class="headerlink" title="微信讨论群 ducafecat"></a>微信讨论群 ducafecat</h3><h3 id="系列集合"><a href="#系列集合" class="headerlink" title="系列集合"></a>系列集合</h3><h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p><a href="https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/</a></p>
+<h4 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h4><p><a href="https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/</a></p>
+<h4 id="Dart-编程语言基础"><a href="#Dart-编程语言基础" class="headerlink" title="Dart 编程语言基础"></a>Dart 编程语言基础</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=111585" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=111585</a></p>
+<h4 id="Flutter-零基础入门"><a href="#Flutter-零基础入门" class="headerlink" title="Flutter 零基础入门"></a>Flutter 零基础入门</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=123470" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=123470</a></p>
+<h4 id="Flutter-实战从零开始-新闻客户端"><a href="#Flutter-实战从零开始-新闻客户端" class="headerlink" title="Flutter 实战从零开始 新闻客户端"></a>Flutter 实战从零开始 新闻客户端</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=106755</a></p>
+<h4 id="Flutter-组件开发"><a href="#Flutter-组件开发" class="headerlink" title="Flutter 组件开发"></a>Flutter 组件开发</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=144262" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=144262</a></p>
+<h4 id="Flutter-Bloc"><a href="#Flutter-Bloc" class="headerlink" title="Flutter Bloc"></a>Flutter Bloc</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177519" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177519</a></p>
+<h4 id="Flutter-Getx4"><a href="#Flutter-Getx4" class="headerlink" title="Flutter Getx4"></a>Flutter Getx4</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177514" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177514</a></p>
+<h4 id="Docker-Yapi"><a href="#Docker-Yapi" class="headerlink" title="Docker Yapi"></a>Docker Yapi</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=130578" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=130578</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/&title=《在 Flutter 中实现文字动画》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/&title=《在 Flutter 中实现文字动画》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 Flutter 中实现文字动画》 — duCafeCat&url=https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/07/20/translation/explore-typedef-in-dart-fluter/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">在 dart fluter 中使用 typedef</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/07/14/translation/automatic-generate-json-serializable-in-flutter/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 自动生成json实体类</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/&title=《在 Flutter 中实现文字动画》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/&title=《在 Flutter 中实现文字动画》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 Flutter 中实现文字动画》 — duCafeCat&url=https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/07/19/translation/exploring-text-animations-in-flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADL0lEQVR42u3aQW7CQAwFUO5/6VbqqlWV8G0HiZiXFSqQzBsW7nz78Yivr5/r/1/y6+iev9/Nv3u+tssubGxs7Juwk+Uevc4XNNmI6uto+7CxsbHXsauLPi9p1QKTrCH5S34fbGxs7M9kJ1tQXej5/SeFFhsbGxu7t5S8dJ0vvVfSsLGxsT+ZnRSGySerT5wXv8uyNGxsbOy3Z/eC/vd8/cL+NjY2NvZbsudjN/nRpXfYmJSrQwU2Njb2Inb+737eyp1HQnlxSgKpwztgY2NjL2LnDYDe//NXlb3J8QkbGxt7NzsPa5J385GafNwnL1SFZgM2Njb2CnZ12KUwEBNXit7AUP76MEvDxsbGXsE+LxK9PukkPMoPQkl5e3IfbGxs7BXsyYEhYVfDpmqjorfF2NjY2PvYSRmrJlW9beodeKr3wcbGxt7EzktUUmaqYX31B5hs92FXBBsbG/vm7F7cXy05vbGbauSUfwYbGxt7H7sa9PcWWo2WesM90R2wsbGxF7ETQG+AptfK7Y3+TDYLGxsbex87B0wGevK2brXIFSaVsLGxsVew83IyCet7xSYPj/IIDBsbG3sfu1ckrj1gXDUYVL6wsbGxV7DzRu9X8coLSW/Lqk/58y1sbGzsRez8GJBETslRoRffJwekclMZGxsbewW7GtNUP9lrFefHoV4RxcbGxt7EriYweSO22nzNnzJpSGBjY2PvY18VCeUN3WoboLfCJz8MNjY29iJ2L8qZNIzz8Z3eAFDhXWxsbOxF7Mk0S7W9Wm1FVL/bPHthY2Nj35Y9b+72yl6+NZO2waEFGxsbexE7QVa7CtcO6EzaAE8+j42Njb2CPRmXTAYuc3Y+Otk7FGFjY2PvZk+KTXUpvSDp0bqwsbGxP4edX8kRZRLoz0tjoQeCjY2NvYLdKwaTSKg6+lNtNuQxEzY2NvYmdq9o9Q4qees3f1a11GFjY2NvZVfjniTKnxS/vGHQLMPY2NjYH8muHjZ6m5XHRtXtwMbGxsbuxUDVApkXxXw7opwMGxsb++bs3o3ykCjfiOp3X94ewMbGxn57djWO6RWePOKfNCSqz8XGxsa+OfsbmLqWumFuTjIAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

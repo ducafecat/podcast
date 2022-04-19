@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>在 Flutter 中编写自定义小部件(第1部分)ー EllipsizedText | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信 flutter 研修群 ducafecat原文 https://rlesovyi.medium.com/writing">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 Flutter 中编写自定义小部件(第1部分)ー EllipsizedText">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信 flutter 研修群 ducafecat原文 https://rlesovyi.medium.com/writing">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/2021-05-31-08-55-16.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/2021-05-31-08-35-42.png">
+<meta property="og:image" content="https://ducafecat.tech/img/public-qrcode.png">
+<meta property="og:updated_time" content="2021-05-31T00:56:06.894Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 Flutter 中编写自定义小部件(第1部分)ー EllipsizedText">
+<meta name="twitter:description" content="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~微信 flutter 研修群 ducafecat原文 https://rlesovyi.medium.com/writing">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/2021-05-31-08-55-16.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">在 Flutter 中编写自定义小部件(第1部分)ー EllipsizedText</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">在 Flutter 中编写自定义小部件(第1部分)ー EllipsizedText</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-05-30T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2021-05-31
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><span class="post-toc-number">1.</span> <span class="post-toc-text">老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信-flutter-研修群-ducafecat"><span class="post-toc-number">2.</span> <span class="post-toc-text">微信 flutter 研修群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">3.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">4.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">5.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思考"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">思考</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码-1"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">6.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">6.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">6.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开源项目"><span class="post-toc-number">6.4.2.</span> <span class="post-toc-text">开源项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">6.4.3.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">6.4.4.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">6.4.5.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">6.4.6.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">6.4.7.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">6.4.8.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">6.4.9.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            在 Flutter 中编写自定义小部件(第1部分)ー EllipsizedText
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-05-31 00:00:00" datetime="2021-05-30T16:00:00.000Z"  itemprop="datePublished">2021-05-31</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-05-31-08-55-16.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><a href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文" class="headerlink" title="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~"></a>老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</h2><h2 id="微信-flutter-研修群-ducafecat"><a href="#微信-flutter-研修群-ducafecat" class="headerlink" title="微信 flutter 研修群 ducafecat"></a>微信 flutter 研修群 ducafecat</h2><h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://rlesovyi.medium.com/writing-custom-widgets-in-flutter-part-1-ellipsizedtext-a0efdc1368a8" target="_blank" rel="noopener">https://rlesovyi.medium.com/writing-custom-widgets-in-flutter-part-1-ellipsizedtext-a0efdc1368a8</a></p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/MatrixDev/Flutter-CustomWidgets" target="_blank" rel="noopener">https://github.com/MatrixDev/Flutter-CustomWidgets</a></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-05-31-08-35-42.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>声明式用户界面在 Flutter 是相当不错，易于使用，它是非常诱人的使用尽可能。但是很多时候，开发人员只是做得太过火了ーー用声明的方式编写所有东西，即使有时候任务可以以更强制性的方式更有效、更容易理解。</p>
+<p>每个人都应该明白的—- 在陈述和命令式编程之间必须有一个平衡。每种方法都有自己的用途，每种方法在某些任务上都比其他方法更加出色。</p>
+<p>在本系列文章中，我将描述如何通过从头创建自定义小部件来解决不同的问题。每一个都比前一个稍微复杂一点。</p>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>在查看代码之前，我们需要知道一些基本的事情。</p>
+<p>Widget ー只是一个不可变的(最好是 const)类，它包含 Elements 和 RenderObjects 的配置属性。它还负责创建上述元素和渲染对象。需要理解的重要事情ー小部件从不包含状态或任何业务逻辑，只是传递它们。</p>
+<p>元素ー是负责实际 UI 树的实体。它包含对所有子元素的引用，以及(不像 Widget)对其父元素的引用。元素在大多数情况下都会被重用，除非键或小部件被更改。因此，如果 onlyWidget 属性被更改，即使分配了新的 Widget，Element 也将保持不变。</p>
+<p>State ー只不过是 Element 内部的一个用户定义类，它还公开了一些来自它的回调。</p>
+<p>RenderObject ーー负责实际尺寸的计算、子元素的放置、绘制、触摸事件的处理等。这些对象与 Android 或其他框架的经典视图非常相似。</p>
+<p>为什么我们同时拥有元素和渲染对象？因为效率高。每个小部件都有各自的元素，但只有一些有渲染对象。由于这一点，很多布局，触摸和其他层次遍历调用可以省略。</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p>第一个例子是一个非常简单的小部件，它在文本不适合时用省略号缩放文本。为什么我们需要这样一个小部件时，内置的文本已经省略号支持你可能会问？答案很简单—- 到目前为止，它只是通过文字而不是字符来表达 <a href="https://github.com/flutter/flutter/issues/18761。所以如果你有一个非常长的单词在结尾ー大多数时候你只能看到这个单词的前几个字母，即使有足够的空间去填充。" target="_blank" rel="noopener">https://github.com/flutter/flutter/issues/18761。所以如果你有一个非常长的单词在结尾ー大多数时候你只能看到这个单词的前几个字母，即使有足够的空间去填充。</a></p>
+<p>那么，我们开始吧。Flutter 有许多内置的基类和 mixin，它们将帮助构建完全自定义的小部件。以下是其中的一些:</p>
+<ul>
+<li>LeafRenderObjectWidget 没有 child</li>
+<li>SingleChildRenderObjectWidget 一个 child</li>
+<li>MultiChildRenderObjectWidget 多个 child</li>
+</ul>
+<p>在我们的例子中，我们将使用 LeafRenderObjectWidget，因为我们只需要渲染文本，并且不会有子节点:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Ellipsis &#123; start, middle, end &#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EllipsizedText</span> <span class="keyword">extends</span> <span class="title">LeafRenderObjectWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> text;</span><br><span class="line">  <span class="keyword">final</span> TextStyle? style;</span><br><span class="line">  <span class="keyword">final</span> Ellipsis ellipsis;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> EllipsizedText(</span><br><span class="line">    <span class="keyword">this</span>.text, &#123;</span><br><span class="line">    Key? key,</span><br><span class="line">    <span class="keyword">this</span>.style,</span><br><span class="line">    <span class="keyword">this</span>.ellipsis = Ellipsis.end,</span><br><span class="line">  &#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  RenderObject createRenderObject(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> RenderEllipsizedText()..widget = <span class="keyword">this</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> updateRenderObject(BuildContext context, RenderEllipsizedText renderObject) &#123;</span><br><span class="line">    renderObject.widget = <span class="keyword">this</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们创建了我们的 Widget，唯一不同寻常的是有两种方法:</p>
+<ul>
+<li>createRenderObject — 负责实际创建我们的 RenderObject</li>
+<li>updateRenderObject — 当 Widget 的数据发生变化但 RenderObject 保持不变时，将调用 updateRenderObject ー。在这种情况下，我们需要更新 RenderObject 中的数据，否则它将呈现旧文本</li>
+</ul>
+<p>我还需要注意，将每个值从小部件复制到 RenderObject 是首选的。但是我会通过整个 Widget，因为不管怎样它们都是不可变的(而且我懒得编写所有的样板代码)。</p>
+<p>现在让我们从实际的渲染对象开始:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RenderEllipsizedText</span> <span class="keyword">extends</span> <span class="title">RenderBox</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> _widgetChanged = <span class="keyword">false</span>;</span><br><span class="line">  <span class="keyword">var</span> _widget = <span class="keyword">const</span> EllipsizedText(<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">set</span> widget(EllipsizedText widget) &#123;</span><br><span class="line">    <span class="keyword">if</span> (_widget.text == widget.text &amp;&amp;</span><br><span class="line">        _widget.style == widget.style &amp;&amp;</span><br><span class="line">        _widget.ellipsis == widget.ellipsis) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    _widgetChanged = <span class="keyword">true</span>;</span><br><span class="line">    _widget = widget;</span><br><span class="line">    markNeedsLayout();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这里，我们定义了所有的变量，并编写了一个 setter 来实际更新它们。还有一个检查值是否实际发生了更改的防护措施ー如果没有更改，则没有必要重新计算省略号和重绘文本。</p>
+<p>现在我们需要布局渲染对象。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RenderEllipsizedText</span> <span class="keyword">extends</span> <span class="title">RenderBox</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">var</span> _constraints = <span class="keyword">const</span> BoxConstraints();</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> performLayout() &#123;</span><br><span class="line">    <span class="keyword">if</span> (!_widgetChanged &amp;&amp; _constraints == constraints &amp;&amp; hasSize) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _widgetChanged = <span class="keyword">false</span>;</span><br><span class="line">    _constraints = constraints;</span><br><span class="line"></span><br><span class="line">    size =_ellipsize(</span><br><span class="line">      minWidth: constraints.minWidth,</span><br><span class="line">      maxWidth: constraints.maxWidth,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>布局的过程相当简单。所有我们需要做的ー根据提供给我们的约束计算渲染对象的大小。约束只描述我们必须遵守的最小和最大规模。另外，如果没有任何变化，并且在以前的布局传递过程中已经计算了大小，则添加额外的检查。</p>
+<p>实际创建省略号文本的过程相当繁琐，而且肯定有更好的解决方案，但我选择使用二进制搜索来寻找最佳匹配。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RenderEllipsizedText</span> <span class="keyword">extends</span> <span class="title">RenderBox</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">final</span> _textPainter = TextPainter(textDirection: TextDirection.ltr);</span><br><span class="line"></span><br><span class="line">  Size _ellipsize(&#123;required <span class="built_in">double</span> minWidth, required <span class="built_in">double</span> maxWidth&#125;) &#123;</span><br><span class="line">    <span class="keyword">final</span> text = _widget.text;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (_layoutText(length: text.length, minWidth: minWidth) &gt; maxWidth) &#123;</span><br><span class="line">      <span class="keyword">var</span> left = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">var</span> right = text.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="keyword">final</span> index = (left + right) ~/ <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (_layoutText(length: index, minWidth: minWidth) &gt; maxWidth) &#123;</span><br><span class="line">          right = index;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          left = index + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      _layoutText(length: right - <span class="number">1</span>, minWidth: minWidth);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> constraints.constrain(Size(_textPainter.width, _textPainter.height));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我不会讲完所有这些逻辑(如果你愿意，你可以通过它来阅读)。但是重要的是 TextPainter 是用来计算文本大小的。如果文本大小长于我们的约束，我会尽量使它越来越短，直到它符合我们的约束。</p>
+<p><code>_layoutText</code> 用来计算我们裁剪后的文本大小:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">double</span> _layoutText(&#123;required <span class="built_in">int</span> length, required <span class="built_in">double</span> minWidth&#125;) &#123;</span><br><span class="line">  <span class="keyword">final</span> text = _widget.text;</span><br><span class="line">  <span class="keyword">final</span> style = _widget.style;</span><br><span class="line">  <span class="keyword">final</span> ellipsis = _widget.ellipsis;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">String</span> ellipsizedText = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">switch</span> (ellipsis) &#123;</span><br><span class="line">    <span class="keyword">case</span> Ellipsis.start:</span><br><span class="line">      <span class="keyword">if</span> (length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        ellipsizedText = text.substring(text.length - length, text.length);</span><br><span class="line">        <span class="keyword">if</span> (length != text.length) &#123;</span><br><span class="line">          ellipsizedText = <span class="string">'...'</span> + ellipsizedText;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> Ellipsis.middle:</span><br><span class="line">      <span class="keyword">if</span> (length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        ellipsizedText = text;</span><br><span class="line">        <span class="keyword">if</span> (length != text.length) &#123;</span><br><span class="line">          <span class="keyword">var</span> start = text.substring(<span class="number">0</span>, (length / <span class="number">2</span>).round());</span><br><span class="line">          <span class="keyword">var</span> end = text.substring(text.length - start.length, text.length);</span><br><span class="line">          ellipsizedText = start + <span class="string">'...'</span> + end;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> Ellipsis.end:</span><br><span class="line">      <span class="keyword">if</span> (length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        ellipsizedText = text.substring(<span class="number">0</span>, length);</span><br><span class="line">        <span class="keyword">if</span> (length != text.length) &#123;</span><br><span class="line">          ellipsizedText = ellipsizedText + <span class="string">'...'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  _textPainter.text = TextSpan(text: ellipsizedText, style: style);</span><br><span class="line">  _textPainter.layout(minWidth: minWidth, maxWidth: <span class="built_in">double</span>.infinity);</span><br><span class="line">  <span class="keyword">return</span> _textPainter.width;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>差不多就是这样了，我们剩下要做的就是——实际上画出我们的文本。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@override</span></span><br><span class="line"><span class="keyword">void</span> paint(PaintingContext context, Offset offset) &#123;</span><br><span class="line">  _textPainter.paint(context.canvas, offset);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech/</a></p>
+<p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">https://github.com/ducafecat</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h2><h3 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h3><h4 id="GetX-Quick-Start"><a href="#GetX-Quick-Start" class="headerlink" title="GetX Quick Start"></a>GetX Quick Start</h4><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h4 id="新闻客户端"><a href="#新闻客户端" class="headerlink" title="新闻客户端"></a>新闻客户端</h4><p><a href="https://github.com/ducafecat/flutter_learn_news" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news</a></p>
+<h3 id="strapi-手册译文"><a href="#strapi-手册译文" class="headerlink" title="strapi 手册译文"></a>strapi 手册译文</h3><p><a href="https://getstrapi.cn" target="_blank" rel="noopener">https://getstrapi.cn</a></p>
+<h3 id="微信讨论群-ducafecat"><a href="#微信讨论群-ducafecat" class="headerlink" title="微信讨论群 ducafecat"></a>微信讨论群 ducafecat</h3><h3 id="系列集合"><a href="#系列集合" class="headerlink" title="系列集合"></a>系列集合</h3><h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p><a href="https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/</a></p>
+<h4 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h4><p><a href="https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/</a></p>
+<h4 id="Dart-编程语言基础"><a href="#Dart-编程语言基础" class="headerlink" title="Dart 编程语言基础"></a>Dart 编程语言基础</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=111585" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=111585</a></p>
+<h4 id="Flutter-零基础入门"><a href="#Flutter-零基础入门" class="headerlink" title="Flutter 零基础入门"></a>Flutter 零基础入门</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=123470" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=123470</a></p>
+<h4 id="Flutter-实战从零开始-新闻客户端"><a href="#Flutter-实战从零开始-新闻客户端" class="headerlink" title="Flutter 实战从零开始 新闻客户端"></a>Flutter 实战从零开始 新闻客户端</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=106755</a></p>
+<h4 id="Flutter-组件开发"><a href="#Flutter-组件开发" class="headerlink" title="Flutter 组件开发"></a>Flutter 组件开发</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=144262" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=144262</a></p>
+<h4 id="Flutter-Bloc"><a href="#Flutter-Bloc" class="headerlink" title="Flutter Bloc"></a>Flutter Bloc</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177519" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177519</a></p>
+<h4 id="Flutter-Getx4"><a href="#Flutter-Getx4" class="headerlink" title="Flutter Getx4"></a>Flutter Getx4</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177514" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177514</a></p>
+<h4 id="Docker-Yapi"><a href="#Docker-Yapi" class="headerlink" title="Docker Yapi"></a>Docker Yapi</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=130578" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=130578</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/&title=《在 Flutter 中编写自定义小部件(第1部分)ー EllipsizedText》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/&title=《在 Flutter 中编写自定义小部件(第1部分)ー EllipsizedText》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 Flutter 中编写自定义小部件(第1部分)ー EllipsizedText》 — duCafeCat&url=https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/06/01/flutter-opensource/flutter-crypto-app/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter开源项目 - 加密币客户端 flutter-crypto-app</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/05/27/translation/how-to-use-lottie-animation-in-your-flutter-splash-screen/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">flutter 启动屏幕使用 Lottie 动画</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/&title=《在 Flutter 中编写自定义小部件(第1部分)ー EllipsizedText》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/&title=《在 Flutter 中编写自定义小部件(第1部分)ー EllipsizedText》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 Flutter 中编写自定义小部件(第1部分)ー EllipsizedText》 — duCafeCat&url=https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/05/31/translation/writing-custom-widgets-in-flutter-part-1-ellipsizedtext/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD7klEQVR42u3aS27bQBAFQN//0s42AUPxve6RIQOllWBTM5ziotmfr6/483353P397/9er3n9q+s11+/Jmne/OvbBgQMHDhzlUZPNktWuf0+Omhw7f0j5GXHgwIEDx1mOu1tpvz9sFgTvU9wJOg4cOHDg+DSO/ACb6zepIw4cOHDg+L0cbYnwHcVKHDhw4MDxORyzJlBeLpyV9vLELC9uHquV4sCBAweORaSbFQo/5/tb5jtw4MCBA0eQCO2HG2ajD/v1XyeN0elw4MCBA8eao03D8kToVPzPE8vZkAQOHDhw4HgHR7v02cZSslp+TX7/q6kKHDhw4MDx8g6TdCi/PmkUza7Pg2gxvnD9Ow4cOHDgWHC0w2053CxM5veQFxOLB4YDBw4cONYc0b/Lw2/Sp2Tf2ShDPTmIAwcOHDhGHPn2+7GD2VGTtO3YiwIOHDhw4DjEsVkob0e1QX0WyNsXgtviIA4cOHDgWHDsBxracYc8ALevAjN0HDhw4MBxiqPdfp+2vU7M2vGF/PpkXxw4cODAcZajbfO0jau2KZUnabMHmaSOOHDgwIGj5dinOrNDbuCSUmB+Dw8ZLQ4cOHDgKDn2c3ZJ6M1TqZxp05Qq3jJw4MCBA0fJUcuV7ah37LLJuR4eCQ4cOHDgOMSRN4H2TaaW9VTAjh4JDhw4cOA4ypE3nNqD5YXFPJGbNcMewjMOHDhw4FhzzEps+djZLJBvBvJmAbsIujhw4MCBI+Boi3d5I2pWvHt3cfBhfRw4cODAcZRjP7g2G03IE7NN+a9I3nDgwIEDx4gjH4nbN3tmCVX7ANrxi3++48CBAweOQxyzJZIgncSvTdMoD6IRKA4cOHDgOMoxG4zLjzoLoskhZ4hRWRAHDhw4cCw42pRpc7w2uG4eTPIrHDhw4MBxlmM2CtC2kfLftkCzwBzVSnHgwIEDR8mRh7H993ZmoL2TDT0OHDhw4DjFkW+5D2lRErUYjGjLlP/ZFwcOHDhwrDk2G+clv9kwRPtgctziXQMHDhw4cJQc7QjCLBlr6WcDcEmAf9gFBw4cOHAc4tgEsLxNlYfV/fqzFXDgwIEDx56jbdu07Z/ZsZM0Mm8+1Y8HBw4cOHAsOL7LT3vTefsnL+rlrwL1iwIOHDhw4FhzzNKkNnzuA3bdSQvWX6V/OHDgwIHj5V75eFk7fLApPs6Ouh90wIEDBw4cpzhmW7atoLZ4N0svV68OOHDgwIHjxznaAJkH7/34XV5SvD07Dhw4cOD4cY5NQbCetoiTzHY84vZuceDAgQPHIY58+KDdrA3DbbGyLREeazvhwIEDB471QEM7cDCD2x+15cOBAwcOHIc4/gD7xAtttUyjowAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

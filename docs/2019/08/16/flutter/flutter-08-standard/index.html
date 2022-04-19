@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 零基础入门中文教学 - 08 开发规范 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="本节目标 Dart 规范 Flutter 阿里规范  VSCode 格式化 右键菜单                                                                                                              当 Save 时自动格式化">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 零基础入门中文教学 - 08 开发规范">
+<meta property="og:url" content="https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 Dart 规范 Flutter 阿里规范  VSCode 格式化 右键菜单                                                                                                              当 Save 时自动格式化">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/2019-08-26-15-10-18.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/2019-08-26-15-08-42.png">
+<meta property="og:updated_time" content="2019-08-26T07:11:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 零基础入门中文教学 - 08 开发规范">
+<meta name="twitter:description" content="本节目标 Dart 规范 Flutter 阿里规范  VSCode 格式化 右键菜单                                                                                                              当 Save 时自动格式化">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/2019-08-26-15-10-18.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 零基础入门中文教学 - 08 开发规范</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 零基础入门中文教学 - 08 开发规范</h1>
+        <h5 class="subtitle">
+             <time datetime="2019-08-15T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2019-08-16
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VSCode-格式化"><span class="post-toc-number">2.</span> <span class="post-toc-text">VSCode 格式化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#规范精要"><span class="post-toc-number">3.</span> <span class="post-toc-text">规范精要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用小写加下划线来命名库和源文件"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">使用小写加下划线来命名库和源文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优先使用小驼峰法作为常量命名"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">优先使用小驼峰法作为常量命名</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#所有流控制结构，请使用大括号"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">所有流控制结构，请使用大括号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Doc-注释"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">Doc 注释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导入-lib-下文件库，统一指定包名，避免过多的"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">导入 lib 下文件库，统一指定包名，避免过多的123```dartpackage:flutter_go/</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用相邻字符串连接字符串文字"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">使用相邻字符串连接字符串文字</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优先使用模板字符串"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">优先使用模板字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在不需要的时候，避免使用花括号"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">在不需要的时候，避免使用花括号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不要使用-length-查看集合是否为空"><span class="post-toc-number">3.9.</span> <span class="post-toc-text">不要使用.length 查看集合是否为空</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#遍历一个序列"><span class="post-toc-number">3.10.</span> <span class="post-toc-text">遍历一个序列</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不要显式地将变量初始化为空"><span class="post-toc-number">3.11.</span> <span class="post-toc-text">不要显式地将变量初始化为空</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在不需要的时候不要用-this"><span class="post-toc-number">3.12.</span> <span class="post-toc-text">在不需要的时候不要用 this</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#尽可能使用初始化的形式"><span class="post-toc-number">3.13.</span> <span class="post-toc-text">尽可能使用初始化的形式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不要使用-new"><span class="post-toc-number">3.14.</span> <span class="post-toc-text">不要使用 new</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优先使用-async-await-代替原始的-futures"><span class="post-toc-number">3.15.</span> <span class="post-toc-text">优先使用 async/await 代替原始的 futures</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#当异步没有任何用处时，不要使用它"><span class="post-toc-number">3.16.</span> <span class="post-toc-text">当异步没有任何用处时，不要使用它</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-flutter/flutter-08-standard" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            Flutter 零基础入门中文教学 - 08 开发规范
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-16 00:00:00" datetime="2019-08-15T16:00:00.000Z"  itemprop="datePublished">2019-08-16</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter零基础入门中文教学/">Flutter零基础入门中文教学</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h2><ul>
+<li>Dart 规范</li>
+<li>Flutter 阿里规范</li>
+</ul>
+<h2 id="VSCode-格式化"><a href="#VSCode-格式化" class="headerlink" title="VSCode 格式化"></a>VSCode 格式化</h2><ul>
+<li>右键菜单</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-08-26-15-10-18.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>当 Save 时自动格式化</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2019-08-26-15-08-42.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="规范精要"><a href="#规范精要" class="headerlink" title="规范精要"></a>规范精要</h2><h3 id="使用小写加下划线来命名库和源文件"><a href="#使用小写加下划线来命名库和源文件" class="headerlink" title="使用小写加下划线来命名库和源文件"></a>使用小写加下划线来命名库和源文件</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span> peg_parser.source_scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">'file_system.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'slider_menu.dart'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="优先使用小驼峰法作为常量命名"><a href="#优先使用小驼峰法作为常量命名" class="headerlink" title="优先使用小驼峰法作为常量命名"></a>优先使用小驼峰法作为常量命名</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pi = <span class="number">3.14</span>;</span><br><span class="line"><span class="keyword">const</span> defaultTimeout = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">final</span> urlScheme = <span class="built_in">RegExp</span>(<span class="string">'^([a-z]+):'</span>);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dice</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">final</span> numberGenerator = Random();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="所有流控制结构，请使用大括号"><a href="#所有流控制结构，请使用大括号" class="headerlink" title="所有流控制结构，请使用大括号"></a>所有流控制结构，请使用大括号</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (isWeekDay) &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'Bike to work!'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'Go dancing or read a book!'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Doc-注释"><a href="#Doc-注释" class="headerlink" title="Doc 注释"></a>Doc 注释</h3><p>使用///文档注释来记录成员和类型。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="markdown">/// The number of characters in this chunk when unsplit.</span></span></span><br><span class="line"><span class="built_in">int</span> <span class="keyword">get</span> length =&gt; ...</span><br></pre></td></tr></table></figure>
+<h3 id="导入-lib-下文件库，统一指定包名，避免过多的"><a href="#导入-lib-下文件库，统一指定包名，避免过多的" class="headerlink" title="导入 lib 下文件库，统一指定包名，避免过多的"></a>导入 lib 下文件库，统一指定包名，避免过多的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```dart</span><br><span class="line">package:flutter_go/</span><br></pre></td></tr></table></figure></h3><h3 id="使用相邻字符串连接字符串文字"><a href="#使用相邻字符串连接字符串文字" class="headerlink" title="使用相邻字符串连接字符串文字"></a>使用相邻字符串连接字符串文字</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">raiseAlarm(</span><br><span class="line">    <span class="string">'ERROR: Parts of the spaceship are on fire. Other '</span></span><br><span class="line">    <span class="string">'parts are overrun by martians. Unclear which are which.'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="优先使用模板字符串"><a href="#优先使用模板字符串" class="headerlink" title="优先使用模板字符串"></a>优先使用模板字符串</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello, $name! You are <span class="subst">$&#123;year - birth&#125;</span> years old.'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="在不需要的时候，避免使用花括号"><a href="#在不需要的时候，避免使用花括号" class="headerlink" title="在不需要的时候，避免使用花括号"></a>在不需要的时候，避免使用花括号</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hi, $name!'</span></span><br><span class="line"><span class="string">"Wear your wildest $decade's outfit."</span></span><br></pre></td></tr></table></figure>
+<h3 id="不要使用-length-查看集合是否为空"><a href="#不要使用-length-查看集合是否为空" class="headerlink" title="不要使用.length 查看集合是否为空"></a>不要使用.length 查看集合是否为空</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (lunchBox.isEmpty) <span class="keyword">return</span> <span class="string">'so hungry...'</span>;</span><br><span class="line"><span class="keyword">if</span> (words.isNotEmpty) <span class="keyword">return</span> words.join(<span class="string">' '</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="遍历一个序列"><a href="#遍历一个序列" class="headerlink" title="遍历一个序列"></a>遍历一个序列</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> person <span class="keyword">in</span> people) &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="不要显式地将变量初始化为空"><a href="#不要显式地将变量初始化为空" class="headerlink" title="不要显式地将变量初始化为空"></a>不要显式地将变量初始化为空</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> _nextId;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LazyId</span> </span>&#123;</span><br><span class="line">  <span class="built_in">int</span> _id;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">int</span> <span class="keyword">get</span> id &#123;</span><br><span class="line">    <span class="keyword">if</span> (_nextId == <span class="keyword">null</span>) _nextId = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (_id == <span class="keyword">null</span>) _id = _nextId++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> _id;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="在不需要的时候不要用-this"><a href="#在不需要的时候不要用-this" class="headerlink" title="在不需要的时候不要用 this"></a>在不需要的时候不要用 this</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> value;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> clear() &#123;</span><br><span class="line">    update(<span class="keyword">null</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> update(value) &#123;</span><br><span class="line">    <span class="keyword">this</span>.value = value;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="尽可能使用初始化的形式"><a href="#尽可能使用初始化的形式" class="headerlink" title="尽可能使用初始化的形式"></a>尽可能使用初始化的形式</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="built_in">num</span> x, y;</span><br><span class="line">  Point(<span class="keyword">this</span>.x, <span class="keyword">this</span>.y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="不要使用-new"><a href="#不要使用-new" class="headerlink" title="不要使用 new"></a>不要使用 new</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Widget build(BuildContext context) &#123;</span><br><span class="line">  <span class="keyword">return</span> Row(</span><br><span class="line">    children: [</span><br><span class="line">      RaisedButton(</span><br><span class="line">        child: Text(<span class="string">'Increment'</span>),</span><br><span class="line">      ),</span><br><span class="line">      Text(<span class="string">'Click!'</span>),</span><br><span class="line">    ],</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="优先使用-async-await-代替原始的-futures"><a href="#优先使用-async-await-代替原始的-futures" class="headerlink" title="优先使用 async/await 代替原始的 futures"></a>优先使用 async/await 代替原始的 futures</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;<span class="built_in">int</span>&gt; countActivePlayers(<span class="built_in">String</span> teamName) <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> team = <span class="keyword">await</span> downloadTeam(teamName);</span><br><span class="line">    <span class="keyword">if</span> (team == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> players = <span class="keyword">await</span> team.roster;</span><br><span class="line">    <span class="keyword">return</span> players.where((player) =&gt; player.isActive).length;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    log.error(e);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="当异步没有任何用处时，不要使用它"><a href="#当异步没有任何用处时，不要使用它" class="headerlink" title="当异步没有任何用处时，不要使用它"></a>当异步没有任何用处时，不要使用它</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Future afterTwoThings(Future first, Future second) &#123;</span><br><span class="line">  <span class="keyword">return</span> Future.wait([first, second]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://dart.goodev.org/guides/language/effective-dart" target="_blank" rel="noopener">Dart 官方规范</a></li>
+<li><a href="https://github.com/alibaba/flutter-go/blob/develop/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md" target="_blank" rel="noopener">阿里 Flutter Go 代码开发规范 0.1.0 版</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/&title=《Flutter 零基础入门中文教学 - 08 开发规范》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/&title=《Flutter 零基础入门中文教学 - 08 开发规范》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 08 开发规范》 — duCafeCat&url=https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/08/17/flutter/flutter-09-widgets/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 零基础入门中文教学 - 09 一切都是 widget</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/08/12/flutter/flutter-07-first-app-helloword/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 零基础入门中文教学 - 07 我们的第一个程序 hello word</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/&title=《Flutter 零基础入门中文教学 - 08 开发规范》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/&title=《Flutter 零基础入门中文教学 - 08 开发规范》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 零基础入门中文教学 - 08 开发规范》 — duCafeCat&url=https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2019/08/16/flutter/flutter-08-standard/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3aQW7jQAwEwPz/08k1QCKlm0N5jUXpZDiSrNJhyDTn4yM+Pr8d37/5ec7VtfdXXZ1zf+3agYeHh3fw6D+Plnd/1Qx5Rb1/Zjw8PLynefmCnjzc/fd5+ckLzOX3eHh4eG/Dmy3uye/eFy08PDy8/4OXMO4b4vtG+R8XBjw8PLyDMCIJFPIFfff+C1kLHh4eXszLY4L3+fzIfA8PDw/veKqeD8POw4tkca+fFg8PD+8B3ixOPYkbZpFuex88PDy853h5ZJAv6+ejrDwy/uOeeHh4eC/h5cP+Gbsdg+WFp8in8fDw8A54u1nobjCRF5UjJB4eHl7Jy9vcdjyWR7F5NJy8vmEXj4eHh1fO3M8X61ksm2+lahvry/KAh4eH9wCvLRW7zXRyz3qEhoeHh7fKm4217gFbWxDa9jraE4GHh4e3yssX6JPGd/ZSjioeHh4e3gO82aO0n/O/5sO2Pz7j4eHhPcbLW948Tp1Ft7PYt6gYeHh4eDv5wLDlbV9EGwS3GwsufwUPDw9vlZeEtjlmtoGgLQzFS8fDw8N7OS/f5DTLTtvNXnUwgYeHh/cAbxZStEHtLPydbUoY1is8PDy8Jd7W0vw5OlpY0fTj4eHhHfDaR8/b6HaJT4LatT1leHh4eKvdZjsAm3WwbeFpm+8ijMDDw8Mb8WY3OikwyVXtyxr+f4CHh4d3zJst6LMwoi1F7SYtPDw8vNfzthroWQmZBQ2/nI+Hh4e3yjsfSuVpRxtw5NsXLq/Fw8PDe4DXLrj1HoTRdoS8TR9i8PDw8I55s2IwG4+1rfasMODh4eG9hnfS4LZLf72Xoc1X8PDw8N6M1w6rZuefbFbAw8PDezde3gSfj77a7QvLdQ8PDw/vOOfcGoZtFYOiMODh4eGt8mb/8OfxRDsSe2L8hoeHh7fE+wK7aFS5gak8LAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

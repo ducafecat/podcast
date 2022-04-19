@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter开源项目 - appFlowy 真的是 Notion 的替代品? 一周暴涨 star 9k 多! | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="githttps://www.appflowy.io/ https://github.com/AppFlowy-IO/appflowy">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter开源项目 - appFlowy 真的是 Notion 的替代品? 一周暴涨 star 9k 多!">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="githttps://www.appflowy.io/ https://github.com/AppFlowy-IO/appflowy">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-22-22-25.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-22-23-16.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-22-23-59.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-23-31-18.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-22-30-35.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-22-41-01.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-22-43-09.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-22-44-58.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-22-45-48.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-22-58-59.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-23-27-48.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-23-11-05.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-23-14-32.png">
+<meta property="og:image" content="https://ducafecat.tech/img/public-qrcode.png">
+<meta property="og:updated_time" content="2021-12-02T10:38:56.344Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter开源项目 - appFlowy 真的是 Notion 的替代品? 一周暴涨 star 9k 多!">
+<meta name="twitter:description" content="githttps://www.appflowy.io/ https://github.com/AppFlowy-IO/appflowy">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/2021-12-01-22-22-25.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter开源项目 - appFlowy 真的是 Notion 的替代品? 一周暴涨 star 9k 多!</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter开源项目 - appFlowy 真的是 Notion 的替代品? 一周暴涨 star 9k 多!</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-12-01T14:20:14.000Z" itemprop="datePublished" class="page-time">
+	2021-12-01
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/开源/">开源</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git"><span class="post-toc-number">1.</span> <span class="post-toc-text">git</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标-amp-特色"><span class="post-toc-number">2.</span> <span class="post-toc-text">目标&amp;特色</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#编译运行"><span class="post-toc-number">3.</span> <span class="post-toc-text">编译运行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码架构"><span class="post-toc-number">4.</span> <span class="post-toc-text">代码架构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参阅技术说明-doc"><span class="post-toc-number">5.</span> <span class="post-toc-text">参阅技术说明 doc</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#看看本地文件在哪里"><span class="post-toc-number">6.</span> <span class="post-toc-text">看看本地文件在哪里</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#flutter-插件"><span class="post-toc-number">7.</span> <span class="post-toc-text">flutter 插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">8.</span> <span class="post-toc-text">总结</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">9.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">9.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">9.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">9.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">9.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开源项目"><span class="post-toc-number">9.4.2.</span> <span class="post-toc-text">开源项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">9.4.3.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">9.4.4.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">9.4.5.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">9.4.6.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">9.4.7.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">9.4.8.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">9.4.9.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-flutter-opensource/flutter-opensource-appflowy" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            Flutter开源项目 - appFlowy 真的是 Notion 的替代品? 一周暴涨 star 9k 多!
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-12-01 22:20:14" datetime="2021-12-01T14:20:14.000Z"  itemprop="datePublished">2021-12-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/开源/">开源</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-01-22-22-25.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p><a href="https://www.appflowy.io/" target="_blank" rel="noopener">https://www.appflowy.io/</a></p>
+<p><a href="https://github.com/AppFlowy-IO/appflowy" target="_blank" rel="noopener">https://github.com/AppFlowy-IO/appflowy</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-01-22-23-16.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-01-22-23-59.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>也就 1 周 star 9.8k，我以为他是刷的。</p>
+</blockquote>
+<h2 id="目标-amp-特色"><a href="#目标-amp-特色" class="headerlink" title="目标&amp;特色"></a>目标&amp;特色</h2><ul>
+<li><p>目标替代 Notion</p>
+</li>
+<li><p>数据 100% 自己管理</p>
+</li>
+<li><p>开源方式提供，你可以自己改</p>
+</li>
+<li><p>多平台支持</p>
+</li>
+<li><p>原生体验，估计是用了 flutter 关系</p>
+</li>
+</ul>
+<h2 id="编译运行"><a href="#编译运行" class="headerlink" title="编译运行"></a>编译运行</h2><ul>
+<li><ol>
+<li>git clone</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/AppFlowy-IO/appflowy.git</span><br></pre></td></tr></table></figure>
+<ul>
+<li><ol start="2">
+<li>安装 rust</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cd appflowy/frontend</span><br><span class="line"></span><br><span class="line">make install_rust</span><br><span class="line"></span><br><span class="line">source $HOME/.cargo/env</span><br><span class="line"></span><br><span class="line">make install_cargo_make</span><br><span class="line"></span><br><span class="line">cargo make install_targets</span><br></pre></td></tr></table></figure>
+<ul>
+<li><ol start="3">
+<li>切换 flutter dev</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">flutter channel dev</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line"></span><br><span class="line">fvm use dev</span><br><span class="line">fvm global dev</span><br></pre></td></tr></table></figure>
+<ul>
+<li><ol start="4">
+<li>flutter 启用 desktop</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># for windows</span><br><span class="line">flutter config --enable-windows-desktop</span><br><span class="line"></span><br><span class="line"># for macos</span><br><span class="line">flutter config --enable-macos-desktop</span><br><span class="line"></span><br><span class="line"># for linux</span><br><span class="line">flutter config --enable-linux-desktop</span><br></pre></td></tr></table></figure>
+<ul>
+<li><ol start="5">
+<li>用 vscode 或者其它 idea 打开</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open appflowy/frontend</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-01-23-31-18.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-01-22-30-35.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="代码架构"><a href="#代码架构" class="headerlink" title="代码架构"></a>代码架构</h2><ul>
+<li><p>技术选型</p>
+<ul>
+<li><p>flutter: 多端适配</p>
+</li>
+<li><p>rust: ffi 平台接口、服务端</p>
+</li>
+</ul>
+</li>
+<li><p>flutter 端 <code>frontend/app_flowy</code></p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-01-22-41-01.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>前端业务 rust 层 <code>frontend/rust-lib</code></li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-01-22-43-09.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>共享库 shared-lib <code>shared-lib</code></li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-01-22-44-58.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>后端 rust api <code>backend</code></li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-01-22-45-48.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="参阅技术说明-doc"><a href="#参阅技术说明-doc" class="headerlink" title="参阅技术说明 doc"></a>参阅技术说明 <code>doc</code></h2><ul>
+<li>系统设计说明 <code>doc/APPFLOWY_SYSTEM_DESIGN.md</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">                        Frontend                                                     FLowySDK</span><br><span class="line">                                                             │                                              ┌─────────┐</span><br><span class="line">                                                             │                                          ┌7─▶│Handler A│</span><br><span class="line">                                                             │                                          │   └─────────┘</span><br><span class="line">                                                             │                             ┌─────────┐  │   ┌─────────┐</span><br><span class="line">┌──────┐    ┌────┐    ┌──────────────┐                       │                        ┌───▶│Module A │──┼──▶│Handler B│</span><br><span class="line">│Widget│─1─▶│Bloc│─2─▶│ Repository A │─3─┐                   │                        │    └─────────┘  │   └─────────┘</span><br><span class="line">└──────┘    └────┘    └──────────────┘   │                   │                        │                 │   ┌─────────┐</span><br><span class="line">                      ┌──────────────┐   │    ┌───────┐    ┌─┴──┐     ┌───────────┐   │    ┌─────────┐  └──▶│Handler C│</span><br><span class="line">                      │ Repository B │───┼───▶│ Event │─4─▶│FFI │─5──▶│Dispatcher │─6─┼───▶│Module B │      └─────────┘</span><br><span class="line">                      └──────────────┘   │    └───────┘    └─┬──┘     └───────────┘   │    └─────────┘</span><br><span class="line">                      ┌──────────────┐   │                   │                        │</span><br><span class="line">                      │ Repository C │───┘                   │                        │    ┌─────────┐</span><br><span class="line">                      └──────────────┘                       │                        └───▶│Module C │</span><br><span class="line">                                                             │                             └─────────┘</span><br><span class="line">                                                             │</span><br><span class="line">                                                             │</span><br></pre></td></tr></table></figure>
+<p>Here are the event flow:</p>
+<ol>
+<li>User click on the <code>Widget</code>(The user interface) that invokes the <code>Bloc</code> actions</li>
+<li><code>Bloc</code> calls the repositories to perform additional operations to handle the actions.</li>
+<li><code>Repository</code> offers the functionalities by combining the event, defined in the <code>FlowySDK</code>.</li>
+<li><code>Events</code> will be passed in the <code>FlowySDK</code> through the <a href="https://en.wikipedia.org/wiki/Foreign_function_interface" target="_blank" rel="noopener">FFI</a> interface.</li>
+<li><code>Dispatcher</code> parses the event and generates the specific action scheduled in the <code>FlowySDK</code> runtime.</li>
+<li><code>Dispatcher</code> find the event handler declared by the modules.</li>
+<li><code>Handler</code> consumes the event and generates the response. The response will be returned to the widget through the <code>FFI</code>.</li>
+</ol>
+<p>The event flow will be discussed in two parts: the frontend implemented in flutter and the FlowySDK implemented in Rust.</p>
+<ul>
+<li><p>linux 编译说明 <code>doc/BUILD_ON_LINUX.md</code></p>
+</li>
+<li><p>windows 编译说明 <code>doc/BUILD_ON_WINDOWS.md</code></p>
+</li>
+<li><p>贡献参与说明 <code>doc/CONTRIBUTING.md</code></p>
+</li>
+<li><p>DDD 设计说明 <code>doc/DOMAIN_DRIVEN_DESIGN.md</code></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">┌──────────────────────────────────────────────────┐         ─────────▶</span><br><span class="line">│                Presentation Layer                │──┐      Dependency</span><br><span class="line">└──────────────────────────────────────────────────┘  │</span><br><span class="line">                          │                           │</span><br><span class="line">                          ▼                           │</span><br><span class="line">┌──────────────────────────────────────────────────┐  │</span><br><span class="line">│                Application Layer                 │  │</span><br><span class="line">└──────────────────────────────────────────────────┘  │</span><br><span class="line">                          │                           │</span><br><span class="line">                          ▼                           │</span><br><span class="line">┌──────────────────────────────────────────────────┐  │</span><br><span class="line">│                   Domain Layer                   │◀─┘</span><br><span class="line">└──────────────────────────────────────────────────┘</span><br><span class="line">                          ▲</span><br><span class="line">                          │</span><br><span class="line">┌──────────────────────────────────────────────────┐</span><br><span class="line">│               Infrastructure Layer               │</span><br><span class="line">└──────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+<p><strong>Presentation Layer</strong>:</p>
+<ul>
+<li>Responsible for presenting information to the user and interpreting user commands.</li>
+<li>Consists of Widgets and also the state of the Widgets.</li>
+</ul>
+<p><strong>Application Layer</strong>:</p>
+<ul>
+<li>Defines the jobs the software is supposed to do. (Shouldn’t find any UI code or network code)</li>
+<li>Coordinates the application activity and delegates work to the next layer down.</li>
+<li>It doesn’t contain any complex business logic but the basic validation on the user input before<br>passing to the other layer.</li>
+</ul>
+<p><strong>Domain Layer</strong>:</p>
+<ul>
+<li>Responsible for representing concepts of the business.</li>
+<li>Manages the business state or delegated to the infrastructure layer.</li>
+<li>Self contained and it doesn’t depend on any other layers. Domain should be well isolated from the<br>other layers.</li>
+</ul>
+<p><strong>Infrastructure Layer</strong>:</p>
+<ul>
+<li>Provides generic technical capabilities that support the higher layers. It deals with APIs, persistence and network, etc.</li>
+<li>Implements the repository interface and hiding the complexity of the Domain layer.</li>
+</ul>
+<ul>
+<li><p>编辑器 <code>doc/EDITOR.md</code></p>
+</li>
+<li><p>roadmap</p>
+</li>
+</ul>
+<p><a href="https://trello.com/b/NCyXCXXh/appflowy-roadmap" target="_blank" rel="noopener">https://trello.com/b/NCyXCXXh/appflowy-roadmap</a></p>
+<h2 id="看看本地文件在哪里"><a href="#看看本地文件在哪里" class="headerlink" title="看看本地文件在哪里"></a>看看本地文件在哪里</h2><ul>
+<li>找到 sqlite</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-01-22-58-59.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>搜索本地</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find ~ -iname &apos;flowy-database.db&apos;</span><br><span class="line"></span><br><span class="line">~/Library/Containers/com.appflowy.macos/Data/Documents/flowy/fd3ada7d-7653-4196-90e1-7de0019627bc/flowy-database.db</span><br></pre></td></tr></table></figure>
+<h2 id="flutter-插件"><a href="#flutter-插件" class="headerlink" title="flutter 插件"></a>flutter 插件</h2><ul>
+<li>flutter-quill</li>
+</ul>
+<p><a href="https://github.com/singerdmx/flutter-quill" target="_blank" rel="noopener">https://github.com/singerdmx/flutter-quill</a></p>
+<p>富文本编辑器</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-01-23-27-48.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>freezed</li>
+</ul>
+<p><a href="https://pub.flutter-io.cn/packages/freezed" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/freezed</a></p>
+<p>数据 model 生成器，支持注解方式</p>
+<ul>
+<li>flutter_colorpicker</li>
+</ul>
+<p><a href="https://pub.flutter-io.cn/packages/flutter_colorpicker" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/flutter_colorpicker</a></p>
+<p>颜色选取工具</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-01-23-11-05.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>styled_widget</li>
+</ul>
+<p><a href="https://pub.flutter-io.cn/packages/styled_widget" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/styled_widget</a></p>
+<p>简化小组件定义</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-12-01-23-14-32.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Icon(OMIcons.home, color: Colors.white)</span><br><span class="line">  .padding(all: <span class="number">10</span>)</span><br><span class="line">  .decorated(color: Color(<span class="number">0xff7AC1E7</span>), shape: BoxShape.circle)</span><br><span class="line">  .padding(all: <span class="number">15</span>)</span><br><span class="line">  .decorated(color: Color(<span class="number">0xffE8F2F7</span>), shape: BoxShape.circle)</span><br><span class="line">  .padding(all: <span class="number">20</span>)</span><br><span class="line">  .card(</span><br><span class="line">    elevation: <span class="number">10</span>,</span><br><span class="line">    shape: RoundedRectangleBorder(</span><br><span class="line">      borderRadius: BorderRadius.circular(<span class="number">20</span>),</span><br><span class="line">    ),</span><br><span class="line">  )</span><br><span class="line">  .alignment(Alignment.center)</span><br><span class="line">  .backgroundColor(Color(<span class="number">0xffEBECF1</span>));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>get_it</li>
+</ul>
+<p><a href="https://pub.flutter-io.cn/packages/get_it" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/get_it</a></p>
+<p>全局访问你的业务对象，你可以拆分业务和 UI</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> getIt = GetIt.instance;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> setup() &#123;</span><br><span class="line">  getIt.registerSingleton&lt;AppModel&gt;(AppModel());</span><br><span class="line"></span><br><span class="line"><span class="comment">// Alternatively you could write it if you don't like global variables</span></span><br><span class="line">  GetIt.I.registerSingleton&lt;AppModel&gt;(AppModel());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"></span><br><span class="line">MaterialButton(</span><br><span class="line">  child: Text(<span class="string">"Update"</span>),</span><br><span class="line">  onPressed: getIt&lt;AppModel&gt;().update   <span class="comment">// given that your AppModel has a method update</span></span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>看到人家的架构，感觉自己弱爆了，我还是先领域分层设计做做干净</li>
+<li>flutter bloc , rust ffi web protobuf 感觉还是成熟的选择</li>
+<li>如果持续更新的话，我也很想看看架构的演变</li>
+<li>现阶段估计还是在测试架构设计，应该不会上很多功能</li>
+</ul>
+<p>© 猫哥</p>
+<ul>
+<li><p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech/</a></p>
+</li>
+<li><p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">https://github.com/ducafecat</a></p>
+</li>
+<li><p>微信群 ducafecat</p>
+</li>
+<li><p>b 站 <a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">https://space.bilibili.com/404904528</a></p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h2><h3 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h3><h4 id="GetX-Quick-Start"><a href="#GetX-Quick-Start" class="headerlink" title="GetX Quick Start"></a>GetX Quick Start</h4><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h4 id="新闻客户端"><a href="#新闻客户端" class="headerlink" title="新闻客户端"></a>新闻客户端</h4><p><a href="https://github.com/ducafecat/flutter_learn_news" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news</a></p>
+<h3 id="strapi-手册译文"><a href="#strapi-手册译文" class="headerlink" title="strapi 手册译文"></a>strapi 手册译文</h3><p><a href="https://getstrapi.cn" target="_blank" rel="noopener">https://getstrapi.cn</a></p>
+<h3 id="微信讨论群-ducafecat"><a href="#微信讨论群-ducafecat" class="headerlink" title="微信讨论群 ducafecat"></a>微信讨论群 ducafecat</h3><h3 id="系列集合"><a href="#系列集合" class="headerlink" title="系列集合"></a>系列集合</h3><h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p><a href="https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/</a></p>
+<h4 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h4><p><a href="https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/</a></p>
+<h4 id="Dart-编程语言基础"><a href="#Dart-编程语言基础" class="headerlink" title="Dart 编程语言基础"></a>Dart 编程语言基础</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=111585" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=111585</a></p>
+<h4 id="Flutter-零基础入门"><a href="#Flutter-零基础入门" class="headerlink" title="Flutter 零基础入门"></a>Flutter 零基础入门</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=123470" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=123470</a></p>
+<h4 id="Flutter-实战从零开始-新闻客户端"><a href="#Flutter-实战从零开始-新闻客户端" class="headerlink" title="Flutter 实战从零开始 新闻客户端"></a>Flutter 实战从零开始 新闻客户端</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=106755</a></p>
+<h4 id="Flutter-组件开发"><a href="#Flutter-组件开发" class="headerlink" title="Flutter 组件开发"></a>Flutter 组件开发</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=144262" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=144262</a></p>
+<h4 id="Flutter-Bloc"><a href="#Flutter-Bloc" class="headerlink" title="Flutter Bloc"></a>Flutter Bloc</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177519" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177519</a></p>
+<h4 id="Flutter-Getx4"><a href="#Flutter-Getx4" class="headerlink" title="Flutter Getx4"></a>Flutter Getx4</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177514" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177514</a></p>
+<h4 id="Docker-Yapi"><a href="#Docker-Yapi" class="headerlink" title="Docker Yapi"></a>Docker Yapi</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=130578" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=130578</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/&title=《Flutter开源项目 - appFlowy 真的是 Notion 的替代品? 一周暴涨 star 9k 多!》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/&title=《Flutter开源项目 - appFlowy 真的是 Notion 的替代品? 一周暴涨 star 9k 多!》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter开源项目 - appFlowy 真的是 Notion 的替代品? 一周暴涨 star 9k 多!》 — duCafeCat&url=https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/12/09/blog/2021-jetbrains-fleet-vs-vscode/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">2021年12月 - Jetbrains Fleet 对比 Vscode</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/11/24/flutter/flutter-19-layout-rule/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 零基础入门中文教学 - 19 布局规则 紧约束、松约束、无边界</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/&title=《Flutter开源项目 - appFlowy 真的是 Notion 的替代品? 一周暴涨 star 9k 多!》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/&title=《Flutter开源项目 - appFlowy 真的是 Notion 的替代品? 一周暴涨 star 9k 多!》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter开源项目 - appFlowy 真的是 Notion 的替代品? 一周暴涨 star 9k 多!》 — duCafeCat&url=https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/12/01/flutter-opensource/flutter-opensource-appflowy/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADG0lEQVR42u3aQW7jQAwEQP//015gTwF2nXSTshGPS6cgkSXVGAhF9txu8XH/e9xGx9fP3r8cyZmPzvn3uD3jwMbGxn4T9v3b49E5yeMm58/OTJb1h6XBxsbGPo7dFp68wOQLNGPkT4WNjY2NndxmX+SSNiNZAmxsbGzsWYFpi1C7oO3XgI2Njf057P3rfrso+zL2olkaNjY29q9nz8La3/nzE/NtbGxs7F/JvpfHPhhoQ999k/Of62BjY2MfxN6M2jeLNdt2MytXRQeGjY2NfQR79hD5I7ZXy7sJbGxs7M9k56PzfKCffypvV2ZbhaImBBsbG/vN2W10Gm2FCZqNWVjbRhd1kICNjY39tuz9DZIHTX7/7JYGGxsb+2x2GwNc2yS0n2q/jFtbe7GxsbHfhN3C2lg3CXqTe+VfVVJ6sbGxsT+HvXndb4OHti3ZxM/Y2NjY57E3myM3oW97/WSZoqESNjY29tHs9nGjV/+XLE3dimBjY2MfxL5qiDMbIbUPnQfSP+Qh2NjY2Eew2wH9JsTNg4dZa5T/FRsbG/tUdo7cbPfJA922Tbpg4w42Njb2Eex260w+pm+peZuRLz02Njb2qez9+L49s40i8maj3jyEjY2NfRA7eYl/TfmZPcNsOIWNjY39Cex2YDRblNnmy33MgI2NjX0GuwXsN9xsFnq2PahORbCxsbHfhD0j5c1AsnFnNkKa3RcbGxv7PHYLayOBa0nJffMYGBsbG/skdl5mNqOfWSSQLHpb0rCxsbHPZuf/4ZPHas9pH33YcmBjY2MfxN4wks+2Ba8NiZOrRREvNjY29kHsNnydDYxmcW8bJz/8YrCxsbEPYm9KQjuaTzCz8VbbYmFjY2OfxL6XRzs2umpp2jDgh3KLjY2NfRB786I/u8IG0I6WsLGxsT+HvY9UZ+UkKWOzdij6KzY2NvZx7Mti1DhIyAOG4V4kbGxsbOygLOWjnLxMts1P3tJgY2NjYyelaxPQtk1I25BE4zVsbGzst2XPhkpXbazZJBjDrULY2NjYB7FnQW8bIeTjpLxd2SwHNjY29hHsPyFjz6s0WWteAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 实战从零开始 新闻客户端 - 08 路由管理 auto_route | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="本节目标 安装插件 路由定义 自动生成路由控制类 转场动画 登录检查中间件 带参数传递 获取返回值  视频   代码https://github.com/ducafecat/flutte">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 实战从零开始 新闻客户端 - 08 路由管理 auto_route">
+<meta property="og:url" content="https://blog.ducafecat.tech/2020/04/17/flutter-project/flutter-project-news-08-auto-route/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 安装插件 路由定义 自动生成路由控制类 转场动画 登录检查中间件 带参数传递 获取返回值  视频   代码https://github.com/ducafecat/flutte">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2020/04/17/flutter-project/flutter-project-news-08-auto-route/bg.jpg">
+<meta property="og:updated_time" content="2020-07-04T06:33:27.703Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 实战从零开始 新闻客户端 - 08 路由管理 auto_route">
+<meta name="twitter:description" content="本节目标 安装插件 路由定义 自动生成路由控制类 转场动画 登录检查中间件 带参数传递 获取返回值  视频   代码https://github.com/ducafecat/flutte">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2020/04/17/flutter-project/flutter-project-news-08-auto-route/bg.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 实战从零开始 新闻客户端 - 08 路由管理 auto_route</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 实战从零开始 新闻客户端 - 08 路由管理 auto_route</h1>
+        <h5 class="subtitle">
+             <time datetime="2020-04-16T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2020-04-17
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter-实战从零开始/">Flutter 实战从零开始</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视频"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">视频</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一些优秀的路由插件"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">一些优秀的路由插件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装插件"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">安装插件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#路由定义"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">路由定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自动生成路由控制类"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">自动生成路由控制类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#路由跳转"><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">路由跳转</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#转场动画"><span class="post-toc-number">1.3.6.</span> <span class="post-toc-text">转场动画</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#登录检查中间件"><span class="post-toc-number">1.3.7.</span> <span class="post-toc-text">登录检查中间件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参数传递"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">参数传递</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#资源"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">资源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#视频-1"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">视频</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#蓝湖设计稿（加微信给授权-ducafecat）"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">蓝湖设计稿（加微信给授权 ducafecat）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#YAPI-接口管理"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">YAPI 接口管理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#参考"><span class="post-toc-number">1.5.4.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#VSCode-插件"><span class="post-toc-number">1.5.5.</span> <span class="post-toc-text">VSCode 插件</span></a></li></ol></li></ol></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-flutter-project/flutter-project-news-08-auto-route" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            Flutter 实战从零开始 新闻客户端 - 08 路由管理 auto_route
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-04-17 00:00:00" datetime="2020-04-16T16:00:00.000Z"  itemprop="datePublished">2020-04-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter-实战从零开始/">Flutter 实战从零开始</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="bg.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h1 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h1><ul>
+<li>安装插件</li>
+<li>路由定义</li>
+<li>自动生成路由控制类</li>
+<li>转场动画</li>
+<li>登录检查中间件</li>
+<li>带参数传递</li>
+<li>获取返回值</li>
+</ul>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><iframe src="//player.bilibili.com/player.html?bvid=BV1xf4y1S7Xq&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.8" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.8</a></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="一些优秀的路由插件"><a href="#一些优秀的路由插件" class="headerlink" title="一些优秀的路由插件"></a>一些优秀的路由插件</h3><ul>
+<li><p><a href="https://pub.flutter-io.cn/packages/fluro" target="_blank" rel="noopener">fluro</a></p>
+<p>前端的使用体验</p>
+<p>router.navigateTo(context, “/users/1234”, transition: TransitionType.fadeIn);</p>
+</li>
+<li><p><a href="https://pub.flutter-io.cn/packages/flutter_modular" target="_blank" rel="noopener">flutter_modular</a></p>
+<p>功能强大的路由管理：中间件、懒加载、状态管理、动态路由、分组路由、动画、返回值、命名路由</p>
+</li>
+<li><p><a href="https://pub.flutter-io.cn/packages/auto_route" target="_blank" rel="noopener">auto_route</a></p>
+<p>设计精简、低耦合其它功能</p>
+<p>功能：中间件、自动生成路由代码、动态路由、动画、返回值、命名路由</p>
+</li>
+</ul>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><ul>
+<li>官网</li>
+</ul>
+<p><a href="https://pub.flutter-io.cn/packages/auto_route" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/auto_route</a></p>
+<ul>
+<li>pubspec.yaml</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line"><span class="attr">  flutter:</span></span><br><span class="line"><span class="attr">    sdk:</span> <span class="string">flutter</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 路由管理</span></span><br><span class="line"><span class="attr">  auto_route:</span> <span class="string">^0.4.4</span></span><br><span class="line"></span><br><span class="line"><span class="attr">dev_dependencies:</span></span><br><span class="line"><span class="attr">  flutter_test:</span></span><br><span class="line"><span class="attr">    sdk:</span> <span class="string">flutter</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 路由生成</span></span><br><span class="line"><span class="attr">  auto_route_generator:</span> <span class="string">^0.4.4</span></span><br><span class="line"><span class="attr">  build_runner:</span></span><br></pre></td></tr></table></figure>
+<h3 id="路由定义"><a href="#路由定义" class="headerlink" title="路由定义"></a>路由定义</h3><ul>
+<li>lib/common/router/router.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MaterialAutoRouter</span>()</span><br><span class="line"><span class="class"><span class="keyword">class</span> $<span class="title">AppRouter</span> </span>&#123;</span><br><span class="line">  <span class="meta">@initial</span></span><br><span class="line">  IndexPage indexPageRoute;</span><br><span class="line"></span><br><span class="line">  WelcomePage welcomePageRoute;</span><br><span class="line"></span><br><span class="line">  SignInPage signInPageRoute;</span><br><span class="line"></span><br><span class="line">  SignUpPage signUpPageRoute;</span><br><span class="line"></span><br><span class="line">  ApplicationPage applicationPageRoute;</span><br><span class="line"></span><br><span class="line">  DetailsPage detailsPageRoute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意 <code>$</code> 符号</p>
+</blockquote>
+<h3 id="自动生成路由控制类"><a href="#自动生成路由控制类" class="headerlink" title="自动生成路由控制类"></a>自动生成路由控制类</h3><ul>
+<li>执行命令</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter packages pub run build_runner build</span><br></pre></td></tr></table></figure>
+<ul>
+<li>自动生成 lib/common/router/router.gr.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// GENERATED CODE - DO NOT MODIFY BY HAND</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// **************************************************************************</span></span><br><span class="line"><span class="comment">// AutoRouteGenerator</span></span><br><span class="line"><span class="comment">// **************************************************************************</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/cupertino.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:auto_route/auto_route.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/pages/index/index.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/pages/welcome/welcome.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/pages/sign_in/sign_in.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/pages/sign_up/sign_up.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/pages/application/application.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/router/auth_grard.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/pages/details/details.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Routes</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> indexPageRoute = <span class="string">'/'</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> welcomePageRoute = <span class="string">'/welcome-page-route'</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> signInPageRoute = <span class="string">'/sign-in-page-route'</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> signUpPageRoute = <span class="string">'/sign-up-page-route'</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> applicationPageRoute = <span class="string">'/application-page-route'</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> detailsPageRoute = <span class="string">'/details-page-route'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppRouter</span> <span class="keyword">extends</span> <span class="title">RouterBase</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">List</span>&lt;<span class="built_in">Type</span>&gt;&gt; <span class="keyword">get</span> guardedRoutes =&gt; &#123;</span><br><span class="line">        Routes.applicationPageRoute: [AuthGuard],</span><br><span class="line">        Routes.detailsPageRoute: [AuthGuard],</span><br><span class="line">      &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//This will probably be removed in future versions</span></span><br><span class="line">  <span class="comment">//you should call ExtendedNavigator.ofRouter&lt;Router&gt;() directly</span></span><br><span class="line">  <span class="keyword">static</span> ExtendedNavigatorState <span class="keyword">get</span> navigator =&gt;</span><br><span class="line">      ExtendedNavigator.ofRouter&lt;AppRouter&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Route&lt;<span class="keyword">dynamic</span>&gt; onGenerateRoute(RouteSettings settings) &#123;</span><br><span class="line">    <span class="keyword">final</span> args = settings.arguments;</span><br><span class="line">    <span class="keyword">switch</span> (settings.name) &#123;</span><br><span class="line">      <span class="keyword">case</span> Routes.indexPageRoute:</span><br><span class="line">        <span class="keyword">if</span> (hasInvalidArgs&lt;IndexPageArguments&gt;(args)) &#123;</span><br><span class="line">          <span class="keyword">return</span> misTypedArgsRoute&lt;IndexPageArguments&gt;(args);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">final</span> typedArgs = args <span class="keyword">as</span> IndexPageArguments ?? IndexPageArguments();</span><br><span class="line">        <span class="keyword">return</span> MaterialPageRoute&lt;<span class="keyword">dynamic</span>&gt;(</span><br><span class="line">          builder: (_) =&gt; IndexPage(key: typedArgs.key),</span><br><span class="line">          settings: settings,</span><br><span class="line">        );</span><br><span class="line">      <span class="keyword">case</span> Routes.welcomePageRoute:</span><br><span class="line">        <span class="keyword">if</span> (hasInvalidArgs&lt;WelcomePageArguments&gt;(args)) &#123;</span><br><span class="line">          <span class="keyword">return</span> misTypedArgsRoute&lt;WelcomePageArguments&gt;(args);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">final</span> typedArgs =</span><br><span class="line">            args <span class="keyword">as</span> WelcomePageArguments ?? WelcomePageArguments();</span><br><span class="line">        <span class="keyword">return</span> MaterialPageRoute&lt;<span class="keyword">dynamic</span>&gt;(</span><br><span class="line">          builder: (_) =&gt; WelcomePage(key: typedArgs.key),</span><br><span class="line">          settings: settings,</span><br><span class="line">        );</span><br><span class="line">      <span class="keyword">case</span> Routes.signInPageRoute:</span><br><span class="line">        <span class="keyword">if</span> (hasInvalidArgs&lt;SignInPageArguments&gt;(args)) &#123;</span><br><span class="line">          <span class="keyword">return</span> misTypedArgsRoute&lt;SignInPageArguments&gt;(args);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">final</span> typedArgs = args <span class="keyword">as</span> SignInPageArguments ?? SignInPageArguments();</span><br><span class="line">        <span class="keyword">return</span> MaterialPageRoute&lt;<span class="keyword">dynamic</span>&gt;(</span><br><span class="line">          builder: (_) =&gt; SignInPage(key: typedArgs.key),</span><br><span class="line">          settings: settings,</span><br><span class="line">        );</span><br><span class="line">      <span class="keyword">case</span> Routes.signUpPageRoute:</span><br><span class="line">        <span class="keyword">if</span> (hasInvalidArgs&lt;SignUpPageArguments&gt;(args)) &#123;</span><br><span class="line">          <span class="keyword">return</span> misTypedArgsRoute&lt;SignUpPageArguments&gt;(args);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">final</span> typedArgs = args <span class="keyword">as</span> SignUpPageArguments ?? SignUpPageArguments();</span><br><span class="line">        <span class="keyword">return</span> MaterialPageRoute&lt;<span class="keyword">dynamic</span>&gt;(</span><br><span class="line">          builder: (_) =&gt; SignUpPage(key: typedArgs.key),</span><br><span class="line">          settings: settings,</span><br><span class="line">        );</span><br><span class="line">      <span class="keyword">case</span> Routes.applicationPageRoute:</span><br><span class="line">        <span class="keyword">if</span> (hasInvalidArgs&lt;ApplicationPageArguments&gt;(args)) &#123;</span><br><span class="line">          <span class="keyword">return</span> misTypedArgsRoute&lt;ApplicationPageArguments&gt;(args);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">final</span> typedArgs =</span><br><span class="line">            args <span class="keyword">as</span> ApplicationPageArguments ?? ApplicationPageArguments();</span><br><span class="line">        <span class="keyword">return</span> MaterialPageRoute&lt;<span class="keyword">dynamic</span>&gt;(</span><br><span class="line">          builder: (_) =&gt; ApplicationPage(key: typedArgs.key),</span><br><span class="line">          settings: settings,</span><br><span class="line">        );</span><br><span class="line">      <span class="keyword">case</span> Routes.detailsPageRoute:</span><br><span class="line">        <span class="keyword">if</span> (hasInvalidArgs&lt;DetailsPageArguments&gt;(args)) &#123;</span><br><span class="line">          <span class="keyword">return</span> misTypedArgsRoute&lt;DetailsPageArguments&gt;(args);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">final</span> typedArgs =</span><br><span class="line">            args <span class="keyword">as</span> DetailsPageArguments ?? DetailsPageArguments();</span><br><span class="line">        <span class="keyword">return</span> MaterialPageRoute&lt;<span class="keyword">dynamic</span>&gt;(</span><br><span class="line">          builder: (_) =&gt; DetailsPage(key: typedArgs.key),</span><br><span class="line">          settings: settings,</span><br><span class="line">        );</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> unknownRoutePage(settings.name);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//**************************************************************************</span></span><br><span class="line"><span class="comment">// Arguments holder classes</span></span><br><span class="line"><span class="comment">//***************************************************************************</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//IndexPage arguments holder class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexPageArguments</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> Key key;</span><br><span class="line">  IndexPageArguments(&#123;<span class="keyword">this</span>.key&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//WelcomePage arguments holder class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WelcomePageArguments</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> Key key;</span><br><span class="line">  WelcomePageArguments(&#123;<span class="keyword">this</span>.key&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//SignInPage arguments holder class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SignInPageArguments</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> Key key;</span><br><span class="line">  SignInPageArguments(&#123;<span class="keyword">this</span>.key&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//SignUpPage arguments holder class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SignUpPageArguments</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> Key key;</span><br><span class="line">  SignUpPageArguments(&#123;<span class="keyword">this</span>.key&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ApplicationPage arguments holder class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ApplicationPageArguments</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> Key key;</span><br><span class="line">  ApplicationPageArguments(&#123;<span class="keyword">this</span>.key&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//DetailsPage arguments holder class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DetailsPageArguments</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> Key key;</span><br><span class="line">  DetailsPageArguments(&#123;<span class="keyword">this</span>.key&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="路由跳转"><a href="#路由跳转" class="headerlink" title="路由跳转"></a>路由跳转</h3><ul>
+<li>方式 1：带 context 方式</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExtendedNavigator.of(context).pushNamed(Routes.signUpPageRoute);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方式 2：不带 context 方式</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExtendedNavigator.ofRouter&lt;AppRouter&gt;().pushNamed(Routes.signUpPageRoute);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方式 3：如果你只有一个导航</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExtenedNavigator.rootNavigator.pushNamed(Routes.signUpPageRoute);</span><br></pre></td></tr></table></figure>
+<h3 id="转场动画"><a href="#转场动画" class="headerlink" title="转场动画"></a>转场动画</h3><ul>
+<li>lib/common/router/router.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Widget zoomInTransition(BuildContext context, Animation&lt;<span class="built_in">double</span>&gt; animation,</span><br><span class="line">    Animation&lt;<span class="built_in">double</span>&gt; secondaryAnimation, Widget child) &#123;</span><br><span class="line">  <span class="comment">// you get an animation object and a widget</span></span><br><span class="line">  <span class="comment">// make your own transition</span></span><br><span class="line">  <span class="keyword">return</span> ScaleTransition(scale: animation, child: child);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@MaterialAutoRouter</span>()</span><br><span class="line"><span class="class"><span class="keyword">class</span> $<span class="title">AppRouter</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  <span class="meta">@CustomRoute</span>(transitionsBuilder: zoomInTransition)</span><br><span class="line">  ApplicationPage applicationPageRoute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>重新生成</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter packages pub run build_runner build</span><br></pre></td></tr></table></figure>
+<h3 id="登录检查中间件"><a href="#登录检查中间件" class="headerlink" title="登录检查中间件"></a>登录检查中间件</h3><ul>
+<li>创建 lib/common/router/auth_grard.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:auto_route/auto_route.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/router/router.gr.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/utils/utils.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AuthGuard</span> <span class="keyword">extends</span> <span class="title">RouteGuard</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Future&lt;<span class="built_in">bool</span>&gt; canNavigate(ExtendedNavigatorState navigator, <span class="built_in">String</span> routeName,</span><br><span class="line">      <span class="built_in">Object</span> arguments) <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> isAuth = <span class="keyword">await</span> isAuthenticated();</span><br><span class="line">    <span class="keyword">if</span> (isAuth == <span class="keyword">false</span>) &#123;</span><br><span class="line">      ExtendedNavigator.rootNavigator.pushNamed(Routes.signInPageRoute);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> isAuth;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注册 lib/main.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> MaterialApp(</span><br><span class="line">      title: <span class="string">'ducafecat.tech'</span>,</span><br><span class="line">      debugShowCheckedModeBanner: <span class="keyword">false</span>,</span><br><span class="line">      builder: ExtendedNavigator&lt;AppRouter&gt;(</span><br><span class="line">        initialRoute: Routes.indexPageRoute,</span><br><span class="line">        router: AppRouter(),</span><br><span class="line">        guards: [AuthGuard()],</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>定义 lib/common/router/router.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MaterialAutoRouter</span>()</span><br><span class="line"><span class="class"><span class="keyword">class</span> $<span class="title">AppRouter</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  <span class="meta">@GuardedBy</span>([AuthGuard])</span><br><span class="line">  <span class="meta">@CustomRoute</span>(transitionsBuilder: zoomInTransition)</span><br><span class="line">  ApplicationPage applicationPageRoute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>重新生成</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter packages pub run build_runner build</span><br></pre></td></tr></table></figure>
+<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><ul>
+<li>设定初始参数 lib/pages/details/details.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DetailsPage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> cid;</span><br><span class="line">  DetailsPage(&#123;Key key, <span class="keyword">this</span>.cid&#125;) : <span class="keyword">super</span>(key: key);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>定义 lib/common/router/router.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MaterialAutoRouter</span>(generateNavigationHelperExtension: <span class="keyword">true</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> $<span class="title">AppRouter</span> </span>&#123;</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+<ul>
+<li>重新生成</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter packages pub run build_runner build</span><br></pre></td></tr></table></figure>
+<ul>
+<li>lib/common/router/router.gr.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//DetailsPage arguments holder class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DetailsPageArguments</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> Key key;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> cid;</span><br><span class="line">  DetailsPageArguments(&#123;<span class="keyword">this</span>.key, <span class="keyword">this</span>.cid&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>导航参数</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExtendedNavigator.rootNavigator.pushDetailsPageRoute(cid: <span class="string">'123'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取返回值</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ExtendedNavigator.rootNavigator</span><br><span class="line">    .pushNamed(Routes.signUpPageRoute)</span><br><span class="line">    .then((onValue) &#123;</span><br><span class="line">  <span class="built_in">print</span>(onValue);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h3 id="视频-1"><a href="#视频-1" class="headerlink" title="视频"></a>视频</h3><ul>
+<li><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">b 站</a></li>
+<li><a href="https://www.youtube.com/watch?v=Uucg6GGGBsY&amp;list=PL274L1n86T80VZR30KaLOKV6jqwTq5E8D" target="_blank" rel="noopener">油管镜像</a></li>
+</ul>
+<h3 id="蓝湖设计稿（加微信给授权-ducafecat）"><a href="#蓝湖设计稿（加微信给授权-ducafecat）" class="headerlink" title="蓝湖设计稿（加微信给授权 ducafecat）"></a>蓝湖设计稿（加微信给授权 ducafecat）</h3><p><a href="https://lanhuapp.com/url/lYuz1" target="_blank" rel="noopener">https://lanhuapp.com/url/lYuz1</a><br>密码: gSKl</p>
+<blockquote>
+<p>蓝湖现在收费了，所以查看标记还请自己上传 xd 设计稿<br>商业设计稿文件不好直接分享, 可以加微信联系 ducafecat</p>
+</blockquote>
+<h3 id="YAPI-接口管理"><a href="#YAPI-接口管理" class="headerlink" title="YAPI 接口管理"></a>YAPI 接口管理</h3><p><a href="http://yapi.demo.qunar.com/" target="_blank" rel="noopener">http://yapi.demo.qunar.com/</a></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://pub.flutter-io.cn/packages/auto_route" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/auto_route</a></p>
+<h3 id="VSCode-插件"><a href="#VSCode-插件" class="headerlink" title="VSCode 插件"></a>VSCode 插件</h3><ul>
+<li>Flutter、Dart</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=alexisvt.flutter-snippets" target="_blank" rel="noopener">Flutter Widget Snippets</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=Nash.awesome-flutter-snippets" target="_blank" rel="noopener">Awesome Flutter Snippets</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype" target="_blank" rel="noopener">Paste JSON as Code</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=FelixAngelov.bloc" target="_blank" rel="noopener">bloc</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker" target="_blank" rel="noopener">Code Spell Checker</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2020/04/17/flutter-project/flutter-project-news-08-auto-route/&title=《Flutter 实战从零开始 新闻客户端 - 08 路由管理 auto_route》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2020/04/17/flutter-project/flutter-project-news-08-auto-route/&title=《Flutter 实战从零开始 新闻客户端 - 08 路由管理 auto_route》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2020/04/17/flutter-project/flutter-project-news-08-auto-route/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 实战从零开始 新闻客户端 - 08 路由管理 auto_route》 — duCafeCat&url=https://blog.ducafecat.tech/2020/04/17/flutter-project/flutter-project-news-08-auto-route/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2020/04/17/flutter-project/flutter-project-news-08-auto-route/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/04/24/flutter-project/flutter-project-news-09-webview/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 实战从零开始 新闻客户端 - 09 详情页展示、分享、远程真机调试</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/04/08/flutter-project/flutter-project-news-07-provider/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 实战从零开始 新闻客户端 - 07 Provider、认证授权、骨架屏、磁盘缓存</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2020/04/17/flutter-project/flutter-project-news-08-auto-route/&title=《Flutter 实战从零开始 新闻客户端 - 08 路由管理 auto_route》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2020/04/17/flutter-project/flutter-project-news-08-auto-route/&title=《Flutter 实战从零开始 新闻客户端 - 08 路由管理 auto_route》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2020/04/17/flutter-project/flutter-project-news-08-auto-route/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 实战从零开始 新闻客户端 - 08 路由管理 auto_route》 — duCafeCat&url=https://blog.ducafecat.tech/2020/04/17/flutter-project/flutter-project-news-08-auto-route/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2020/04/17/flutter-project/flutter-project-news-08-auto-route/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADM0lEQVR42u3awW7bQAwEUP//T6dATwVSuTOkjVqbp1NgS9Y+6cCQs49HfHz9Pq4+T77985z88+/f5nd/wYGNjY19E/bX0+P7LZNFP78qWcnzq/K1Xd4XGxsb+zj286LVFpV80bMimq/n8nNsbGzsH8nOv20LUlt+sLGxsbHfXcDylmP2aGYvABsbG/tsdr6U2fl5eNAi3z5Lw8bGxv549myg85l/vzHfxsbGxv5I9ld5JLfJF1q0DYs1/0WBjY2NfRA7+Xe/XVBeCPMB02aLz+UvYGNjYx/Bzocybciaj3LyOLl93Je/jI2NjX0QOw90/9eZr4orLt85NjY29hHszWad9szNcCovlsOIFxsbG/u27OfNRr7J5lWFKllJ+0CLeAAbGxv7Vuw2Ut0M6DcNxuz1FO8ZGxsb+2h2G9C+agA06x2Sv7GxsbFPYre8dsSzj3vb4VS+TmxsbOwz2HUUWg6e2n2gmwAgb0uwsbGxT2W3gW7eouwjgeT15I8JGxsb+1R2Usai8hCXsdmuolkk/I+6jY2NjX1zdvtDm+FOi8xD6HrLDjY2NvYR7LZ05e1BO+JvtxC1gzBsbGzss9mvaic2DcYsJJ5t9MHGxsY+id0WpFnJmY31n7OTB315L2xsbOxD2fnmmHZrzn7AlK8hehDY2NjYx7H3P5SUmXagv3lw0eQMGxsb+1D2PuidbQOaBQ91+oGNjY39w9j7gpQ/uLqdKNsVbGxs7LPZm6h1hmzD5lnMfHl3bGxs7KPZeXuQjHg27UoeNtSNEzY2Nvah7CT03Qz986vawpa3ItjY2NjnsZOBe148ZhtuZhs3Z48JGxsb+zx22zYk/+63xW8fPOSl99HeABsbG/sm7HyInyDzcpgPkh6jI2pCsLGxsY9gtyP+WcSbF5h21JWsYZhpYGNjY388e1YM8uFRW+Q2V72lHGJjY2PfhJ1vtamTh9E5s6Ci3eKDjY2NfR47n6LPCltyr00k0EbF2NjY2D+TvSktrwqYN0MlbGxsbOykdM3KYRtOtA/usVkoNjY29k3Ym2Ygb1RyxmZo9eJZGjY2NvbHs/dBbwtui1wOmF2FjY2NfVv2L5GSq89bAS0VAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

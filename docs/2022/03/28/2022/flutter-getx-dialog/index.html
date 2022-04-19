@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>在 Flutter 使用 GetX 对话框 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="原文 https://medium.flutterdevs.com/dialog-using-getx-in-flutter-248601043311  参考 https://pub.d">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 Flutter 使用 GetX 对话框">
+<meta property="og:url" content="https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="原文 https://medium.flutterdevs.com/dialog-using-getx-in-flutter-248601043311  参考 https://pub.d">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220328082341.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/1b234cef46b339f3eede934755c50cb7059c024fafb6a5ed1b59d0e08a961f25.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/ced3b599f329c23e52052557fbf82acd70d617fbaa286fc03def7a3a45fef919.gif">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/0269dc7d896e3714278bf3097c69b8f474c32c683c4fb1f398efef61c47ef018.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/db4995a98be9632ec703316a34671ac39a57e5342ed6097e33294b7635a98928.png">
+<meta property="og:image" content="https://ducafecat.tech/img/banner-gzh.png">
+<meta property="og:updated_time" content="2022-03-28T02:14:46.120Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 Flutter 使用 GetX 对话框">
+<meta name="twitter:description" content="原文 https://medium.flutterdevs.com/dialog-using-getx-in-flutter-248601043311  参考 https://pub.d">
+<meta name="twitter:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220328082341.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">在 Flutter 使用 GetX 对话框</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">在 Flutter 使用 GetX 对话框</h1>
+        <h5 class="subtitle">
+             <time datetime="2022-03-27T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2022-03-28
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">1.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">2.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">3.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#了解如何在您的-Flutter-应用程序使用-GetX-创建一个对话框"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">了解如何在您的 Flutter 应用程序使用 GetX 创建一个对话框</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取-Flutter-Package"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">获取 | Flutter Package</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Introduction"><span class="post-toc-number"></span> <span class="post-toc-text">Introduction:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#简介"><span class="post-toc-number"></span> <span class="post-toc-text">简介:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Constructor"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">Constructor:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Properties"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">Properties:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Implementation"><span class="post-toc-number">0.3.</span> <span class="post-toc-text">Implementation:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何实现-dart-文件中的代码"><span class="post-toc-number">0.4.</span> <span class="post-toc-text">如何实现 dart 文件中的代码:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全部代码"><span class="post-toc-number">0.5.</span> <span class="post-toc-text">全部代码:</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#结语"><span class="post-toc-number"></span> <span class="post-toc-text">结语:</span></a>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-2022/flutter-getx-dialog" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            在 Flutter 使用 GetX 对话框
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-03-28 00:00:00" datetime="2022-03-27T16:00:00.000Z"  itemprop="datePublished">2022-03-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220328082341.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://medium.flutterdevs.com/dialog-using-getx-in-flutter-248601043311" target="_blank" rel="noopener">https://medium.flutterdevs.com/dialog-using-getx-in-flutter-248601043311</a></p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://pub.dev/packages/get" target="_blank" rel="noopener">https://pub.dev/packages/get</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="了解如何在您的-Flutter-应用程序使用-GetX-创建一个对话框"><a href="#了解如何在您的-Flutter-应用程序使用-GetX-创建一个对话框" class="headerlink" title="了解如何在您的 Flutter 应用程序使用 GetX 创建一个对话框"></a>了解如何在您的 Flutter 应用程序使用 GetX 创建一个对话框</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/1b234cef46b339f3eede934755c50cb7059c024fafb6a5ed1b59d0e08a961f25.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>在 Flutter 使用 GetX 对话框</p>
+<p>是移动应用程序的基本组成部分。他们帮助传递警告和重要信息，以及做具体的活动。当 Flutter 开发人员在 Flutter 制作一个对话框时，它利用上下文和生成器制作一个对话框。然而，对于开发人员来说，利用上下文和构建器来培养 Dialogs 是不合适的。</p>
+<p>在本文中，我们将探索在 Flutter 使用 GetX 的对话框。我们还将实现一个演示程序，并了解如何使用您的 Flutter 应用程序的获取包创建对话框。</p>
+<h3 id="获取-Flutter-Package"><a href="#获取-Flutter-Package" class="headerlink" title="获取 | Flutter Package"></a>获取 | Flutter Package</h3><p>GetX 是一个超轻和强大的解决方案 Flutter 。它结合了高性能的状态管理，智能..</p>
+<p><a href="https://pub.dev/packages/get" target="_blank" rel="noopener">https://pub.dev/packages/get</a></p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction:"></a>Introduction:</h1><h1 id="简介"><a href="#简介" class="headerlink" title="简介:"></a>简介:</h1><p>当我们需要显示任何类似表单的内容时，我们可以创建这个对话框，它涉及 Flutter 的 GetX 库。我们可以使对话框利用 GetX 的基本代码和非常简单的使一个对话框。它没有利用上下文和生成器来创建对话框。</p>
+<p>是 Flutter 问题的附加轻量强解。它加入了精英的性能状态管理、智能依赖注入管理和路由管理。</p>
+<blockquote>
+<p>演示模块:</p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/ced3b599f329c23e52052557fbf82acd70d617fbaa286fc03def7a3a45fef919.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>这个演示视频展示了如何在 Flutter 中创建一个对话框，并展示了如何使用您的 Flutter 应用程序中的 get 包来工作，以及使用不同的属性。它会显示在你的设备上。</p>
+<h3 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor:"></a>Constructor:</h3><blockquote>
+<p>要使用 Get.defaultDialog () ，需要调用下面的构造函数:</p>
+</blockquote>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;T?&gt; defaultDialog&lt;T&gt;(&#123;</span><br><span class="line">  <span class="built_in">String</span> title = <span class="string">"Alert"</span>,</span><br><span class="line">  EdgeInsetsGeometry? titlePadding,</span><br><span class="line">  TextStyle? titleStyle,</span><br><span class="line">  Widget? content,</span><br><span class="line">  EdgeInsetsGeometry? contentPadding,</span><br><span class="line">  VoidCallback? onConfirm,</span><br><span class="line">  VoidCallback? onCancel,</span><br><span class="line">  VoidCallback? onCustom,</span><br><span class="line">  Color? cancelTextColor,</span><br><span class="line">  Color? confirmTextColor,</span><br><span class="line">  <span class="built_in">String</span>? textConfirm,</span><br><span class="line">  <span class="built_in">String</span>? textCancel,</span><br><span class="line">  <span class="built_in">String</span>? textCustom,</span><br><span class="line">  Widget? confirm,</span><br><span class="line">  Widget? cancel,</span><br><span class="line">  Widget? custom,</span><br><span class="line">  Color? backgroundColor,</span><br><span class="line">  <span class="built_in">bool</span> barrierDismissible = <span class="keyword">true</span>,</span><br><span class="line">  Color? buttonColor,</span><br><span class="line">  <span class="built_in">String</span> middleText = <span class="string">"Dialog made in 3 lines of code"</span>,</span><br><span class="line">  TextStyle? middleTextStyle,</span><br><span class="line">  <span class="built_in">double</span> radius = <span class="number">20.0</span>,</span><br><span class="line">  <span class="built_in">List</span>&lt;Widget&gt;? actions,</span><br><span class="line">  WillPopCallback? onWillPop,</span><br><span class="line">  GlobalKey&lt;NavigatorState&gt;? navigatorKey,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties:"></a>Properties:</h3><blockquote>
+<p>有一些 Get.defaultDialog ()的属性:</p>
+</blockquote>
+<ul>
+<li><strong>&gt; title</strong>: 此属性用于对话框的标题。默认情况下，标题为“ Alert”。</li>
+<li><strong>&gt; titleStyle</strong>: 此属性用于使用 TextStyle 给标题文本赋予的样式。</li>
+<li><strong>&gt; content</strong>: 在这个属性中用于给出对话框的内容，并且应该使用 Widget 给出内容。</li>
+<li><strong>&gt; middleText</strong>: 此属性用于对话框的中间文本。如果我们也利用内容，那么内容小部件数据将被播种。</li>
+<li><strong>&gt; barrierDismissible</strong>: 如果我们想通过单击对话框外部来关闭对话框，那么这个属性的值应该为 true else false。默认情况下，它的值为 true。</li>
+<li><strong>&gt; middleTextStyle</strong>: 此属性用于使用 TextStyle 给中间文本赋予的样式。</li>
+<li><strong>&gt; radius</strong>: 在此属性中使用的是提供的对话框的半径。默认情况下，它的值为 20。</li>
+<li><strong>&gt; backgroundColor</strong>: 在这个属性中用作对话框的背景颜色。</li>
+</ul>
+<h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation:"></a>Implementation:</h3><ul>
+<li>第一步: 添加依赖项</li>
+</ul>
+<blockquote>
+<p>将依赖项添加到 pubspec ー yaml 文件。</p>
+</blockquote>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dependencies:</span><br><span class="line">  flutter:</span><br><span class="line">    sdk: flutter</span><br><span class="line">  <span class="keyword">get</span>: ^<span class="number">4.6</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二步: 导入</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:get/get.dart'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第三步: 在应用程序的根目录中运行 flutter 软件包。</li>
+</ul>
+<h3 id="如何实现-dart-文件中的代码"><a href="#如何实现-dart-文件中的代码" class="headerlink" title="如何实现 dart 文件中的代码:"></a>如何实现 dart 文件中的代码:</h3><p>你需要分别在你的代码中实现它:</p>
+<blockquote>
+<p>在 lib 文件夹中创建一个名为 main.dart 的新 dart 文件。</p>
+</blockquote>
+<p>我们使用了 GetMaterialApp 而不是 MaterialApp，因为我们正在使用 GetX 库构建应用程序。如果我们不利用 GetMaterialApp，那么，在这一点上，它的功能将不工作。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> GetMaterialApp(</span><br><span class="line">  title: <span class="string">'Dialog Demo'</span>,</span><br><span class="line">  theme: ThemeData(</span><br><span class="line">    primarySwatch: Colors._blue_,</span><br><span class="line">  ),</span><br><span class="line">  home: Splash(),</span><br><span class="line">  debugShowCheckedModeBanner: <span class="keyword">false</span>,</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>我们将在 main.dart 文件中创建一个 Home 类</p>
+</blockquote>
+<p>在正文中，我们将添加一个 Center 小部件。在这个小部件中，我们将添加一个 Column 小部件，该小部件的中心是 mainAxisAlignment。我们将添加一些东西，首先，我们将添加一个图像，其次，我们将添加一个带有子属性和样式属性的立面按钮。在 onPressed 函数中，我们将添加 Get.defaultDialog ()。我们将在下面深入描述它。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Center(</span><br><span class="line">    child: Column(</span><br><span class="line">      mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">      children: [</span><br><span class="line">        Image.asset(<span class="string">"assets/logo.png"</span>, scale: <span class="number">14</span>,),</span><br><span class="line">        SizedBox(height: <span class="number">80</span>,),</span><br><span class="line">        ElevatedButton(</span><br><span class="line">          child: Text(<span class="string">'Show Dialog'</span>),</span><br><span class="line">          style: ElevatedButton._styleFrom_(</span><br><span class="line">            primary: Colors._teal_,</span><br><span class="line">            onPrimary: Colors._white_,</span><br><span class="line">            shadowColor: Colors._tealAccent_,</span><br><span class="line">            textStyle: TextStyle(</span><br><span class="line">                fontSize: <span class="number">18</span>,</span><br><span class="line">            ),</span><br><span class="line">            elevation: <span class="number">5</span>,</span><br><span class="line">            shape: RoundedRectangleBorder(</span><br><span class="line">                borderRadius: BorderRadius.circular(<span class="number">20.0</span>)),</span><br><span class="line">            minimumSize: Size(<span class="number">120</span>, <span class="number">50</span>),</span><br><span class="line">          ),</span><br><span class="line">          onPressed: () &#123;</span><br><span class="line">             Get.defaultDialog(); &#125;,</span><br><span class="line">        ),</span><br><span class="line">      ],</span><br><span class="line">    )),</span><br></pre></td></tr></table></figure>
+<p>当我们运行应用程序时，我们应该得到屏幕的输出，就像下面的屏幕截图一样。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/0269dc7d896e3714278bf3097c69b8f474c32c683c4fb1f398efef61c47ef018.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>Home Screen 主屏幕</p>
+<blockquote>
+<p>现在，我们将深入描述 Get.defaultDialog () :</p>
+</blockquote>
+<p>现在您看到了在 Flutter 使用 GetX 获得只有很少行的对话是多么容易。您还可以使用 GetX 提供的不同选项对其进行自定义。我们将添加标题，中间文本，背景颜色，标题样式，中间文本样式和半径。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Get.defaultDialog(</span><br><span class="line">  title: <span class="string">"Welcome to Flutter Dev'S"</span>,</span><br><span class="line">  middleText: <span class="string">"FlutterDevs is a protruding flutter app development company with "</span></span><br><span class="line">      <span class="string">"an extensive in-house team of 30+ seasoned professionals who know "</span></span><br><span class="line">      <span class="string">"exactly what you need to strengthen your business across various dimensions"</span>,</span><br><span class="line">  backgroundColor: Colors._teal_,</span><br><span class="line">  titleStyle: TextStyle(color: Colors._white_),</span><br><span class="line">  middleTextStyle: TextStyle(color: Colors._white_),</span><br><span class="line">  radius: <span class="number">30</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>当我们运行应用程序时，我们应该得到屏幕的输出，就像下面的屏幕截图一样。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/db4995a98be9632ec703316a34671ac39a57e5342ed6097e33294b7635a98928.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>Final Output 最终输出</p>
+<h3 id="全部代码"><a href="#全部代码" class="headerlink" title="全部代码:"></a>全部代码:</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_dialog_getx_demo/splash_screen.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:get/get.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  runApp(MyApp());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="comment">// This widget is the root of your application.</span></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> GetMaterialApp(</span><br><span class="line">      title: <span class="string">'Dialog Demo'</span>,</span><br><span class="line">      theme: ThemeData(</span><br><span class="line">        primarySwatch: Colors._blue_,</span><br><span class="line">      ),</span><br><span class="line">      home: Splash(),</span><br><span class="line">      debugShowCheckedModeBanner: <span class="keyword">false</span>,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Home</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        automaticallyImplyLeading: <span class="keyword">false</span>,</span><br><span class="line">        title: Text(<span class="string">'Dialog Using GetX In Flutter'</span>),</span><br><span class="line">        centerTitle: <span class="keyword">true</span>,</span><br><span class="line">        backgroundColor: Colors._cyan_,</span><br><span class="line">      ),</span><br><span class="line">      body: Center(</span><br><span class="line">          child: Column(</span><br><span class="line">            mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">            children: [</span><br><span class="line">              Image.asset(<span class="string">"assets/logo.png"</span>, scale: <span class="number">14</span>,),</span><br><span class="line">              SizedBox(height: <span class="number">80</span>,),</span><br><span class="line">              ElevatedButton(</span><br><span class="line">                child: Text(<span class="string">'Show Dialog'</span>),</span><br><span class="line">                style: ElevatedButton._styleFrom_(</span><br><span class="line">                  primary: Colors._teal_,</span><br><span class="line">                  onPrimary: Colors._white_,</span><br><span class="line">                  shadowColor: Colors._tealAccent_,</span><br><span class="line">                  textStyle: TextStyle(</span><br><span class="line">                      fontSize: <span class="number">18</span>,</span><br><span class="line">                  ),</span><br><span class="line">                  elevation: <span class="number">5</span>,</span><br><span class="line">                  shape: RoundedRectangleBorder(</span><br><span class="line">                      borderRadius: BorderRadius.circular(<span class="number">20.0</span>)),</span><br><span class="line">                  minimumSize: Size(<span class="number">120</span>, <span class="number">50</span>),</span><br><span class="line">                ),</span><br><span class="line">                onPressed: () &#123;</span><br><span class="line">                  Get.defaultDialog(</span><br><span class="line">                    title: <span class="string">"Welcome to Flutter Dev'S"</span>,</span><br><span class="line">                    middleText: <span class="string">"FlutterDevs is a protruding flutter app development company with "</span></span><br><span class="line">                        <span class="string">"an extensive in-house team of 30+ seasoned professionals who know "</span></span><br><span class="line">                        <span class="string">"exactly what you need to strengthen your business across various dimensions"</span>,</span><br><span class="line">                    backgroundColor: Colors._teal_,</span><br><span class="line">                    titleStyle: TextStyle(color: Colors._white_),</span><br><span class="line">                    middleTextStyle: TextStyle(color: Colors._white_),</span><br><span class="line">                    radius: <span class="number">30</span></span><br><span class="line">                  );</span><br><span class="line">                &#125;,</span><br><span class="line">              ),</span><br><span class="line">            ],</span><br><span class="line">          )),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语:"></a>结语:</h1><p>在本文中，我已经解释了使用 GetX 的对话框的基本结构; 您可以根据自己的选择修改这段代码。这是我对使用 GetX 进行用户交互的对话框的一个小小介绍，它正在使用 Flutter 工作。</p>
+<p>我希望这个博客将提供您充分的信息，尝试在您的 Flutter 项目使用 GetX 对话框。我们将向您展示介绍是什么？.使用 GetX 插件制作一个工作对话框的演示程序。在本博客中，我们已经研究了 flutter 应用程序的使用 GetX 的对话框。我希望这个博客能帮助你更好地理解这个对话框。所以请尝试一下。</p>
+<hr>
+<p>© 猫哥</p>
+<ul>
+<li><p>微信 ducafecat</p>
+</li>
+<li><p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">博客 ducafecat.tech</a></p>
+</li>
+<li><p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">github</a></p>
+</li>
+<li><p><a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">bilibili</a></p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/banner-gzh.png" alt="订阅号" title="">
+                </div>
+                <div class="image-caption">订阅号</div>
+            </figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&title=《在 Flutter 使用 GetX 对话框》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&title=《在 Flutter 使用 GetX 对话框》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 Flutter 使用 GetX 对话框》 — duCafeCat&url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/04/19/2022/expansionpanellist-in-flutter/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter ExpansionPanelList 创建一个扩展面板列表</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/03/17/2022/flutter-devtools-performance/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">2022 Flutter Performance 性能调试工具 devTools</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&title=《在 Flutter 使用 GetX 对话框》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&title=《在 Flutter 使用 GetX 对话框》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 Flutter 使用 GetX 对话框》 — duCafeCat&url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/03/28/2022/flutter-getx-dialog/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuklEQVR42u3awa4aMQwFUP7/p6nUVaV2wr1O8srizArBMMkJUmzsvF7x9f59Pb3/56frO9tR3n9drxsXHh4e3mjqT9d64CdkPun1/ev5rOeMh4eHd5uXDJNs1rOluRh+8PDw8P4rb71BJ1t/O9HZQuDh4eF9Dy8Zpkh24zCDh4eH9528pBixEx5mIeFHay14eHh43f5cNMC+4fXF/h4eHh7eRle93aDbowbr57TB4B9PxsPDw7vASxr5sykWw5eHq/LUHA8PD+8GbzaVGXv/gFe7BHh4eHg3ePnH+WY9S6/bENWOhYeHh3eKd2PS+QLlxwXWoeU1iw94eHh4G7x84FnbLEmv8+pBvhB4eHh4N3hteNjfgZMp7gSqx98QDw8P7xBvlubupMh5WTYvYdQ1FTw8PLxDvHZbnyXKbQtt/d0P7+Ph4eFd47VfzlPhU4GnTdnx8PDwbvNmRdXZ5p4saL7oHxpjeHh4eBd47dacFxSShdsJA3Uww8PDwzvEm6Wt+aRPtcfaO/Hw8PDu8dqmVJ5q58n3rMxRzxwPDw/vEK8txbaFifbwwez3Kcq4eHh4eId4ybaeP7RdjrqtlYcQPDw8vAu8nanPUuR2Odo5PBZz8fDw8A7x2i7ZrJV1KoGuW2J4eHh4F3j5EYGi1RQMPCtMDKl4eHh4F3htitz+0883/fbfQFtKxsPDwzvFm5VrZ0+YlX3z1PzD/wY8PDy8C7x2d52ly/uMYv54eHh4R3nv8kq29XyBdo4vDA9d4eHh4W3zZoWJrQQ3KGTkjAMVFzw8PLwRr01w2/Lr+p6koTUrYeDh4eHd5uXBYKfH1LbQ8qC1dbIMDw8P7zKv3cRbxs7BLzw8PLxv480S3KQysLNwHxJ3PDw8vGu8WdOrbYntP79Ou/Hw8PAu8E41wHZS8FOLNWTj4eHhpbxfUmqccRR4cXwAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

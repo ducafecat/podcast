@@ -190,7 +190,7 @@
             <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-07-01-05-45-34.png" alt="" title="">
+                    <img src="2021-07-01-05-45-34.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -218,7 +218,7 @@
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-07-01-05-33-41.png" alt="" title="">
+                    <img src="2021-07-01-05-33-41.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -228,7 +228,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-07-01-05-34-14.png" alt="" title="">
+                    <img src="2021-07-01-05-34-14.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -242,7 +242,7 @@
 <p>让我们来看一个如何正确做到这一点的例子: Card widget。你可以观察到在设置页面的第三个例子中，形状是直线而不是角。</p>
 <p>而只有‘ child’属性在代码中使用: Card (child: …)</p>
 <p>当你深入研究 Card 小部件是如何设计的时候，你会看到它的形状是如何定义的。下面是有关 Card.shape 属性的代码文档:</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="markdown">/// The shape of </span>the<span class="markdown"> card's [Material].</span></span></span><br><span class="line"><span class="comment"><span class="markdown">///</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// Defines </span>the<span class="markdown"> card's [Material.shape].</span></span></span><br><span class="line"><span class="comment"><span class="markdown">///</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// If this property is null then [CardTheme.shape] of [ThemeData.cardTheme]</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// is used. If that's null then </span>the<span class="markdown"> shape </span>will<span class="markdown"> be </span>a<span class="markdown"> [RoundedRectangleBorder]</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// with </span>a<span class="markdown"> circular corner radius of 4.0.</span></span></span><br><span class="line"><span class="keyword">final</span> ShapeBorder? shape;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// <span class="markdown">The shape of the card's [Material].</span></span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">/// <span class="markdown">Defines the card's [Material.shape].</span></span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">/// <span class="markdown">If this property is null then [CardTheme.shape] of [ThemeData.cardTheme]</span></span></span><br><span class="line"><span class="comment">/// <span class="markdown">is used. If that's null then the shape will be a [RoundedRectangleBorder]</span></span></span><br><span class="line"><span class="comment">/// <span class="markdown">with a circular corner radius of 4.0.</span></span></span><br><span class="line"><span class="keyword">final</span> ShapeBorder? shape;</span><br></pre></td></tr></table></figure>
 <p>因此，为了确保“普通”卡片共享相同的设计，您必须定义自己的 ThemeData，并在 MaterialApp 小部件中使用它作为主题(或 darkTheme)。</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ThemeData example() &#123;</span><br><span class="line">  <span class="keyword">final</span> base  = ThemeData.dark();</span><br><span class="line">  <span class="keyword">final</span> mainColor = Colors.lightBlue;</span><br><span class="line">  <span class="keyword">return</span> base.copyWith(</span><br><span class="line">    cardColor: Color.lerp(mainColor, Colors.white, <span class="number">0.2</span>),</span><br><span class="line">    cardTheme: base.cardTheme?.copyWith(</span><br><span class="line">      color: Color.lerp(mainColor, Colors.black, <span class="number">0.1</span>),</span><br><span class="line">      margin: EdgeInsets.all(<span class="number">20.0</span>),</span><br><span class="line">      elevation: <span class="number">0.0</span>,</span><br><span class="line">      shape: BeveledRectangleBorder(</span><br><span class="line">          borderRadius: BorderRadius.circular(<span class="number">14.0</span>),</span><br><span class="line">          side: BorderSide(color: Colors.white24, width: <span class="number">1</span>)),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面的代码演示了如何更改卡片设计，但是您可以为来自 Flutter SDK 的几乎所有小部件进行更改。此外，您应该将主题相关的内容集中到单个文件中，因为 ThemeData 是一个巨大的数据结构。</p>
@@ -251,7 +251,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-07-01-05-36-52.png" alt="" title="">
+                    <img src="2021-07-01-05-36-52.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -277,7 +277,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt="" title="">
+                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>

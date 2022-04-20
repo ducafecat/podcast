@@ -188,7 +188,7 @@
             <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-25-08-07-06.png" alt="" title="">
+                    <img src="2021-05-25-08-07-06.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -209,7 +209,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-25-06-15-25.png" alt="" title="">
+                    <img src="2021-05-25-06-15-25.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -225,7 +225,7 @@
 <li>min / max / average by items property;</li>
 <li>filtering out null items;</li>
 </ul>
-<h3 id="安装-dartx-pubspec-yaml"><a href="#安装-dartx-pubspec-yaml" class="headerlink" title="安装 dartx pubspec.yaml"></a>安装 dartx <code>pubspec.yaml</code></h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line"><span class="attr">  dartx:</span> <span class="string">^0.7.1</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装-dartx-pubspec-yaml"><a href="#安装-dartx-pubspec-yaml" class="headerlink" title="安装 dartx pubspec.yaml"></a>安装 dartx <code>pubspec.yaml</code></h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">dartx:</span> <span class="string">^0.7.1</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:dartx/dartx.dart'</span>;</span><br></pre></td></tr></table></figure>
 <h3 id="First-last-collection-item…"><a href="#First-last-collection-item…" class="headerlink" title="First / last collection item…"></a>First / last collection item…</h3><h4 id="…-or-null"><a href="#…-or-null" class="headerlink" title="… or null"></a>… or null</h4><p>为了得到第一个和最后一个收集项目的简单省道，你可以这样写:</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> first = list.first;</span><br><span class="line"><span class="keyword">final</span> last = list.last;</span><br></pre></td></tr></table></figure>
@@ -255,9 +255,9 @@
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> firstWhereOrNull = list.firstOrNullWhere((x) =&gt; x.matches(condition));</span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> lastWhereOrNull = list.lastOrNullWhere((x) =&gt; x.matches(condition));</span><br></pre></td></tr></table></figure>
 <h3 id="…-collection-items-depending-on-their-index"><a href="#…-collection-items-depending-on-their-index" class="headerlink" title="… collection items depending on their index"></a>… collection items depending on their index</h3><h4 id="Map…"><a href="#Map…" class="headerlink" title="Map…"></a>Map…</h4><p>当您需要获得一个新的集合，其中每个项目以某种方式依赖于其索引时，这种情况并不罕见。例如，每个新项都是来自原始集合的项及其索引的字符串表示形式。</p>
 <p>如果你喜欢我的一句俏皮话，简单地说就是:</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> newList = list.asMap()</span><br><span class="line">  .map((index, x) =&gt; MapEntry(index, <span class="string">'$index $x'</span>))</span><br><span class="line">  .values</span><br><span class="line">  .toList();</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> newList = list.asMap()</span><br><span class="line">  .map((index, x) =&gt; MapEntry(index, <span class="string">'<span class="subst">$index</span> <span class="subst">$x</span>'</span>))</span><br><span class="line">  .values</span><br><span class="line">  .toList();</span><br></pre></td></tr></table></figure>
 <p>使用 dartx 可以:</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> newList = list.mapIndexed((index, x) =&gt; <span class="string">'$index $x'</span>).toList();</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> newList = list.mapIndexed((index, x) =&gt; <span class="string">'<span class="subst">$index</span> <span class="subst">$x</span>'</span>).toList();</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>我应用.toList ()是因为这个和大多数其他扩展方法返回 lazy Iterable。</p>
 </blockquote>
@@ -269,9 +269,9 @@
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> oddItems = list.whereIndexed((x, index) =&gt; index.isOdd).toList();</span><br><span class="line"></span><br><span class="line"><span class="comment">// or</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> oddItems = list.whereNotIndexed((x, index) =&gt; index.isEven).toList();</span><br></pre></td></tr></table></figure>
 <h3 id="Iterate…"><a href="#Iterate…" class="headerlink" title="Iterate…"></a>Iterate…</h3><p>如何记录集合内容并指定项目索引？</p>
 <p>In plain Dart:</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; list.length; i++) &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'$i: <span class="subst">$&#123;list[i]&#125;</span>'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; list.length; i++) &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'<span class="subst">$i</span>: <span class="subst">$&#123;list[i]&#125;</span>'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>使用 dartx 可以:</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.forEachIndexed((element, index) =&gt; <span class="built_in">print</span>(<span class="string">'$index: $element'</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.forEachIndexed((element, index) =&gt; <span class="built_in">print</span>(<span class="string">'<span class="subst">$index</span>: <span class="subst">$element</span>'</span>));</span><br></pre></td></tr></table></figure>
 <h3 id="Converting-a-collection-to-a-map"><a href="#Converting-a-collection-to-a-map" class="headerlink" title="Converting a collection to a map"></a>Converting a collection to a map</h3><p>例如，需要将不同 Person 对象的列表转换为 Map &lt; String，Person &gt; ，其中键是 Person.id，值是完整 Person 实例。</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> peopleMap = people.asMap().map((index, person) =&gt; MapEntry(person.id, person));</span><br></pre></td></tr></table></figure>
 <p>使用 dartx 可以:</p>
@@ -335,7 +335,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt="" title="">
+                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>

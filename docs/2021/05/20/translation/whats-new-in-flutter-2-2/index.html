@@ -207,7 +207,7 @@
             <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-08-59-40.png" alt="" title="">
+                    <img src="2021-05-20-08-59-40.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -238,7 +238,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-06-08-40.png" alt="" title="">
+                    <img src="2021-05-20-06-08-40.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -263,7 +263,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-06-15-18.png" alt="" title="">
+                    <img src="2021-05-20-06-15-18.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -273,14 +273,14 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-06-16-14.png" alt="" title="">
+                    <img src="2021-05-20-06-16-14.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-06-16-24.png" alt="" title="">
+                    <img src="2021-05-20-06-16-24.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -289,7 +289,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-06-17-40.png" alt="按名称搜索 Flutter 材质图标" title="">
+                    <img src="2021-05-20-06-17-40.png" alt="按名称搜索 Flutter 材质图标" title>
                 </div>
                 <div class="image-caption">按名称搜索 Flutter 材质图标</div>
             </figure>
@@ -300,30 +300,30 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-06-19-31.png" alt="Flutter 2.2 可以取消冒出窗口部件层次结构的击键，例如允许 TAB 从 TextField 更改焦点" title="">
+                    <img src="2021-05-20-06-19-31.png" alt="Flutter 2.2 可以取消冒出窗口部件层次结构的击键，例如允许 TAB 从 TextField 更改焦点" title>
                 </div>
                 <div class="image-caption">Flutter 2.2 可以取消冒出窗口部件层次结构的击键，例如允许 TAB 从 TextField 更改焦点</div>
             </figure>
 <p>自定义文本操作允许你做一些事情，比如在 TextField 中特殊处理 Enter 键; 例如，你可以触发在聊天客户端发送消息，同时仍然允许通过 Ctrl + Enter 插入一个新行。这些相同的文本操作允许 Flutter 本身提供不同的按键来匹配主机 OS 本身的文本编辑行为，例如，在 Windows 和 Linux 上使用 Ctrl + c，而在 macOS 上使用 Cmd + c。</p>
 <p><a href="https://github.com/flutter/flutter/pull/75032" target="_blank" rel="noopener">https://github.com/flutter/flutter/pull/75032</a></p>
 <p>作为一个例子，下面的示例重写了默认的左箭头操作，并为退格键和删除键提供了一个新的操作:</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/services.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() =&gt; runApp(MyApp());</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> Widget build(BuildContext context) =&gt; MaterialApp(</span><br><span class="line">       title: <span class="string">'Flutter TextField Key Binding Demo'</span>,</span><br><span class="line">       home: Scaffold(body: UnforgivingTextField()),</span><br><span class="line">     );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="markdown">/// A text field that clears itself if </span>the<span class="markdown"> user tries to back up or correct</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// something.</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UnforgivingTextField</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> State&lt;UnforgivingTextField&gt; createState() =&gt; _UnforgivingTextFieldState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_UnforgivingTextFieldState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">UnforgivingTextField</span>&gt; </span>&#123;</span><br><span class="line"> <span class="comment">// The text editing controller used to clear the text field.</span></span><br><span class="line"> late TextEditingController controller;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> <span class="keyword">void</span> initState() &#123;</span><br><span class="line">   <span class="keyword">super</span>.initState();</span><br><span class="line">   controller = TextEditingController();</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> Widget build(BuildContext context) =&gt; Shortcuts(</span><br><span class="line">       shortcuts: &lt;LogicalKeySet, Intent&gt;&#123;</span><br><span class="line">         <span class="comment">// This overrides the left arrow key binding that the text field normally</span></span><br><span class="line">         <span class="comment">// has in order to move the cursor back by a character. The default is</span></span><br><span class="line">         <span class="comment">// created by the MaterialApp, which has a DefaultTextEditingShortcuts</span></span><br><span class="line">         <span class="comment">// widget in it.</span></span><br><span class="line">         LogicalKeySet(LogicalKeyboardKey.arrowLeft): <span class="keyword">const</span> ClearIntent(),</span><br><span class="line"></span><br><span class="line">         <span class="comment">// This binds the delete and backspace keys to also clear the text field.</span></span><br><span class="line">         <span class="comment">// You can bind any key, not just those already bound in</span></span><br><span class="line">         <span class="comment">// DefaultTextEditingShortcuts.</span></span><br><span class="line">         LogicalKeySet(LogicalKeyboardKey.delete): <span class="keyword">const</span> ClearIntent(),</span><br><span class="line">         LogicalKeySet(LogicalKeyboardKey.backspace): <span class="keyword">const</span> ClearIntent(),</span><br><span class="line">       &#125;,</span><br><span class="line">       child: Actions(</span><br><span class="line">         actions: &lt;<span class="built_in">Type</span>, Action&lt;Intent&gt;&gt;&#123;</span><br><span class="line">           <span class="comment">// This binds the intent that indicates clearing a text field to the</span></span><br><span class="line">           <span class="comment">// action that does the clearing.</span></span><br><span class="line">           ClearIntent: ClearAction(controller: controller),</span><br><span class="line">         &#125;,</span><br><span class="line">         child: Center(child: TextField(controller: controller)),</span><br><span class="line">       ),</span><br><span class="line">     );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="markdown">/// An intent that is bound to ClearAction.</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClearIntent</span> <span class="keyword">extends</span> <span class="title">Intent</span> </span>&#123;</span><br><span class="line"> <span class="keyword">const</span> ClearIntent();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="markdown">/// An action that is bound to ClearIntent that clears </span>the<span class="markdown"> TextEditingController</span></span></span><br><span class="line"><span class="comment"><span class="markdown">/// passed to it.</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClearAction</span> <span class="keyword">extends</span> <span class="title">Action</span>&lt;<span class="title">ClearIntent</span>&gt; </span>&#123;</span><br><span class="line"> ClearAction(&#123;required <span class="keyword">this</span>.controller&#125;);</span><br><span class="line"></span><br><span class="line"> <span class="keyword">final</span> TextEditingController controller;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> <span class="built_in">Object</span>? invoke(covariant ClearIntent intent) &#123;</span><br><span class="line">   controller.clear();</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/services.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() =&gt; runApp(MyApp());</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> Widget build(BuildContext context) =&gt; MaterialApp(</span><br><span class="line">       title: <span class="string">'Flutter TextField Key Binding Demo'</span>,</span><br><span class="line">       home: Scaffold(body: UnforgivingTextField()),</span><br><span class="line">     );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// <span class="markdown">A text field that clears itself if the user tries to back up or correct</span></span></span><br><span class="line"><span class="comment">/// <span class="markdown">something.</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UnforgivingTextField</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> State&lt;UnforgivingTextField&gt; createState() =&gt; _UnforgivingTextFieldState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_UnforgivingTextFieldState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">UnforgivingTextField</span>&gt; </span>&#123;</span><br><span class="line"> <span class="comment">// The text editing controller used to clear the text field.</span></span><br><span class="line"> late TextEditingController controller;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> <span class="keyword">void</span> initState() &#123;</span><br><span class="line">   <span class="keyword">super</span>.initState();</span><br><span class="line">   controller = TextEditingController();</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> Widget build(BuildContext context) =&gt; Shortcuts(</span><br><span class="line">       shortcuts: &lt;LogicalKeySet, Intent&gt;&#123;</span><br><span class="line">         <span class="comment">// This overrides the left arrow key binding that the text field normally</span></span><br><span class="line">         <span class="comment">// has in order to move the cursor back by a character. The default is</span></span><br><span class="line">         <span class="comment">// created by the MaterialApp, which has a DefaultTextEditingShortcuts</span></span><br><span class="line">         <span class="comment">// widget in it.</span></span><br><span class="line">         LogicalKeySet(LogicalKeyboardKey.arrowLeft): <span class="keyword">const</span> ClearIntent(),</span><br><span class="line"></span><br><span class="line">         <span class="comment">// This binds the delete and backspace keys to also clear the text field.</span></span><br><span class="line">         <span class="comment">// You can bind any key, not just those already bound in</span></span><br><span class="line">         <span class="comment">// DefaultTextEditingShortcuts.</span></span><br><span class="line">         LogicalKeySet(LogicalKeyboardKey.delete): <span class="keyword">const</span> ClearIntent(),</span><br><span class="line">         LogicalKeySet(LogicalKeyboardKey.backspace): <span class="keyword">const</span> ClearIntent(),</span><br><span class="line">       &#125;,</span><br><span class="line">       child: Actions(</span><br><span class="line">         actions: &lt;<span class="built_in">Type</span>, Action&lt;Intent&gt;&gt;&#123;</span><br><span class="line">           <span class="comment">// This binds the intent that indicates clearing a text field to the</span></span><br><span class="line">           <span class="comment">// action that does the clearing.</span></span><br><span class="line">           ClearIntent: ClearAction(controller: controller),</span><br><span class="line">         &#125;,</span><br><span class="line">         child: Center(child: TextField(controller: controller)),</span><br><span class="line">       ),</span><br><span class="line">     );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// <span class="markdown">An intent that is bound to ClearAction.</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClearIntent</span> <span class="keyword">extends</span> <span class="title">Intent</span> </span>&#123;</span><br><span class="line"> <span class="keyword">const</span> ClearIntent();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// <span class="markdown">An action that is bound to ClearIntent that clears the TextEditingController</span></span></span><br><span class="line"><span class="comment">/// <span class="markdown">passed to it.</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClearAction</span> <span class="keyword">extends</span> <span class="title">Action</span>&lt;<span class="title">ClearIntent</span>&gt; </span>&#123;</span><br><span class="line"> ClearAction(&#123;required <span class="keyword">this</span>.controller&#125;);</span><br><span class="line"></span><br><span class="line"> <span class="keyword">final</span> TextEditingController controller;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> <span class="built_in">Object</span>? invoke(<span class="keyword">covariant</span> ClearIntent intent) &#123;</span><br><span class="line">   controller.clear();</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-06-20-56.png" alt="按左箭头或 ESC 可以清除文本" title="">
+                    <img src="2021-05-20-06-20-56.png" alt="按左箭头或 ESC 可以清除文本" title>
                 </div>
                 <div class="image-caption">按左箭头或 ESC 可以清除文本</div>
             </figure>
 <p>我们仍然有更多的工作要做，但我们正在努力给你提供完整的文本编辑操作。我们的目标是，当 Flutter 桌面变得稳定时，你的用户将无法分辨出 Flutter 应用程序中编辑文本与主机操作系统中其他应用程序之间的区别。</p>
 <h4 id="自动滚动行为"><a href="#自动滚动行为" class="headerlink" title="自动滚动行为"></a>自动滚动行为</h4><p>作为我们持续追求的一部分，让 Flutter 应用在每个平台上都表现得像最好的应用一样，我们在这个版本中重新审视了滚动条。当实际显示滚动条时，安卓和 iOS 是相同的; 默认情况下它们不显示滚动条。另一方面，对于桌面应用程序，当内容大于容器时，通常会自动显示滚动条，这需要您添加一个滚动条父窗口小部件。为了在移动或桌面上获得正确的行为，此版本在必要时自动添加滚动条。</p>
 <p>考虑下面的无滚动条代码:</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() =&gt; runApp(App());</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> Widget build(BuildContext context) =&gt; MaterialApp(</span><br><span class="line">       title: <span class="string">'Automatic Scrollbars'</span>,</span><br><span class="line">       home: HomePage(),</span><br><span class="line">     );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HomePage</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> Widget build(BuildContext context) =&gt; Scaffold(</span><br><span class="line">       body: ListView.builder(</span><br><span class="line">         itemCount: <span class="number">100</span>,</span><br><span class="line">         itemBuilder: (context, index) =&gt; Text(<span class="string">'Item $index'</span>),</span><br><span class="line">       ),</span><br><span class="line">     );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() =&gt; runApp(App());</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> Widget build(BuildContext context) =&gt; MaterialApp(</span><br><span class="line">       title: <span class="string">'Automatic Scrollbars'</span>,</span><br><span class="line">       home: HomePage(),</span><br><span class="line">     );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HomePage</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line"> <span class="meta">@override</span></span><br><span class="line"> Widget build(BuildContext context) =&gt; Scaffold(</span><br><span class="line">       body: ListView.builder(</span><br><span class="line">         itemCount: <span class="number">100</span>,</span><br><span class="line">         itemBuilder: (context, index) =&gt; Text(<span class="string">'Item <span class="subst">$index</span>'</span>),</span><br><span class="line">       ),</span><br><span class="line">     );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在桌面上运行时，会出现一个滚动条:</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-06-22-26.png" alt="" title="">
+                    <img src="2021-05-20-06-22-26.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -335,7 +335,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-06-24-38.png" alt="" title="">
+                    <img src="2021-05-20-06-24-38.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -351,7 +351,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-06-27-32.png" alt="跟踪显示在应用程序启动期间发生的预编译" title="">
+                    <img src="2021-05-20-06-27-32.png" alt="跟踪显示在应用程序启动期间发生的预编译" title>
                 </div>
                 <div class="image-caption">跟踪显示在应用程序启动期间发生的预编译</div>
             </figure>
@@ -385,7 +385,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-08-29-49.png" alt="" title="">
+                    <img src="2021-05-20-08-29-49.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -400,7 +400,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-08-35-23.png" alt="" title="">
+                    <img src="2021-05-20-08-35-23.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -426,7 +426,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-08-41-41.png" alt="" title="">
+                    <img src="2021-05-20-08-41-41.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -445,7 +445,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-08-43-46.png" alt="" title="">
+                    <img src="2021-05-20-08-43-46.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -453,7 +453,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-08-43-56.png" alt="" title="">
+                    <img src="2021-05-20-08-43-56.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -463,7 +463,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-08-44-26.png" alt="激活 DevTools Provider 选项卡" title="">
+                    <img src="2021-05-20-08-44-26.png" alt="激活 DevTools Provider 选项卡" title>
                 </div>
                 <div class="image-caption">激活 DevTools Provider 选项卡</div>
             </figure>
@@ -483,7 +483,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-08-46-00.png" alt="新的 Dart 重构行动内嵌方法" title="">
+                    <img src="2021-05-20-08-46-00.png" alt="新的 Dart 重构行动内嵌方法" title>
                 </div>
                 <div class="image-caption">新的 Dart 重构行动内嵌方法</div>
             </figure>
@@ -491,7 +491,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-08-47-02.png" alt="现在您可以获得所有的堆栈跟踪，而不仅仅是第一个" title="">
+                    <img src="2021-05-20-08-47-02.png" alt="现在您可以获得所有的堆栈跟踪，而不仅仅是第一个" title>
                 </div>
                 <div class="image-caption">现在您可以获得所有的堆栈跟踪，而不仅仅是第一个</div>
             </figure>
@@ -511,7 +511,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-08-48-36.png" alt="实践中的 DartPad 工作坊" title="">
+                    <img src="2021-05-20-08-48-36.png" alt="实践中的 DartPad 工作坊" title>
                 </div>
                 <div class="image-caption">实践中的 DartPad 工作坊</div>
             </figure>
@@ -530,7 +530,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-20-08-51-04.png" alt="" title="">
+                    <img src="2021-05-20-08-51-04.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -541,7 +541,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/public-qrcode.png" alt="" title="">
+                    <img src="/img/public-qrcode.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>

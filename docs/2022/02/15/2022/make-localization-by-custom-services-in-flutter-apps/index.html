@@ -199,7 +199,7 @@
             <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2022-02-15-22-26-00.png" alt="" title="">
+                    <img src="2022-02-15-22-26-00.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -216,7 +216,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/54df0eabf27d91ede48b2972c6c1049752c5fdbe5c48b7f00b432fd5e75ac439.png" alt="" title="">
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/54df0eabf27d91ede48b2972c6c1049752c5fdbe5c48b7f00b432fd5e75ac439.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -237,7 +237,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/0bf31cfbd44cbe0b31d43981dfa1669c0265cd21b5abedc8e10ca125716bab46.png" alt="" title="">
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/0bf31cfbd44cbe0b31d43981dfa1669c0265cd21b5abedc8e10ca125716bab46.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -245,7 +245,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/f07d061a61297f4d8fc3bbd072d6319e794f45f16d478464e71f14d671b11ac2.png" alt="" title="">
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/f07d061a61297f4d8fc3bbd072d6319e794f45f16d478464e71f14d671b11ac2.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -264,7 +264,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/9876ac962608a6523191f566154173405a69235e44f087afb5c45d8644eb3be5.png" alt="" title="">
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/9876ac962608a6523191f566154173405a69235e44f087afb5c45d8644eb3be5.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -272,18 +272,18 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/ae38fb8c521b61a667d85d5e23a0f0eb61b19e742063a6ef8db3f3e07ad83ca7.png" alt="" title="">
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/ae38fb8c521b61a667d85d5e23a0f0eb61b19e742063a6ef8db3f3e07ad83ca7.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
 <p>现在，我将实现一个服务层来获取列表语言结果和相关键值。我总是倾向于为下面的实例服务调用的每个业务操作提供接口。</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ILangugaeService</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> INetworkManager networkManager;</span><br><span class="line">  ILangugaeService(<span class="keyword">this</span>.networkManager);</span><br><span class="line">  Future&lt;<span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;?&gt; fetchLangageList();</span><br><span class="line">  Future&lt;<span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="keyword">dynamic</span>&gt;?&gt; fetchSpesificResources(<span class="built_in">String</span> key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ILangugaeService</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> INetworkManager networkManager;</span><br><span class="line">  ILangugaeService(<span class="keyword">this</span>.networkManager);</span><br><span class="line">  Future&lt;<span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;?&gt; fetchLangageList();</span><br><span class="line">  Future&lt;<span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">dynamic</span>&gt;?&gt; fetchSpesificResources(<span class="built_in">String</span> key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在我尝试为控件后端响应实现一个特性测试之后，我编写了这个接口，它是正确的，因此我想为我们的业务验证这个响应。</p>
 <p>当您调用这个测试服务测试文件时，您将看到每个操作都是正确的。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/662ff037133028c83cf2d5164773f056ae5bbcdd00648e87e8a5394a664a4d2f.png" alt="" title="">
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/662ff037133028c83cf2d5164773f056ae5bbcdd00648e87e8a5394a664a4d2f.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -294,7 +294,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/32aea7758934048407d71a300889a4a3781cf26a464a8ab78a41fa7c624d79c8.png" alt="" title="">
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/32aea7758934048407d71a300889a4a3781cf26a464a8ab78a41fa7c624d79c8.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -305,7 +305,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/9e7e480474c2e4a3db3854f82febade222802f1a447fee54b2d73f422fb40394.png" alt="" title="">
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/9e7e480474c2e4a3db3854f82febade222802f1a447fee54b2d73f422fb40394.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -313,14 +313,14 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/c64b5f3a67728b9ca848f1031fa195fdf5b76b1d7467bd1cd3890b584a137fd9.png" alt="" title="">
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/c64b5f3a67728b9ca848f1031fa195fdf5b76b1d7467bd1cd3890b584a137fd9.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/29afd097bce847950ac01b59e86946035e06023783a5aab8e5059f4a7fe7e326.png" alt="" title="">
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/29afd097bce847950ac01b59e86946035e06023783a5aab8e5059f4a7fe7e326.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -329,7 +329,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/fb38a8ea828468e92eb7541a401d6763cea0820585037b6b2703ffc1fe99ee3b.png" alt="" title="">
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/fb38a8ea828468e92eb7541a401d6763cea0820585037b6b2703ffc1fe99ee3b.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -344,7 +344,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/e1fd87dd965497423eb937c8fe333c5ff6b30547bde1416ed8265ef520ce8894.gif" alt="" title="">
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/e1fd87dd965497423eb937c8fe333c5ff6b30547bde1416ed8265ef520ce8894.gif" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -383,7 +383,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.tech/img/banner-gzh.png" alt="订阅号" title="">
+                    <img src="https://ducafecat.tech/img/banner-gzh.png" alt="订阅号" title>
                 </div>
                 <div class="image-caption">订阅号</div>
             </figure>

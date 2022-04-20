@@ -189,7 +189,7 @@
             <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-21-09-00-00.png" alt="" title="">
+                    <img src="2021-05-21-09-00-00.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -199,7 +199,7 @@
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-21-08-37-45.png" alt="" title="">
+                    <img src="2021-05-21-08-37-45.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -209,7 +209,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-05-21-08-41-53.png" alt="" title="">
+                    <img src="2021-05-21-08-41-53.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -260,7 +260,7 @@
 <blockquote>
 <p>为了在使用 await 时捕捉错误，你可以使用 Dart 的标准 try/catch 包括:</p>
 </blockquote>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;<span class="built_in">String</span>&gt; getData() <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">final</span> response = <span class="keyword">await</span> http.<span class="keyword">get</span>(<span class="string">"https://flutterdevs.com"</span>);</span><br><span class="line">    <span class="keyword">return</span> response.body;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (excute) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Error: $excute"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;<span class="built_in">String</span>&gt; getData() <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">final</span> response = <span class="keyword">await</span> http.<span class="keyword">get</span>(<span class="string">"https://flutterdevs.com"</span>);</span><br><span class="line">    <span class="keyword">return</span> response.body;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (excute) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Error: <span class="subst">$excute</span>"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在这个版本中，我们放置的代码，可以抛出豁免到 try 块。在一切都很容易的情况下，我们将得到一个响应并返回字符串信息，类似于在早期模型中。如果出现错误，catch 块将执行所有考虑过的内容，并向我们传递一个对豁免的引用。由于我们没有向 getData ()的最大限度添加明确的返回公告，Dart 将在那里添加一个特定的返回 null 语句，这将以 null 值结束未来。</p>
 <blockquote>
 <p>请注意，如果网络调用成功，则在 try 块中会发生返回，因此不会调用隐含的返回。</p>
@@ -285,7 +285,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/public-qrcode.png" alt="" title="">
+                    <img src="/img/public-qrcode.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>

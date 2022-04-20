@@ -190,7 +190,7 @@
             <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-06-29-05-57-15.png" alt="" title="">
+                    <img src="2021-06-29-05-57-15.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -202,7 +202,7 @@
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-06-29-05-41-13.png" alt="" title="">
+                    <img src="2021-06-29-05-41-13.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -212,7 +212,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="generate-password.gif" alt="" title="">
+                    <img src="generate-password.gif" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -243,12 +243,12 @@
 </blockquote>
 <p>在 lib 文件夹中创建一个名为 custom.dart 的新 dart 文件。</p>
 <p>我们将创建一个 String generatePassword ()方法。在内部，我们将添加最终长度等于 20，letterLowerCase，letterUpperCase，number，special 字符。当我们使用一个强密码，然后真正的所有 bool 字母，isNumber，和 isSpecial。添加字符串字符并返回 List。生成()。添加 final indexRandom 等于 Random.secure ()。nextInt (chars.length)和 return chars [ indexRandom ]。</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'dart:math'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span> generatePassword(&#123;</span><br><span class="line">  <span class="built_in">bool</span> letter = <span class="keyword">true</span>,</span><br><span class="line">  <span class="built_in">bool</span> isNumber = <span class="keyword">true</span>,</span><br><span class="line">  <span class="built_in">bool</span> isSpecial = <span class="keyword">true</span>,</span><br><span class="line">&#125;) &#123;</span><br><span class="line">  <span class="keyword">final</span> length = <span class="number">20</span>;</span><br><span class="line">  <span class="keyword">final</span> letterLowerCase = <span class="string">"abcdefghijklmnopqrstuvwxyz"</span>;</span><br><span class="line">  <span class="keyword">final</span> letterUpperCase = <span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>;</span><br><span class="line">  <span class="keyword">final</span> number = <span class="string">'0123456789'</span>;</span><br><span class="line">  <span class="keyword">final</span> special = <span class="string">'@#%^*&gt;\$@?/[]=+'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">String</span> chars = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">if</span> (letter) chars += <span class="string">'$letterLowerCase$letterUpperCase'</span>;</span><br><span class="line">  <span class="keyword">if</span> (isNumber) chars += <span class="string">'$number'</span>;</span><br><span class="line">  <span class="keyword">if</span> (isSpecial) chars += <span class="string">'$special'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">List</span>.generate(length, (index) &#123;</span><br><span class="line">    <span class="keyword">final</span> indexRandom = Random.secure().nextInt(chars.length);</span><br><span class="line">    <span class="keyword">return</span> chars [indexRandom];</span><br><span class="line">  &#125;).join(<span class="string">''</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'dart:math'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span> generatePassword(&#123;</span><br><span class="line">  <span class="built_in">bool</span> letter = <span class="keyword">true</span>,</span><br><span class="line">  <span class="built_in">bool</span> isNumber = <span class="keyword">true</span>,</span><br><span class="line">  <span class="built_in">bool</span> isSpecial = <span class="keyword">true</span>,</span><br><span class="line">&#125;) &#123;</span><br><span class="line">  <span class="keyword">final</span> length = <span class="number">20</span>;</span><br><span class="line">  <span class="keyword">final</span> letterLowerCase = <span class="string">"abcdefghijklmnopqrstuvwxyz"</span>;</span><br><span class="line">  <span class="keyword">final</span> letterUpperCase = <span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>;</span><br><span class="line">  <span class="keyword">final</span> number = <span class="string">'0123456789'</span>;</span><br><span class="line">  <span class="keyword">final</span> special = <span class="string">'@#%^*&gt;\$@?/[]=+'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">String</span> chars = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">if</span> (letter) chars += <span class="string">'<span class="subst">$letterLowerCase</span><span class="subst">$letterUpperCase</span>'</span>;</span><br><span class="line">  <span class="keyword">if</span> (isNumber) chars += <span class="string">'<span class="subst">$number</span>'</span>;</span><br><span class="line">  <span class="keyword">if</span> (isSpecial) chars += <span class="string">'<span class="subst">$special</span>'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">List</span>.generate(length, (index) &#123;</span><br><span class="line">    <span class="keyword">final</span> indexRandom = Random.secure().nextInt(chars.length);</span><br><span class="line">    <span class="keyword">return</span> chars [indexRandom];</span><br><span class="line">  &#125;).join(<span class="string">''</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当我们运行应用程序时，我们应该得到屏幕的输出，就像下面的屏幕截图一样。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-06-29-05-46-34.png" alt="" title="">
+                    <img src="2021-06-29-05-46-34.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -262,7 +262,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt="" title="">
+                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>

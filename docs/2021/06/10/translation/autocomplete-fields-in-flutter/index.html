@@ -190,7 +190,7 @@
             <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-06-10-05-45-47.png" alt="" title="">
+                    <img src="2021-06-10-05-45-47.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -211,7 +211,7 @@
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-06-10-05-37-25.png" alt="" title="">
+                    <img src="2021-06-10-05-37-25.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -225,7 +225,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-06-10-05-37-13.png" alt="" title="">
+                    <img src="2021-06-10-05-37-13.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -238,7 +238,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-06-10-05-39-16.png" alt="" title="">
+                    <img src="2021-06-10-05-39-16.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -248,7 +248,7 @@
 <h3 id="Class-suggestions"><a href="#Class-suggestions" class="headerlink" title="Class suggestions"></a>Class suggestions</h3><blockquote>
 <p>注意: 你必须在你的模型类中使用 <code>toJson</code> 方法。如果你想在建议列表中使用它。</p>
 </blockquote>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserModel</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span>? email;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span>? password;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> UserModel(&#123;<span class="keyword">this</span>.email, <span class="keyword">this</span>.password&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// If we wanna use this model class into FieldSuggestion.</span></span><br><span class="line">  <span class="comment">// Then we must have toJson method, like this:</span></span><br><span class="line">  <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="keyword">dynamic</span>&gt; toJson() =&gt; &#123;</span><br><span class="line">        <span class="string">'email'</span>: <span class="keyword">this</span>.email,</span><br><span class="line">        <span class="string">'password'</span>: <span class="keyword">this</span>.password,</span><br><span class="line">      &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserModel</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span>? email;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span>? password;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> UserModel(&#123;<span class="keyword">this</span>.email, <span class="keyword">this</span>.password&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// If we wanna use this model class into FieldSuggestion.</span></span><br><span class="line">  <span class="comment">// Then we must have toJson method, like this:</span></span><br><span class="line">  <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">dynamic</span>&gt; toJson() =&gt; &#123;</span><br><span class="line">        <span class="string">'email'</span>: <span class="keyword">this</span>.email,</span><br><span class="line">        <span class="string">'password'</span>: <span class="keyword">this</span>.password,</span><br><span class="line">      &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果我们给出一个 <code>userSuggestions</code>，它是 <code>List&lt;usermodel&gt;</code> 。然后我们必须添加 searchBy 属性。我们的模型只有电子邮件和密码，对吗？所以我们可以这样实现: searchBy: <code>email</code> 或者 searchBy: <code>password</code>。</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">FieldSuggestion(</span><br><span class="line">  hint: <span class="string">'Email'</span>,</span><br><span class="line">  textController: textEditingController,</span><br><span class="line">  suggestionList: userSuggestions,</span><br><span class="line">  searchBy: <span class="string">'email'</span> <span class="comment">// Or 'password'</span></span><br><span class="line">),</span><br></pre></td></tr></table></figure>
 <hr>
@@ -258,7 +258,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt="" title="">
+                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>

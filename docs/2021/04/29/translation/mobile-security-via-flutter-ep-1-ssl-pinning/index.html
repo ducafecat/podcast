@@ -188,7 +188,7 @@
             <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-04-29-06-24-31.png" alt="" title="">
+                    <img src="2021-04-29-06-24-31.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -198,7 +198,7 @@
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-04-29-06-21-31.png" alt="" title="">
+                    <img src="2021-04-29-06-21-31.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -223,7 +223,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="2021-04-29-06-12-51.png" alt="" title="">
+                    <img src="2021-04-29-06-12-51.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -239,7 +239,7 @@
 <p>为了获得 certificate.pem，我使用这个脚本从服务器获得公钥，并在 Terminal 中运行这个命令以获得 certificate.pem 文件。不要忘记在没有 HTTP 或 HTTPs 的情况下将“ your-url. com”更改为您的网站。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl s_client -showcerts -connect your-url.com:443 -servername your-url.com &lt;/dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' &gt; certificate.pem</span><br></pre></td></tr></table></figure>
 <p>一旦你获得了 certificate.pem，把你的证书放到你的目标资产中，并将你的资产添加到 pubspec.yaml 中。我将它添加到 cert 文件夹中。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">assets:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">assets/cert/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">assets:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">assets/cert/</span></span><br></pre></td></tr></table></figure>
 <p>您可以设置任意多的信任证书，但我通常只设置四个证书。原因是你拥有的越多，你就越容易被黑客攻击。但是为什么是四个呢？对于防火墙，我使用 Akamai 在到达服务器之前阻止和过滤请求，消除系统中的坏请求、匿名请求和 DDoS 攻击。因此，两个证书是为 Akamai，而其他两个是为了更新证书在未来。我曾经试图固定相同的证书或无效的证书，结果 Dart 像预期的那样抛给我一个错误。</p>
 <p>一旦我们完成了以上所有的工作，一切似乎都在工作。如果您更改了服务器上的证书，应用程序将停止工作。呜呼！任务完成了，对吧？一开始是我..。</p>
 <p>直到我发现了 badCertificateCallback 的一个大问题。</p>

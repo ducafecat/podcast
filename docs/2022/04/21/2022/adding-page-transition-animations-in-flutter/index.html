@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>在 Flutter 添加页面过渡动画 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="原文 https://medium.com/@aayushkedawat/adding-page-transition-animations-in-flutter-8886a04fea3">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 Flutter 添加页面过渡动画">
+<meta property="og:url" content="https://blog.ducafecat.tech/2022/04/21/2022/adding-page-transition-animations-in-flutter/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="原文 https://medium.com/@aayushkedawat/adding-page-transition-animations-in-flutter-8886a04fea3">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220421215950.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/40ee03520353bab2bece9861db71a77cafb0a46646b3b1470638736e5befbba3.gif">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/0bb48e9c7e617e26a9f7544c014060d5be9d60ad5b746001b4678e41995ed981.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/0d94c5df4678dc40275cc6671fe4de1d874c33b42d48ca7e2174b60719bf647c.gif">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/a609843013e13f572c6ecc1b53b400b836695a4b0630f2896d76a49efbbe47ef.gif">
+<meta property="og:image" content="https://ducafecat.tech/img/banner-gzh.png">
+<meta property="og:updated_time" content="2022-04-21T13:59:56.064Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 Flutter 添加页面过渡动画">
+<meta name="twitter:description" content="原文 https://medium.com/@aayushkedawat/adding-page-transition-animations-in-flutter-8886a04fea3">
+<meta name="twitter:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220421215950.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">在 Flutter 添加页面过渡动画</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">在 Flutter 添加页面过渡动画</h1>
+        <h5 class="subtitle">
+             <time datetime="2022-04-21T14:00:00.000Z" itemprop="datePublished" class="page-time">
+	2022-04-21
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">1.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">2.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">3.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#引言"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">引言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第一步-在-pubspec-yaml-中添加页面动画转换"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">第一步: 在 pubspec.yaml 中添加页面动画转换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#步骤-2-在-PageOne-上导入库"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">步骤 2: 在 PageOne 上导入库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#步骤-3-添加以下导航代码行"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">步骤 3: 添加以下导航代码行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他类型转换的完整代码"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">其他类型转换的完整代码:</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-2022/adding-page-transition-animations-in-flutter" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            在 Flutter 添加页面过渡动画
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-04-21 22:00:00" datetime="2022-04-21T14:00:00.000Z"  itemprop="datePublished">2022-04-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220421215950.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://medium.com/@aayushkedawat/adding-page-transition-animations-in-flutter-8886a04fea3c" target="_blank" rel="noopener">https://medium.com/@aayushkedawat/adding-page-transition-animations-in-flutter-8886a04fea3c</a></p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://pub.dev/packages/page_animation_transition" target="_blank" rel="noopener">https://pub.dev/packages/page_animation_transition</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>大家好，在这篇文章中，我们将学习如何添加动画，同时从一个页面到其他在 Flutter。我们将覆盖不同类型的动画和实现基本动画 Flutter 使用包页动画过渡。</p>
+<p><a href="https://pub.dev/packages/page_animation_transition" target="_blank" rel="noopener">page_animation_transition</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/40ee03520353bab2bece9861db71a77cafb0a46646b3b1470638736e5befbba3.gif" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>动画在提升用户体验方面起着至关重要的作用，但动画到底是什么呢？</p>
+<p>设计语言，例如 Material，定义了在路线(或屏幕)之间转换时的标准行为。不过，有时候，自定义屏幕之间的转换可以使应用程序更加独特。</p>
+<p>在本教程中，我们将使用包页面 <a href="https://pub.dev/packages/page_animation_transition" target="_blank" rel="noopener">page_animation_transition</a> 来简化在页面上添加转换。</p>
+<p><strong>使用插件探索不同的转换</strong></p>
+<h3 id="第一步-在-pubspec-yaml-中添加页面动画转换"><a href="#第一步-在-pubspec-yaml-中添加页面动画转换" class="headerlink" title="第一步: 在 pubspec.yaml 中添加页面动画转换"></a>第一步: 在 pubspec.yaml 中添加页面动画转换</h3><p><a href="https://pub.dev/packages/page_animation_transition" target="_blank" rel="noopener">page_animation_transition</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/0bb48e9c7e617e26a9f7544c014060d5be9d60ad5b746001b4678e41995ed981.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="步骤-2-在-PageOne-上导入库"><a href="#步骤-2-在-PageOne-上导入库" class="headerlink" title="步骤 2: 在 PageOne 上导入库"></a>步骤 2: 在 PageOne 上导入库</h3><p>假设您正在从 PageOne 过渡到 PageTwo</p>
+<p>以下是图书馆支持的动画类型:</p>
+<blockquote>
+<p><em>BottomToTopTransition<br>TopToBottomTransition<br>RightToLeftTransition<br>LeftToRightTransition<br>FadeAnimationTransition<br>ScaleAnimationTransition<br>RotationAnimationTransition<br>TopToBottomFadedTransition<br>BottomToTopFadedTransition<br>RightToLeftFadedTransition<br>LeftToRightFadedTransition</em></p>
+<p>底到上转换到底转换<br>右转移<br>左/右转变<br>淡化动画/转换<br>标量动画/转换<br>转动/动画/转变<br>上到下到过渡<br>底部/上部/下部/上部/下部/上部/下部/上部/下部/上部/下部/上部/<br>右转到/ftfaded/transition<br>左/右/插入/转换</p>
+</blockquote>
+<h3 id="步骤-3-添加以下导航代码行"><a href="#步骤-3-添加以下导航代码行" class="headerlink" title="步骤 3: 添加以下导航代码行"></a>步骤 3: 添加以下导航代码行</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Navigator.of(context).push(PageAnimationTransition(page: <span class="keyword">const</span> PageTwo(), pageAnimationType: BottomToTopTransition()));</span><br></pre></td></tr></table></figure>
+<p>对于预定义的路由:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">onGenerateRoute: (settings) &#123;</span><br><span class="line">    <span class="keyword">switch</span> (settings.name) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'/pageTwo'</span>:</span><br><span class="line">        <span class="keyword">return</span> PageAnimationTransition(child: PageTwo(), pageAnimationType: LeftToRightFadedTransition());</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><code>Navigator.pushNamed(context, &#39;/pageTwo&#39;);</code></p>
+<p>Pushnamed (context,’/pageTwo’) ;</p>
+<p>Output:</p>
+<p>输出:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/0d94c5df4678dc40275cc6671fe4de1d874c33b42d48ca7e2174b60719bf647c.gif" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="其他类型转换的完整代码"><a href="#其他类型转换的完整代码" class="headerlink" title="其他类型转换的完整代码:"></a>其他类型转换的完整代码:</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:page_animation_transition/animations/bottom_to_top_faded_transition.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:page_animation_transition/animations/bottom_to_top_transition.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:page_animation_transition/animations/fade_animation_transition.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:page_animation_transition/animations/left_to_right_faded_transition.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:page_animation_transition/animations/left_to_right_transition.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:page_animation_transition/animations/right_to_left_faded_transition.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:page_animation_transition/animations/right_to_left_transition.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:page_animation_transition/animations/rotate_animation_transition.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:page_animation_transition/animations/scale_animation_transition.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:page_animation_transition/animations/top_to_bottom_faded.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:page_animation_transition/animations/top_to_bottom_transition.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:page_animation_transition/page_animation_transition.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'page_two.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;<span class="class"><span class="keyword">class</span> <span class="title">PageOne</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> PageOne(&#123;Key? key&#125;) : <span class="keyword">super</span>(key: key);[<span class="meta">@override</span>](http:<span class="comment">//twitter.com/override)</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: <span class="keyword">const</span> Text(<span class="string">'Page Animation Transition'</span>),</span><br><span class="line">        centerTitle: <span class="keyword">true</span>,</span><br><span class="line">      ),</span><br><span class="line">      body: SizedBox(</span><br><span class="line">        width: MediaQuery.of(context).size.width,</span><br><span class="line">        child: Column(</span><br><span class="line">          mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">          crossAxisAlignment: CrossAxisAlignment.center,</span><br><span class="line">          children: [</span><br><span class="line">            ElevatedButton(</span><br><span class="line">                onPressed: () &#123;</span><br><span class="line">                  Navigator.of(context).push(PageAnimationTransition(</span><br><span class="line">                      page: <span class="keyword">const</span> PageTwo(),</span><br><span class="line">                      pageAnimationType: BottomToTopTransition()));</span><br><span class="line">                &#125;,</span><br><span class="line">                child: <span class="keyword">const</span> Text(<span class="string">'Bottom To Top'</span>)),</span><br><span class="line">            ElevatedButton(</span><br><span class="line">                onPressed: () &#123;</span><br><span class="line">                  Navigator.of(context).push(PageAnimationTransition(</span><br><span class="line">                      page: <span class="keyword">const</span> PageTwo(),</span><br><span class="line">                      pageAnimationType: TopToBottomTransition()));</span><br><span class="line">                &#125;,</span><br><span class="line">                child: <span class="keyword">const</span> Text(<span class="string">'Top to bottom'</span>)),</span><br><span class="line">            ElevatedButton(</span><br><span class="line">                onPressed: () &#123;</span><br><span class="line">                  Navigator.of(context).push(PageAnimationTransition(</span><br><span class="line">                      page: <span class="keyword">const</span> PageTwo(),</span><br><span class="line">                      pageAnimationType: RightToLeftTransition()));</span><br><span class="line">                &#125;,</span><br><span class="line">                child: <span class="keyword">const</span> Text(<span class="string">'Right To Left'</span>)),</span><br><span class="line">            ElevatedButton(</span><br><span class="line">                onPressed: () &#123;</span><br><span class="line">                  Navigator.of(context).push(PageAnimationTransition(</span><br><span class="line">                      page: <span class="keyword">const</span> PageTwo(),</span><br><span class="line">                      pageAnimationType: LeftToRightTransition()));</span><br><span class="line">                &#125;,</span><br><span class="line">                child: <span class="keyword">const</span> Text(<span class="string">'Left to Right'</span>)),</span><br><span class="line">            ElevatedButton(</span><br><span class="line">                onPressed: () &#123;</span><br><span class="line">                  Navigator.of(context).push(PageAnimationTransition(</span><br><span class="line">                      page: <span class="keyword">const</span> PageTwo(),</span><br><span class="line">                      pageAnimationType: FadeAnimationTransition()));</span><br><span class="line">                &#125;,</span><br><span class="line">                child: <span class="keyword">const</span> Text(<span class="string">'Faded'</span>)),</span><br><span class="line">            ElevatedButton(</span><br><span class="line">                onPressed: () &#123;</span><br><span class="line">                  Navigator.of(context).push(PageAnimationTransition(</span><br><span class="line">                      page: <span class="keyword">const</span> PageTwo(),</span><br><span class="line">                      pageAnimationType: ScaleAnimationTransition()));</span><br><span class="line">                &#125;,</span><br><span class="line">                child: <span class="keyword">const</span> Text(<span class="string">'Scale'</span>)),</span><br><span class="line">            ElevatedButton(</span><br><span class="line">                onPressed: () &#123;</span><br><span class="line">                  Navigator.of(context).push(PageAnimationTransition(</span><br><span class="line">                      page: <span class="keyword">const</span> PageTwo(),</span><br><span class="line">                      pageAnimationType: RotationAnimationTransition()));</span><br><span class="line">                &#125;,</span><br><span class="line">                child: <span class="keyword">const</span> Text(<span class="string">'Rotate'</span>)),</span><br><span class="line">            ElevatedButton(</span><br><span class="line">                onPressed: () &#123;</span><br><span class="line">                  Navigator.of(context).push(PageAnimationTransition(</span><br><span class="line">                      page: <span class="keyword">const</span> PageTwo(),</span><br><span class="line">                      pageAnimationType: TopToBottomFadedTransition()));</span><br><span class="line">                &#125;,</span><br><span class="line">                child: <span class="keyword">const</span> Text(<span class="string">'Top to Bottom Faded'</span>)),</span><br><span class="line">            ElevatedButton(</span><br><span class="line">                onPressed: () &#123;</span><br><span class="line">                  Navigator.of(context).push(PageAnimationTransition(</span><br><span class="line">                      page: <span class="keyword">const</span> PageTwo(),</span><br><span class="line">                      pageAnimationType: BottomToTopFadedTransition()));</span><br><span class="line">                &#125;,</span><br><span class="line">                child: <span class="keyword">const</span> Text(<span class="string">'Bottom to Top Faded'</span>)),</span><br><span class="line">            ElevatedButton(</span><br><span class="line">                onPressed: () &#123;</span><br><span class="line">                  Navigator.of(context).push(PageAnimationTransition(</span><br><span class="line">                      page: <span class="keyword">const</span> PageTwo(),</span><br><span class="line">                      pageAnimationType: RightToLeftFadedTransition()));</span><br><span class="line">                &#125;,</span><br><span class="line">                child: <span class="keyword">const</span> Text(<span class="string">'Right to Left Faded'</span>)),</span><br><span class="line">            ElevatedButton(</span><br><span class="line">                onPressed: () &#123;</span><br><span class="line">                  Navigator.of(context).push(PageAnimationTransition(</span><br><span class="line">                      page: <span class="keyword">const</span> PageTwo(),</span><br><span class="line">                      pageAnimationType: LeftToRightFadedTransition()));</span><br><span class="line">                &#125;,</span><br><span class="line">                child: <span class="keyword">const</span> Text(<span class="string">'Left to Right Faded'</span>)),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/a609843013e13f572c6ecc1b53b400b836695a4b0630f2896d76a49efbbe47ef.gif" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>希望这个博客能帮助你深入了解 Flutter 的转变。谢谢阅读！如果有任何错误，请在评论中让我知道，这样我可以改进。如果这个博客对你有帮助，就鼓掌吧！</p>
+<hr>
+<p>© 猫哥</p>
+<ul>
+<li><p>微信 ducafecat</p>
+</li>
+<li><p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">博客 ducafecat.tech</a></p>
+</li>
+<li><p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">github</a></p>
+</li>
+<li><p><a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">bilibili</a></p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/banner-gzh.png" alt="订阅号" title>
+                </div>
+                <div class="image-caption">订阅号</div>
+            </figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/04/21/2022/adding-page-transition-animations-in-flutter/&title=《在 Flutter 添加页面过渡动画》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/04/21/2022/adding-page-transition-animations-in-flutter/&title=《在 Flutter 添加页面过渡动画》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/04/21/2022/adding-page-transition-animations-in-flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 Flutter 添加页面过渡动画》 — duCafeCat&url=https://blog.ducafecat.tech/2022/04/21/2022/adding-page-transition-animations-in-flutter/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/04/21/2022/adding-page-transition-animations-in-flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/04/21/2022/how-do-we-test-flutter-applications-unit-test/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">如何测试 Flutter 应用? ー 单元测试</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/04/21/2022/adding-page-transition-animations-in-flutter/&title=《在 Flutter 添加页面过渡动画》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/04/21/2022/adding-page-transition-animations-in-flutter/&title=《在 Flutter 添加页面过渡动画》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/04/21/2022/adding-page-transition-animations-in-flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 Flutter 添加页面过渡动画》 — duCafeCat&url=https://blog.ducafecat.tech/2022/04/21/2022/adding-page-transition-animations-in-flutter/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/04/21/2022/adding-page-transition-animations-in-flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADNUlEQVR42u3awW7rMAwEwP7/T+cB75rG2aVUIFbGpyJRbQ19YEjq5ye+Hv+v509eXc9r2vskT3lev/nCxsbGvgk7B7z6r+s1r/6ekZKwRqHBxsbGPo59nbSu11xvpV2fYPLQv/wcGxsb+yvZyVZmSbENxOz1YGNjY2Mnm0junHR48mdhY2NjY7eN/mRbeRMqLy3a/WzrpWFjY2N/PLsd9H7y338438bGxsb+SPZjdM0SVZJ4kn1u2D82Njb2Qey2SdS2ovIAtSHIhwo/bSyxsbGxb8VuW/zt+HY9IeUHhvL0ho2NjX0eO2/W5GPX2f/mqS4fZvzyCTY2NvZx7HZku/7bPk+N+cso9oaNjY19HHtlPvzYdOXhyFtLRSmCjY2NfQT7LzY3KzAKQNkCG74rbGxs7A9mr5QK+XC3DcfKQZ96aIGNjY19c3aenNqjM22raLb+ulP00oWNjY19KLstDPaWEyvDg3aH2NjY2OexZwOAthhYecosgWFjY2N/D3tWeMyaPm3xsL5+6UbY2NjYH89emicslBC7Qta2wH75FhsbG/vm7JUWz8q37Ubb8uZNGsbGxsY+iN0+Jm/65PfZ25Cq12BjY2MfwW5TwvVj8hqoDWsesmjkgI2NjX0oe9buyUmzYiN5YlIIFX0pbGxs7Fux27Q0G822g4G2gEnC/aYCw8bGxr4huy0MZoOBJEHOypj2mNHw/BE2Njb2Ddn1jcrf+bNjPe3xnTe5GhsbG/s49qxl3246XzMbCUQvABsbG/to9izNJCVEPjCYDXeLVhQ2Njb2Qez89/l6oz8vYPLAzYKCjY2NfSo7H+i2w9f8AE2x0XJIEB3cwcbGxj6CvSttrDSe8mHDyiABGxsb+zx2S22P+LSFTdt4qt8tNjY29hHsR3m1P/Fn7f62nGhfFTY2NvZJ7LZNv94eytPVLFFtaC1hY2Nj35C9a3PtcZnk27w4SZIiNjY29tnsWWK4xrch2JBp8ztgY2NjfzG7HbUmQZkVG7PDoNjY2NjfzK5vXTahklBuGy1gY2NjH8deOXCz0uLJ7zALx8ugYGNjYx/Eng16263nW0xKjl3DA2xsbOybs/8BKy2rz9egnE8AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

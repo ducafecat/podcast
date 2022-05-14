@@ -1,5 +1,5 @@
 ---
-title: 译 10 个 Flutter 组件推荐 - 2
+title: 10 个 Flutter 组件推荐 - 2
 tags: flutter
 categories: 译文
 date: 2022-05-14 00:00:00

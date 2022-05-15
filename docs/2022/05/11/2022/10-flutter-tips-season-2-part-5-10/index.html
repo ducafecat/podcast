@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>10 个 Flutter 优秀组件 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="今天我们再次讨论关于 UI 和 Widgets 的优秀软件包。所以… … 让我们开始愉快的阅读吧！ 原文 https://tomicriedel.medium.com/10-flutte">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="10 个 Flutter 优秀组件">
+<meta property="og:url" content="https://blog.ducafecat.tech/2022/05/11/2022/10-flutter-tips-season-2-part-5-10/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="今天我们再次讨论关于 UI 和 Widgets 的优秀软件包。所以… … 让我们开始愉快的阅读吧！ 原文 https://tomicriedel.medium.com/10-flutte">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220511191144.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/cf4e9219635441d1a939dbf4ad91f58503f1feb4e17054ab309812bc4f3bb3cc.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/7e13dcfbb943e50bd3105ddd6e3d6f5bcbd60e4301de421aee559cdd12324917.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/7461905eb7c443a7e0138f6f518cce49eeb726bb46c2ba2f0320819ec3ede1de.gif">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/d981e1099515a41a8803752c686a6f13f11e8743665ef20d2021b229faa8661e.gif">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/083d091b627697fcfa923b328c9bc938f4e70a26aa70ab1b1c05f955c1e060e7.gif">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/251ce8af069bcf03b920b45209aed5e11c86d11beb9be494a3971f45f8bd8bef.gif">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/647ac60c45362ad418267cf901154f135473ecc5c1d5d2b757e010d10177ae5d.gif">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/31f5fbf09e3d5fc51a83116766296bc9bcf0ee578c1ce54f4512a2e259f51299.gif">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/07b64462451d914f1ed084f616fcf49b909cc25d7b6b34283bfe3ffc1040fd67.gif">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/018e8a553afe11f33c8bb1376ac38a80f978ca84e0de74cd2501b70e67e33016.jpg">
+<meta property="og:image" content="https://ducafecat.tech/img/banner-gzh.png">
+<meta property="og:updated_time" content="2022-05-11T11:11:58.729Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="10 个 Flutter 优秀组件">
+<meta name="twitter:description" content="今天我们再次讨论关于 UI 和 Widgets 的优秀软件包。所以… … 让我们开始愉快的阅读吧！ 原文 https://tomicriedel.medium.com/10-flutte">
+<meta name="twitter:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220511191144.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">10 个 Flutter 优秀组件</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">10 个 Flutter 优秀组件</h1>
+        <h5 class="subtitle">
+             <time datetime="2022-05-10T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2022-05-11
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">1.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">2.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Yaru"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Yaru</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Aesthetic-对话"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Aesthetic 对话</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Swipable-Stack"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Swipable Stack</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Animated-Toggle-Switch-动画切换开关"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Animated Toggle Switch 动画切换开关</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义导航栏"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">自定义导航栏</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义计时器"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">自定义计时器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Flash-闪光"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">Flash 闪光</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Scribble"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">Scribble</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Water-Drop-导航杆"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">Water Drop 导航杆</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Glass-玻璃效果"><span class="post-toc-number">2.10.</span> <span class="post-toc-text">Glass 玻璃效果</span></a></li></ol></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-2022/10-flutter-tips-season-2-part-5-10" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            10 个 Flutter 优秀组件
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-05-11 00:00:00" datetime="2022-05-10T16:00:00.000Z"  itemprop="datePublished">2022-05-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220511191144.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>今天我们再次讨论关于 UI 和 Widgets 的优秀软件包。所以… … 让我们开始愉快的阅读吧！</p>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://tomicriedel.medium.com/10-flutter-tips-season-2-part-5-10-e8152b58935a" target="_blank" rel="noopener">https://tomicriedel.medium.com/10-flutter-tips-season-2-part-5-10-e8152b58935a</a></p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Yaru"><a href="#Yaru" class="headerlink" title="Yaru"></a><a href="https://pub.dev/packages/yaru" target="_blank" rel="noopener">Yaru</a></h3><p>Flutter 支持许多平台，其中包括 Linux。现在，如果你开发了一个漂亮的 Ubuntu 风格的应用程序，它可能会变得复杂。这就是亚鲁存在的原因。这使您能够使用各种各样的组件，从按钮和检查到进度条，而无需编写复杂的代码。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/cf4e9219635441d1a939dbf4ad91f58503f1feb4e17054ab309812bc4f3bb3cc.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="Aesthetic-对话"><a href="#Aesthetic-对话" class="headerlink" title="Aesthetic 对话"></a>Aesthetic 对话</h3><p>对话是伟大的发明。它们被用在几乎每一个应用程序中，并且看起来非常棒。然而，创建如此美妙的对话框需要时间。出于这个原因，有一个包叫做 <a href="https://pub.dev/packages/aesthetic_dialogs" target="_blank" rel="noopener">aesthetic_dialogs</a>。这为您提供了许多定制选项，但仍然非常容易使用。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/7e13dcfbb943e50bd3105ddd6e3d6f5bcbd60e4301de421aee559cdd12324917.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="Swipable-Stack"><a href="#Swipable-Stack" class="headerlink" title="Swipable Stack"></a>Swipable Stack</h3><p><a href="https://pub.dev/packages/swipable_stack" target="_blank" rel="noopener">swipable_stack</a></p>
+<p>你可能想要创建一个 Tinder 的克隆，或者一个完全不同的应用，但是它也有熟悉的 swipecards。当然，你可以自己添加整个应用程序，但是为什么要让它变得不必要的困难呢？你应该使用 <a href="https://pub.dev/packages/swipable_stack" target="_blank" rel="noopener">swipable_stack</a>。有了这个软件包，你可以很容易地创建这些卡片，并通过一些代码线获得用户输入。你的应用程序可以是这样的:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/7461905eb7c443a7e0138f6f518cce49eeb726bb46c2ba2f0320819ec3ede1de.gif" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="Animated-Toggle-Switch-动画切换开关"><a href="#Animated-Toggle-Switch-动画切换开关" class="headerlink" title="Animated Toggle Switch 动画切换开关"></a>Animated Toggle Switch 动画切换开关</h3><p><a href="https://pub.dev/packages/animated_toggle_switch" target="_blank" rel="noopener">animated_toggle_switch</a></p>
+<p>动画切换开关为您提供了一个不同的选择，不仅仅是 2 个选择不同的开关。解释这个概念最简单的方法是使用 gif:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/d981e1099515a41a8803752c686a6f13f11e8743665ef20d2021b229faa8661e.gif" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="自定义导航栏"><a href="#自定义导航栏" class="headerlink" title="自定义导航栏"></a>自定义导航栏</h3><p><a href="http://pub.dev/packages/custom_navigation_bar" target="_blank" rel="noopener">custom_navigation_bar</a></p>
+<p>自定义导航栏为你提供了创建简单的动画导航栏的可能性。这个导航条适合任何看起来很时髦的应用程序，一定会吸引用户的眼球！</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/083d091b627697fcfa923b328c9bc938f4e70a26aa70ab1b1c05f955c1e060e7.gif" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="自定义计时器"><a href="#自定义计时器" class="headerlink" title="自定义计时器"></a>自定义计时器</h3><p><a href="https://pub.dev/packages/custom_timer" target="_blank" rel="noopener">Custom Timer</a></p>
+<p>定制计时器让你有可能在你的应用程序中创建一个非常简单的计时器，然而这是非常可定制的。这个软件包非常容易使用，并且可以在任何一个运动和时钟应用程序中找到使用方法:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/251ce8af069bcf03b920b45209aed5e11c86d11beb9be494a3971f45f8bd8bef.gif" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="Flash-闪光"><a href="#Flash-闪光" class="headerlink" title="Flash 闪光"></a>Flash 闪光</h3><p><a href="https://pub.dev/packages/flash" target="_blank" rel="noopener">flash</a></p>
+<p>提醒对话框是很棒的，但是有时候写这么多代码并自定义整个事情会有点烦人。这就是 <a href="https://pub.dev/packages/flash" target="_blank" rel="noopener">flash</a> 发挥作用的地方。这是一个非常容易使用的可定制的警报库。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/647ac60c45362ad418267cf901154f135473ecc5c1d5d2b757e010d10177ae5d.gif" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="Scribble"><a href="#Scribble" class="headerlink" title="Scribble"></a>Scribble</h3><p><a href="https://pub.dev/packages/scribble" target="_blank" rel="noopener">Scribble</a></p>
+<p><a href="https://pub.dev/packages/scribble" target="_blank" rel="noopener">Scribble</a> 是一个图书馆，让你在 Flutter 应用程序中绘制基本的方法。你可以使用橡皮擦，使用不同厚度的钢笔，甚至是不同的颜色。对于具有小型绘图功能的应用程序，这个库是绝对推荐的。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/31f5fbf09e3d5fc51a83116766296bc9bcf0ee578c1ce54f4512a2e259f51299.gif" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="Water-Drop-导航杆"><a href="#Water-Drop-导航杆" class="headerlink" title="Water Drop 导航杆"></a>Water Drop 导航杆</h3><p><a href="https://pub.dev/packages/water_drop_nav_bar" target="_blank" rel="noopener">library</a></p>
+<p>这个导航栏有很多精彩的动画。正如这个<a href="https://pub.dev/packages/water_drop_nav_bar" target="_blank" rel="noopener">library</a>的名字所暗示的那样，它看起来就像一滴水滴落在选定的图标上。下面是一个例子:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/07b64462451d914f1ed084f616fcf49b909cc25d7b6b34283bfe3ffc1040fd67.gif" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="Glass-玻璃效果"><a href="#Glass-玻璃效果" class="headerlink" title="Glass 玻璃效果"></a>Glass 玻璃效果</h3><p><a href="https://pub.dev/packages/glassmorphism" target="_blank" rel="noopener">glassmorphism</a></p>
+<p>玻璃态势是一个巨大的用户界面趋势，但并不总是容易实现。这就是为什么有这样一个 <a href="https://pub.dev/packages/glassmorphism" target="_blank" rel="noopener">glassmorphism</a> ，它允许您轻松地创建 Glasmorphic UI。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/018e8a553afe11f33c8bb1376ac38a80f978ca84e0de74cd2501b70e67e33016.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>end.</p>
+<p>祝你今天愉快！</p>
+<hr>
+<p>© 猫哥</p>
+<ul>
+<li><p>微信 ducafecat</p>
+</li>
+<li><p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">博客 ducafecat.tech</a></p>
+</li>
+<li><p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">github</a></p>
+</li>
+<li><p><a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">bilibili</a></p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/banner-gzh.png" alt="订阅号" title>
+                </div>
+                <div class="image-caption">订阅号</div>
+            </figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/05/11/2022/10-flutter-tips-season-2-part-5-10/&title=《10 个 Flutter 优秀组件》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/05/11/2022/10-flutter-tips-season-2-part-5-10/&title=《10 个 Flutter 优秀组件》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/05/11/2022/10-flutter-tips-season-2-part-5-10/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《10 个 Flutter 优秀组件》 — duCafeCat&url=https://blog.ducafecat.tech/2022/05/11/2022/10-flutter-tips-season-2-part-5-10/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/05/11/2022/10-flutter-tips-season-2-part-5-10/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/05/12/2022/introducing-flutter-3/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">介绍 Flutter 3</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/05/11/2022/4-extremely-useful-flutter-tips/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">4 个非常有用的 Flutter 技巧</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                    <a href="http://www.miitbeian.gov.cn/" target="_blank">
+                        京ICP备2021009050号
+                    </a><br>
+                    
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/05/11/2022/10-flutter-tips-season-2-part-5-10/&title=《10 个 Flutter 优秀组件》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/05/11/2022/10-flutter-tips-season-2-part-5-10/&title=《10 个 Flutter 优秀组件》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/05/11/2022/10-flutter-tips-season-2-part-5-10/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《10 个 Flutter 优秀组件》 — duCafeCat&url=https://blog.ducafecat.tech/2022/05/11/2022/10-flutter-tips-season-2-part-5-10/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/05/11/2022/10-flutter-tips-season-2-part-5-10/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACpElEQVR42u3aS27DMAwFwNz/0u22QGH7kRTTFBivgnwUjRcS/ajXK76+flw/37l/nfz26r+SkY9deHh4eIOp/76uppiPkEwxuX1X71z9Fx4eHt42L1+gq8t0lTfZWvDw8PA+mXe/fCf46g3Cw8PD+7+8pLyeBBlJOY6Hh4f3CbzJ0Pfv5JjqmIezFjw8PLyYNwkU/ur1Sn8PDw8Pb9xVT5ph+WJdbZ4dmC0eHh7eAi9fcCeHCXqkXssNDw8P7/28nJFvAL1oI2FHY+Lh4eEd5SWh7cazf16aV2Pc6CQXHh4e3oBXLk8H8WsyiXwTqh5owMPDwzvL2+ih5TFEL4AozBkPDw9vmZdPJZnW2YW+WpTj4eHhbfBODT1vmyXB7oHWFx4eHt4h3uQQVR62VqvcXm380ADDw8PDG/NOLfp5hNELPnoFPR4eHt42L29x5S386gbQiycebhweHh7eG3kHEuLBsYDJYYVCxoyHh4d3iNdrblW3jfulv3qwIDp0hYeHhzfm9YrUavuq0LLqxQ1XY+Lh4eEt8PK2U/6dUXAQbzx5iY+Hh4e3x6tGDNVf5YV4b7OJnhjw8PDwxrzqcj8JLHL2BPbwxICHh4e3wOthtttmzYNceHh4eAu8+bK+10KrNsweCms8PDy8BV6PMYke8kMDya1/OHSFh4eHt8CrLs2T5b5XsifbzOVzAx4eHt4C71ShnIcL1QI6v/Dw8PD2eF/FKylq86ZXXtznn+Lh4eFt86pLbTXwnUe3k9d4eHh4e7zJsp5HFXn5fnjbwMPDw1vj5YeZet9Pbtk8WbncGPDw8PA+kpdvA9VjAdU4GA8PD+/zedWA9WxYXGn24eHh4Z3kTf6sumTfF9OnSnY8PDy8PV7vgb8a/k6m1dwS8PDw8M7zvgGyFuQpb43lhAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

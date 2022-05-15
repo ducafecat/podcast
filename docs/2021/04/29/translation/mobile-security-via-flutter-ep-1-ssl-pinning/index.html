@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 移动安全 ー Ep.1 SSL Pinning | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="原文 https://medium.com/kbtg-life/mobile-security-via-flutter-ep-1-ssl-pinning-c57f18b711f6  前言">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 移动安全 ー Ep.1 SSL Pinning">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="原文 https://medium.com/kbtg-life/mobile-security-via-flutter-ep-1-ssl-pinning-c57f18b711f6  前言">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/2021-04-29-06-24-31.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/2021-04-29-06-21-31.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/2021-04-29-06-12-51.png">
+<meta property="og:updated_time" content="2021-04-28T22:24:33.351Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 移动安全 ー Ep.1 SSL Pinning">
+<meta name="twitter:description" content="原文 https://medium.com/kbtg-life/mobile-security-via-flutter-ep-1-ssl-pinning-c57f18b711f6  前言">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/2021-04-29-06-24-31.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 移动安全 ー Ep.1 SSL Pinning</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 移动安全 ー Ep.1 SSL Pinning</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-04-28T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2021-04-29
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">1.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">2.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">3.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">4.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SSL-Pinning"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">SSL Pinning</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开始实现"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">开始实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">5.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">5.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">5.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">5.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">5.4.2.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">5.4.3.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">5.4.4.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">5.4.5.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">5.4.6.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">5.4.7.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">5.4.8.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-translation/mobile-security-via-flutter-ep-1-ssl-pinning" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            Flutter 移动安全 ー Ep.1 SSL Pinning
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-04-29 00:00:00" datetime="2021-04-28T16:00:00.000Z"  itemprop="datePublished">2021-04-29</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-04-29-06-24-31.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://medium.com/kbtg-life/mobile-security-via-flutter-ep-1-ssl-pinning-c57f18b711f6" target="_blank" rel="noopener">https://medium.com/kbtg-life/mobile-security-via-flutter-ep-1-ssl-pinning-c57f18b711f6</a></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-04-29-06-21-31.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>这篇文章还是很好的，作者是一个银行从业者，简单说就是在你的程序里指定 ssl 通讯证书，提供安全性。</p>
+<p>为啥这样做呢，比如你用公共 <code>wifi</code> ，这时候打开 <code>www.taobaomy.com</code> 竟然证书显示机构 “淘宝官方”，这显然是伪造的。</p>
+<p>还有你确实访问了 <code>www.taobao.com</code> ，但是被公共 <code>wifi</code> 中间劫持替换证书，重定向去了他的网站，你输入的 <code>用户名、密码</code> 都被窃取了。</p>
+<p>所以说呢，验证通讯证书很有必要。</p>
+<p>如果觉得好，请分享到朋友圈。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://owasp.org/" target="_blank" rel="noopener">https://owasp.org/</a></li>
+<li><a href="https://api.flutter.dev/flutter/dart-io/HttpClient/badCertificateCallback.html" target="_blank" rel="noopener">https://api.flutter.dev/flutter/dart-io/HttpClient/badCertificateCallback.html</a></li>
+<li><a href="https://github.com/dart-lang/sdk/issues/39425#issuecomment-680312787" target="_blank" rel="noopener">https://github.com/dart-lang/sdk/issues/39425#issuecomment-680312787</a></li>
+<li><a href="https://pub.dev/packages/ssl_pinning_plugin" target="_blank" rel="noopener">https://pub.dev/packages/ssl_pinning_plugin</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>由于 2019 冠状病毒疾病的流行，我们看到移动应用程序的使用量有了很大的增长。开发人员必须不断跟上新特性的发展，或者改善更好的用户体验。随着一切都在网上进行，越来越多的钱涌入这个行业，这些自然而然的坏家伙(也就是坏黑客)想要利用它。我敢肯定我们都知道设计思维和如何与用户产生共鸣，因为如果我们从未使用过我们的产品，或者更糟糕的是，喜欢它，你还能指望用户如何喜欢我们的产品吗？是时候设身处地为别人着想了。在 KBTG，我们有一个叫做“狗食”的程序。你们中的一些人可能听说过这个成语“吃自己的狗粮”。这意味着你必须在别人喜欢你的产品之前使用你的产品，坚持使用你的产品，并且热爱你的产品。有些人可能会认为用户喜欢的是前沿的特性或者很酷的设计，但是在 KBTG，我们不仅仅局限于其中的两个。</p>
+<p>安全是我们同情用户的另一个重要组成部分。他们信任我们，向我们提供他们有价值的私人信息，所以我们的荣誉和责任就是为我们的系统提供完全的内部和外部保护。所谓内部人员，我们指的是像我们这样的开发人员。出于数据隐私的原因，我们根本没有能力查看我们的数据库或查看用户的信息。所有的东西都是加密的，我们的团队中没有人可以访问这个密钥。这个过程表明我们是多么关心我们的用户。对我们来说困难的部分是当我们遇到一个问题，它是很难调查，因为我们没有访问原始数据来解决它，但我们接受这个挑战，因为我们自豪地保护我们的用户隐私。</p>
+<p>在本系列文章中，我将分享我从银行业工作中获得的知识，我坚信这些知识体现了最高安全性的领域。我的向导没那么难。我只是遵循 OWASP 的标准。</p>
+<p><a href="https://owasp.org/" target="_blank" rel="noopener">https://owasp.org/</a></p>
+<p>我会告诉你如何在 Flutter 中实现这个。我们还没有尝试开发一个具有超级安全性的应用程序，但这将是指导所有移动应用程序的基本的，必须具备的安全性。实现过程并不复杂。这可能需要你 10 天左右的时间来开发。是的，只有 10 天！与通常需要 80-90 天的功能相比，这听起来几乎没什么。让我们从 SSL 钉住开始本系列的第一集。</p>
+<h3 id="SSL-Pinning"><a href="#SSL-Pinning" class="headerlink" title="SSL Pinning"></a>SSL Pinning</h3><p>SSL Pinning 可以防止 MITM (Man in the Middle Attack) ，但那到底是什么呢？</p>
+<p>简而言之，当你连接到一个公共 WIFI 或热点时，负责网络的 IT 人员，无论好坏，都可以把流量从你的移动设备传送到你连接的服务器。想了解更多细节，你可以去专业网站上查找，比如下面的一个。底线是不要使用公共 WIFI 或任何其他人的热点！</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-04-29-06-12-51.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>Credit 信用 <a href="https://www.guardsquare.com/en/blog/iOS-SSL-certificate-pinning-bypassing" target="_blank" rel="noopener">https://www.guardsquare.com/en/blog/iOS-SSL-certificate-pinning-bypassing</a></p>
+<h3 id="开始实现"><a href="#开始实现" class="headerlink" title="开始实现"></a>开始实现</h3><p>如果您正在调查 Stackoverflow 关于 Flutter 或 Dart 中 SSL pinting 的内容，那么您可能会找到一个关于 <code>badCertificateCallback</code> 的解决方案。</p>
+<p><a href="https://api.flutter.dev/flutter/dart-io/HttpClient/badCertificateCallback.html" target="_blank" rel="noopener">https://api.flutter.dev/flutter/dart-io/HttpClient/badCertificateCallback.html</a></p>
+<p>基本上，您可以通过告诉 Flutter 不要信任任何证书(除了您在移动应用程序中提供的证书)来覆盖 Flutter。下面是如何实现的方法。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HttpClient _client = <span class="keyword">new</span> HttpClient(context: <span class="keyword">await</span> globalContext);</span><br><span class="line">_client.badCertificateCallback =</span><br><span class="line">(X509Certificate cert, <span class="built_in">String</span> host, <span class="built_in">int</span> port) =&gt; <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">var</span> _ioClient = <span class="keyword">new</span> IOClient(_client);</span><br><span class="line">_ioClient.<span class="keyword">get</span>(url)</span><br></pre></td></tr></table></figure>
+<p>创建 HttpClient，将 <code>globalContext</code> 传递给它，并将 badcertificateecallback 分配为 false。</p>
+<p>获得 ioClient 之后，可以使用它调用 GET、 POST、 PUT、 DELETE。上面的代码表明我只会信任其中的两个证书，因此如果其他证书在移动应用程序有请求时被发送，它将在获得 badCertificateCallback 后停止工作。</p>
+<p>以下是获取 GlobalContext 的方法。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;SecurityContext&gt; <span class="keyword">get</span> globalContext <span class="keyword">async</span> &#123;</span><br><span class="line">   <span class="comment">// Note: Not allowed to load the same certificate</span></span><br><span class="line">   <span class="keyword">final</span> sslCert1 = <span class="keyword">await</span></span><br><span class="line">   rootBundle.load(<span class="string">'assets/cert/certificate.pem'</span>);</span><br><span class="line">   <span class="keyword">final</span> sslCert2 = <span class="keyword">await</span></span><br><span class="line">   rootBundle.load(<span class="string">'assets/cert/certificate2.pem'</span>);</span><br><span class="line">   SecurityContext sc = <span class="keyword">new</span> SecurityContext(withTrustedRoots: <span class="keyword">false</span>);</span><br><span class="line">   sc.setTrustedCertificatesBytes(sslCert1.buffer.asInt8List());</span><br><span class="line">   sc.setTrustedCertificatesBytes(sslCert2.buffer.asInt8List());</span><br><span class="line"><span class="keyword">return</span> sc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了获得 certificate.pem，我使用这个脚本从服务器获得公钥，并在 Terminal 中运行这个命令以获得 certificate.pem 文件。不要忘记在没有 HTTP 或 HTTPs 的情况下将“ your-url. com”更改为您的网站。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl s_client -showcerts -connect your-url.com:443 -servername your-url.com &lt;/dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' &gt; certificate.pem</span><br></pre></td></tr></table></figure>
+<p>一旦你获得了 certificate.pem，把你的证书放到你的目标资产中，并将你的资产添加到 pubspec.yaml 中。我将它添加到 cert 文件夹中。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">assets:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">assets/cert/</span></span><br></pre></td></tr></table></figure>
+<p>您可以设置任意多的信任证书，但我通常只设置四个证书。原因是你拥有的越多，你就越容易被黑客攻击。但是为什么是四个呢？对于防火墙，我使用 Akamai 在到达服务器之前阻止和过滤请求，消除系统中的坏请求、匿名请求和 DDoS 攻击。因此，两个证书是为 Akamai，而其他两个是为了更新证书在未来。我曾经试图固定相同的证书或无效的证书，结果 Dart 像预期的那样抛给我一个错误。</p>
+<p>一旦我们完成了以上所有的工作，一切似乎都在工作。如果您更改了服务器上的证书，应用程序将停止工作。呜呼！任务完成了，对吧？一开始是我..。</p>
+<p>直到我发现了 badCertificateCallback 的一个大问题。</p>
+<p><a href="https://github.com/dart-lang/sdk/issues/39425#issuecomment-680312787" target="_blank" rel="noopener">https://github.com/dart-lang/sdk/issues/39425#issuecomment-680312787</a></p>
+<p>原来 badCertificateCallback 在没有检查通用名称的情况下就固定了中间证书，这造成了一个严重的安全问题，因为坏的黑客也可以创建这些证书。例如，在我的例子中，我将 Let’s Encrypt 作为一个中间证书，因此如果一个黑客创建了假证书并将其发送到我们的应用程序，它将接受这个请求！因为我们不检查通用名称，并假设证书来自同一证书提供程序。</p>
+<p>为了解决这个问题，我还必须使用另一种方法检查该证书的 SHA256。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;<span class="built_in">bool</span>&gt; <span class="keyword">get</span> _isAllowList <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> myAllowList = <span class="string">"xxxxxxx"</span>;</span><br><span class="line">    <span class="keyword">final</span> x509Cert1 = <span class="keyword">await</span> _readPemCert(<span class="string">'assets/cert/certificate.pem'</span>);</span><br><span class="line">    X509CertificateData data = X509Utils.x509CertificateFromPem(x509Cert1);</span><br><span class="line">    <span class="keyword">return</span> data.sha256Thumbprint == myAllowList</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>来自下面的函数。这可能不是一个好的解决方案，因为我不知道证书是如何工作的，所以我只使用字符串操作: p</p>
+<p>基本上，我只是削减了证书的其他部分，只得到最后一部分。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;<span class="built_in">String</span>&gt; _readPemCert(<span class="built_in">String</span> path) <span class="keyword">async</span> &#123;</span><br><span class="line">   <span class="keyword">final</span> sslCert = <span class="keyword">await</span> rootBundle.load(path);</span><br><span class="line">   <span class="keyword">final</span> data = sslCert.buffer.asUint8List();</span><br><span class="line">   <span class="keyword">final</span> pemString = utf8.decode(data);</span><br><span class="line">   <span class="keyword">final</span> pemArray = pemString.split(<span class="string">"-----END CERTIFICATE-----"</span>);</span><br><span class="line">   <span class="keyword">final</span> cert = [pemArray[<span class="number">0</span>], <span class="string">"-----END CERTIFICATE-----"</span>].join(<span class="string">""</span>);</span><br><span class="line">   <span class="keyword">return</span> cert;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，我使用 libs basic_utils 来解析证书。把这个加到你的 pubspec.yaml 里。我不能用 basic 语言解析整个证书，所以我必须这样做。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">basic_utils:</span> <span class="string">^2.7.0-rc.4</span></span><br></pre></td></tr></table></figure>
+<p>使用 get X509Utils 获得 sha256 来与允许列表进行比较，这个允许列表在省道中保存为常量。现在，我们可以使用两个方法(badCertCallback 和 X509Utils)再次检查安全性，以查看添加到允许列表中的证书和来自服务器的 Sha256 是否相同。</p>
+<p>最近，在我实现了我的方法之后，我发现了一个关于 SSL 固定的新的库。</p>
+<p><a href="https://pub.dev/packages/ssl_pinning_plugin" target="_blank" rel="noopener">https://pub.dev/packages/ssl_pinning_plugin</a></p>
+<p>由于我的解决方案已经被移动安全渗透测试接受，我还没有测试过这个解决方案，所以我决定坚持使用旧的解决方案。它可能看起来不那么干净，但是它正如预期的那样工作，所以我称之为成功。</p>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech/</a></p>
+<p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">https://github.com/ducafecat</a></p>
+<h2 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h2><h3 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h3><h4 id="GetX-Quick-Start"><a href="#GetX-Quick-Start" class="headerlink" title="GetX Quick Start"></a>GetX Quick Start</h4><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h4 id="新闻客户端"><a href="#新闻客户端" class="headerlink" title="新闻客户端"></a>新闻客户端</h4><p><a href="https://github.com/ducafecat/flutter_learn_news" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news</a></p>
+<h3 id="strapi-手册译文"><a href="#strapi-手册译文" class="headerlink" title="strapi 手册译文"></a>strapi 手册译文</h3><p><a href="https://getstrapi.cn" target="_blank" rel="noopener">https://getstrapi.cn</a></p>
+<h3 id="微信讨论群-ducafecat"><a href="#微信讨论群-ducafecat" class="headerlink" title="微信讨论群 ducafecat"></a>微信讨论群 ducafecat</h3><h3 id="系列集合"><a href="#系列集合" class="headerlink" title="系列集合"></a>系列集合</h3><h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p><a href="https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/</a></p>
+<h4 id="Dart-编程语言基础"><a href="#Dart-编程语言基础" class="headerlink" title="Dart 编程语言基础"></a>Dart 编程语言基础</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=111585" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=111585</a></p>
+<h4 id="Flutter-零基础入门"><a href="#Flutter-零基础入门" class="headerlink" title="Flutter 零基础入门"></a>Flutter 零基础入门</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=123470" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=123470</a></p>
+<h4 id="Flutter-实战从零开始-新闻客户端"><a href="#Flutter-实战从零开始-新闻客户端" class="headerlink" title="Flutter 实战从零开始 新闻客户端"></a>Flutter 实战从零开始 新闻客户端</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=106755</a></p>
+<h4 id="Flutter-组件开发"><a href="#Flutter-组件开发" class="headerlink" title="Flutter 组件开发"></a>Flutter 组件开发</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=144262" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=144262</a></p>
+<h4 id="Flutter-Bloc"><a href="#Flutter-Bloc" class="headerlink" title="Flutter Bloc"></a>Flutter Bloc</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177519" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177519</a></p>
+<h4 id="Flutter-Getx4"><a href="#Flutter-Getx4" class="headerlink" title="Flutter Getx4"></a>Flutter Getx4</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177514" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177514</a></p>
+<h4 id="Docker-Yapi"><a href="#Docker-Yapi" class="headerlink" title="Docker Yapi"></a>Docker Yapi</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=130578" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=130578</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/&title=《Flutter 移动安全 ー Ep.1 SSL Pinning》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/&title=《Flutter 移动安全 ー Ep.1 SSL Pinning》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 移动安全 ー Ep.1 SSL Pinning》 — duCafeCat&url=https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/04/30/translation/mobile-security-via-flutter-ep-2-strong-device-strong-pin/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 移动安全 ー Ep.2 Strong Device/ Strong Pin</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/04/28/translation/hud-progress-in-flutter/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 中使用 HUD Progress 组件</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                    <a href="http://www.miitbeian.gov.cn/" target="_blank">
+                        京ICP备2021009050号
+                    </a><br>
+                    
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/&title=《Flutter 移动安全 ー Ep.1 SSL Pinning》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/&title=《Flutter 移动安全 ー Ep.1 SSL Pinning》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 移动安全 ー Ep.1 SSL Pinning》 — duCafeCat&url=https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/04/29/translation/mobile-security-via-flutter-ep-1-ssl-pinning/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMElEQVR42u3aS45iQQwEwL7/pXu2I83Ay7RB4hXBCtF8KtwLy876+Ykfvy96PPrOv1/59z2P3v/oUy97YGNjY9+EnRw0/+uj4+bPn58zeZ4UHRsbG/s8dvszeWnaYiWNqi0fNjY2Nvbz97TNLB8nng8wyTCDjY2NjZ38fNuQ2kGiPQM2Njb2d7Lzn7xY1pSYvMTPz/zGXRo2Njb2x7PzVPTzn78l38bGxsb+YPbmws0sEmhPMosrLk6CjY2NfRC7vS4zW/TkA0bePjdlxcbGxj6J3bal/NDtgdp1/ywkjj6AjY2NfSt2fqUmb0VtqLAZPPII4T/vwcbGxj6I3Uakr3q9bZyzIQcbGxv7O9nJB/LmlI8cs5LlAww2Njb2eezXRqptnPDuoaWJSLCxsbHvzc6j1lmZ8rXULPrNT3gR9GJjY2Mfwc5j1/3FzXws2TfCOt/AxsbGvhU7GQPyKz5tO2y/OWmK9VIJGxsb+7bsvC0lP5Oz26C3vUIU7Y6wsbGxj2DPjps3tjwwaHnthaEo6MXGxsa+OXsWr7brpGTkaGPjOrrAxsbGPpTdroHy5pGUdfadw9EIGxsb+yB2HpRuVjybi0GzdVI9UWFjY2Pflt0ODEmZkvLNyrpvhBejCDY2NvYN2bPoN18qzXLVTSmTM2NjY2OfxN4v8WeV3qyWZrEENjY29qns/Kv3V3P2a6zk35PHCdjY2Ngnsd8RKuzb3j6EaL8TGxsb+77sdmXfLuJzcFvQPMzAxsbGPpWdw2Z/zRdJs6s57fmxsbGxz2PPAoB8WZO3qzwebv8B0dSFjY2NfXP2fsPULpXy0uevtO0TGxsb+1R2smCaXeuZNcV8OVW/HxsbG/s4doLMx4Y2BtgEum2LxcbGxj6J/Vs+9sHtLKCdraXqzRk2Njb2DdltA9iMELMwYB8zr4qCjY2NfRN23rTadrh5fX9x56Kg2NjY2Mex27aRh755QJsUog2ML1ZL2NjY2F/PbkltNDsbUaKpCxsbG/uL2bOLNW1RXtVWL5ZK2NjY2AexN5dyZkWZhbuzeKC+uIONjY19K/Z+VdQud2btp02tN2fGxsbGvgn7Dy6OU++5BIuvAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>用 Melos 管理多包 Flutter 项目 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="猫哥说我正在的写的新闻客户端代码模板，只是适合最多 100 pages 的轻巧型单包项目。 但是页面再多的话，说明你的项目业务、功能、组件足够复杂，项目也庞大，参与的人也多，这样的话项目">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用 Melos 管理多包 Flutter 项目">
+<meta property="og:url" content="https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="猫哥说我正在的写的新闻客户端代码模板，只是适合最多 100 pages 的轻巧型单包项目。 但是页面再多的话，说明你的项目业务、功能、组件足够复杂，项目也庞大，参与的人也多，这样的话项目">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/2021-06-08-06-23-31.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/2021-06-08-05-53-01.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/2021-06-08-05-58-51.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/2021-06-08-06-02-12.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/2021-06-08-06-09-26.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/2021-06-08-06-09-41.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/2021-06-08-06-13-17.png">
+<meta property="og:image" content="https://ducafecat.tech/img/public-qrcode.png">
+<meta property="og:updated_time" content="2021-06-07T22:24:17.218Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用 Melos 管理多包 Flutter 项目">
+<meta name="twitter:description" content="猫哥说我正在的写的新闻客户端代码模板，只是适合最多 100 pages 的轻巧型单包项目。 但是页面再多的话，说明你的项目业务、功能、组件足够复杂，项目也庞大，参与的人也多，这样的话项目">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/2021-06-08-06-23-31.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">用 Melos 管理多包 Flutter 项目</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">用 Melos 管理多包 Flutter 项目</h1>
+        <h5 class="subtitle">
+             <time datetime="2021-06-07T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2021-06-08
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#猫哥说"><span class="post-toc-number">1.</span> <span class="post-toc-text">猫哥说</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><span class="post-toc-number">2.</span> <span class="post-toc-text">老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信-flutter-研修群-ducafecat"><span class="post-toc-number">3.</span> <span class="post-toc-text">微信 flutter 研修群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">4.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">5.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">6.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">7.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#挑战"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">挑战</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">解决方案</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#介绍-Melos"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">介绍 Melos</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装-Melos"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">安装 Melos</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Melos-Bootstrap"><span class="post-toc-number">7.5.</span> <span class="post-toc-text">Melos Bootstrap</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Melos-Clean"><span class="post-toc-number">7.6.</span> <span class="post-toc-text">Melos Clean</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Commands"><span class="post-toc-number">7.7.</span> <span class="post-toc-text">Commands</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#图形用户界面选项"><span class="post-toc-number">7.8.</span> <span class="post-toc-text">图形用户界面选项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Next-Steps"><span class="post-toc-number">7.9.</span> <span class="post-toc-text">Next Steps</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#往期"><span class="post-toc-number">8.</span> <span class="post-toc-text">往期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开源"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">开源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetX-Quick-Start"><span class="post-toc-number">8.1.1.</span> <span class="post-toc-text">GetX Quick Start</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新闻客户端"><span class="post-toc-number">8.1.2.</span> <span class="post-toc-text">新闻客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strapi-手册译文"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">strapi 手册译文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信讨论群-ducafecat"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">微信讨论群 ducafecat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系列集合"><span class="post-toc-number">8.4.</span> <span class="post-toc-text">系列集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译文"><span class="post-toc-number">8.4.1.</span> <span class="post-toc-text">译文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开源项目"><span class="post-toc-number">8.4.2.</span> <span class="post-toc-text">开源项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dart-编程语言基础"><span class="post-toc-number">8.4.3.</span> <span class="post-toc-text">Dart 编程语言基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-零基础入门"><span class="post-toc-number">8.4.4.</span> <span class="post-toc-text">Flutter 零基础入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-实战从零开始-新闻客户端"><span class="post-toc-number">8.4.5.</span> <span class="post-toc-text">Flutter 实战从零开始 新闻客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-组件开发"><span class="post-toc-number">8.4.6.</span> <span class="post-toc-text">Flutter 组件开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Bloc"><span class="post-toc-number">8.4.7.</span> <span class="post-toc-text">Flutter Bloc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flutter-Getx4"><span class="post-toc-number">8.4.8.</span> <span class="post-toc-text">Flutter Getx4</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Docker-Yapi"><span class="post-toc-number">8.4.9.</span> <span class="post-toc-text">Docker Yapi</span></a></li></ol></li></ol></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-translation/managing-multi-package-flutter-projects-with-melos" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            用 Melos 管理多包 Flutter 项目
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-06-08 00:00:00" datetime="2021-06-07T16:00:00.000Z"  itemprop="datePublished">2021-06-08</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-06-08-06-23-31.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="猫哥说"><a href="#猫哥说" class="headerlink" title="猫哥说"></a>猫哥说</h2><p>我正在的写的新闻客户端代码模板，只是适合最多 100 pages 的轻巧型单包项目。</p>
+<p>但是页面再多的话，说明你的项目业务、功能、组件足够复杂，项目也庞大，参与的人也多，这样的话项目就需要多包架构了，做过 android 的朋友最能体会了。</p>
+<p>这篇文章就是介绍如何用 melos 来管理多包项目，看看对你是否有帮助吧。</p>
+<h2 id="老铁记得-转发-，猫哥会呈现更多-Flutter-好文"><a href="#老铁记得-转发-，猫哥会呈现更多-Flutter-好文" class="headerlink" title="老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~"></a>老铁记得 转发 ，猫哥会呈现更多 Flutter 好文~~~~</h2><h2 id="微信-flutter-研修群-ducafecat"><a href="#微信-flutter-研修群-ducafecat" class="headerlink" title="微信 flutter 研修群 ducafecat"></a>微信 flutter 研修群 ducafecat</h2><h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/SAGARSURI/melos_demo" target="_blank" rel="noopener">https://github.com/SAGARSURI/melos_demo</a></p>
+<blockquote>
+<p>integrate_melos 分支是完成的代码</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://docs.page/invertase/melos" target="_blank" rel="noopener">https://docs.page/invertase/melos</a></li>
+<li><a href="https://invertase.io/" target="_blank" rel="noopener">https://invertase.io/</a></li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>大多数情况下，当你创建一个 flutter 项目。你使用一个包。这个项目由一个 pubspec.yaml，lib 文件夹组成。您将所有的特性和实用程序放在同一个包中。但也有一些项目将它们的特性和实用程序分解成多个包。这有助于提高关注点分离，并允许团队开源他们的一些软件包。下面是一个多包项目的示意图:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-06-08-05-53-01.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>在这里，我们将项目分为三个层次。第一层是根项目，它包含适用于项目中所有不同包的通用配置。第二层拥有独立的功能包，它们不相互依赖。第三层由多个功能包中使用的实用工具包组成。我不会深入探讨如何创建或结构一个多包 flutter 项目。本文将着重于解决一个典型的多包 flutter 项目所面临的特殊挑战。</p>
+<h3 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h3><p>在一个简单的程序包中，运行下面的任务是非常简单的:</p>
+<ul>
+<li>flutter pub get</li>
+<li>flutter test</li>
+<li>flutter analyze</li>
+<li>Generating code coverage i.e flutter test –coverage</li>
+</ul>
+<p>但是在一个多包的 flutter 项目中运行相同的任务是具有挑战性的，因为你需要在项目中的每个包中运行这些任务，并在任务完成后给出总结结果。现在我们知道挑战是什么了。让我们来讨论一下解决这个问题的可能方法。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>有两种可能的解决方案来解决这个问题。让我们看看第一个:</p>
+<ol>
+<li>为各种任务编写 bash 脚本</li>
+</ol>
+<p>这绝对是一个解决方案，但不是一个明智的解决方案。您需要首先编写一个脚本，找出项目中的所有包，并在其中运行上述任务之一。您还需要确保以漂亮的格式显示输出，以使内容具有可读性。如果您更喜欢 GUI，那么您需要在 IDE 中创建某种配置，以便通过 GUI 运行脚本</p>
+<ol start="2">
+<li>将 Melos 整合到你的项目中</li>
+</ol>
+<p>这是一个比我强烈推荐的第一个方案更聪明的解决方案。因此，让我们详细讨论什么是 Melos，以及如何将其集成到您的多包项目中</p>
+<h3 id="介绍-Melos"><a href="#介绍-Melos" class="headerlink" title="介绍 Melos"></a>介绍 Melos</h3><blockquote>
+<p>Melos 是一个 CLI 工具，用于管理多个包的 flutter/飞镖项目。</p>
+</blockquote>
+<p>Melos 是由一个著名的小组在 flutter 社区即 invertase。你可以在他们的网站上阅读关于 Melos 的详细信息，但是这里有一个 Melos 提供的特性的快速列表:</p>
+<ul>
+<li>Automatic versioning &amp; changelog generation. 自动版本控制和更新日志生成</li>
+<li>Automated publishing of packages to 将包自动发布到 pub.dev.</li>
+<li>Local package linking and installation. 本地包的链接和安装</li>
+<li>Executing simultaneous commands across packages. 跨包执行同步命令</li>
+<li>Listing of local packages &amp; their dependencies. 本地包及其依赖项的列表</li>
+</ul>
+<p>现在让我们看看如何使用 Melos 执行上述所有任务。</p>
+<ul>
+<li>注意: 如果你想在实践中学习，请下载入门课程。还有另一个分支，您可以在其中找到项目的最终版本。</li>
+</ul>
+<p><a href="https://github.com/SAGARSURI/melos_demo" target="_blank" rel="noopener">https://github.com/SAGARSURI/melos_demo</a></p>
+<h3 id="安装-Melos"><a href="#安装-Melos" class="headerlink" title="安装 Melos"></a>安装 Melos</h3><p>让我们先安装 Melos。我假设您已经安装了 Flutter SDK，并将 Flutter 和 Dart 路径设置为 <code>bash_profile</code>。在终端中运行以下命令:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dart pub global activate melos</span><br></pre></td></tr></table></figure>
+<p>下一步是在 IDE 中打开初学者项目。我更喜欢使用 Intellij，并且会向你展示一些由 Melos 提供的非常棒的 GUI 特性。项目结构应如下:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-06-08-05-58-51.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>现在创建一个名为 melos.yaml 的文件，并将以下内容复制到其中:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">melos_demo</span></span><br><span class="line"></span><br><span class="line"><span class="attr">packages:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">utility/**</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">features/**</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">"*"</span></span><br></pre></td></tr></table></figure>
+<p>让我们理解一下上面的脚本:<br>a) name : 你必须给出项目的名称。您可以在 root 项目的 pubspec.yaml 中找到它.<br>b) packages : 这个列表应该包含到项目中单个软件包的路径. 可以使用 glob 模式展开格式定义每个路径.</p>
+<h3 id="Melos-Bootstrap"><a href="#Melos-Bootstrap" class="headerlink" title="Melos Bootstrap"></a>Melos Bootstrap</h3><p>现在，从根项目中在终端中运行以下命令，将所有本地包链接在一起，并更新依赖关系，即 flutter pub get。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">melos bootstrap</span><br></pre></td></tr></table></figure>
+<p>在运行上面的命令之后，你应该会看到如下的输出:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-06-08-06-02-12.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>你可以在这里阅读为什么你需要引导 Melos。准确地说，这是在项目中设置 Melos 或执行项目清理时应该执行的重要命令之一。</p>
+<p><a href="https://docs.page/invertase/melos/getting-started#why-do-i-need-to-bootstrap" target="_blank" rel="noopener">https://docs.page/invertase/melos/getting-started#why-do-i-need-to-bootstrap</a></p>
+<h3 id="Melos-Clean"><a href="#Melos-Clean" class="headerlink" title="Melos Clean"></a>Melos Clean</h3><p>当您希望从项目中删除临时文件(构建工件、pub 文件等)时，可以执行此命令。下面是这个命令的样子:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">melos clean</span><br></pre></td></tr></table></figure>
+<h3 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h3><p>现在，您将着手创建不同的命令，以实现我们在本文开头提到的任务。</p>
+<p>在特定的包中运行测试用例在你的 melos.yaml 文件中写入以下命令:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">melos_demo</span></span><br><span class="line"></span><br><span class="line"><span class="attr">packages:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">utility/**</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">features/**</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">"*"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">scripts:</span></span><br><span class="line">  <span class="attr">test:selective_unit_test:</span></span><br><span class="line">    <span class="attr">run:</span> <span class="string">melos</span> <span class="string">exec</span> <span class="string">--dir-exists="test"</span> <span class="string">--fail-fast</span> <span class="string">--</span> <span class="string">flutter</span> <span class="string">test</span> <span class="string">--no-pub</span> <span class="string">--coverage</span></span><br><span class="line">    <span class="attr">description:</span> <span class="string">Run</span> <span class="string">Flutter</span> <span class="string">tests</span> <span class="string">for</span> <span class="string">a</span> <span class="string">specific</span> <span class="string">package</span> <span class="string">in</span> <span class="string">this</span> <span class="string">project.</span></span><br><span class="line">    <span class="attr">select-package:</span></span><br><span class="line">      <span class="attr">flutter:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">dir-exists:</span> <span class="string">test</span></span><br></pre></td></tr></table></figure>
+<p>让我们理解一下上面的脚本中发生了什么:</p>
+<p>1)你已经创建了一个自定义脚本，即 test: selective_unit_test，一旦执行，它会显示一个选项来选择一个你想要运行的单元测试包。</p>
+<ol start="2">
+<li>Melos 提供了强大的过滤选项来选择符合过滤条件的包。在上面的脚本中，您使用 – dir-exists = “ test”作为筛选选项。这将过滤由 testfolder 组成的所有包。你可以在他们的网站上找到更多的过滤选项。</li>
+</ol>
+<p>3)——如果遇到失败的测试用例，fail-fast 将立即终止脚本执行。</p>
+<p>4)您可以使用描述部分为每个脚本提供一个可读的描述。</p>
+<p>5)你一定想知道为什么你把这个命令命名为 test: selective_unit_test。下一个命令将回答您的问题。</p>
+<p>6)你可以详细阅读 melos exec 做了什么。基本上，它将在项目中的每个包中执行命令或脚本。</p>
+<p><a href="https://docs.page/invertase/melos/commands#exec" target="_blank" rel="noopener">https://docs.page/invertase/melos/commands#exec</a></p>
+<p>现在运行以下命令:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">melos run <span class="built_in">test</span>:selective_unit_test</span><br></pre></td></tr></table></figure>
+<p>您将看到以下输出:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-06-08-06-09-26.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>上面的命令能够找出包含文件夹测试的这些包。输入 2 作为选项，你会看到如下输出:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-06-08-06-09-41.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>在所有包中运行测试用例现在编写以下命令，它将运行项目中的所有单元测试用例。这不会提示任何选项的选择:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">scripts:</span></span><br><span class="line">  <span class="attr">test:</span></span><br><span class="line">    <span class="attr">run:</span> <span class="string">melos</span> <span class="string">run</span> <span class="string">test:selective_unit_test</span> <span class="string">--no-select</span></span><br><span class="line">    <span class="attr">description:</span> <span class="string">Run</span> <span class="string">all</span> <span class="string">Flutter</span> <span class="string">tests</span> <span class="string">in</span> <span class="string">this</span> <span class="string">project.</span></span><br></pre></td></tr></table></figure>
+<p>让我们讨论一下上面的命令是做什么的:</p>
+<ol>
+<li>这个命令将基本上运行上一个命令–no-select as an argument. 这意味着运行所有的单元测试</li>
+<li>你可以使用 melos 来运行这个命令 因为可能有多个变种的测试命令，就像您在前一步骤 i.e 中创建的那样 test:selective_unit_test . 您还可以创建更多的变种，例如 test:e2e_test , test:bdd_test etc. 你可以将所有的变量组合在一起，并在一个命令 i.e 中运行 test .</li>
+</ol>
+<p>运行所有包中的 analyzein: 在 script 部分创建以下命令:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">analyze:</span></span><br><span class="line">  <span class="attr">run:</span> <span class="string">melos</span> <span class="string">exec</span> <span class="string">--</span> <span class="string">flutter</span> <span class="string">analyze</span> <span class="string">.</span></span><br><span class="line">  <span class="attr">description:</span> <span class="string">Run</span> <span class="string">`dart</span> <span class="string">analyze`</span> <span class="string">in</span> <span class="string">all</span> <span class="string">packages.</span></span><br></pre></td></tr></table></figure>
+<p>这里没有什么特别的，您可以执行 melos 运行分析来运行所有包中的分析。</p>
+<p>生成整个项目的代码 coverage: 为整个项目生成代码 coverage。项目中包含一个自定义脚本，即组合覆盖。嘘。这将基本上合并来自不同包的所有 lcov.info 文件到一个 lcov.info 文件中。然后，您可以使用此方法将 lcov.info 文件转换为 HTML。</p>
+<p><a href="https://stackoverflow.com/a/53663093/4161284" target="_blank" rel="noopener">https://stackoverflow.com/a/53663093/4161284</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"></span><br><span class="line">escapedPath=<span class="string">"<span class="variable">$(echo `pwd` | sed 's/\//\\\//g')</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> grep flutter pubspec.yaml &gt; /dev/null; <span class="keyword">then</span></span><br><span class="line">  <span class="keyword">if</span> [ -d <span class="string">"coverage"</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="comment"># combine line coverage info from package tests to a common file</span></span><br><span class="line">    <span class="keyword">if</span> [ ! -d <span class="string">"<span class="variable">$MELOS_ROOT_PATH</span>/coverage_report"</span> ]; <span class="keyword">then</span></span><br><span class="line">      mkdir <span class="string">"<span class="variable">$MELOS_ROOT_PATH</span>/coverage_report"</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    sed <span class="string">"s/^SF:lib/SF:<span class="variable">$escapedPath</span>\/lib/g"</span> coverage/lcov.info &gt;&gt; <span class="string">"<span class="variable">$MELOS_ROOT_PATH</span>/coverage_report/lcov.info"</span></span><br><span class="line">    rm -rf <span class="string">"coverage"</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p>在脚本部分下面写下以下命令:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">gen_coverage:</span> <span class="string">melos</span> <span class="string">exec</span> <span class="string">--</span> <span class="string">"\$MELOS_ROOT_PATH/combine_coverage.sh"</span></span><br></pre></td></tr></table></figure>
+<p>Path 会给出存储 MELOS.yaml 的路径即 root 项目。脚本执行完毕后。您可以在项目中看到 coverage_report 文件夹。现在你有一个 lcov.info 文件，它会给你一个整个项目的报告。</p>
+<p>最后，你的 melos.yaml 文件看起来像这样:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">melos_demo</span></span><br><span class="line"></span><br><span class="line"><span class="attr">packages:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">utility/**</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">features/**</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">"*"</span></span><br><span class="line"><span class="attr">scripts:</span></span><br><span class="line">  <span class="attr">test:selective_unit_test:</span></span><br><span class="line">    <span class="attr">run:</span> <span class="string">melos</span> <span class="string">exec</span> <span class="string">--dir-exists="test"</span> <span class="string">--fail-fast</span> <span class="string">--</span> <span class="string">flutter</span> <span class="string">test</span> <span class="string">--no-pub</span> <span class="string">--coverage</span></span><br><span class="line">    <span class="attr">description:</span> <span class="string">Run</span> <span class="string">Flutter</span> <span class="string">tests</span> <span class="string">for</span> <span class="string">a</span> <span class="string">specific</span> <span class="string">package</span> <span class="string">in</span> <span class="string">this</span> <span class="string">project.</span></span><br><span class="line">    <span class="attr">select-package:</span></span><br><span class="line">      <span class="attr">flutter:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">dir-exists:</span> <span class="string">test</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">test:</span></span><br><span class="line">    <span class="attr">run:</span> <span class="string">melos</span> <span class="string">run</span> <span class="string">test:selective_unit_test</span> <span class="string">--no-select</span></span><br><span class="line">    <span class="attr">description:</span> <span class="string">Run</span> <span class="string">all</span> <span class="string">Flutter</span> <span class="string">tests</span> <span class="string">in</span> <span class="string">this</span> <span class="string">project.</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">analyze:</span></span><br><span class="line">    <span class="attr">run:</span> <span class="string">melos</span> <span class="string">exec</span> <span class="string">--</span> <span class="string">flutter</span> <span class="string">analyze</span> <span class="string">.</span></span><br><span class="line">    <span class="attr">description:</span> <span class="string">Run</span> <span class="string">`dart</span> <span class="string">analyze`</span> <span class="string">in</span> <span class="string">all</span> <span class="string">packages.</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">gen_coverage:</span> <span class="string">melos</span> <span class="string">exec</span> <span class="string">--</span> <span class="string">"\$MELOS_ROOT_PATH/combine_coverage.sh"</span></span><br></pre></td></tr></table></figure>
+<h3 id="图形用户界面选项"><a href="#图形用户界面选项" class="headerlink" title="图形用户界面选项"></a>图形用户界面选项</h3><p>如果您不希望通过终端执行这些命令，并希望使用 GUI 运行它们，那么 Melos 可以满足您的要求。添加所有命令后，可以再次运行引导程序命令。这将生成一些配置，你可以看到一些图形用户界面选项如下:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2021-06-08-06-13-17.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>现在您可以执行所有这些命令，而无需在终端中键入任何内容。</p>
+<h3 id="Next-Steps"><a href="#Next-Steps" class="headerlink" title="Next Steps"></a>Next Steps</h3><p>这只是冰山一角。你可以在 Melos 网站上学到更多的过滤选项和命令。希望你喜欢这篇文章。</p>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech/</a></p>
+<p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">https://github.com/ducafecat</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/public-qrcode.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h2><h3 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h3><h4 id="GetX-Quick-Start"><a href="#GetX-Quick-Start" class="headerlink" title="GetX Quick Start"></a>GetX Quick Start</h4><p><a href="https://github.com/ducafecat/getx_quick_start" target="_blank" rel="noopener">https://github.com/ducafecat/getx_quick_start</a></p>
+<h4 id="新闻客户端"><a href="#新闻客户端" class="headerlink" title="新闻客户端"></a>新闻客户端</h4><p><a href="https://github.com/ducafecat/flutter_learn_news" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news</a></p>
+<h3 id="strapi-手册译文"><a href="#strapi-手册译文" class="headerlink" title="strapi 手册译文"></a>strapi 手册译文</h3><p><a href="https://getstrapi.cn" target="_blank" rel="noopener">https://getstrapi.cn</a></p>
+<h3 id="微信讨论群-ducafecat"><a href="#微信讨论群-ducafecat" class="headerlink" title="微信讨论群 ducafecat"></a>微信讨论群 ducafecat</h3><h3 id="系列集合"><a href="#系列集合" class="headerlink" title="系列集合"></a>系列集合</h3><h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p><a href="https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E8%AF%91%E6%96%87/</a></p>
+<h4 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h4><p><a href="https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/" target="_blank" rel="noopener">https://ducafecat.tech/categories/%E5%BC%80%E6%BA%90/</a></p>
+<h4 id="Dart-编程语言基础"><a href="#Dart-编程语言基础" class="headerlink" title="Dart 编程语言基础"></a>Dart 编程语言基础</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=111585" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=111585</a></p>
+<h4 id="Flutter-零基础入门"><a href="#Flutter-零基础入门" class="headerlink" title="Flutter 零基础入门"></a>Flutter 零基础入门</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=123470" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=123470</a></p>
+<h4 id="Flutter-实战从零开始-新闻客户端"><a href="#Flutter-实战从零开始-新闻客户端" class="headerlink" title="Flutter 实战从零开始 新闻客户端"></a>Flutter 实战从零开始 新闻客户端</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=106755" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=106755</a></p>
+<h4 id="Flutter-组件开发"><a href="#Flutter-组件开发" class="headerlink" title="Flutter 组件开发"></a>Flutter 组件开发</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=144262" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=144262</a></p>
+<h4 id="Flutter-Bloc"><a href="#Flutter-Bloc" class="headerlink" title="Flutter Bloc"></a>Flutter Bloc</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177519" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177519</a></p>
+<h4 id="Flutter-Getx4"><a href="#Flutter-Getx4" class="headerlink" title="Flutter Getx4"></a>Flutter Getx4</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=177514" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=177514</a></p>
+<h4 id="Docker-Yapi"><a href="#Docker-Yapi" class="headerlink" title="Docker Yapi"></a>Docker Yapi</h4><p><a href="https://space.bilibili.com/404904528/channel/detail?cid=130578" target="_blank" rel="noopener">https://space.bilibili.com/404904528/channel/detail?cid=130578</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/&title=《用 Melos 管理多包 Flutter 项目》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/&title=《用 Melos 管理多包 Flutter 项目》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《用 Melos 管理多包 Flutter 项目》 — duCafeCat&url=https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/06/09/translation/introducing-nativeshell/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">介绍 Flutter 桌面应用 NativeShell</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/06/04/translation/5-must-have-flutter-desktop-packages-to-include-in-your-next-build/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 5个必备的桌面插件包将包含在你的下一个版本中</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                    <a href="http://www.miitbeian.gov.cn/" target="_blank">
+                        京ICP备2021009050号
+                    </a><br>
+                    
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/&title=《用 Melos 管理多包 Flutter 项目》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/&title=《用 Melos 管理多包 Flutter 项目》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《用 Melos 管理多包 Flutter 项目》 — duCafeCat&url=https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2021/06/08/translation/managing-multi-package-flutter-projects-with-melos/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADKElEQVR42u3azW7iYAwFUN7/pRlpVpU6Ta7tlCHmZIX4aThfF8a+fjzi6/n3+vr46zPJe54/XMnfPH7++6uXXdjY2Ng3YT8Pr++kHHn82d4xzT+FjY2NvZWdFK3kceHG8R173/Pks9jY2Ngfya6WorwQ5s1GtVhiY2NjY0+OIL9LrwXCxsbGxp6Mb45vU21Uei3Qi2Zp2NjY2G/P7gW97/n41/NtbGxs7DdjPwdXr52YFMhqFPHjt8LGxsZexE6GQUlJm6z1zNubJDY4KWPY2NjY69j5wD1h5AedhwTH70/KKjY2NvYO9mRRplrYeuUqbzzyY8XGxsbexL5qlj5pVPKYuVfMmnEvNjY29s3Zk3JVjQ2qx9Fb2Sn/h7GxsbFvwk5+xE8KT36XeVuSh8rY2NjY+9i9pZyrVmdGgGJDgo2Njb2Vna/C5OVtPk7K4948rv5HKoKNjY19c3a1Aagu1kxG9tWBUTmixsbGxl7EzotWPjwq3Li4AHrVMWFjY2PvYE8i2N5hVaOISZxwUrSwsbGxV7CrxSP5JT8fACVldf4qNjY29g52XmyqyEljU2178rVRbGxs7E9g98Y0+WFNWqC8HJ7cCxsbG3s1Owl98wWd/MiuCoCTg8bGxsbex47eWmw58nalepdJtICNjY29m52XkF5s0IuTq6s/0VgKGxsbex07Hy1VMZOCN9+uKWwqYWNjY9+WfdV4qHqg+fHlpasX/WJjY2PvYF/10z/HV5F5cS2EHNjY2Njr2I/WlTckeeNRLWDN8BgbGxt7KTv/6tWQuFeKqoFxMxvBxsbGvjm7N5qpDoBe89nyLA0bGxt7EXtSxvKxVPWdSYDRa2+wsbGxt7J7zUayNJOP8nuB7mhlBxsbG/u27ElZyluU6hioSqquEGFjY2NvYlcD3Wpxqsa31b9QDQ+wsbGxt7LnRevaZmYyWiocCjY2NvY69iQD/Y12IokQLhgtYWNjY38wO/kqPdikgcnLHjY2NvZnsqtrPb34tjfoLwcD2NjY2OvYV7UB1eFRfny9UddJAcPGxsZewZ4HvfnxVZuHXnTxonwbGxsb+/+z/wBE+girBgJbFwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

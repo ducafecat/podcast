@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter 实战从零开始 新闻客户端 - 14 headless strapi + graphql 快速构建新闻后台 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="本节目标 strapi + graphql 插件 + docker 安装 strapi 管理数据结构、内容 flutter + graphql 插件 实现查询  视频   代码https">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 实战从零开始 新闻客户端 - 14 headless strapi + graphql 快速构建新闻后台">
+<meta property="og:url" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="本节目标 strapi + graphql 插件 + docker 安装 strapi 管理数据结构、内容 flutter + graphql 插件 实现查询  视频   代码https">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/2020-07-03-17-43-32.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/2020-07-04-13-47-38.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/2020-07-04-13-48-08.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/2020-07-03-16-45-52.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/2020-07-03-16-47-15.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/2020-07-03-16-47-35.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/2020-07-03-16-46-25.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/2020-07-03-16-48-29.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/2020-07-03-16-48-55.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/2020-07-03-16-49-37.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/2020-07-03-16-49-59.png">
+<meta property="og:image" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/2020-07-03-16-50-31.png">
+<meta property="og:updated_time" content="2020-07-04T06:19:49.792Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter 实战从零开始 新闻客户端 - 14 headless strapi + graphql 快速构建新闻后台">
+<meta name="twitter:description" content="本节目标 strapi + graphql 插件 + docker 安装 strapi 管理数据结构、内容 flutter + graphql 插件 实现查询  视频   代码https">
+<meta name="twitter:image" content="https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/2020-07-03-17-43-32.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter 实战从零开始 新闻客户端 - 14 headless strapi + graphql 快速构建新闻后台</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter 实战从零开始 新闻客户端 - 14 headless strapi + graphql 快速构建新闻后台</h1>
+        <h5 class="subtitle">
+             <time datetime="2020-07-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2020-07-03
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter-实战从零开始/">Flutter 实战从零开始</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">1.</span> <span class="post-toc-text">本节目标</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视频"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">视频</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#后台开发步骤"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">后台开发步骤</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#采用-strapi-nodejs-网关-的方案"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">采用 strapi + nodejs + 网关 的方案</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-strapi-安装"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">1. strapi 安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-1-docker-compose-方式安装"><span class="post-toc-number">1.3.3.1.</span> <span class="post-toc-text">1.1 docker-compose 方式安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-2-安装-graphql-插件"><span class="post-toc-number">1.3.3.2.</span> <span class="post-toc-text">1.2 安装 graphql 插件</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-构建新闻数据结构"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">2. 构建新闻数据结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-创建数据类型"><span class="post-toc-number">1.3.4.1.</span> <span class="post-toc-text">2.1 创建数据类型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-调整数据编辑界面"><span class="post-toc-number">1.3.4.2.</span> <span class="post-toc-text">2.2 调整数据编辑界面</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-3-调整数据列表界面"><span class="post-toc-number">1.3.4.3.</span> <span class="post-toc-text">2.3 调整数据列表界面</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-4-维护数据"><span class="post-toc-number">1.3.4.4.</span> <span class="post-toc-text">2.4 维护数据</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-调试-graphql-请求"><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">3. 调试 graphql 请求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-graphql-语法"><span class="post-toc-number">1.3.5.1.</span> <span class="post-toc-text">3.3 graphql 语法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-4-调试新闻列表"><span class="post-toc-number">1.3.5.2.</span> <span class="post-toc-text">3.4 调试新闻列表</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-编写-flutter-代码"><span class="post-toc-number">1.3.6.</span> <span class="post-toc-text">4. 编写 flutter 代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-1-加入-graphql-插件"><span class="post-toc-number">1.3.6.1.</span> <span class="post-toc-text">4.1 加入 graphql 插件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-2-封装-graphql-client-工具类"><span class="post-toc-number">1.3.6.2.</span> <span class="post-toc-text">4.2 封装 graphql client 工具类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-3-编写-graphql-查询请求"><span class="post-toc-number">1.3.6.3.</span> <span class="post-toc-text">4.3 编写 graphql 查询请求</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-4-编写数据实体"><span class="post-toc-number">1.3.6.4.</span> <span class="post-toc-text">4.4 编写数据实体</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-5-编写-API-访问"><span class="post-toc-number">1.3.6.5.</span> <span class="post-toc-text">4.5 编写 API 访问</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-6-修改新闻列表页"><span class="post-toc-number">1.3.6.6.</span> <span class="post-toc-text">4.6 修改新闻列表页</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-7-修改新闻详情页"><span class="post-toc-number">1.3.6.7.</span> <span class="post-toc-text">4.7 修改新闻详情页</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#资源"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">资源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计稿蓝湖预览"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">设计稿蓝湖预览</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#参考"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">参考</span></a></li></ol></li></ol></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-flutter-project/flutter-project-news-14-headless-strapi-graphql" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            Flutter 实战从零开始 新闻客户端 - 14 headless strapi + graphql 快速构建新闻后台
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-07-03 00:00:00" datetime="2020-07-02T16:00:00.000Z"  itemprop="datePublished">2020-07-03</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Flutter-实战从零开始/">Flutter 实战从零开始</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-07-03-17-43-32.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h1 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h1><ul>
+<li>strapi + graphql 插件 + docker 安装</li>
+<li>strapi 管理数据结构、内容</li>
+<li>flutter + graphql 插件 实现查询</li>
+</ul>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><iframe src="//player.bilibili.com/player.html?bvid=BV1Zz411e7dj&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"> </iframe>
+
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.14" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_learn_news/releases/tag/v1.0.14</a></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="后台开发步骤"><a href="#后台开发步骤" class="headerlink" title="后台开发步骤"></a>后台开发步骤</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-07-04-13-47-38.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="采用-strapi-nodejs-网关-的方案"><a href="#采用-strapi-nodejs-网关-的方案" class="headerlink" title="采用 strapi + nodejs + 网关 的方案"></a>采用 strapi + nodejs + 网关 的方案</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-07-04-13-48-08.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="1-strapi-安装"><a href="#1-strapi-安装" class="headerlink" title="1. strapi 安装"></a>1. strapi 安装</h3><h4 id="1-1-docker-compose-方式安装"><a href="#1-1-docker-compose-方式安装" class="headerlink" title="1.1 docker-compose 方式安装"></a>1.1 docker-compose 方式安装</h4><ul>
+<li>.env</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PASSWORD=123456</span><br></pre></td></tr></table></figure>
+<ul>
+<li>docker-compose.yml</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3"</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mongo:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mongo</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mongo</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">27017</span><span class="string">:27017</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MONGO_INITDB_ROOT_USERNAME=root</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MONGO_INITDB_ROOT_PASSWORD=$&#123;PASSWORD&#125;</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./docker-data/mongo:/data/db</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="attr">docker_net:</span></span><br><span class="line">        <span class="attr">ipv4_address:</span> <span class="number">172.22</span><span class="number">.0</span><span class="number">.11</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># starpi</span></span><br><span class="line">  <span class="comment"># admin / 123456 / admin@ducafecat.tech</span></span><br><span class="line">  <span class="attr">strapi-app:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">strapi/strapi</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">strapi-app</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">1337</span><span class="string">:1337</span></span><br><span class="line">    <span class="comment"># command: strapi build</span></span><br><span class="line">    <span class="comment"># command: strapi start</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_CLIENT=mongo</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_HOST=mongo</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_PORT=27017</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_NAME=strapi</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_USERNAME=root</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_PASSWORD=$&#123;PASSWORD&#125;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_AUTHENTICATION_DATABASE=strapi</span></span><br><span class="line">      <span class="comment"># - NODE_ENV=production</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">mongo</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./docker-data/strapi-app:/srv/app</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="attr">docker_net:</span></span><br><span class="line">        <span class="attr">ipv4_address:</span> <span class="number">172.22</span><span class="number">.0</span><span class="number">.12</span></span><br><span class="line"></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">docker_net:</span></span><br><span class="line">    <span class="attr">driver:</span> <span class="string">bridge</span></span><br><span class="line">    <span class="attr">ipam:</span></span><br><span class="line">      <span class="attr">config:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">subnet:</span> <span class="number">172.22</span><span class="number">.0</span><span class="number">.0</span><span class="string">/16</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://localhost:1337/admin" target="_blank" rel="noopener">http://localhost:1337/admin</a></p>
+<h4 id="1-2-安装-graphql-插件"><a href="#1-2-安装-graphql-插件" class="headerlink" title="1.2 安装 graphql 插件"></a>1.2 安装 graphql 插件</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-07-03-16-45-52.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="2-构建新闻数据结构"><a href="#2-构建新闻数据结构" class="headerlink" title="2. 构建新闻数据结构"></a>2. 构建新闻数据结构</h3><h4 id="2-1-创建数据类型"><a href="#2-1-创建数据类型" class="headerlink" title="2.1 创建数据类型"></a>2.1 创建数据类型</h4><ul>
+<li>添加类型</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-07-03-16-47-15.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>添加字段</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-07-03-16-47-35.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>字段列表</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-07-03-16-46-25.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="2-2-调整数据编辑界面"><a href="#2-2-调整数据编辑界面" class="headerlink" title="2.2 调整数据编辑界面"></a>2.2 调整数据编辑界面</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-07-03-16-48-29.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="2-3-调整数据列表界面"><a href="#2-3-调整数据列表界面" class="headerlink" title="2.3 调整数据列表界面"></a>2.3 调整数据列表界面</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-07-03-16-48-55.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="2-4-维护数据"><a href="#2-4-维护数据" class="headerlink" title="2.4 维护数据"></a>2.4 维护数据</h4><ul>
+<li>列表</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-07-03-16-49-37.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>添加</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-07-03-16-49-59.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="3-调试-graphql-请求"><a href="#3-调试-graphql-请求" class="headerlink" title="3. 调试 graphql 请求"></a>3. 调试 graphql 请求</h3><h4 id="3-3-graphql-语法"><a href="#3-3-graphql-语法" class="headerlink" title="3.3 graphql 语法"></a>3.3 graphql 语法</h4><ul>
+<li>类型<ul>
+<li>query 查询</li>
+<li>mutate 操作</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-4-调试新闻列表"><a href="#3-4-调试新闻列表" class="headerlink" title="3.4 调试新闻列表"></a>3.4 调试新闻列表</h4><p><a href="http://localhost:1337/graphql" target="_blank" rel="noopener">http://localhost:1337/graphql</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="2020-07-03-16-50-31.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="4-编写-flutter-代码"><a href="#4-编写-flutter-代码" class="headerlink" title="4. 编写 flutter 代码"></a>4. 编写 flutter 代码</h3><h4 id="4-1-加入-graphql-插件"><a href="#4-1-加入-graphql-插件" class="headerlink" title="4.1 加入 graphql 插件"></a>4.1 加入 graphql 插件</h4><p><a href="https://pub.flutter-io.cn/packages/graphql" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/graphql</a></p>
+<ul>
+<li>pubspec.yaml</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="comment"># graphql</span></span><br><span class="line">  <span class="attr">graphql:</span> <span class="string">^3.0.2</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-2-封装-graphql-client-工具类"><a href="#4-2-封装-graphql-client-工具类" class="headerlink" title="4.2 封装 graphql client 工具类"></a>4.2 封装 graphql client 工具类</h4><ul>
+<li>lib/common/utils/graphql_client.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/values/values.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/widgets/widgets.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:graphql/client.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GraphqlClientUtil</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> OptimisticCache cache = OptimisticCache(</span><br><span class="line">    dataIdFromObject: typenameDataIdFromObject,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> client() &#123;</span><br><span class="line">    HttpLink _httpLink = HttpLink(</span><br><span class="line">      uri: <span class="string">'<span class="subst">$SERVER_STRAPI_GRAPHQL_URL</span>/graphql'</span>,</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// final AuthLink _authLink = AuthLink(</span></span><br><span class="line">    <span class="comment">//   getToken: () =&gt;</span></span><br><span class="line">    <span class="comment">//       'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZmMzNDdhYzgzOTVjMDAwY2ViYzE5NyIsImlhdCI6MTU5MzY1NDcwNiwiZXhwIjoxNTk2MjQ2NzA2fQ.RYDmNSDJxcZLLPHAf4u59IER7Bs5VoWfBo1_t-TR5yY',</span></span><br><span class="line">    <span class="comment">// );</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// final Link _link = _authLink.concat(_httpLink);</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> GraphQLClient(</span><br><span class="line">      cache: cache,</span><br><span class="line">      link: _httpLink,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 查询</span></span><br><span class="line">  <span class="keyword">static</span> Future query(&#123;</span><br><span class="line">    <span class="meta">@required</span> BuildContext context,</span><br><span class="line">    <span class="meta">@required</span> <span class="built_in">String</span> schema,</span><br><span class="line">    <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">dynamic</span>&gt; variables,</span><br><span class="line">  &#125;) <span class="keyword">async</span> &#123;</span><br><span class="line">    QueryOptions options = QueryOptions(</span><br><span class="line">      documentNode: gql(schema),</span><br><span class="line">      variables: variables,</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    QueryResult result = <span class="keyword">await</span> client().query(options);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (result.hasException) &#123;</span><br><span class="line">      toastInfo(msg: result.exception.toString());</span><br><span class="line">      <span class="keyword">throw</span> result.exception;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 操作</span></span><br><span class="line">  <span class="keyword">static</span> Future mutate(&#123;</span><br><span class="line">    <span class="meta">@required</span> BuildContext context,</span><br><span class="line">    <span class="meta">@required</span> <span class="built_in">String</span> schema,</span><br><span class="line">    <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">dynamic</span>&gt; variables,</span><br><span class="line">  &#125;) <span class="keyword">async</span> &#123;</span><br><span class="line">    QueryOptions options = QueryOptions(</span><br><span class="line">      documentNode: gql(schema),</span><br><span class="line">      variables: variables,</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    QueryResult result = <span class="keyword">await</span> client().mutate(options);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (result.hasException) &#123;</span><br><span class="line">      toastInfo(msg: result.exception.toString());</span><br><span class="line">      <span class="keyword">throw</span> result.exception;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-3-编写-graphql-查询请求"><a href="#4-3-编写-graphql-查询请求" class="headerlink" title="4.3 编写 graphql 查询请求"></a>4.3 编写 graphql 查询请求</h4><ul>
+<li>lib/common/graphql/news_content.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">String</span> GQL_NEWS_LIST = <span class="string">r'''</span></span><br><span class="line"><span class="string">  query News &#123;</span></span><br><span class="line"><span class="string">    newsContents &#123;</span></span><br><span class="line"><span class="string">      title</span></span><br><span class="line"><span class="string">      category</span></span><br><span class="line"><span class="string">      author</span></span><br><span class="line"><span class="string">      url</span></span><br><span class="line"><span class="string">      addtime</span></span><br><span class="line"><span class="string">      thumbnail &#123;</span></span><br><span class="line"><span class="string">        url</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">'''</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="4-4-编写数据实体"><a href="#4-4-编写数据实体" class="headerlink" title="4.4 编写数据实体"></a>4.4 编写数据实体</h4><p>lib/common/entitys/gql_news.dart</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GqlNewsResponseEntity</span> </span>&#123;</span><br><span class="line">  GqlNewsResponseEntity(&#123;</span><br><span class="line">    <span class="keyword">this</span>.id,</span><br><span class="line">    <span class="keyword">this</span>.title,</span><br><span class="line">    <span class="keyword">this</span>.category,</span><br><span class="line">    <span class="keyword">this</span>.author,</span><br><span class="line">    <span class="keyword">this</span>.url,</span><br><span class="line">    <span class="keyword">this</span>.addtime,</span><br><span class="line">    <span class="keyword">this</span>.thumbnail,</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">String</span> id;</span><br><span class="line">  <span class="built_in">String</span> title;</span><br><span class="line">  <span class="built_in">String</span> category;</span><br><span class="line">  <span class="built_in">String</span> author;</span><br><span class="line">  <span class="built_in">String</span> url;</span><br><span class="line">  <span class="built_in">DateTime</span> addtime;</span><br><span class="line">  Thumbnail thumbnail;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">factory</span> GqlNewsResponseEntity.fromJson(<span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">dynamic</span>&gt; json) =&gt;</span><br><span class="line">      GqlNewsResponseEntity(</span><br><span class="line">        id: json[<span class="string">"id"</span>],</span><br><span class="line">        title: json[<span class="string">"title"</span>],</span><br><span class="line">        category: json[<span class="string">"category"</span>],</span><br><span class="line">        author: json[<span class="string">"author"</span>],</span><br><span class="line">        url: json[<span class="string">"url"</span>],</span><br><span class="line">        addtime: <span class="built_in">DateTime</span>.parse(json[<span class="string">"addtime"</span>]),</span><br><span class="line">        thumbnail: Thumbnail.fromJson(json[<span class="string">"thumbnail"</span>]),</span><br><span class="line">      );</span><br><span class="line"></span><br><span class="line">  <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">dynamic</span>&gt; toJson() =&gt; &#123;</span><br><span class="line">        <span class="string">"id"</span>: id,</span><br><span class="line">        <span class="string">"title"</span>: title,</span><br><span class="line">        <span class="string">"category"</span>: category,</span><br><span class="line">        <span class="string">"author"</span>: author,</span><br><span class="line">        <span class="string">"url"</span>: url,</span><br><span class="line">        <span class="string">"addtime"</span>:</span><br><span class="line">            <span class="string">"<span class="subst">$&#123;addtime.year.toString().padLeft(<span class="number">4</span>, <span class="string">'0'</span>)&#125;</span>-<span class="subst">$&#123;addtime.month.toString().padLeft(<span class="number">2</span>, <span class="string">'0'</span>)&#125;</span>-<span class="subst">$&#123;addtime.day.toString().padLeft(<span class="number">2</span>, <span class="string">'0'</span>)&#125;</span>"</span>,</span><br><span class="line">        <span class="string">"thumbnail"</span>: thumbnail.toJson(),</span><br><span class="line">      &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Thumbnail</span> </span>&#123;</span><br><span class="line">  Thumbnail(&#123;</span><br><span class="line">    <span class="keyword">this</span>.url,</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">String</span> url;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">factory</span> Thumbnail.fromJson(<span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">dynamic</span>&gt; json) =&gt; Thumbnail(</span><br><span class="line">        url: json[<span class="string">"url"</span>],</span><br><span class="line">      );</span><br><span class="line"></span><br><span class="line">  <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">dynamic</span>&gt; toJson() =&gt; &#123;</span><br><span class="line">        <span class="string">"url"</span>: url,</span><br><span class="line">      &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-5-编写-API-访问"><a href="#4-5-编写-API-访问" class="headerlink" title="4.5 编写 API 访问"></a>4.5 编写 API 访问</h4><ul>
+<li>lib/common/apis/gql_news.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/entitys/entitys.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/graphql/graphql.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/utils/utils.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:graphql/client.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// <span class="markdown">新闻</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GqlNewsAPI</span> </span>&#123;</span><br><span class="line">  <span class="comment">/// <span class="markdown">翻页</span></span></span><br><span class="line">  <span class="keyword">static</span> Future&lt;<span class="built_in">List</span>&lt;GqlNewsResponseEntity&gt;&gt; newsPageList(&#123;</span><br><span class="line">    <span class="meta">@required</span> BuildContext context,</span><br><span class="line">    <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">dynamic</span>&gt; params,</span><br><span class="line">  &#125;) <span class="keyword">async</span> &#123;</span><br><span class="line">    QueryResult response =</span><br><span class="line">        <span class="keyword">await</span> GraphqlClientUtil.query(context: context, schema: GQL_NEWS_LIST);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> response.data[<span class="string">'newsContents'</span>]</span><br><span class="line">        .map&lt;GqlNewsResponseEntity&gt;(</span><br><span class="line">            (item) =&gt; GqlNewsResponseEntity.fromJson(item))</span><br><span class="line">        .toList();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-6-修改新闻列表页"><a href="#4-6-修改新闻列表页" class="headerlink" title="4.6 修改新闻列表页"></a>4.6 修改新闻列表页</h4><ul>
+<li>lib/pages/main/main.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'dart:async'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/apis/apis.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/entitys/entitys.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/utils/utils.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/values/values.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/widgets/widgets.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/pages/main/ad_widget.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/pages/main/categories_widget.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/pages/main/channels_widget.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/pages/main/news_item_widget.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/pages/main/newsletter_widget.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/pages/main/recommend_widget.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_easyrefresh/easy_refresh.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainPage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  MainPage(&#123;Key key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _MainPageState createState() =&gt; _MainPageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_MainPageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">MainPage</span>&gt; </span>&#123;</span><br><span class="line">  EasyRefreshController _controller; <span class="comment">// EasyRefresh控制器</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// NewsPageListResponseEntity _newsPageList; // 新闻翻页</span></span><br><span class="line">  <span class="built_in">List</span>&lt;GqlNewsResponseEntity&gt; _newsPageList; <span class="comment">// 新闻翻页</span></span><br><span class="line"></span><br><span class="line">  NewsItem _newsRecommend; <span class="comment">// 新闻推荐</span></span><br><span class="line">  <span class="built_in">List</span>&lt;CategoryResponseEntity&gt; _categories; <span class="comment">// 分类</span></span><br><span class="line">  <span class="built_in">List</span>&lt;ChannelResponseEntity&gt; _channels; <span class="comment">// 频道</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">String</span> _selCategoryCode; <span class="comment">// 选中的分类Code</span></span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> initState() &#123;</span><br><span class="line">    <span class="keyword">super</span>.initState();</span><br><span class="line">    _controller = EasyRefreshController();</span><br><span class="line">    _loadAllData();</span><br><span class="line">    _loadLatestWithDiskCache();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果有磁盘缓存，延迟3秒拉取更新档案</span></span><br><span class="line">  _loadLatestWithDiskCache() &#123;</span><br><span class="line">    <span class="keyword">if</span> (CACHE_ENABLE == <span class="keyword">true</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> cacheData = StorageUtil().getJSON(STORAGE_INDEX_NEWS_CACHE_KEY);</span><br><span class="line">      <span class="keyword">if</span> (cacheData != <span class="keyword">null</span>) &#123;</span><br><span class="line">        Timer(<span class="built_in">Duration</span>(seconds: <span class="number">3</span>), () &#123;</span><br><span class="line">          _controller.callRefresh();</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 读取所有数据</span></span><br><span class="line">  _loadAllData() <span class="keyword">async</span> &#123;</span><br><span class="line">    _categories = <span class="keyword">await</span> NewsAPI.categories(</span><br><span class="line">      context: context,</span><br><span class="line">      cacheDisk: <span class="keyword">true</span>,</span><br><span class="line">    );</span><br><span class="line">    _channels = <span class="keyword">await</span> NewsAPI.channels(</span><br><span class="line">      context: context,</span><br><span class="line">      cacheDisk: <span class="keyword">true</span>,</span><br><span class="line">    );</span><br><span class="line">    <span class="comment">// _newsRecommend = await NewsAPI.newsRecommend(</span></span><br><span class="line">    <span class="comment">//   context: context,</span></span><br><span class="line">    <span class="comment">//   cacheDisk: true,</span></span><br><span class="line">    <span class="comment">// );</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// _newsPageList = await NewsAPI.newsPageList(</span></span><br><span class="line">    <span class="comment">//   context: context,</span></span><br><span class="line">    <span class="comment">//   cacheDisk: true,</span></span><br><span class="line">    <span class="comment">// );</span></span><br><span class="line">    _newsPageList = <span class="keyword">await</span> GqlNewsAPI.newsPageList(</span><br><span class="line">      context: context,</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    _selCategoryCode = _categories.first.code;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (mounted) &#123;</span><br><span class="line">      setState(() &#123;&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 拉取推荐、新闻</span></span><br><span class="line">  _loadNewsData(</span><br><span class="line">    categoryCode, &#123;</span><br><span class="line">    <span class="built_in">bool</span> refresh = <span class="keyword">false</span>,</span><br><span class="line">  &#125;) <span class="keyword">async</span> &#123;</span><br><span class="line">    _selCategoryCode = categoryCode;</span><br><span class="line">    _newsRecommend = <span class="keyword">await</span> NewsAPI.newsRecommend(</span><br><span class="line">      context: context,</span><br><span class="line">      params: NewsRecommendRequestEntity(categoryCode: categoryCode),</span><br><span class="line">      refresh: refresh,</span><br><span class="line">      cacheDisk: <span class="keyword">true</span>,</span><br><span class="line">    );</span><br><span class="line">    <span class="comment">// _newsPageList = await NewsAPI.newsPageList(</span></span><br><span class="line">    <span class="comment">//   context: context,</span></span><br><span class="line">    <span class="comment">//   params: NewsPageListRequestEntity(categoryCode: categoryCode),</span></span><br><span class="line">    <span class="comment">//   refresh: refresh,</span></span><br><span class="line">    <span class="comment">//   cacheDisk: true,</span></span><br><span class="line">    <span class="comment">// );</span></span><br><span class="line">    _newsPageList = <span class="keyword">await</span> GqlNewsAPI.newsPageList(</span><br><span class="line">      context: context,</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (mounted) &#123;</span><br><span class="line">      setState(() &#123;&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 分类菜单</span></span><br><span class="line">  Widget _buildCategories() &#123;</span><br><span class="line">    <span class="keyword">return</span> _categories == <span class="keyword">null</span></span><br><span class="line">        ? Container()</span><br><span class="line">        : newsCategoriesWidget(</span><br><span class="line">            categories: _categories,</span><br><span class="line">            selCategoryCode: _selCategoryCode,</span><br><span class="line">            onTap: (CategoryResponseEntity item) &#123;</span><br><span class="line">              _loadNewsData(item.code);</span><br><span class="line">            &#125;,</span><br><span class="line">          );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 推荐阅读</span></span><br><span class="line">  Widget _buildRecommend() &#123;</span><br><span class="line">    <span class="keyword">return</span> _newsRecommend == <span class="keyword">null</span> <span class="comment">// 数据没到位，可以用骨架图展示</span></span><br><span class="line">        ? Container()</span><br><span class="line">        : recommendWidget(_newsRecommend);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 频道</span></span><br><span class="line">  Widget _buildChannels() &#123;</span><br><span class="line">    <span class="keyword">return</span> _channels == <span class="keyword">null</span></span><br><span class="line">        ? Container()</span><br><span class="line">        : newsChannelsWidget(</span><br><span class="line">            channels: _channels,</span><br><span class="line">            onTap: (ChannelResponseEntity item) &#123;&#125;,</span><br><span class="line">          );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 新闻列表</span></span><br><span class="line">  Widget _buildNewsList() &#123;</span><br><span class="line">    <span class="keyword">return</span> _newsPageList == <span class="keyword">null</span></span><br><span class="line">        ? Container(</span><br><span class="line">            height: duSetHeight(<span class="number">161</span> * <span class="number">5</span> + <span class="number">100.0</span>),</span><br><span class="line">          )</span><br><span class="line">        : Column(</span><br><span class="line">            children: _newsPageList.map((item) &#123;</span><br><span class="line">              <span class="comment">// 新闻行</span></span><br><span class="line">              <span class="built_in">List</span>&lt;Widget&gt; widgets = &lt;Widget&gt;[</span><br><span class="line">                newsItem(item),</span><br><span class="line">                Divider(height: <span class="number">1</span>),</span><br><span class="line">              ];</span><br><span class="line"></span><br><span class="line">              <span class="comment">// 每 5 条 显示广告</span></span><br><span class="line">              <span class="built_in">int</span> index = _newsPageList.indexOf(item);</span><br><span class="line">              <span class="keyword">if</span> (((index + <span class="number">1</span>) % <span class="number">5</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">                widgets.addAll(&lt;Widget&gt;[</span><br><span class="line">                  adWidget(),</span><br><span class="line">                  Divider(height: <span class="number">1</span>),</span><br><span class="line">                ]);</span><br><span class="line">              &#125;</span><br><span class="line"></span><br><span class="line">              <span class="comment">// 返回</span></span><br><span class="line">              <span class="keyword">return</span> Column(</span><br><span class="line">                children: widgets,</span><br><span class="line">              );</span><br><span class="line">            &#125;).toList(),</span><br><span class="line">          );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ad 广告条</span></span><br><span class="line">  <span class="comment">// 邮件订阅</span></span><br><span class="line">  Widget _buildEmailSubscribe() &#123;</span><br><span class="line">    <span class="keyword">return</span> newsletterWidget();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> _newsPageList == <span class="keyword">null</span></span><br><span class="line">        ? cardListSkeleton()</span><br><span class="line">        : EasyRefresh(</span><br><span class="line">            enableControlFinishRefresh: <span class="keyword">true</span>,</span><br><span class="line">            controller: _controller,</span><br><span class="line">            header: ClassicalHeader(),</span><br><span class="line">            onRefresh: () <span class="keyword">async</span> &#123;</span><br><span class="line">              <span class="keyword">await</span> _loadNewsData(</span><br><span class="line">                _selCategoryCode,</span><br><span class="line">                refresh: <span class="keyword">true</span>,</span><br><span class="line">              );</span><br><span class="line">              _controller.finishRefresh();</span><br><span class="line">            &#125;,</span><br><span class="line">            child: SingleChildScrollView(</span><br><span class="line">              child: Column(</span><br><span class="line">                children: &lt;Widget&gt;[</span><br><span class="line">                  _buildCategories(),</span><br><span class="line">                  Divider(height: <span class="number">1</span>),</span><br><span class="line">                  _buildRecommend(),</span><br><span class="line">                  Divider(height: <span class="number">1</span>),</span><br><span class="line">                  _buildChannels(),</span><br><span class="line">                  Divider(height: <span class="number">1</span>),</span><br><span class="line">                  _buildNewsList(),</span><br><span class="line">                  Divider(height: <span class="number">1</span>),</span><br><span class="line">                  _buildEmailSubscribe(),</span><br><span class="line">                ],</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">          );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-7-修改新闻详情页"><a href="#4-7-修改新闻详情页" class="headerlink" title="4.7 修改新闻详情页"></a>4.7 修改新闻详情页</h4><ul>
+<li>lib/pages/main/news_item_widget.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:auto_route/auto_route.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/entitys/entitys.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/utils/utils.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/values/values.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/widgets/widgets.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter_ducafecat_news/common/router/router.gr.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// <span class="markdown">新闻行 Item</span></span></span><br><span class="line">Widget newsItem(GqlNewsResponseEntity item) &#123;</span><br><span class="line">  <span class="keyword">return</span> Container(</span><br><span class="line">    height: duSetHeight(<span class="number">161</span>),</span><br><span class="line">    padding: EdgeInsets.all(duSetWidth(<span class="number">20</span>)),</span><br><span class="line">    child: Row(</span><br><span class="line">      mainAxisAlignment: MainAxisAlignment.spaceBetween,</span><br><span class="line">      crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">      children: &lt;Widget&gt;[</span><br><span class="line">        <span class="comment">// 图</span></span><br><span class="line">        InkWell(</span><br><span class="line">          onTap: () &#123;</span><br><span class="line">            ExtendedNavigator.rootNavigator.pushNamed(</span><br><span class="line">              Routes.detailsPageRoute,</span><br><span class="line">              arguments: DetailsPageArguments(item: item),</span><br><span class="line">            );</span><br><span class="line">          &#125;,</span><br><span class="line">          child: imageCached(</span><br><span class="line">            <span class="string">'<span class="subst">$SERVER_STRAPI_GRAPHQL_URL</span><span class="subst">$&#123;item.thumbnail.url&#125;</span>'</span>,</span><br><span class="line">            width: duSetWidth(<span class="number">121</span>),</span><br><span class="line">            height: duSetWidth(<span class="number">121</span>),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">        <span class="comment">// 右侧</span></span><br><span class="line">        SizedBox(</span><br><span class="line">          width: duSetWidth(<span class="number">194</span>),</span><br><span class="line">          child: Column(</span><br><span class="line">            crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">            children: &lt;Widget&gt;[</span><br><span class="line">              <span class="comment">// 作者</span></span><br><span class="line">              Container(</span><br><span class="line">                margin: EdgeInsets.all(<span class="number">0</span>),</span><br><span class="line">                child: Text(</span><br><span class="line">                  item.author,</span><br><span class="line">                  style: TextStyle(</span><br><span class="line">                    fontFamily: <span class="string">'Avenir'</span>,</span><br><span class="line">                    fontWeight: FontWeight.normal,</span><br><span class="line">                    color: AppColors.thirdElementText,</span><br><span class="line">                    fontSize: duSetFontSize(<span class="number">14</span>),</span><br><span class="line">                    height: <span class="number">1</span>,</span><br><span class="line">                  ),</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              <span class="comment">// 标题</span></span><br><span class="line">              InkWell(</span><br><span class="line">                onTap: () &#123;</span><br><span class="line">                  ExtendedNavigator.rootNavigator.pushNamed(</span><br><span class="line">                    Routes.detailsPageRoute,</span><br><span class="line">                    arguments: DetailsPageArguments(item: item),</span><br><span class="line">                  );</span><br><span class="line">                &#125;,</span><br><span class="line">                child: Container(</span><br><span class="line">                  margin: EdgeInsets.only(top: duSetHeight(<span class="number">10</span>)),</span><br><span class="line">                  child: Text(</span><br><span class="line">                    item.title,</span><br><span class="line">                    style: TextStyle(</span><br><span class="line">                      fontFamily: <span class="string">'Montserrat'</span>,</span><br><span class="line">                      fontWeight: FontWeight.w500,</span><br><span class="line">                      color: AppColors.primaryText,</span><br><span class="line">                      fontSize: duSetFontSize(<span class="number">16</span>),</span><br><span class="line">                      height: <span class="number">1</span>,</span><br><span class="line">                    ),</span><br><span class="line">                    overflow: TextOverflow.clip,</span><br><span class="line">                    maxLines: <span class="number">3</span>,</span><br><span class="line">                  ),</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              <span class="comment">// Spacer</span></span><br><span class="line">              Spacer(),</span><br><span class="line">              <span class="comment">// 一行 3 列</span></span><br><span class="line">              Container(</span><br><span class="line">                child: Row(</span><br><span class="line">                  crossAxisAlignment: CrossAxisAlignment.center,</span><br><span class="line">                  children: &lt;Widget&gt;[</span><br><span class="line">                    <span class="comment">// 分类</span></span><br><span class="line">                    ConstrainedBox(</span><br><span class="line">                      constraints: BoxConstraints(</span><br><span class="line">                        maxWidth: duSetWidth(<span class="number">60</span>),</span><br><span class="line">                      ),</span><br><span class="line">                      child: Text(</span><br><span class="line">                        item.category,</span><br><span class="line">                        style: TextStyle(</span><br><span class="line">                          fontFamily: <span class="string">'Avenir'</span>,</span><br><span class="line">                          fontWeight: FontWeight.normal,</span><br><span class="line">                          color: AppColors.secondaryElementText,</span><br><span class="line">                          fontSize: duSetFontSize(<span class="number">14</span>),</span><br><span class="line">                          height: <span class="number">1</span>,</span><br><span class="line">                        ),</span><br><span class="line">                        overflow: TextOverflow.clip,</span><br><span class="line">                        maxLines: <span class="number">1</span>,</span><br><span class="line">                      ),</span><br><span class="line">                    ),</span><br><span class="line">                    <span class="comment">// 添加时间</span></span><br><span class="line">                    Container(</span><br><span class="line">                      width: duSetWidth(<span class="number">15</span>),</span><br><span class="line">                    ),</span><br><span class="line">                    ConstrainedBox(</span><br><span class="line">                      constraints: BoxConstraints(</span><br><span class="line">                        maxWidth: duSetWidth(<span class="number">100</span>),</span><br><span class="line">                      ),</span><br><span class="line">                      child: Text(</span><br><span class="line">                        <span class="string">'• <span class="subst">$&#123;duTimeLineFormat(item.addtime)&#125;</span>'</span>,</span><br><span class="line">                        style: TextStyle(</span><br><span class="line">                          fontFamily: <span class="string">'Avenir'</span>,</span><br><span class="line">                          fontWeight: FontWeight.normal,</span><br><span class="line">                          color: AppColors.thirdElementText,</span><br><span class="line">                          fontSize: duSetFontSize(<span class="number">14</span>),</span><br><span class="line">                          height: <span class="number">1</span>,</span><br><span class="line">                        ),</span><br><span class="line">                        overflow: TextOverflow.clip,</span><br><span class="line">                        maxLines: <span class="number">1</span>,</span><br><span class="line">                      ),</span><br><span class="line">                    ),</span><br><span class="line">                    <span class="comment">// 更多</span></span><br><span class="line">                    Spacer(),</span><br><span class="line">                    InkWell(</span><br><span class="line">                      child: Icon(</span><br><span class="line">                        Icons.more_horiz,</span><br><span class="line">                        color: AppColors.primaryText,</span><br><span class="line">                        size: <span class="number">24</span>,</span><br><span class="line">                      ),</span><br><span class="line">                      onTap: () &#123;&#125;,</span><br><span class="line">                    ),</span><br><span class="line">                  ],</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">            ],</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">      ],</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h3 id="设计稿蓝湖预览"><a href="#设计稿蓝湖预览" class="headerlink" title="设计稿蓝湖预览"></a>设计稿蓝湖预览</h3><p><a href="https://lanhuapp.com/url/lYuz1" target="_blank" rel="noopener">https://lanhuapp.com/url/lYuz1</a><br>密码: gSKl</p>
+<blockquote>
+<p>蓝湖现在收费了，所以查看标记还请自己上传 xd 设计稿<br>商业设计稿文件不好直接分享, 可以加微信联系 ducafecat</p>
+</blockquote>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://pub.flutter-io.cn/packages/graphql" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/graphql</a></li>
+<li><a href="https://strapi.io/documentation/v3.x/getting-started/quick-start.html" target="_blank" rel="noopener">https://strapi.io/documentation/v3.x/getting-started/quick-start.html</a></li>
+</ul>
+<hr>
+<p>© 猫哥</p>
+<p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">https://ducafecat.tech</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/&title=《Flutter 实战从零开始 新闻客户端 - 14 headless strapi + graphql 快速构建新闻后台》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/&title=《Flutter 实战从零开始 新闻客户端 - 14 headless strapi + graphql 快速构建新闻后台》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 实战从零开始 新闻客户端 - 14 headless strapi + graphql 快速构建新闻后台》 — duCafeCat&url=https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/07/09/flutter-project/flutter-project-news-15-strapi-graphql-data-model/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Flutter 实战从零开始 新闻客户端 - 15 headless strapi 数据建模 graphql 条件查询排序</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/06/18/flutter-project/flutter-project-news-13-code-generate-supernova/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Flutter 实战从零开始 新闻客户端 - 13 使用 supernova、imgcook 导入 sketch psd xd 自动生成用户中心代码</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                    <a href="http://www.miitbeian.gov.cn/" target="_blank">
+                        京ICP备2021009050号
+                    </a><br>
+                    
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/&title=《Flutter 实战从零开始 新闻客户端 - 14 headless strapi + graphql 快速构建新闻后台》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/&title=《Flutter 实战从零开始 新闻客户端 - 14 headless strapi + graphql 快速构建新闻后台》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter 实战从零开始 新闻客户端 - 14 headless strapi + graphql 快速构建新闻后台》 — duCafeCat&url=https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2020/07/03/flutter-project/flutter-project-news-14-headless-strapi-graphql/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADLUlEQVR42u3aQW7jQAwEQP//097zHuR0D2UgYkqnwDakKQ4QiuS8XvH1vriuvr26Q/v31bdXv7n5wsbGxn4I+/3xaheRPOXz5y348wZchgYbGxt7HbtNOcmtc2QSgrMAXX6OjY2N/efZ87f9z2FqUxQ2NjY29lkCSx6QlCiTdIWNjY2NnTeVJgtNgtWWNJMyCRsbG3sTOy8qfv/fX5lvY2NjY/9i9ru82nIiX1abREcKbGxs7EXss2W1raK2nJg0nooDQ9jY2Ngr2J8fPDlA0y7obLRQjwTyR2JjY2M/hH0Wgva45LzkaMe9xTZgY2NjP5zdNmLadDVpSJ3xohEyNjY29mp2+9J/70GfSeCKsgobGxt7EbstNs4O0ORj4LYs+crxHWxsbOxHsc8en6S99ujPWSsqv8N/CmxsbOxF7HyhLW8yrP1GwYONjY29lT2pXRJkOxiY/LLupWFjY2OvYM/bTG0KaUOW3+1114WNjY39QPbZ2DUf3E7KjLPGUzSoxsbGxl7Bfh9ddyXCecPosDTCxsbGXsdOXuvnI+GzFk9bkESbhI2Njb2O3bZy8mZQm/zasXFSePww08bGxsZ+OLv+1x8g8zZT3nhq7xkVQtjY2Ngr2O0i2tJlMiSYl0CXaQwbGxt7HTtv4ucv+nlKy8PXbtXlJ9jY2NiL2GeAPJm1VdGkzIhOJ032DRsbG/tXstt00g5l26Z/sgF5iC+fi42Njb2OnR+XPGvlTEh5uVLcDRsbG3sRu71dHqA8EHelzPpu2NjY2IvYk4b+ZAycryFv+ucDD2xsbOxN7DxRJckpb/S3IWvLkuLgDjY2NvYi9r2HaYr8ORgY58XPq903bGxs7Mey25ZQ2zZq20A/pKKyCYWNjY29if0ur3wROeOsnMgT1WXqwsbGxl7BnoxU22IjSXvfCNMo7WFjY2M/hH2WtCaYpIw5C2ixEmxsbOx17EliyBPeWV49y8A/lCXY2NjYf5g9+U1LytNSuzHY2NjYf5mdp6I8jeVt/XY8fFmoYGNjY69jt4u798BN3lT6HKDiW2xsbOxF7HzQe3awph055IH7RisKGxsb+1HsfzAmF3LDHDRXAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

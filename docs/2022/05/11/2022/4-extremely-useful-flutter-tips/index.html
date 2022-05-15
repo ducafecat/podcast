@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>4 个非常有用的 Flutter 技巧 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="今天我将向您展示 4 个非常有用的 Flutter 技巧，您可以立即应用到您的项目。我不会向您展示任何包或扩展，就像我通常做的那样，但是非常简单，但是非常有用的提示！ 原文 https:">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4 个非常有用的 Flutter 技巧">
+<meta property="og:url" content="https://blog.ducafecat.tech/2022/05/11/2022/4-extremely-useful-flutter-tips/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="今天我将向您展示 4 个非常有用的 Flutter 技巧，您可以立即应用到您的项目。我不会向您展示任何包或扩展，就像我通常做的那样，但是非常简单，但是非常有用的提示！ 原文 https:">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220511061146.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/06f8f17f37d444f1637cba69d89514eb854cacb63f238734950c7d17cdc97457.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/4a31cf09ccec7f67753e1eb970996cca64a82bcaae00544c81f443550f601433.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/15770749db4b1bb2fff56d4b17bdb681831ab693634c2b9619b910e4a9e15cd0.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/51864fc203e5f3ea47220452f91a8ce67107075b072c2f9a4d5e5e09b039474d.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/8dd70299148c3f7f4bb39dd87688903cd2ed9a09fc035ab4ef659fece1068a92.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/bce876ed3de8b6841edeefacf7177cf763e13eb6f46fa9cf4fc008f908164360.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/5da1983a1d3e8c693ac7ddef7f7d6b20d0bf0964861ccf9d6b2bb055f0d72cb0.gif">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/248ecbc9e81424709aa6412e952f76208b4145f30ff9833dd9061aa22593ee2f.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/257d73d09393efeb549ccb771f3aa4d735971246739e5382fc64901088965e69.gif">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/a6464c595fd48b5d702da42dfffd57684cea98f16c189dfdbe828d939f048d9b.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/a43e35ded87dc43f3dd7042402371ce73d8b8346d0b54a5ea88735c8ba8a8e0b.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/da6718f224f4910a55400a0cb106ee2ed32301937d96bfd05519848cc80eda12.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/e45f73d516585564688a4dbb0d723f2599d4c590ee2ec341b60412bcc6e919e7.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/e5b8dbbd3edab4a4d14c0c8bcd42bc7a49f9f9197643eda7c1bad748928b8fd1.png">
+<meta property="og:image" content="https://ducafecat.tech/img/banner-gzh.png">
+<meta property="og:updated_time" content="2022-05-10T22:11:49.954Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="4 个非常有用的 Flutter 技巧">
+<meta name="twitter:description" content="今天我将向您展示 4 个非常有用的 Flutter 技巧，您可以立即应用到您的项目。我不会向您展示任何包或扩展，就像我通常做的那样，但是非常简单，但是非常有用的提示！ 原文 https:">
+<meta name="twitter:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220511061146.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">4 个非常有用的 Flutter 技巧</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">4 个非常有用的 Flutter 技巧</h1>
+        <h5 class="subtitle">
+             <time datetime="2022-05-10T16:00:00.000Z" itemprop="datePublished" class="page-time">
+	2022-05-11
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原文"><span class="post-toc-number">1.</span> <span class="post-toc-text">原文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">2.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简化-Assert-管理"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">简化 Assert 管理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更容易-imports"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">更容易 imports</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#从按钮上移除飞溅效果"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">从按钮上移除飞溅效果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更简单的平台小工具"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">更简单的平台小工具</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可见性小工具"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">可见性小工具</span></a></li></ol></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-2022/4-extremely-useful-flutter-tips" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            4 个非常有用的 Flutter 技巧
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-05-11 00:00:00" datetime="2022-05-10T16:00:00.000Z"  itemprop="datePublished">2022-05-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/译文/">译文</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220511061146.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>今天我将向您展示 4 个非常有用的 Flutter 技巧，您可以立即应用到您的项目。我不会向您展示任何包或扩展，就像我通常做的那样，但是非常简单，但是非常有用的提示！</p>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><blockquote>
+<p><a href="https://tomicriedel.medium.com/4-extremely-useful-flutter-tips-57686f1e3707" target="_blank" rel="noopener">https://tomicriedel.medium.com/4-extremely-useful-flutter-tips-57686f1e3707</a></p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>今天我将向您展示 4 个非常有用的 Flutter 技巧，您可以立即应用到您的项目。我不会向您展示任何包或扩展，就像我通常做的那样，但是非常简单，但是非常有用的提示！</p>
+<h3 id="简化-Assert-管理"><a href="#简化-Assert-管理" class="headerlink" title="简化 Assert 管理"></a>简化 Assert 管理</h3><p>管理 Assert 可能非常困难。如果你想在你的应用程序中多次使用一个图像，你必须一次又一次地指定路径。但是有一个简单得多的解决方案。创建一个 App Assets 类，用于存储所有的 App Assert。现在您可以轻松地使用 <code>AppAssets.appLogo</code> 或 <code>AppAssets.noConnection</code> 调用 Assert。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/06f8f17f37d444f1637cba69d89514eb854cacb63f238734950c7d17cdc97457.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/4a31cf09ccec7f67753e1eb970996cca64a82bcaae00544c81f443550f601433.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="更容易-imports"><a href="#更容易-imports" class="headerlink" title="更容易 imports"></a>更容易 imports</h3><p>在一个文件的开头看到和管理成千上万的导入真的很烦人。这就是为什么我要向你们展示一种轻松减少进口的方法。</p>
+<p>假设你有一个文件夹叫做 Constants, 里面的文件包括 <code>app_colors.dart</code>, <code>app_fonts.dart</code>, <code>app_theme.dart</code>, <code>app_constants</code> and <code>app_assets.dart</code> are.</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/15770749db4b1bb2fff56d4b17bdb681831ab693634c2b9619b910e4a9e15cd0.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>在这个文件夹中，您现在创建一个名为 constant.dart 的新文件。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/51864fc203e5f3ea47220452f91a8ce67107075b072c2f9a4d5e5e09b039474d.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>在这里，您为每个文件编写一个导出语句。现在你可以通过简单的导入 constant.dart 来访问你的每个文件:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/8dd70299148c3f7f4bb39dd87688903cd2ed9a09fc035ab4ef659fece1068a92.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/bce876ed3de8b6841edeefacf7177cf763e13eb6f46fa9cf4fc008f908164360.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="从按钮上移除飞溅效果"><a href="#从按钮上移除飞溅效果" class="headerlink" title="从按钮上移除飞溅效果"></a>从按钮上移除飞溅效果</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/5da1983a1d3e8c693ac7ddef7f7d6b20d0bf0964861ccf9d6b2bb055f0d72cb0.gif" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>当你点击一个按钮时，每个人都知道这种飞溅效果，我一点也不喜欢。</p>
+<p>所以我将向你们展示如何用一条线消除这种效果。</p>
+<p>为此你必须使用 <code>splashFactory</code>:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/248ecbc9e81424709aa6412e952f76208b4145f30ff9833dd9061aa22593ee2f.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>现在你的按钮在按下的时候看起来像这样:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/257d73d09393efeb549ccb771f3aa4d735971246739e5382fc64901088965e69.gif" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>(我一直在点击按钮)</p>
+<h3 id="更简单的平台小工具"><a href="#更简单的平台小工具" class="headerlink" title="更简单的平台小工具"></a>更简单的平台小工具</h3><p>每个 Flutter 开发人员可能都知道当你查询用户是 iOS 还是 Android 时的情况。因此，您然后显示一个特定的 wdiget，例如 Switch 或 CupertinoSwitch。但是如果我告诉你，你不需要一个查询，也不需要两个小工具呢？怎么做到的？这就是我现在要展示给你们的:</p>
+<p>许多可用于安卓和 iOS 的小工具都有一个。安卓版本的自适应扩展。例如，让我们用。适应的:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/a6464c595fd48b5d702da42dfffd57684cea98f16c189dfdbe828d939f048d9b.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/a43e35ded87dc43f3dd7042402371ce73d8b8346d0b54a5ea88735c8ba8a8e0b.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/da6718f224f4910a55400a0cb106ee2ed32301937d96bfd05519848cc80eda12.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>好的，这已经很好了，但是最好的还在后面: 这也可以用于图标。要做到这一点，你只需要使用 <code>Icons.adaptive.share</code> 在 Android 和 iOS 上显示一个共享图标。</p>
+<p>我不知道这些小工具具体适用于哪些部件，但无论如何，<code>Slider</code>、 <code>SwitchListTile</code> 和 <code>CircularProgressIndicator</code> 都可以使用这个特性。</p>
+<h3 id="可见性小工具"><a href="#可见性小工具" class="headerlink" title="可见性小工具"></a>可见性小工具</h3><p>使用 bool 来查询一个小部件是否应该可见通常是这样的:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/e45f73d516585564688a4dbb0d723f2599d4c590ee2ec341b60412bcc6e919e7.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>但是还有一个名为可见性的小工具可以做到这一点:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/e5b8dbbd3edab4a4d14c0c8bcd42bc7a49f9f9197643eda7c1bad748928b8fd1.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>这样看起来好多了，对吧？</p>
+<p>end</p>
+<p>谢谢你的阅读，祝你有愉快的一天！</p>
+<hr>
+<p>© 猫哥</p>
+<ul>
+<li><p>微信 ducafecat</p>
+</li>
+<li><p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">博客 ducafecat.tech</a></p>
+</li>
+<li><p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">github</a></p>
+</li>
+<li><p><a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">bilibili</a></p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/banner-gzh.png" alt="订阅号" title>
+                </div>
+                <div class="image-caption">订阅号</div>
+            </figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/05/11/2022/4-extremely-useful-flutter-tips/&title=《4 个非常有用的 Flutter 技巧》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/05/11/2022/4-extremely-useful-flutter-tips/&title=《4 个非常有用的 Flutter 技巧》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/05/11/2022/4-extremely-useful-flutter-tips/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《4 个非常有用的 Flutter 技巧》 — duCafeCat&url=https://blog.ducafecat.tech/2022/05/11/2022/4-extremely-useful-flutter-tips/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/05/11/2022/4-extremely-useful-flutter-tips/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/05/11/2022/10-flutter-tips-season-2-part-5-10/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">10 个 Flutter 优秀组件</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/05/08/2022/7-cool-features-of-dart-language/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Dart 语言的7个很酷的特点</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                    <a href="http://www.miitbeian.gov.cn/" target="_blank">
+                        京ICP备2021009050号
+                    </a><br>
+                    
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/05/11/2022/4-extremely-useful-flutter-tips/&title=《4 个非常有用的 Flutter 技巧》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/05/11/2022/4-extremely-useful-flutter-tips/&title=《4 个非常有用的 Flutter 技巧》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/05/11/2022/4-extremely-useful-flutter-tips/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《4 个非常有用的 Flutter 技巧》 — duCafeCat&url=https://blog.ducafecat.tech/2022/05/11/2022/4-extremely-useful-flutter-tips/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/05/11/2022/4-extremely-useful-flutter-tips/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuUlEQVR42u3aQW7cQAwEQP//0w6QkwPH2m5yJnaA0mmxlrWqOYijJt/e4uP99/Hx88dvPp/5+fznaz6fmfx1deDh4eGNbv2rI7np/L/yqyWfn+8ZDw8P7zYvLwazkjArD/ur4eHh4X0v75lxtjzk94OHh4f383lteJEsCh4eHt7/yEse7puwtYW18ceBrAUPDw8v5s0aYN/7+Xp/Dw8PD2/UVc+LRBtPbLbjxd3i4eHhXeAlt9gWjIQ6m4zKq8CLS+Ph4eEteO2rfhsK5P+bxxzP7bQ/PuPh4eFd4M0CiGQgoB2oagPc9q7w8PDwTvFmLaXNFrxdgnpQ4Lnu4eHh4R3iPW9zZyMCsyGtNox4cQ4eHh7eBV772p8sRB43fFsYgYeHh7eOcfPX/lkJaZesLUX1lhoPDw9vzcvDgrYMtAMHyTdFxcPDw8O7xmubUvvBqfYKs0AEDw8P7wZv1tZKHtx522w2rFCz8fDw8A7x8jVoRwTa8LdtqkXXx8PDw7vAa9tUsy112+zf3w8eHh7ebd7smI1JtVvnWcHAw8PDu81rH+Wbjfip4YOiIOHh4eEd5bXb5eT7fLyg3XDXhQcPDw/vMm/z+G6HsdrSMowe8PDw8K7xNg3+NnidbbXzEvKXdwU8PDy8o7wWmT+Un6/QDiWshrrw8PDwjvJONa6S5dhs35/PfDFThoeHh3eNlw8EJNFDO1CVl4diY42Hh4d3gbeJYmex72xBZwNheHh4eDd47+Wx32rPysYw4MDDw8O7wJtVkk14sdmgzxpseHh4eDd4eQCRvPbnbap8CfKxhre8e4aHh4e35rUb5U2EMfutYykLHh4e3j/ktS38NqidYV4sBx4eHt6P5OXt/E2k2/4KHh4e3m3eJow4++ifFZ4vfwUPDw/vAm/2kt9GGPk5mxB5eODh4eGlvF8/CBbbXAcJHAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

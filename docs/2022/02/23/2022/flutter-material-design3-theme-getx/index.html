@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flutter GetX + Material Design 3 Theme 样式自定义 | duCafeCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="flutter">
+    <meta name="description" content="tips-getx-material-design3              效果展示 样式自定义    Material 样式调试工具   本节目标 了解 Material Design 设计样式表 Flutt">
+<meta name="keywords" content="flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter GetX + Material Design 3 Theme 样式自定义">
+<meta property="og:url" content="https://blog.ducafecat.tech/2022/02/23/2022/flutter-material-design3-theme-getx/index.html">
+<meta property="og:site_name" content="duCafeCat">
+<meta property="og:description" content="tips-getx-material-design3              效果展示 样式自定义    Material 样式调试工具   本节目标 了解 Material Design 设计样式表 Flutt">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/tips-getx-material-design3.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123657.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123720.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123759.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123818.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123837.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225102123.png">
+<meta property="og:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225102230.png">
+<meta property="og:image" content="https://ducafecat.tech/img/banner-gzh.png">
+<meta property="og:updated_time" content="2022-03-01T09:17:21.093Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter GetX + Material Design 3 Theme 样式自定义">
+<meta name="twitter:description" content="tips-getx-material-design3              效果展示 样式自定义    Material 样式调试工具   本节目标 了解 Material Design 设计样式表 Flutt">
+<meta name="twitter:image" content="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/tips-getx-material-design3.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="duCafeCat" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/avatar.jpg">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">猫哥</h5>
+                    <a href="mailto:ducafecat@gmail.com" title="ducafecat@gmail.com" class="mail">ducafecat@gmail.com</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Archives
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        Tags
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        Categories
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <img src="/img/weixin.png" alt="微信号">
+
+    </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flutter GetX + Material Design 3 Theme 样式自定义</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="Search" />
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container fade-scale">
+        <h1 class="title">Flutter GetX + Material Design 3 Theme 样式自定义</h1>
+        <h5 class="subtitle">
+             <time datetime="2022-02-23T02:00:00.000Z" itemprop="datePublished" class="page-time">
+	2022-02-23
+</time>
+
+
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/flutter/">flutter</a></li></ul>
+ 
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+<aside class="post-widget">
+
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#效果展示"><span class="post-toc-number">1.</span> <span class="post-toc-text">效果展示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节目标"><span class="post-toc-number">2.</span> <span class="post-toc-text">本节目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视频"><span class="post-toc-number">3.</span> <span class="post-toc-text">视频</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">4.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">6.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#了解-Material-样式表"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">了解 Material 样式表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Flutter-中一步步定制你的样式"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">Flutter 中一步步定制你的样式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第一步-生成-colorScheme，创建-ThemeData"><span class="post-toc-number">6.2.1.</span> <span class="post-toc-text">第一步: 生成 colorScheme，创建 ThemeData</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第二步-切换-theme-效果"><span class="post-toc-number">6.2.2.</span> <span class="post-toc-text">第二步: 切换 theme 效果</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第三步-自定义主题色-MaterialColor"><span class="post-toc-number">6.2.3.</span> <span class="post-toc-text">第三步: 自定义主题色 MaterialColor</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第四步-全局定义组件样式"><span class="post-toc-number">6.2.4.</span> <span class="post-toc-text">第四步: 全局定义组件样式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第五步-局部定义组件样式"><span class="post-toc-number">6.2.5.</span> <span class="post-toc-text">第五步: 局部定义组件样式</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">7.</span> <span class="post-toc-text">总结</span></a></li></ol>
+    </nav>
+
+</aside>
+
+
+
+<article id="post-2022/flutter-material-design3-theme-getx" class="post-article article-type-post fade"
+    itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">
+            Flutter GetX + Material Design 3 Theme 样式自定义
+        </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-02-23 10:00:00" datetime="2022-02-23T02:00:00.000Z"  itemprop="datePublished">2022-02-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/flutter/">flutter</a></li></ul>
+
+
+
+            
+
+        </div>
+
+        <img src="/img/banner-gzh.png" alt="微信公账号">
+
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/tips-getx-material-design3.png" alt="tips-getx-material-design3" title>
+                </div>
+                <div class="image-caption">tips-getx-material-design3</div>
+            </figure>
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><ul>
+<li>样式自定义</li>
+</ul>
+<p><img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123657.png" style="zoom:33%;"></p>
+<ul>
+<li>Material 样式调试工具</li>
+</ul>
+<p><img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123720.png" style="zoom:25%;float:left;"><br><img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123759.png" style="zoom:25%;float:left;"><br><img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123818.png" style="zoom:25%;float:left;"><br><img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225123837.png" style="zoom:25%;"></p>
+<h2 id="本节目标"><a href="#本节目标" class="headerlink" title="本节目标"></a>本节目标</h2><ul>
+<li>了解 Material Design 设计样式表</li>
+<li>Flutter 中自定义样式（全局、局部）<ul>
+<li>颜色</li>
+<li>字体</li>
+<li>组件</li>
+</ul>
+</li>
+</ul>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><iframe src="//player.bilibili.com/player.html?aid=936996374&bvid=BV1aT4y1S7pB&cid=519506964&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p><a href="https://www.bilibili.com/video/BV1aT4y1S7pB" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1aT4y1S7pB</a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li><p>Flutter GetX 中定制你的样式<br><a href="https://github.com/ducafecat/flutter_develop_tips/tree/main/flutter_theme_custom_getx" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_develop_tips/tree/main/flutter_theme_custom_getx</a></p>
+</li>
+<li><p>调试你的样式<br><a href="https://github.com/ducafecat/flutter_develop_tips/tree/main/flutter_material_design3_theme_getx" target="_blank" rel="noopener">https://github.com/ducafecat/flutter_develop_tips/tree/main/flutter_material_design3_theme_getx</a></p>
+</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><p>Material Design 2<br><a href="https://material.io" target="_blank" rel="noopener">https://material.io</a></p>
+</li>
+<li><p>Material Design 3<br><a href="https://m3.material.io" target="_blank" rel="noopener">https://m3.material.io</a><br><a href="https://m3.material.io/styles/color/overview" target="_blank" rel="noopener">https://m3.material.io/styles/color/overview</a><br><a href="https://m3.material.io/styles/typography/overview" target="_blank" rel="noopener">https://m3.material.io/styles/typography/overview</a><br><a href="https://m3.material.io/foundations/design-tokens/overview" target="_blank" rel="noopener">https://m3.material.io/foundations/design-tokens/overview</a></p>
+</li>
+<li><p>material 样式文件<br><a href="https://www.figma.com/community/file/1035203688168086460" target="_blank" rel="noopener">https://www.figma.com/community/file/1035203688168086460</a></p>
+</li>
+<li><p>material 颜色样式生成器<br><a href="https://material-foundation.github.io/material-theme-builder" target="_blank" rel="noopener">https://material-foundation.github.io/material-theme-builder</a></p>
+</li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="了解-Material-样式表"><a href="#了解-Material-样式表" class="headerlink" title="了解 Material 样式表"></a>了解 Material 样式表</h3><ul>
+<li>material 样式文件, figma 格式<br><a href="https://www.figma.com/community/file/1035203688168086460" target="_blank" rel="noopener">https://www.figma.com/community/file/1035203688168086460</a></li>
+</ul>
+<blockquote>
+<p>导入你的 figma</p>
+</blockquote>
+<ul>
+<li>颜色、字体</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225102123.png" alt="figma颜色字体" title>
+                </div>
+                <div class="image-caption">figma颜色字体</div>
+            </figure>
+<ul>
+<li>组件</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/podcast/20220225102230.png" alt="figma组件" title>
+                </div>
+                <div class="image-caption">figma组件</div>
+            </figure>
+<h3 id="Flutter-中一步步定制你的样式"><a href="#Flutter-中一步步定制你的样式" class="headerlink" title="Flutter 中一步步定制你的样式"></a>Flutter 中一步步定制你的样式</h3><h4 id="第一步-生成-colorScheme，创建-ThemeData"><a href="#第一步-生成-colorScheme，创建-ThemeData" class="headerlink" title="第一步: 生成 colorScheme，创建 ThemeData"></a>第一步: 生成 colorScheme，创建 ThemeData</h4><ul>
+<li>material-theme-builder 编辑器<br><a href="https://material-foundation.github.io/material-theme-builder/#/custom" target="_blank" rel="noopener">https://material-foundation.github.io/material-theme-builder/#/custom</a></li>
+</ul>
+<blockquote>
+<p>导出 dart 格式导入你的项目</p>
+</blockquote>
+<ul>
+<li>lib/color_schemes.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> lightColorScheme = ColorScheme(</span><br><span class="line">  brightness: Brightness.light,</span><br><span class="line">  primary: Color(<span class="number">0xFF6750A4</span>),</span><br><span class="line">  onPrimary: Color(<span class="number">0xFFFFFFFF</span>),</span><br><span class="line">  primaryContainer: Color(<span class="number">0xFFEADDFF</span>),</span><br><span class="line">  onPrimaryContainer: Color(<span class="number">0xFF21005D</span>),</span><br><span class="line">  secondary: Color(<span class="number">0xFF625B71</span>),</span><br><span class="line">  onSecondary: Color(<span class="number">0xFFFFFFFF</span>),</span><br><span class="line">  secondaryContainer: Color(<span class="number">0xFFE8DEF8</span>),</span><br><span class="line">  onSecondaryContainer: Color(<span class="number">0xFF1D192B</span>),</span><br><span class="line">  tertiary: Color(<span class="number">0xFF7D5260</span>),</span><br><span class="line">  onTertiary: Color(<span class="number">0xFFFFFFFF</span>),</span><br><span class="line">  tertiaryContainer: Color(<span class="number">0xFFFFD8E4</span>),</span><br><span class="line">  onTertiaryContainer: Color(<span class="number">0xFF31111D</span>),</span><br><span class="line">  error: Color(<span class="number">0xFFB3261E</span>),</span><br><span class="line">  errorContainer: Color(<span class="number">0xFFF9DEDC</span>),</span><br><span class="line">  onError: Color(<span class="number">0xFFFFFFFF</span>),</span><br><span class="line">  onErrorContainer: Color(<span class="number">0xFF410E0B</span>),</span><br><span class="line">  background: Color(<span class="number">0xFFFFFBFE</span>),</span><br><span class="line">  onBackground: Color(<span class="number">0xFF1C1B1F</span>),</span><br><span class="line">  surface: Color(<span class="number">0xFFFFFBFE</span>),</span><br><span class="line">  onSurface: Color(<span class="number">0xFF1C1B1F</span>),</span><br><span class="line">  surfaceVariant: Color(<span class="number">0xFFE7E0EC</span>),</span><br><span class="line">  onSurfaceVariant: Color(<span class="number">0xFF49454F</span>),</span><br><span class="line">  outline: Color(<span class="number">0xFF79747E</span>),</span><br><span class="line">  onInverseSurface: Color(<span class="number">0xFFF4EFF4</span>),</span><br><span class="line">  inverseSurface: Color(<span class="number">0xFF313033</span>),</span><br><span class="line">  inversePrimary: Color(<span class="number">0xFFD0BCFF</span>),</span><br><span class="line">  shadow: Color(<span class="number">0xFF000000</span>),</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> darkColorScheme = ColorScheme(</span><br><span class="line">  brightness: Brightness.dark,</span><br><span class="line">  primary: Color(<span class="number">0xFFD0BCFF</span>),</span><br><span class="line">  onPrimary: Color(<span class="number">0xFF381E72</span>),</span><br><span class="line">  primaryContainer: Color(<span class="number">0xFF4F378B</span>),</span><br><span class="line">  onPrimaryContainer: Color(<span class="number">0xFFEADDFF</span>),</span><br><span class="line">  secondary: Color(<span class="number">0xFFCCC2DC</span>),</span><br><span class="line">  onSecondary: Color(<span class="number">0xFF332D41</span>),</span><br><span class="line">  secondaryContainer: Color(<span class="number">0xFF4A4458</span>),</span><br><span class="line">  onSecondaryContainer: Color(<span class="number">0xFFE8DEF8</span>),</span><br><span class="line">  tertiary: Color(<span class="number">0xFFEFB8C8</span>),</span><br><span class="line">  onTertiary: Color(<span class="number">0xFF492532</span>),</span><br><span class="line">  tertiaryContainer: Color(<span class="number">0xFF633B48</span>),</span><br><span class="line">  onTertiaryContainer: Color(<span class="number">0xFFFFD8E4</span>),</span><br><span class="line">  error: Color(<span class="number">0xFFF2B8B5</span>),</span><br><span class="line">  errorContainer: Color(<span class="number">0xFF8C1D18</span>),</span><br><span class="line">  onError: Color(<span class="number">0xFF601410</span>),</span><br><span class="line">  onErrorContainer: Color(<span class="number">0xFFF9DEDC</span>),</span><br><span class="line">  background: Color(<span class="number">0xFF1C1B1F</span>),</span><br><span class="line">  onBackground: Color(<span class="number">0xFFE6E1E5</span>),</span><br><span class="line">  surface: Color(<span class="number">0xFF1C1B1F</span>),</span><br><span class="line">  onSurface: Color(<span class="number">0xFFE6E1E5</span>),</span><br><span class="line">  surfaceVariant: Color(<span class="number">0xFF49454F</span>),</span><br><span class="line">  onSurfaceVariant: Color(<span class="number">0xFFCAC4D0</span>),</span><br><span class="line">  outline: Color(<span class="number">0xFF938F99</span>),</span><br><span class="line">  onInverseSurface: Color(<span class="number">0xFF1C1B1F</span>),</span><br><span class="line">  inverseSurface: Color(<span class="number">0xFFE6E1E5</span>),</span><br><span class="line">  inversePrimary: Color(<span class="number">0xFF6750A4</span>),</span><br><span class="line">  shadow: Color(<span class="number">0xFF000000</span>),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>分别定义了 <code>ColorScheme</code> 类型的，<code>明亮</code> 和 <code>暗色</code> 两种色彩定义</p>
+</blockquote>
+<ul>
+<li>lib/theme.dart</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">'color_schemes.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppTheme</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> ThemeData light = ThemeData(</span><br><span class="line">    colorScheme: lightColorScheme,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> ThemeData dark = ThemeData(</span><br><span class="line">    colorScheme: darkColorScheme,</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>创建 <code>明亮</code>和<code>暗色</code>两种<code>ThemeData</code>样式对象<br>分别设置 <code>colorScheme</code> 属性为上面的 <code>lightColorScheme</code> <code>darkColorScheme</code> 色彩定义</p>
+</blockquote>
+<h4 id="第二步-切换-theme-效果"><a href="#第二步-切换-theme-效果" class="headerlink" title="第二步: 切换 theme 效果"></a>第二步: 切换 theme 效果</h4><ul>
+<li>加入 <code>GetX</code> pub 包</li>
+</ul>
+<p><a href="https://pub.flutter-io.cn/packages/get" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages/get</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; flutter pub add get</span><br></pre></td></tr></table></figure>
+<ul>
+<li>新增 <code>lib/global.dart</code> 全局变量管理</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:get/get.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">'theme.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GlobalService</span> <span class="keyword">extends</span> <span class="title">GetxService</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> GlobalService <span class="keyword">get</span> to =&gt; Get.find();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 是否黑暗模式</span></span><br><span class="line">  <span class="keyword">final</span> RxBool _isDarkModel = Get.isDarkMode.obs;</span><br><span class="line">  <span class="built_in">bool</span> <span class="keyword">get</span> isDarkModel =&gt; _isDarkModel.value;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 切换模式</span></span><br><span class="line">  <span class="keyword">void</span> switchThemeModel() &#123;</span><br><span class="line">    _isDarkModel.value = !_isDarkModel.value;</span><br><span class="line">    Get.changeTheme(</span><br><span class="line">      _isDarkModel.value == <span class="keyword">true</span> ? AppTheme.dark : AppTheme.light,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改 <code>lib/main.dart</code> main 函数</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  appInit();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">appInit() <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="comment">// 初始 fluuter 引擎</span></span><br><span class="line">  WidgetsFlutterBinding.ensureInitialized();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 初始</span></span><br><span class="line">  Get.put&lt;GlobalService&gt;(GlobalService());</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 启动</span></span><br><span class="line">  runApp(<span class="keyword">const</span> MyApp());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> MyApp(&#123;Key? key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> GetMaterialApp(</span><br><span class="line">      title: <span class="string">'Flutter Demo'</span>,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 初始样式</span></span><br><span class="line">      theme:</span><br><span class="line">          GlobalService.to.isDarkModel == <span class="keyword">true</span> ? AppTheme.dark : AppTheme.light,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// home 界面</span></span><br><span class="line">      home: <span class="keyword">const</span> MyHomePage(title: <span class="string">'Flutter Demo Home Page'</span>),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>ensureInitialized</code> 会先绑定 Flutter 引擎和原生端的接口，为后续的组件初始做准备</p>
+</blockquote>
+<ul>
+<li>加入 <code>lib/main.dart</code> 切换按钮</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">floatingActionButton: Obx(() &#123;</span><br><span class="line">  <span class="keyword">return</span> FloatingActionButton(</span><br><span class="line">    onPressed: () &#123;</span><br><span class="line">      GlobalService.to.switchThemeModel();</span><br><span class="line">    &#125;,</span><br><span class="line">    child: Icon(</span><br><span class="line">      GlobalService.to.isDarkModel == <span class="keyword">true</span></span><br><span class="line">          ? Icons.dark_mode</span><br><span class="line">          : Icons.light_mode,</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用 <code>Obx</code> 方式响应按钮切换</p>
+</blockquote>
+<h4 id="第三步-自定义主题色-MaterialColor"><a href="#第三步-自定义主题色-MaterialColor" class="headerlink" title="第三步: 自定义主题色 MaterialColor"></a>第三步: 自定义主题色 MaterialColor</h4><ul>
+<li>新增 <code>lib/string_to_material_color.dart</code> 字符串转 <code>MaterialColor</code> 函数</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// 字符串转 Color 类型</span></span><br><span class="line"><span class="comment">/// Color color = stringToColor("40c254");</span></span><br><span class="line">Color stringToColor(<span class="built_in">String</span> source) &#123;</span><br><span class="line">  <span class="keyword">return</span> Color(<span class="built_in">int</span>.parse(source, radix: <span class="number">16</span>) | <span class="number">0xFF000000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 字符串转 MaterialColor</span></span><br><span class="line"><span class="comment">/// MaterialColor materialColor = stringToMaterialColor("40c254");</span></span><br><span class="line">MaterialColor stringToMaterialColor(<span class="built_in">String</span> source) &#123;</span><br><span class="line">  Color color = stringToColor(source);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">List</span>&lt;<span class="built_in">double</span>&gt; strengths = &lt;<span class="built_in">double</span>&gt;[<span class="number">.05</span>];</span><br><span class="line">  <span class="built_in">Map</span>&lt;<span class="built_in">int</span>, Color&gt; swatch = &lt;<span class="built_in">int</span>, Color&gt;&#123;&#125;;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">int</span> r = color.red, g = color.green, b = color.blue;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    strengths.add(<span class="number">0.1</span> * i);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> strength <span class="keyword">in</span> strengths) &#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="built_in">double</span> ds = <span class="number">0.5</span> - strength;</span><br><span class="line">    swatch[(strength * <span class="number">1000</span>).round()] = Color.fromRGBO(</span><br><span class="line">      r + ((ds &lt; <span class="number">0</span> ? r : (<span class="number">255</span> - r)) * ds).round(),</span><br><span class="line">      g + ((ds &lt; <span class="number">0</span> ? g : (<span class="number">255</span> - g)) * ds).round(),</span><br><span class="line">      b + ((ds &lt; <span class="number">0</span> ? b : (<span class="number">255</span> - b)) * ds).round(),</span><br><span class="line">      <span class="number">1</span>,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> MaterialColor(color.value, swatch);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>选取颜色</li>
+</ul>
+<p><a href="https://www.color-hex.com/" target="_blank" rel="noopener">https://www.color-hex.com/</a></p>
+<ul>
+<li>设置 <code>lib/theme.dart</code> <code>light</code> 对象的属性 <code>primarySwatch</code></li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppTheme</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 自定义主色</span></span><br><span class="line">  <span class="keyword">static</span> MaterialColor myColor = stringToMaterialColor(<span class="string">"008744"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> ThemeData light = ThemeData(</span><br><span class="line">    primarySwatch: myColor,</span><br><span class="line">  );</span><br></pre></td></tr></table></figure>
+<h4 id="第四步-全局定义组件样式"><a href="#第四步-全局定义组件样式" class="headerlink" title="第四步: 全局定义组件样式"></a>第四步: 全局定义组件样式</h4><ul>
+<li>修改 <code>lib/theme.dart</code> , <code>appBarTheme</code> 属性</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppTheme</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> ThemeData light = ThemeData(</span><br><span class="line">    colorScheme: lightColorScheme,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 全局 - 自定义 AppBarTheme</span></span><br><span class="line">    appBarTheme: ThemeData.light().appBarTheme.copyWith(</span><br><span class="line">          backgroundColor: Colors.yellow,</span><br><span class="line">          titleTextStyle: ThemeData.light().textTheme.titleLarge?.copyWith(</span><br><span class="line">                color: Colors.black,</span><br><span class="line">                fontWeight: FontWeight.bold,</span><br><span class="line">                fontSize: <span class="number">20</span>,</span><br><span class="line">              ),</span><br><span class="line">        ),</span><br><span class="line">  );</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>copyWith</code> 方法将会把其它属性一起复制</p>
+</blockquote>
+<h4 id="第五步-局部定义组件样式"><a href="#第五步-局部定义组件样式" class="headerlink" title="第五步: 局部定义组件样式"></a>第五步: 局部定义组件样式</h4><ul>
+<li>修改 <code>lib/main.dart</code>, <code>MyHomePage</code> 界面的 <code>build</code> 方法</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过 GetX 的 theme 属性，读取当前样式 `ThemeData`</span></span><br><span class="line">ThemeData theme = Get.theme;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Theme(</span><br><span class="line">  data: theme.copyWith(</span><br><span class="line">    appBarTheme: theme.appBarTheme.copyWith(</span><br><span class="line">      backgroundColor: theme.colorScheme.tertiary,</span><br><span class="line">    ),</span><br><span class="line">  ),</span><br><span class="line">  child: Scaffold(</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>用 <code>Theme</code> 包裹需要局部使用的组件, 设置 <code>data</code> 属性</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文介绍了 Material Design 3 中的样式表，以及如何在 Flutter 中如何修改全局、局部的样式，MaterialCorlor 和 Color 的区别以及如何使用。</p>
+<p>我们可以发现如果和设计师协调好 颜色、字体、组件交互的样式标准，然后再适配下 Material Design ，样式配置将会快很多，很多时候样式调整给客户的是一种新鲜感，比如节假日、特殊日子里色调改下就行。</p>
+<hr>
+<p>© 猫哥</p>
+<ul>
+<li><p>微信 ducafecat</p>
+</li>
+<li><p><a href="https://ducafecat.tech/" target="_blank" rel="noopener">博客 ducafecat.tech</a></p>
+</li>
+<li><p><a href="https://github.com/ducafecat" target="_blank" rel="noopener">github</a></p>
+</li>
+<li><p><a href="https://space.bilibili.com/404904528" target="_blank" rel="noopener">bilibili</a></p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ducafecat.tech/img/banner-gzh.png" alt="订阅号" title>
+                </div>
+                <div class="image-caption">订阅号</div>
+            </figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        邮箱 ducafecat@gmail.com / 微信 ducafecat / 留言板 disqus
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.ducafecat.tech">
+            <img src="/img/avatar.jpg" alt="猫哥">
+            猫哥
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/02/23/2022/flutter-material-design3-theme-getx/&title=《Flutter GetX + Material Design 3 Theme 样式自定义》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/02/23/2022/flutter-material-design3-theme-getx/&title=《Flutter GetX + Material Design 3 Theme 样式自定义》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/02/23/2022/flutter-material-design3-theme-getx/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter GetX + Material Design 3 Theme 样式自定义》 — duCafeCat&url=https://blog.ducafecat.tech/2022/02/23/2022/flutter-material-design3-theme-getx/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/02/23/2022/flutter-material-design3-theme-getx/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/03/17/2022/flutter-devtools-performance/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">2022 Flutter Performance 性能调试工具 devTools</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/02/15/2022/make-localization-by-custom-services-in-flutter-apps/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">在 Flutter 应用程序中通过定制服务进行本地化</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+            <p>
+                
+                    <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i
+                                class="icon icon-lg icon-rss"></i></a></span>
+                    
+                        <span>
+                            This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p><span>
+                猫哥 &copy; 
+                        2018 - 
+                                2022
+            </span>
+            <span>
+                
+                    <a href="http://www.miitbeian.gov.cn/" target="_blank">
+                        京ICP备2021009050号
+                    </a><br>
+                    
+                        Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                            href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> <span>网站备案号:
+                            京ICP备2021009050号-1</span>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ducafecat.tech/2022/02/23/2022/flutter-material-design3-theme-getx/&title=《Flutter GetX + Material Design 3 Theme 样式自定义》 — duCafeCat&pic=https://blog.ducafecat.tech/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ducafecat.tech/2022/02/23/2022/flutter-material-design3-theme-getx/&title=《Flutter GetX + Material Design 3 Theme 样式自定义》 — duCafeCat&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ducafecat.tech/2022/02/23/2022/flutter-material-design3-theme-getx/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flutter GetX + Material Design 3 Theme 样式自定义》 — duCafeCat&url=https://blog.ducafecat.tech/2022/02/23/2022/flutter-material-design3-theme-getx/&via=https://blog.ducafecat.tech" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ducafecat.tech/2022/02/23/2022/flutter-material-design3-theme-getx/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3aMVIDMQwF0Nz/0qGFwht9yWJSvFTMAGu/LSzly69X+fP+9Tn99vSXp/+qrDV5zgsPDw9vjfd+/KS8E/h5i89PeH6Jpz3j4eHhbfMqx/1zqZgf6Kct1p+Jh4eH9528+jL1gnGrvcbDw8P7Tl4aUjxvrtIoT1pzPDw8vD1e79GVJrgScNSfuZi14OHh4ZV59Zjge35eme/h4eHhjafq9SIxGZ49F4nRbvHw8PAWeL04tdfU1kOHNPL48Jd4eHh4V3m9Rra32Jwdly48PDy8Zd4krq2M09J2/Hn1UjCBh4eHt8ZLh1j1tjjdVq8YfIgh8PDw8K7y0utTkwtYdUY6kIuHYXh4eHgDXjriSqOKesmprxtEyXh4eHgLvLTxTWOCeuNbeWWVvQVVCA8PD6/Fm4zte/Fr/fWl7fVxAIaHh4d3lbf3nf3WRateMIGHh4e3x3tevh4B1A/9XrFJw188PDy8Pd7d47g34krb6LQ44eHh4d3l9Q7ZeZg7eRHBsA0PDw9vjdcjBWlHeFanzz8+Ew8PD+9feOk1gnQYlkbA9SD4w50yPDw8vKu8dEA1H+rvXboqfWPAw8PDu8RLwe/wM1ml/hKPhQEPDw/vEi8dL6UhRWUr8XE/mfLh4eHhXeLVB1QTzN24oR6C4OHh4W3zem1rCu5dLwhIae3Cw8PDG/DSg7h3PSu9KNALMvDw8PC2eem26sXgQvzaKjZ4eHh4G7zeEKt+rWoSCvd+++dnPDw8vAVe7xDvTdjSKwj1VUYwPDw8vNbq9WJQP4hvjbUulA08PDy8NV6cYYSXANLIeDFrwcPDw/t3Xu/q1bWBVrofPDw8vK/hpd/3J612r+nHw8PD2+b1Fpu013dj3OBOGR4eHt6YN2+L668g3dbKRQE8PDy8Pu8HRaPaT5ZeljwAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s22.cnzz.com/z_stat.php?id=1274928662&web_id=1274928662')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
